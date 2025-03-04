@@ -226,7 +226,7 @@ rules:
 - RULE-SET,Netflix,Netflix
 - RULE-SET,Disney Plus,Disney
 - RULE-SET,YouTube,YouTube
-#   - RULE-SET,YouTube Music,YouTube
+# - RULE-SET,YouTube Music,YouTube
 - RULE-SET,Max,Max
 - RULE-SET,Spotify,Spotify
 
@@ -248,7 +248,7 @@ rules:
 - RULE-SET,KKBOX,Asian TV
 - RULE-SET,KKTV,Asian TV
 - RULE-SET,Line TV,Asian TV
-#   - RULE-SET,MOO,Asian TV
+# - RULE-SET,MOO,Asian TV
 - RULE-SET,myTV SUPER,Asian TV
 - RULE-SET,Niconico,Asian TV
 - RULE-SET,ViuTV,Asian TV
@@ -285,7 +285,7 @@ rules:
 - RULE-SET,Speedtest,Speedtest
 - RULE-SET,Steam,Steam
 
-#- RULE-SET,miHoYo,miHoYo
+# - RULE-SET,miHoYo,miHoYo
 
 - RULE-SET,PROXY,Proxy
 
@@ -294,7 +294,7 @@ rules:
 
 - RULE-SET,LAN,DIRECT
 - GEOIP,CN,Domestic
-- MATCH,Others
+- MATCH,Final
 
 # script:
   # code: |
