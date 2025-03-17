@@ -1,0 +1,5 @@
+payload:  
+  # > Direct
+  - DOMAIN-SUFFIX,zju.edu.cn
+  - DOMAIN-SUFFIX,zmmc.com.cn
+  - DOMAIN-SUFFIX,mypikpak.com

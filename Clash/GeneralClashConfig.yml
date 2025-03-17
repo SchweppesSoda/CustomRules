@@ -1,0 +1,789 @@
+#---------------------------------------------------#
+# 配置文件需要放置在 $HOME/.config/clash/config.yml
+# 或者运行目录下的config.yml
+#---------------------------------------------------#
+# 混合端口 HTTP和SOCKS5用一个端口
+mixed-port: 7890
+
+# HTTP 代理端口
+# port: 7890
+
+# SOCKS5 代理端口
+socks-port: 7891
+
+# Linux 和 macOS 的 redir 代理端口 (如需使用此功能，请取消注释)
+# redir-port: 7892
+
+# 允许局域网的连接（可用来共享代理）
+allow-lan: true
+
+# 仅在将allow-lan设置为true时适用
+# #"*": 绑定所有IP地址
+# #192.168.122.11: 绑定单个IPv4地址
+# #"[aaaa::a8aa:ff:fe09:57d8]": 绑定单个IPv6地址
+bind-address: "*"
+ipv6: true
+
+# 规则模式：rule（规则） / global（全局代理）/ direct（全局直连）/ script (脚本)
+# mode: rule
+
+# 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
+# 5 个级别：silent / error / warning / info / debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
+log-level: info
+
+# Clash 的 RESTful API
+external-controller: '127.0.0.1:9090'
+
+# 您可以将静态网页资源（如 clash-dashboard）放置在一个目录中，clash 将会服务于 `RESTful API/ui`
+# 参数应填写配置目录的相对路径或绝对路径。
+# http://127.0.0.1:9090/ui/#/
+# external-ui: folder
+# yacd面板：  https://github.com/haishanh/yacd
+# Razord面板：http://clash.razord.top/#/proxies
+# external-ui: dashboard
+
+# RESTful API 的口令 (可选)
+# secret: ""
+
+# 实验性功能
+experimental:
+  ignore-resolve-fail: true # 忽略 DNS 解析失败，默认值为 true
+  # interface-name: en0 # outbound interface name
+
+# 本地 SOCKS5 / HTTP(S) 服务认证
+# authentication:
+#  - "user1:pass1"
+#  - "user2:pass2"
+
+# 实验性功能 hosts, 支持通配符 (例如 *.clash.dev 甚至 *.foo.*.example.com)
+# 静态的域名 比 通配域名 具有更高的优先级 (foo.example.com 优先于 *.example.com)
+# 注意: hosts 在 fake-ip 模式下不生效
+#hosts:
+#   '*.clash.dev': 127.0.0.1
+#   'alpha.clash.dev': '::1'
+
+dns:
+  enable: true # 是否启用dns false
+  ipv6: false
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  #fake-ip-range: 198.18.0.1/16 #
+  #fake-ip-filter: # fake ip 白名单列表，如果你不知道这个参数的作用，请勿修改
+     #- '*.lan'
+     #- localhost.ptlogin2.qq.com
+  default-nameserver:
+     - 119.29.29.29 # 腾讯DNS
+     - 223.5.5.5 # 阿里DNS
+     - 223.6.6.6 # 阿里DNS
+  nameserver:
+     - https://doh.pub/dns-query #腾讯 DoH DNS
+     - https://dns.alidns.com/dns-query # 阿里 DoH DNS
+     - https://dns.rubyfish.cn/dns-query # RubyFish DoH DNS     
+     # - https://doh.360.cn/dns-query # 360 DoH DNS
+  fallback:
+     - 8.8.4.4 # 谷歌DNS
+     # - 8.8.8.8 # 谷歌DNS
+     # - 1.1.1.1 # Cloudflare DNS
+     - https://cloudflare-dns.com/dns-query
+     - https://dns.google/dns-query
+     - https://1.1.1.1/dns-query
+     # - tls://dns.google:853
+     - tls://1.1.1.1:853
+     # - tls://8.8.8.8:853
+  #fallback-filter:
+     #geoip: true # 默认
+     #ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
+       #- 240.0.0.0/4
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - "time.*.com"
+    - "time.*.gov"
+    - "time.*.edu.cn"
+    - "time.*.apple.com"
+    - "time1.*.com"
+    - "time2.*.com"
+    - "time3.*.com"
+    - "time4.*.com"
+    - "time5.*.com"
+    - "time6.*.com"
+    - "time7.*.com"
+    - "ntp.*.com"
+    - "ntp1.*.com"
+    - "ntp2.*.com"
+    - "ntp3.*.com"
+    - "ntp4.*.com"
+    - "ntp5.*.com"
+    - "ntp6.*.com"
+    - "ntp7.*.com"
+    - "*.time.edu.cn"
+    - "*.ntp.org.cn"
+    - "+.pool.ntp.org"
+    - "time1.cloud.tencent.com"
+    - "music.163.com"
+    - "*.music.163.com"
+    - "*.126.net"
+    - "musicapi.taihe.com"
+    - "music.taihe.com"
+    - "songsearch.kugou.com"
+    - "trackercdn.kugou.com"
+    - "*.kuwo.cn"
+    - "api-jooxtt.sanook.com"
+    - "api.joox.com"
+    - "joox.com"
+    - "y.qq.com"
+    - "*.y.qq.com"
+    - "streamoc.music.tc.qq.com"
+    - "mobileoc.music.tc.qq.com"
+    - "isure.stream.qqmusic.qq.com"
+    - "dl.stream.qqmusic.qq.com"
+    - "aqqmusic.tc.qq.com"
+    - "amobile.music.tc.qq.com"
+    - "*.xiami.com"
+    - "*.music.migu.cn"
+    - "music.migu.cn"
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
+    - "msftconnecttest.com"
+    - "msftncsi.com"
+    - "localhost.ptlogin2.qq.com"
+    - "localhost.sec.qq.com"
+    - "+.srv.nintendo.net"
+    - "+.stun.playstation.net"
+    - "xbox.*.microsoft.com"
+    - "xnotify.xboxlive.com"
+    - "+.battlenet.com.cn"
+    - "+.wotgame.cn"
+    - "+.wggames.cn"
+    - "+.wowsgame.cn"
+    - "+.wargaming.net"
+    - "proxy.golang.org"
+    - "stun.*.*"
+    - "stun.*.*.*"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "heartbeat.belkin.com"
+    - "*.linksys.com"
+    - "*.linksyssmartwifi.com"
+    - "*.router.asus.com"
+    - "mesu.apple.com"
+    - "swscan.apple.com"
+    - "swquery.apple.com"
+    - "swdownload.apple.com"
+    - "swcdn.apple.com"
+    - "swdist.apple.com"
+    - "lens.l.google.com"
+    - "stun.l.google.com"
+    - "+.nflxvideo.net"
+    - "*.square-enix.com"
+    - "*.finalfantasyxiv.com"
+    - "*.ffxiv.com"
+
+# 1. clash DNS 请求逻辑：
+#   (1) 当访问一个域名时， nameserver 与 fallback 列表内的所有服务器并发请求，得到域名对应的 IP 地址。
+#   (2) clash 将选取 nameserver 列表内，解析最快的结果。
+#   (3) 若解析结果中，IP 地址属于 国外，那么 clash 将选择 fallback 列表内，解析最快的结果。
+#
+#   因此，我在 nameserver 和 fallback 内都放置了无污染、解析速度较快的国内 DNS 服务器，以达到最快的解析速度。
+#   但是 fallback 列表内服务器会用在解析境外网站，为了结果绝对无污染，我仅保留了支持 DoT/DoH 的两个服务器。
+#
+# 2. clash DNS 配置注意事项：
+#   (1) 如果您为了确保 DNS 解析结果无污染，请仅保留列表内以 tls:// 或 https:// 开头的 DNS 服务器，但是通常对于国内域名没有必要。
+#   (2) 如果您不在乎可能解析到污染的结果，更加追求速度。请将 nameserver 列表的服务器插入至 fallback 列表内，并移除重复项。
+#
+# 3. 关于 DNS over HTTPS (DoH) 和 DNS over TLS (DoT) 的选择：
+#   对于两项技术双方各执一词，而且会无休止的争论，各有利弊。各位请根据具体需求自行选择，但是配置文件内默认启用 DoT，因为目前国内没有封锁或管制。
+#   DoH: 以 https:// 开头的 DNS 服务器。拥有更好的伪装性，且几乎不可能被运营商或网络管理封锁，但查询效率和安全性可能略低。
+#   DoT: 以 tls:// 开头的 DNS 服务器。拥有更高的安全性和查询效率，但端口有可能被管制或封锁。
+#   若要了解更多关于 DoH/DoT 相关技术，请自行查阅规范文档。
+
+tun:
+  enable: true
+  stack: gvisor
+  dns-hijack:
+    - 198.18.0.2:53
+  auto-route: true
+  auto-detect-interface: true
+
+# Rule Provider
+rules:
+- RULE-SET,MyDirect,Domestic
+- RULE-SET,MyNonChina,NonChina
+- RULE-SET,TikTok,TikTok
+# - RULE-SET,Emby,Emby
+
+- RULE-SET,AdBlock,AdBlock
+- RULE-SET,HTTPDNS,HTTPDNS
+- RULE-SET,Special,DIRECT
+
+- RULE-SET,Netflix,Netflix
+- RULE-SET,Disney Plus,Disney
+- RULE-SET,YouTube,YouTube
+# - RULE-SET,YouTube Music,YouTube
+- RULE-SET,Max,Max
+- RULE-SET,Spotify,Spotify
+
+- RULE-SET,Bilibili,CN Mainland TV
+- RULE-SET,IQ,CN Mainland TV
+- RULE-SET,IQIYI,CN Mainland TV
+- RULE-SET,Letv,CN Mainland TV
+- RULE-SET,Netease Music,CN Mainland TV
+- RULE-SET,Tencent Video,CN Mainland TV
+- RULE-SET,WeTV,CN Mainland TV
+- RULE-SET,Youku,CN Mainland TV
+
+- RULE-SET,Abema TV,Asian TV
+- RULE-SET,Bahamut,Asian TV
+- RULE-SET,Fox+,Asian TV
+- RULE-SET,Hulu Japan,Asian TV
+- RULE-SET,Japonx,Asian TV
+- RULE-SET,JOOX,Asian TV
+- RULE-SET,KKBOX,Asian TV
+- RULE-SET,KKTV,Asian TV
+- RULE-SET,Line TV,Asian TV
+# - RULE-SET,MOO,Asian TV
+- RULE-SET,myTV SUPER,Asian TV
+- RULE-SET,Niconico,Asian TV
+- RULE-SET,ViuTV,Asian TV
+
+- RULE-SET,ABC,Global TV
+- RULE-SET,Amazon,Global TV
+- RULE-SET,BBC iPlayer,Global TV
+- RULE-SET,DAZN,Global TV
+- RULE-SET,Discovery Plus,Global TV
+- RULE-SET,encoreTVB,Global TV
+- RULE-SET,F1 TV,Global TV
+- RULE-SET,Fox Now,Global TV
+- RULE-SET,Hulu,Global TV
+- RULE-SET,Pandora,Global TV
+- RULE-SET,PBS,Global TV
+- RULE-SET,Pornhub,Global TV
+- RULE-SET,Soundcloud,Global TV
+
+- RULE-SET,Apple Music,Apple TV
+- RULE-SET,Apple News,Apple TV
+- RULE-SET,Apple TV,Apple TV
+
+- RULE-SET,Apple,Apple
+
+- RULE-SET,Telegram,Telegram
+
+- RULE-SET,Crypto,Crypto
+- RULE-SET,Discord,Discord
+- RULE-SET,Google FCM,Google FCM
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,AI Suite,AI Suite
+- RULE-SET,PayPal,PayPal
+- RULE-SET,Scholar,Scholar
+- RULE-SET,Speedtest,Speedtest
+- RULE-SET,Steam,Steam
+
+# - RULE-SET,miHoYo,miHoYo
+
+- RULE-SET,PROXY,Proxy
+
+- RULE-SET,Domestic,Domestic
+- RULE-SET,Domestic IPs,Domestic
+
+- RULE-SET,LAN,DIRECT
+- GEOIP,CN,Domestic
+- MATCH,Final
+
+# script:
+  # code: |
+    # def main(ctx,metadata):
+        # ruleset_action = {
+            # 'AdBlock': 'AdBlock',
+            # 'HTTPDNS': 'HTTPDNS',
+            # 'Special': 'DIRECT',
+            # 'Netflix': 'Netflix',
+            # 'Disney Plus': 'Disney',
+            # 'YouTube': 'YouTube',
+            # 'Max': 'Max',
+            # 'Spotify': 'Spotify',
+            # 'Bilibili': 'CN Mainland TV',
+            # 'IQ': 'CN Mainland TV',
+            # 'IQIYI': 'CN Mainland TV',
+            # 'Letv': 'CN Mainland TV',
+            # 'Netease Music': 'CN Mainland TV',
+            # 'Tencent Video': 'CN Mainland TV',
+            # 'Youku': 'CN Mainland TV',
+            # 'WeTV': 'CN Mainland TV',
+            # 'Abema TV': 'Asian TV',
+            # 'Bahamut': 'Asian TV',
+            # 'Fox+': 'Asian TV',
+            # 'Hulu Japan': 'Asian TV',
+            # 'Japonx': 'Asian TV',
+            # 'JOOX': 'Asian TV',
+            # 'KKBOX': 'Asian TV',
+            # 'KKTV': 'Asian TV',
+            # 'Line TV': 'Asian TV',
+            # 'myTV SUPER': 'Asian TV',
+            # 'Niconico': 'Asian TV',
+            # 'ViuTV': 'Asian TV',
+            # 'ABC': 'Global TV',
+            # 'Amazon': 'Global TV',
+            # 'BBC iPlayer': 'Global TV',
+            # 'DAZN': 'Global TV',
+            # 'Discovery Plus': 'Global TV',
+            # 'encoreTVB': 'Global TV',
+            # 'F1 TV': 'Global TV',
+            # 'Fox Now': 'Global TV',
+            # 'Hulu': 'Global TV',
+            # 'Pandora': 'Global TV',
+            # 'PBS': 'Global TV',
+            # 'Pornhub': 'Global TV',
+            # 'Soundcloud': 'Global TV',
+            # 'Apple Music': 'Apple TV',
+            # 'Apple News': 'Apple TV',
+            # 'Apple TV': 'Apple TV',
+            # 'Apple': 'Apple',
+            # 'Telegram': 'Telegram',
+            # 'Crypto': 'Crypto',
+            # 'Discord': 'Discord',
+            # 'Google FCM': 'Google FCM',
+            # 'Microsoft': 'Microsoft',
+            # 'AI Suite': 'AI Suite',
+            # 'PayPal': 'PayPal',
+            # 'Scholar': 'Scholar',
+            # 'Speedtest': 'Speedtest',
+            # 'Steam': 'Steam',
+            # 'miHoYo': 'miHoYo',
+            # 'PROXY': 'Proxy',
+            # 'Domestic': 'Domestic',
+            # 'Domestic IPs': 'Domestic',
+            # 'LAN': 'DIRECT'
+          # }
+
+        # port = int(metadata['dst_port'])
+
+        # if metadata['network'] == 'UDP' and port == 443:
+            # ctx.log('[Script] matched QUIC traffic use reject')
+            # return 'REJECT'
+
+        # port_list = [21,22,23,53,80,123,143,194,443,465,587,853,993,995,998,2052,2053,2082,2083,2086,2095,2096,3389,5222,5228,5229,5230,8080,8443,8880,8888,8889]
+        # if port not in port_list:
+            # ctx.log('[Script] not common port use direct')
+            # return 'DIRECT'
+
+        # if metadata['dst_ip'] == '':
+            # metadata['dst_ip'] = ctx.resolve_ip(metadata['host'])
+
+        # for ruleset in ruleset_action:
+            # if ctx.rule_providers[ruleset].match(metadata):
+                # return ruleset_action[ruleset]
+
+        # if metadata['dst_ip'] != '':
+            # code = ctx.geoip(metadata['dst_ip'])
+            # if code == 'CN':
+                # ctx.log('[Script] Geoip CN')
+                # return 'Domestic'
+
+        # ctx.log('[Script] FINAL')
+        # return 'Others'
+
+rule-providers:
+  MyDirect:
+    type: http
+    behavior: classical
+    url: 'https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/myrule/MyDirect.yaml'
+    path: ./Rules/MyDirect
+    interval: 86400
+  MyNonChina:
+    type: http
+    behavior: classical
+    url: 'https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/myrule/MyNonChina.yaml'
+    path: ./Rules/MyNonChina
+    interval: 86400
+  TikTok:
+    type: http
+    behavior: classical
+    url: 'https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/myrule/TikTok.yaml'
+    path: ./Rules/TikTok
+    interval: 86400
+  # Emby:
+    # type: http
+    # behavior: classical
+    # url: 'https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/myrule/Emby.yaml'
+    # path: ./Rules/Emby
+    # interval: 86400
+##############################################################################################
+  AdBlock:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/AdBlock.yaml'
+    path: ./Rules/AdBlock
+    interval: 86400
+  HTTPDNS:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/HTTPDNS.yaml'
+    path: ./Rules/HTTPDNS
+    interval: 86400
+  Special:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Special.yaml'
+    path: ./Rules/Special
+    interval: 86400
+  PROXY:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Proxy.yaml'
+    path: ./Rules/Proxy
+    interval: 86400
+  Domestic:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Domestic.yaml'
+    path: ./Rules/Domestic
+    interval: 86400
+  Domestic IPs:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Domestic%20IPs.yaml'
+    path: ./Rules/Domestic_IPs
+    interval: 86400
+  LAN:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/LAN.yaml'
+    path: ./Rules/LAN
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Netflix.yaml'
+    path: ./Rules/Media/Netflix
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Spotify.yaml'
+    path: ./Rules/Media/Spotify
+    interval: 86400
+  # YouTube Music:
+  #   type: http
+  #   behavior: classical
+  #   url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/YouTube%20Music.yaml'
+  #   path: ./Rules/Media/YouTube_Music
+  #   interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/YouTube.yaml'
+    path: ./Rules/Media/YouTube
+    interval: 86400
+  Max:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Max.yaml'
+    path: ./Rules/Media/Max
+    interval: 86400
+  Bilibili:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Bilibili.yaml'
+    path: ./Rules/Media/Bilibili
+    interval: 86400
+  IQ:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/IQ.yaml'
+    path: ./Rules/Media/IQI
+    interval: 86400
+  IQIYI:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/IQIYI.yaml'
+    path: ./Rules/Media/IQYI
+    interval: 86400
+  Letv:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Letv.yaml'
+    path: ./Rules/Media/Letv
+    interval: 86400
+  # MOO:
+  #   type: http
+  #   behavior: classical
+  #   url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/MOO.yaml'
+  #   path: ./Rules/Media/MOO
+  #   interval: 86400
+  Netease Music:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Netease%20Music.yaml'
+    path: ./Rules/Media/Netease_Music
+    interval: 86400
+  Tencent Video:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Tencent%20Video.yaml'
+    path: ./Rules/Media/Tencent_Video
+    interval: 86400
+  Youku:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Youku.yaml'
+    path: ./Rules/Media/Youku
+    interval: 86400
+  WeTV:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/WeTV.yaml'
+    path: ./Rules/Media/WeTV
+    interval: 86400
+  ABC:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/ABC.yaml'
+    path: ./Rules/Media/ABC
+    interval: 86400
+  Abema TV:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Abema%20TV.yaml'
+    path: ./Rules/Media/Abema_TV
+    interval: 86400
+  Amazon:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Amazon.yaml'
+    path: ./Rules/Media/Amazon
+    interval: 86400
+  Apple Music:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Apple%20Music.yaml'
+    path: ./Rules/Media/Apple_Music
+    interval: 86400
+  Apple News:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Apple%20News.yaml'
+    path: ./Rules/Media/Apple_News
+    interval: 86400
+  Apple TV:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Apple%20TV.yaml'
+    path: ./Rules/Media/Apple_TV
+    interval: 86400
+  Bahamut:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Bahamut.yaml'
+    path: ./Rules/Media/Bahamut
+    interval: 86400
+  BBC iPlayer:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/BBC%20iPlayer.yaml'
+    path: ./Rules/Media/BBC_iPlayer
+    interval: 86400
+  DAZN:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/DAZN.yaml'
+    path: ./Rules/Media/DAZN
+    interval: 86400
+  Discovery Plus:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Discovery%20Plus.yaml'
+    path: ./Rules/Media/Discovery_Plus
+    interval: 86400
+  Disney Plus:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Disney%20Plus.yaml'
+    path: ./Rules/Media/Disney_Plus
+    interval: 86400
+  encoreTVB:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/encoreTVB.yaml'
+    path: ./Rules/Media/encoreTVB
+    interval: 86400
+  F1 TV:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/F1%20TV.yaml'
+    path: ./Rules/Media/F1_TV
+    interval: 86400
+  Fox Now:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Fox%20Now.yaml'
+    path: ./Rules/Media/Fox_Now
+    interval: 86400
+  Fox+:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Fox%2B.yaml'
+    path: ./Rules/Media/Fox+
+    interval: 86400
+  Hulu Japan:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Hulu%20Japan.yaml'
+    path: ./Rules/Media/Hulu_Japan
+    interval: 86400
+  Hulu:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Hulu.yaml'
+    path: ./Rules/Media/Hulu
+    interval: 86400
+  Japonx:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Japonx.yaml'
+    path: ./Rules/Media/Japonx
+    interval: 86400
+  JOOX:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/JOOX.yaml'
+    path: ./Rules/Media/JOOX
+    interval: 86400
+  KKBOX:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/KKBOX.yaml'
+    path: ./Rules/Media/KKBOX
+    interval: 86400
+  KKTV:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/KKTV.yaml'
+    path: ./Rules/Media/KKTV
+    interval: 86400
+  Line TV:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Line%20TV.yaml'
+    path: ./Rules/Media/Line_TV
+    interval: 86400
+  myTV SUPER:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/myTV%20SUPER.yaml'
+    path: ./Rules/Media/myTV_SUPER
+    interval: 86400
+  Niconico:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Niconico.yaml'
+    path: ./Rules/Media/Niconico
+    interval: 86400
+  Pandora:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Pandora.yaml'
+    path: ./Rules/Media/Pandora
+    interval: 86400
+  PBS:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/PBS.yaml'
+    path: ./Rules/Media/PBS
+    interval: 86400
+  Pornhub:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Pornhub.yaml'
+    path: ./Rules/Media/Pornhub
+    interval: 86400
+  Soundcloud:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/Soundcloud.yaml'
+    path: ./Rules/Media/Soundcloud
+    interval: 86400
+  ViuTV:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Media/ViuTV.yaml'
+    path: ./Rules/Media/ViuTV
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Telegram.yaml'
+    path: ./Rules/Telegram
+    interval: 86400
+  Crypto:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Crypto.yaml'
+    path: ./Rules/Crypto
+    interval: 86400
+  Discord:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Discord.yaml'
+    path: ./Rules/Discord
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Steam.yaml'
+    path: ./Rules/Steam
+    interval: 86400
+  Speedtest:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Speedtest.yaml'
+    path: ./Rules/Speedtest
+    interval: 86400
+  PayPal:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/PayPal.yaml'
+    path: ./Rules/PayPal
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Microsoft.yaml'
+    path: ./Rules/Microsoft
+    interval: 86400
+  AI Suite:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/AI%20Suite.yaml'
+    path: ./Rules/AI Suite
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Apple.yaml'
+    path: ./Rules/Apple
+    interval: 86400
+  Google FCM:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Google%20FCM.yaml'
+    path: ./Rules/Google FCM
+    interval: 86400
+  Scholar:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/Scholar.yaml'
+    path: ./Rules/Scholar
+    interval: 86400
+  miHoYo:
+    type: http
+    behavior: classical
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/miHoYo.yaml'
+    path: ./Rules/miHoYo
+    interval: 86400
