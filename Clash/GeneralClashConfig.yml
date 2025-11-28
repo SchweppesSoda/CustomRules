@@ -206,7 +206,7 @@ dns:
 
 tun:
   enable: true
-  stack: gvisor
+  stack: system
   dns-hijack:
     - 198.18.0.2:53
   auto-route: true
@@ -216,7 +216,6 @@ tun:
 rules:
 - RULE-SET,MyDirect,Domestic
 - RULE-SET,MyNonChina,NonChina
-- RULE-SET,TikTok,TikTok
 # - RULE-SET,Emby,Emby
 
 - RULE-SET,AdBlock,AdBlock
@@ -229,15 +228,6 @@ rules:
 # - RULE-SET,YouTube Music,YouTube
 - RULE-SET,Max,Max
 - RULE-SET,Spotify,Spotify
-
-- RULE-SET,Bilibili,CN Mainland TV
-- RULE-SET,IQ,CN Mainland TV
-- RULE-SET,IQIYI,CN Mainland TV
-- RULE-SET,Letv,CN Mainland TV
-- RULE-SET,Netease Music,CN Mainland TV
-- RULE-SET,Tencent Video,CN Mainland TV
-- RULE-SET,WeTV,CN Mainland TV
-- RULE-SET,Youku,CN Mainland TV
 
 - RULE-SET,Abema TV,Asian TV
 - RULE-SET,Bahamut,Asian TV
@@ -267,11 +257,14 @@ rules:
 - RULE-SET,Pornhub,Global TV
 - RULE-SET,Soundcloud,Global TV
 
-- RULE-SET,Apple Music,Apple TV
-- RULE-SET,Apple News,Apple TV
-- RULE-SET,Apple TV,Apple TV
-
-- RULE-SET,Apple,Apple
+- RULE-SET,Bilibili,CN Mainland TV
+- RULE-SET,IQ,CN Mainland TV
+- RULE-SET,IQIYI,CN Mainland TV
+- RULE-SET,Letv,CN Mainland TV
+- RULE-SET,Netease Music,CN Mainland TV
+- RULE-SET,Tencent Video,CN Mainland TV
+- RULE-SET,WeTV,CN Mainland TV
+- RULE-SET,Youku,CN Mainland TV
 
 - RULE-SET,Telegram,Telegram
 
@@ -284,6 +277,13 @@ rules:
 - RULE-SET,Scholar,Scholar
 - RULE-SET,Speedtest,Speedtest
 - RULE-SET,Steam,Steam
+- RULE-SET,TikTok,TikTok
+
+- RULE-SET,Apple Music,Apple TV
+- RULE-SET,Apple News,Apple TV
+- RULE-SET,Apple TV,Apple TV
+
+- RULE-SET,Apple,Apple
 
 # - RULE-SET,miHoYo,miHoYo
 
@@ -405,7 +405,7 @@ rule-providers:
   TikTok:
     type: http
     behavior: classical
-    url: 'https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/myrule/TikTok.yaml'
+    url: 'https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/TikTok.yaml'
     path: ./Rules/TikTok
     interval: 86400
   # Emby:
