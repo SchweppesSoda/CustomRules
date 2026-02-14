@@ -24,3 +24,6 @@ payload:
   
   # > 厂妹
   - DOMAIN-SUFFIX,emby.wtf
+  
+  # > SNTP
+  - DOMAIN-SUFFIX,pe.cn2gias.uk
