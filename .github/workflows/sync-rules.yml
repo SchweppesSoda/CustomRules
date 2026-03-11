@@ -14,7 +14,16 @@ jobs:
 
       - name: Convert all YAML to List
         run: |
+          # 删除 Mihomo 中已不存在对应 yaml 的 list 文件
+          for list in Surge/*.list; do
+            [ -f "$list" ] || continue
+            filename=$(basename "${list%.list}")
+            [ -f "Mihomo/${filename}.yaml" ] || rm "$list"
+          done
+
+          # 转换所有 yaml 到 list
           for yaml in Mihomo/*.yaml; do
+            [ -f "$yaml" ] || continue
             filename=$(basename "${yaml%.yaml}")
             sed -n '/^payload:/,$ {
               /^payload:/d
@@ -29,4 +38,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet || (git add Surge/*.list && git commit -m "chore: sync list from yaml" && git push)
+          git add Surge/
+          git diff --cached --quiet || git commit -m "chore: sync list from yaml" && git push
