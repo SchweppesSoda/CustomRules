@@ -1,0 +1,32 @@
+name: Sync YAML to List
+
+on:
+  push:
+    paths:
+      - 'Mihomo/**/*.yaml'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Convert all YAML to List
+        run: |
+          for yaml in Mihomo/*.yaml; do
+            filename=$(basename "${yaml%.yaml}")
+            sed -n '/^payload:/,$ {
+              /^payload:/d
+              s/^  - //
+              s/^  # - /# /
+              /^  #/s/^  //
+              p
+            }' "$yaml" > "Surge/${filename}.list"
+          done
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet || (git add Surge/*.list && git commit -m "chore: sync list from yaml" && git push)
