@@ -1,16 +1,28 @@
-# Emby Nexitally
+# > Emby Nexitally
 DOMAIN,emby.nexitally.com
 
-# Emby Maying
+# > Emby Maying
 DOMAIN,emby.maying.club
-
-# Emby MDSS
+  
+# > Emby MDSS
 DOMAIN,emby.mdss.cloud
-
-# Emby Plus
+  
+# > Emby Wave
+DOMAIN-SUFFIX,emby.page
+  
+# > Emby LinkCube
+DOMAIN,emby.linkfireka.xyz
+  
+# > Emby EXFLUX
+DOMAIN,line.emby.men
+  
+# > Emby Plus
 DOMAIN,emby.plusmedia.site
 DOMAIN,bgp.emby.mickeycloud.com
-DOMAIN,emby.xeton.dev
-DOMAIN,jellyfin.xeton.dev
-DOMAIN,movie.xeton.dev
-DOMAIN,servers.xeton.dev
+DOMAIN-SUFFIX,xeton.dev
+  
+# > 厂妹
+DOMAIN-SUFFIX,emby.wtf
+  
+# > SNTP
+DOMAIN-SUFFIX,pe.cn2gias.uk
