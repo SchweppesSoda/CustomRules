@@ -11,3 +11,29 @@ DOMAIN-SUFFIX,api.wd-purple.com
 # > LinkCube API
 DOMAIN-SUFFIX,api.linkcube.dev
 DOMAIN-SUFFIX,api.linkcube.com
+
+# > Direct IP
+# api-huacloud.net
+IP-CIDR,104.26.12.175/32
+IP-CIDR,104.26.13.175/32
+IP-CIDR,172.67.69.215/32
+
+# api-xmancdn.net
+# currently NXDOMAIN, no IP-CIDR available
+
+# api.wd-purple.com
+IP-CIDR,104.26.14.69/32
+IP-CIDR,104.26.15.69/32
+IP-CIDR,172.67.72.191/32
+
+# api.linkcube.dev
+IP-CIDR,104.26.14.208/32
+IP-CIDR,104.26.15.208/32
+IP-CIDR,172.67.75.37/32
+
+# api.linkcube.com
+IP-CIDR,23.239.3.104/32
+IP-CIDR,23.239.4.93/32
+IP-CIDR,66.175.216.36/32
+IP-CIDR,74.207.241.245/32
+IP-CIDR,192.155.84.236/32
