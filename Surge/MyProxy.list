@@ -1,20 +1,3 @@
-# > Proxy
-DOMAIN-SUFFIX,workona.com
-DOMAIN-SUFFIX,duyaoss.com
-DOMAIN-SUFFIX,typingclub.com
-DOMAIN-SUFFIX,relay.firefox.com 
-
-# > Github
-DOMAIN-SUFFIX,github.com
-DOMAIN-SUFFIX,gist.github.com
-DOMAIN-SUFFIX,cdn.jsdelivr.net
-  
-# > Airport
-DOMAIN-SUFFIX,dlercloud.com
-DOMAIN-SUFFIX,maying.co
-DOMAIN-SUFFIX,nexitally.net
-DOMAIN-SUFFIX,hitun.io
-  
 # > Google
 DOMAIN-KEYWORD,mtalk.google.com
 DOMAIN,safebrowsing.googleapis.com
