@@ -27,3 +27,6 @@ payload:
   
   # > SNTP
   - DOMAIN-SUFFIX,pe.cn2gias.uk
+  
+  # > UHDNow
+  - DOMAIN-SUFFIX,uhdnow.com
