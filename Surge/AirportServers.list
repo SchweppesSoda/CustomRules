@@ -1,7 +1,6 @@
 # > Airport Node Servers
 # Source: provider files in 98ab9e7f8377f05d4af64004c413a6a2-a49f653f27c8401a566301f1892544da644fa62f.zip
 # Scope: commercial airport providers from the main config. Self-hosted/landing providers are intentionally excluded.
-# Surge DOMAIN-SUFFIX matches the domain itself and all subdomains.
 
 # > MESL
 DOMAIN-SUFFIX,911-gt3-rs.com
