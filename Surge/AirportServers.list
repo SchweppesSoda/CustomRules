@@ -30,7 +30,7 @@ DOMAIN-SUFFIX,linkcubecloud.dev
 DOMAIN-SUFFIX,apt-agent.dev
 
 # > iNetS
-DOMAIN-SUFFIX,inetsnode.de
+# DOMAIN-SUFFIX,inetsnode.de
 
 # > OixCloud
 # DOMAIN-SUFFIX,cloud-nodes.com

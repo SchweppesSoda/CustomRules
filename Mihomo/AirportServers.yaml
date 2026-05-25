@@ -1,0 +1,41 @@
+payload:
+  # > Airport Node Servers
+  # Source: provider files in 98ab9e7f8377f05d4af64004c413a6a2-a49f653f27c8401a566301f1892544da644fa62f.zip
+  # Scope: commercial airport providers from the main config. Self-hosted/landing providers are intentionally excluded.
+
+  # > MESL
+  - DOMAIN-SUFFIX,911-gt3-rs.com
+
+  # > CTC02
+  - DOMAIN-SUFFIX,ctcxianyu.com
+  - DOMAIN-SUFFIX,oss.ctc.lol
+
+  # > BitzNet
+  - DOMAIN-SUFFIX,bnsepserv.com
+
+  # > SNTP
+  - DOMAIN-SUFFIX,37ccys.uk
+  - DOMAIN-SUFFIX,presntp.uk
+  - DOMAIN-SUFFIX,as9929.uk
+  - IP-CIDR,37.123.193.207/32,no-resolve
+  - IP-CIDR,37.123.193.208/32,no-resolve
+  - IP-CIDR,37.123.193.37/32,no-resolve
+  - IP-CIDR,37.123.193.38/32,no-resolve
+  - IP-CIDR,38.92.26.67/32,no-resolve
+
+  # > LinkCube
+  - DOMAIN-SUFFIX,linkcubecloud.dev
+
+  # > FlowerSS
+  - DOMAIN-SUFFIX,apt-agent.dev
+
+  # > iNetS
+  # - DOMAIN-SUFFIX,inetsnode.de
+
+  # > OixCloud
+  # - DOMAIN-SUFFIX,cloud-nodes.com
+  - DOMAIN-SUFFIX,07c06051-81fd-4aa4-a94e-a0860315df8f.org
+  - DOMAIN-SUFFIX,22b74943-12ad-47f4-b705-f2defb6ffea0.org
+
+  # > RFC_JP
+  - DOMAIN-SUFFIX,jp.cotory.com
