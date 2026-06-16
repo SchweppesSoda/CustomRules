@@ -236,10 +236,21 @@ export default async function(ctx) {
   const now = new Date();
   const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
   const TIME_COL = { light: 'rgba(0,0,0,0.3)', dark: 'rgba(255,255,255,0.3)' };
-  const family = ctx.widgetFamily || ctx.family || "systemMedium";
-  const isLarge = family === "systemLarge" || family === "systemExtraLarge";
+  const layoutHint = String(ctx.env?.RADAR_LAYOUT || ctx.env?.WIDGET_SIZE || "").toLowerCase();
+  const familyValue = [
+    ctx.widgetFamily,
+    ctx.family,
+    ctx.widget?.family,
+    ctx.widget?.widgetFamily,
+    ctx.widgetSize,
+    ctx.size,
+    ctx.env?.widgetFamily,
+    ctx.env?.WIDGET_FAMILY
+  ].find((v) => v !== undefined && v !== null && String(v).trim());
+  const family = String(familyValue || "systemMedium").toLowerCase();
+  const isLarge = /large|extra|大/.test(layoutHint) || (!/medium|中/.test(layoutHint) && /large|extra|大/.test(family));
   const S = isLarge
-    ? { padding: 16, title: 15, icon: 17, rowFont: 11, labelFont: 10, rowIcon: 12, rowGap: 5.5, headerSpacer: 12, panelPadding: [9, 10] }
+    ? { padding: [14, 14, 12, 14], title: 15, icon: 17, rowFont: 10.5, labelFont: 10, rowIcon: 12, rowGap: 4.5, headerSpacer: 8, panelPadding: [9, 10] }
     : { padding: 14, title: 14, icon: 16, rowFont: 10, labelFont: 10, rowIcon: 11, rowGap: 4.5, headerSpacer: 12, panelPadding: [8, 10] };
 
   // 5. 网格行组件 (采用 C.dim 和 C.text)
@@ -253,12 +264,13 @@ export default async function(ctx) {
     ]
   });
 
-  const Section = (ic, icCol, title, rows) => ({
+  const LargeCard = (ic, icCol, title, rows) => ({
     type: 'stack',
     direction: 'column',
-    gap: S.rowGap,
+    gap: 4.5,
     flex: 1,
-    padding: S.panelPadding,
+    height: 120,
+    padding: [9, 10],
     backgroundColor: C.barBg,
     borderRadius: 10,
     children: [
@@ -271,42 +283,70 @@ export default async function(ctx) {
     ]
   });
 
-  const Summary = (ic, icCol, label, val) => ({
+  const Metric = (ic, icCol, label, val, valCol = C.text) => ({
     type: 'stack',
     direction: 'column',
-    gap: 6,
+    gap: 5,
     flex: 1,
+    height: 52,
+    padding: [8, 9],
+    backgroundColor: C.barBg,
+    borderRadius: 10,
+    children: [
+      { type: 'stack', direction: 'row', alignItems: 'center', gap: 5, children: [
+        { type: 'image', src: `sf-symbol:${ic}`, color: icCol, width: 12, height: 12 },
+        { type: 'text', text: label, font: { size: 10, weight: 'regular' }, textColor: C.dim, maxLines: 1 },
+        { type: 'spacer' }
+      ]},
+      { type: 'text', text: val, font: { size: 12, weight: 'semibold' }, textColor: valCol, maxLines: 1, minScale: 0.35 }
+    ]
+  });
+
+  const unlockMark = (res, cc) => {
+    if (res === "🍿" || res === "APP") return res;
+    if (res === "❌") return "🚫";
+    return getFlag(res === "OK" || res === "XX" ? cc : res);
+  };
+
+  const UnlockBadge = (name, res, cc, ic, icCol) => ({
+    type: 'stack',
+    direction: 'row',
+    alignItems: 'center',
+    gap: 5,
+    flex: 1,
+    children: [
+      { type: 'image', src: `sf-symbol:${ic}`, color: icCol, width: 11, height: 11 },
+      { type: 'text', text: name, font: { size: 10, weight: 'regular' }, textColor: C.dim, maxLines: 1 },
+      { type: 'spacer' },
+      { type: 'text', text: unlockMark(res, cc), font: { size: 12, weight: 'semibold' }, textColor: C.text, maxLines: 1, minScale: 0.5 }
+    ]
+  });
+
+  const UnlockPanel = {
+    type: 'stack',
+    direction: 'column',
+    gap: 8,
+    height: 76,
     padding: [9, 10],
     backgroundColor: C.barBg,
     borderRadius: 10,
     children: [
-      { type: 'stack', direction: 'row', alignItems: 'center', gap: 6, children: [
-        { type: 'image', src: `sf-symbol:${ic}`, color: icCol, width: 13, height: 13 },
-        { type: 'text', text: label, font: { size: 11, weight: 'semibold' }, textColor: C.dim, maxLines: 1 },
-        { type: 'spacer' }
+      { type: 'stack', direction: 'row', alignItems: 'center', gap: 8, children: [
+        { type: 'image', src: 'sf-symbol:play.tv.fill', color: C.cpu, width: 12, height: 12 },
+        { type: 'text', text: '影视', font: { size: 11, weight: 'semibold' }, textColor: C.text, maxLines: 1 },
+        UnlockBadge('NF', rNF, proxyData.cc, 'n.circle.fill', C.cpu),
+        UnlockBadge('DP', rDP, proxyData.cc, 'd.circle.fill', C.cpu),
+        UnlockBadge('TK', rTK, proxyData.cc, 't.circle.fill', C.cpu)
       ]},
-      { type: 'text', text: val, font: { size: 12, weight: 'medium' }, textColor: C.text, maxLines: 1, minScale: 0.35 }
+      { type: 'stack', direction: 'row', alignItems: 'center', gap: 8, children: [
+        { type: 'image', src: 'sf-symbol:cpu', color: C.mem, width: 12, height: 12 },
+        { type: 'text', text: 'AI', font: { size: 11, weight: 'semibold' }, textColor: C.text, maxLines: 1 },
+        UnlockBadge('GPT', rGPT, proxyData.cc, 'g.circle.fill', C.mem),
+        UnlockBadge('CL', rCL, proxyData.cc, 'c.circle.fill', C.mem),
+        UnlockBadge('GM', rGM, proxyData.cc, 'sparkles', C.mem)
+      ]}
     ]
-  });
-
-  const localRows = [
-    Row(netIcon, C.cpu, "环境", netName, C.text),
-    Row("wifi.router.fill", C.cpu, "网关", gateway, C.text),
-    Row("iphone", C.cpu, "内网", localIp, C.text),
-    Row("globe.asia.australia.fill", C.cpu, "公网", localData.ip, C.text),
-    Row("map.fill", C.cpu, "位置", localData.loc, C.text),
-    Row("antenna.radiowaves.left.and.right", C.cpu, "运营", localData.isp, C.text),
-    Row("timer", C.cpu, "延迟", localDelay, C.text)
-  ];
-
-  const proxyRows = [
-    Row("paperplane.fill", C.mem, "出口", proxyData.ip, C.text),
-    Row("mappin.and.ellipse", C.mem, "落地", proxyData.loc, C.text),
-    Row("server.rack", C.mem, "厂商", proxyData.isp, C.text),
-    Row(nativeIc, nativeCol, "属性", nativeText, C.text),
-    Row(riskIc, riskCol, "纯净", riskTxt, riskCol),
-    Row("timer", C.mem, "延迟", proxyDelay, C.text)
-  ];
+  };
 
   const Header = {
     type: 'stack', direction: 'row', alignItems: 'center', gap: 6, children: [
@@ -322,18 +362,32 @@ export default async function(ctx) {
       type: 'widget',
       padding: S.padding,
       backgroundColor: C.bg,
+      gap: 8,
       children: [
         Header,
-        { type: 'spacer', length: S.headerSpacer },
-        { type: 'stack', direction: 'row', gap: 10, flex: 1, children: [
-          Section(netIcon, C.cpu, "本地网络", localRows),
-          Section("paperplane.fill", C.mem, "代理出口", proxyRows)
+        { type: 'stack', direction: 'row', gap: 10, height: 120, children: [
+          LargeCard(netIcon, C.cpu, "本地网络", [
+            Row(netIcon, C.cpu, "环境", netName, C.text),
+            Row("iphone", C.cpu, "内网", localIp, C.text),
+            Row("globe.asia.australia.fill", C.cpu, "公网", localData.ip, C.text),
+            Row("map.fill", C.cpu, "位置", localData.loc, C.text),
+            Row("antenna.radiowaves.left.and.right", C.cpu, "运营", localData.isp, C.text)
+          ]),
+          LargeCard("paperplane.fill", C.mem, "代理出口", [
+            Row("paperplane.fill", C.mem, "出口", proxyData.ip, C.text),
+            Row("mappin.and.ellipse", C.mem, "落地", proxyData.loc, C.text),
+            Row("server.rack", C.mem, "厂商", proxyData.isp, C.text),
+            Row(nativeIc, nativeCol, "属性", nativeText, C.text),
+            Row(riskIc, riskCol, "纯净", riskTxt, riskCol)
+          ])
         ]},
-        { type: 'spacer', length: 10 },
-        { type: 'stack', direction: 'row', gap: 10, children: [
-          Summary("play.tv.fill", C.cpu, "影视解锁", textVideo),
-          Summary("cpu", C.mem, "AI 解锁", textAI)
-        ]}
+        { type: 'stack', direction: 'row', gap: 10, height: 52, children: [
+          Metric("wifi.router.fill", C.cpu, "网关", gateway),
+          Metric("timer", C.cpu, "本地延迟", localDelay),
+          Metric("timer", C.mem, "出口延迟", proxyDelay),
+          Metric(riskIc, riskCol, "风险评分", riskTxt, riskCol)
+        ]},
+        UnlockPanel
       ]
     };
   }

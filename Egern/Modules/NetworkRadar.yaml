@@ -4,6 +4,16 @@ author: SchweppesSoda
 homepage: https://github.com/SchweppesSoda/CustomRules
 icon: waveform.path.ecg
 
+env_schema:
+  RADAR_LAYOUT:
+    name: 显示布局
+    description: auto 自动识别小组件尺寸；large 强制大号布局；medium 强制中号布局。
+    default_value: auto
+    options:
+      - auto
+      - large
+      - medium
+
 scriptings:
   - generic:
       name: 网络诊断雷达
