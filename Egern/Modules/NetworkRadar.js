@@ -250,7 +250,7 @@ export default async function(ctx) {
   const family = String(familyValue || "systemMedium").toLowerCase();
   const isLarge = /large|extra|大/.test(layoutHint) || (!/medium|中/.test(layoutHint) && /large|extra|大/.test(family));
   const S = isLarge
-    ? { padding: [14, 14, 12, 14], title: 15, icon: 17, rowFont: 10.5, labelFont: 10, rowIcon: 12, rowGap: 4.5, headerSpacer: 8, panelPadding: [9, 10] }
+    ? { padding: [12, 13, 10, 13], title: 15, icon: 17, rowFont: 10.5, labelFont: 10, rowIcon: 12, rowGap: 4, headerSpacer: 8, panelPadding: [8, 9] }
     : { padding: 14, title: 14, icon: 16, rowFont: 10, labelFont: 10, rowIcon: 11, rowGap: 4.5, headerSpacer: 12, panelPadding: [8, 10] };
 
   // 5. 网格行组件 (采用 C.dim 和 C.text)
@@ -264,13 +264,26 @@ export default async function(ctx) {
     ]
   });
 
+  const FullRow = (ic, icCol, label, val, valCol = C.text) => ({
+    type: 'stack',
+    direction: 'column',
+    gap: 3,
+    children: [
+      { type: 'stack', direction: 'row', alignItems: 'center', gap: 5, children: [
+        { type: 'image', src: `sf-symbol:${ic}`, color: icCol, width: S.rowIcon, height: S.rowIcon },
+        { type: 'text', text: label, font: { size: S.labelFont, weight: 'regular' }, textColor: C.dim, maxLines: 1 },
+        { type: 'spacer' }
+      ]},
+      { type: 'text', text: val, font: { size: S.rowFont, weight: 'medium' }, textColor: valCol, maxLines: 1, minScale: 0.35 }
+    ]
+  });
+
   const LargeCard = (ic, icCol, title, rows) => ({
     type: 'stack',
     direction: 'column',
-    gap: 4.5,
+    gap: 4,
     flex: 1,
-    height: 120,
-    padding: [9, 10],
+    padding: [8, 9],
     backgroundColor: C.barBg,
     borderRadius: 10,
     children: [
@@ -286,10 +299,9 @@ export default async function(ctx) {
   const Metric = (ic, icCol, label, val, valCol = C.text) => ({
     type: 'stack',
     direction: 'column',
-    gap: 5,
+    gap: 4,
     flex: 1,
-    height: 52,
-    padding: [8, 9],
+    padding: [7, 8],
     backgroundColor: C.barBg,
     borderRadius: 10,
     children: [
@@ -325,9 +337,8 @@ export default async function(ctx) {
   const UnlockPanel = {
     type: 'stack',
     direction: 'column',
-    gap: 8,
-    height: 76,
-    padding: [9, 10],
+    gap: 6,
+    padding: [8, 9],
     backgroundColor: C.barBg,
     borderRadius: 10,
     children: [
@@ -362,29 +373,32 @@ export default async function(ctx) {
       type: 'widget',
       padding: S.padding,
       backgroundColor: C.bg,
-      gap: 8,
+      gap: 6,
       children: [
         Header,
-        { type: 'stack', direction: 'row', gap: 10, height: 120, children: [
+        { type: 'stack', direction: 'row', alignItems: 'stretch', gap: 8, children: [
           LargeCard(netIcon, C.cpu, "本地网络", [
             Row(netIcon, C.cpu, "环境", netName, C.text),
             Row("iphone", C.cpu, "内网", localIp, C.text),
             Row("globe.asia.australia.fill", C.cpu, "公网", localData.ip, C.text),
-            Row("map.fill", C.cpu, "位置", localData.loc, C.text),
-            Row("antenna.radiowaves.left.and.right", C.cpu, "运营", localData.isp, C.text)
+            FullRow("map.fill", C.cpu, "位置", localData.loc, C.text),
+            Row("antenna.radiowaves.left.and.right", C.cpu, "运营", localData.isp, C.text),
+            Row("wifi.router.fill", C.cpu, "网关", gateway, C.text),
+            Row("timer", C.cpu, "延迟", localDelay, C.text)
           ]),
           LargeCard("paperplane.fill", C.mem, "代理出口", [
             Row("paperplane.fill", C.mem, "出口", proxyData.ip, C.text),
             Row("mappin.and.ellipse", C.mem, "落地", proxyData.loc, C.text),
-            Row("server.rack", C.mem, "厂商", proxyData.isp, C.text),
+            FullRow("server.rack", C.mem, "厂商", proxyData.isp, C.text),
             Row(nativeIc, nativeCol, "属性", nativeText, C.text),
-            Row(riskIc, riskCol, "纯净", riskTxt, riskCol)
+            Row(riskIc, riskCol, "纯净", riskTxt, riskCol),
+            Row("timer", C.mem, "延迟", proxyDelay, C.text),
+            Row("cpu", C.mem, "AI", textAI, C.text)
           ])
         ]},
-        { type: 'stack', direction: 'row', gap: 10, height: 52, children: [
-          Metric("wifi.router.fill", C.cpu, "网关", gateway),
-          Metric("timer", C.cpu, "本地延迟", localDelay),
-          Metric("timer", C.mem, "出口延迟", proxyDelay),
+        { type: 'stack', direction: 'row', alignItems: 'stretch', gap: 8, children: [
+          Metric("antenna.radiowaves.left.and.right", C.cpu, "本地运营", localData.isp),
+          Metric(nativeIc, nativeCol, "出口属性", nativeText),
           Metric(riskIc, riskCol, "风险评分", riskTxt, riskCol)
         ]},
         UnlockPanel
