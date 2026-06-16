@@ -7,7 +7,7 @@ icon: waveform.path.ecg
 scriptings:
   - generic:
       name: 网络诊断雷达
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/NetworkRadar.js
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js
       update_interval: 86400
       timeout: 20
 
