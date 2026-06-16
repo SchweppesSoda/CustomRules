@@ -1,4 +1,4 @@
-name: 网络诊断雷达
+﻿name: 网络诊断雷达
 description: 基于 Network-Pro.js 的 Egern 小组件模块，增加本地运营商显示并适配大号小组件。
 author: SchweppesSoda
 homepage: https://github.com/SchweppesSoda/CustomRules
@@ -7,7 +7,7 @@ icon: waveform.path.ecg
 scriptings:
   - generic:
       name: 网络诊断雷达
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Script/NetworkRadar.js
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/NetworkRadar.js
       update_interval: 86400
       timeout: 20
 
