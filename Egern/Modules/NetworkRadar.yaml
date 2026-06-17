@@ -17,8 +17,8 @@ env_schema:
 scriptings:
   - generic:
       name: 网络诊断雷达
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js
-      update_interval: 86400
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260617-0404
+      update_interval: 300
       timeout: 20
 
 widgets:
