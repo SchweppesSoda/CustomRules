@@ -1,5 +1,5 @@
 name: Network Radar
-desc: 独立网络诊断 Tile；不参与 PO0 上报。
+desc: 独立网络诊断 Tile；每 10 分钟后台检测，首页只读缓存，不参与 PO0 上报。
 
 script-providers:
   proxyconfig-network-radar:
@@ -7,10 +7,18 @@ script-providers:
     path: ./scripts/network-radar.js
     interval: 86400
 
+cron:
+  script:
+    - name: proxyconfig-network-radar
+      cron: '*/10 * * * *'
+      timeout: 15
+      argument: '{"mode":"refresh"}'
+
 tiles:
   - name: proxyconfig-network-radar
     interval: 600
     title: Network Radar
-    content: 等待检测
+    content: 等待首次后台检测
     icon: radar
     backgroundColor: '#2563eb'
+    argument: '{"mode":"status"}'
