@@ -1,0 +1,27 @@
+name: HTTPDNS Loon Extra
+desc: 从原 Loon/Surge 模块提取并转换的补充 HTTPDNS 规则。
+
+rule-providers:
+  Stash-HTTPDNS-Loon-Extra:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Rules/HTTPDNS.Loon-Extra.list
+    path: ./Rules/Stash/HTTPDNS.Loon-Extra.list
+    interval: 86400
+
+rules:
+  - RULE-SET,Stash-HTTPDNS-Loon-Extra,HTTPDNS
+
+http:
+  force-http-engine:
+    - 119.29.29.29:80
+    - 203.107.1.1:80
+    - 203.107.1.33:80
+    - 203.107.1.66:80
+    - 203.107.1.67:80
+    - 203.107.1.97:80
+  url-rewrite:
+    - ^https?://119\.29\.29\.29/d - reject
+    - ^https?://203\.107\.1\.(1|33|66|67|97)/\d+/ss - reject
+    - ^https?://180\.76\.76\.(200|112)/v\d+/resolve - reject

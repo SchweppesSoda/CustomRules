@@ -1,0 +1,16 @@
+name: Network Radar
+desc: 独立网络诊断 Tile；不参与 PO0 上报。
+
+script-providers:
+  proxyconfig-network-radar:
+    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Scripts/network-radar.js
+    path: ./scripts/network-radar.js
+    interval: 86400
+
+tiles:
+  - name: proxyconfig-network-radar
+    interval: 600
+    title: Network Radar
+    content: 等待检测
+    icon: radar
+    backgroundColor: '#2563eb'

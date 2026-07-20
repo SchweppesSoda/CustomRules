@@ -1,0 +1,14 @@
+name: Advertising Lite
+desc: 独立广告规则开关；主配置已有 Meta 广告 MRS，此项作为原模块兼容补充。
+
+rule-providers:
+  Stash-AdvertisingLite:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AdvertisingLite/AdvertisingLite.list
+    path: ./Rules/Stash/AdvertisingLite.list
+    interval: 86400
+
+rules:
+  - RULE-SET,Stash-AdvertisingLite,AdBlock

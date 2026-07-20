@@ -1,0 +1,16 @@
+name: IP 信息面板（默认关闭）
+desc: 原 Egern IP 信息面板的轻量 Stash 等价实现，只显示直连 IP、国家和 ISP。
+
+script-providers:
+  proxyconfig-ip-panel:
+    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Scripts/ip-panel.js
+    path: ./scripts/ip-panel.js
+    interval: 86400
+
+tiles:
+  - name: proxyconfig-ip-panel
+    interval: 600
+    title: IP 信息
+    content: 等待检测
+    icon: network
+    backgroundColor: '#2563eb'

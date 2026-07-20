@@ -1,0 +1,20 @@
+name: HTTPDNS Block
+desc: 在主配置 MRS 规则之外，保留旧模块的 URL/HTTP Engine 兼容处理。
+
+rule-providers:
+  Stash-HTTPDNS-Block:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BlockHttpDNS/BlockHttpDNS.list
+    path: ./Rules/Stash/BlockHttpDNS.list
+    interval: 86400
+
+rules:
+  - RULE-SET,Stash-HTTPDNS-Block,HTTPDNS
+
+http:
+  force-http-engine:
+    - 119.29.29.29:80
+    - dns.weixin.qq.com:80
+    - dns.weixin.qq.com:8080

@@ -1,0 +1,11 @@
+name: Google CN 307
+desc: 将 g.cn/google.cn 重定向到 www.google.com；HTTPS 需要信任 Stash 自己生成的 CA。
+
+http:
+  url-rewrite:
+    - ^https?://(www\.)?(g|google)\.cn https://www.google.com 307
+  mitm:
+    - g.cn:443
+    - www.g.cn:443
+    - google.cn:443
+    - www.google.cn:443

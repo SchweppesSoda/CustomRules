@@ -1,0 +1,29 @@
+name: BoxJs（默认关闭）
+desc: 官方 BoxJS Stash override 的仓库副本。
+openUrl: http://boxjs.com
+author: ChavyLeung
+homepage: https://docs.boxjs.app/
+icon: https://raw.githubusercontent.com/chavyleung/scripts/master/box/icons/BoxJs.png
+
+http:
+  force-http-engine:
+    - boxjs.com:80
+    - boxjs.net:80
+    - '*.boxjs.com:80'
+    - '*.boxjs.net:80'
+  mitm:
+    - boxjs.com:443
+    - boxjs.net:443
+    - '*.boxjs.com:443'
+    - '*.boxjs.net:443'
+  script:
+    - match: ^https?:\/\/(.+\.)?boxjs\.(com|net)
+      name: BoxJs
+      type: request
+      require-body: true
+      timeout: 120
+
+script-providers:
+  BoxJs:
+    url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
+    interval: 86400

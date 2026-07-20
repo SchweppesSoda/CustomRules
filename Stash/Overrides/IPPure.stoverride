@@ -1,0 +1,31 @@
+name: IPPure Collapsed Tiles（默认关闭）
+icon: https://ippure.com/logo.png
+desc: Stash 官方频道发布的 IPPure 第三方服务面板。
+
+tiles:
+  - name: IPPure-IP-Info
+    title: IPPure IP Info
+    icon: https://ippure.com/logo.png
+    collapsed: true
+    url: https://ippure.com
+  - name: IPPure-IP-Fraud-Score
+    title: IPPure IP Fraud Score
+    icon: https://ippure.com/logo.png
+    collapsed: true
+    url: https://ippure.com
+  - name: IPPure-IP-Native-Check
+    title: IPPure IP Native Check
+    icon: https://ippure.com/logo.png
+    collapsed: true
+    url: https://ippure.com
+
+script-providers:
+  IPPure-IP-Info:
+    url: https://fastly.jsdelivr.net/gh/StashNetworks/misc@main/collapsed-tiles/script/ippure-ip-info.js
+    path: ippure/ip-info.js
+  IPPure-IP-Fraud-Score:
+    url: https://fastly.jsdelivr.net/gh/StashNetworks/misc@main/collapsed-tiles/script/ippure-ip-fraud-score.js
+    path: ippure/ip-fraud-score.js
+  IPPure-IP-Native-Check:
+    url: https://fastly.jsdelivr.net/gh/StashNetworks/misc@main/collapsed-tiles/script/ippure-ip-native-check.js
+    path: ippure/ip-native-check.js

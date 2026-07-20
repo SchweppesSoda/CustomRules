@@ -1,0 +1,15 @@
+name: Skip Proxy Lists（配置可管理部分）
+desc: |-
+  本 Override 管理 REJECT 与 Fake-IP 例外。
+  Stash 的 Skip Proxy 是 App 网络设置，不属于配置文件语法；请一次性粘贴：
+  www.baidu.com,yunbusiness.ccb.com,wxh.wo.cn,gate.lagou.com,www.abchina.com.cn,www.shanbay.com,login-service.mobile-bank.psbc.com,mobile-bank.psbc.com,id6.me,www.163.com
+
+rules:
+  - DOMAIN,msmp.abchina.com.cn,REJECT
+
+dns:
+  fake-ip-filter:
+    - easy-login.10099.com.cn
+    - '*-update.xoyocdn.com'
+    - id6.me
+    - open.e.189.cn
