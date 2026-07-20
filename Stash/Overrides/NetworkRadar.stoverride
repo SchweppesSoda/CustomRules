@@ -1,24 +1,47 @@
 name: Network Radar
-desc: 独立网络诊断 Tile；每 10 分钟后台检测，首页只读缓存，不参与 PO0 上报。
+desc: 独立网络诊断 Tile；后台检测与首页渲染物理分离，v2 Tile 不访问网络或旧脚本缓存。
 
 script-providers:
-  proxyconfig-network-radar:
-    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Scripts/network-radar.js
-    path: ./scripts/network-radar.js
+  proxyconfig-network-radar-worker-v2:
+    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Scripts/network-radar.js?rev=20260721-v2
     interval: 86400
+  proxyconfig-network-radar-tile-v2:
+    interval: 86400
+    payload: |
+      const key = "proxyconfig.network-radar.v1";
+      const clean = (value, limit) => String(typeof value === "string" || typeof value === "number" ? value : "-").replace(/\s+/g, " ").slice(0, limit);
+      let state = {};
+      try { state = JSON.parse($persistentStore.read(key) || "{}") || {}; } catch (_) {}
+      const checkedAt = Number(state.checked_at);
+      if (!Number.isFinite(checkedAt) || checkedAt <= 0) {
+        $done({ title: "Network Radar v2", content: "等待首次后台检测", icon: "radar", backgroundColor: "#6b7280" });
+      } else {
+        const render = (label, item) => {
+          if (!item || item.error) return `${label} 检测失败`;
+          const ms = Math.max(0, Math.min(9999, Math.round(Number(item.ms) || 0)));
+          return `${label} ${clean(item.ip, 45)} · ${clean(item.country, 12)} · ${ms}ms`;
+        };
+        const ok = state.direct && !state.direct.error && state.proxy && !state.proxy.error;
+        const age = Math.max(0, Math.min(99999, Math.floor((Date.now() - checkedAt) / 60000)));
+        $done({
+          title: ok ? "Network Radar v2" : "Network Radar v2 异常",
+          content: `${render("直连", state.direct)}\n${render("代理", state.proxy)}\n${age} 分钟前`,
+          icon: "radar",
+          backgroundColor: ok ? "#2563eb" : "#b45309",
+        });
+      }
 
 cron:
   script:
-    - name: proxyconfig-network-radar
+    - name: proxyconfig-network-radar-worker-v2
       cron: '*/10 * * * *'
       timeout: 15
       argument: '{"mode":"refresh"}'
 
 tiles:
-  - name: proxyconfig-network-radar
+  - name: proxyconfig-network-radar-tile-v2
     interval: 600
-    title: Network Radar
+    title: Network Radar v2
     content: 等待首次后台检测
     icon: radar
     backgroundColor: '#2563eb'
-    argument: '{"mode":"status"}'
