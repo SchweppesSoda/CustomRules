@@ -7,8 +7,8 @@ payload:
   - DOMAIN-SUFFIX,911-gt3-rs.com
 
   # > CTC02
-  - DOMAIN-SUFFIX,ctcxianyu.com
-  - DOMAIN-SUFFIX,oss.ctc.lol
+  # - DOMAIN-SUFFIX,ctcxianyu.com
+  # - DOMAIN-SUFFIX,oss.ctc.lol
 
   # > BitzNet
   - DOMAIN-SUFFIX,bnsepserv.com
@@ -33,13 +33,7 @@ payload:
   - DOMAIN-SUFFIX,lxy1015.top
   - DOMAIN-SUFFIX,liangxin1.xyz
 
-  # > iNetS
-  # - DOMAIN-SUFFIX,inetsnode.de
-
   # > OixCloud
   # - DOMAIN-SUFFIX,cloud-nodes.com
   - DOMAIN-SUFFIX,07c06051-81fd-4aa4-a94e-a0860315df8f.org
   - DOMAIN-SUFFIX,22b74943-12ad-47f4-b705-f2defb6ffea0.org
-
-  # > RFC_JP
-  - DOMAIN-SUFFIX,jp.cotory.com
