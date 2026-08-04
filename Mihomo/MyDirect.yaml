@@ -5,7 +5,7 @@ payload:
   # - DOMAIN-SUFFIX,mypikpak.com
 
   # > PO0 LAN Worker
-  - DOMAIN,louis14th.kdns.fr
+  # - DOMAIN,louis14th.kdns.fr
 
   # > FlowerCloud API
   - DOMAIN-SUFFIX,api-huacloud.net
