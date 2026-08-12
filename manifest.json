@@ -2717,8 +2717,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 22,
-      "rules_sha256": "d304f628cc7bfe7b9f8ef7431bfb03242e1a67d56af1ecc96ca659fb1c0527f3"
+      "rule_count": 21,
+      "rules_sha256": "a90d794966c8e015bec034ff557a681774d4602c5ffd4ed2d9b1a5087ad77df3"
     },
     "MyGoHome": {
       "formats": [
@@ -2746,5 +2746,5 @@
       "rules_sha256": "d365c2e8b3ccee0d032bac0517c5704fe551090523a37ad2a1c8c0fdbe86b418"
     }
   },
-  "source_commit": "7392271034e79998ff9b8480ae0ecf0d52ad6cc4"
+  "source_commit": "d4c5472b6d1bf4a43cb8c0f69b63174db80599cc"
 }

@@ -3,7 +3,6 @@
 payload:
   - DOMAIN-SUFFIX,zju.edu.cn
   - DOMAIN-SUFFIX,zmmc.com.cn
-  - DOMAIN,louis14th.kdns.fr
   - DOMAIN-SUFFIX,api-huacloud.net
   - DOMAIN-SUFFIX,api-xmancdn.net
   - DOMAIN-SUFFIX,api.wd-purple.com
