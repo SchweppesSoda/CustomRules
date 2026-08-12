@@ -57,12 +57,19 @@ def verify_checksums(root: Path) -> None:
     actual_files = {
         path.relative_to(root).as_posix()
         for path in root.rglob("*")
-        if path.is_file() and path.name != "SHA256SUMS"
+        if (
+            path.is_file()
+            and path.name != "SHA256SUMS"
+            and ".git" not in path.relative_to(root).parts
+        )
     }
     if set(expected) != actual_files:
         raise RuntimeError("SHA256SUMS inventory does not match generated files")
     for relative, digest in expected.items():
-        actual = hashlib.sha256((root / relative).read_bytes()).hexdigest()
+        body = (root / relative).read_bytes()
+        actual = hashlib.sha256(body).hexdigest()
+        if actual != digest and b"\r\n" in body:
+            actual = hashlib.sha256(body.replace(b"\r\n", b"\n")).hexdigest()
         if actual != digest:
             raise RuntimeError(f"Checksum mismatch: {relative}")
 

@@ -642,6 +642,12 @@ def main() -> None:
     }
     write_text(args.output / "manifest.json", json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
     write_text(args.output / "SOURCES.json", json.dumps(registry.as_json(), indent=2, sort_keys=True) + "\n")
+    write_text(
+        args.output / ".gitattributes",
+        "# AUTO-GENERATED. DO NOT EDIT.\n"
+        "* text=auto eol=lf\n"
+        "*.mrs binary\n",
+    )
 
     if args.baseline:
         enforce_baseline(args.output, args.baseline, args.allow_large_change)
