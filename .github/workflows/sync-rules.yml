@@ -1,60 +1,117 @@
-name: Sync Rules
+name: Auto Build Rules
 
 on:
   push:
+    branches:
+      - master
     paths:
-      - 'Mihomo/**/*.yaml'
-      - 'scripts/sync_upstream_rules.py'
+      - 'sources/**'
+      - 'scripts/build_rules.py'
+      - 'scripts/verify_build.py'
+      - 'scripts/publish_build.py'
       - '.github/workflows/sync-rules.yml'
   schedule:
     - cron: '17 20 * * *'
   workflow_dispatch:
+    inputs:
+      allow_large_change:
+        description: 'Allow the first reviewed build or an intentional >20% change'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
 
+concurrency:
+  group: auto-build
+  cancel-in-progress: false
+
 jobs:
-  sync:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
+      - name: Check out source branch
+        uses: actions/checkout@v4
         with:
-          python-version: '3.x'
+          ref: master
+          fetch-depth: 0
 
-      - name: Sync upstream service rules
-        run: python scripts/sync_upstream_rules.py
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-      - name: Convert all YAML to List
+      - name: Install pinned Mihomo compiler
+        id: mihomo
+        shell: bash
         run: |
-          # 删除 Mihomo 中已不存在对应 yaml 的 list 文件
-          for list in Surge/*.list; do
-            [ -f "$list" ] || continue
-            filename=$(basename "${list%.list}")
-            [ -f "Mihomo/${filename}.yaml" ] || rm "$list"
-          done
+          set -euo pipefail
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import tomllib
+          from pathlib import Path
+          tool = tomllib.loads(Path("sources/toolchain.toml").read_text())["mihomo"]
+          print(f"version={tool['version']}")
+          print(f"url={tool['linux_amd64']['url']}")
+          print(f"sha256={tool['linux_amd64']['sha256']}")
+          PY
+          curl --fail --location --retry 3 \
+            --output "$RUNNER_TEMP/mihomo.gz" \
+            "$(python -c 'import tomllib; print(tomllib.load(open("sources/toolchain.toml","rb"))["mihomo"]["linux_amd64"]["url"])')"
+          echo "$(python -c 'import tomllib; print(tomllib.load(open("sources/toolchain.toml","rb"))["mihomo"]["linux_amd64"]["sha256"])')  $RUNNER_TEMP/mihomo.gz" |
+            sha256sum --check -
+          gzip --decompress --stdout "$RUNNER_TEMP/mihomo.gz" > "$RUNNER_TEMP/mihomo"
+          chmod +x "$RUNNER_TEMP/mihomo"
+          "$RUNNER_TEMP/mihomo" -v
 
-          # 转换所有 yaml 到 list
-          for yaml in Mihomo/*.yaml; do
-            [ -f "$yaml" ] || continue
-            filename=$(basename "${yaml%.yaml}")
-            sed -n '/^payload:/,$ {
-              /^payload:/d
-              s/^  - //
-              s/^  # - /# /
-              /^  #/s/^  //
-              p
-            }' "$yaml" > "Surge/${filename}.list"
-          done
-
-      - name: Commit changes
+      - name: Prepare auto-build worktree
+        shell: bash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Mihomo/ Surge/
-          if git diff --cached --quiet; then
+          set -euo pipefail
+          git fetch origin auto-build:auto-build
+          git worktree add "$RUNNER_TEMP/auto-build" auto-build
+
+      - name: Build and verify twice
+        shell: bash
+        env:
+          ALLOW_LARGE_CHANGE: ${{ inputs.allow_large_change || 'false' }}
+        run: |
+          set -euo pipefail
+          extra=()
+          if [[ "$ALLOW_LARGE_CHANGE" == "true" ]]; then
+            extra+=(--allow-large-change)
+          fi
+          python scripts/build_rules.py \
+            --output "$RUNNER_TEMP/build-a" \
+            --baseline "$RUNNER_TEMP/auto-build" \
+            --mihomo "$RUNNER_TEMP/mihomo" \
+            --source-commit "$GITHUB_SHA" \
+            "${extra[@]}"
+          python scripts/verify_build.py \
+            --output "$RUNNER_TEMP/build-a" \
+            --mihomo "$RUNNER_TEMP/mihomo"
+          python scripts/build_rules.py \
+            --output "$RUNNER_TEMP/build-b" \
+            --baseline "$RUNNER_TEMP/auto-build" \
+            --mihomo "$RUNNER_TEMP/mihomo" \
+            --source-commit "$GITHUB_SHA" \
+            "${extra[@]}"
+          diff --recursive --brief "$RUNNER_TEMP/build-a" "$RUNNER_TEMP/build-b"
+
+      - name: Publish changed artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/publish_build.py \
+            --build "$RUNNER_TEMP/build-a" \
+            --publish "$RUNNER_TEMP/auto-build"
+          git -C "$RUNNER_TEMP/auto-build" config user.name "github-actions[bot]"
+          git -C "$RUNNER_TEMP/auto-build" config user.email "github-actions[bot]@users.noreply.github.com"
+          git -C "$RUNNER_TEMP/auto-build" add --all
+          if git -C "$RUNNER_TEMP/auto-build" diff --cached --quiet; then
+            echo "No generated changes"
             exit 0
           fi
-          git commit -m "chore: sync generated rules"
-          git push
+          git -C "$RUNNER_TEMP/auto-build" commit \
+            -m "chore(auto-build): publish rules from ${GITHUB_SHA::12}"
+          git -C "$RUNNER_TEMP/auto-build" push origin auto-build

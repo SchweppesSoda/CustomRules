@@ -1,0 +1,2545 @@
+# Banking entity catalog. This is source data; generated rule files live on auto-build.
+# Regions are mutually exclusive. Review metadata is intentionally explicit.
+
+[[entities]]
+id = "wise"
+name = "Wise"
+kind = "cross-border-account"
+region = "Global"
+required = true
+upstream = ["wise"]
+domains = ["suffix:wise.com", "suffix:transferwise.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "airwallex"
+name = "Airwallex"
+kind = "licensed-fintech"
+region = "Global"
+required = true
+domains = ["suffix:airwallex.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "worldfirst"
+name = "WorldFirst"
+kind = "cross-border-account"
+region = "Global"
+required = true
+domains = ["suffix:worldfirst.com", "suffix:worldfirst.com.cn"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "payoneer"
+name = "Payoneer"
+kind = "cross-border-account"
+region = "Global"
+required = true
+domains = ["suffix:payoneer.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "mercury"
+name = "Mercury"
+kind = "licensed-fintech"
+region = "NorthAmerica"
+required = true
+domains = ["suffix:mercury.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "brex"
+name = "Brex"
+kind = "licensed-fintech"
+region = "NorthAmerica"
+required = true
+domains = ["suffix:brex.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ifast-global-bank"
+name = "iFAST Global Bank"
+kind = "bank"
+region = "Europe"
+required = true
+upstream = ["ifast"]
+domains = ["suffix:ifastgb.com", "suffix:ifastglobalbank.org"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "n26"
+name = "N26"
+kind = "digital-bank"
+region = "Europe"
+required = true
+upstream = ["n26"]
+domains = ["suffix:n26.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "revolut"
+name = "Revolut"
+kind = "licensed-fintech"
+region = "Europe"
+required = true
+domains = ["suffix:revolut.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "currenxie"
+name = "Currenxie"
+kind = "licensed-fintech"
+region = "HongKongMacau"
+required = true
+domains = ["suffix:currenxie.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "statrys"
+name = "Statrys"
+kind = "licensed-fintech"
+region = "HongKongMacau"
+required = true
+domains = ["suffix:statrys.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "starryblu"
+name = "Starryblu"
+kind = "digital-bank"
+region = "Singapore"
+required = true
+domains = ["suffix:starryblu.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "aspire"
+name = "Aspire"
+kind = "licensed-fintech"
+region = "Singapore"
+required = true
+domains = ["suffix:aspireapp.com"]
+source = "official-domain-review"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-com"
+name = "hsbc.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-net"
+name = "hsbc.net"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.net"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbcnet-com"
+name = "hsbcnet.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbcnet.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-co-uk"
+name = "hsbc.co.uk"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.co.uk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-uk"
+name = "hsbc.uk"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.uk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-com-au"
+name = "hsbc.com.au"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.com.au"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-ca"
+name = "hsbc.ca"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.ca"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-co-in"
+name = "hsbc.co.in"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.co.in"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-co-jp"
+name = "hsbc.co.jp"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-com-hk"
+name = "hsbc.com.hk"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.com.hk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-com-my"
+name = "hsbc.com.my"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.com.my"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-co-nz"
+name = "hsbc.co.nz"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.co.nz"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-com-sg"
+name = "hsbc.com.sg"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.com.sg"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-com-tw"
+name = "hsbc.com.tw"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.com.tw"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-com-vn"
+name = "hsbc.com.vn"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.com.vn"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbc-ae"
+name = "hsbc.ae"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbc.ae"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbcprivatebank-com"
+name = "hsbcprivatebank.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbcprivatebank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hsbcinnovationbanking-com"
+name = "hsbcinnovationbanking.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:hsbcinnovationbanking.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "sc-com"
+name = "sc.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:sc.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "standardchartered-com"
+name = "standardchartered.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:standardchartered.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "citi-com"
+name = "citi.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:citi.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "citibank-com"
+name = "citibank.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:citibank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "jpmorgan-com"
+name = "jpmorgan.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:jpmorgan.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "jpmorganchase-com"
+name = "jpmorganchase.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:jpmorganchase.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "santander-com"
+name = "santander.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:santander.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bbva-com"
+name = "bbva.com"
+kind = "bank"
+region = "Global"
+required = false
+domains = ["suffix:bbva.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "53-com"
+name = "53.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:53.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ally-com"
+name = "ally.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:ally.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankofamerica-com"
+name = "bankofamerica.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:bankofamerica.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bofa-com"
+name = "bofa.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:bofa.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "capitalone-com"
+name = "capitalone.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:capitalone.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "chase-com"
+name = "chase.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:chase.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "chime-com"
+name = "chime.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:chime.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "citizensbank-com"
+name = "citizensbank.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:citizensbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "discover-com"
+name = "discover.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:discover.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "goldmansachs-com"
+name = "goldmansachs.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:goldmansachs.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "huntington-com"
+name = "huntington.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:huntington.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "key-com"
+name = "key.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:key.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "marcus-com"
+name = "marcus.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:marcus.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "mtb-com"
+name = "mtb.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:mtb.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "pnc-com"
+name = "pnc.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:pnc.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "regions-com"
+name = "regions.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:regions.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "truist-com"
+name = "truist.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:truist.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "usaa-com"
+name = "usaa.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:usaa.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "usbank-com"
+name = "usbank.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:usbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "varomoney-com"
+name = "varomoney.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:varomoney.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "wellsfargo-com"
+name = "wellsfargo.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:wellsfargo.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bmo-com"
+name = "bmo.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:bmo.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "cibc-com"
+name = "cibc.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:cibc.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "desjardins-com"
+name = "desjardins.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:desjardins.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "nbc-ca"
+name = "nbc.ca"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:nbc.ca"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "rbc-com"
+name = "rbc.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:rbc.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "rbcroyalbank-com"
+name = "rbcroyalbank.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:rbcroyalbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "scotiabank-com"
+name = "scotiabank.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:scotiabank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "td-com"
+name = "td.com"
+kind = "bank"
+region = "NorthAmerica"
+required = false
+domains = ["suffix:td.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "abnamro-com"
+name = "abnamro.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:abnamro.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankofscotland-co-uk"
+name = "bankofscotland.co.uk"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:bankofscotland.co.uk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "barclays-co-uk"
+name = "barclays.co.uk"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:barclays.co.uk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "barclays-com"
+name = "barclays.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:barclays.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bnpparibas-com"
+name = "bnpparibas.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:bnpparibas.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bunq-com"
+name = "bunq.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:bunq.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "commerzbank-com"
+name = "commerzbank.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:commerzbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "credit-agricole-com"
+name = "credit-agricole.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:credit-agricole.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "creditmutuel-fr"
+name = "creditmutuel.fr"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:creditmutuel.fr"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "danskebank-com"
+name = "danskebank.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:danskebank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "db-com"
+name = "db.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:db.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "deutsche-bank-de"
+name = "deutsche-bank.de"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:deutsche-bank.de"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "dnb-no"
+name = "dnb.no"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:dnb.no"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "erste-com"
+name = "erste.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:erste.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "halifax-co-uk"
+name = "halifax.co.uk"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:halifax.co.uk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ing-com"
+name = "ing.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:ing.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ingbank-com"
+name = "ingbank.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:ingbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "intesasanpaolo-com"
+name = "intesasanpaolo.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:intesasanpaolo.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "juliusbaer-com"
+name = "juliusbaer.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:juliusbaer.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "kbc-com"
+name = "kbc.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:kbc.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "lloydsbank-com"
+name = "lloydsbank.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:lloydsbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "monzo-com"
+name = "monzo.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:monzo.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "natwest-com"
+name = "natwest.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:natwest.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "nordea-com"
+name = "nordea.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:nordea.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "otpbank-com"
+name = "otpbank.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:otpbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "rabobank-com"
+name = "rabobank.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:rabobank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "raiffeisen-com"
+name = "raiffeisen.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:raiffeisen.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "rbs-co-uk"
+name = "rbs.co.uk"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:rbs.co.uk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "santander-co-uk"
+name = "santander.co.uk"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:santander.co.uk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "seb-se"
+name = "seb.se"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:seb.se"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "societegenerale-com"
+name = "societegenerale.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:societegenerale.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "starlingbank-com"
+name = "starlingbank.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:starlingbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "swedbank-com"
+name = "swedbank.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:swedbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ubs-com"
+name = "ubs.com"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:ubs.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "unicreditgroup-eu"
+name = "unicreditgroup.eu"
+kind = "bank"
+region = "Europe"
+required = false
+domains = ["suffix:unicreditgroup.eu"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "airstarbank-com"
+name = "airstarbank.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:airstarbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "antbank-hk"
+name = "antbank.hk"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:antbank.hk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankofsingapore-com"
+name = "bankofsingapore.com"
+kind = "bank"
+region = "Singapore"
+required = false
+domains = ["suffix:bankofsingapore.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bnu-com-mo"
+name = "bnu.com.mo"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:bnu.com.mo"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bocmacau-com"
+name = "bocmacau.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:bocmacau.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bochk-com"
+name = "bochk.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:bochk.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "dbs-com"
+name = "dbs.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:dbs.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "dbs-com-hk"
+name = "dbs.com.hk"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:dbs.com.hk"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "dbs-com-sg"
+name = "dbs.com.sg"
+kind = "bank"
+region = "Singapore"
+required = false
+domains = ["suffix:dbs.com.sg"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "fusionbank-com"
+name = "fusionbank.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:fusionbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hangseng-com"
+name = "hangseng.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:hangseng.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hkbea-com"
+name = "hkbea.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:hkbea.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "icbc-com-mo"
+name = "icbc.com.mo"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:icbc.com.mo"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "livibank-com"
+name = "livibank.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:livibank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "mox-com"
+name = "mox.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:mox.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ocbc-com"
+name = "ocbc.com"
+kind = "bank"
+region = "Singapore"
+required = false
+domains = ["suffix:ocbc.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "uobgroup-com"
+name = "uobgroup.com"
+kind = "bank"
+region = "Singapore"
+required = false
+domains = ["suffix:uobgroup.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "welab-bank"
+name = "welab.bank"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:welab.bank"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "zabank-com"
+name = "zabank.com"
+kind = "bank"
+region = "HongKongMacau"
+required = false
+domains = ["suffix:zabank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "anext-com-sg"
+name = "anext.com.sg"
+kind = "bank"
+region = "Singapore"
+required = false
+domains = ["suffix:anext.com.sg"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "greenlinkdigitalbank-com"
+name = "greenlinkdigitalbank.com"
+kind = "bank"
+region = "Singapore"
+required = false
+domains = ["suffix:greenlinkdigitalbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "gxs-com-sg"
+name = "gxs.com.sg"
+kind = "bank"
+region = "Singapore"
+required = false
+domains = ["suffix:gxs.com.sg"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "maribank-sg"
+name = "maribank.sg"
+kind = "bank"
+region = "Singapore"
+required = false
+domains = ["suffix:maribank.sg"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "trustbank-sg"
+name = "trustbank.sg"
+kind = "bank"
+region = "Singapore"
+required = false
+domains = ["suffix:trustbank.sg"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "jp-bank-japanpost-jp"
+name = "jp-bank.japanpost.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:jp-bank.japanpost.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "aozorabank-co-jp"
+name = "aozorabank.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:aozorabank.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "jibunbank-co-jp"
+name = "jibunbank.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:jibunbank.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "mizuhobank-co-jp"
+name = "mizuhobank.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:mizuhobank.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "mufg-jp"
+name = "mufg.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:mufg.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "paypay-bank-co-jp"
+name = "paypay-bank.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:paypay-bank.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "rakuten-bank-co-jp"
+name = "rakuten-bank.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:rakuten-bank.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "resona-gr-co-jp"
+name = "resona-gr.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:resona-gr.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "sbishinseibank-co-jp"
+name = "sbishinseibank.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:sbishinseibank.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "sevenbank-co-jp"
+name = "sevenbank.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:sevenbank.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "smbc-co-jp"
+name = "smbc.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:smbc.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "smbctb-co-jp"
+name = "smbctb.co.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:smbctb.co.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "smtb-jp"
+name = "smtb.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:smtb.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "sonybank-jp"
+name = "sonybank.jp"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:sonybank.jp"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ibk-co-kr"
+name = "ibk.co.kr"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:ibk.co.kr"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "kakaobank-com"
+name = "kakaobank.com"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:kakaobank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "kbstar-com"
+name = "kbstar.com"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:kbstar.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "kebhana-com"
+name = "kebhana.com"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:kebhana.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "shinhan-com"
+name = "shinhan.com"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:shinhan.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "tossbank-com"
+name = "tossbank.com"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:tossbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "wooribank-com"
+name = "wooribank.com"
+kind = "bank"
+region = "JapanKorea"
+required = false
+domains = ["suffix:wooribank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "anz-com"
+name = "anz.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:anz.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "anz-com-au"
+name = "anz.com.au"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:anz.com.au"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "anz-co-nz"
+name = "anz.co.nz"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:anz.co.nz"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "asb-co-nz"
+name = "asb.co.nz"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:asb.co.nz"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bendigoadelaide-com-au"
+name = "bendigoadelaide.com.au"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bendigoadelaide.com.au"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bnz-co-nz"
+name = "bnz.co.nz"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bnz.co.nz"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "boq-com-au"
+name = "boq.com.au"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:boq.com.au"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "commbank-com-au"
+name = "commbank.com.au"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:commbank.com.au"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ing-com-au"
+name = "ing.com.au"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:ing.com.au"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "kiwibank-co-nz"
+name = "kiwibank.co.nz"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:kiwibank.co.nz"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "macquarie-com"
+name = "macquarie.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:macquarie.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "nab-com-au"
+name = "nab.com.au"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:nab.com.au"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "westpac-com-au"
+name = "westpac.com.au"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:westpac.com.au"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "westpac-co-nz"
+name = "westpac.co.nz"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:westpac.co.nz"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ambankgroup-com"
+name = "ambankgroup.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:ambankgroup.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankislam-com"
+name = "bankislam.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bankislam.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "cimb-com"
+name = "cimb.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:cimb.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "cimbclicks-com-my"
+name = "cimbclicks.com.my"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:cimbclicks.com.my"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hlb-com-my"
+name = "hlb.com.my"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:hlb.com.my"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hongleongconnect-my"
+name = "hongleongconnect.my"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:hongleongconnect.my"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "maybank-com"
+name = "maybank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:maybank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "maybank2u-com-my"
+name = "maybank2u.com.my"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:maybank2u.com.my"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "publicbank-com-my"
+name = "publicbank.com.my"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:publicbank.com.my"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "publicbankgroup-com"
+name = "publicbankgroup.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:publicbankgroup.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "rhbgroup-com"
+name = "rhbgroup.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:rhbgroup.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bangkokbank-com"
+name = "bangkokbank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bangkokbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "kasikornbank-com"
+name = "kasikornbank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:kasikornbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "krungsri-com"
+name = "krungsri.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:krungsri.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "krungthai-com"
+name = "krungthai.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:krungthai.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "scb-co-th"
+name = "scb.co.th"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:scb.co.th"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "ttbbank-com"
+name = "ttbbank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:ttbbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bca-co-id"
+name = "bca.co.id"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bca.co.id"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankbsi-co-id"
+name = "bankbsi.co.id"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bankbsi.co.id"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankmandiri-co-id"
+name = "bankmandiri.co.id"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bankmandiri.co.id"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bni-co-id"
+name = "bni.co.id"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bni.co.id"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bri-co-id"
+name = "bri.co.id"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bri.co.id"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "cimbniaga-co-id"
+name = "cimbniaga.co.id"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:cimbniaga.co.id"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "danamon-co-id"
+name = "danamon.co.id"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:danamon.co.id"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "jago-com"
+name = "jago.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:jago.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "permatabank-com"
+name = "permatabank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:permatabank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bdo-com-ph"
+name = "bdo.com.ph"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bdo.com.ph"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bpi-com-ph"
+name = "bpi.com.ph"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bpi.com.ph"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "chinabank-ph"
+name = "chinabank.ph"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:chinabank.ph"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "eastwestbanker-com"
+name = "eastwestbanker.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:eastwestbanker.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "metrobank-com-ph"
+name = "metrobank.com.ph"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:metrobank.com.ph"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "rcbc-com"
+name = "rcbc.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:rcbc.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "securitybank-com"
+name = "securitybank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:securitybank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "unionbankph-com"
+name = "unionbankph.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:unionbankph.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "acb-com-vn"
+name = "acb.com.vn"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:acb.com.vn"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bidv-com-vn"
+name = "bidv.com.vn"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bidv.com.vn"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "mbbank-com-vn"
+name = "mbbank.com.vn"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:mbbank.com.vn"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "sacombank-com-vn"
+name = "sacombank.com.vn"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:sacombank.com.vn"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "techcombank-com"
+name = "techcombank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:techcombank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "tpbank-com-vn"
+name = "tpbank.com.vn"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:tpbank.com.vn"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "vietcombank-com-vn"
+name = "vietcombank.com.vn"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:vietcombank.com.vn"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "vietinbank-vn"
+name = "vietinbank.vn"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:vietinbank.vn"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "vpbank-com-vn"
+name = "vpbank.com.vn"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:vpbank.com.vn"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "axisbank-com"
+name = "axisbank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:axisbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankofbaroda-in"
+name = "bankofbaroda.in"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bankofbaroda.in"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "hdfcbank-com"
+name = "hdfcbank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:hdfcbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "icicibank-com"
+name = "icicibank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:icicibank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "idfcfirstbank-com"
+name = "idfcfirstbank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:idfcfirstbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "indusind-com"
+name = "indusind.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:indusind.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "kotak-com"
+name = "kotak.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:kotak.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "onlinesbi-sbi"
+name = "onlinesbi.sbi"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:onlinesbi.sbi"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "sbi-co-in"
+name = "sbi.co.in"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:sbi.co.in"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "yesbank-in"
+name = "yesbank.in"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:yesbank.in"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "adcb-com"
+name = "adcb.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:adcb.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "adib-ae"
+name = "adib.ae"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:adib.ae"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankfab-com"
+name = "bankfab.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:bankfab.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "dib-ae"
+name = "dib.ae"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:dib.ae"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "emiratesnbd-com"
+name = "emiratesnbd.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:emiratesnbd.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "mashreq-com"
+name = "mashreq.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:mashreq.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "alahli-com"
+name = "alahli.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:alahli.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "alrajhibank-com-sa"
+name = "alrajhibank.com.sa"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:alrajhibank.com.sa"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankalbilad-com"
+name = "bankalbilad.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:bankalbilad.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "meem-com-sa"
+name = "meem.com.sa"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:meem.com.sa"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "riyadbank-com"
+name = "riyadbank.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:riyadbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "sab-com"
+name = "sab.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:sab.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "cbq-qa"
+name = "cbq.qa"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:cbq.qa"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "qnb-com"
+name = "qnb.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:qnb.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "kfh-com"
+name = "kfh.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:kfh.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "nbk-com"
+name = "nbk.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:nbk.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bankmuscat-com"
+name = "bankmuscat.com"
+kind = "bank"
+region = "MiddleEast"
+required = false
+domains = ["suffix:bankmuscat.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "absa-co-za"
+name = "absa.co.za"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:absa.co.za"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "capitecbank-co-za"
+name = "capitecbank.co.za"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:capitecbank.co.za"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "fnb-co-za"
+name = "fnb.co.za"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:fnb.co.za"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "nedbank-co-za"
+name = "nedbank.co.za"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:nedbank.co.za"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "standardbank-co-za"
+name = "standardbank.co.za"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:standardbank.co.za"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "accessbankplc-com"
+name = "accessbankplc.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:accessbankplc.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "gtbank-com"
+name = "gtbank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:gtbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "zenithbank-com"
+name = "zenithbank.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:zenithbank.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bb-com-br"
+name = "bb.com.br"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bb.com.br"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bradesco-com-br"
+name = "bradesco.com.br"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bradesco.com.br"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "caixa-gov-br"
+name = "caixa.gov.br"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:caixa.gov.br"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "itau-com-br"
+name = "itau.com.br"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:itau.com.br"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "nubank-com-br"
+name = "nubank.com.br"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:nubank.com.br"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bancointer-com-br"
+name = "bancointer.com.br"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bancointer.com.br"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "santander-com-br"
+name = "santander.com.br"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:santander.com.br"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bancolombia-com"
+name = "bancolombia.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bancolombia.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "davivienda-com"
+name = "davivienda.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:davivienda.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "banorte-com"
+name = "banorte.com"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:banorte.com"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "santander-com-mx"
+name = "santander.com.mx"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:santander.com.mx"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bancochile-cl"
+name = "bancochile.cl"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bancochile.cl"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "bci-cl"
+name = "bci.cl"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:bci.cl"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "scotiabank-cl"
+name = "scotiabank.cl"
+kind = "bank"
+region = "Other"
+required = false
+domains = ["suffix:scotiabank.cl"]
+source = "manual-review-2026-08-12"
+reviewed = "2026-08-12"

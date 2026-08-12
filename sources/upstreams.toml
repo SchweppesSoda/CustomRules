@@ -1,0 +1,30 @@
+[v2fly]
+base_url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data"
+
+[crypto_candidates]
+url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-cryptocurrency"
+
+[sets.AI]
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list",
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-intelligence.list",
+]
+
+[sets.Apple]
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list",
+]
+
+[sets.AppleCN]
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.list",
+]
+
+[sets.AppleTV]
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.list",
+]

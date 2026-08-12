@@ -1,0 +1,456 @@
+[meta]
+schema = 1
+scope = "trading-account-first"
+reviewed = "2026-08-12"
+
+[[entities]]
+id = "binance"
+name = "Binance"
+kind = "exchange"
+required = true
+upstream_components = ["binance"]
+domains = ["suffix:binance.com", "suffix:binance.us", "suffix:bnbchain.org"]
+
+[[entities]]
+id = "okx"
+name = "OKX"
+kind = "exchange"
+required = true
+upstream_components = ["okx"]
+domains = ["suffix:okx.com", "suffix:okex.com"]
+
+[[entities]]
+id = "bybit"
+name = "Bybit"
+kind = "exchange"
+required = true
+upstream_components = ["bybit"]
+domains = ["suffix:bybit.com", "suffix:bybit.eu", "suffix:bybit.nl", "exact:bybit-exchange.github.io"]
+
+[[entities]]
+id = "bitget"
+name = "Bitget"
+kind = "exchange"
+required = true
+domains = ["suffix:bitget.com", "suffix:bitgetapp.com", "suffix:bitgetapps.com", "suffix:bitgetimg.com"]
+
+[[entities]]
+id = "mexc"
+name = "MEXC"
+kind = "exchange"
+required = true
+domains = ["suffix:mexc.com", "suffix:mexc.co", "suffix:mexcsensors.com"]
+
+[[entities]]
+id = "gate"
+name = "Gate"
+kind = "exchange"
+required = true
+upstream_components = ["gateio"]
+domains = ["suffix:gate.io", "suffix:gate.com"]
+
+[[entities]]
+id = "kucoin"
+name = "KuCoin"
+kind = "exchange"
+required = true
+upstream_components = ["kucoin"]
+domains = ["suffix:kucoin.com"]
+
+[[entities]]
+id = "coinbase"
+name = "Coinbase"
+kind = "exchange"
+required = true
+domains = ["suffix:coinbase.com", "suffix:coinbasecdn.net"]
+
+[[entities]]
+id = "kraken"
+name = "Kraken"
+kind = "exchange"
+required = true
+upstream_components = ["kraken"]
+domains = ["suffix:kraken.com"]
+
+[[entities]]
+id = "crypto-com"
+name = "Crypto.com"
+kind = "exchange"
+required = true
+domains = ["suffix:crypto.com"]
+
+[[entities]]
+id = "gemini"
+name = "Gemini"
+kind = "exchange"
+required = true
+domains = ["suffix:gemini.com"]
+
+[[entities]]
+id = "htx"
+name = "HTX"
+kind = "exchange"
+required = true
+upstream_components = ["huobi"]
+domains = ["suffix:htx.com", "suffix:huobi.com"]
+
+[[entities]]
+id = "bingx"
+name = "BingX"
+kind = "exchange"
+required = true
+domains = ["suffix:bingx.com"]
+
+[[entities]]
+id = "coinw"
+name = "CoinW"
+kind = "exchange"
+required = true
+domains = ["suffix:coinw.com"]
+
+[[entities]]
+id = "whitebit"
+name = "WhiteBIT"
+kind = "exchange"
+required = true
+domains = ["suffix:whitebit.com"]
+
+[[entities]]
+id = "bitfinex"
+name = "Bitfinex"
+kind = "exchange"
+required = true
+domains = ["suffix:bitfinex.com"]
+
+[[entities]]
+id = "bitstamp"
+name = "Bitstamp"
+kind = "exchange"
+required = true
+domains = ["suffix:bitstamp.net"]
+
+[[entities]]
+id = "bitmex"
+name = "BitMEX"
+kind = "exchange"
+required = true
+domains = ["suffix:bitmex.com"]
+
+[[entities]]
+id = "deribit"
+name = "Deribit"
+kind = "exchange"
+required = true
+upstream_components = ["deribit"]
+domains = ["suffix:deribit.com"]
+
+[[entities]]
+id = "bitflyer"
+name = "bitFlyer"
+kind = "exchange"
+required = true
+upstream_components = ["bitflyer"]
+domains = ["suffix:bitflyer.com", "suffix:bitflyer.jp"]
+
+[[entities]]
+id = "coincheck"
+name = "Coincheck"
+kind = "exchange"
+required = true
+domains = ["suffix:coincheck.com"]
+
+[[entities]]
+id = "upbit"
+name = "Upbit"
+kind = "exchange"
+required = true
+domains = ["suffix:upbit.com"]
+
+[[entities]]
+id = "bithumb"
+name = "Bithumb"
+kind = "exchange"
+required = true
+domains = ["suffix:bithumb.com"]
+
+[[entities]]
+id = "pionex"
+name = "Pionex"
+kind = "exchange"
+required = true
+domains = ["suffix:pionex.com"]
+
+[[entities]]
+id = "bitbank"
+name = "Bitbank"
+kind = "exchange"
+domains = ["suffix:bitbank.cc"]
+
+[[entities]]
+id = "cex"
+name = "CEX.IO"
+kind = "exchange"
+domains = ["suffix:cex.io"]
+
+[[entities]]
+id = "coinone"
+name = "Coinone"
+kind = "exchange"
+upstream_components = ["coinone"]
+domains = ["suffix:coinone.co.kr"]
+
+[[entities]]
+id = "korbit"
+name = "Korbit"
+kind = "exchange"
+domains = ["suffix:korbit.co.kr"]
+
+[[entities]]
+id = "bitmart"
+name = "BitMart"
+kind = "exchange"
+domains = ["suffix:bitmart.com"]
+
+[[entities]]
+id = "bitpanda"
+name = "Bitpanda"
+kind = "exchange"
+domains = ["suffix:bitpanda.com"]
+
+[[entities]]
+id = "bit2me"
+name = "Bit2Me"
+kind = "exchange"
+domains = ["suffix:bit2me.com"]
+
+[[entities]]
+id = "coinjar"
+name = "CoinJar"
+kind = "exchange"
+domains = ["suffix:coinjar.com"]
+
+[[entities]]
+id = "blofin"
+name = "BloFin"
+kind = "exchange"
+domains = ["suffix:blofin.com"]
+
+[[entities]]
+id = "zoomex"
+name = "Zoomex"
+kind = "exchange"
+domains = ["suffix:zoomex.com"]
+
+[[entities]]
+id = "bisq"
+name = "Bisq"
+kind = "exchange"
+upstream_components = ["bitsquare"]
+domains = ["suffix:bisq.io", "suffix:bisq.network"]
+
+[[entities]]
+id = "lighter"
+name = "Lighter"
+kind = "exchange"
+upstream_components = ["lighter"]
+domains = ["suffix:lighter.exchange", "suffix:lighter.xyz"]
+
+[[entities]]
+id = "nexo"
+name = "Nexo"
+kind = "custodian"
+upstream_components = ["nexo"]
+domains = ["suffix:nexo.io"]
+
+[[entities]]
+id = "osl"
+name = "OSL"
+kind = "custodian"
+domains = ["suffix:osl.com"]
+
+[[entities]]
+id = "metamask"
+name = "MetaMask"
+kind = "wallet"
+required = true
+domains = ["suffix:metamask.io", "exact:token-api.metaswap.codefi.network"]
+
+[[entities]]
+id = "trust-wallet"
+name = "Trust Wallet"
+kind = "wallet"
+required = true
+upstream_components = ["trustwallet"]
+domains = ["suffix:trustwallet.com"]
+
+[[entities]]
+id = "onekey"
+name = "OneKey"
+kind = "hardware-wallet"
+required = true
+upstream_components = ["onekey"]
+domains = ["suffix:onekey.so", "exact:onekey.zendesk.com"]
+
+[[entities]]
+id = "safepal"
+name = "SafePal"
+kind = "hardware-wallet"
+required = true
+upstream_components = ["safepal"]
+domains = ["suffix:safepal.com"]
+
+[[entities]]
+id = "ledger"
+name = "Ledger"
+kind = "hardware-wallet"
+required = true
+domains = ["suffix:ledger.com", "suffix:ledgerwallet.com"]
+
+[[entities]]
+id = "trezor"
+name = "Trezor"
+kind = "hardware-wallet"
+required = true
+domains = ["suffix:trezor.io", "suffix:satoshilabs.com"]
+
+[[entities]]
+id = "tangem"
+name = "Tangem"
+kind = "hardware-wallet"
+required = true
+domains = ["suffix:tangem.com"]
+
+[[entities]]
+id = "rabby"
+name = "Rabby"
+kind = "wallet"
+required = true
+domains = ["suffix:rabby.io"]
+
+[[entities]]
+id = "imtoken"
+name = "imToken"
+kind = "wallet"
+required = true
+domains = ["suffix:imtoken.com"]
+
+[[entities]]
+id = "phantom"
+name = "Phantom"
+kind = "wallet"
+required = true
+domains = ["suffix:phantom.app"]
+
+[[entities]]
+id = "exodus"
+name = "Exodus"
+kind = "wallet"
+required = true
+domains = ["suffix:exodus.com"]
+
+[[entities]]
+id = "backpack"
+name = "Backpack"
+kind = "wallet"
+domains = ["suffix:backpack.app"]
+
+[[entities]]
+id = "xverse"
+name = "Xverse"
+kind = "wallet"
+domains = ["suffix:xverse.app"]
+
+[[entities]]
+id = "unisat"
+name = "UniSat"
+kind = "wallet"
+domains = ["suffix:unisat.io"]
+
+[[entities]]
+id = "redotpay"
+name = "RedotPay"
+kind = "crypto-card"
+required = true
+upstream_components = ["redotpay"]
+domains = ["suffix:redotpay.com"]
+
+[[entities]]
+id = "fiat24"
+name = "Fiat24"
+kind = "crypto-card"
+required = true
+domains = ["suffix:fiat24.com"]
+
+[[entities]]
+id = "straitsx"
+name = "StraitsX"
+kind = "onramp"
+required = true
+upstream_components = ["straitsx"]
+domains = ["suffix:straitsx.com", "suffix:xfers.com"]
+
+[[entities]]
+id = "uphold"
+name = "Uphold"
+kind = "onramp"
+domains = ["suffix:uphold.com"]
+
+[[entities]]
+id = "wirex"
+name = "Wirex"
+kind = "crypto-card"
+domains = ["suffix:wirex.com", "suffix:wirexapp.com"]
+
+[[entities]]
+id = "xapo"
+name = "Xapo Bank"
+kind = "custodian"
+domains = ["suffix:xapo.com"]
+
+[[entities]]
+id = "swissborg"
+name = "SwissBorg"
+kind = "custodian"
+domains = ["suffix:swissborg.com"]
+
+[[entities]]
+id = "mercuryo"
+name = "Mercuryo"
+kind = "onramp"
+domains = ["suffix:mercuryo.io"]
+
+[[entities]]
+id = "oobit"
+name = "Oobit"
+kind = "crypto-card"
+domains = ["suffix:oobit.com"]
+
+[[entities]]
+id = "bitpay"
+name = "BitPay"
+kind = "crypto-card"
+domains = ["suffix:bitpay.com"]
+
+[[entities]]
+id = "bitrefill"
+name = "Bitrefill"
+kind = "crypto-card"
+domains = ["suffix:bitrefill.com"]
+
+[[entities]]
+id = "gnosis-pay"
+name = "Gnosis Pay"
+kind = "crypto-card"
+domains = ["suffix:gnosispay.com"]
+
+[[entities]]
+id = "kast"
+name = "KAST"
+kind = "crypto-card"
+domains = ["suffix:kast.xyz"]
+
+[[entities]]
+id = "infini"
+name = "Infini"
+kind = "crypto-card"
+domains = ["suffix:infini.money"]
