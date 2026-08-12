@@ -2567,18 +2567,32 @@
     ]
   },
   "mihomo_version": "v1.19.29",
-  "schema": 1,
+  "schema": 2,
   "sets": {
     "AI": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 178,
       "rules_sha256": "59e79eab90878731716f9960e865f52e36d15ec3dac2cfb83f3ff08fbc87b82a"
     },
+    "AICN": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 113,
+      "rules_sha256": "294f6a91190db7aea9e5f4c08bbda97cff2356a652cf5a4206ae51b906352156"
+    },
     "AirportServers": {
+      "behavior": "classical",
       "formats": [
         "yaml",
         "list"
@@ -2587,132 +2601,315 @@
       "rules_sha256": "efb805bca3892a99de435379b2ca5ac30ff77d5d2b8749daa9c25eca9c2522fe"
     },
     "Apple": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 1585,
       "rules_sha256": "35c73470fa11fa0a5e8dd760d35be566d2b4fbdff686e081741cc81d91ea2d0c"
     },
     "AppleCN": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 296,
       "rules_sha256": "d02804d79bed7bbc61d8d0889d04496ef5e9c96e86056815810a0859009e4841"
     },
-    "AppleTV": {
+    "ApplePush": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
+      "rule_count": 3,
+      "rules_sha256": "8ba5d2e9937047a8d876af7b598399f60f5f82c1e9566b5e016d65ac616f8f8c"
+    },
+    "AppleTV": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
       "rule_count": 8,
       "rules_sha256": "478d2fff2b63b1f5e7bbc3fdc19a51e49134f455c025fdeceaa6b8fd74741161"
     },
     "Banking": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 257,
       "rules_sha256": "6db0d8f06462343a6e32da0ec3724e115fdf63e4db4fc0833fb7fc841d8c57e2"
     },
     "Banking/Europe": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 39,
       "rules_sha256": "961842ef0158aa9c2055bc43d95eb90bcd5dbe7d425db224052660b82bd92332"
     },
     "Banking/Global": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 32,
       "rules_sha256": "3762418922dd40b3cea7ab4a328a756dac959f497d330c46b09e37fc131e11d5"
     },
     "Banking/HongKongMacau": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 17,
       "rules_sha256": "4ca5bf425cdc0ae8b9eebb13ade1b71ca064c86a6fd0236a6692bb2eee6a7ff8"
     },
     "Banking/JapanKorea": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 21,
       "rules_sha256": "8478e86b5a5e2dd3de87443cbece7638b0167a5a96cb2100eb0ee3ad9d902dff"
     },
     "Banking/MiddleEast": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 17,
       "rules_sha256": "3026cd33d0402d559477f2af8830f4c50549320f2eff5e68d85a408206a09d5a"
     },
     "Banking/NorthAmerica": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 31,
       "rules_sha256": "d3866dbd7b1fc590cb5d89cc8e6596dd15d3ef524e7d67182fd5cd9d425205fc"
     },
     "Banking/Other": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 89,
       "rules_sha256": "6948958df5009bb34b69c7c83db270c8920d6e7078ed17ef8e00c06148ef6f44"
     },
     "Banking/Singapore": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 11,
       "rules_sha256": "1352897337aa456b8f2cf8e4e63d3e2919a6e75dbd1a3c5dab8d15578a11ab8f"
     },
     "Crypto": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 178,
       "rules_sha256": "12e2e8665b597389d7259380e6dacb5c7bf9ac1fc42f6a5a459c9e1357e08801"
     },
     "Emby": {
+      "behavior": "domain",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
+      "rule_count": 89,
+      "rules_sha256": "5f3ddc466c3c745e4933cfb0e62701cecbd7952090c08e0e6fcef43c8078bdd2"
+    },
+    "GameDownload": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 491,
+      "rules_sha256": "ddaeb74ed1068aeddcf26bb697d484972c7f3da8dc84c25880bf1f1d68f907d8"
+    },
+    "GameDownloadCN": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 24,
+      "rules_sha256": "55bd7c92183ecfce6cffd3c2586ca8c4e18fef887c9051a4c2c53745858b4f62"
+    },
+    "GoogleFCM": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
       "rule_count": 12,
-      "rules_sha256": "0544f4bbdcd1a355f3e4cb29d31b40b44f0285cdfacf02ad9b4dc81d018a875f"
+      "rules_sha256": "19286abb4fd359743325d9d6d55c48fd7eebf2cbb492587740537756afac78c4"
+    },
+    "GoogleGlobal": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 7,
+      "rules_sha256": "bb70e97f8db6f9d1f3f88874b54814a59dfad484ac94378e81f581a3e8f8416a"
+    },
+    "IP/ApplePush": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 9,
+      "rules_sha256": "fe8e4bcd211fd65c8b8c12e2fe705930beb84f1a7f62427bed3249ad7b326141"
+    },
+    "IP/Google": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 7809,
+      "rules_sha256": "a0fd9ef3338338bd3b1187de87eb213300d9f37fa1c71e02201c7230ca75978d"
+    },
+    "IP/GoogleFCM": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 26,
+      "rules_sha256": "b4cd99f45bfd8ce0a182683b8b0ffcafad1fe82ae007be7fca55016bc4cb8a15"
+    },
+    "IP/Netflix": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 112,
+      "rules_sha256": "036a4e8124ed5c91c8a84cf7139b7e79f3f1cc78731037b9a458596aeaa892fd"
+    },
+    "IP/Proxy": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 19,
+      "rules_sha256": "c5dc505f37d107a678cbf5221e43e14ce082131be39ae7c2b8f85c8142ca6041"
+    },
+    "IP/Telegram": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 12,
+      "rules_sha256": "645f3bb935daecb32a1a6db615322cf208f9697ea7fa6d55f3a785e00afb9c16"
+    },
+    "IP/Twitter": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 20,
+      "rules_sha256": "4f2d491014763a6d415c29035357e198db49d3670c350402fed0145e4ccc48ab"
+    },
+    "IP/YouTube": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 3,
+      "rules_sha256": "c03c3392816142514a78d4879512f7804915d5e018e5a027761803d5ae82c09b"
+    },
+    "MicrosoftCN": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 190,
+      "rules_sha256": "1377c8311f43759a096c6ca4abde7a25220da2b4bb712c6f63ccb924683cfa00"
     },
     "MyDirect": {
+      "behavior": "classical",
       "formats": [
         "yaml",
         "list"
@@ -2721,15 +2918,18 @@
       "rules_sha256": "a90d794966c8e015bec034ff557a681774d4602c5ffd4ed2d9b1a5087ad77df3"
     },
     "MyGoHome": {
+      "behavior": "classical",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
+      "mrs_behavior": "domain",
       "rule_count": 1,
       "rules_sha256": "4e36d14e89543a5e64bbf1aa366be707c2837dea2af18d241977c6967948e14c"
     },
     "MyProxy": {
+      "behavior": "classical",
       "formats": [
         "yaml",
         "list"
@@ -2737,14 +2937,103 @@
       "rule_count": 10,
       "rules_sha256": "b7d89ff7beee5a0ad35001620ac52247d048ff764c13e7ff0ef3e6cda14cc05d"
     },
+    "Netflix": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 24,
+      "rules_sha256": "77d4c75ff5f1e02d3da492f9e2e38562b9bea4c481eec4a1e7e0a46def59859f"
+    },
+    "ProxyGlobal": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 26330,
+      "rules_sha256": "ec8e102349b9b0f0b66f25fd76a12f3d2ebf6ec246c9919ea5a65b7062834041"
+    },
+    "ScholarCN": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 90,
+      "rules_sha256": "f1536ed46306ddbd7c9f77b19a068774b331c48fff577ea06927e6a614e125da"
+    },
+    "ScholarGlobal": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 475,
+      "rules_sha256": "93498d5b9f9db2ac2fcac6db79d6c527fd4b13e773c656324802e9ba9948baf6"
+    },
+    "SteamCN": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 19,
+      "rules_sha256": "a1277688f38bfd18d0fa93d41480bbee8399c70e77375e774b6492b58834d3a7"
+    },
+    "Telegram": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 21,
+      "rules_sha256": "619df30317e41c5958311c5d4f76abe1bfa45ae4ba399129a0fec2fe4edd43d9"
+    },
     "TikTok": {
+      "behavior": "classical",
       "formats": [
         "yaml",
         "list"
       ],
       "rule_count": 15,
       "rules_sha256": "d365c2e8b3ccee0d032bac0517c5704fe551090523a37ad2a1c8c0fdbe86b418"
+    },
+    "Twitter": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 24,
+      "rules_sha256": "ccdc94b2bcec1f043fddd9cd9bb529472dfd9d663af36a19a586ec8b6efc1211"
+    },
+    "YouTube": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 177,
+      "rules_sha256": "3c29a7896249128059bde686368466c57eb08eae5f777f3ab7fff9118c34c9f6"
     }
   },
-  "source_commit": "52a025ee04e06365141e47625d3e9c8c64c5e574"
+  "source_commit": "17b61f62eafb88e1401452de7c29f6babd690509"
 }

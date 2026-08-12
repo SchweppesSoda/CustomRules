@@ -1,6 +1,31 @@
 {
   "sources": [
     {
+      "sha256": "cfdc0216e9a9ca9a9ccff34331d767bcfccdcb70f8a0e86755d78eabdfc2174d",
+      "size": "425",
+      "url": "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt"
+    },
+    {
+      "sha256": "fdab8b8a030dcd64a5b3223f08861e325ebfb04a428275bc6b6b49e515d9c836",
+      "size": "164620",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.list"
+    },
+    {
+      "sha256": "8f226765d2fcb5a6881a838c5c7bba8b70fa56f5c11a283df0db1d4d3e23de98",
+      "size": "2063",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.list"
+    },
+    {
+      "sha256": "b0a0a5a4280f2c713a26bf1763317be5aefeda02e4e78dab7c2efbda02663181",
+      "size": "192",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list"
+    },
+    {
+      "sha256": "13a7b4a699cc3f054eab729038298fefd832c2659cadba58aba16d48e6e4b184",
+      "size": "322",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.list"
+    },
+    {
       "sha256": "3f01d5c8bff62b69e0ea0cae5b96c98bf004bf0a27afe0772a612f5644a61592",
       "size": "130",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-intelligence.list"
@@ -26,6 +51,91 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list"
     },
     {
+      "sha256": "20ae489f92f189bef1674e4521976fc7ad437c50bc86b0ab740e30788abd6549",
+      "size": "1680",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-cn.list"
+    },
+    {
+      "sha256": "ec2f9dc32cd69644ca94b809a781121e4dee581885c3ac19332d7104a746ce07",
+      "size": "14292",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download.list"
+    },
+    {
+      "sha256": "46c1ca51a0b7a8342efe8be5870a393e61abc72bdbc7a272787164b9dd13cc08",
+      "size": "752",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download@cn.list"
+    },
+    {
+      "sha256": "e4cb99acaf97c3d242a2b156e46e1ef0ebb659b3dd26f2c43530ce77a2334dd8",
+      "size": "8310",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-!cn.list"
+    },
+    {
+      "sha256": "00be5a49328de7108f931023c1164e5e86bb837c73291b60150497df4a0ea24e",
+      "size": "1303",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-cn.list"
+    },
+    {
+      "sha256": "08d27800feb2591e648d215e75c0968391b5d54a578b21f9c6efe50509d437f4",
+      "size": "453429",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list"
+    },
+    {
+      "sha256": "278716b5d4fd1a80f3755f15184128de0ba67c37db64de8f984410ac81fdcf58",
+      "size": "148",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google@!cn.list"
+    },
+    {
+      "sha256": "ff576e511b10883408360734a909a90b7e99224d87b2a80db6e35ffd5d97934c",
+      "size": "256",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.list"
+    },
+    {
+      "sha256": "0d9d5d4dfc4a239cc89aa0e734890471b4d9aef2cd3d7a9a4f907a877ababdbf",
+      "size": "4255",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft@cn.list"
+    },
+    {
+      "sha256": "980ec18a1c566850622523310feb9ed38cd562c82e697c3da7f756b816f337d8",
+      "size": "452",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.list"
+    },
+    {
+      "sha256": "e6b5348e481a87eba0a3a9e4131f3247d92a365cb980d45863399b216c3fde58",
+      "size": "407",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.list"
+    },
+    {
+      "sha256": "2448b2699519cd258b10232fcacd01e89b7db04c8ce7fc860a4962518370a329",
+      "size": "293",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list"
+    },
+    {
+      "sha256": "7bc17d19d2fa089b36993e56275eb0eb7355963f3e90a711364086442fd369c0",
+      "size": "369",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.list"
+    },
+    {
+      "sha256": "e95f241fa4357918fc1066390c352aad750b571ddea15e3421d30c84e947ac10",
+      "size": "2743",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list"
+    },
+    {
+      "sha256": "9794f848f2935db94be703f797921f8c512a1ddd213c20c47c1f884dccbd82ca",
+      "size": "1590",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleFCM/GoogleFCM.list"
+    },
+    {
+      "sha256": "42274e143447066e26e1ebbf21ae03ce6efb40827f41e2775a84fb16d390713d",
+      "size": "5451",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list"
+    },
+    {
+      "sha256": "d0aa47a87cd5e16132a0aa099b5c4adc0d090733839e8ba97f4dec49c70346e3",
+      "size": "497",
+      "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Apple%20Push.list"
+    },
+    {
       "sha256": "9e0134ff1d724bbbbc44730cd723b3c6952873aaa65fc2bec6ae8b25b1d70f68",
       "size": "674",
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/binance"
@@ -49,6 +159,11 @@
       "sha256": "0848f09d9b8f2d3c3dfc3603c842670627696bff87f1d519733282d0f5611129",
       "size": "1577",
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-cryptocurrency"
+    },
+    {
+      "sha256": "b981c779b5bf55f3a9c2f444820bede1dd8da8ab6f5af4731ba97490ee510250",
+      "size": "2329",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-emby"
     },
     {
       "sha256": "329622262f4916f658108ce06b31db18743a0dfb5f732729111480f811bea0a8",

@@ -1,0 +1,6 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: ApplePush
+payload:
+  - +.apple.com.edgekey.net
+  - +.push-apple.com.akadns.net
+  - +.push.apple.com
