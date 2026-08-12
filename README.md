@@ -27,6 +27,8 @@ Non-rule resources such as `Egern/Modules/` and `Stash/` continue to use
 - `sources/catalog/banking.toml` is the entity-level Banking catalog with
   mutually exclusive regions.
 - `sources/upstreams.toml` is the only registry for permitted remote sources.
+  Every set declares its parser and `domain` or `ipcidr` behavior; the Emby
+  declaration also enables the reviewed manual/upstream union.
 - `sources/toolchain.toml` pins the Mihomo compiler release and archive
   SHA256.
 
@@ -54,7 +56,17 @@ under `Mihomo/Banking/` and `Surge/Banking/`. The aggregate is validated as
 the exact union of the eight regions.
 
 Pure-domain sets also receive MRS output. Classical sets retain their existing
-YAML/LIST semantics.
+YAML/LIST semantics. Service-domain sets are published at
+`Mihomo/<Service>.yaml/.mrs` and `Surge/<Service>.list`; service IP sets use
+`Mihomo/IP/<Service>.yaml/.mrs` and `Surge/IP/<Service>.list`. IP YAML/MRS files
+use `ipcidr` behavior and LIST files use `IP-CIDR`/`IP-CIDR6` with
+`no-resolve`.
+
+The generated `Emby` set is the normalized, de-duplicated literal union of
+`sources/manual/Emby.yaml` and V2Fly `category-emby`. Unsupported classical
+types found while splitting mixed upstreams are retained for review in
+`reports/Unsupported-Upstream-Rules.txt`; they never enter a domain or IP
+artifact silently.
 
 ## Safety and reproducibility
 
@@ -72,7 +84,8 @@ It:
 7. publishes only changed files without force-pushing.
 
 The published branch also contains `manifest.json`, `SOURCES.json`,
-`SHA256SUMS`, and the candidate-review report.
+`SHA256SUMS`, the Crypto candidate-review report, and the unsupported-upstream
+report.
 
 ## Stash and other non-rule resources
 

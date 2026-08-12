@@ -5,6 +5,7 @@ base_url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master
 url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-cryptocurrency"
 
 [sets.AI]
+behavior = "domain"
 parser = "meta-list"
 urls = [
   "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list",
@@ -12,19 +13,191 @@ urls = [
 ]
 
 [sets.Apple]
+behavior = "domain"
 parser = "meta-list"
 urls = [
   "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list",
 ]
 
 [sets.AppleCN]
+behavior = "domain"
 parser = "meta-list"
 urls = [
   "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.list",
 ]
 
 [sets.AppleTV]
+behavior = "domain"
 parser = "meta-list"
 urls = [
   "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.list",
+]
+
+[sets.Emby]
+behavior = "domain"
+parser = "v2fly-component"
+components = ["category-emby"]
+merge_manual = true
+
+[sets.AICN]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-cn.list",
+]
+
+[sets.MicrosoftCN]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft@cn.list",
+]
+
+[sets.ScholarCN]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-cn.list",
+]
+
+[sets.ScholarGlobal]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-!cn.list",
+]
+
+[sets.SteamCN]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.list",
+]
+
+[sets.GameDownloadCN]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download@cn.list",
+]
+
+[sets.GameDownload]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download.list",
+]
+
+[sets.GoogleGlobal]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google@!cn.list",
+]
+
+[sets.ApplePush]
+behavior = "domain"
+parser = "classical-list"
+keyword_suffixes = ["apple.com.edgekey.net"]
+urls = [
+  "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Apple%20Push.list",
+]
+
+[sets.Telegram]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list",
+]
+
+[sets.Twitter]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.list",
+]
+
+[sets.GoogleFCM]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.list",
+]
+
+[sets.YouTube]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list",
+]
+
+[sets.Netflix]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.list",
+]
+
+[sets.ProxyGlobal]
+behavior = "domain"
+parser = "meta-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list",
+]
+
+[sets."IP/ApplePush"]
+behavior = "ipcidr"
+parser = "classical-list"
+keyword_suffixes = ["apple.com.edgekey.net"]
+urls = [
+  "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Apple%20Push.list",
+]
+
+[sets."IP/Telegram"]
+behavior = "ipcidr"
+parser = "cidr-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list",
+]
+
+[sets."IP/Twitter"]
+behavior = "ipcidr"
+parser = "cidr-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.list",
+]
+
+[sets."IP/GoogleFCM"]
+behavior = "ipcidr"
+parser = "classical-list"
+urls = [
+  "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleFCM/GoogleFCM.list",
+]
+
+[sets."IP/YouTube"]
+behavior = "ipcidr"
+parser = "classical-list"
+urls = [
+  "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list",
+]
+
+[sets."IP/Netflix"]
+behavior = "ipcidr"
+parser = "cidr-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.list",
+]
+
+[sets."IP/Google"]
+behavior = "ipcidr"
+parser = "cidr-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.list",
+]
+
+[sets."IP/Proxy"]
+behavior = "ipcidr"
+parser = "cidr-list"
+urls = [
+  "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt",
 ]
