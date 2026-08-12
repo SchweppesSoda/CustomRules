@@ -1,0 +1,14 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Banking/Singapore
+payload:
+  - +.anext.com.sg
+  - +.aspireapp.com
+  - +.bankofsingapore.com
+  - +.dbs.com.sg
+  - +.greenlinkdigitalbank.com
+  - +.gxs.com.sg
+  - +.maribank.sg
+  - +.ocbc.com
+  - +.starryblu.com
+  - +.trustbank.sg
+  - +.uobgroup.com

@@ -1,0 +1,18 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: AirportServers
+DOMAIN-SUFFIX,911-gt3-rs.com
+DOMAIN-SUFFIX,bnsepserv.com
+DOMAIN-SUFFIX,37ccys.uk
+DOMAIN-SUFFIX,presntp.uk
+DOMAIN-SUFFIX,as9929.uk
+IP-CIDR,37.123.193.207/32,no-resolve
+IP-CIDR,37.123.193.208/32,no-resolve
+IP-CIDR,37.123.193.37/32,no-resolve
+IP-CIDR,37.123.193.38/32,no-resolve
+IP-CIDR,38.92.26.67/32,no-resolve
+DOMAIN-SUFFIX,linkcubecloud.dev
+DOMAIN-SUFFIX,apt-agent.dev
+DOMAIN-SUFFIX,lxy1015.top
+DOMAIN-SUFFIX,liangxin1.xyz
+DOMAIN-SUFFIX,07c06051-81fd-4aa4-a94e-a0860315df8f.org
+DOMAIN-SUFFIX,22b74943-12ad-47f4-b705-f2defb6ffea0.org

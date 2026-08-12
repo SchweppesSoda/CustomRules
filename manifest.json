@@ -1,0 +1,2750 @@
+{
+  "branch": "auto-build",
+  "entities": {
+    "Banking": [
+      {
+        "id": "wise",
+        "kind": "cross-border-account",
+        "name": "Wise",
+        "region": "Global",
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "airwallex",
+        "kind": "licensed-fintech",
+        "name": "Airwallex",
+        "region": "Global",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "worldfirst",
+        "kind": "cross-border-account",
+        "name": "WorldFirst",
+        "region": "Global",
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "payoneer",
+        "kind": "cross-border-account",
+        "name": "Payoneer",
+        "region": "Global",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "mercury",
+        "kind": "licensed-fintech",
+        "name": "Mercury",
+        "region": "NorthAmerica",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "brex",
+        "kind": "licensed-fintech",
+        "name": "Brex",
+        "region": "NorthAmerica",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "ifast-global-bank",
+        "kind": "bank",
+        "name": "iFAST Global Bank",
+        "region": "Europe",
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "n26",
+        "kind": "digital-bank",
+        "name": "N26",
+        "region": "Europe",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "revolut",
+        "kind": "licensed-fintech",
+        "name": "Revolut",
+        "region": "Europe",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "currenxie",
+        "kind": "licensed-fintech",
+        "name": "Currenxie",
+        "region": "HongKongMacau",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "statrys",
+        "kind": "licensed-fintech",
+        "name": "Statrys",
+        "region": "HongKongMacau",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "starryblu",
+        "kind": "digital-bank",
+        "name": "Starryblu",
+        "region": "Singapore",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "aspire",
+        "kind": "licensed-fintech",
+        "name": "Aspire",
+        "region": "Singapore",
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-com",
+        "kind": "bank",
+        "name": "hsbc.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-net",
+        "kind": "bank",
+        "name": "hsbc.net",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbcnet-com",
+        "kind": "bank",
+        "name": "hsbcnet.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-co-uk",
+        "kind": "bank",
+        "name": "hsbc.co.uk",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-uk",
+        "kind": "bank",
+        "name": "hsbc.uk",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-com-au",
+        "kind": "bank",
+        "name": "hsbc.com.au",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-ca",
+        "kind": "bank",
+        "name": "hsbc.ca",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-co-in",
+        "kind": "bank",
+        "name": "hsbc.co.in",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-co-jp",
+        "kind": "bank",
+        "name": "hsbc.co.jp",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-com-hk",
+        "kind": "bank",
+        "name": "hsbc.com.hk",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-com-my",
+        "kind": "bank",
+        "name": "hsbc.com.my",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-co-nz",
+        "kind": "bank",
+        "name": "hsbc.co.nz",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-com-sg",
+        "kind": "bank",
+        "name": "hsbc.com.sg",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-com-tw",
+        "kind": "bank",
+        "name": "hsbc.com.tw",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-com-vn",
+        "kind": "bank",
+        "name": "hsbc.com.vn",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbc-ae",
+        "kind": "bank",
+        "name": "hsbc.ae",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbcprivatebank-com",
+        "kind": "bank",
+        "name": "hsbcprivatebank.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hsbcinnovationbanking-com",
+        "kind": "bank",
+        "name": "hsbcinnovationbanking.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "sc-com",
+        "kind": "bank",
+        "name": "sc.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "standardchartered-com",
+        "kind": "bank",
+        "name": "standardchartered.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "citi-com",
+        "kind": "bank",
+        "name": "citi.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "citibank-com",
+        "kind": "bank",
+        "name": "citibank.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "jpmorgan-com",
+        "kind": "bank",
+        "name": "jpmorgan.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "jpmorganchase-com",
+        "kind": "bank",
+        "name": "jpmorganchase.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "santander-com",
+        "kind": "bank",
+        "name": "santander.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bbva-com",
+        "kind": "bank",
+        "name": "bbva.com",
+        "region": "Global",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "53-com",
+        "kind": "bank",
+        "name": "53.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "ally-com",
+        "kind": "bank",
+        "name": "ally.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankofamerica-com",
+        "kind": "bank",
+        "name": "bankofamerica.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bofa-com",
+        "kind": "bank",
+        "name": "bofa.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "capitalone-com",
+        "kind": "bank",
+        "name": "capitalone.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "chase-com",
+        "kind": "bank",
+        "name": "chase.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "chime-com",
+        "kind": "bank",
+        "name": "chime.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "citizensbank-com",
+        "kind": "bank",
+        "name": "citizensbank.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "discover-com",
+        "kind": "bank",
+        "name": "discover.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "goldmansachs-com",
+        "kind": "bank",
+        "name": "goldmansachs.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "huntington-com",
+        "kind": "bank",
+        "name": "huntington.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "key-com",
+        "kind": "bank",
+        "name": "key.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "marcus-com",
+        "kind": "bank",
+        "name": "marcus.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "mtb-com",
+        "kind": "bank",
+        "name": "mtb.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "pnc-com",
+        "kind": "bank",
+        "name": "pnc.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "regions-com",
+        "kind": "bank",
+        "name": "regions.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "truist-com",
+        "kind": "bank",
+        "name": "truist.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "usaa-com",
+        "kind": "bank",
+        "name": "usaa.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "usbank-com",
+        "kind": "bank",
+        "name": "usbank.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "varomoney-com",
+        "kind": "bank",
+        "name": "varomoney.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "wellsfargo-com",
+        "kind": "bank",
+        "name": "wellsfargo.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bmo-com",
+        "kind": "bank",
+        "name": "bmo.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "cibc-com",
+        "kind": "bank",
+        "name": "cibc.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "desjardins-com",
+        "kind": "bank",
+        "name": "desjardins.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "nbc-ca",
+        "kind": "bank",
+        "name": "nbc.ca",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "rbc-com",
+        "kind": "bank",
+        "name": "rbc.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "rbcroyalbank-com",
+        "kind": "bank",
+        "name": "rbcroyalbank.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "scotiabank-com",
+        "kind": "bank",
+        "name": "scotiabank.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "td-com",
+        "kind": "bank",
+        "name": "td.com",
+        "region": "NorthAmerica",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "abnamro-com",
+        "kind": "bank",
+        "name": "abnamro.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankofscotland-co-uk",
+        "kind": "bank",
+        "name": "bankofscotland.co.uk",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "barclays-co-uk",
+        "kind": "bank",
+        "name": "barclays.co.uk",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "barclays-com",
+        "kind": "bank",
+        "name": "barclays.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bnpparibas-com",
+        "kind": "bank",
+        "name": "bnpparibas.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bunq-com",
+        "kind": "bank",
+        "name": "bunq.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "commerzbank-com",
+        "kind": "bank",
+        "name": "commerzbank.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "credit-agricole-com",
+        "kind": "bank",
+        "name": "credit-agricole.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "creditmutuel-fr",
+        "kind": "bank",
+        "name": "creditmutuel.fr",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "danskebank-com",
+        "kind": "bank",
+        "name": "danskebank.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "db-com",
+        "kind": "bank",
+        "name": "db.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "deutsche-bank-de",
+        "kind": "bank",
+        "name": "deutsche-bank.de",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "dnb-no",
+        "kind": "bank",
+        "name": "dnb.no",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "erste-com",
+        "kind": "bank",
+        "name": "erste.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "halifax-co-uk",
+        "kind": "bank",
+        "name": "halifax.co.uk",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "ing-com",
+        "kind": "bank",
+        "name": "ing.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "ingbank-com",
+        "kind": "bank",
+        "name": "ingbank.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "intesasanpaolo-com",
+        "kind": "bank",
+        "name": "intesasanpaolo.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "juliusbaer-com",
+        "kind": "bank",
+        "name": "juliusbaer.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "kbc-com",
+        "kind": "bank",
+        "name": "kbc.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "lloydsbank-com",
+        "kind": "bank",
+        "name": "lloydsbank.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "monzo-com",
+        "kind": "bank",
+        "name": "monzo.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "natwest-com",
+        "kind": "bank",
+        "name": "natwest.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "nordea-com",
+        "kind": "bank",
+        "name": "nordea.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "otpbank-com",
+        "kind": "bank",
+        "name": "otpbank.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "rabobank-com",
+        "kind": "bank",
+        "name": "rabobank.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "raiffeisen-com",
+        "kind": "bank",
+        "name": "raiffeisen.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "rbs-co-uk",
+        "kind": "bank",
+        "name": "rbs.co.uk",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "santander-co-uk",
+        "kind": "bank",
+        "name": "santander.co.uk",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "seb-se",
+        "kind": "bank",
+        "name": "seb.se",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "societegenerale-com",
+        "kind": "bank",
+        "name": "societegenerale.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "starlingbank-com",
+        "kind": "bank",
+        "name": "starlingbank.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "swedbank-com",
+        "kind": "bank",
+        "name": "swedbank.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "ubs-com",
+        "kind": "bank",
+        "name": "ubs.com",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "unicreditgroup-eu",
+        "kind": "bank",
+        "name": "unicreditgroup.eu",
+        "region": "Europe",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "airstarbank-com",
+        "kind": "bank",
+        "name": "airstarbank.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "antbank-hk",
+        "kind": "bank",
+        "name": "antbank.hk",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankofsingapore-com",
+        "kind": "bank",
+        "name": "bankofsingapore.com",
+        "region": "Singapore",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bnu-com-mo",
+        "kind": "bank",
+        "name": "bnu.com.mo",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bocmacau-com",
+        "kind": "bank",
+        "name": "bocmacau.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bochk-com",
+        "kind": "bank",
+        "name": "bochk.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "dbs-com",
+        "kind": "bank",
+        "name": "dbs.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "dbs-com-hk",
+        "kind": "bank",
+        "name": "dbs.com.hk",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "dbs-com-sg",
+        "kind": "bank",
+        "name": "dbs.com.sg",
+        "region": "Singapore",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "fusionbank-com",
+        "kind": "bank",
+        "name": "fusionbank.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hangseng-com",
+        "kind": "bank",
+        "name": "hangseng.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hkbea-com",
+        "kind": "bank",
+        "name": "hkbea.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "icbc-com-mo",
+        "kind": "bank",
+        "name": "icbc.com.mo",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "livibank-com",
+        "kind": "bank",
+        "name": "livibank.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "mox-com",
+        "kind": "bank",
+        "name": "mox.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "ocbc-com",
+        "kind": "bank",
+        "name": "ocbc.com",
+        "region": "Singapore",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "uobgroup-com",
+        "kind": "bank",
+        "name": "uobgroup.com",
+        "region": "Singapore",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "welab-bank",
+        "kind": "bank",
+        "name": "welab.bank",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "zabank-com",
+        "kind": "bank",
+        "name": "zabank.com",
+        "region": "HongKongMacau",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "anext-com-sg",
+        "kind": "bank",
+        "name": "anext.com.sg",
+        "region": "Singapore",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "greenlinkdigitalbank-com",
+        "kind": "bank",
+        "name": "greenlinkdigitalbank.com",
+        "region": "Singapore",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "gxs-com-sg",
+        "kind": "bank",
+        "name": "gxs.com.sg",
+        "region": "Singapore",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "maribank-sg",
+        "kind": "bank",
+        "name": "maribank.sg",
+        "region": "Singapore",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "trustbank-sg",
+        "kind": "bank",
+        "name": "trustbank.sg",
+        "region": "Singapore",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "jp-bank-japanpost-jp",
+        "kind": "bank",
+        "name": "jp-bank.japanpost.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "aozorabank-co-jp",
+        "kind": "bank",
+        "name": "aozorabank.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "jibunbank-co-jp",
+        "kind": "bank",
+        "name": "jibunbank.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "mizuhobank-co-jp",
+        "kind": "bank",
+        "name": "mizuhobank.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "mufg-jp",
+        "kind": "bank",
+        "name": "mufg.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "paypay-bank-co-jp",
+        "kind": "bank",
+        "name": "paypay-bank.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "rakuten-bank-co-jp",
+        "kind": "bank",
+        "name": "rakuten-bank.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "resona-gr-co-jp",
+        "kind": "bank",
+        "name": "resona-gr.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "sbishinseibank-co-jp",
+        "kind": "bank",
+        "name": "sbishinseibank.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "sevenbank-co-jp",
+        "kind": "bank",
+        "name": "sevenbank.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "smbc-co-jp",
+        "kind": "bank",
+        "name": "smbc.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "smbctb-co-jp",
+        "kind": "bank",
+        "name": "smbctb.co.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "smtb-jp",
+        "kind": "bank",
+        "name": "smtb.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "sonybank-jp",
+        "kind": "bank",
+        "name": "sonybank.jp",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "ibk-co-kr",
+        "kind": "bank",
+        "name": "ibk.co.kr",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "kakaobank-com",
+        "kind": "bank",
+        "name": "kakaobank.com",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "kbstar-com",
+        "kind": "bank",
+        "name": "kbstar.com",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "kebhana-com",
+        "kind": "bank",
+        "name": "kebhana.com",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "shinhan-com",
+        "kind": "bank",
+        "name": "shinhan.com",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "tossbank-com",
+        "kind": "bank",
+        "name": "tossbank.com",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "wooribank-com",
+        "kind": "bank",
+        "name": "wooribank.com",
+        "region": "JapanKorea",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "anz-com",
+        "kind": "bank",
+        "name": "anz.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "anz-com-au",
+        "kind": "bank",
+        "name": "anz.com.au",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "anz-co-nz",
+        "kind": "bank",
+        "name": "anz.co.nz",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "asb-co-nz",
+        "kind": "bank",
+        "name": "asb.co.nz",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bendigoadelaide-com-au",
+        "kind": "bank",
+        "name": "bendigoadelaide.com.au",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bnz-co-nz",
+        "kind": "bank",
+        "name": "bnz.co.nz",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "boq-com-au",
+        "kind": "bank",
+        "name": "boq.com.au",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "commbank-com-au",
+        "kind": "bank",
+        "name": "commbank.com.au",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "ing-com-au",
+        "kind": "bank",
+        "name": "ing.com.au",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "kiwibank-co-nz",
+        "kind": "bank",
+        "name": "kiwibank.co.nz",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "macquarie-com",
+        "kind": "bank",
+        "name": "macquarie.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "nab-com-au",
+        "kind": "bank",
+        "name": "nab.com.au",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "westpac-com-au",
+        "kind": "bank",
+        "name": "westpac.com.au",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "westpac-co-nz",
+        "kind": "bank",
+        "name": "westpac.co.nz",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "ambankgroup-com",
+        "kind": "bank",
+        "name": "ambankgroup.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankislam-com",
+        "kind": "bank",
+        "name": "bankislam.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "cimb-com",
+        "kind": "bank",
+        "name": "cimb.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "cimbclicks-com-my",
+        "kind": "bank",
+        "name": "cimbclicks.com.my",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hlb-com-my",
+        "kind": "bank",
+        "name": "hlb.com.my",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hongleongconnect-my",
+        "kind": "bank",
+        "name": "hongleongconnect.my",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "maybank-com",
+        "kind": "bank",
+        "name": "maybank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "maybank2u-com-my",
+        "kind": "bank",
+        "name": "maybank2u.com.my",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "publicbank-com-my",
+        "kind": "bank",
+        "name": "publicbank.com.my",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "publicbankgroup-com",
+        "kind": "bank",
+        "name": "publicbankgroup.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "rhbgroup-com",
+        "kind": "bank",
+        "name": "rhbgroup.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bangkokbank-com",
+        "kind": "bank",
+        "name": "bangkokbank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "kasikornbank-com",
+        "kind": "bank",
+        "name": "kasikornbank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "krungsri-com",
+        "kind": "bank",
+        "name": "krungsri.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "krungthai-com",
+        "kind": "bank",
+        "name": "krungthai.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "scb-co-th",
+        "kind": "bank",
+        "name": "scb.co.th",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "ttbbank-com",
+        "kind": "bank",
+        "name": "ttbbank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bca-co-id",
+        "kind": "bank",
+        "name": "bca.co.id",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankbsi-co-id",
+        "kind": "bank",
+        "name": "bankbsi.co.id",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankmandiri-co-id",
+        "kind": "bank",
+        "name": "bankmandiri.co.id",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bni-co-id",
+        "kind": "bank",
+        "name": "bni.co.id",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bri-co-id",
+        "kind": "bank",
+        "name": "bri.co.id",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "cimbniaga-co-id",
+        "kind": "bank",
+        "name": "cimbniaga.co.id",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "danamon-co-id",
+        "kind": "bank",
+        "name": "danamon.co.id",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "jago-com",
+        "kind": "bank",
+        "name": "jago.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "permatabank-com",
+        "kind": "bank",
+        "name": "permatabank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bdo-com-ph",
+        "kind": "bank",
+        "name": "bdo.com.ph",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bpi-com-ph",
+        "kind": "bank",
+        "name": "bpi.com.ph",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "chinabank-ph",
+        "kind": "bank",
+        "name": "chinabank.ph",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "eastwestbanker-com",
+        "kind": "bank",
+        "name": "eastwestbanker.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "metrobank-com-ph",
+        "kind": "bank",
+        "name": "metrobank.com.ph",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "rcbc-com",
+        "kind": "bank",
+        "name": "rcbc.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "securitybank-com",
+        "kind": "bank",
+        "name": "securitybank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "unionbankph-com",
+        "kind": "bank",
+        "name": "unionbankph.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "acb-com-vn",
+        "kind": "bank",
+        "name": "acb.com.vn",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bidv-com-vn",
+        "kind": "bank",
+        "name": "bidv.com.vn",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "mbbank-com-vn",
+        "kind": "bank",
+        "name": "mbbank.com.vn",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "sacombank-com-vn",
+        "kind": "bank",
+        "name": "sacombank.com.vn",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "techcombank-com",
+        "kind": "bank",
+        "name": "techcombank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "tpbank-com-vn",
+        "kind": "bank",
+        "name": "tpbank.com.vn",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "vietcombank-com-vn",
+        "kind": "bank",
+        "name": "vietcombank.com.vn",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "vietinbank-vn",
+        "kind": "bank",
+        "name": "vietinbank.vn",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "vpbank-com-vn",
+        "kind": "bank",
+        "name": "vpbank.com.vn",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "axisbank-com",
+        "kind": "bank",
+        "name": "axisbank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankofbaroda-in",
+        "kind": "bank",
+        "name": "bankofbaroda.in",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "hdfcbank-com",
+        "kind": "bank",
+        "name": "hdfcbank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "icicibank-com",
+        "kind": "bank",
+        "name": "icicibank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "idfcfirstbank-com",
+        "kind": "bank",
+        "name": "idfcfirstbank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "indusind-com",
+        "kind": "bank",
+        "name": "indusind.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "kotak-com",
+        "kind": "bank",
+        "name": "kotak.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "onlinesbi-sbi",
+        "kind": "bank",
+        "name": "onlinesbi.sbi",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "sbi-co-in",
+        "kind": "bank",
+        "name": "sbi.co.in",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "yesbank-in",
+        "kind": "bank",
+        "name": "yesbank.in",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "adcb-com",
+        "kind": "bank",
+        "name": "adcb.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "adib-ae",
+        "kind": "bank",
+        "name": "adib.ae",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankfab-com",
+        "kind": "bank",
+        "name": "bankfab.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "dib-ae",
+        "kind": "bank",
+        "name": "dib.ae",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "emiratesnbd-com",
+        "kind": "bank",
+        "name": "emiratesnbd.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "mashreq-com",
+        "kind": "bank",
+        "name": "mashreq.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "alahli-com",
+        "kind": "bank",
+        "name": "alahli.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "alrajhibank-com-sa",
+        "kind": "bank",
+        "name": "alrajhibank.com.sa",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankalbilad-com",
+        "kind": "bank",
+        "name": "bankalbilad.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "meem-com-sa",
+        "kind": "bank",
+        "name": "meem.com.sa",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "riyadbank-com",
+        "kind": "bank",
+        "name": "riyadbank.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "sab-com",
+        "kind": "bank",
+        "name": "sab.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "cbq-qa",
+        "kind": "bank",
+        "name": "cbq.qa",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "qnb-com",
+        "kind": "bank",
+        "name": "qnb.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "kfh-com",
+        "kind": "bank",
+        "name": "kfh.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "nbk-com",
+        "kind": "bank",
+        "name": "nbk.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bankmuscat-com",
+        "kind": "bank",
+        "name": "bankmuscat.com",
+        "region": "MiddleEast",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "absa-co-za",
+        "kind": "bank",
+        "name": "absa.co.za",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "capitecbank-co-za",
+        "kind": "bank",
+        "name": "capitecbank.co.za",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "fnb-co-za",
+        "kind": "bank",
+        "name": "fnb.co.za",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "nedbank-co-za",
+        "kind": "bank",
+        "name": "nedbank.co.za",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "standardbank-co-za",
+        "kind": "bank",
+        "name": "standardbank.co.za",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "accessbankplc-com",
+        "kind": "bank",
+        "name": "accessbankplc.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "gtbank-com",
+        "kind": "bank",
+        "name": "gtbank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "zenithbank-com",
+        "kind": "bank",
+        "name": "zenithbank.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bb-com-br",
+        "kind": "bank",
+        "name": "bb.com.br",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bradesco-com-br",
+        "kind": "bank",
+        "name": "bradesco.com.br",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "caixa-gov-br",
+        "kind": "bank",
+        "name": "caixa.gov.br",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "itau-com-br",
+        "kind": "bank",
+        "name": "itau.com.br",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "nubank-com-br",
+        "kind": "bank",
+        "name": "nubank.com.br",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bancointer-com-br",
+        "kind": "bank",
+        "name": "bancointer.com.br",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "santander-com-br",
+        "kind": "bank",
+        "name": "santander.com.br",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bancolombia-com",
+        "kind": "bank",
+        "name": "bancolombia.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "davivienda-com",
+        "kind": "bank",
+        "name": "davivienda.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "banorte-com",
+        "kind": "bank",
+        "name": "banorte.com",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "santander-com-mx",
+        "kind": "bank",
+        "name": "santander.com.mx",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bancochile-cl",
+        "kind": "bank",
+        "name": "bancochile.cl",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bci-cl",
+        "kind": "bank",
+        "name": "bci.cl",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "scotiabank-cl",
+        "kind": "bank",
+        "name": "scotiabank.cl",
+        "region": "Other",
+        "required": false,
+        "rule_count": 1
+      }
+    ],
+    "Crypto": [
+      {
+        "id": "binance",
+        "kind": "exchange",
+        "name": "Binance",
+        "region": null,
+        "required": true,
+        "rule_count": 45
+      },
+      {
+        "id": "okx",
+        "kind": "exchange",
+        "name": "OKX",
+        "region": null,
+        "required": true,
+        "rule_count": 10
+      },
+      {
+        "id": "bybit",
+        "kind": "exchange",
+        "name": "Bybit",
+        "region": null,
+        "required": true,
+        "rule_count": 18
+      },
+      {
+        "id": "bitget",
+        "kind": "exchange",
+        "name": "Bitget",
+        "region": null,
+        "required": true,
+        "rule_count": 4
+      },
+      {
+        "id": "mexc",
+        "kind": "exchange",
+        "name": "MEXC",
+        "region": null,
+        "required": true,
+        "rule_count": 3
+      },
+      {
+        "id": "gate",
+        "kind": "exchange",
+        "name": "Gate",
+        "region": null,
+        "required": true,
+        "rule_count": 6
+      },
+      {
+        "id": "kucoin",
+        "kind": "exchange",
+        "name": "KuCoin",
+        "region": null,
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "coinbase",
+        "kind": "exchange",
+        "name": "Coinbase",
+        "region": null,
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "kraken",
+        "kind": "exchange",
+        "name": "Kraken",
+        "region": null,
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "crypto-com",
+        "kind": "exchange",
+        "name": "Crypto.com",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "gemini",
+        "kind": "exchange",
+        "name": "Gemini",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "htx",
+        "kind": "exchange",
+        "name": "HTX",
+        "region": null,
+        "required": true,
+        "rule_count": 10
+      },
+      {
+        "id": "bingx",
+        "kind": "exchange",
+        "name": "BingX",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "coinw",
+        "kind": "exchange",
+        "name": "CoinW",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "whitebit",
+        "kind": "exchange",
+        "name": "WhiteBIT",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "bitfinex",
+        "kind": "exchange",
+        "name": "Bitfinex",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "bitstamp",
+        "kind": "exchange",
+        "name": "Bitstamp",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "bitmex",
+        "kind": "exchange",
+        "name": "BitMEX",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "deribit",
+        "kind": "exchange",
+        "name": "Deribit",
+        "region": null,
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "bitflyer",
+        "kind": "exchange",
+        "name": "bitFlyer",
+        "region": null,
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "coincheck",
+        "kind": "exchange",
+        "name": "Coincheck",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "upbit",
+        "kind": "exchange",
+        "name": "Upbit",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "bithumb",
+        "kind": "exchange",
+        "name": "Bithumb",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "pionex",
+        "kind": "exchange",
+        "name": "Pionex",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "bitbank",
+        "kind": "exchange",
+        "name": "Bitbank",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "cex",
+        "kind": "exchange",
+        "name": "CEX.IO",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "coinone",
+        "kind": "exchange",
+        "name": "Coinone",
+        "region": null,
+        "required": false,
+        "rule_count": 3
+      },
+      {
+        "id": "korbit",
+        "kind": "exchange",
+        "name": "Korbit",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bitmart",
+        "kind": "exchange",
+        "name": "BitMart",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bitpanda",
+        "kind": "exchange",
+        "name": "Bitpanda",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bit2me",
+        "kind": "exchange",
+        "name": "Bit2Me",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "coinjar",
+        "kind": "exchange",
+        "name": "CoinJar",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "blofin",
+        "kind": "exchange",
+        "name": "BloFin",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "zoomex",
+        "kind": "exchange",
+        "name": "Zoomex",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bisq",
+        "kind": "exchange",
+        "name": "Bisq",
+        "region": null,
+        "required": false,
+        "rule_count": 3
+      },
+      {
+        "id": "lighter",
+        "kind": "exchange",
+        "name": "Lighter",
+        "region": null,
+        "required": false,
+        "rule_count": 3
+      },
+      {
+        "id": "nexo",
+        "kind": "custodian",
+        "name": "Nexo",
+        "region": null,
+        "required": false,
+        "rule_count": 2
+      },
+      {
+        "id": "osl",
+        "kind": "custodian",
+        "name": "OSL",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "metamask",
+        "kind": "wallet",
+        "name": "MetaMask",
+        "region": null,
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "trust-wallet",
+        "kind": "wallet",
+        "name": "Trust Wallet",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "onekey",
+        "kind": "hardware-wallet",
+        "name": "OneKey",
+        "region": null,
+        "required": true,
+        "rule_count": 4
+      },
+      {
+        "id": "safepal",
+        "kind": "hardware-wallet",
+        "name": "SafePal",
+        "region": null,
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "ledger",
+        "kind": "hardware-wallet",
+        "name": "Ledger",
+        "region": null,
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "trezor",
+        "kind": "hardware-wallet",
+        "name": "Trezor",
+        "region": null,
+        "required": true,
+        "rule_count": 2
+      },
+      {
+        "id": "tangem",
+        "kind": "hardware-wallet",
+        "name": "Tangem",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "rabby",
+        "kind": "wallet",
+        "name": "Rabby",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "imtoken",
+        "kind": "wallet",
+        "name": "imToken",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "phantom",
+        "kind": "wallet",
+        "name": "Phantom",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "exodus",
+        "kind": "wallet",
+        "name": "Exodus",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "backpack",
+        "kind": "wallet",
+        "name": "Backpack",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "xverse",
+        "kind": "wallet",
+        "name": "Xverse",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "unisat",
+        "kind": "wallet",
+        "name": "UniSat",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "redotpay",
+        "kind": "crypto-card",
+        "name": "RedotPay",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "fiat24",
+        "kind": "crypto-card",
+        "name": "Fiat24",
+        "region": null,
+        "required": true,
+        "rule_count": 1
+      },
+      {
+        "id": "straitsx",
+        "kind": "onramp",
+        "name": "StraitsX",
+        "region": null,
+        "required": true,
+        "rule_count": 4
+      },
+      {
+        "id": "uphold",
+        "kind": "onramp",
+        "name": "Uphold",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "wirex",
+        "kind": "crypto-card",
+        "name": "Wirex",
+        "region": null,
+        "required": false,
+        "rule_count": 2
+      },
+      {
+        "id": "xapo",
+        "kind": "custodian",
+        "name": "Xapo Bank",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "swissborg",
+        "kind": "custodian",
+        "name": "SwissBorg",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "mercuryo",
+        "kind": "onramp",
+        "name": "Mercuryo",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "oobit",
+        "kind": "crypto-card",
+        "name": "Oobit",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bitpay",
+        "kind": "crypto-card",
+        "name": "BitPay",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "bitrefill",
+        "kind": "crypto-card",
+        "name": "Bitrefill",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "gnosis-pay",
+        "kind": "crypto-card",
+        "name": "Gnosis Pay",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "kast",
+        "kind": "crypto-card",
+        "name": "KAST",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "infini",
+        "kind": "crypto-card",
+        "name": "Infini",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      }
+    ]
+  },
+  "mihomo_version": "v1.19.29",
+  "schema": 1,
+  "sets": {
+    "AI": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 178,
+      "rules_sha256": "59e79eab90878731716f9960e865f52e36d15ec3dac2cfb83f3ff08fbc87b82a"
+    },
+    "AirportServers": {
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 16,
+      "rules_sha256": "efb805bca3892a99de435379b2ca5ac30ff77d5d2b8749daa9c25eca9c2522fe"
+    },
+    "Apple": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 1585,
+      "rules_sha256": "35c73470fa11fa0a5e8dd760d35be566d2b4fbdff686e081741cc81d91ea2d0c"
+    },
+    "AppleCN": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 296,
+      "rules_sha256": "d02804d79bed7bbc61d8d0889d04496ef5e9c96e86056815810a0859009e4841"
+    },
+    "AppleTV": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 8,
+      "rules_sha256": "478d2fff2b63b1f5e7bbc3fdc19a51e49134f455c025fdeceaa6b8fd74741161"
+    },
+    "Banking": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 257,
+      "rules_sha256": "6db0d8f06462343a6e32da0ec3724e115fdf63e4db4fc0833fb7fc841d8c57e2"
+    },
+    "Banking/Europe": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 39,
+      "rules_sha256": "961842ef0158aa9c2055bc43d95eb90bcd5dbe7d425db224052660b82bd92332"
+    },
+    "Banking/Global": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 32,
+      "rules_sha256": "3762418922dd40b3cea7ab4a328a756dac959f497d330c46b09e37fc131e11d5"
+    },
+    "Banking/HongKongMacau": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 17,
+      "rules_sha256": "4ca5bf425cdc0ae8b9eebb13ade1b71ca064c86a6fd0236a6692bb2eee6a7ff8"
+    },
+    "Banking/JapanKorea": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 21,
+      "rules_sha256": "8478e86b5a5e2dd3de87443cbece7638b0167a5a96cb2100eb0ee3ad9d902dff"
+    },
+    "Banking/MiddleEast": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 17,
+      "rules_sha256": "3026cd33d0402d559477f2af8830f4c50549320f2eff5e68d85a408206a09d5a"
+    },
+    "Banking/NorthAmerica": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 31,
+      "rules_sha256": "d3866dbd7b1fc590cb5d89cc8e6596dd15d3ef524e7d67182fd5cd9d425205fc"
+    },
+    "Banking/Other": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 89,
+      "rules_sha256": "6948958df5009bb34b69c7c83db270c8920d6e7078ed17ef8e00c06148ef6f44"
+    },
+    "Banking/Singapore": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 11,
+      "rules_sha256": "1352897337aa456b8f2cf8e4e63d3e2919a6e75dbd1a3c5dab8d15578a11ab8f"
+    },
+    "Crypto": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 178,
+      "rules_sha256": "12e2e8665b597389d7259380e6dacb5c7bf9ac1fc42f6a5a459c9e1357e08801"
+    },
+    "Emby": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 12,
+      "rules_sha256": "0544f4bbdcd1a355f3e4cb29d31b40b44f0285cdfacf02ad9b4dc81d018a875f"
+    },
+    "MyDirect": {
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 22,
+      "rules_sha256": "d304f628cc7bfe7b9f8ef7431bfb03242e1a67d56af1ecc96ca659fb1c0527f3"
+    },
+    "MyGoHome": {
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "rule_count": 1,
+      "rules_sha256": "4e36d14e89543a5e64bbf1aa366be707c2837dea2af18d241977c6967948e14c"
+    },
+    "MyProxy": {
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 10,
+      "rules_sha256": "b7d89ff7beee5a0ad35001620ac52247d048ff764c13e7ff0ef3e6cda14cc05d"
+    },
+    "TikTok": {
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 15,
+      "rules_sha256": "d365c2e8b3ccee0d032bac0517c5704fe551090523a37ad2a1c8c0fdbe86b418"
+    }
+  },
+  "source_commit": "7392271034e79998ff9b8480ae0ecf0d52ad6cc4"
+}

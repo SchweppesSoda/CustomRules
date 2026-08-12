@@ -1,0 +1,35 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Banking/Global
+payload:
+  - +.airwallex.com
+  - +.bbva.com
+  - +.citi.com
+  - +.citibank.com
+  - +.hsbc.ae
+  - +.hsbc.ca
+  - +.hsbc.co.in
+  - +.hsbc.co.jp
+  - +.hsbc.co.nz
+  - +.hsbc.co.uk
+  - +.hsbc.com
+  - +.hsbc.com.au
+  - +.hsbc.com.hk
+  - +.hsbc.com.my
+  - +.hsbc.com.sg
+  - +.hsbc.com.tw
+  - +.hsbc.com.vn
+  - +.hsbc.net
+  - +.hsbc.uk
+  - +.hsbcinnovationbanking.com
+  - +.hsbcnet.com
+  - +.hsbcprivatebank.com
+  - +.jpmorgan.com
+  - +.jpmorganchase.com
+  - +.payoneer.com
+  - +.santander.com
+  - +.sc.com
+  - +.standardchartered.com
+  - +.transferwise.com
+  - +.wise.com
+  - +.worldfirst.com
+  - +.worldfirst.com.cn

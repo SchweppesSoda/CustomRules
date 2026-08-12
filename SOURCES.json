@@ -1,0 +1,124 @@
+{
+  "sources": [
+    {
+      "sha256": "3f01d5c8bff62b69e0ea0cae5b96c98bf004bf0a27afe0772a612f5644a61592",
+      "size": "130",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-intelligence.list"
+    },
+    {
+      "sha256": "c249b5785d86791c7dee979e357b570f0c57d8d5905a64f71cb4b103ad460a6c",
+      "size": "185",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.list"
+    },
+    {
+      "sha256": "8ec5fca8de12d6a66445fd35a578015d855cf723b125844c4824ecc596ec2f36",
+      "size": "36860",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list"
+    },
+    {
+      "sha256": "96f3fc01c0796f368ddaf05ac6b83005c52173598c7532cdc699d12eea8e2798",
+      "size": "7000",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.list"
+    },
+    {
+      "sha256": "7414ca6e1cca1a1d66a103ef3d11313c15828af086f9de8f3aad1d58d00ae7c3",
+      "size": "3351",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list"
+    },
+    {
+      "sha256": "9e0134ff1d724bbbbc44730cd723b3c6952873aaa65fc2bec6ae8b25b1d70f68",
+      "size": "674",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/binance"
+    },
+    {
+      "sha256": "9699f1b82b0d1dbeebda231ff0bf2b2465176d782565385d58175d5cff623556",
+      "size": "25",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bitflyer"
+    },
+    {
+      "sha256": "5c2d6f852e88a531fddbb249e97f753fab8f3af0dff4a3eafe0d63fb4de1b8c3",
+      "size": "34",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bitsquare"
+    },
+    {
+      "sha256": "8827c8c475f05cfbcb6e486752e88d000d5531a91a7b8b0cf5bbafb89a23b8e6",
+      "size": "214",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bybit"
+    },
+    {
+      "sha256": "0848f09d9b8f2d3c3dfc3603c842670627696bff87f1d519733282d0f5611129",
+      "size": "1577",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-cryptocurrency"
+    },
+    {
+      "sha256": "329622262f4916f658108ce06b31db18743a0dfb5f732729111480f811bea0a8",
+      "size": "46",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/coinone"
+    },
+    {
+      "sha256": "a5b51924426cbddcef9ff528744485c5db807dfe2b7826785076a91c28605a33",
+      "size": "41",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/deribit"
+    },
+    {
+      "sha256": "68268f35cdf62433c2b03a6e283f843ee8390ea05203ac76b9268c94a2157dc9",
+      "size": "62",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/gateio"
+    },
+    {
+      "sha256": "20341bab3b685d6703b633bfb617c6a19324e4a7022290ac03fda7c5706d207a",
+      "size": "112",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/huobi"
+    },
+    {
+      "sha256": "b3b555a42d744b4a3c70ece5b4fd29e9fa05ab4e43fe3b02ee67d464d3433158",
+      "size": "22",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kraken"
+    },
+    {
+      "sha256": "2f90bce8fc42d5a158c9bd8f0fd3c8735138d18b4b4943efca24d5c71f7884d7",
+      "size": "23",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kucoin"
+    },
+    {
+      "sha256": "bf4247e8e18bf1882d358806a85d4b4f5f39f777886cf7bcad72fb355c0cc8d8",
+      "size": "49",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/lighter"
+    },
+    {
+      "sha256": "db20fc567d8a345d97bcb4716bd6486593a6cf134836ab46bb9620ed05efeb52",
+      "size": "17",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nexo"
+    },
+    {
+      "sha256": "b2c5efae97b921b7a2b5bd497292de9d306f4dce8a8f4cc2689a3ccca10196f3",
+      "size": "139",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/okx"
+    },
+    {
+      "sha256": "a5dab19eb347c680dc7d50778e0cd83581698a1c441edd41b698fcd8ba6b421c",
+      "size": "65",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/onekey"
+    },
+    {
+      "sha256": "0600c25e0529bc980f7b4086da124f585ba1e6c50439e2a7694575b28722ef16",
+      "size": "147",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/redotpay"
+    },
+    {
+      "sha256": "d98ef1b9bf52bba51677d3f7450dfeb6ab61299b275db9c6a15ee8e64bf84888",
+      "size": "25",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/safepal"
+    },
+    {
+      "sha256": "ad9e219f63ecd83a05b55aa4dcabbe20f44686c06eb50c0f6d984c8eb7c01f70",
+      "size": "120",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/straitsx"
+    },
+    {
+      "sha256": "0c5cc521b201c31c985a0e563493c35fc972e91dca95a08b5b5df089a0ccb4ef",
+      "size": "16",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/trustwallet"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Banking/JapanKorea
+payload:
+  - +.aozorabank.co.jp
+  - +.ibk.co.kr
+  - +.jibunbank.co.jp
+  - +.jp-bank.japanpost.jp
+  - +.kakaobank.com
+  - +.kbstar.com
+  - +.kebhana.com
+  - +.mizuhobank.co.jp
+  - +.mufg.jp
+  - +.paypay-bank.co.jp
+  - +.rakuten-bank.co.jp
+  - +.resona-gr.co.jp
+  - +.sbishinseibank.co.jp
+  - +.sevenbank.co.jp
+  - +.shinhan.com
+  - +.smbc.co.jp
+  - +.smbctb.co.jp
+  - +.smtb.jp
+  - +.sonybank.jp
+  - +.tossbank.com
+  - +.wooribank.com

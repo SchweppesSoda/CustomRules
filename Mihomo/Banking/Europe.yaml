@@ -1,0 +1,42 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Banking/Europe
+payload:
+  - +.abnamro.com
+  - +.bankofscotland.co.uk
+  - +.barclays.co.uk
+  - +.barclays.com
+  - +.bnpparibas.com
+  - +.bunq.com
+  - +.commerzbank.com
+  - +.credit-agricole.com
+  - +.creditmutuel.fr
+  - +.danskebank.com
+  - +.db.com
+  - +.deutsche-bank.de
+  - +.dnb.no
+  - +.erste.com
+  - +.halifax.co.uk
+  - +.ifastgb.com
+  - +.ifastglobalbank.org
+  - +.ing.com
+  - +.ingbank.com
+  - +.intesasanpaolo.com
+  - +.juliusbaer.com
+  - +.kbc.com
+  - +.lloydsbank.com
+  - +.monzo.com
+  - +.n26.com
+  - +.natwest.com
+  - +.nordea.com
+  - +.otpbank.com
+  - +.rabobank.com
+  - +.raiffeisen.com
+  - +.rbs.co.uk
+  - +.revolut.com
+  - +.santander.co.uk
+  - +.seb.se
+  - +.societegenerale.com
+  - +.starlingbank.com
+  - +.swedbank.com
+  - +.ubs.com
+  - +.unicreditgroup.eu

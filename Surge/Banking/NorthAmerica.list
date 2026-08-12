@@ -1,0 +1,33 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Banking/NorthAmerica
+DOMAIN-SUFFIX,53.com
+DOMAIN-SUFFIX,ally.com
+DOMAIN-SUFFIX,bankofamerica.com
+DOMAIN-SUFFIX,bmo.com
+DOMAIN-SUFFIX,bofa.com
+DOMAIN-SUFFIX,brex.com
+DOMAIN-SUFFIX,capitalone.com
+DOMAIN-SUFFIX,chase.com
+DOMAIN-SUFFIX,chime.com
+DOMAIN-SUFFIX,cibc.com
+DOMAIN-SUFFIX,citizensbank.com
+DOMAIN-SUFFIX,desjardins.com
+DOMAIN-SUFFIX,discover.com
+DOMAIN-SUFFIX,goldmansachs.com
+DOMAIN-SUFFIX,huntington.com
+DOMAIN-SUFFIX,key.com
+DOMAIN-SUFFIX,marcus.com
+DOMAIN-SUFFIX,mercury.com
+DOMAIN-SUFFIX,mtb.com
+DOMAIN-SUFFIX,nbc.ca
+DOMAIN-SUFFIX,pnc.com
+DOMAIN-SUFFIX,rbc.com
+DOMAIN-SUFFIX,rbcroyalbank.com
+DOMAIN-SUFFIX,regions.com
+DOMAIN-SUFFIX,scotiabank.com
+DOMAIN-SUFFIX,td.com
+DOMAIN-SUFFIX,truist.com
+DOMAIN-SUFFIX,usaa.com
+DOMAIN-SUFFIX,usbank.com
+DOMAIN-SUFFIX,varomoney.com
+DOMAIN-SUFFIX,wellsfargo.com

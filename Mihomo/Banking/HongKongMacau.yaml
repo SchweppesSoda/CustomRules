@@ -1,0 +1,20 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Banking/HongKongMacau
+payload:
+  - +.airstarbank.com
+  - +.antbank.hk
+  - +.bnu.com.mo
+  - +.bochk.com
+  - +.bocmacau.com
+  - +.currenxie.com
+  - +.dbs.com
+  - +.dbs.com.hk
+  - +.fusionbank.com
+  - +.hangseng.com
+  - +.hkbea.com
+  - +.icbc.com.mo
+  - +.livibank.com
+  - +.mox.com
+  - +.statrys.com
+  - +.welab.bank
+  - +.zabank.com
