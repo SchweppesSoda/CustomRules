@@ -1,7 +1,7 @@
 {
   "sources": [
     {
-      "sha256": "cfdc0216e9a9ca9a9ccff34331d767bcfccdcb70f8a0e86755d78eabdfc2174d",
+      "sha256": "224d3d3e012c35268ecf4148722a6a68c98699b4b463509f055e3e05504e0186",
       "size": "425",
       "url": "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt"
     },
@@ -36,22 +36,22 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.list"
     },
     {
-      "sha256": "8ec5fca8de12d6a66445fd35a578015d855cf723b125844c4824ecc596ec2f36",
+      "sha256": "4884d9cc8c91e1cd02ce5a4baa2aa4753727b608a3c7a90f6ca8c9cfbc8c5267",
       "size": "36860",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list"
     },
     {
-      "sha256": "96f3fc01c0796f368ddaf05ac6b83005c52173598c7532cdc699d12eea8e2798",
+      "sha256": "8333e4af0231574268e53ce54380106a70d0ed46b19fd1008990f8af493c78a3",
       "size": "7000",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.list"
     },
     {
-      "sha256": "7414ca6e1cca1a1d66a103ef3d11313c15828af086f9de8f3aad1d58d00ae7c3",
+      "sha256": "99ebacaa4ce0c79218b58d5072455e55f5254fd61c3e56e1870bad5912797eb7",
       "size": "3351",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list"
     },
     {
-      "sha256": "20ae489f92f189bef1674e4521976fc7ad437c50bc86b0ab740e30788abd6549",
+      "sha256": "e80108a678903a58cc42c95b055b093cef32e7b6e15f91fc564c3a732375c4a3",
       "size": "1680",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-cn.list"
     },
@@ -66,18 +66,18 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download@cn.list"
     },
     {
-      "sha256": "e4cb99acaf97c3d242a2b156e46e1ef0ebb659b3dd26f2c43530ce77a2334dd8",
+      "sha256": "5e97ad5fab723f65f4b20d8cbea5dc9051e226a4ee1ef25e65c5f714e8ab2949",
       "size": "8310",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-!cn.list"
     },
     {
-      "sha256": "00be5a49328de7108f931023c1164e5e86bb837c73291b60150497df4a0ea24e",
+      "sha256": "57db7a6641a76cb7f3d0c722a52f0d1a97fbba620da951a4728a59a5be417036",
       "size": "1303",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-cn.list"
     },
     {
-      "sha256": "08d27800feb2591e648d215e75c0968391b5d54a578b21f9c6efe50509d437f4",
-      "size": "453429",
+      "sha256": "cc1d055177d32a5cfd61a0b381fba90fbea09998cbfc39817cdcdd3ff7d8752d",
+      "size": "453611",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list"
     },
     {
