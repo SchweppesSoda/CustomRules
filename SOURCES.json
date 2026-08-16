@@ -36,17 +36,17 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.list"
     },
     {
-      "sha256": "652da48ef957e4efd8a08993f33e081629868969b91df0eccda1512271cd966a",
+      "sha256": "c04ca427c1636347feb88e398c06b1f97fa9d363d7e35f980065ff0216405947",
       "size": "36860",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list"
     },
     {
-      "sha256": "d76c2e548f4300bc7dea80f21d8f1ad2e868d1da3c2ea08584a1516774d19a65",
+      "sha256": "52d301794d7990b63a5fcf49f0c725cd278da54ad10c165f745af4380e3a98b4",
       "size": "7000",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.list"
     },
     {
-      "sha256": "ad13aff144561b260ac8f2e48745db4701068c2324db5ee93e276fb05c88fb3b",
+      "sha256": "07c1ff6bd9ea555abc76da53ba1000152349553ab8637dc30b2ec09109232471",
       "size": "3351",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list"
     },
@@ -66,7 +66,7 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download@cn.list"
     },
     {
-      "sha256": "362715a1f0061c8c0b36059505ba7820ad88510ee2b07cdfe611def40df01350",
+      "sha256": "e1600f6b6347bc5ad26f3836e97e56b2fa877c86d96fa3cc64549f8b366da772",
       "size": "8310",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-!cn.list"
     },
@@ -76,8 +76,8 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-cn.list"
     },
     {
-      "sha256": "1c7a124c7f8f612e493bb5068e4c077c44fd75007c9132dc2140ea3060c4c5cf",
-      "size": "453648",
+      "sha256": "258b4d8b344bd6dac64b088fa69a80a40adf5ed0cfb82249fb2ccb75823e961d",
+      "size": "453665",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list"
     },
     {
@@ -91,7 +91,7 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.list"
     },
     {
-      "sha256": "f7ee57b791819d5d74937a8820be9675eb1c9c24d8a34217b33feafea83486f5",
+      "sha256": "0d9d5d4dfc4a239cc89aa0e734890471b4d9aef2cd3d7a9a4f907a877ababdbf",
       "size": "4255",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft@cn.list"
     },
