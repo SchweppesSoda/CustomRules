@@ -2588,8 +2588,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 113,
-      "rules_sha256": "294f6a91190db7aea9e5f4c08bbda97cff2356a652cf5a4206ae51b906352156"
+      "rule_count": 114,
+      "rules_sha256": "9e964762371148e5a597cf25021312f87b2dd2a7660b6b465a9db3928370fd5e"
     },
     "AirportServers": {
       "behavior": "classical",
