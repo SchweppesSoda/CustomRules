@@ -2828,8 +2828,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 7902,
-      "rules_sha256": "0c025ea297e523680d828cdd1b9520dd1ee645c01462ca56003de552497ce49d"
+      "rule_count": 7947,
+      "rules_sha256": "52efc5ccb2d98add2eabb041f6104070dd93cb0af8e8ce0281c14258aaa62de6"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
