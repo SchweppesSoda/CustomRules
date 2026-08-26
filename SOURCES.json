@@ -36,17 +36,17 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.list"
     },
     {
-      "sha256": "6cd5e895257ac76889b468775f421bbe8514e1024be23d347818aa9b9faba659",
+      "sha256": "a4065f0fb877a80194ed3ed63011abcc5a8cd3ecac0e1af78592c05a63391ee0",
       "size": "36860",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list"
     },
     {
-      "sha256": "5d1e5870cf51afa7dd9a9b3b07a6876d8d1a5b58ecdc3f5432b8fca6721f27f9",
+      "sha256": "b1552c9082b1f4322475ced652dbdbbdf717e5f01ffeacdf3cea3866fe44618c",
       "size": "7000",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.list"
     },
     {
-      "sha256": "295bbf48f90e0bacbc0cb16bd145a5dd74ad9d2e780f3435c62c098d9950bd2b",
+      "sha256": "ad4f60643ab0f9f2db838a37508c9f6d925635b1648967fc1baf697d263e34ef",
       "size": "3431",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list"
     },
@@ -66,7 +66,7 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download@cn.list"
     },
     {
-      "sha256": "0b4fe4c0cf131f068d57d309296a65867fbe3396efd3013e0b73911ecb90df57",
+      "sha256": "37cfb8ea4380276c4ed77fac1658a5d2669a79c87c4eb9b87113f2755f162154",
       "size": "8310",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-!cn.list"
     },
@@ -76,8 +76,8 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-cn.list"
     },
     {
-      "sha256": "c892dac63d9e38f48cead54136d96a39a3d70501a77eda5216c2a65b4c4c9125",
-      "size": "453945",
+      "sha256": "92f44ce536f68f7cb472b6077d83eb228c4efc0e3c7463e15c2a10e10644b9e5",
+      "size": "454009",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list"
     },
     {
