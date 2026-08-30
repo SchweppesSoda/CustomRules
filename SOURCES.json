@@ -36,17 +36,17 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.list"
     },
     {
-      "sha256": "c364e76e1efdd2f8a4071670b38c966dfad2d40cba17f6aec8b7e104bc43ca4c",
+      "sha256": "b9fd350b40adfeb996cd7c106cdf245be189a6cedcaec77cae62b8570eb4aee3",
       "size": "36860",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list"
     },
     {
-      "sha256": "f2410d0f08f86aec0a6c9ad58f0865be1d4ea387a277616b6b904ac78f303b7c",
+      "sha256": "a6ae3da7d0bbb0eb4a216889067aaec28910259745c026d562fe6832cad87e0b",
       "size": "7000",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.list"
     },
     {
-      "sha256": "988a71e643b1ff42cea0d14ad3d61ad72a3f0e695ca1e14a8f95b9716175cd2c",
+      "sha256": "d6c34ef2f9577edf2f105c17ce9737f590d8beca4141d9bf7b911913b58cd135",
       "size": "3431",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list"
     },
@@ -66,12 +66,12 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download@cn.list"
     },
     {
-      "sha256": "56c4453f2a9614da73990d32b802be6b9317126a3fef3fcbcf24d57be83c133f",
+      "sha256": "3701b3b3dc4dbd3690586c05274e0d06cd3bf0f43b519c7290e779f854f75ab1",
       "size": "8310",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-!cn.list"
     },
     {
-      "sha256": "5e122e306cbab5757540027f33368c68cc70b11be1002e3a491e59d8f41d2deb",
+      "sha256": "00be5a49328de7108f931023c1164e5e86bb837c73291b60150497df4a0ea24e",
       "size": "1303",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-cn.list"
     },
@@ -91,7 +91,7 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.list"
     },
     {
-      "sha256": "fdaface6af9503fadf8c68cb3a383dad0912ddf1b7fd8f0bd7e87af87121da1c",
+      "sha256": "cad6cb3e1253def08646df6391ca79abfb22ddea030d3bc9487babf22d00af3b",
       "size": "4235",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft@cn.list"
     },
@@ -161,8 +161,8 @@
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-cryptocurrency"
     },
     {
-      "sha256": "b981c779b5bf55f3a9c2f444820bede1dd8da8ab6f5af4731ba97490ee510250",
-      "size": "2329",
+      "sha256": "bbafc8f5870c5e3062d3ca22225f55c06f730bf70eb099ebaeffcdf9d4d7a9ef",
+      "size": "2355",
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-emby"
     },
     {
