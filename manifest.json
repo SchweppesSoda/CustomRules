@@ -2082,7 +2082,7 @@
         "name": "Gate",
         "region": null,
         "required": true,
-        "rule_count": 6
+        "rule_count": 8
       },
       {
         "id": "kucoin",
@@ -2751,8 +2751,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 178,
-      "rules_sha256": "12e2e8665b597389d7259380e6dacb5c7bf9ac1fc42f6a5a459c9e1357e08801"
+      "rule_count": 180,
+      "rules_sha256": "7b43caf5fb3309002caf939ccb450d44b6eb9371256b5fe01e2041a70ce5f446"
     },
     "Emby": {
       "behavior": "domain",
@@ -2956,8 +2956,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26372,
-      "rules_sha256": "a77b8398e81ea93b1770fc9223281ac37fc1cb99d5a9cd43d1670436468f1312"
+      "rule_count": 26373,
+      "rules_sha256": "fd7bf0ad64f9b3067f04af512141e5fa9fec80c03015da175d388afb851a61f3"
     },
     "ScholarCN": {
       "behavior": "domain",

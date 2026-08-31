@@ -36,17 +36,17 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.list"
     },
     {
-      "sha256": "b9fd350b40adfeb996cd7c106cdf245be189a6cedcaec77cae62b8570eb4aee3",
+      "sha256": "e0d867e10f06ecefc5436f47ffd5679bf7a57c3e69489f64057ddaf347d1d392",
       "size": "36860",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list"
     },
     {
-      "sha256": "a6ae3da7d0bbb0eb4a216889067aaec28910259745c026d562fe6832cad87e0b",
+      "sha256": "fc54696b23443cefc2d38c80809a25f7894be04328de8bb2a823327d9ee42bb7",
       "size": "7000",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple@cn.list"
     },
     {
-      "sha256": "d6c34ef2f9577edf2f105c17ce9737f590d8beca4141d9bf7b911913b58cd135",
+      "sha256": "2771d49b33e427914cce08340b0ccce920e5e711dcf83999bd3970bd3cba8527",
       "size": "3431",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list"
     },
@@ -66,7 +66,7 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-game-platforms-download@cn.list"
     },
     {
-      "sha256": "3701b3b3dc4dbd3690586c05274e0d06cd3bf0f43b519c7290e779f854f75ab1",
+      "sha256": "8fcc429e66ba77bab6f09c0df441ce9ca2ddaf01e1a89bc0bcfa9467523bfe59",
       "size": "8310",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-!cn.list"
     },
@@ -76,8 +76,8 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-cn.list"
     },
     {
-      "sha256": "fb095028a624ca53641468a50ccbf6c9c259da5dbe1a7b12e01f5472d401b7e2",
-      "size": "454055",
+      "sha256": "2fd6ead7b3a055b32aa3a784ece86d334ab7d62449ced2c71e71a09fe97f66aa",
+      "size": "454071",
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list"
     },
     {
@@ -176,8 +176,8 @@
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/deribit"
     },
     {
-      "sha256": "68268f35cdf62433c2b03a6e283f843ee8390ea05203ac76b9268c94a2157dc9",
-      "size": "62",
+      "sha256": "6c4f15862d003b8baa0fa95ca2ccfff892842e50e1d386881673fc3b7a2d32ac",
+      "size": "90",
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/gateio"
     },
     {
