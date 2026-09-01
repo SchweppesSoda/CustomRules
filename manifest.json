@@ -2588,8 +2588,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 113,
-      "rules_sha256": "c99cb119118f96c1c024ff846c45ca88530aacd2dec89c8abe7e57226ebb1652"
+      "rule_count": 115,
+      "rules_sha256": "6db8c0c6fbd40aeceb3d755373e44d1a7499e79a5270d97cf5513d7297d72cb8"
     },
     "AirportServers": {
       "behavior": "classical",
@@ -2956,8 +2956,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26373,
-      "rules_sha256": "fd7bf0ad64f9b3067f04af512141e5fa9fec80c03015da175d388afb851a61f3"
+      "rule_count": 26380,
+      "rules_sha256": "25acae7696b1f11be9311e7ee8736866c40ea9392781a3eddbbcb43585f48bf1"
     },
     "ScholarCN": {
       "behavior": "domain",
