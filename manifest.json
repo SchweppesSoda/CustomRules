@@ -2595,10 +2595,23 @@
       "behavior": "classical",
       "formats": [
         "yaml",
-        "list"
+        "list",
+        "mrs"
       ],
-      "rule_count": 16,
-      "rules_sha256": "efb805bca3892a99de435379b2ca5ac30ff77d5d2b8749daa9c25eca9c2522fe"
+      "mrs_behavior": "domain",
+      "rule_count": 11,
+      "rules_sha256": "0607d987fc31dbf0f9cc7b9c35322c6677dbcee4aecec065ce3607b8be636e8b"
+    },
+    "AirportServersCTC": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 2,
+      "rules_sha256": "00613343e9f2392cf0b33c4142b793d0da0e6405072c1ca052b9d16c88cd9920"
     },
     "Apple": {
       "behavior": "domain",
@@ -3035,5 +3048,5 @@
       "rules_sha256": "3c29a7896249128059bde686368466c57eb08eae5f777f3ab7fff9118c34c9f6"
     }
   },
-  "source_commit": "17b61f62eafb88e1401452de7c29f6babd690509"
+  "source_commit": "8bac217872401131e8683c3e28af2889f9534d90"
 }
