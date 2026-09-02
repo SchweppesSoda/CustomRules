@@ -21,7 +21,21 @@ Non-rule resources such as `Egern/Modules/` and `Stash/` continue to use
 ## Sources
 
 - `sources/manual/` contains reviewed classical rule sources such as
-  MyDirect, MyProxy, Emby, AirportServers, MyGoHome, and TikTok.
+  MyDirect, MyProxy, Emby, AirportServers, AirportServersCTC, MyGoHome, and
+  TikTok. Every `sources/manual/*.yaml` file is discovered automatically by
+  `scripts/build_rules.py` and emits `Mihomo/<name>.yaml` plus
+  `Surge/<name>.list`; every manual source always provides these YAML/LIST
+  artifacts. MRS output follows the builder's existing eligibility logic.
+- `sources/manual/AirportServers.yaml` is the generic airport node-domain
+  source. Private provider-sync automation may replace only the text between
+  the exact `# BEGIN AUTO-GENERATED PROVIDER DOMAINS` and
+  `# END AUTO-GENERATED PROVIDER DOMAINS` markers. Manually protected entries,
+  including the OixCloud entries, remain outside that block.
+- `sources/manual/AirportServersCTC.yaml` is the CTC-only source. The
+  `ctcxianyu.com` and `525536.xyz` suffix rules are protected manual entries;
+  any additional CTC provider domains must be emitted inside its marked
+  dynamic block. `oss.ctc.lol` is intentionally not pinned and may only be
+  supplied dynamically.
 - `sources/catalog/crypto.toml` is the entity-level Crypto catalog. Its scope
   is trading accounts, custody, wallets, fiat on/off ramps, and Crypto Cards.
 - `sources/catalog/banking.toml` is the entity-level Banking catalog with
@@ -86,6 +100,11 @@ It:
 The published branch also contains `manifest.json`, `SOURCES.json`,
 `SHA256SUMS`, the Crypto candidate-review report, and the unsupported-upstream
 report.
+
+Public sources contain domain/rule data only. They must not include provider
+subscription URLs, keys, tokens, or node credentials. BitzNet remains an
+ordinary dynamic airport entry here; fake-IP/hosts compatibility is handled by
+the private configuration TODO rather than this public source.
 
 ## Stash and other non-rule resources
 

@@ -1,0 +1,12 @@
+payload:
+  # > CTC02 node servers
+  # These two entries are manually protected and must survive subscription
+  # refreshes. Additional CTC domains belong only in the marked dynamic block.
+  - DOMAIN-SUFFIX,ctcxianyu.com
+  - DOMAIN-SUFFIX,525536.xyz
+
+  # BEGIN AUTO-GENERATED PROVIDER DOMAINS
+  # Generated from Mihomo proxies[].server; node names, ports, and credentials are omitted.
+  # Pinned CTC domains are maintained in the manual section outside this marker.
+  # > CTC02
+  # END AUTO-GENERATED PROVIDER DOMAINS
