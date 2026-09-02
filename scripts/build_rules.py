@@ -29,6 +29,7 @@ DOMAIN_RE = re.compile(
 )
 DOMAIN_TYPES = {"DOMAIN", "DOMAIN-SUFFIX"}
 IP_TYPES = {"IP-CIDR", "IP-CIDR6"}
+AIRPORT_DOMAIN_SOURCE_NAMES = frozenset({"AirportServers", "AirportServersCTC"})
 BEHAVIOR_TYPES = {
     "domain": DOMAIN_TYPES,
     "ipcidr": IP_TYPES,
@@ -227,6 +228,26 @@ def parse_classical_yaml(path: Path) -> list[Rule]:
     if not rules:
         raise ValueError(f"No rules found in {path}")
     return stable_unique(rules)
+
+
+def validate_airport_domain_source(
+    name: str, rules: list[Rule], *, stage: str = "source"
+) -> None:
+    """Keep the two airport DNS sources strictly domain-only.
+
+    Other classical sources, including MyDirect, may legitimately contain
+    IP-CIDR/IP-CIDR6 rules.  This check is deliberately keyed to the two
+    AirportServers source names instead of changing the global parser.
+    """
+
+    if name not in AIRPORT_DOMAIN_SOURCE_NAMES:
+        return
+    invalid = [rule.classical for rule in rules if rule.kind not in DOMAIN_TYPES]
+    if invalid:
+        preview = ", ".join(invalid[:3])
+        raise ValueError(
+            f"{name}: {stage} must contain only DOMAIN/DOMAIN-SUFFIX rules: {preview}"
+        )
 
 
 def parse_meta_list(body: str, url: str) -> list[Rule]:
@@ -455,6 +476,7 @@ def validate_no_shared_suffix(name: str, rules: list[Rule]) -> None:
 
 
 def render_classical_yaml(name: str, rules: list[Rule]) -> str:
+    validate_airport_domain_source(name, rules, stage="render")
     lines = [
         "# AUTO-GENERATED. DO NOT EDIT.",
         f"# Rule set: {name}",
@@ -489,6 +511,7 @@ def render_ipcidr_yaml(name: str, rules: list[Rule]) -> str:
 
 
 def render_list(name: str, rules: list[Rule], behavior: str = "classical") -> str:
+    validate_airport_domain_source(name, rules, stage="render")
     lines = [
         "# AUTO-GENERATED. DO NOT EDIT.",
         f"# Rule set: {name}",
@@ -788,7 +811,9 @@ def main() -> None:
     entity_reports: dict[str, list[dict[str, object]]] = {}
 
     for path in sorted((SOURCES / "manual").glob("*.yaml")):
-        sets[path.stem] = RuleSet(parse_classical_yaml(path), "classical")
+        rules = parse_classical_yaml(path)
+        validate_airport_domain_source(path.stem, rules)
+        sets[path.stem] = RuleSet(rules, "classical")
 
     for name, config in sorted(upstream_config.get("sets", {}).items()):
         built, unsupported = build_upstream_set(
@@ -836,6 +861,7 @@ def main() -> None:
     manifests: dict[str, dict[str, object]] = {}
     for name, rule_set in sorted(sets.items()):
         rules = stable_unique(rule_set.rules)
+        validate_airport_domain_source(name, rules, stage="build")
         behavior = rule_set.behavior
         is_domain_only = all(rule.kind in DOMAIN_TYPES for rule in rules)
         yaml_path = args.output / "Mihomo" / f"{name}.yaml"
@@ -849,8 +875,11 @@ def main() -> None:
         else:
             write_text(yaml_path, render_classical_yaml(name, rules))
             yaml_rules = parse_classical_yaml(yaml_path)
+        validate_airport_domain_source(name, yaml_rules, stage="YAML output")
         write_text(list_path, render_list(name, rules, behavior))
-        if yaml_rules != parse_list_rules(list_path, behavior):
+        list_rules = parse_list_rules(list_path, behavior)
+        validate_airport_domain_source(name, list_rules, stage="LIST output")
+        if yaml_rules != list_rules:
             raise RuntimeError(f"YAML/LIST mismatch for {name}")
         formats = ["yaml", "list"]
         mrs_behavior: str | None = None

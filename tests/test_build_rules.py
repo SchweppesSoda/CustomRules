@@ -39,6 +39,9 @@ class BuildRulesTests(unittest.TestCase):
             lowered = text.casefold()
             for literal in forbidden_literals:
                 self.assertNotIn(literal, lowered, source)
+            rules = build_rules.parse_classical_yaml(source)
+            build_rules.validate_airport_domain_source(source.stem, rules)
+            self.assertTrue(all(rule.kind in build_rules.DOMAIN_TYPES for rule in rules))
 
     def test_airport_sources_use_protected_and_dynamic_regions(self) -> None:
         generic = ROOT / "sources" / "manual" / "AirportServers.yaml"
@@ -58,11 +61,33 @@ class BuildRulesTests(unittest.TestCase):
         self.assertNotIn("ctcxianyu.com", generic_text)
         self.assertNotIn("525536.xyz", generic_text)
         self.assertNotIn("07c06051-81fd-4aa4-a94e-a0860315df8f.org", generic_dynamic)
+        self.assertIn("DOMAIN-SUFFIX,911-gt2-rs.com", generic_dynamic)
+        self.assertIn("DOMAIN-SUFFIX,aws-agent.net", generic_dynamic)
+        for suffix in ("lxyun.xyz", "777078.xyz", "7770006.xyz", "7770008.xyz"):
+            self.assertIn(f"DOMAIN-SUFFIX,{suffix}", generic_dynamic)
+        self.assertNotIn("DOMAIN,cl-", generic_dynamic)
+        self.assertNotIn("DOMAIN,aws-link", generic_dynamic)
         self.assertIn("ctcxianyu.com", ctc_text.split(begin, 1)[0])
         self.assertIn("525536.xyz", ctc_text.split(begin, 1)[0])
         self.assertNotIn("ctcxianyu.com", ctc_dynamic)
         self.assertNotIn("525536.xyz", ctc_dynamic)
         self.assertNotIn("DOMAIN-SUFFIX,oss.ctc.lol", ctc_text.split(begin, 1)[0])
+
+    def test_airport_domain_validation_is_scoped_and_covers_outputs(self) -> None:
+        invalid = [build_rules.Rule("IP-CIDR", "192.0.2.0/24")]
+        for name in ("AirportServers", "AirportServersCTC"):
+            with self.subTest(name=name):
+                with self.assertRaisesRegex(ValueError, "only DOMAIN/DOMAIN-SUFFIX"):
+                    build_rules.validate_airport_domain_source(name, invalid)
+                with self.assertRaisesRegex(ValueError, "only DOMAIN/DOMAIN-SUFFIX"):
+                    build_rules.render_classical_yaml(name, invalid)
+                with self.assertRaisesRegex(ValueError, "only DOMAIN/DOMAIN-SUFFIX"):
+                    build_rules.render_list(name, invalid)
+
+        # MyDirect remains a classical source where IP rules are legal.
+        rendered = build_rules.render_classical_yaml("MyDirect", invalid)
+        self.assertIn("IP-CIDR,192.0.2.0/24", rendered)
+        self.assertIn("IP-CIDR,192.0.2.0/24", build_rules.render_list("MyDirect", invalid))
 
     def test_manual_source_discovery_includes_ctc_airport_source(self) -> None:
         names = sorted(

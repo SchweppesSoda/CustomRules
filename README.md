@@ -35,7 +35,13 @@ Non-rule resources such as `Egern/Modules/` and `Stash/` continue to use
   `ctcxianyu.com` and `525536.xyz` suffix rules are protected manual entries;
   any additional CTC provider domains must be emitted inside its marked
   dynamic block. `oss.ctc.lol` is intentionally not pinned and may only be
-  supplied dynamically.
+  supplied dynamically. Both AirportServers sources are DNS-only and accept
+  `DOMAIN`/`DOMAIN-SUFFIX` rules; their builder input and generated YAML/LIST
+  outputs reject IP-CIDR/IP-CIDR6 and other non-domain rules. IP rules remain
+  valid in unrelated classical sources such as `MyDirect.yaml`. The private
+  synchronizer emits every live hostname as a `DOMAIN-SUFFIX` for its
+  registrable root using an offline Public Suffix List, including public and
+  private suffixes; provider-specific allowlists are not required.
 - `sources/catalog/crypto.toml` is the entity-level Crypto catalog. Its scope
   is trading accounts, custody, wallets, fiat on/off ramps, and Crypto Cards.
 - `sources/catalog/banking.toml` is the entity-level Banking catalog with

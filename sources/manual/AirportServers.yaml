@@ -9,8 +9,7 @@ payload:
   # BEGIN AUTO-GENERATED PROVIDER DOMAINS
   # Generated from Mihomo proxies[].server; node names, ports, and credentials are omitted.
   # > MESL
-  - DOMAIN,cl-188.911-gt2-rs.com
-  - DOMAIN,cl-199.911-gt2-rs.com
+  - DOMAIN-SUFFIX,911-gt2-rs.com
   # > BitzNet
   - DOMAIN-SUFFIX,bnsepserv.com
   # > SNTP
@@ -18,49 +17,12 @@ payload:
   # > LinkCube
   - DOMAIN-SUFFIX,linkcubecloud.dev
   # > Flower
-  - DOMAIN,63182sh8-4d7b.aws-agent.net
-  - DOMAIN,7d0a2gz0-7a0c.aws-agent.net
-  - DOMAIN,8bf71bj7-dc2c.aws-agent.net
+  - DOMAIN-SUFFIX,aws-agent.net
   # > LiangXin
-  - DOMAIN,aws-link1.lxyun.xyz
-  - DOMAIN,aws-link13.lxyun.xyz
-  - DOMAIN,aws-link14.lxyun.xyz
-  - DOMAIN,aws-link19.lxyun.xyz
-  - DOMAIN,aws-link2.lxyun.xyz
-  - DOMAIN,aws-link20.lxyun.xyz
-  - DOMAIN,aws-link23.lxyun.xyz
-  - DOMAIN,aws-link3.lxyun.xyz
-  - DOMAIN,aws-link30.lxyun.xyz
-  - DOMAIN,aws-link31.lxyun.xyz
-  - DOMAIN,aws-link4.lxyun.xyz
-  - DOMAIN,aws-link5.lxyun.xyz
-  - DOMAIN,aws-link7.lxyun.xyz
-  - DOMAIN,aws-link8.lxyun.xyz
-  - DOMAIN,aws-link9.lxyun.xyz
-  - DOMAIN,aws-linkhy1.lxyun.xyz
-  - DOMAIN,aws-linkhy10.lxyun.xyz
-  - DOMAIN,aws-linkhy11.lxyun.xyz
-  - DOMAIN,aws-linkhy12.lxyun.xyz
-  - DOMAIN,aws-linkhy15.lxyun.xyz
-  - DOMAIN,aws-linkhy16.lxyun.xyz
-  - DOMAIN,aws-linkhy17.lxyun.xyz
-  - DOMAIN,aws-linkhy18.lxyun.xyz
-  - DOMAIN,aws-linkhy2.lxyun.xyz
-  - DOMAIN,aws-linkhy22.lxyun.xyz
-  - DOMAIN,aws-linkhy3.lxyun.xyz
-  - DOMAIN,aws-linkhy4.lxyun.xyz
-  - DOMAIN,aws-linkhy5.lxyun.xyz
-  - DOMAIN,aws-linkhy9.lxyun.xyz
-  - DOMAIN,cfyes.7770006.xyz
-  - DOMAIN,cfyes.7770008.xyz
-  - DOMAIN,cfyes.777078.xyz
-  - DOMAIN,lxyus1.777078.xyz
-  - DOMAIN,lxyus2.777078.xyz
-  - DOMAIN,lxyus3.777078.xyz
-  - DOMAIN,lxyus4.777078.xyz
-  - IP-CIDR,203.10.97.121/32,no-resolve
-  - IP-CIDR,62.164.143.251/32,no-resolve
-  - IP-CIDR,62.164.143.252/32,no-resolve
+  - DOMAIN-SUFFIX,7770006.xyz
+  - DOMAIN-SUFFIX,7770008.xyz
+  - DOMAIN-SUFFIX,777078.xyz
+  - DOMAIN-SUFFIX,lxyun.xyz
   # END AUTO-GENERATED PROVIDER DOMAINS
 
   # > OixCloud (manual protected; keep outside the auto-generated block)
