@@ -2841,8 +2841,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8059,
-      "rules_sha256": "dad6e1b978205a3069cb40c80b88511841917a548998798e12662b489cd9276d"
+      "rule_count": 8126,
+      "rules_sha256": "74fa76919b609bbe8ac39d7f2a0324c0468b0183d9e9cdf02df2429b610330d3"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -2863,8 +2863,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 114,
-      "rules_sha256": "9850c5e1e764880f8c4995c5482a43e51766a3b91d5d613f93f9186d4a21d582"
+      "rule_count": 120,
+      "rules_sha256": "befa8b335d6bc0332c17da74164235195ec1d6557c41a5781d9460ebc1131c1e"
     },
     "IP/Proxy": {
       "behavior": "ipcidr",
