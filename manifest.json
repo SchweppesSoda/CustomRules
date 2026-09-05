@@ -2841,8 +2841,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8126,
-      "rules_sha256": "74fa76919b609bbe8ac39d7f2a0324c0468b0183d9e9cdf02df2429b610330d3"
+      "rule_count": 8142,
+      "rules_sha256": "9744ff03957d534d0972b465617a0f8e6a85abadc0c283a52eaccc0dd333b2bb"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -2969,8 +2969,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26380,
-      "rules_sha256": "25acae7696b1f11be9311e7ee8736866c40ea9392781a3eddbbcb43585f48bf1"
+      "rule_count": 26381,
+      "rules_sha256": "60303e42077f693cda077c739c09ef04d94404bd8c8dcaa14473ff5103626229"
     },
     "ScholarCN": {
       "behavior": "domain",
