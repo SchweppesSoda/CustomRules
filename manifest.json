@@ -2969,8 +2969,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26381,
-      "rules_sha256": "60303e42077f693cda077c739c09ef04d94404bd8c8dcaa14473ff5103626229"
+      "rule_count": 26387,
+      "rules_sha256": "add6f6ef1eebbadacf33a7e5fa8a0c540a08c40f18433f4581ef126cf08e5015"
     },
     "ScholarCN": {
       "behavior": "domain",
