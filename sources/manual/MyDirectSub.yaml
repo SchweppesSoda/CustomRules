@@ -1,0 +1,9 @@
+payload:
+  # > sub
+  - DOMAIN,oics.net
+  - DOMAIN,cont.bbkcdpub.com
+  - DOMAIN,sub1.sntp.me
+  - DOMAIN,api-linkcube.com
+  - DOMAIN,api.xmancdn.net
+  - DOMAIN,em.mesl.cloud
+  - DOMAIN,liangxin.xyz
