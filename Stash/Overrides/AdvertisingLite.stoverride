@@ -1,14 +1,22 @@
 name: Advertising Lite
-desc: 独立广告规则开关；主配置已有 Meta 广告 MRS，此项作为原模块兼容补充。
+desc: 使用 CustomRules HaGeZi Light；主配置已包含同一规则时不要叠加启用。
 
 rule-providers:
   Stash-AdvertisingLite:
     type: http
-    behavior: classical
-    format: text
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AdvertisingLite/AdvertisingLite.list
-    path: ./Rules/Stash/AdvertisingLite.list
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/auto-build/Mihomo/AdBlockLite.mrs
+    path: ./Rules/Stash/AdBlockLite.mrs
     interval: 86400
+  # 完整规则备用（原 category-ads-all）；切换时与上方 Lite provider 二选一。
+  # Stash-AdvertisingLite:
+  #   type: http
+  #   behavior: domain
+  #   format: mrs
+  #   url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/auto-build/Mihomo/AdBlock.mrs
+  #   path: ./Rules/Stash/AdBlock.mrs
+  #   interval: 86400
 
 rules:
   - RULE-SET,Stash-AdvertisingLite,AdBlock
