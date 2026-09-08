@@ -18,10 +18,10 @@ payload:
   - DOMAIN-SUFFIX,lindedin.cn
 
   # > sub
-  - DOMAIN-SUFFIX,oics.net
-  - DOMAIN-SUFFIX,bbkcdpub.com
-  - DOMAIN-SUFFIX,sntp.me
-  - DOMAIN-SUFFIX,api-linkcube.com
-  - DOMAIN-SUFFIX,xmancdn.net
-  - DOMAIN-SUFFIX,mesl.cloud
-  - DOMAIN-SUFFIX,liangxin.xyz
+  - DOMAIN,oics.net
+  - DOMAIN,cont.bbkcdpub.com
+  - DOMAIN,sub1.sntp.me
+  - DOMAIN,api-linkcube.com
+  - DOMAIN,api.xmancdn.net
+  - DOMAIN,em.mesl.cloud
+  - DOMAIN,liangxin.xyz
