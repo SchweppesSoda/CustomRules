@@ -4002,6 +4002,17 @@
       "rule_count": 21,
       "rules_sha256": "a90d794966c8e015bec034ff557a681774d4602c5ffd4ed2d9b1a5087ad77df3"
     },
+    "MyDirectSub": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 7,
+      "rules_sha256": "de579a2b1f979d036851839d90759db914ac067c7f606502facd2759a1452348"
+    },
     "MyGoHome": {
       "behavior": "classical",
       "formats": [
@@ -4019,8 +4030,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 17,
-      "rules_sha256": "fe55a5e6e69434c04d6cdce2fc928b0434fa0fdbe62c270d9bb2da2bb0983c7f"
+      "rule_count": 10,
+      "rules_sha256": "b7d89ff7beee5a0ad35001620ac52247d048ff764c13e7ff0ef3e6cda14cc05d"
     },
     "NetEase": {
       "behavior": "domain",
@@ -4588,5 +4599,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "0f9847fcd4d8b0242da012cb0d5793b1c8cd4daa"
+  "source_commit": "378608715d65f187f218991c1b9baf9a762f46d3"
 }

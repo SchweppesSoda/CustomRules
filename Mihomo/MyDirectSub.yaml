@@ -1,0 +1,10 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: MyDirectSub
+payload:
+  - DOMAIN,oics.net
+  - DOMAIN,cont.bbkcdpub.com
+  - DOMAIN,sub1.sntp.me
+  - DOMAIN,api-linkcube.com
+  - DOMAIN,api.xmancdn.net
+  - DOMAIN,em.mesl.cloud
+  - DOMAIN,liangxin.xyz
