@@ -3878,9 +3878,10 @@
         "list",
         "mrs"
       ],
+      "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 19,
-      "rules_sha256": "c5dc505f37d107a678cbf5221e43e14ce082131be39ae7c2b8f85c8142ca6041"
+      "rule_count": 9347,
+      "rules_sha256": "1fa57df9ca5f77a30e61917531ec3667e5ba69d8c62546cac9fcee01f97b3859"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
@@ -4587,5 +4588,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "88b99972694b60c7bfd608eec3eb112a24d71ffb"
+  "source_commit": "c16f8ad545cd65be427ce47799fef1b22f03c8c4"
 }

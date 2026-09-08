@@ -1,6 +1,11 @@
 {
   "sources": [
     {
+      "sha256": "9c27eac9930e6aace319e669deafdfd655ecfd5bfc6e1fa1912af019656255eb",
+      "size": "202729",
+      "url": "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta"
+    },
+    {
       "sha256": "3a90c9c3f69308bfab99b68be42203d7a3114bc45d4aa035ec58a4e7158307f8",
       "size": "425",
       "url": "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt"
@@ -9,6 +14,51 @@
       "sha256": "72d5f97cb3adedd7ef632962effda4aa3b9953da20427cd6050d55d1184de5ea",
       "size": "191112",
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list"
+    },
+    {
+      "sha256": "f9e27d6b9195ca840eeae29fde2f052f88c75978f385f0d3642607eaffa368fd",
+      "size": "10589",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/4ea3103622a2cebb5dfd189fc78d84cd584f8d73/geo/geoip/cloudflare.list"
+    },
+    {
+      "sha256": "d7c08cabbb9444e100632e75de7856b02834bd4926a9a0c7e0cfd3fbe2ffee5b",
+      "size": "3442",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/4ea3103622a2cebb5dfd189fc78d84cd584f8d73/geo/geoip/cloudfront.list"
+    },
+    {
+      "sha256": "8d46273631fc3bedd4ea3aa2732e0c7d3a8e54c419b9069ac056bd11cd27b7ea",
+      "size": "153186",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/4ea3103622a2cebb5dfd189fc78d84cd584f8d73/geo/geoip/cn.list"
+    },
+    {
+      "sha256": "48869ee5d7e9f77820f1d65d56383ee4f983e513b6f0bff6e2374d40d0b57571",
+      "size": "2094",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/4ea3103622a2cebb5dfd189fc78d84cd584f8d73/geo/geoip/facebook.list"
+    },
+    {
+      "sha256": "63eaebcb41cbd02a74a79775b67caf7bd868fcbb28f7c7f2785cce667542f886",
+      "size": "1537",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/4ea3103622a2cebb5dfd189fc78d84cd584f8d73/geo/geoip/fastly.list"
+    },
+    {
+      "sha256": "f9c2ddf82a4ea404dd5f0058db9c9b1d29d1fcd32032fc37446a87d49bee728e",
+      "size": "171722",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/4ea3103622a2cebb5dfd189fc78d84cd584f8d73/geo/geoip/google.list"
+    },
+    {
+      "sha256": "d15c9b6dc241d956a2b410d215eeefb1058e50bbefbd54475a0d240c3fe21495",
+      "size": "2218",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/4ea3103622a2cebb5dfd189fc78d84cd584f8d73/geo/geoip/netflix.list"
+    },
+    {
+      "sha256": "b0a0a5a4280f2c713a26bf1763317be5aefeda02e4e78dab7c2efbda02663181",
+      "size": "192",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/4ea3103622a2cebb5dfd189fc78d84cd584f8d73/geo/geoip/telegram.list"
+    },
+    {
+      "sha256": "13a7b4a699cc3f054eab729038298fefd832c2659cadba58aba16d48e6e4b184",
+      "size": "322",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/4ea3103622a2cebb5dfd189fc78d84cd584f8d73/geo/geoip/twitter.list"
     },
     {
       "sha256": "8d46273631fc3bedd4ea3aa2732e0c7d3a8e54c419b9069ac056bd11cd27b7ea",
