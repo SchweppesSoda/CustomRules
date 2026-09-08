@@ -167,7 +167,7 @@ report.
 Public sources contain domain/rule data only. They must not include provider
 subscription URLs, keys, tokens, or node credentials. BitzNet remains an
 ordinary dynamic airport entry here; fake-IP/hosts compatibility is handled by
-the private configuration TODO rather than this public source.
+the private configuration repository’s Provider Compatibility writer rather than this public source.
 
 ## Stash and other non-rule resources
 
@@ -175,3 +175,11 @@ the private configuration TODO rather than this public source.
 - `Stash/Scripts/`: scripts used by Stash modules.
 - `Stash/Rules/`: Stash-specific supplements.
 - `Sub-Store/scripts/stash-provider-transform.js`: provider transformation.
+
+## Maintenance entry points
+
+[AGENTS.md](./AGENTS.md) records the `master` / `auto-build` exception, checkout ownership, validation and commit rules. [.github/workflows/sync-rules.yml](./.github/workflows/sync-rules.yml) owns generated publication; [scripts/verify_consumers.py](./scripts/verify_consumers.py) checks downstream subscription paths and behavior.
+
+PO0 official reporting modules belong to [VPS-Toolkit](https://github.com/SchweppesSoda/VPS-Toolkit/tree/main/scripts/po0/nftables/clients), and reusable maintenance workflows belong to [proxy-vps-skills](https://github.com/SchweppesSoda/proxy-vps-skills). Private client configuration and device recovery records remain outside this public repository.
+
+Use `.tmp/` for local validation output and `.build/` for build/tool caches. Preserve source snapshots needed for reproducing a past run outside the repository before cleanup; a new scheduled update must obtain a fresh source cache.
