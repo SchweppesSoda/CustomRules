@@ -179,6 +179,23 @@ YAML/LIST semantics. Service-domain sets are published at
 use `ipcidr` behavior and LIST files use `IP-CIDR`/`IP-CIDR6` with
 `no-resolve`.
 
+`IP/Proxy` is the exact address union of MetaCubeX full GeoIP `cloudflare`,
+`cloudfront`, `facebook`, `fastly`, `google`, `netflix`, `telegram`, and `twitter`,
+minus its CN collection, followed by the existing 666OS Proxy IP supplement.
+Each fresh build resolves one immutable MetaCubeX commit for all eight inputs
+and CN; later builds resolve a new snapshot. The compatibility supplement is
+added after subtraction, so CN filtering never silently removes existing
+supplement coverage. Dedicated service IP rules keep their earlier priority.
+Shared CDN/cloud addresses may also match unrelated sites.
+
+The `reports/IP/Proxy-selection.json` artifact records the exact input bodies,
+URLs, hashes and snapshot commit. Verification recomputes the selection and
+requires every IP LIST entry to retain `no-resolve`; Mihomo/Stash consumers
+retain it on the calling RULE-SET, and Loon/Egern retain the shared LIST flags.
+The report is evidence, not a client subscription. The first reviewed expansion
+uses the existing manual `allow_large_change` workflow input; scheduled builds
+keep the normal change thresholds.
+
 The generated `Emby` set is the normalized, de-duplicated literal union of
 `sources/manual/Emby.yaml` and V2Fly `category-emby`. Unsupported classical
 types found while splitting mixed upstreams are retained for review in

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import bisect
 import hashlib
 import ipaddress
 import json
@@ -110,6 +111,7 @@ class Rule:
 class RuleSet:
     rules: list[Rule]
     behavior: str
+    selection: dict[str, object] | None = None
 
 
 class SourceRegistry:
@@ -289,13 +291,93 @@ def parse_cidr_list(body: str, url: str) -> list[Rule]:
             continue
         if line.startswith(("IP-CIDR,", "IP-CIDR6,")):
             parts = [part.strip() for part in line.split(",")]
-            if len(parts) < 2:
+            if len(parts) < 2 or any(option != "no-resolve" for option in parts[2:]):
                 raise ValueError(f"Malformed IP rule in {url}: {line}")
             line = parts[1]
         rules.append(normalize_ip_network(line))
     if not rules:
         raise RuntimeError(f"No supported IP networks found in {url}")
     return stable_unique(rules)
+
+
+def subtract_ip_rules(primary: list[Rule], excluded: list[Rule]) -> list[Rule]:
+    """Subtract exact address ranges without enumerating addresses (including IPv6)."""
+    left, right = canonical_ip_networks(primary), canonical_ip_networks(excluded)
+    result: list[Rule] = []
+    for version in (4, 6):
+        address = ipaddress.IPv4Address if version == 4 else ipaddress.IPv6Address
+        ranges = [(int(n.network_address), int(n.broadcast_address))
+                  for token in right[version] for n in [ipaddress.ip_network(token)]]
+        ends = [end for _, end in ranges]
+        for token in left[version]:
+            network = ipaddress.ip_network(token)
+            start, end = int(network.network_address), int(network.broadcast_address)
+            index = bisect.bisect_left(ends, start)
+            while index < len(ranges) and ranges[index][0] <= end:
+                low, high = ranges[index]
+                if low > start:
+                    result.extend(normalize_ip_network(str(n)) for n in
+                                  ipaddress.summarize_address_range(address(start), address(low - 1)))
+                start = max(start, high + 1)
+                if start > end:
+                    break
+                index += 1
+            if start <= end:
+                result.extend(normalize_ip_network(str(n)) for n in
+                              ipaddress.summarize_address_range(address(start), address(end)))
+    return stable_unique(result)
+
+
+def select_ip_union(primary: list[Rule], excluded: list[Rule], supplement: list[Rule]) -> list[Rule]:
+    # Compatibility rules are added AFTER exclusion: existing coverage must survive.
+    selected = canonical_ip_networks([*subtract_ip_rules(primary, excluded), *supplement])
+    rules = stable_unique([normalize_ip_network(token) for version in (4, 6)
+                           for token in selected[version]])
+    if not rules:
+        raise ValueError("IP selection has no rules")
+    return rules
+
+
+def build_ip_union(config: dict[str, object], fetcher: Fetcher) -> RuleSet:
+    """Fetch the reviewed primary and exclusion lists from one immutable commit."""
+    if config.get("behavior") != "ipcidr" or any(
+        config.get(key) for key in ("include_sets", "merge_manual", "non_domain_only")
+    ):
+        raise ValueError("CIDR union must be an independent ipcidr set")
+    api = str(config.get("snapshot_api_url", ""))
+    match = re.fullmatch(r"https://api\.github\.com/repos/([^/]+/[^/]+)/commits/([^/]+)", api)
+    if not match:
+        raise ValueError("CIDR union requires a GitHub commit snapshot URL")
+    repo, ref = match.groups()
+    prefix = f"https://raw.githubusercontent.com/{repo}/{ref}/"
+    groups = {role: config.get(key) for role, key in
+              (("primary", "urls"), ("excluded", "exclude_urls"), ("supplement", "supplement_urls"))}
+    for role, urls in groups.items():
+        if not isinstance(urls, list) or not urls or any(not isinstance(url, str) for url in urls):
+            raise ValueError(f"CIDR union requires nonempty {role} URLs")
+        if role != "supplement" and any(not url.startswith(prefix) for url in urls):
+            raise ValueError("Primary/excluded URLs must share the configured snapshot")
+    snapshot_response = fetcher.bytes(api).decode("utf-8")
+    sha = json.loads(snapshot_response).get("sha", "")
+    if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{40}", sha):
+        raise ValueError("Invalid CIDR source commit")
+    selected_inputs: dict[str, list[Rule]] = {}
+    evidence: list[dict[str, str]] = []
+    for role, urls in groups.items():
+        rules: list[Rule] = []
+        for source_url in urls:
+            url = (source_url.replace(prefix, f"https://raw.githubusercontent.com/{repo}/{sha}/", 1)
+                   if role != "supplement" else source_url)
+            body = fetcher.bytes(url)
+            text = body.decode("utf-8-sig")
+            rules.extend(parse_cidr_list(text, url))
+            evidence.append({"role": role, "source_url": source_url, "url": url,
+                             "sha256": hashlib.sha256(body).hexdigest(),
+                             "text": body.decode("utf-8")})
+        selected_inputs[role] = rules
+    rules = select_ip_union(**selected_inputs)
+    return RuleSet(rules, "ipcidr", {"schema": 1, "snapshot_api_url": api,
+                   "snapshot_commit": sha, "snapshot_response": snapshot_response, "sources": evidence})
 
 
 def parse_classical_list(
@@ -386,6 +468,8 @@ def build_upstream_set(
     if behavior not in {*BEHAVIOR_TYPES, "classical"}:
         raise ValueError(f"{name}: upstream behavior must be domain, ipcidr or classical")
     parser = str(config.get("parser", ""))
+    if parser == "cidr-union-excluding":
+        return build_ip_union(config, fetcher), []
     rules: list[Rule] = []
     unsupported: list[str] = []
     if parser == "v2fly-component":
@@ -1080,6 +1164,10 @@ def main() -> None:
             manifests[name]["mrs_behavior"] = mrs_behavior
         if name in policy_aggregates:
             manifests[name]["aggregation"] = policy_aggregates[name]
+        if rule_set.selection is not None:
+            report = f"reports/{name}-selection.json"
+            write_text(args.output / report, json.dumps(rule_set.selection, indent=2, sort_keys=True) + "\n")
+            manifests[name]["ip_selection"] = report
 
     for region, rules in regions.items():
         name = f"Banking/{region}"

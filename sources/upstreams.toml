@@ -204,8 +204,24 @@ urls = [
 
 [sets."IP/Proxy"]
 behavior = "ipcidr"
-parser = "cidr-list"
+parser = "cidr-union-excluding"
+# Resolve once per fresh build; all eight categories and CN use this same commit.
+snapshot_api_url = "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta"
 urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cloudflare.list",
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cloudfront.list",
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.list",
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/fastly.list",
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.list",
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.list",
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list",
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.list",
+]
+exclude_urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.list",
+]
+# Add existing coverage after CN subtraction, preserving compatibility.
+supplement_urls = [
   "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt",
 ]
 

@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import tempfile
@@ -13,6 +14,7 @@ from pathlib import Path
 
 from build_rules import (SOURCES, adblock_lite_protections, load_toml, stable_unique,
                          parse_classical_yaml, parse_list_rules,
+                         parse_cidr_list, select_ip_union,
                          parse_wildcard_domain_list, select_adblock_lite)
 
 
@@ -63,6 +65,8 @@ def yaml_ip_rules(path: Path) -> list[str]:
 def list_rules(path: Path, behavior: str = "classical") -> list[str]:
     rules = data_lines(path)
     if behavior == "ipcidr":
+        if any(not line.endswith(",no-resolve") for line in rules):
+            raise RuntimeError(f"IP LIST rule is missing no-resolve: {path.name}")
         return [
             line.removesuffix(",no-resolve")
             for line in rules
@@ -114,6 +118,7 @@ def verify_behavior_sets(root: Path, manifest: dict[str, object]) -> None:
             raise RuntimeError(f"Manifest rule hash mismatch: {name}")
 
     verify_policy_aggregates(root, manifest)
+    verify_ip_selections(root, manifest)
 
     lite = parse_list_rules(root / 'Surge' / 'AdBlockLite.list')
     policy = load_toml(SOURCES / 'policies' / 'adblock-lite.toml')
@@ -266,6 +271,49 @@ def verify_policy_aggregates(root: Path, manifest: dict[str, object]) -> None:
         found = parse_list_rules(root / 'Surge' / f'{name}.list', info['behavior'])
         if found != expected:
             raise RuntimeError(f'Policy aggregate is not the literal member union: {name}')
+
+
+def verify_ip_selections(root: Path, manifest: dict[str, object]) -> None:
+    contracts = {name: config for name, config in load_toml(SOURCES / 'upstreams.toml')['sets'].items()
+                 if config['parser'] == 'cidr-union-excluding'}
+    actual = {name for name, info in manifest['sets'].items() if 'ip_selection' in info}
+    if actual != set(contracts):
+        raise RuntimeError('IP selection inventory differs from source contract')
+    sources = {item['url']: item['sha256'] for item in
+               json.loads((root / 'SOURCES.json').read_text(encoding='utf-8'))['sources']}
+    for name, config in contracts.items():
+        report = f'reports/{name}-selection.json'
+        if manifest['sets'][name]['ip_selection'] != report:
+            raise RuntimeError(f'IP selection report path mismatch: {name}')
+        evidence = json.loads((root / report).read_text(encoding='utf-8'))
+        if evidence['schema'] != 1 or evidence['snapshot_api_url'] != config['snapshot_api_url']:
+            raise RuntimeError(f'IP selection snapshot contract mismatch: {name}')
+        sha = evidence['snapshot_commit']
+        if not re.fullmatch(r'[0-9a-f]{40}', sha):
+            raise RuntimeError(f'Invalid IP selection snapshot: {name}')
+        response = evidence['snapshot_response']
+        if (json.loads(response).get('sha') != sha or
+            sources.get(config['snapshot_api_url']) != hashlib.sha256(response.encode('utf-8')).hexdigest()):
+            raise RuntimeError(f'IP selection commit evidence mismatch: {name}')
+        repo, ref = config['snapshot_api_url'].split('/repos/', 1)[1].split('/commits/')
+        prefix = f'https://raw.githubusercontent.com/{repo}/{ref}/'
+        expected_sources = [(role, url) for role, key in
+                            (('primary', 'urls'), ('excluded', 'exclude_urls'), ('supplement', 'supplement_urls'))
+                            for url in config[key]]
+        if [(s['role'], s['source_url']) for s in evidence['sources']] != expected_sources:
+            raise RuntimeError(f'IP selection sources mismatch: {name}')
+        groups = {role: [] for role in ('primary', 'excluded', 'supplement')}
+        for item in evidence['sources']:
+            expected_url = (item['source_url'].replace(prefix, f'https://raw.githubusercontent.com/{repo}/{sha}/', 1)
+                            if item['role'] != 'supplement' else item['source_url'])
+            digest = hashlib.sha256(item['text'].encode('utf-8')).hexdigest()
+            if item['url'] != expected_url or item['sha256'] != digest or sources.get(expected_url) != digest:
+                raise RuntimeError(f'IP selection source checksum mismatch: {name}')
+            groups[item['role']].extend(parse_cidr_list(item['text'].lstrip('\ufeff'), expected_url))
+        expected = select_ip_union(**groups)
+        found = parse_list_rules(root / 'Surge' / f'{name}.list', 'ipcidr')
+        if found != expected:
+            raise RuntimeError(f'IP selection differs from (primary minus CN) union supplement: {name}')
 
 
 def main() -> None:
