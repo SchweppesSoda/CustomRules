@@ -11,7 +11,7 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from build_rules import (SOURCES, adblock_lite_protections, load_toml,
+from build_rules import (SOURCES, adblock_lite_protections, load_toml, stable_unique,
                          parse_classical_yaml, parse_list_rules,
                          parse_wildcard_domain_list, select_adblock_lite)
 
@@ -112,6 +112,8 @@ def verify_behavior_sets(root: Path, manifest: dict[str, object]) -> None:
             raise RuntimeError(f"Manifest count mismatch: {name}")
         if hashlib.sha256('\n'.join(yaml_rules).encode()).hexdigest() != info['rules_sha256']:
             raise RuntimeError(f"Manifest rule hash mismatch: {name}")
+
+    verify_policy_aggregates(root, manifest)
 
     lite = parse_list_rules(root / 'Surge' / 'AdBlockLite.list')
     policy = load_toml(SOURCES / 'policies' / 'adblock-lite.toml')
@@ -245,6 +247,25 @@ def verify_mrs_loading(root: Path, mihomo: Path, manifest: dict[str, object]) ->
         )
     if result.returncode != 0:
         raise RuntimeError(f"Mihomo failed to load generated MRS files:\n{result.stdout}{result.stderr}")
+
+
+def verify_policy_aggregates(root: Path, manifest: dict[str, object]) -> None:
+    contract = load_toml(SOURCES / 'policy-aggregates.toml')['aggregates']
+    actual = {name for name, info in manifest['sets'].items() if 'aggregation' in info}
+    if actual != set(contract):
+        raise RuntimeError('Policy aggregate inventory differs from source contract')
+    for name, spec in contract.items():
+        info = manifest['sets'][name]
+        if info['aggregation'] != {'policy': spec['policy'], 'members': spec['members']}:
+            raise RuntimeError(f'Policy aggregate membership mismatch: {name}')
+        expected = stable_unique([
+            rule for member in spec['members']
+            for rule in parse_list_rules(root / 'Surge' / f'{member}.list',
+                                         manifest['sets'][member]['behavior'])
+        ])
+        found = parse_list_rules(root / 'Surge' / f'{name}.list', info['behavior'])
+        if found != expected:
+            raise RuntimeError(f'Policy aggregate is not the literal member union: {name}')
 
 
 def main() -> None:

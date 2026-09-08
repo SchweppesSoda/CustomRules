@@ -75,6 +75,46 @@ Source provenance and hashes remain in `SOURCES.json`. A fresh per-run
 `--offline`. Never reuse an old cache for a new scheduled update. The CI also
 verifies the final publication tree and skips copying byte-identical files.
 
+## Policy aggregates
+
+[`sources/policy-aggregates.toml`](./sources/policy-aggregates.toml) defines the
+client-facing unions for rules that share a final policy. The builder combines
+the listed source sets, removes exact duplicates, and preserves every other
+match condition. `manifest.json` records the policy and source members, and the
+verifier requires each aggregate to equal that literal member union.
+
+| Final policy | Mihomo / Stash | Surge / Egern / Loon Full |
+| --- | --- | --- |
+| Asian TV | `Policy/AsianTV` | `Policy/Classical/AsianTV` |
+| Global TV | `Policy/GlobalTV` | `Policy/Classical/GlobalTV` |
+| CN Mainland TV | `Policy/CNMainlandTV` | `Policy/Classical/CNMainlandTV` |
+| Steam | `Policy/Steam` | `Policy/Classical/Steam` |
+| Apple TV | Existing single AppleTV source | `Policy/Classical/AppleTV` |
+| AI Suite | Existing rules | `Policy/Classical/AISuite` for Loon Full only |
+
+The two families preserve the existing clients' different source membership.
+They are not interchangeable domain-only projections of one larger list.
+Netflix, YouTube, Spotify and Disney keep their independent policies. Service
+IP rules retain their later position; rules targeting the same policy at
+different priorities must not be merged across intervening rules.
+
+Every aggregate emits YAML and LIST. Pure-domain aggregates also emit MRS;
+mixed aggregates retain classical YAML/LIST rather than dropping keywords, IPs
+or other conditions. For example, `Policy/GlobalTV` is domain-only while
+`Policy/CNMainlandTV` currently contains mixed rules. Use manifest behavior,
+not the directory name, to choose the client provider type.
+
+During rollout, existing per-service URLs remain published for older profiles
+and Lite clients. This first stage reduces client subscriptions; it adds 10
+aggregates (23 files), so a complete build temporarily grows from 475 to 498
+files. Removing old exports is a separate step after their consumers have
+migrated; fewer subscriptions does not by itself mean fewer published files.
+
+Run the normal unit tests, two builds from one fresh input snapshot, and
+`scripts/verify_build.py`. Publish and verify the new `auto-build` assets before
+switching client URLs. The private configuration repository prepares and
+validates candidate profiles, preserves source hashes, and owns client rollout.
+
 ## Sources
 
 - `sources/manual/` contains reviewed classical rule sources such as

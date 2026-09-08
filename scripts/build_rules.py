@@ -518,6 +518,46 @@ def stable_unique(rules: list[Rule]) -> list[Rule]:
     return list(dict.fromkeys(rules))
 
 
+def add_policy_aggregates(
+    sets: dict[str, RuleSet], config: dict[str, object]
+) -> dict[str, dict[str, object]]:
+    """Union reviewed members without projecting away any rule semantics.
+
+    Aggregate membership is explicit and only references independent source
+    sets. Existing public service artifacts remain available during migration.
+    Validate the entire contract before adding anything to the caller's sets.
+    """
+    if config.get("schema") != 1:
+        raise ValueError("Policy aggregate schema must be 1")
+    staged: dict[str, RuleSet] = {}
+    metadata: dict[str, dict[str, object]] = {}
+    for name, spec in config.get("aggregates", {}).items():
+        if not re.fullmatch(r"Policy/(?:Classical/)?[A-Za-z][A-Za-z0-9]*", name):
+            raise ValueError(f"Invalid policy aggregate name: {name}")
+        if name in sets:
+            raise ValueError(f"Policy aggregate collides with source: {name}")
+        members = spec.get("members")
+        policy = spec.get("policy")
+        if (not isinstance(policy, str) or not policy.strip()
+                or not isinstance(members, list) or len(members) < 2
+                or not all(isinstance(member, str) for member in members)
+                or len(set(members)) != len(members)):
+            raise ValueError(f"{name}: policy and unique source members are required")
+        if any(member not in sets or member.startswith("Policy/") for member in members):
+            raise ValueError(f"{name}: member must be an existing independent source")
+        if any(not sets[member].rules for member in members):
+            raise ValueError(f"{name}: empty source member")
+        rules = stable_unique([rule for member in members for rule in sets[member].rules])
+        kinds = {rule.kind for rule in rules}
+        behavior = ("domain" if kinds <= DOMAIN_TYPES else "ipcidr"
+                    if kinds <= IP_TYPES and all(sets[m].behavior == "ipcidr" for m in members)
+                    else "classical")
+        staged[name] = RuleSet(rules, behavior)
+        metadata[name] = {"policy": policy, "members": members}
+    sets.update(staged)
+    return metadata
+
+
 def merge_rule_sets(name: str, manual: RuleSet, upstream: RuleSet) -> RuleSet:
     if manual.behavior != "classical":
         raise ValueError(f"{name}: merge source must be a manual classical set")
@@ -985,6 +1025,9 @@ def main() -> None:
         raise RuntimeError("Banking region union does not equal Banking aggregate")
     validate_region_exclusivity(regions)
 
+    policy_aggregates = add_policy_aggregates(
+        sets, load_toml(SOURCES / "policy-aggregates.toml")
+    )
     manifests: dict[str, dict[str, object]] = {}
     for name, rule_set in sorted(sets.items()):
         rules = stable_unique(rule_set.rules)
@@ -1035,6 +1078,8 @@ def main() -> None:
         }
         if mrs_behavior:
             manifests[name]["mrs_behavior"] = mrs_behavior
+        if name in policy_aggregates:
+            manifests[name]["aggregation"] = policy_aggregates[name]
 
     for region, rules in regions.items():
         name = f"Banking/{region}"

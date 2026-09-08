@@ -19,5 +19,6 @@
 - 维护 `sources/`、`scripts/` 或发布流程时，先读 README 和对应 workflow，运行 `python -m unittest discover -s tests -v` 及涉及的构建/验证门禁。
 - AirportServers 两份源的生成 marker 由私有配置同步器拥有，受保护的人工条目在 marker 外；改动跨越生成范围时使用 generated-config-sync 工作流。
 - 规则修改核对消费者的 URL、分支、格式、behavior 与策略目标。发布产物验证通过后才能切换客户端；不要从旧 source cache 冒充一次新上游抓取。
+- `sources/policy-aggregates.toml` 定义按最终策略合并的成员。聚合必须是成员规则的精确去重并集，不能丢弃 classical 条件、跨过其它策略或把不同客户端的来源并成更大的集合；运行 `tests/test_policy_aggregates.py` 及完整构建门禁。旧服务输出在迁移期保留，删除前核对旧配置与 Lite 消费者。
 - 文档/忽略规则改动检查链接与 `git diff --check`，不因整理而重建、发布规则或重新部署设备。
 - 公共仓库不保存订阅 capability URL、Token、私钥、原始节点配置或设备现场备份。

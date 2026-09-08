@@ -1,0 +1,53 @@
+# Aggregate only adjacent rules with the same final policy.
+# Keep the two existing client source families distinct; do not broaden either.
+schema = 1
+
+[aggregates."Policy/AsianTV"]
+policy = "Asian TV"
+clients = ["Mihomo", "Stash"]
+members = ["AbemaTV", "Bahamut", "Hulu", "Japonx", "KKBOX", "KKTV", "Line", "myTVSUPER", "Niconico", "ViuTV"]
+
+[aggregates."Policy/GlobalTV"]
+policy = "Global TV"
+clients = ["Mihomo", "Stash"]
+members = ["ABC", "PrimeVideo", "BBC", "DAZN", "DiscoveryPlus", "TVB", "Fox", "HBO", "PBS", "Pornhub", "Soundcloud"]
+
+[aggregates."Policy/CNMainlandTV"]
+policy = "CN Mainland TV"
+clients = ["Mihomo", "Stash"]
+members = ["BiliBili", "iQIYI", "Classical/NetEaseMusicYaml", "Classical/TencentVideoYaml", "Classical/WeTV", "Youku"]
+
+[aggregates."Policy/Steam"]
+policy = "Steam"
+clients = ["Mihomo", "Stash"]
+members = ["GameDownload", "Steam"]
+
+[aggregates."Policy/Classical/AppleTV"]
+policy = "Apple TV"
+clients = ["Egern", "Surge", "Loon"]
+members = ["AppleTV", "Classical/AppleMusic", "Classical/AppleNews"]
+
+[aggregates."Policy/Classical/AsianTV"]
+policy = "Asian TV"
+clients = ["Egern", "Surge", "Loon"]
+members = ["Classical/AbemaTV", "Classical/Bahamut", "Classical/iQIYIIntl", "Classical/myTVSUPER", "Classical/Fox+", "Classical/HuluJapan", "Classical/JOOX", "Classical/KKBOX", "Classical/KKTV", "Classical/LineTV", "Classical/Niconico", "Classical/ViuTV"]
+
+[aggregates."Policy/Classical/GlobalTV"]
+policy = "Global TV"
+clients = ["Egern", "Surge", "Loon"]
+members = ["Classical/HBO", "Classical/PrimeVideo", "Classical/ABC", "Classical/BBC", "Classical/DAZN", "Classical/DiscoveryPlus", "Classical/TVB", "Classical/F1TV", "Classical/Fox", "Classical/Pandora", "Classical/PBS", "Classical/Soundcloud"]
+
+[aggregates."Policy/Classical/CNMainlandTV"]
+policy = "CN Mainland TV"
+clients = ["Egern", "Surge", "Loon"]
+members = ["Classical/BiliBili", "Classical/iQIYI", "Classical/LeTV", "Classical/NetEaseMusic", "Classical/TencentVideo", "Classical/Youku"]
+
+[aggregates."Policy/Classical/Steam"]
+policy = "Steam"
+clients = ["Egern", "Surge", "Loon"]
+members = ["GameDownload", "Classical/Steam"]
+
+[aggregates."Policy/Classical/AISuite"]
+policy = "AI Suite"
+clients = ["Loon"]
+members = ["Classical/OpenAI", "Classical/Claude", "Classical/Anthropic", "Classical/Copilot", "Classical/Gemini"]
