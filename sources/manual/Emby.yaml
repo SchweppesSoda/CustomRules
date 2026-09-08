@@ -26,7 +26,7 @@ payload:
   - DOMAIN-SUFFIX,emby.wtf
 
   # > SNTP
-  - DOMAIN-SUFFIX,pe.cn2gias.uk
+  - DOMAIN-SUFFIX,cn2gias.uk
 
   # > UHDNow
   - DOMAIN-SUFFIX,uhdnow.com
