@@ -409,6 +409,10 @@ def build_upstream_set(
                 if behavior != "domain":
                     raise ValueError(f"{name}: meta-list only supports domain behavior")
                 rules.extend(parse_meta_list(body, url))
+            elif parser == "wildcard-domain-list":
+                if behavior != "domain":
+                    raise ValueError(f"{name}: wildcard-domain-list only supports domain behavior")
+                rules.extend(parse_wildcard_domain_list(body, url))
             elif parser == "cidr-list":
                 if behavior != "ipcidr":
                     raise ValueError(f"{name}: cidr-list only supports ipcidr behavior")
@@ -427,7 +431,7 @@ def build_upstream_set(
     rules = stable_unique(rules)
     if config.get("non_domain_only"):
         rules = [rule for rule in rules if rule.kind not in DOMAIN_TYPES]
-    if behavior == "domain":
+    if behavior == "domain" and parser != "wildcard-domain-list":
         rules = compact_domains(rules)
     allowed = BEHAVIOR_TYPES.get(behavior)
     invalid = [rule.classical for rule in rules if allowed is not None and rule.kind not in allowed]
@@ -462,12 +466,52 @@ def parse_full_classical_list(body: str, url: str) -> list[Rule]:
     return stable_unique(result)
 
 
-def select_adblock_lite(rules: list[Rule], approved: set[str]) -> list[Rule]:
-    # A reviewed list of exact rule values, not a name/keyword heuristic.
-    selected = [rule for rule in rules if rule.kind in DOMAIN_TYPES and rule.value in approved]
+def parse_wildcard_domain_list(body: str, url: str) -> list[Rule]:
+    """HaGeZi wildcard entries cover the root AND all subdomains."""
+    result: list[Rule] = []
+    for number, raw in enumerate(body.splitlines(), 1):
+        line = raw.strip()
+        if not line or line.startswith('#'):
+            continue
+        if not line.startswith('*.'):
+            raise ValueError(f"Unsupported wildcard-domain syntax: {url}:{number}")
+        domain = normalize_domain(line[2:])
+        if '.' not in domain:
+            raise ValueError(f"Top-level wildcard is forbidden: {url}:{number}")
+        try:
+            ipaddress.ip_address(domain)
+        except ValueError:
+            pass
+        else:
+            raise ValueError(f"IP in wildcard-domain source: {url}:{number}")
+        result.append(Rule('DOMAIN-SUFFIX', domain))
+    if not result:
+        raise ValueError(f"Empty wildcard-domain source: {url}")
+    return stable_unique(result)
+
+
+def adblock_lite_protections(policy: dict[str, object], httpdns: list[Rule]) -> list[Rule]:
+    # HTTPDNS retains its own policy; protect exact/suffix match spaces alike.
+    return stable_unique([
+        *httpdns,
+        *(Rule('DOMAIN-SUFFIX', normalize_domain(value)) for value in policy['protected_suffixes']),
+    ])
+
+
+def select_adblock_lite(rules: list[Rule], protected: list[Rule]) -> tuple[list[Rule], list[str]]:
+    if any(rule.kind not in DOMAIN_TYPES for rule in [*rules, *protected]):
+        raise ValueError("AdBlockLite and its protections must be domain-only")
+    selected: list[Rule] = []
+    excluded: list[str] = []
+    for rule in rules:
+        overlaps = [item.classical for item in protected if rules_overlap(rule, item)]
+        if overlaps:
+            excluded.append(f"{rule.classical} # protects: {'; '.join(overlaps)}")
+        else:
+            selected.append(rule)
     if not selected:
-        raise ValueError("AdBlockLite has no approved rules in the upstream snapshot")
-    return compact_domains(selected)
+        raise ValueError("AdBlockLite has no rules after compatibility exclusions")
+    return compact_domains(selected), sorted(excluded)
 
 
 def stable_unique(rules: list[Rule]) -> list[Rule]:
@@ -545,6 +589,7 @@ def render_domain_yaml(name: str, rules: list[Rule]) -> str:
     lines = [
         "# AUTO-GENERATED. DO NOT EDIT.",
         f"# Rule set: {name}",
+        *adblock_lite_notices(name),
         "payload:",
     ]
     lines.extend(f"  - {rule.domain_token}" for rule in rules)
@@ -568,12 +613,24 @@ def render_list(name: str, rules: list[Rule], behavior: str = "classical") -> st
     lines = [
         "# AUTO-GENERATED. DO NOT EDIT.",
         f"# Rule set: {name}",
+        *adblock_lite_notices(name),
     ]
     if behavior == "ipcidr":
         lines.extend(f"{rule.classical},no-resolve" for rule in rules)
     else:
         lines.extend(rule.classical for rule in rules)
     return "\n".join(lines) + "\n"
+
+
+def adblock_lite_notices(name: str) -> list[str]:
+    if name != 'AdBlockLite':
+        return []
+    return [
+        "# Derived from HaGeZi Multi Light: https://github.com/hagezi/dns-blocklists",
+        "# Modified by CustomRules: HTTPDNS/shared-service exclusions and format conversion.",
+        "# License: GPL-3.0; see reports/AdBlockLite-LICENSE.txt on auto-build.",
+        "# Original source and notices: reports/AdBlockLite-Upstream.txt on auto-build.",
+    ]
 
 
 def write_text(path: Path, content: str) -> None:
@@ -893,7 +950,11 @@ def main() -> None:
             raise ValueError(f"{name}: merged set is empty")
 
     lite_policy = load_toml(SOURCES / "policies" / "adblock-lite.toml")
-    sets["AdBlockLite"] = RuleSet(select_adblock_lite(sets["AdBlock"].rules, set(lite_policy["approved_domains"])), "domain")
+    lite_rules, lite_excluded = select_adblock_lite(
+        sets["AdBlockLite"].rules,
+        adblock_lite_protections(lite_policy, sets["HTTPDNS"].rules),
+    )
+    sets["AdBlockLite"] = RuleSet(lite_rules, "domain")
 
     crypto, _, entity_reports["Crypto"] = build_catalog(
         SOURCES / "catalog" / "crypto.toml",
@@ -1000,6 +1061,17 @@ def main() -> None:
         }
 
     candidate_url = str(upstream_config["crypto_candidates"]["url"])
+    lite_url = upstream_config['sets']['AdBlockLite']['urls'][0]
+    write_text(args.output / 'reports' / 'AdBlockLite-Excluded.txt', '\n'.join([
+        '# AUTO-GENERATED REVIEW REPORT. NOT USED FOR ROUTING.',
+        '# HaGeZi Light rules removed for HTTPDNS and shared-service compatibility.',
+        f'# Upstream: {lite_url}',
+        f'# Excluded rules: {len(lite_excluded)}',
+        *lite_excluded, '',
+    ]))
+    write_text(args.output / 'reports' / 'AdBlockLite-Upstream.txt', fetcher.text(lite_url))
+    write_text(args.output / 'reports' / 'AdBlockLite-LICENSE.txt',
+               (SOURCES / 'licenses' / 'HaGeZi-GPL-3.0.txt').read_text(encoding='utf-8'))
     registered = {
         str(component)
         for entity in load_toml(SOURCES / "catalog" / "crypto.toml")["entities"]

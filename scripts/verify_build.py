@@ -11,7 +11,9 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from build_rules import parse_classical_yaml
+from build_rules import (SOURCES, adblock_lite_protections, load_toml,
+                         parse_classical_yaml, parse_list_rules,
+                         parse_wildcard_domain_list, select_adblock_lite)
 
 
 REGIONS = (
@@ -111,10 +113,17 @@ def verify_behavior_sets(root: Path, manifest: dict[str, object]) -> None:
         if hashlib.sha256('\n'.join(yaml_rules).encode()).hexdigest() != info['rules_sha256']:
             raise RuntimeError(f"Manifest rule hash mismatch: {name}")
 
-    lite = set(list_rules(root / 'Surge' / 'AdBlockLite.list'))
-    full = set(list_rules(root / 'Surge' / 'AdBlock.list'))
-    if not lite or not lite < full or any(not rule.startswith(('DOMAIN,', 'DOMAIN-SUFFIX,')) for rule in lite):
-        raise RuntimeError('AdBlockLite must be a nonempty, domain-only proper subset of AdBlock')
+    lite = parse_list_rules(root / 'Surge' / 'AdBlockLite.list')
+    policy = load_toml(SOURCES / 'policies' / 'adblock-lite.toml')
+    protected = adblock_lite_protections(policy, parse_list_rules(root / 'Surge' / 'HTTPDNS.list'))
+    upstream = parse_wildcard_domain_list(
+        (root / 'reports' / 'AdBlockLite-Upstream.txt').read_text(encoding='utf-8'), 'HaGeZi Light')
+    expected, excluded = select_adblock_lite(upstream, protected)
+    if lite != expected:
+        raise RuntimeError('AdBlockLite differs from HaGeZi Light with compatibility exclusions')
+    report = data_lines(root / 'reports' / 'AdBlockLite-Excluded.txt')
+    if report != excluded:
+        raise RuntimeError('AdBlockLite exclusion report mismatch')
 
     aggregate = set(list_rules(root / "Surge" / "Banking.list", "domain"))
     region_sets = {

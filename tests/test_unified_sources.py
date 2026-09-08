@@ -34,16 +34,51 @@ class UnifiedSourcesTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unsupported classical syntax'):
             builder.parse_full_classical_list('DOMAIN,example.com\nUNKNOWN,value', 'fixture')
 
-    def test_lite_never_promotes_unreviewed_upstream_additions(self):
+    def test_light_wildcards_preserve_root_and_subdomain_coverage(self):
+        rules = builder.parse_wildcard_domain_list('# source\n*.Ads.Example.com\n', 'fixture')
+        self.assertEqual(rules, [builder.Rule('DOMAIN-SUFFIX', 'ads.example.com')])
+        for host in ['ads.example.com', 'sub.ads.example.com']:
+            self.assertTrue(builder.rules_overlap(rules[0], builder.Rule('DOMAIN', host)))
+        self.assertFalse(builder.rules_overlap(rules[0], builder.Rule('DOMAIN', 'notads.example.com')))
+
+    def test_light_parser_rejects_silent_format_changes(self):
+        for body in ['example.com', '||example.com^', '*.com', '*.192.0.2.1',
+                     '*.example.com\nDOMAIN-KEYWORD,ads', '*.ads.*.com', '# empty']:
+            with self.subTest(body=body), self.assertRaises(ValueError):
+                builder.parse_wildcard_domain_list(body, 'fixture')
+
+    def test_lite_follows_upstream_but_protects_httpdns_match_spaces(self):
+        rule = builder.Rule
+        protected = [rule('DOMAIN', 'httpdns.browser.example'),
+                     rule('DOMAIN-SUFFIX', 'dns.example')]
+        blocked = [rule('DOMAIN-SUFFIX', 'browser.example'),
+                   rule('DOMAIN-SUFFIX', 'dns.example'),
+                   rule('DOMAIN', 'child.dns.example')]
+        safe = [rule('DOMAIN-SUFFIX', 'new-ad-network.example'),
+                rule('DOMAIN-SUFFIX', 'notdns.example'),
+                rule('DOMAIN', 'child.httpdns.browser.example')]
+        selected, excluded = builder.select_adblock_lite(blocked + safe, protected)
+        self.assertEqual(set(selected), set(safe))
+        self.assertEqual(len(excluded), 3)
+        for candidate in selected:
+            self.assertFalse(any(builder.rules_overlap(candidate, p) for p in protected))
+
+    def test_lite_protects_shared_services_and_rejects_non_domains(self):
+        rule = builder.Rule
         policy = tomllib.loads((ROOT/'sources/policies/adblock-lite.toml').read_text())
-        approved = set(policy['approved_domains'])
-        rules = [builder.Rule('DOMAIN-SUFFIX', 'doubleclick.net'),
-                 builder.Rule('DOMAIN-SUFFIX', 'graph.instagram.com'),
-                 builder.Rule('DOMAIN-SUFFIX', 'new-ad-network.example'),
-                 builder.Rule('DOMAIN-KEYWORD', 'doubleclick.net'),
-                 builder.Rule('IP-CIDR', '192.0.2.0/24')]
-        self.assertEqual(builder.select_adblock_lite(rules, approved), [rules[0]])
-        self.assertTrue(approved.isdisjoint({'onesignal.com','sentry.io','appsflyersdk.com','graph.instagram.com','dns.weixin.qq.com','paydns.wechatpay.cn'}))
+        protected = builder.adblock_lite_protections(policy, [rule('DOMAIN', 'dns.example')])
+        safe = rule('DOMAIN-SUFFIX', 'ads.example')
+        selected, excluded = builder.select_adblock_lite([
+            safe, rule('DOMAIN-SUFFIX', 'onesignal.com'),
+            rule('DOMAIN', 'o123.ingest.sentry.io'), rule('DOMAIN-SUFFIX', 'dns.example'),
+        ], protected)
+        self.assertEqual(selected, [safe])
+        self.assertEqual(len(excluded), 3)
+        for bad in [rule('DOMAIN-KEYWORD', 'ads'), rule('IP-CIDR', '192.0.2.0/24')]:
+            with self.assertRaisesRegex(ValueError, 'domain-only'):
+                builder.select_adblock_lite([safe, bad], protected)
+        with self.assertRaisesRegex(ValueError, 'no rules'):
+            builder.select_adblock_lite([rule('DOMAIN', 'dns.example')], protected)
 
     def test_offline_snapshot_never_accesses_network(self):
         with tempfile.TemporaryDirectory() as temporary:

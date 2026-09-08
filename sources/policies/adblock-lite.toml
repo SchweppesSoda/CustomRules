@@ -1,18 +1,11 @@
-# AdBlockLite is a reviewed subset of MetaCubeX category-ads-all.
-# Match complete rule values only. No heuristic keyword/substring selection.
-# Keep telemetry, push, login, payment, shared SDK and CDN infrastructure out.
-# Additions require review; upstream additions cannot expand Lite automatically.
-approved_domains = [
-  "aaxads.com", "ad-srv.net", "adbutter.net", "adcolony.com", "admob.com",
-  "adnxs.com", "adtechus.com", "adtrue.com", "adview.cn", "adxprtz.com",
-  "advertserve.com", "amazon-adsystem.com", "casalemedia.com",
-  "doubleclick.net", "doubleclick-cn.net", "doubleclick.cn", "doubleclick.com",
-  "googleadservices.com", "googleadservices-cn.com",
-  "googlesyndication.com", "googlesyndication-cn.com", "adservice.google.com",
-  "mgid.com", "moatads.com", "openx.net", "openxadexchange.com", "openxcdn.net",
-  "openxenterprise.com", "pubmatic.com", "pubmatic.co.jp", "spotxchange.com",
-  "taboola.com", "ads.sohu.com", "adnet.sohu.com", "ad.toutiao.com",
-  "ad.api.moji.com", "ad.12306.cn", "ad.hpplay.cn", "ads.huan.tv",
-  "advertising.apple.com", "api-adservices.apple.com", "iadsdk.apple.com",
-  "iad.apple.com", "mobads.baidu.com", "cpro.baidu.com", "union.baidu.com",
+# AdBlockLite follows HaGeZi Multi Light (sources/upstreams.toml).
+# HTTPDNS exact/suffix rules are protected dynamically on every build.
+# Remove overlapping blockers, including broader parent suffixes; do not
+# silently turn a suffix into an exact rule or otherwise narrow its semantics.
+# Preserve shared push/APIs and error reporters even if upstream changes.
+protected_suffixes = [
+  "onesignal.com",
+  "graph.instagram.com", "graph.whatsapp.com", "graph.whatsapp.net",
+  "sentry.io", "sentry.dev", "sentry-cdn.com", "getsentry.com",
+  "bugsnag.com", "crashlytics.com", "instabug.com",
 ]

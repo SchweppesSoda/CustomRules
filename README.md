@@ -37,14 +37,18 @@ GeoIP/ASN databases remain separately managed.
 
 ### Conservative ad blocking
 
-- `AdBlockLite`: the default, reviewed domain-only subset of MetaCubeX
-  `category-ads-all`. Its allowlist is `sources/policies/adblock-lite.toml`.
-  New upstream entries cannot enter Lite until their full domain values have
-  been reviewed. No keyword, IP, broad telemetry, push, shared SDK or login
-  rules are included. Smaller coverage is intentional; zero false positives
-  is not guaranteed.
-- `AdBlock`: the full MetaCubeX category, available as an opt-in replacement.
-  Do not stack it with Lite in the same client.
+- `AdBlockLite`: the default, derived from [HaGeZi Multi Light](https://github.com/hagezi/dns-blocklists#light).
+  It follows this maintained low-interference tier, including ads, tracking,
+  metrics, telemetry and some badware. It is no longer the original 46-domain
+  manual subset. Wildcard entries preserve root and subdomain coverage in
+  every client; keyword/IP/rewrite rules are not imported.
+  Each build removes blockers whose match space overlaps `HTTPDNS`, including
+  broader parent suffixes, plus shared-service protections declared in
+  `sources/policies/adblock-lite.toml`. Exclusions do not force traffic DIRECT:
+  the normal client policy still decides routing. Zero false positives is not
+  guaranteed; this is a compatibility-oriented default, not an ads-only list.
+- `AdBlock`: the unchanged full MetaCubeX category, available as an alternative.
+  It is a different source, not a superset of HaGeZi Light. Do not stack them.
 - `HTTPDNS`: the deduplicated domain union of MetaCubeX `httpdns` and
   `category-httpdns-cn`. Clients default to DIRECT and retain an opt-in REJECT
   selection; duplicate hard-blocking plugins/rewrite rules should be disabled.
@@ -52,6 +56,10 @@ GeoIP/ASN databases remain separately managed.
 
 Both ad variants and HTTPDNS emit `Mihomo/<Name>.yaml/.mrs` and
 `Surge/<Name>.list`. All formats are generated from the same selected rules.
+HaGeZi-derived outputs retain attribution and the GPL-3.0 license. The
+`reports/AdBlockLite-Upstream.txt`, `AdBlockLite-Excluded.txt`, and
+`AdBlockLite-LICENSE.txt` files preserve the original source snapshot, exact
+exclusions and license on `auto-build`; they are not routing subscriptions.
 
 ### Migration validation
 
