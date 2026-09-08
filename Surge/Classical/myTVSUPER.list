@@ -1,0 +1,6 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/myTVSUPER
+DOMAIN-SUFFIX,mytvsuper.com
+DOMAIN-KEYWORD,nowtv100
+DOMAIN-KEYWORD,rthklive
+USER-AGENT,mytv*

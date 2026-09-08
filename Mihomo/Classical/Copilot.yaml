@@ -1,0 +1,14 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/Copilot
+payload:
+  - DOMAIN,copilot-proxy.githubusercontent.com
+  - DOMAIN,copilot-telemetry-service.githubusercontent.com
+  - DOMAIN,copilot-telemetry.githubusercontent.com
+  - DOMAIN,copilot-workspace.githubnext.com
+  - DOMAIN,copilotprodattachments.blob.core.windows.net
+  - DOMAIN-SUFFIX,githubcopilot.com
+  - DOMAIN-KEYWORD,openaicom-api
+  - IP-ASN,14061,no-resolve
+  - IP-ASN,20473,no-resolve
+  - IP-CIDR,24.199.123.28/32,no-resolve
+  - IP-CIDR,64.23.132.171/32,no-resolve

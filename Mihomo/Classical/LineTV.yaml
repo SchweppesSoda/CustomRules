@@ -1,0 +1,7 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/LineTV
+payload:
+  - USER-AGENT,LINE*
+  - DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net
+  - DOMAIN-SUFFIX,linetv.tw
+  - DOMAIN-SUFFIX,profile.line-scdn.net

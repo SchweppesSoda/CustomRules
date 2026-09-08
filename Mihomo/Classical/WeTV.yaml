@@ -1,0 +1,6 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/WeTV
+payload:
+  - PROCESS-NAME,com.tencent.qqlivei18n
+  - DOMAIN-SUFFIX,wetv.vip
+  - DOMAIN-SUFFIX,wetvinfo.com

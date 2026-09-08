@@ -1,0 +1,6 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/JOOX
+payload:
+  - USER-AGENT,WeMusic*
+  - USER-AGENT,JOOX*
+  - DOMAIN-SUFFIX,joox.com

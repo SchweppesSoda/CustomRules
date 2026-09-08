@@ -1,0 +1,5 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/JOOX
+USER-AGENT,WeMusic*
+USER-AGENT,JOOX*
+DOMAIN-SUFFIX,joox.com

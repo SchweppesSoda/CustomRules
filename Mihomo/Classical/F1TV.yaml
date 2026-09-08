@@ -1,0 +1,6 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/F1TV
+payload:
+  - DOMAIN-SUFFIX,f1.com
+  - DOMAIN-SUFFIX,f1tv.com
+  - DOMAIN-SUFFIX,formula1.com

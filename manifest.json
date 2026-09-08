@@ -2569,6 +2569,17 @@
   "mihomo_version": "v1.19.29",
   "schema": 2,
   "sets": {
+    "ABC": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 4,
+      "rules_sha256": "ca4c2edf908cd55d059ae4b5975fb271deb66ddff445cea3888b4897543da40c"
+    },
     "AI": {
       "behavior": "domain",
       "formats": [
@@ -2590,6 +2601,50 @@
       "mrs_behavior": "domain",
       "rule_count": 115,
       "rules_sha256": "6db8c0c6fbd40aeceb3d755373e44d1a7499e79a5270d97cf5513d7297d72cb8"
+    },
+    "AIGlobal": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 179,
+      "rules_sha256": "0aa86d4755037625cd965dfb6b2c51d5dfbd4b58a8f6eac1631fd12d3c6a91f0"
+    },
+    "AbemaTV": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 21,
+      "rules_sha256": "a7181b1cdce7ac1089223d070e71ea015b002e87286fa6d2022e95ffab129f0d"
+    },
+    "AdBlock": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 907,
+      "rules_sha256": "9c25e52a461e314ca08b0bcbacadfc42d702a49606c6536d2c3fbe05f7b57aa8"
+    },
+    "AdBlockLite": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 46,
+      "rules_sha256": "c8c46186163a1dcc8a23ea8d32ddceb4c1c84d5e86a396baf6d63b117468fac9"
     },
     "AirportServers": {
       "behavior": "classical",
@@ -2613,6 +2668,28 @@
       "rule_count": 2,
       "rules_sha256": "00613343e9f2392cf0b33c4142b793d0da0e6405072c1ca052b9d16c88cd9920"
     },
+    "Alibaba": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 372,
+      "rules_sha256": "82a0130d18f61e035b39bc43639d4e769e03b3bba2c204c61eb50619230f75a8"
+    },
+    "Anthropic": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 8,
+      "rules_sha256": "d97e7c0a843c241062194b8b990a661410e298071fd3203f2d2e3109aeaad5bd"
+    },
     "Apple": {
       "behavior": "domain",
       "formats": [
@@ -2635,6 +2712,28 @@
       "rule_count": 296,
       "rules_sha256": "d02804d79bed7bbc61d8d0889d04496ef5e9c96e86056815810a0859009e4841"
     },
+    "AppleIntelligence": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 5,
+      "rules_sha256": "bbafe7e4336881b6a8f546df62f63f8b184a416a0d8089c0bc0f07290b13d8df"
+    },
+    "AppleMusic": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 11,
+      "rules_sha256": "e62f747e6cf2300b844b4fe4c232bc11169142d6bd7bdc019524f129a850bbaa"
+    },
     "ApplePush": {
       "behavior": "domain",
       "formats": [
@@ -2656,6 +2755,28 @@
       "mrs_behavior": "domain",
       "rule_count": 8,
       "rules_sha256": "478d2fff2b63b1f5e7bbc3fdc19a51e49134f455c025fdeceaa6b8fd74741161"
+    },
+    "BBC": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 28,
+      "rules_sha256": "0803615336ad5552725f84e1fe16ce720d0dfe839e4b7cb509bb57c12aaea6e7"
+    },
+    "Bahamut": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 5,
+      "rules_sha256": "865de3335095f678a9580f1fcfcffb275527b68e92dcb6f904fdcefacbc2516e"
     },
     "Banking": {
       "behavior": "domain",
@@ -2756,6 +2877,692 @@
       "rule_count": 11,
       "rules_sha256": "1352897337aa456b8f2cf8e4e63d3e2919a6e75dbd1a3c5dab8d15578a11ab8f"
     },
+    "BiliBili": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 53,
+      "rules_sha256": "93080188419f3cb32371cd25808c54f3c6d01576421863d0ecb61a49a9dd76cf"
+    },
+    "China": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 111021,
+      "rules_sha256": "048ac5f1d4437e514a188e1482fab78893903c92b588c0434f4c817cbaf9004e"
+    },
+    "ChinaMedia": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 390,
+      "rules_sha256": "c14f688e04f8e103778d4281a050cd110fbdf64dff876cd34bf06311e2e5abc9"
+    },
+    "Classical/ABC": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 4,
+      "rules_sha256": "ca4c2edf908cd55d059ae4b5975fb271deb66ddff445cea3888b4897543da40c"
+    },
+    "Classical/ASN.China": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 5076,
+      "rules_sha256": "cdae301fa2bd07e52bc5cbf3eae6692249fa87cef92256612e4a426412a35f91"
+    },
+    "Classical/AbemaTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 23,
+      "rules_sha256": "852c5776b1cf176b8a7e9bf696f7fdb507820b780c4753b9810519fab8ce90c8"
+    },
+    "Classical/Anthropic": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 8,
+      "rules_sha256": "d97e7c0a843c241062194b8b990a661410e298071fd3203f2d2e3109aeaad5bd"
+    },
+    "Classical/Apple": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 1628,
+      "rules_sha256": "fe65623670b625fcc10a1254e4ccd37e6386950a849cf1b0435d294ba8453276"
+    },
+    "Classical/AppleMusic": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 13,
+      "rules_sha256": "7d346267f95a3c3ae0381218d75fed108c37c72354380899cfb9714bb0b12004"
+    },
+    "Classical/AppleNews": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 2,
+      "rules_sha256": "1cc6cf8a3834986e558a0aa5e2d837acb0bf531fe06ec88865b9f1c7cb9102e2"
+    },
+    "Classical/AppleTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 10,
+      "rules_sha256": "e00e792c4acb1011fdec9375313d27e5641b765f1a571f8bcc2a56e3fe2af5bc"
+    },
+    "Classical/BBC": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 31,
+      "rules_sha256": "b29c2f7f129d010a93fc8cf3dce50bf8eb9a63c4c046d2cd590bade7de3a16ae"
+    },
+    "Classical/Bahamut": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 6,
+      "rules_sha256": "43f290e095bfbada375c3453a4025b8f4216be02982055caa8dee194f97e207c"
+    },
+    "Classical/BiliBili": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 71,
+      "rules_sha256": "6b007663555e28214974bc750a8435401f405c776a81299b888001f71c981e40"
+    },
+    "Classical/China": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 111082,
+      "rules_sha256": "ab042abc088daa86ff00fd128f15c7d164d49ec19cba1962c7ea9cf1b7d867f8"
+    },
+    "Classical/ChinaASN": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 1009,
+      "rules_sha256": "2c60624c64160252e815ec99db866beaafb0dee2dde708bd981bc32c9ab837b0"
+    },
+    "Classical/ChinaMedia": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 511,
+      "rules_sha256": "78a9f86dc2406b7d02b9f32eb6cedb9d760055fc03303856bd3dc84b5e98e35d"
+    },
+    "Classical/Claude": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 8,
+      "rules_sha256": "d97e7c0a843c241062194b8b990a661410e298071fd3203f2d2e3109aeaad5bd"
+    },
+    "Classical/Copilot": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 11,
+      "rules_sha256": "701a10687f99c0ba9a6743aabc2eb17ea4dcfd6d0b9ad3acc97b7dc517e85d21"
+    },
+    "Classical/DAZN": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 10,
+      "rules_sha256": "469c4a927cbed12cf9c84bf440d6583bce2031b0b8eddd26783ec3ec9e3542c9"
+    },
+    "Classical/Discord": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 28,
+      "rules_sha256": "b2412d65e3b458aa6a8c71f90ca2a37368e82faba97a5d801b015ee53690988a"
+    },
+    "Classical/DiscoveryPlus": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 4,
+      "rules_sha256": "433e949d8fb963c3e323ad1f56ac3bc6d8e87d30e446aec3aa6b496417640889"
+    },
+    "Classical/Disney": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 225,
+      "rules_sha256": "c88972e59414ccec3709385b7d408eb1a691373567c639adb078f0a0d483e29e"
+    },
+    "Classical/F1TV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 3,
+      "rules_sha256": "b5df783bcf417da2eddc552ae4a03bf2c94303037fa5812ea1a9d120f8d0e0fe"
+    },
+    "Classical/Fox": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 246,
+      "rules_sha256": "e92a985975ad8d897db714553ec82676b7c956931ef1cc010964a5e94c4b3d77"
+    },
+    "Classical/Fox+": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 4,
+      "rules_sha256": "dc3e133ab023e1f5576bfae3988929a8644d019682d8cf343e648ddf5288ef50"
+    },
+    "Classical/Gemini": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 44,
+      "rules_sha256": "5edb924f4780fe7f68dcf4007278333c61cad6f1ca1aac0e7b23c162894dd6b9"
+    },
+    "Classical/GitHub": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 60,
+      "rules_sha256": "ad91d05c70de2eb80fd39326486c01a415b3281b2415e15b57de56a3e65d7a6d"
+    },
+    "Classical/GlobalMedia": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 2599,
+      "rules_sha256": "e868e79bd0065e2ed67098c0a8e6d961b3468de3ee14972dfcaf83d4641c585c"
+    },
+    "Classical/Google": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 859,
+      "rules_sha256": "48f6b762d96f10d6432dd76ea26e35d164e46e1353afdce2e779d6e2ad8a3106"
+    },
+    "Classical/GoogleFCM": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 38,
+      "rules_sha256": "9180de7445fe430d6c219a8979ea7b0ec368bb58fca345011747864182b67a67"
+    },
+    "Classical/HBO": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 68,
+      "rules_sha256": "d3e39714cf717f55ee25fc8037ef44d5eaa8aca70cd9ff0605e3b51ea2a16504"
+    },
+    "Classical/HuluJapan": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 5,
+      "rules_sha256": "41611dea53b3a24d18541b52551c0a631478e5f316212e05c0e4d4da0b7b0e57"
+    },
+    "Classical/JOOX": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 3,
+      "rules_sha256": "ea4b9cd8716c9d7f3f6dffc52b2aa25adb20e54c0f77997bdef6b65ee7848d81"
+    },
+    "Classical/KKBOX": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 5,
+      "rules_sha256": "a86075e558655981a19efa843624bd5c7d16f3e99e0525c5226b3acc5241c2c7"
+    },
+    "Classical/KKTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 5,
+      "rules_sha256": "baee302f1c53e3eef3c5ffef498a6c98b2cf2857f1d5db227400709745a5cc43"
+    },
+    "Classical/LeTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 13,
+      "rules_sha256": "d1cd4a2899c680f02b1ce8767111e1af4867bcbe34b7b86f60fccde1cd6ecd0f"
+    },
+    "Classical/LineTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 4,
+      "rules_sha256": "52eec1993f7a99e30c75af2a3fe239c3bd746033d91dfaa6118e097b2798ffea"
+    },
+    "Classical/Microsoft": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 646,
+      "rules_sha256": "634bca507559822cc872fce7170ad52392e1c5609ea34b7ef0ae3c4d00ee3b9a"
+    },
+    "Classical/NetEaseMusic": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 30,
+      "rules_sha256": "63163452b6b1eff805944359c69ac6207d54abc225690e61770c3e7f892ec3dc"
+    },
+    "Classical/NetEaseMusicYaml": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 2,
+      "rules_sha256": "7b4b5411cadbc03e86dbe6a5df798f73a215204e223b0dc14f75710cb35b1202"
+    },
+    "Classical/Netflix": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 1148,
+      "rules_sha256": "f422d7bdb9918b89c0f9639d1f533fd82a8091413958d9c738f101527fa69898"
+    },
+    "Classical/Niconico": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 10,
+      "rules_sha256": "64f79ce59273322c2e1a60cbc5dc6d76a0932307d9c42074fb02247f693681d9"
+    },
+    "Classical/OpenAI": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 26,
+      "rules_sha256": "60d90bc3b571f53a116a4c357545dc20eac6dc3ec02be1399ef1cd74e8f41636"
+    },
+    "Classical/PBS": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 2,
+      "rules_sha256": "07c9cd2e4726ede422d8b2fc0b2fef783911d10b9eebd61f8027f4c1c899b85f"
+    },
+    "Classical/Pandora": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 1,
+      "rules_sha256": "5c5c9e10fa139e9f37c35602ee981c3fb017a9213419e92f7db5bfc9286863cb"
+    },
+    "Classical/PayPal": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 247,
+      "rules_sha256": "0ef1c2902431e81a5a348ca626ead51bcba8a239e1111985a6b9131238a31dad"
+    },
+    "Classical/PrimeVideo": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 26,
+      "rules_sha256": "9b6b3c543cf16e04c88b9d6d315146addef9fce701072919786811994b5b6026"
+    },
+    "Classical/Private": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 148,
+      "rules_sha256": "8166c3e837182328c77a7bee0bf07522660c46d49fff5102503c53f40646d5aa"
+    },
+    "Classical/Proxy": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 26518,
+      "rules_sha256": "5452cc7990c1ad6239e0e95177b85d110106d0e4565f645390e87ef9a8c3a756"
+    },
+    "Classical/ProxyGFWlist": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 6883,
+      "rules_sha256": "77382d7324a41403568660845eb272ef5321e9d7586e17c52a8433003a86c04e"
+    },
+    "Classical/Scholar": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 475,
+      "rules_sha256": "93498d5b9f9db2ac2fcac6db79d6c527fd4b13e773c656324802e9ba9948baf6"
+    },
+    "Classical/Soundcloud": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 4,
+      "rules_sha256": "4dd29aa257f375594a5b181e6c683d8490d459e4fbf113702e7984d1b8a139a1"
+    },
+    "Classical/Special": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 105,
+      "rules_sha256": "27aa0560f3b4f18ec60e3b7d1b172cef695882b52032f64779b7d0e280fb8d17"
+    },
+    "Classical/Speedtest": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 77,
+      "rules_sha256": "532797df3142fe650eb4bb84ae64f60f33fbef3cf30e568b88fd30e83ae6d093"
+    },
+    "Classical/Spotify": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 30,
+      "rules_sha256": "5a29a3d9dd8df80feeba5d7b2a3796af3495ef72961e727cc64cc725c0f5235a"
+    },
+    "Classical/Steam": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 62,
+      "rules_sha256": "3aca5e9fd5f8e8ad27b3121cd4119c2fd9febafec85ef408cb81d5516f8fef35"
+    },
+    "Classical/TVB": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 15,
+      "rules_sha256": "11a80eb8b5a915a8a5a59a8e16f96ad71a58a4a7945abdd8df2e378a3aa3329b"
+    },
+    "Classical/Telegram": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 37,
+      "rules_sha256": "a098c7a2be278322ab5619927ea431fcbf22729071ff7f40b948f3c177420264"
+    },
+    "Classical/TencentVideo": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 51,
+      "rules_sha256": "08be1ee235d0471ee148e69e9941928e959ab11bb2cd055bb0720007e43607fd"
+    },
+    "Classical/TencentVideoYaml": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 2,
+      "rules_sha256": "09fdf40c54fb9f68b4494ab097dbca4b108ec11aafa82c951b465e04a7af09f7"
+    },
+    "Classical/ViuTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 7,
+      "rules_sha256": "b494116dff016c3a15b3a15cd0dbda7272b68a830095084e7b079a0fd5984a1e"
+    },
+    "Classical/WeChat": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 33,
+      "rules_sha256": "368cf961b0f5d85d6127db26109286abdc55553d0cf78f922b4eb3ee2930907d"
+    },
+    "Classical/WeTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 3,
+      "rules_sha256": "e97930ca2dba99684a971c1279e64f5624b60475b4dbbdcabc1ee5733cce9fca"
+    },
+    "Classical/YouTube": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 188,
+      "rules_sha256": "0d9276e6da20257fccfd3897884c354131f3a21e717e541f2e9a108bc3658857"
+    },
+    "Classical/YouTubeMusic": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 181,
+      "rules_sha256": "56db1ede20a1a339f2cf68748682cb5f6fef8e1adb46fbf20c92122b11d634d5"
+    },
+    "Classical/Youku": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 13,
+      "rules_sha256": "02e67c6d241e355a837272c5cd3e021543cd5e1c3b70c7f5f7f66f3e25c1bb04"
+    },
+    "Classical/iQIYI": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 39,
+      "rules_sha256": "7150ca6e92f70b5a2ee6904daeb2e53edf40bd7d55a17028ee39a1b48ce900d0"
+    },
+    "Classical/iQIYIIntl": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 16,
+      "rules_sha256": "34715c033c90ca5f54a51b53bc89b3daedb29872f839f9033bf3b0ea3ed5016a"
+    },
+    "Classical/myTVSUPER": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 4,
+      "rules_sha256": "8d76a676a312f69970c6be463961accbb75d9593d157fe3dd49a2c5c585f6456"
+    },
+    "Claude": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 8,
+      "rules_sha256": "d97e7c0a843c241062194b8b990a661410e298071fd3203f2d2e3109aeaad5bd"
+    },
+    "Copilot": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 6,
+      "rules_sha256": "233c781f0254c9873f072cf6297fcb77b918489e4ad055b66624905522b67bbc"
+    },
     "Crypto": {
       "behavior": "domain",
       "formats": [
@@ -2767,6 +3574,61 @@
       "rule_count": 180,
       "rules_sha256": "7b43caf5fb3309002caf939ccb450d44b6eb9371256b5fe01e2041a70ce5f446"
     },
+    "DAZN": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 8,
+      "rules_sha256": "3e5d7006ca9781f325e5843d8eb370a0358129654a14a294ab22f91b707c04b0"
+    },
+    "Discord": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 28,
+      "rules_sha256": "b2412d65e3b458aa6a8c71f90ca2a37368e82faba97a5d801b015ee53690988a"
+    },
+    "DiscoveryPlus": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 3,
+      "rules_sha256": "3e0c2f89b6bbae908bb3f771da0c1f200abda8aadc3e16fb1e42c9f5d466f0ad"
+    },
+    "Disney": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 222,
+      "rules_sha256": "257cec31b2e2c362ad9c8b9ea82dbab0efdf8a5ac8d0f189b6189c467517149a"
+    },
+    "DouYin": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 71,
+      "rules_sha256": "2a52d66cb9210cdfa37e0d395a08f4380053b544d28cac1b1908a9b75866d202"
+    },
     "Emby": {
       "behavior": "domain",
       "formats": [
@@ -2777,6 +3639,28 @@
       "mrs_behavior": "domain",
       "rule_count": 89,
       "rules_sha256": "5f3ddc466c3c745e4933cfb0e62701cecbd7952090c08e0e6fcef43c8078bdd2"
+    },
+    "F1TV": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 3,
+      "rules_sha256": "b5df783bcf417da2eddc552ae4a03bf2c94303037fa5812ea1a9d120f8d0e0fe"
+    },
+    "Fox": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 245,
+      "rules_sha256": "2ec5f37f115aedddd97bb54ec71fe0eb867cb2f6d2636878898eed0d3a3094e0"
     },
     "GameDownload": {
       "behavior": "domain",
@@ -2800,6 +3684,61 @@
       "rule_count": 24,
       "rules_sha256": "55bd7c92183ecfce6cffd3c2586ca8c4e18fef887c9051a4c2c53745858b4f62"
     },
+    "Gemini": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 41,
+      "rules_sha256": "3c7f134674067e7a10c6f2a0db575c06599d76c88d68084152df26831726c16c"
+    },
+    "GeolocationCN": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 5286,
+      "rules_sha256": "8fb5ee1be22a3f2b710ace4ba07e50a16379ce324c3766e6ae84622e83604590"
+    },
+    "GitHub": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 59,
+      "rules_sha256": "65ff988356c95068eb92c7d73aaf5506089ee26355a9f324c5eeacd22359c3b6"
+    },
+    "GlobalMedia": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 1579,
+      "rules_sha256": "14f8cc867e835a353bfc8fd7020a93cab0e40b78b2fe64b14a6fe1b1a6466707"
+    },
+    "Google": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 846,
+      "rules_sha256": "c6ffd44986a2a8b6a325974e1b4ef120559a20ea072b4b16be615383c2397fee"
+    },
     "GoogleFCM": {
       "behavior": "domain",
       "formats": [
@@ -2822,6 +3761,50 @@
       "rule_count": 7,
       "rules_sha256": "bb70e97f8db6f9d1f3f88874b54814a59dfad484ac94378e81f581a3e8f8416a"
     },
+    "HBO": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 65,
+      "rules_sha256": "a4744d12be95c3c4c09806ee70bd0aa33ffa274195c4b8cb92f1bc8d2d0fd823"
+    },
+    "HTTPDNS": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 50,
+      "rules_sha256": "0a76434f8ca5e388f38c3aa89976de127c532a48ab127df4ba86ceaea6d30e6e"
+    },
+    "HTTPDNSCN": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 49,
+      "rules_sha256": "4b6ebb056d7eae856db742e6fa354da7ec13863915436e054871ad8f3e25abc1"
+    },
+    "Hulu": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 48,
+      "rules_sha256": "65a3695ff1bd625e6cb681b89dfd88ac68235851bdb072faa630e76a44b67542"
+    },
     "IP/ApplePush": {
       "behavior": "ipcidr",
       "formats": [
@@ -2832,6 +3815,17 @@
       "mrs_behavior": "ipcidr",
       "rule_count": 9,
       "rules_sha256": "fe8e4bcd211fd65c8b8c12e2fe705930beb84f1a7f62427bed3249ad7b326141"
+    },
+    "IP/China": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 9622,
+      "rules_sha256": "7e7c21f114cac918dae8c4565c6e74acfc6c9c1aacbcc381aea846b6be1a103c"
     },
     "IP/Google": {
       "behavior": "ipcidr",
@@ -2865,6 +3859,17 @@
       "mrs_behavior": "ipcidr",
       "rule_count": 120,
       "rules_sha256": "befa8b335d6bc0332c17da74164235195ec1d6557c41a5781d9460ebc1131c1e"
+    },
+    "IP/Private": {
+      "behavior": "ipcidr",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "ipcidr",
+      "rule_count": 18,
+      "rules_sha256": "a51d9bffa700657ae1fd31bfe7789dc8fe1611e3ccfb83d62e63484796a20f88"
     },
     "IP/Proxy": {
       "behavior": "ipcidr",
@@ -2910,6 +3915,72 @@
       "rule_count": 3,
       "rules_sha256": "c03c3392816142514a78d4879512f7804915d5e018e5a027761803d5ae82c09b"
     },
+    "Japonx": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 4,
+      "rules_sha256": "accc422a258572b9bc35e0b4c3f1d1fcb6c05d684369912e156a8c3a60133873"
+    },
+    "JingDong": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 235,
+      "rules_sha256": "7992d7624e1292ce82fd4e2f074a16dbde4a7d248ff2a5868d3c5a97728d112a"
+    },
+    "KKBOX": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 5,
+      "rules_sha256": "a86075e558655981a19efa843624bd5c7d16f3e99e0525c5226b3acc5241c2c7"
+    },
+    "KKTV": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 3,
+      "rules_sha256": "23a81e35ffe0f5e941e1b36f3e71a73888723f9992a1626a2a10c292a5331658"
+    },
+    "Line": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 20,
+      "rules_sha256": "cd70040d4497402eeb7a8f5a5d8399da78c9e8dbc2209f2648523d111133a2bc"
+    },
+    "Microsoft": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 637,
+      "rules_sha256": "3e2143e685a4a7447cdc84afb01d9596f478a690a7456357b6af19b0bc738cea"
+    },
     "MicrosoftCN": {
       "behavior": "domain",
       "formats": [
@@ -2950,6 +4021,17 @@
       "rule_count": 10,
       "rules_sha256": "b7d89ff7beee5a0ad35001620ac52247d048ff764c13e7ff0ef3e6cda14cc05d"
     },
+    "NetEase": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 42,
+      "rules_sha256": "3743a7c53a7ca629b38355f25d35d93c50a7bc256c96017f66ad683d4b573c9e"
+    },
     "Netflix": {
       "behavior": "domain",
       "formats": [
@@ -2961,6 +4043,94 @@
       "rule_count": 24,
       "rules_sha256": "77d4c75ff5f1e02d3da492f9e2e38562b9bea4c481eec4a1e7e0a46def59859f"
     },
+    "Niconico": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 10,
+      "rules_sha256": "64f79ce59273322c2e1a60cbc5dc6d76a0932307d9c42074fb02247f693681d9"
+    },
+    "OpenAI": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 22,
+      "rules_sha256": "cf7a1447db0f6a1a93b633df719e0c45188e7276909bc6aa193ef2bbaa5e29a1"
+    },
+    "PBS": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 1,
+      "rules_sha256": "a9d2522df0afab4249101e64cf5ea4ad7c05447f40fa559d04c3a818188c8442"
+    },
+    "PayPal": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 245,
+      "rules_sha256": "29fc4c569f3566e3dffd32f784c91202e079acf4671eda66ba84a322886579f8"
+    },
+    "Pornhub": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 9,
+      "rules_sha256": "559d991559c94aa3c75b11a5c947b025f1258a174533251a8450cfe1ab80f191"
+    },
+    "PrimeVideo": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 23,
+      "rules_sha256": "5d635782275666f35eaeac4b60f261890719767f72a1b7db9d5639856725ec9f"
+    },
+    "Private": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 130,
+      "rules_sha256": "6802ad34cea360eda5b8fa9e9c9214747b9c4bf654f6335657bc70a838ea1861"
+    },
+    "Proxy": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 26387,
+      "rules_sha256": "add6f6ef1eebbadacf33a7e5fa8a0c540a08c40f18433f4581ef126cf08e5015"
+    },
     "ProxyGlobal": {
       "behavior": "domain",
       "formats": [
@@ -2971,6 +4141,17 @@
       "mrs_behavior": "domain",
       "rule_count": 26387,
       "rules_sha256": "add6f6ef1eebbadacf33a7e5fa8a0c540a08c40f18433f4581ef126cf08e5015"
+    },
+    "Scholar": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 475,
+      "rules_sha256": "93498d5b9f9db2ac2fcac6db79d6c527fd4b13e773c656324802e9ba9948baf6"
     },
     "ScholarCN": {
       "behavior": "domain",
@@ -2994,6 +4175,50 @@
       "rule_count": 475,
       "rules_sha256": "93498d5b9f9db2ac2fcac6db79d6c527fd4b13e773c656324802e9ba9948baf6"
     },
+    "Soundcloud": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 3,
+      "rules_sha256": "a6ad73c1c2ab3805c3c41716a6f1e5c4c0817ef900315b99c5a687b3b8939688"
+    },
+    "Speedtest": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 75,
+      "rules_sha256": "682c81e94d09282c9a269a1314aaab34a7961a56fb5bf0198d4ea3c58a0c361a"
+    },
+    "Spotify": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 25,
+      "rules_sha256": "e64ff673beb35dd6ea5f70f68aa4a719e54c6d68de2eb7ee65d5b8d5de4d284f"
+    },
+    "Steam": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 59,
+      "rules_sha256": "f13b7c74acbcf558751b7f5da9ad1cc5a6a6457a58aed7b036a8ebc0f929174d"
+    },
     "SteamCN": {
       "behavior": "domain",
       "formats": [
@@ -3005,6 +4230,17 @@
       "rule_count": 19,
       "rules_sha256": "a1277688f38bfd18d0fa93d41480bbee8399c70e77375e774b6492b58834d3a7"
     },
+    "TVB": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 14,
+      "rules_sha256": "f89a7e4bda538493495882b87b67d86073b884747f38aa2289789fefd93751e8"
+    },
     "Telegram": {
       "behavior": "domain",
       "formats": [
@@ -3015,6 +4251,17 @@
       "mrs_behavior": "domain",
       "rule_count": 21,
       "rules_sha256": "619df30317e41c5958311c5d4f76abe1bfa45ae4ba399129a0fec2fe4edd43d9"
+    },
+    "Tencent": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 551,
+      "rules_sha256": "655b84535b2d241c490be41195db44634688dd12d7c577ec8dfca4bd7c67755f"
     },
     "TikTok": {
       "behavior": "classical",
@@ -3036,6 +4283,28 @@
       "rule_count": 24,
       "rules_sha256": "ccdc94b2bcec1f043fddd9cd9bb529472dfd9d663af36a19a586ec8b6efc1211"
     },
+    "ViuTV": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 6,
+      "rules_sha256": "71c0af18fe1cd45c0555b9d1ec5aaac0664b0039463e1a296027fc8b5caba46b"
+    },
+    "XiaoMi": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 51,
+      "rules_sha256": "57bea08130dd81de1d58eb19b23ac7f9e841a683d5a32ce276ef0f56398c39f1"
+    },
     "YouTube": {
       "behavior": "domain",
       "formats": [
@@ -3046,7 +4315,62 @@
       "mrs_behavior": "domain",
       "rule_count": 177,
       "rules_sha256": "3c29a7896249128059bde686368466c57eb08eae5f777f3ab7fff9118c34c9f6"
+    },
+    "YouTubeMusic": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 177,
+      "rules_sha256": "3c29a7896249128059bde686368466c57eb08eae5f777f3ab7fff9118c34c9f6"
+    },
+    "Youku": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 10,
+      "rules_sha256": "0587eb344bb817e059202239ea801a037b43baa4a6d74afabce4d8b399b96236"
+    },
+    "iQIYI": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 10,
+      "rules_sha256": "04dd2296e17fbcbfac245a65fcf9fa7fdbad5605b8783e2a4f98225be41495a4"
+    },
+    "iQIYIIntl": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 1,
+      "rules_sha256": "f78c752625705eabdd4061047a938899266bed7b816bee54f7c6935d35d49f26"
+    },
+    "myTVSUPER": {
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 1,
+      "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "8bac217872401131e8683c3e28af2889f9534d90"
+  "source_commit": "1c81315da1c1085b404a3651fcebdab6041db350"
 }

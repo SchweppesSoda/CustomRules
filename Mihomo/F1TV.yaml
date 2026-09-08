@@ -1,0 +1,6 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: F1TV
+payload:
+  - +.f1.com
+  - +.f1tv.com
+  - +.formula1.com

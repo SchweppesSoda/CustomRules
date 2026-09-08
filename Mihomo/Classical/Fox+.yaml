@@ -1,0 +1,7 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/Fox+
+payload:
+  - USER-AGENT,FOXPlus*
+  - DOMAIN-SUFFIX,akamaized.net
+  - DOMAIN-SUFFIX,foxplus.com
+  - DOMAIN-SUFFIX,theplatform.com

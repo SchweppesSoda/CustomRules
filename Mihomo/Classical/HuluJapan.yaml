@@ -1,0 +1,8 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/HuluJapan
+payload:
+  - DOMAIN-SUFFIX,happyon.jp
+  - DOMAIN-SUFFIX,hulu.jp
+  - DOMAIN-SUFFIX,prod.hjholdings.tv
+  - DOMAIN-SUFFIX,streaks.jp
+  - DOMAIN-SUFFIX,yb.uncn.jp

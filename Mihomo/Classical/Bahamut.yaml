@@ -1,0 +1,9 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Classical/Bahamut
+payload:
+  - DOMAIN,gamer-cds.cdn.hinet.net
+  - DOMAIN,gamer2-cds.cdn.hinet.net
+  - DOMAIN-SUFFIX,bahamut.akamaized.net
+  - DOMAIN-SUFFIX,bahamut.com.tw
+  - DOMAIN-SUFFIX,gamer.com.tw
+  - USER-AGENT,Anime*

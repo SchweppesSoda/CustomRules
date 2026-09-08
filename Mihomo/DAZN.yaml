@@ -1,0 +1,11 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: DAZN
+payload:
+  - +.dazn-api.com
+  - +.dazn.com
+  - +.dazndn.com
+  - +.daznfeeds.com
+  - +.daznplayer.com
+  - +.daznservices.com
+  - +.indazn.com
+  - +.indaznlab.com
