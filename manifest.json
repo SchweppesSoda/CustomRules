@@ -4020,7 +4020,7 @@
         "list"
       ],
       "rule_count": 17,
-      "rules_sha256": "4888a94e0007be3f5cee473a390fb67192cc5e49942bac311b8b42a80bf3cbcf"
+      "rules_sha256": "fe55a5e6e69434c04d6cdce2fc928b0434fa0fdbe62c270d9bb2da2bb0983c7f"
     },
     "NetEase": {
       "behavior": "domain",
@@ -4588,5 +4588,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "c16f8ad545cd65be427ce47799fef1b22f03c8c4"
+  "source_commit": "0f9847fcd4d8b0242da012cb0d5793b1c8cd4daa"
 }
