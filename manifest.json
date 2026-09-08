@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 36599,
-      "rules_sha256": "fd7ea1abf7533703603e5316ce5c8131e16b0b2ec4ef38e2dd070e1c83c90dd6"
+      "rule_count": 37105,
+      "rules_sha256": "bdbeac9476cd701d81e3628fbe48c378853b787e78193da215d8c103f9020d6e"
     },
     "AirportServers": {
       "behavior": "classical",
@@ -3638,7 +3638,7 @@
       ],
       "mrs_behavior": "domain",
       "rule_count": 89,
-      "rules_sha256": "5f3ddc466c3c745e4933cfb0e62701cecbd7952090c08e0e6fcef43c8078bdd2"
+      "rules_sha256": "640a5eb9d36236edb0254e250956c4aba4ec1124468a3bc85210771682aa0ebb"
     },
     "F1TV": {
       "behavior": "domain",
@@ -4018,8 +4018,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 10,
-      "rules_sha256": "b7d89ff7beee5a0ad35001620ac52247d048ff764c13e7ff0ef3e6cda14cc05d"
+      "rule_count": 17,
+      "rules_sha256": "4888a94e0007be3f5cee473a390fb67192cc5e49942bac311b8b42a80bf3cbcf"
     },
     "NetEase": {
       "behavior": "domain",
@@ -4086,6 +4086,221 @@
       "mrs_behavior": "domain",
       "rule_count": 245,
       "rules_sha256": "29fc4c569f3566e3dffd32f784c91202e079acf4671eda66ba84a322886579f8"
+    },
+    "Policy/AsianTV": {
+      "aggregation": {
+        "members": [
+          "AbemaTV",
+          "Bahamut",
+          "Hulu",
+          "Japonx",
+          "KKBOX",
+          "KKTV",
+          "Line",
+          "myTVSUPER",
+          "Niconico",
+          "ViuTV"
+        ],
+        "policy": "Asian TV"
+      },
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 123,
+      "rules_sha256": "4e1da009879d7d3236da82d72df673de9afd661aa5d679861ba22b86b188ffea"
+    },
+    "Policy/CNMainlandTV": {
+      "aggregation": {
+        "members": [
+          "BiliBili",
+          "iQIYI",
+          "Classical/NetEaseMusicYaml",
+          "Classical/TencentVideoYaml",
+          "Classical/WeTV",
+          "Youku"
+        ],
+        "policy": "CN Mainland TV"
+      },
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 80,
+      "rules_sha256": "c223663c1956df827b36e4c12ec0623b48dec92ec9a2eb38287eb59bb85a7780"
+    },
+    "Policy/Classical/AISuite": {
+      "aggregation": {
+        "members": [
+          "Classical/OpenAI",
+          "Classical/Claude",
+          "Classical/Anthropic",
+          "Classical/Copilot",
+          "Classical/Gemini"
+        ],
+        "policy": "AI Suite"
+      },
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 86,
+      "rules_sha256": "b0807fd7b7970ca088b87e8b232147a78132cf4dffda19ca2b2899cf5962b020"
+    },
+    "Policy/Classical/AppleTV": {
+      "aggregation": {
+        "members": [
+          "AppleTV",
+          "Classical/AppleMusic",
+          "Classical/AppleNews"
+        ],
+        "policy": "Apple TV"
+      },
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 23,
+      "rules_sha256": "0345478f320c05c18765c33da9eed76fd24d996cbaf1bc39f6e35651d9d5780e"
+    },
+    "Policy/Classical/AsianTV": {
+      "aggregation": {
+        "members": [
+          "Classical/AbemaTV",
+          "Classical/Bahamut",
+          "Classical/iQIYIIntl",
+          "Classical/myTVSUPER",
+          "Classical/Fox+",
+          "Classical/HuluJapan",
+          "Classical/JOOX",
+          "Classical/KKBOX",
+          "Classical/KKTV",
+          "Classical/LineTV",
+          "Classical/Niconico",
+          "Classical/ViuTV"
+        ],
+        "policy": "Asian TV"
+      },
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 92,
+      "rules_sha256": "3686ffaee6189dcc34fccaf5618e13320e7105f27b9a72a69225564c634a7dd3"
+    },
+    "Policy/Classical/CNMainlandTV": {
+      "aggregation": {
+        "members": [
+          "Classical/BiliBili",
+          "Classical/iQIYI",
+          "Classical/LeTV",
+          "Classical/NetEaseMusic",
+          "Classical/TencentVideo",
+          "Classical/Youku"
+        ],
+        "policy": "CN Mainland TV"
+      },
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 217,
+      "rules_sha256": "72b9aed1a79f8d10e64b67fe96697ec639b48d3c13d13c00cb80f7f18d0c90d2"
+    },
+    "Policy/Classical/GlobalTV": {
+      "aggregation": {
+        "members": [
+          "Classical/HBO",
+          "Classical/PrimeVideo",
+          "Classical/ABC",
+          "Classical/BBC",
+          "Classical/DAZN",
+          "Classical/DiscoveryPlus",
+          "Classical/TVB",
+          "Classical/F1TV",
+          "Classical/Fox",
+          "Classical/Pandora",
+          "Classical/PBS",
+          "Classical/Soundcloud"
+        ],
+        "policy": "Global TV"
+      },
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 414,
+      "rules_sha256": "7bd2d6ba0cad9fa4edf5f50ea3918ce5ad9579cf7bf01bea79dfa8bcf85f6189"
+    },
+    "Policy/Classical/Steam": {
+      "aggregation": {
+        "members": [
+          "GameDownload",
+          "Classical/Steam"
+        ],
+        "policy": "Steam"
+      },
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "rule_count": 548,
+      "rules_sha256": "33ac827d5085296d5063b966985b9c806b43728faf79cf5856d2ccafe7e71ffa"
+    },
+    "Policy/GlobalTV": {
+      "aggregation": {
+        "members": [
+          "ABC",
+          "PrimeVideo",
+          "BBC",
+          "DAZN",
+          "DiscoveryPlus",
+          "TVB",
+          "Fox",
+          "HBO",
+          "PBS",
+          "Pornhub",
+          "Soundcloud"
+        ],
+        "policy": "Global TV"
+      },
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 403,
+      "rules_sha256": "8e0bf7b4eee589c0104a3bacd23a17f6c31a0020c150795031b8d31c8b5538dd"
+    },
+    "Policy/Steam": {
+      "aggregation": {
+        "members": [
+          "GameDownload",
+          "Steam"
+        ],
+        "policy": "Steam"
+      },
+      "behavior": "domain",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "rule_count": 545,
+      "rules_sha256": "2d40416f7581adf2f1e5483d78179d1a59c604413bc91d20cd502ed39f7da73b"
     },
     "Pornhub": {
       "behavior": "domain",
@@ -4372,5 +4587,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "b2147c0d09526f6558cc73468005681fcb0c5ded"
+  "source_commit": "88b99972694b60c7bfd608eec3eb112a24d71ffb"
 }
