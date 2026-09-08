@@ -96,7 +96,7 @@ verifies the final publication tree and skips copying byte-identical files.
 - `sources/catalog/banking.toml` is the entity-level Banking catalog with
   mutually exclusive regions.
 - `sources/upstreams.toml` is the only registry for permitted remote sources.
-  Every set declares its parser and `domain` or `ipcidr` behavior; the Emby
+  Every set declares its parser and `domain`, `ipcidr` or `classical` behavior; the Emby
   declaration also enables the reviewed manual/upstream union.
 - `sources/toolchain.toml` pins the Mihomo compiler release and archive
   SHA256.
