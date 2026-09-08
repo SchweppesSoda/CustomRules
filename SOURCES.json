@@ -836,6 +836,11 @@
       "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Special.list"
     },
     {
+      "sha256": "2df8eb2eb4acec68c8d0179814f1327e6d325f5311f1cf714c8a61c69919a5d1",
+      "size": "796445",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light.txt"
+    },
+    {
       "sha256": "9e0134ff1d724bbbbc44730cd723b3c6952873aaa65fc2bec6ae8b25b1d70f68",
       "size": "674",
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/binance"
