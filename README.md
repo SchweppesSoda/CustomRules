@@ -18,6 +18,55 @@ https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/auto-buil
 Non-rule resources such as `Egern/Modules/` and `Stash/` continue to use
 `master`.
 
+## Unified client subscriptions
+
+All ordinary remote rule subscriptions in the maintained ProxyConfig clients
+are published here. `sources/consumer-map.json` records the migration from each
+old public URL to its generated set and the reason for choosing its source.
+MetaCubeX is the preferred domain/IP upstream. Services without an equivalent
+MetaCubeX category retain their existing blackmatrix7, dler-io, ACL4SSR or other
+reviewed source, explicitly listed in `sources/upstreams.toml`.
+
+`Classical/<Service>` combines the preferred domain set with the former
+source's non-domain rules (keywords, IPs, ASN, process, user-agent or URL rules).
+Where no equivalent domain set exists, it preserves the whole classical
+source. These emit YAML and LIST, plus MRS only when the result is domain-only.
+They are not silently reduced to domain-only MRS. Client-specific DNS lists
+use domain-only projections. Proxy subscriptions, modules, scripts, icons and
+GeoIP/ASN databases remain separately managed.
+
+### Conservative ad blocking
+
+- `AdBlockLite`: the default, reviewed domain-only subset of MetaCubeX
+  `category-ads-all`. Its allowlist is `sources/policies/adblock-lite.toml`.
+  New upstream entries cannot enter Lite until their full domain values have
+  been reviewed. No keyword, IP, broad telemetry, push, shared SDK or login
+  rules are included. Smaller coverage is intentional; zero false positives
+  is not guaranteed.
+- `AdBlock`: the full MetaCubeX category, available as an opt-in replacement.
+  Do not stack it with Lite in the same client.
+- `HTTPDNS`: the deduplicated domain union of MetaCubeX `httpdns` and
+  `category-httpdns-cn`. Clients default to DIRECT and retain an opt-in REJECT
+  selection; duplicate hard-blocking plugins/rewrite rules should be disabled.
+  Existing saved policy selections may need to be changed on the device.
+
+Both ad variants and HTTPDNS emit `Mihomo/<Name>.yaml/.mrs` and
+`Surge/<Name>.list`. All formats are generated from the same selected rules.
+
+### Migration validation
+
+Build and publish artifacts before switching client subscriptions. The
+read-only client gate checks URLs, artifact existence and provider behavior:
+
+```text
+python scripts/verify_consumers.py --proxyconfig-root ../ProxyConfig --output <verified-build> --include-generated
+```
+
+Source provenance and hashes remain in `SOURCES.json`. A fresh per-run
+`--source-cache` captures inputs; the second build uses the same cache with
+`--offline`. Never reuse an old cache for a new scheduled update. The CI also
+verifies the final publication tree and skips copying byte-identical files.
+
 ## Sources
 
 - `sources/manual/` contains reviewed classical rule sources such as

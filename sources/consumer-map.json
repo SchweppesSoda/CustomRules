@@ -1,0 +1,637 @@
+{
+  "schema": 1,
+  "rules": {
+    "https://github.com/666OS/rules/raw/release/mihomo/domain/China.mrs": {
+      "set": "China",
+      "reason": "MetaCubeX domain/IP source"
+    },
+    "https://github.com/666OS/rules/raw/release/mihomo/domain/Private.mrs": {
+      "set": "Private",
+      "reason": "MetaCubeX domain/IP source"
+    },
+    "https://github.com/666OS/rules/raw/release/mihomo/domain/Proxy.mrs": {
+      "set": "ProxyGlobal",
+      "reason": "MetaCubeX domain/IP source"
+    },
+    "https://github.com/666OS/rules/raw/release/mihomo/ip/China.mrs": {
+      "set": "IP/China",
+      "reason": "MetaCubeX domain/IP source"
+    },
+    "https://github.com/666OS/rules/raw/release/mihomo/ip/Private.mrs": {
+      "set": "IP/Private",
+      "reason": "MetaCubeX domain/IP source"
+    },
+    "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list": {
+      "set": "Classical/ProxyGFWlist",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs": {
+      "set": "IP/China",
+      "reason": "MetaCubeX domain/IP source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs": {
+      "set": "IP/Private",
+      "reason": "MetaCubeX domain/IP source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/abc.mrs": {
+      "set": "ABC",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/abema.mrs": {
+      "set": "AbemaTV",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-intelligence.mrs": {
+      "set": "AppleIntelligence",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bahamut.mrs": {
+      "set": "Bahamut",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bbc.mrs": {
+      "set": "BBC",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs": {
+      "set": "BiliBili",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs": {
+      "set": "AdBlockLite",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs": {
+      "set": "AIGlobal",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-httpdns-cn.mrs": {
+      "set": "HTTPDNSCN",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-speedtest.mrs": {
+      "set": "Speedtest",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs": {
+      "set": "China",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/dazn.mrs": {
+      "set": "DAZN",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discord.mrs": {
+      "set": "Discord",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discoveryplus.mrs": {
+      "set": "DiscoveryPlus",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.mrs": {
+      "set": "Disney",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fox.mrs": {
+      "set": "Fox",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-cn.mrs": {
+      "set": "GeolocationCN",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs": {
+      "set": "GitHub",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hbo.mrs": {
+      "set": "HBO",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/httpdns.mrs": {
+      "set": "HTTPDNS",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hulu.mrs": {
+      "set": "Hulu",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/iqiyi.mrs": {
+      "set": "iQIYI",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/japonx.mrs": {
+      "set": "Japonx",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/kkbox.mrs": {
+      "set": "KKBOX",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/kktv.mrs": {
+      "set": "KKTV",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/line.mrs": {
+      "set": "Line",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs": {
+      "set": "Microsoft",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/mytvsuper.mrs": {
+      "set": "myTVSUPER",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netease.mrs": {
+      "set": "NetEase",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/niconico.mrs": {
+      "set": "Niconico",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs": {
+      "set": "PayPal",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pbs.mrs": {
+      "set": "PBS",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pornhub.mrs": {
+      "set": "Pornhub",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/primevideo.mrs": {
+      "set": "PrimeVideo",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs": {
+      "set": "Private",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/soundcloud.mrs": {
+      "set": "Soundcloud",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs": {
+      "set": "Spotify",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs": {
+      "set": "Steam",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tencent.mrs": {
+      "set": "Tencent",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tvb.mrs": {
+      "set": "TVB",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/viu.mrs": {
+      "set": "ViuTV",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youku.mrs": {
+      "set": "Youku",
+      "reason": "MetaCubeX domain source"
+    },
+    "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Rules/HTTPDNS.Loon-Extra.list": {
+      "set": "HTTPDNS",
+      "reason": "retire broad legacy HTTPDNS supplement"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AbemaTV/AbemaTV.list": {
+      "set": "Classical/AbemaTV",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Advertising/Advertising.list": {
+      "set": "AdBlockLite",
+      "reason": "reviewed conservative blocking policy"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Advertising/Advertising_Domain.list": {
+      "set": "AdBlockLite",
+      "reason": "reviewed conservative blocking policy"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Apple/Apple.list": {
+      "set": "Classical/Apple",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AppleMusic/AppleMusic.list": {
+      "set": "Classical/AppleMusic",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AppleNews/AppleNews.list": {
+      "set": "Classical/AppleNews",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AppleTV/AppleTV.list": {
+      "set": "Classical/AppleTV",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Bahamut/Bahamut.list": {
+      "set": "Classical/Bahamut",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list": {
+      "set": "Classical/BiliBili",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BlockHttpDNS/BlockHttpDNS.list": {
+      "set": "HTTPDNS",
+      "reason": "reviewed conservative blocking policy"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list": {
+      "set": "Classical/China",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/ChinaASN/ChinaASN.list": {
+      "set": "Classical/ChinaASN",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/ChinaMedia/ChinaMedia.list": {
+      "set": "Classical/ChinaMedia",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Claude/Claude.list": {
+      "set": "Classical/Claude",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Copilot/Copilot.list": {
+      "set": "Classical/Copilot",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Discord/Discord.list": {
+      "set": "Classical/Discord",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Disney/Disney.list": {
+      "set": "Classical/Disney",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Gemini/Gemini.list": {
+      "set": "Classical/Gemini",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GitHub/GitHub.list": {
+      "set": "Classical/GitHub",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia.list": {
+      "set": "Classical/GlobalMedia",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list": {
+      "set": "Classical/Google",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GoogleFCM/GoogleFCM.list": {
+      "set": "Classical/GoogleFCM",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Microsoft/Microsoft.list": {
+      "set": "Classical/Microsoft",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list": {
+      "set": "Classical/Netflix",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list": {
+      "set": "Classical/OpenAI",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/PayPal/PayPal.list": {
+      "set": "Classical/PayPal",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Privacy/Privacy.list": {
+      "set": "AdBlockLite",
+      "reason": "reviewed conservative blocking policy"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Privacy/Privacy_Domain.list": {
+      "set": "AdBlockLite",
+      "reason": "reviewed conservative blocking policy"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list": {
+      "set": "Classical/Proxy",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy_Domain.list": {
+      "set": "ProxyGlobal",
+      "reason": "MetaCubeX global domain source"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Scholar/Scholar.list": {
+      "set": "Classical/Scholar",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Speedtest/Speedtest.list": {
+      "set": "Classical/Speedtest",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list": {
+      "set": "Classical/Spotify",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Steam/Steam.list": {
+      "set": "Classical/Steam",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Telegram/Telegram.list": {
+      "set": "Classical/Telegram",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list": {
+      "set": "TikTok",
+      "reason": "retain reviewed manual TikTok semantics"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list": {
+      "set": "Classical/WeChat",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/YouTube/YouTube.list": {
+      "set": "Classical/YouTube",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/YouTubeMusic/YouTubeMusic.list": {
+      "set": "Classical/YouTubeMusic",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AbemaTV/AbemaTV.list": {
+      "set": "Classical/AbemaTV",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AdvertisingLite/AdvertisingLite.list": {
+      "set": "AdBlockLite",
+      "reason": "reviewed conservative blocking policy"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Anthropic/Anthropic.list": {
+      "set": "Classical/Anthropic",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleMusic/AppleMusic.list": {
+      "set": "Classical/AppleMusic",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleNews/AppleNews.list": {
+      "set": "Classical/AppleNews",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Bahamut/Bahamut.list": {
+      "set": "Classical/Bahamut",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list": {
+      "set": "Classical/BiliBili",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BlockHttpDNS/BlockHttpDNS.list": {
+      "set": "HTTPDNS",
+      "reason": "reviewed conservative blocking policy"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Claude/Claude.list": {
+      "set": "Classical/Claude",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Copilot/Copilot.list": {
+      "set": "Classical/Copilot",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list": {
+      "set": "Classical/Discord",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list": {
+      "set": "Classical/Disney",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list": {
+      "set": "Classical/Gemini",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list": {
+      "set": "Classical/GitHub",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/HBO/HBO.list": {
+      "set": "Classical/HBO",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list": {
+      "set": "Classical/Private",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/LeTV/LeTV.list": {
+      "set": "Classical/LeTV",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list": {
+      "set": "Classical/Microsoft",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/NetEaseMusic/NetEaseMusic.list": {
+      "set": "Classical/NetEaseMusic",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list": {
+      "set": "Classical/OpenAI",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PayPal/PayPal.list": {
+      "set": "Classical/PayPal",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PrimeVideo/PrimeVideo.list": {
+      "set": "Classical/PrimeVideo",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Speedtest/Speedtest.list": {
+      "set": "Classical/Speedtest",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list": {
+      "set": "Classical/Spotify",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Steam/Steam.list": {
+      "set": "Classical/Steam",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TencentVideo/TencentVideo.list": {
+      "set": "Classical/TencentVideo",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Youku/Youku.list": {
+      "set": "Classical/Youku",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/iQIYI/iQIYI.list": {
+      "set": "Classical/iQIYI",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/iQIYIIntl/iQIYIIntl.list": {
+      "set": "Classical/iQIYIIntl",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/myTVSUPER/myTVSUPER.list": {
+      "set": "Classical/myTVSUPER",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Netease%20Music.yaml": {
+      "set": "Classical/NetEaseMusicYaml",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Tencent%20Video.yaml": {
+      "set": "Classical/TencentVideoYaml",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/WeTV.yaml": {
+      "set": "Classical/WeTV",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Domestic%20IPs.list": {
+      "set": "IP/China",
+      "reason": "MetaCubeX CN IP source"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Domestic.list": {
+      "set": "Classical/China",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/ABC.list": {
+      "set": "Classical/ABC",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/BBC%20iPlayer.list": {
+      "set": "Classical/BBC",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/DAZN.list": {
+      "set": "Classical/DAZN",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Discovery%20Plus.list": {
+      "set": "Classical/DiscoveryPlus",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/F1%20TV.list": {
+      "set": "Classical/F1TV",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Fox%20Now.list": {
+      "set": "Classical/Fox",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Fox%2B.list": {
+      "set": "Classical/Fox+",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Hulu%20Japan.list": {
+      "set": "Classical/HuluJapan",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/JOOX.list": {
+      "set": "Classical/JOOX",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/KKBOX.list": {
+      "set": "Classical/KKBOX",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/KKTV.list": {
+      "set": "Classical/KKTV",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Line%20TV.list": {
+      "set": "Classical/LineTV",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Niconico.list": {
+      "set": "Classical/Niconico",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/PBS.list": {
+      "set": "Classical/PBS",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Pandora.list": {
+      "set": "Classical/Pandora",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Soundcloud.list": {
+      "set": "Classical/Soundcloud",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/ViuTV.list": {
+      "set": "Classical/ViuTV",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/encoreTVB.list": {
+      "set": "Classical/TVB",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    },
+    "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Special.list": {
+      "set": "Classical/Special",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://rule.kelee.one/Loon/Alibaba.lsr": {
+      "set": "Alibaba",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/Apple.lsr": {
+      "set": "Apple",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/ChinaMax.lsr": {
+      "set": "China",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/DouYin.lsr": {
+      "set": "DouYin",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/Global.lsr": {
+      "set": "ProxyGlobal",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/Google.lsr": {
+      "set": "Google",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/JingDong.lsr": {
+      "set": "JingDong",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/NetEase.lsr": {
+      "set": "NetEase",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/Tencent.lsr": {
+      "set": "Tencent",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/XiaoMi.lsr": {
+      "set": "XiaoMi",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://rule.kelee.one/Loon/YouTube.lsr": {
+      "set": "YouTube",
+      "reason": "MetaCubeX domain-only DNS projection"
+    },
+    "https://testingcf.jsdelivr.net/gh/VirgilClyne/GetSomeFries@main/ruleset/ASN.China.list": {
+      "set": "Classical/ASN.China",
+      "reason": "no equivalent MetaCubeX service; retain reviewed upstream"
+    },
+    "https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Surge/Surge%203/Provider/Domestic%20IPs.list": {
+      "set": "IP/China",
+      "reason": "MetaCubeX CN IP source"
+    },
+    "https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Surge/Surge%203/Provider/Domestic.list": {
+      "set": "Classical/China",
+      "reason": "MetaCubeX domains + existing non-domain matchers"
+    }
+  }
+}

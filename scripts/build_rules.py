@@ -12,6 +12,7 @@ import re
 import shutil
 import subprocess
 import tempfile
+import time
 import tomllib
 import urllib.request
 from dataclasses import dataclass
@@ -21,7 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ROOT / "sources"
 RULE_RE = re.compile(
-    r"^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|IP-CIDR6?|PROCESS-NAME|USER-AGENT),(.+)$"
+    r"^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-WILDCARD|IP-CIDR6?|IP-ASN|PROCESS-NAME|USER-AGENT|URL-REGEX),(.+)$"
 )
 DOMAIN_RE = re.compile(
     r"^(?=.{1,253}$)[a-z0-9](?:[a-z0-9_-]{0,61}[a-z0-9])?"
@@ -131,18 +132,33 @@ class SourceRegistry:
 
 
 class Fetcher:
-    def __init__(self, registry: SourceRegistry) -> None:
+    def __init__(self, registry: SourceRegistry, cache_dir: Path | None = None, offline: bool = False) -> None:
         self.registry = registry
         self.cache: dict[str, bytes] = {}
+        self.cache_dir = cache_dir
+        self.offline = offline
 
     def bytes(self, url: str) -> bytes:
         if url not in self.cache:
-            request = urllib.request.Request(
-                url,
-                headers={"User-Agent": "CustomRules-AutoBuild/1.0"},
-            )
-            with urllib.request.urlopen(request, timeout=45) as response:
-                body = response.read()
+            cached = self.cache_dir / hashlib.sha256(url.encode()).hexdigest() if self.cache_dir else None
+            if cached and cached.is_file():
+                body = cached.read_bytes()
+            else:
+                if self.offline:
+                    raise RuntimeError(f"Source snapshot is missing: {url}")
+                request = urllib.request.Request(url, headers={"User-Agent": "CustomRules-AutoBuild/1.0"})
+                for attempt in range(3):
+                    try:
+                        with urllib.request.urlopen(request, timeout=45) as response:
+                            body = response.read()
+                        break
+                    except OSError:
+                        if attempt == 2:
+                            raise RuntimeError(f"Failed to fetch approved upstream: {url}") from None
+                        time.sleep(attempt + 1)
+                if cached and body.strip():
+                    cached.parent.mkdir(parents=True, exist_ok=True)
+                    cached.write_bytes(body)
             if not body.strip():
                 raise RuntimeError(f"Upstream returned empty content: {url}")
             self.cache[url] = body
@@ -367,8 +383,8 @@ def build_upstream_set(
     fetcher: Fetcher,
 ) -> tuple[RuleSet, list[str]]:
     behavior = str(config.get("behavior", ""))
-    if behavior not in BEHAVIOR_TYPES:
-        raise ValueError(f"{name}: upstream behavior must be domain or ipcidr")
+    if behavior not in {*BEHAVIOR_TYPES, "classical"}:
+        raise ValueError(f"{name}: upstream behavior must be domain, ipcidr or classical")
     parser = str(config.get("parser", ""))
     rules: list[Rule] = []
     unsupported: list[str] = []
@@ -397,24 +413,61 @@ def build_upstream_set(
                 if behavior != "ipcidr":
                     raise ValueError(f"{name}: cidr-list only supports ipcidr behavior")
                 rules.extend(parse_cidr_list(body, url))
-            elif parser == "classical-list":
-                parsed, ignored = parse_classical_list(
-                    body, url, behavior, keyword_suffixes
-                )
+            elif parser in {"classical-list", "classical-yaml"}:
+                if parser == "classical-yaml":
+                    body = "\n".join(line.strip()[2:].strip().strip("\"'") for line in body.splitlines() if line.strip().startswith("- "))
+                if behavior == "classical":
+                    parsed, ignored = parse_full_classical_list(body, url), []
+                else:
+                    parsed, ignored = parse_classical_list(body, url, behavior, keyword_suffixes)
                 rules.extend(parsed)
                 unsupported.extend(ignored)
             else:
                 raise ValueError(f"{name}: unsupported upstream parser: {parser}")
     rules = stable_unique(rules)
+    if config.get("non_domain_only"):
+        rules = [rule for rule in rules if rule.kind not in DOMAIN_TYPES]
     if behavior == "domain":
         rules = compact_domains(rules)
-    allowed = BEHAVIOR_TYPES[behavior]
-    invalid = [rule.classical for rule in rules if rule.kind not in allowed]
+    allowed = BEHAVIOR_TYPES.get(behavior)
+    invalid = [rule.classical for rule in rules if allowed is not None and rule.kind not in allowed]
     if invalid:
         raise ValueError(f"{name}: {behavior} set contains invalid rules: {invalid[:3]}")
-    if not rules:
+    if not rules and not config.get("include_sets"):
         raise RuntimeError(f"{name}: upstream set is empty")
     return RuleSet(rules, behavior), unsupported
+
+
+def parse_full_classical_list(body: str, url: str) -> list[Rule]:
+    """Preserve classical match types and options; unknown syntax fails closed."""
+    result: list[Rule] = []
+    for number, raw in enumerate(body.splitlines(), 1):
+        line = raw.strip()
+        if not line or line.startswith('#'):
+            continue
+        match = RULE_RE.fullmatch(line)
+        if not match:
+            raise ValueError(f"Unsupported classical syntax: {url}:{number}")
+        kind, value = match.groups()
+        if kind in DOMAIN_TYPES:
+            value = normalize_domain(value)
+        elif kind in IP_TYPES:
+            parts = value.split(',')
+            if any(option != 'no-resolve' for option in parts[1:]):
+                raise ValueError(f"Unsupported IP option: {url}:{number}")
+            value = normalize_ip_network(parts[0]).value + (',no-resolve' if len(parts) > 1 else '')
+        result.append(Rule(kind, value))
+    if not result:
+        raise ValueError(f"Empty classical source: {url}")
+    return stable_unique(result)
+
+
+def select_adblock_lite(rules: list[Rule], approved: set[str]) -> list[Rule]:
+    # A reviewed list of exact rule values, not a name/keyword heuristic.
+    selected = [rule for rule in rules if rule.kind in DOMAIN_TYPES and rule.value in approved]
+    if not selected:
+        raise ValueError("AdBlockLite has no approved rules in the upstream snapshot")
+    return compact_domains(selected)
 
 
 def stable_unique(rules: list[Rule]) -> list[Rule]:
@@ -794,6 +847,8 @@ def main() -> None:
     parser.add_argument("--baseline", type=Path)
     parser.add_argument("--allow-large-change", action="store_true")
     parser.add_argument("--source-commit", default=os.environ.get("GITHUB_SHA", "working-tree"))
+    parser.add_argument("--source-cache", type=Path, help="Fresh per-build input snapshot; reuse only for replay")
+    parser.add_argument("--offline", action="store_true", help="Replay only the existing input snapshot")
     args = parser.parse_args()
 
     if not args.mihomo.is_file():
@@ -805,7 +860,7 @@ def main() -> None:
     upstream_config = load_toml(SOURCES / "upstreams.toml")
     v2fly_base = str(upstream_config["v2fly"]["base_url"])
     registry = SourceRegistry()
-    fetcher = Fetcher(registry)
+    fetcher = Fetcher(registry, args.source_cache, args.offline)
     sets: dict[str, RuleSet] = {}
     unsupported_upstream_rules: list[str] = []
     entity_reports: dict[str, list[dict[str, object]]] = {}
@@ -828,6 +883,17 @@ def main() -> None:
                 )
             built = merge_rule_sets(name, existing, built)
         sets[name] = built
+
+    for name, config in upstream_config.get("sets", {}).items():
+        for included in config.get("include_sets", []):
+            if included not in sets or upstream_config.get("sets", {}).get(included, {}).get("include_sets"):
+                raise ValueError(f"{name}: included set must be an independent built source: {included}")
+            sets[name].rules = stable_unique([*sets[included].rules, *sets[name].rules])
+        if not sets[name].rules:
+            raise ValueError(f"{name}: merged set is empty")
+
+    lite_policy = load_toml(SOURCES / "policies" / "adblock-lite.toml")
+    sets["AdBlockLite"] = RuleSet(select_adblock_lite(sets["AdBlock"].rules, set(lite_policy["approved_domains"])), "domain")
 
     crypto, _, entity_reports["Crypto"] = build_catalog(
         SOURCES / "catalog" / "crypto.toml",

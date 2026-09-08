@@ -201,3 +201,750 @@ parser = "cidr-list"
 urls = [
   "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt",
 ]
+
+# Unified consumer coverage: MetaCubeX first; classical supplements retain non-domain semantics.
+
+[sets."ABC"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/abc.list"]
+
+[sets."AIGlobal"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list"]
+
+[sets."AbemaTV"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/abema.list"]
+
+[sets."AdBlock"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.list"]
+
+[sets."Alibaba"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/alibaba.list"]
+
+[sets."Anthropic"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anthropic.list"]
+
+[sets."AppleIntelligence"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-intelligence.list"]
+
+[sets."AppleMusic"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-music.list"]
+
+[sets."BBC"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bbc.list"]
+
+[sets."Bahamut"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bahamut.list"]
+
+[sets."BiliBili"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.list"]
+
+[sets."China"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.list"]
+
+[sets."ChinaMedia"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-media-cn.list"]
+
+[sets."Classical/ABC"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/ABC.list"]
+include_sets = ["ABC"]
+non_domain_only = true
+
+[sets."Classical/ASN.China"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://testingcf.jsdelivr.net/gh/VirgilClyne/GetSomeFries@main/ruleset/ASN.China.list"]
+
+[sets."Classical/AbemaTV"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AbemaTV/AbemaTV.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AbemaTV/AbemaTV.list"]
+include_sets = ["AbemaTV"]
+non_domain_only = true
+
+[sets."Classical/Anthropic"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Anthropic/Anthropic.list"]
+include_sets = ["Anthropic"]
+non_domain_only = true
+
+[sets."Classical/Apple"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Apple/Apple.list"]
+include_sets = ["Apple"]
+non_domain_only = true
+
+[sets."Classical/AppleMusic"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AppleMusic/AppleMusic.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleMusic/AppleMusic.list"]
+include_sets = ["AppleMusic"]
+non_domain_only = true
+
+[sets."Classical/AppleNews"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AppleNews/AppleNews.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleNews/AppleNews.list"]
+
+[sets."Classical/AppleTV"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AppleTV/AppleTV.list"]
+include_sets = ["AppleTV"]
+non_domain_only = true
+
+[sets."Classical/BBC"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/BBC%20iPlayer.list"]
+include_sets = ["BBC"]
+non_domain_only = true
+
+[sets."Classical/Bahamut"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Bahamut/Bahamut.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Bahamut/Bahamut.list"]
+include_sets = ["Bahamut"]
+non_domain_only = true
+
+[sets."Classical/BiliBili"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list"]
+include_sets = ["BiliBili"]
+non_domain_only = true
+
+[sets."Classical/China"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list", "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Domestic.list"]
+include_sets = ["China"]
+non_domain_only = true
+
+[sets."Classical/ChinaASN"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/ChinaASN/ChinaASN.list"]
+
+[sets."Classical/ChinaMedia"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/ChinaMedia/ChinaMedia.list"]
+include_sets = ["ChinaMedia"]
+non_domain_only = true
+
+[sets."Classical/Claude"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Claude/Claude.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Claude/Claude.list"]
+include_sets = ["Claude"]
+non_domain_only = true
+
+[sets."Classical/Copilot"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Copilot/Copilot.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Copilot/Copilot.list"]
+include_sets = ["Copilot"]
+non_domain_only = true
+
+[sets."Classical/DAZN"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/DAZN.list"]
+include_sets = ["DAZN"]
+non_domain_only = true
+
+[sets."Classical/Discord"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Discord/Discord.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Discord/Discord.list"]
+include_sets = ["Discord"]
+non_domain_only = true
+
+[sets."Classical/DiscoveryPlus"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Discovery%20Plus.list"]
+include_sets = ["DiscoveryPlus"]
+non_domain_only = true
+
+[sets."Classical/Disney"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Disney/Disney.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list"]
+include_sets = ["Disney"]
+non_domain_only = true
+
+[sets."Classical/F1TV"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/F1%20TV.list"]
+include_sets = ["F1TV"]
+non_domain_only = true
+
+[sets."Classical/Fox"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Fox%20Now.list"]
+include_sets = ["Fox"]
+non_domain_only = true
+
+[sets."Classical/Fox+"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Fox%2B.list"]
+
+[sets."Classical/Gemini"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Gemini/Gemini.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list"]
+include_sets = ["Gemini"]
+non_domain_only = true
+
+[sets."Classical/GitHub"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GitHub/GitHub.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list"]
+include_sets = ["GitHub"]
+non_domain_only = true
+
+[sets."Classical/GlobalMedia"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia.list"]
+include_sets = ["GlobalMedia"]
+non_domain_only = true
+
+[sets."Classical/Google"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list"]
+include_sets = ["Google"]
+non_domain_only = true
+
+[sets."Classical/GoogleFCM"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GoogleFCM/GoogleFCM.list"]
+include_sets = ["GoogleFCM"]
+non_domain_only = true
+
+[sets."Classical/HBO"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/HBO/HBO.list"]
+include_sets = ["HBO"]
+non_domain_only = true
+
+[sets."Classical/HuluJapan"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Hulu%20Japan.list"]
+
+[sets."Classical/JOOX"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/JOOX.list"]
+
+[sets."Classical/KKBOX"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/KKBOX.list"]
+include_sets = ["KKBOX"]
+non_domain_only = true
+
+[sets."Classical/KKTV"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/KKTV.list"]
+include_sets = ["KKTV"]
+non_domain_only = true
+
+[sets."Classical/LeTV"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/LeTV/LeTV.list"]
+
+[sets."Classical/LineTV"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Line%20TV.list"]
+
+[sets."Classical/Microsoft"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Microsoft/Microsoft.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list"]
+include_sets = ["Microsoft"]
+non_domain_only = true
+
+[sets."Classical/NetEaseMusic"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/NetEaseMusic/NetEaseMusic.list"]
+
+[sets."Classical/NetEaseMusicYaml"]
+behavior = "classical"
+parser = "classical-yaml"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Netease%20Music.yaml"]
+
+[sets."Classical/Netflix"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list"]
+include_sets = ["Netflix"]
+non_domain_only = true
+
+[sets."Classical/Niconico"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Niconico.list"]
+include_sets = ["Niconico"]
+non_domain_only = true
+
+[sets."Classical/OpenAI"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list"]
+include_sets = ["OpenAI"]
+non_domain_only = true
+
+[sets."Classical/PBS"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/PBS.list"]
+include_sets = ["PBS"]
+non_domain_only = true
+
+[sets."Classical/Pandora"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Pandora.list"]
+
+[sets."Classical/PayPal"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/PayPal/PayPal.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PayPal/PayPal.list"]
+include_sets = ["PayPal"]
+non_domain_only = true
+
+[sets."Classical/PrimeVideo"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PrimeVideo/PrimeVideo.list"]
+include_sets = ["PrimeVideo"]
+non_domain_only = true
+
+[sets."Classical/Private"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list"]
+include_sets = ["Private"]
+non_domain_only = true
+
+[sets."Classical/Proxy"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list"]
+include_sets = ["Proxy"]
+non_domain_only = true
+
+[sets."Classical/ProxyGFWlist"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list"]
+
+[sets."Classical/Scholar"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Scholar/Scholar.list"]
+include_sets = ["Scholar"]
+non_domain_only = true
+
+[sets."Classical/Soundcloud"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Soundcloud.list"]
+include_sets = ["Soundcloud"]
+non_domain_only = true
+
+[sets."Classical/Special"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Special.list"]
+
+[sets."Classical/Speedtest"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Speedtest/Speedtest.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Speedtest/Speedtest.list"]
+include_sets = ["Speedtest"]
+non_domain_only = true
+
+[sets."Classical/Spotify"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list"]
+include_sets = ["Spotify"]
+non_domain_only = true
+
+[sets."Classical/Steam"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Steam/Steam.list", "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Steam/Steam.list"]
+include_sets = ["Steam"]
+non_domain_only = true
+
+[sets."Classical/TVB"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/encoreTVB.list"]
+include_sets = ["TVB"]
+non_domain_only = true
+
+[sets."Classical/Telegram"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Telegram/Telegram.list"]
+include_sets = ["Telegram"]
+non_domain_only = true
+
+[sets."Classical/TencentVideo"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TencentVideo/TencentVideo.list"]
+
+[sets."Classical/TencentVideoYaml"]
+behavior = "classical"
+parser = "classical-yaml"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/Tencent%20Video.yaml"]
+
+[sets."Classical/ViuTV"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/ViuTV.list"]
+include_sets = ["ViuTV"]
+non_domain_only = true
+
+[sets."Classical/WeChat"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list"]
+
+[sets."Classical/WeTV"]
+behavior = "classical"
+parser = "classical-yaml"
+urls = ["https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Media/WeTV.yaml"]
+
+[sets."Classical/YouTube"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/YouTube/YouTube.list"]
+include_sets = ["YouTube"]
+non_domain_only = true
+
+[sets."Classical/YouTubeMusic"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/YouTubeMusic/YouTubeMusic.list"]
+include_sets = ["YouTubeMusic"]
+non_domain_only = true
+
+[sets."Classical/Youku"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Youku/Youku.list"]
+include_sets = ["Youku"]
+non_domain_only = true
+
+[sets."Classical/iQIYI"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/iQIYI/iQIYI.list"]
+include_sets = ["iQIYI"]
+non_domain_only = true
+
+[sets."Classical/iQIYIIntl"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/iQIYIIntl/iQIYIIntl.list"]
+include_sets = ["iQIYIIntl"]
+non_domain_only = true
+
+[sets."Classical/myTVSUPER"]
+behavior = "classical"
+parser = "classical-list"
+urls = ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/myTVSUPER/myTVSUPER.list"]
+include_sets = ["myTVSUPER"]
+non_domain_only = true
+
+[sets."Claude"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anthropic.list"]
+
+[sets."Copilot"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github-copilot.list"]
+
+[sets."DAZN"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/dazn.list"]
+
+[sets."Discord"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discord.list"]
+
+[sets."DiscoveryPlus"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discoveryplus.list"]
+
+[sets."Disney"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.list"]
+
+[sets."DouYin"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/douyin.list"]
+
+[sets."F1TV"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/formula1.list"]
+
+[sets."Fox"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/fox.list"]
+
+[sets."Gemini"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.list"]
+
+[sets."GeolocationCN"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-cn.list"]
+
+[sets."GitHub"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.list"]
+
+[sets."GlobalMedia"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-media.list"]
+
+[sets."Google"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.list"]
+
+[sets."HBO"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hbo.list"]
+
+[sets."HTTPDNS"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/httpdns.list", "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-httpdns-cn.list"]
+
+[sets."HTTPDNSCN"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-httpdns-cn.list"]
+
+[sets."Hulu"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hulu.list"]
+
+[sets."IP/China"]
+behavior = "ipcidr"
+parser = "cidr-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.list"]
+
+[sets."IP/Private"]
+behavior = "ipcidr"
+parser = "cidr-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.list"]
+
+[sets."Japonx"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/japonx.list"]
+
+[sets."JingDong"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/jd.list"]
+
+[sets."KKBOX"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/kkbox.list"]
+
+[sets."KKTV"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/kktv.list"]
+
+[sets."Line"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/line.list"]
+
+[sets."Microsoft"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.list"]
+
+[sets."NetEase"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netease.list"]
+
+[sets."Niconico"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/niconico.list"]
+
+[sets."OpenAI"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.list"]
+
+[sets."PBS"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pbs.list"]
+
+[sets."PayPal"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.list"]
+
+[sets."Pornhub"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pornhub.list"]
+
+[sets."PrimeVideo"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/primevideo.list"]
+
+[sets."Private"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.list"]
+
+[sets."Proxy"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list"]
+
+[sets."Scholar"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-scholar-!cn.list"]
+
+[sets."Soundcloud"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/soundcloud.list"]
+
+[sets."Speedtest"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-speedtest.list"]
+
+[sets."Spotify"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.list"]
+
+[sets."Steam"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.list"]
+
+[sets."TVB"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tvb.list"]
+
+[sets."Tencent"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tencent.list"]
+
+[sets."ViuTV"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/viu.list"]
+
+[sets."XiaoMi"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/xiaomi.list"]
+
+[sets."YouTubeMusic"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list"]
+
+[sets."Youku"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youku.list"]
+
+[sets."iQIYI"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/iqiyi.list"]
+
+[sets."iQIYIIntl"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/iqiyi@!cn.list"]
+
+[sets."myTVSUPER"]
+behavior = "domain"
+parser = "meta-list"
+urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/mytvsuper.list"]

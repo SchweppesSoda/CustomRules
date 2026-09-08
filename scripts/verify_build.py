@@ -11,6 +11,8 @@ import subprocess
 import tempfile
 from pathlib import Path
 
+from build_rules import parse_classical_yaml
+
 
 REGIONS = (
     "Global",
@@ -101,9 +103,18 @@ def verify_behavior_sets(root: Path, manifest: dict[str, object]) -> None:
         elif behavior == "ipcidr":
             yaml_rules = yaml_ip_rules(yaml_path)
         else:
-            continue
+            yaml_rules = [rule.classical for rule in parse_classical_yaml(yaml_path)]
         if yaml_rules != list_rules(list_path, behavior):
             raise RuntimeError(f"YAML/LIST {behavior} rule mismatch: {name}")
+        if len(yaml_rules) != info['rule_count']:
+            raise RuntimeError(f"Manifest count mismatch: {name}")
+        if hashlib.sha256('\n'.join(yaml_rules).encode()).hexdigest() != info['rules_sha256']:
+            raise RuntimeError(f"Manifest rule hash mismatch: {name}")
+
+    lite = set(list_rules(root / 'Surge' / 'AdBlockLite.list'))
+    full = set(list_rules(root / 'Surge' / 'AdBlock.list'))
+    if not lite or not lite < full or any(not rule.startswith(('DOMAIN,', 'DOMAIN-SUFFIX,')) for rule in lite):
+        raise RuntimeError('AdBlockLite must be a nonempty, domain-only proper subset of AdBlock')
 
     aggregate = set(list_rules(root / "Surge" / "Banking.list", "domain"))
     region_sets = {
@@ -129,6 +140,9 @@ def verify_manifest(root: Path) -> dict[str, object]:
     if manifest.get("branch") != "auto-build":
         raise RuntimeError("manifest branch must be auto-build")
     required = {
+        "AdBlockLite",
+        "AdBlock",
+        "HTTPDNS",
         "Crypto",
         "Banking",
         "Emby",

@@ -8,6 +8,7 @@ on:
       - 'sources/**'
       - 'scripts/build_rules.py'
       - 'scripts/verify_build.py'
+      - 'scripts/verify_consumers.py'
       - 'scripts/publish_build.py'
       - 'tests/**'
       - '.github/workflows/sync-rules.yml'
@@ -33,13 +34,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out source branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           ref: master
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6
         with:
           python-version: '3.12'
 
@@ -87,6 +88,7 @@ jobs:
           fi
           python scripts/build_rules.py \
             --output "$RUNNER_TEMP/build-a" \
+            --source-cache "$RUNNER_TEMP/source-snapshot" \
             --baseline "$RUNNER_TEMP/auto-build" \
             --mihomo "$RUNNER_TEMP/mihomo" \
             --source-commit "$GITHUB_SHA" \
@@ -96,6 +98,7 @@ jobs:
             --mihomo "$RUNNER_TEMP/mihomo"
           python scripts/build_rules.py \
             --output "$RUNNER_TEMP/build-b" \
+            --source-cache "$RUNNER_TEMP/source-snapshot" --offline \
             --baseline "$RUNNER_TEMP/auto-build" \
             --mihomo "$RUNNER_TEMP/mihomo" \
             --source-commit "$GITHUB_SHA" \
@@ -109,6 +112,9 @@ jobs:
           python scripts/publish_build.py \
             --build "$RUNNER_TEMP/build-a" \
             --publish "$RUNNER_TEMP/auto-build"
+          python scripts/verify_build.py \
+            --output "$RUNNER_TEMP/auto-build" \
+            --mihomo "$RUNNER_TEMP/mihomo"
           git -C "$RUNNER_TEMP/auto-build" config user.name "github-actions[bot]"
           git -C "$RUNNER_TEMP/auto-build" config user.email "github-actions[bot]@users.noreply.github.com"
           git -C "$RUNNER_TEMP/auto-build" add --all

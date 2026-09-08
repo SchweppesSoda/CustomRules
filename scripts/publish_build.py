@@ -44,6 +44,8 @@ def main() -> None:
     for source in sorted(path for path in args.build.rglob("*") if path.is_file()):
         relative = source.relative_to(args.build)
         target = args.publish / relative
+        if target.is_file() and target.read_bytes() == source.read_bytes():
+            continue
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, target)
 
