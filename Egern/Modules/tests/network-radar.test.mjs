@@ -149,9 +149,10 @@ test('storage failures do not prevent rendering or leak raw errors', async t => 
 test('accepted medium layout has six rows per column and icons, ASN, organization and services', async t => {
   const f = setup(t), tree = await radar.default(f.ctx);
   const columns = tree.children[1];
-  for (const index of [0, 2]) {
-    assert.equal(columns.children[index].children.length, 6);
-    assert.equal(columns.children[index].children.every(row => row.children[0].type === 'image'), true);
+  assert.equal(columns.children.length, 6);
+  for (const row of columns.children) {
+    assert.equal(row.children.length, 2);
+    assert.ok(row.children.every(cell => cell.children[0].type === 'image'));
   }
   for (const value of ['内网', '组织', 'ASN', '策略', '中国电信', 'AS64496']) assert.equal(texts(tree).includes(value), true, value);
   for (const id of ['NF', 'DP', 'TK', 'GPT', 'CL', 'GM']) assert.ok(texts(tree).some(v => v.startsWith(id + ' ')), id);
@@ -211,8 +212,16 @@ test('service names and results stay in the same text block in aligned cells', a
   for (const layout of ['medium', 'large']) {
     f.ctx.env.RADAR_LAYOUT = layout;
     const tree = await radar.default(f.ctx);
-    const rows = tree.children[3].children;
+    const panel = tree.children[3];
+    if (layout === 'medium') {
+      assert.equal(panel.children.length, 6);
+      assert.equal(panel.height, 14);
+      assert.ok(panel.children.every(cell => cell.flex === 1 && cell.children[0].type === 'text'));
+      continue;
+    }
+    const rows = panel.children;
     assert.equal(rows.length, 2);
+    assert.equal(panel.height, 38);
     assert.equal(rows[0].children[0].width, rows[1].children[0].width);
     for (const row of rows) {
       assert.equal(row.children.length, 4);
@@ -247,6 +256,28 @@ function reservedHeight(node) {
   return node.height || needed;
 }
 
+function checkAllocation(node, allocatedHeight) {
+  if (!node.children) return;
+  const p = node.padding || 0;
+  const padding = Array.isArray(p) ? p[0] + (p.length === 2 ? p[0] : p[2]) : p * 2;
+  const inner = allocatedHeight - padding;
+  if (node.direction === 'row') {
+    for (const c of node.children) {
+      assert.ok(reservedHeight(c) <= inner + 0.01, `row content exceeds allocation: ${texts(c)}`);
+      checkAllocation(c, c.height || inner);
+    }
+  } else {
+    const fixed = node.children.filter(c => !c.flex).reduce((sum, c) => sum + reservedHeight(c), 0);
+    const flex = node.children.reduce((sum, c) => sum + (c.flex || 0), 0);
+    const remaining = inner - fixed - Math.max(0, node.children.length - 1) * (node.gap || 0);
+    for (const c of node.children) {
+      const height = c.flex ? remaining * c.flex / flex : reservedHeight(c);
+      assert.ok(height + 0.01 >= reservedHeight(c), `flex row is compressed below readable height: ${texts(c)}`);
+      checkAllocation(c, height);
+    }
+  }
+}
+
 test('native layout reserves every row, bounds title and values, and fits medium/large height budgets', async t => {
   const f = setup(t, { ip: '2001:db8:85a3:8d3:1319:8a2e:370:7348' });
   const model = await radar.collectRadar(f.ctx);
@@ -257,15 +288,14 @@ test('native layout reserves every row, bounds title and values, and fits medium
     f.ctx.env.RADAR_LAYOUT = 'auto'; f.ctx.widgetFamily = family;
     const tree = radar.renderRadar(model, f.ctx);
     assert.ok(reservedHeight(tree) <= budget);
-    assert.ok(walk(tree).filter(n => n.type === 'stack').every(n => n.height > 0));
+    for (const height of [budget, budget + 15, budget + 47]) checkAllocation(tree, height);
     const title = walk(tree).find(n => n.text === '网络诊断雷达');
     assert.equal(title.flex, 1); assert.equal(title.maxLines, 1);
     const location = walk(tree).find(n => n.text === model.local.location);
     assert.equal(location.flex, 1); assert.equal(location.maxLines, 1);
-    // Vertical flex would compete for section height instead of reserving it.
-    for (const n of walk(tree).filter(n => n.direction === 'column' || n.type === 'widget')) {
-      assert.ok((n.children || []).every(child => !child.flex));
-    }
+    // Only the main table absorbs surplus root height. Footer rows stay compact.
+    assert.deepEqual(tree.children.filter(c => c.flex), [tree.children[1]]);
+    assert.ok(walk(tree).filter(n => n.type === 'stack' && !n.height).every(n => n.flex === 1));
   }
 });
 
@@ -316,15 +346,14 @@ test('plain HTTP failures and unexpected content retain diagnostic reasons, not 
 test('large columns have seven aligned rows with latency last; medium reserves title breathing room', async t => {
   const f = setup(t), model = await radar.collectRadar(f.ctx);
   const medium = radar.renderRadar(model, f.ctx);
-  assert.ok(medium.children[0].padding[2] + medium.gap >= 7);
-  assert.equal(medium.children[0].height - medium.children[0].padding[2], 18);
+  assert.ok(medium.children[0].padding[2] + medium.gap >= 9);
+  assert.equal(walk(medium).find(n => n.text === '网络诊断雷达').font.size, 17);
   f.ctx.env.RADAR_LAYOUT = 'large';
   const large = radar.renderRadar(model, f.ctx);
-  const [left, right] = large.children[1].children;
-  assert.equal(left.children.length, 8); assert.equal(right.children.length, 8);
-  assert.equal(left.gap, right.gap);
-  assert.deepEqual(left.children.map(n => n.height), right.children.map(n => n.height));
-  assert.ok(texts(left.children.at(-1)).includes('延迟'));
-  assert.ok(texts(right.children.at(-1)).includes('延迟'));
-  assert.ok(texts(right.children.at(-2)).includes('来源'));
+  const rows = large.children[1].children.slice(1);
+  assert.equal(rows.length, 7);
+  for (const row of rows) assert.equal(row.children[0].height, row.children[1].height);
+  assert.ok(rows.at(-1).children.every(cell => texts(cell).includes('延迟')));
+  assert.ok(texts(rows.at(-2).children[1]).includes('来源'));
+  assert.equal(walk(large).find(n => n.text === '网络诊断雷达').font.size, 20);
 });

@@ -241,18 +241,23 @@ export function renderRadar(model, ctx) {
   const tx = (text, size = large ? 11.5 : 10.5, col = C.ink, weight = 'medium') => ({ type: 'text', text: String(text), font: { size, weight }, textColor: col, maxLines: 1 });
   const stack = (children, direction = 'column', gap = 4, more = {}) => ({ type: 'stack', direction, alignItems: direction === 'column' ? 'start' : 'center', gap, children, ...more });
   const icon = (name, col = C.blue, s = large ? 12 : 11) => ({ type: 'image', src: `sf-symbol:${name}`, color: col, width: s, height: s });
-  // Native stacks need bounded rows: do not rely on browser intrinsic sizing.
-  // Only horizontal values flex; every section reserves its vertical space.
-  const lineHeight = large ? 16 : 13;
+  // The root gives remaining height to one flat table. Its row cells have a
+  // fixed, readable height; surplus space is shared between data rows, never
+  // inflated service cards. Avoid nested flexible columns with intrinsic height.
+  const lineHeight = large ? 20 : 13;
   const bounded = (text, size, col = C.ink, weight = 'medium', align = 'right') => ({ ...tx(text, size, col, weight), flex: 1, textAlign: align, minScale: 1 });
   const rowIcons = { 环境: net.wifi ? 'wifi' : 'antenna.radiowaves.left.and.right', 内网: 'iphone', 公网: 'globe.asia.australia.fill', 位置: 'map.fill', 运营: 'antenna.radiowaves.left.and.right', 网关: 'wifi.router.fill', 延迟: 'timer', 出口: 'paperplane.fill', '出口 IP': 'paperplane.fill', 落地: 'mappin.and.ellipse', ASN: 'network', 组织: 'server.rack', 策略: 'arrow.triangle.branch', 来源: 'doc.text.magnifyingglass' };
-  const row = (label, value, col = C.blue) => stack([icon(rowIcons[label], col, large ? 11 : 10), tx(label, large ? 10.5 : 10, C.dim), bounded(value, large ? 11 : 10.5)], 'row', 3, { height: lineHeight });
+  const row = (label, value, col = C.blue) => stack([icon(rowIcons[label], col, large ? 12 : 10), tx(label, large ? 11.5 : 10, C.dim), bounded(value, large ? 12 : 10.5)], 'row', 3, { height: lineHeight, flex: 1 });
   const rrow = (label, value) => row(label, value, C.purple);
-  const header = stack([icon('waveform.path.ecg', C.blue, large ? 17 : 14), bounded('网络诊断雷达', large ? 16 : 14, C.ink, 'bold', 'left'), tx(proxy.ip ? `${clock(model.at)}${!large && model.cached ? ' · 缓' : ''}` : 'IPv4 未知', 10, proxy.ip ? C.dim : C.amber)], 'row', 6, large ? { height: 22 } : { height: 24, padding: [0, 0, 6, 0] });
-  const card = (title, col, rows) => stack([stack([icon(title === '本地网络' ? rowIcons.环境 : 'paperplane.fill', col, 12), bounded(title, 12, C.ink, 'semibold', 'left')], 'row', 5, { height: 16 }), ...rows], 'column', 2, { flex: 1, height: 158, padding: [6, 8], backgroundColor: C.fill, borderRadius: 12 });
+  const header = stack([icon('waveform.path.ecg', C.blue, large ? 21 : 17), bounded('网络诊断雷达', large ? 20 : 17, C.ink, 'bold', 'left'), tx(proxy.ip ? `${clock(model.at)}${!large && model.cached ? ' · 缓' : ''}` : 'IPv4 未知', 10, proxy.ip ? C.dim : C.amber)], 'row', 6,
+    { height: large ? 34 : 30, padding: [0, 0, 8, 0] });
   const localRows = [row('环境', compact(net.label, 22)), row('内网', displayIP(net.local, large, masked)), row('公网', displayIP(local.ip, large, masked)), row('位置', val(local.location)), row('运营', val(local.organization)), ...(large ? [row('网关', displayIP(net.gateway, large, masked))] : []), row('延迟', val(local.delay))];
   const proxyRows = [rrow('出口', displayIP(proxy.ip, large, masked)), rrow('落地', val(proxy.location)), rrow('组织', val(proxy.organization)), rrow('ASN', val(proxy.asn)), rrow('策略', val(policy)), ...(large ? [rrow('来源', val(proxy.source))] : []), rrow('延迟', val(proxy.delay))];
-  const columns = stack(large ? [card('本地网络', C.blue, localRows), card('代理出口', C.purple, proxyRows)] : [stack(localRows, 'column', 0, { flex: 1, height: 78 }), stack([], 'column', 0, { width: 0.5, height: 78, backgroundColor: C.fill }), stack(proxyRows, 'column', 0, { flex: 1, height: 78 })], 'row', large ? 8 : 6, { height: large ? 158 : 78, alignItems: 'start' });
+  const columnHeading = (title, name, col) => stack([icon(name, col, 14), bounded(title, 14, C.ink, 'semibold', 'left')], 'row', 5, { flex: 1, height: 22 });
+  const columns = stack([
+    ...(large ? [stack([columnHeading('本地网络', rowIcons.环境, C.blue), columnHeading('代理出口', 'paperplane.fill', C.purple)], 'row', 12, { height: 22 })] : []),
+    ...localRows.map((left, i) => stack([left, proxyRows[i]], 'row', large ? 12 : 10, { flex: 1 })),
+  ], 'column', large ? 3 : 1, { flex: 1 });
   const residential = proxy.residential, score = proxy.score;
   const property = residential === true ? '住宅网络' : residential === false ? '机房 / 商业' : '属性未知';
   const propertyIcon = residential === true ? 'house.fill' : residential === false ? 'building.2.fill' : 'questionmark.circle.fill';
@@ -262,20 +267,22 @@ export function renderRadar(model, ctx) {
   const scoreText = score === null ? '无数据' : `${score} · ${score >= 70 ? '高风险' : score >= 40 ? '中风险' : '低风险'}`;
   const qualityItem = (name, text, col) => stack([icon(name, col, large ? 12 : 10), bounded(text, large ? 11 : 10.5, col, 'medium', 'left')], 'row', 4, { flex: 1, height: large ? 16 : 14 });
   const quality = stack([qualityItem(propertyIcon, property, propertyColor), qualityItem(scoreIcon, `IPPure ${scoreText}`, scoreColor)], 'row', 8,
-    large ? { height: 30, padding: [7, 8], backgroundColor: C.fill, borderRadius: 10 } : { height: 14 });
+    large ? { height: 22, padding: [3, 8], backgroundColor: C.fill, borderRadius: 8 } : { height: 14 });
   const serviceIcons = { NF: 'film.fill', DP: 'sparkles.tv', TK: 'music.note', GPT: 'bubble.left.and.bubble.right.fill', CL: 'asterisk', GM: 'sparkles' };
-  const reasonText = result => ({ no_exit: '未测', challenge: '验证', timeout: '超时', connection: '连接', redirect: '跳转', rate_limit: '限流', empty: '空响应', unrecognized: '解析' }[result.reason] || (result.reason?.startsWith('http_') ? result.reason.slice(5) : '?'));
-  const service = (label, ids) => stack([stack([tx(label, 10, C.dim)], 'row', 0, { width: 22, height: large ? 32 : 14 }), ...ids.map(id => {
+  const reasonText = result => ({ no_exit: '未测', challenge: '验证', timeout: '超时', connection: '连接', redirect: '跳转', rate_limit: '限流', empty: '空', unrecognized: '解析' }[result.reason] || (result.reason?.startsWith('http_') ? result.reason.slice(5) : '?'));
+  const service = (label, ids) => stack([...(large ? [stack([tx(label, 10, C.dim)], 'row', 0, { width: 22, height: 18 })] : []), ...ids.map(id => {
     const result = checks[id] || unknown();
     const mark = !model.enabled ? '—' : result.state === 'region' ? result.cc : result.state === 'reachable' ? `${result.cc ? result.cc + ' ' : ''}✓` : result.state === 'restricted' ? '×' : result.state === 'limited' ? '◐' : reasonText(result);
     const col = !model.enabled || result.state === 'unknown' ? C.dim : result.state === 'region' ? C.purple : result.state === 'reachable' ? C.green : result.state === 'restricted' ? C.red : C.amber;
-    return stack([icon(serviceIcons[id], label === '影视' ? C.blue : C.purple, large ? 12 : 10), bounded(`${id} ${mark}`, large ? 11 : 10, col, 'medium', 'left')], 'row', 4,
-      large ? { flex: 1, height: 32, padding: [8, 5], backgroundColor: C.fill, borderRadius: 8 } : { flex: 1, height: 14 });
-  })], 'row', large ? 6 : 4, { height: large ? 32 : 14 });
-  const servicePanel = stack([service('影视', ['NF', 'DP', 'TK']), service('AI', ['GPT', 'CL', 'GM'])], 'column', large ? 6 : 0, { height: large ? 70 : 28 });
+    return stack([...(large ? [icon(serviceIcons[id], label === '影视' ? C.blue : C.purple, 12)] : []), bounded(`${id} ${mark}`, large ? 11 : 10, col, 'medium', large ? 'left' : 'center')], 'row', large ? 4 : 0,
+      { flex: 1, height: large ? 18 : 14 });
+  })], 'row', large ? 6 : 2, { height: large ? 18 : 14 });
+  const servicePanel = large ? stack([service('影视', ['NF', 'DP', 'TK']), service('AI', ['GPT', 'CL', 'GM'])], 'column', 2, { height: 38 })
+    : service('', SERVICE_IDS);
   let footer = !model.enabled ? '服务检测已关闭' : !proxy.ip ? 'IPv4 未知 · 未检测服务' : `${model.cached ? '缓存' : '检测'} ${clock(model.checkedAt)} · ✓ 页面 / 地区码不代表解锁`;
   if (large && proxy.ip && proxy.source !== 'IPPure') footer = '备用 IP 来源 · IPPure 评分不可用';
-  // Full content budgets: medium 155 pt, large 328 pt (including padding).
+  // Minimum content budgets: medium 152 pt, large 325 pt. Extra height goes
+  // to the main table, so 155/170 and 345/376 pt surfaces keep a compact footer.
   return { type: 'widget', padding: large ? [8, 10] : [4, 10], gap: large ? 5 : 1, backgroundColor: C.bg,
     refreshAfter: new Date(model.at + 60_000).toISOString(), children: [header, columns, quality, servicePanel,
       ...(large ? [stack([icon('clock', C.dim, 10), bounded(footer, 9.5, C.dim, 'medium', 'left')], 'row', 4, { height: 12 })] : [])] };
