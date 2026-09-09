@@ -1,450 +1,215 @@
 /**
- * 📌 桌面小组件: 🛡️ 网络诊断雷达 (全栈解锁 Pro 版 - 终极美化版)
- * 🎨 采用全新 System UI 规范色系 | 纯色背景解决暗黑圆角
+ * 网络诊断雷达 — Egern 原生 Widget DSL。
+ * 延续 Network-Pro.js 衍生版的蓝色本地 / 紫色代理布局。
+ * 出口信息来自同一响应；服务标记表示 HTTP 探测，不承诺播放或账号可用。
  */
-export default async function(ctx) {
-  // 1. 统一 UI 规范颜色 (全局 C 对象)
-  const C = {
-    bg: { light: '#FFFFFF', dark: '#121212' },       
-    barBg: { light: '#0000001A', dark: '#FFFFFF22' },
-    text: { light: '#1C1C1E', dark: '#FFFFFF' },     
-    dim: { light: '#8E8E93', dark: '#8E8E93' },      
-    
-    cpu: { light: '#007AFF', dark: '#0A84FF' },      // 用于左侧本地列
-    mem: { light: '#AF52DE', dark: '#BF5AF2' },      // 用于右侧代理列
-    disk: { light: '#FF9500', dark: '#FF9F0A' },     // 用于中危/机房
-    netRx: { light: '#34C759', dark: '#30D158' },    // 用于纯净/原生住宅
-    netTx: { light: '#5856D6', dark: '#5E5CE6' },    
-    
-    // 补充：用于网络雷达极危状态的衍生色
-    yellow: { light: '#FFCC00', dark: '#FFD60A' },
-    red: { light: '#FF3B30', dark: '#FF453A' }
-  };
-
-  // --- 辅助与解析函数 ---
-  const fmtCarrier = (isp) => {
-    if (!isp) return "未知运营商";
-    const raw = String(isp).replace(/\s*\(中国\)\s*/g, "").replace(/\s+/g, " ").trim();
-    const s = raw.toLowerCase();
-    if (/(^|[\s-])(cmcc|cmnet|cmi|mobile)\b|移动/.test(s)) return "中国移动";
-    if (/(^|[\s-])(chinanet|telecom|ctcc|ct)\b|电信/.test(s)) return "中国电信";
-    if (/(^|[\s-])(unicom|cncgroup|netcom|link)\b|联通/.test(s)) return "中国联通";
-    if (/(^|[\s-])(cbn|broadcast)\b|广电/.test(s)) return "中国广电";
-    return raw || "未知运营商";
-  };
-
-  const fmtProxyISP = (isp) => {
-    if (!isp) return "未知";
-    let s = String(isp);
-    const knownCarriers = new Set(["中国移动", "中国电信", "中国联通", "中国广电"]);
-    const carrier = fmtCarrier(s);
-    if (knownCarriers.has(carrier)) return carrier;
-    if (/it7/i.test(s)) return "IT7 Network";
-    if (/dmit/i.test(s)) return "DMIT Network";
-    if (/cloudflare/i.test(s)) return "Cloudflare";
-    if (/akamai/i.test(s)) return "Akamai";
-    if (/amazon|aws/i.test(s)) return "AWS";
-    if (/google/i.test(s)) return "Google Cloud";
-    if (/microsoft|azure/i.test(s)) return "Azure";
-    if (/alibaba|aliyun/i.test(s)) return "阿里云";
-    if (/tencent/i.test(s)) return "腾讯云";
-    if (/oracle/i.test(s)) return "Oracle Cloud";
-    return s.length > 11 ? s.substring(0, 11) + "..." : s; 
-  };
-
-  const getFlag = (code) => {
-    if (!code || code.toUpperCase() === 'TW') return '🇨🇳'; 
-    if (code.toUpperCase() === 'XX' || code === 'OK') return '✅';
-    return String.fromCodePoint(...code.toUpperCase().split('').map(c => 127397 + c.charCodeAt()));
-  };
-
-  const BASE_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36";
-  const commonHeaders = { "User-Agent": BASE_UA, "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" };
-  const readBody = async (r) => {
-    if (!r) return "";
-    if (typeof r.body === "string" && r.body.length) return r.body;
-    if (typeof r.text === "function") {
-      try { const t = await r.text(); return typeof t === "string" ? t : ""; } catch { return ""; }
-    }
-    return "";
-  };
-
-  // 2. 获取本地网络数据
-  const d = ctx.device || {};
-  const isWifi = !!d.wifi?.ssid;
-  let netName = "未连接", netIcon = "antenna.radiowaves.left.and.right";
-  
-  const netInfo = (typeof $network !== 'undefined') ? $network : (ctx.network || {});
-  let localIp = netInfo.v4?.primaryAddress || d.ipv4?.address || "获取失败";
-  let gateway = netInfo.v4?.primaryRouter || d.ipv4?.gateway || "无网关";
-
-  if (isWifi) { netName = d.wifi.ssid; netIcon = "wifi"; }
-  else if (d.cellular?.radio) {
-    const radioMap = { "GPRS": "2.5G", "EDGE": "2.75G", "WCDMA": "3G", "LTE": "4G", "NR": "5G", "NRNSA": "5G" };
-    netName = `${radioMap[d.cellular.radio.toUpperCase().replace(/\s+/g, "")] || d.cellular.radio}`;
-    gateway = "蜂窝内网";
-  }
-
-  // 3. 基础网络请求
-  const fetchLocal = async () => {
-    try {
-      const res = await ctx.http.get('https://myip.ipip.net/json', { headers: commonHeaders, timeout: 4000 });
-      const body = JSON.parse(await res.text());
-      const location = Array.isArray(body?.data?.location) ? body.data.location : [];
-      if (body?.data?.ip) return {
-        ip: body.data.ip,
-        loc: `${location[1] || ""} ${location[2] || ""}`.trim() || "未知",
-        isp: fmtCarrier(location[location.length - 1])
-      };
-    } catch (e) {}
-    return { ip: "获取失败", loc: "未知", isp: "未知运营商" };
-  };
-
-  const fetchProxy = async () => {
-    try {
-      const res = await ctx.http.get('http://ip-api.com/json/?lang=zh-CN', { timeout: 4000 });
-      const data = JSON.parse(await res.text());
-      const flag = getFlag(data.countryCode);
-      return { ip: data.query || "获取失败", loc: `${flag} ${data.city || data.country || ""}`.trim(), isp: fmtProxyISP(data.isp || data.org), cc: data.countryCode || "XX" };
-    } catch (e) { return { ip: "获取失败", loc: "未知", isp: "未知", cc: "XX" }; }
-  };
-
-  const fetchPurity = async () => {
-    try {
-      const res = await ctx.http.get('https://my.ippure.com/v1/info', { timeout: 4000 });
-      return JSON.parse(await res.text());
-    } catch (e) { return {}; }
-  };
-
-  const fetchLocalDelay = async () => {
-    const start = Date.now();
-    try { await ctx.http.get('http://www.baidu.com', { timeout: 2000 }); return `${Date.now() - start} ms`; } catch (e) { return "超时"; }
-  };
-
-  const fetchProxyDelay = async () => {
-    const start = Date.now();
-    try { await ctx.http.get('http://cp.cloudflare.com/generate_204', { timeout: 2000 }); return `${Date.now() - start} ms`; } catch (e) { return "超时"; }
-  };
-
-  // 🎬 流媒体解锁测试 
-  async function checkNetflix() {
-    try {
-      const checkStatus = async (id) => {
-        const r = await ctx.http.get(`https://www.netflix.com/title/${id}`, { timeout: 4000, headers: commonHeaders, followRedirect: false }).catch(() => null);
-        return r ? r.status : 0;
-      };
-      const sFull = await checkStatus(70143836); 
-      const sOrig = await checkStatus(81280792); 
-      if (sFull === 200) return "OK"; 
-      if (sOrig === 200) return "🍿"; 
-      return "❌"; 
-    } catch { return "❌"; }
-  }
-
-  async function checkDisney() {
-    try {
-      const res = await ctx.http.get("https://www.disneyplus.com", { timeout: 4000, headers: commonHeaders, followRedirect: false }).catch(() => null);
-      if (!res || res.status === 403) return "❌";
-      const loc = res.headers?.location || res.headers?.Location || "";
-      if (loc.includes("unavailable")) return "❌";
-      return "OK"; 
-    } catch { return "❌"; }
-  }
-
-  async function checkTikTok() {
-    try {
-      const r = await ctx.http.get("https://www.tiktok.com/explore", { timeout: 4000, headers: commonHeaders, followRedirect: false }).catch(() => null);
-      if (!r || r.status === 403 || r.status === 401) return "❌";
-      const body = await readBody(r);
-      if (body.includes("Access Denied") || body.includes("Please wait...")) return "❌";
-      const m = body.match(/"region":"([A-Z]{2})"/i);
-      return m?.[1] ? m[1].toUpperCase() : "OK";
-    } catch { return "❌"; }
-  }
-
-  // 🤖 AI 解锁测试
-  async function checkChatGPT() {
-    try {
-      const traceRes = await ctx.http.get("https://chatgpt.com/cdn-cgi/trace", { timeout: 3000 }).catch(() => null);
-      const tb = await readBody(traceRes);
-      const m = tb?.match(/loc=([A-Z]{2})/);
-      return m?.[1] ? m[1].toUpperCase() : "OK";
-    } catch { return "❌"; }
-  }
-
-  async function checkClaude() {
-    try {
-      const res = await ctx.http.get("https://claude.ai/login", { 
-        timeout: 5000, 
-        headers: {
-          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
-        }
-      }).catch(() => null);
-      if (!res) return "❌";
-      const status = res.status;
-      const body = await readBody(res);
-      if (body.includes("App unavailable") || body.includes("certain regions")) return "❌";
-      if (status === 403 && body.includes("1020")) return "❌";
-      if (status === 403 && (body.includes("cf-turnstile") || body.includes("Just a moment") || body.includes("Challenge"))) return "OK";
-      if (status === 200 || status === 301 || status === 302) return "OK";
-      return "❌";
-    } catch { return "❌"; }
-  }
-
-  async function checkGemini() {
-    try {
-      const res = await ctx.http.get("https://gemini.google.com/app", { timeout: 4000, headers: commonHeaders, followRedirect: false }).catch(() => null);
-      if (!res) return "❌";
-      const loc = res.headers?.location || res.headers?.Location || "";
-      if (loc.includes("faq")) return "❌";
-      return "OK";
-    } catch { return "❌"; }
-  }
-
-  // 🚦 并发执行所有核心网络请求
-  const [localData, proxyData, purityData, localDelay, proxyDelay, rNF, rDP, rTK, rGPT, rCL, rGM] = await Promise.all([
-    fetchLocal(), fetchProxy(), fetchPurity(), fetchLocalDelay(), fetchProxyDelay(),
-    checkNetflix(), checkDisney(), checkTikTok(), 
-    checkChatGPT(), checkClaude(), checkGemini()
-  ]);
-
-  // 4. 数据清洗与渲染逻辑
-  const isRes = purityData.isResidential;
-  let nativeText = "未知属性", nativeIc = "questionmark.building.fill", nativeCol = C.dim;
-  if (isRes === true) { nativeText = "原生住宅"; nativeIc = "house.fill"; nativeCol = C.netRx; } 
-  else if (isRes === false) { nativeText = "商业机房"; nativeIc = "building.2.fill"; nativeCol = C.disk; }
-
-  const risk = purityData.fraudScore;
-  let riskTxt = "无数据", riskCol = C.dim, riskIc = "questionmark.circle.fill";
-  if (risk !== undefined) {
-    if (risk >= 70) { riskTxt = `高危 (${risk})`; riskCol = C.red; riskIc = "xmark.shield.fill"; } 
-    else if (risk >= 30) { riskTxt = `中危 (${risk})`; riskCol = C.disk; riskIc = "exclamationmark.triangle.fill"; } 
-    else { riskTxt = `纯净 (${risk})`; riskCol = C.netRx; riskIc = "checkmark.shield.fill"; }
-  }
-
-  const fmtUnlock = (name, res, cc) => {
-    let flag = "🚫";
-    if (res === "🍿" || res === "APP") flag = res;
-    else if (res !== "❌") flag = getFlag(res === "OK" || res === "XX" ? cc : res);
-    return `${name} ${flag}`; 
-  };
-  
-  const textVideo = `${fmtUnlock('NF', rNF, proxyData.cc)}   ${fmtUnlock('DP', rDP, proxyData.cc)}   ${fmtUnlock('TK', rTK, proxyData.cc)}`;
-  const textAI = `${fmtUnlock('GPT', rGPT, proxyData.cc)}   ${fmtUnlock('CL', rCL, proxyData.cc)}   ${fmtUnlock('GM', rGM, proxyData.cc)}`;
-
-  const now = new Date();
-  const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-  const TIME_COL = { light: 'rgba(0,0,0,0.3)', dark: 'rgba(255,255,255,0.3)' };
-  const layoutHint = String(ctx.env?.RADAR_LAYOUT || ctx.env?.WIDGET_SIZE || "").toLowerCase();
-  const familyValue = [
-    ctx.widgetFamily,
-    ctx.family,
-    ctx.widget?.family,
-    ctx.widget?.widgetFamily,
-    ctx.widgetSize,
-    ctx.size,
-    ctx.env?.widgetFamily,
-    ctx.env?.WIDGET_FAMILY
-  ].find((v) => v !== undefined && v !== null && String(v).trim());
-  const family = String(familyValue || "systemMedium").toLowerCase();
-  const isLarge = /large|extra|大/.test(layoutHint) || (!/medium|中/.test(layoutHint) && /large|extra|大/.test(family));
-  const S = isLarge
-    ? { padding: [12, 13, 10, 13], title: 15, icon: 17, rowFont: 10.5, labelFont: 10, rowIcon: 12, rowGap: 4, headerSpacer: 8, panelPadding: [8, 9] }
-    : { padding: 14, title: 14, icon: 16, rowFont: 10, labelFont: 10, rowIcon: 11, rowGap: 4.5, headerSpacer: 12, panelPadding: [8, 10] };
-
-  // 5. 网格行组件 (采用 C.dim 和 C.text)
-  const Row = (ic, icCol, label, val, valCol) => ({
-    type: 'stack', direction: 'row', alignItems: 'center', gap: 5,
-    children: [
-      { type: 'image', src: `sf-symbol:${ic}`, color: icCol, width: S.rowIcon, height: S.rowIcon },
-      { type: 'text', text: label, font: { size: S.labelFont, weight: 'regular' }, textColor: C.dim, maxLines: 1 }, 
-      { type: 'spacer' },
-      { type: 'text', text: val, font: { size: S.rowFont, weight: 'medium' }, textColor: valCol, maxLines: 1, minScale: 0.4 }
-    ]
-  });
-
-  const FullRow = (ic, icCol, label, val, valCol = C.text) => ({
-    type: 'stack',
-    direction: 'column',
-    gap: 3,
-    children: [
-      { type: 'stack', direction: 'row', alignItems: 'center', gap: 5, children: [
-        { type: 'image', src: `sf-symbol:${ic}`, color: icCol, width: S.rowIcon, height: S.rowIcon },
-        { type: 'text', text: label, font: { size: S.labelFont, weight: 'regular' }, textColor: C.dim, maxLines: 1 },
-        { type: 'spacer' }
-      ]},
-      { type: 'text', text: val, font: { size: S.rowFont, weight: 'medium' }, textColor: valCol, maxLines: 1, minScale: 0.35 }
-    ]
-  });
-
-  const LargeCard = (ic, icCol, title, rows) => ({
-    type: 'stack',
-    direction: 'column',
-    gap: 4,
-    flex: 1,
-    padding: [8, 9],
-    backgroundColor: C.barBg,
-    borderRadius: 10,
-    children: [
-      { type: 'stack', direction: 'row', alignItems: 'center', gap: 6, children: [
-        { type: 'image', src: `sf-symbol:${ic}`, color: icCol, width: 13, height: 13 },
-        { type: 'text', text: title, font: { size: 11, weight: 'semibold' }, textColor: C.text, maxLines: 1 },
-        { type: 'spacer' }
-      ]},
-      ...rows
-    ]
-  });
-
-  const Metric = (ic, icCol, label, val, valCol = C.text) => ({
-    type: 'stack',
-    direction: 'column',
-    gap: 4,
-    flex: 1,
-    padding: [7, 8],
-    backgroundColor: C.barBg,
-    borderRadius: 10,
-    children: [
-      { type: 'stack', direction: 'row', alignItems: 'center', gap: 5, children: [
-        { type: 'image', src: `sf-symbol:${ic}`, color: icCol, width: 12, height: 12 },
-        { type: 'text', text: label, font: { size: 10, weight: 'regular' }, textColor: C.dim, maxLines: 1 },
-        { type: 'spacer' }
-      ]},
-      { type: 'text', text: val, font: { size: 12, weight: 'semibold' }, textColor: valCol, maxLines: 1, minScale: 0.35 }
-    ]
-  });
-
-  const unlockMark = (res, cc) => {
-    if (res === "🍿" || res === "APP") return res;
-    if (res === "❌") return "🚫";
-    return getFlag(res === "OK" || res === "XX" ? cc : res);
-  };
-
-  const UnlockBadge = (name, res, cc, ic, icCol) => ({
-    type: 'stack',
-    direction: 'row',
-    alignItems: 'center',
-    gap: 5,
-    flex: 1,
-    children: [
-      { type: 'image', src: `sf-symbol:${ic}`, color: icCol, width: 11, height: 11 },
-      { type: 'text', text: name, font: { size: 10, weight: 'regular' }, textColor: C.dim, maxLines: 1 },
-      { type: 'spacer' },
-      { type: 'text', text: unlockMark(res, cc), font: { size: 12, weight: 'semibold' }, textColor: C.text, maxLines: 1, minScale: 0.5 }
-    ]
-  });
-
-  const UnlockPanel = {
-    type: 'stack',
-    direction: 'column',
-    gap: 6,
-    padding: [8, 9],
-    backgroundColor: C.barBg,
-    borderRadius: 10,
-    children: [
-      { type: 'stack', direction: 'row', alignItems: 'center', gap: 8, children: [
-        { type: 'image', src: 'sf-symbol:play.tv.fill', color: C.cpu, width: 12, height: 12 },
-        { type: 'text', text: '影视', font: { size: 11, weight: 'semibold' }, textColor: C.text, maxLines: 1 },
-        UnlockBadge('NF', rNF, proxyData.cc, 'n.circle.fill', C.cpu),
-        UnlockBadge('DP', rDP, proxyData.cc, 'd.circle.fill', C.cpu),
-        UnlockBadge('TK', rTK, proxyData.cc, 't.circle.fill', C.cpu)
-      ]},
-      { type: 'stack', direction: 'row', alignItems: 'center', gap: 8, children: [
-        { type: 'image', src: 'sf-symbol:cpu', color: C.mem, width: 12, height: 12 },
-        { type: 'text', text: 'AI', font: { size: 11, weight: 'semibold' }, textColor: C.text, maxLines: 1 },
-        UnlockBadge('GPT', rGPT, proxyData.cc, 'g.circle.fill', C.mem),
-        UnlockBadge('CL', rCL, proxyData.cc, 'c.circle.fill', C.mem),
-        UnlockBadge('GM', rGM, proxyData.cc, 'sparkles', C.mem)
-      ]}
-    ]
-  };
-
-  const Header = {
-    type: 'stack', direction: 'row', alignItems: 'center', gap: 6, children: [
-      { type: 'image', src: 'sf-symbol:waveform.path.ecg', color: C.text, width: S.icon, height: S.icon },
-      { type: 'text', text: '网络诊断雷达', font: { size: S.title, weight: 'bold' }, textColor: C.text },
-      { type: 'spacer' },
-      { type: 'text', text: timeStr, font: { size: 10, weight: 'medium' }, textColor: TIME_COL }
-    ]
-  };
-
-  if (isLarge) {
-    return {
-      type: 'widget',
-      padding: S.padding,
-      backgroundColor: C.bg,
-      gap: 6,
-      children: [
-        Header,
-        { type: 'stack', direction: 'row', alignItems: 'stretch', gap: 8, children: [
-          LargeCard(netIcon, C.cpu, "本地网络", [
-            Row(netIcon, C.cpu, "环境", netName, C.text),
-            Row("iphone", C.cpu, "内网", localIp, C.text),
-            Row("globe.asia.australia.fill", C.cpu, "公网", localData.ip, C.text),
-            FullRow("map.fill", C.cpu, "位置", localData.loc, C.text),
-            Row("antenna.radiowaves.left.and.right", C.cpu, "运营", localData.isp, C.text),
-            Row("wifi.router.fill", C.cpu, "网关", gateway, C.text),
-            Row("timer", C.cpu, "延迟", localDelay, C.text)
-          ]),
-          LargeCard("paperplane.fill", C.mem, "代理出口", [
-            Row("paperplane.fill", C.mem, "出口", proxyData.ip, C.text),
-            Row("mappin.and.ellipse", C.mem, "落地", proxyData.loc, C.text),
-            FullRow("server.rack", C.mem, "厂商", proxyData.isp, C.text),
-            Row(nativeIc, nativeCol, "属性", nativeText, C.text),
-            Row(riskIc, riskCol, "纯净", riskTxt, riskCol),
-            Row("timer", C.mem, "延迟", proxyDelay, C.text),
-            Row("cpu", C.mem, "AI", textAI, C.text)
-          ])
-        ]},
-        { type: 'stack', direction: 'row', alignItems: 'stretch', gap: 8, children: [
-          Metric("antenna.radiowaves.left.and.right", C.cpu, "本地运营", localData.isp),
-          Metric(nativeIc, nativeCol, "出口属性", nativeText),
-          Metric(riskIc, riskCol, "风险评分", riskTxt, riskCol)
-        ]},
-        UnlockPanel
-      ]
-    };
-  }
-
-  // 6. 最终渲染
-  return {
-    type: 'widget', 
-    padding: S.padding,
-    backgroundColor: C.bg, // 完美融合暗黑圆角
-    children: [
-      // 顶部 Header
-      Header,
-      { type: 'spacer', length: S.headerSpacer }, 
-      
-      // 双列网格
-      { type: 'stack', direction: 'row', gap: 10, children: [
-          
-          // 【左列】：本地与影视 (使用 C.cpu 科技蓝)
-          { type: 'stack', direction: 'column', gap: S.rowGap, flex: 1, children: [
-              Row(netIcon, C.cpu, "环境", netName, C.text),
-              Row("iphone", C.cpu, "内网", localIp, C.text),
-              Row("globe.asia.australia.fill", C.cpu, "公网", localData.ip, C.text),
-              Row("map.fill", C.cpu, "位置", localData.loc, C.text),
-              Row("antenna.radiowaves.left.and.right", C.cpu, "运营", localData.isp, C.text),
-              Row("timer", C.cpu, "延迟", localDelay, C.text), 
-              Row("play.tv.fill", C.cpu, "影视", textVideo, C.text) 
-          ]},
-
-          // ✂️ 【中轴线】：使用 C.barBg 分割
-          { type: 'stack', width: 0.5, backgroundColor: C.barBg },
-          
-          // 【右列】：代理与 AI (使用 C.mem 高贵紫)
-          { type: 'stack', direction: 'column', gap: S.rowGap, flex: 1, children: [
-              Row("paperplane.fill", C.mem, "出口", proxyData.ip, C.text),
-              Row("mappin.and.ellipse", C.mem, "落地", proxyData.loc, C.text),
-              Row("server.rack", C.mem, "厂商", proxyData.isp, C.text),
-              Row(nativeIc, nativeCol, "属性", nativeText, C.text), 
-              Row(riskIc, riskCol, "纯净", riskTxt, riskCol),
-              Row("timer", C.mem, "延迟", proxyDelay, C.text), 
-              Row("cpu", C.mem, "AI", textAI, C.text) 
-          ]}
-      ]},
-      { type: 'spacer' }
-    ]
-  };
+const CACHE_KEY = 'NetworkRadar.v2';
+const SERVICE_IDS = ['NF', 'DP', 'TK', 'GPT', 'CL', 'GM'];
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36';
+const C = {
+  ink: { light: '#1C1C1E', dark: '#FFFFFF' }, dim: { light: '#76767C', dark: '#A0A0A8' },
+  blue: { light: '#007AFF', dark: '#0A84FF' }, purple: { light: '#AF52DE', dark: '#BF5AF2' },
+  green: { light: '#24843B', dark: '#43D66C' }, amber: { light: '#E79011', dark: '#FFB442' },
+  red: { light: '#D93025', dark: '#FF6961' }, fill: { light: '#F0F1F4', dark: '#252528' },
+  bg: { light: '#FFFFFF', dark: '#121212' },
+};
+function clean(value, max = 120) {
+  return typeof value === 'string' ? value.replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, max) : '';
 }
+function ipAddress(value) {
+  const ip = clean(value, 64);
+  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(ip)) return ip.split('.').every(p => Number(p) <= 255) ? ip : '';
+  if (!/^[\da-f:]+$/i.test(ip) || !ip.includes(':') || ip.includes(':::')) return '';
+  const halves = ip.split('::'), parts = ip.split(':').filter(Boolean);
+  if (halves.length > 2 || halves.some(h => h && !/^[\da-f]{1,4}(:[\da-f]{1,4})*$/i.test(h))) return '';
+  if (halves.length === 1 ? parts.length !== 8 || ip.startsWith(':') || ip.endsWith(':') : parts.length >= 8) return '';
+  return ip.toLowerCase();
+}
+function country(value) { return /^[A-Z]{2}$/.test(String(value || '').toUpperCase()) ? String(value).toUpperCase() : ''; }
+function asn(value) { const s = String(value || '').replace(/^AS/i, ''); return /^\d{1,10}$/.test(s) ? `AS${s}` : ''; }
+function carrier(value) {
+  const s = clean(value);
+  if (/cmcc|cmnet|china mobile|移动/i.test(s)) return '中国移动';
+  if (/chinanet|china telecom|电信/i.test(s)) return '中国电信';
+  if (/unicom|cncgroup|联通/i.test(s)) return '中国联通';
+  if (/china broadnet|广电/i.test(s)) return '中国广电';
+  return s || '未知';
+}
+function numberOption(value, fallback, min, max) {
+  if (value === undefined || String(value).trim() === '') return fallback;
+  const n = Number(value);
+  return Number.isFinite(n) ? Math.max(min, Math.min(max, Math.round(n))) : fallback;
+}
+function network(ctx) {
+  const d = ctx.device || {}, legacy = ctx.network?.v4 || {};
+  const wifi = clean(d.wifi?.ssid), radio = clean(d.cellular?.radio);
+  const label = wifi || ({ LTE: '4G', NR: '5G', NRNSA: '5G', WCDMA: '3G' }[radio.toUpperCase()] || radio || '未知网络');
+  const local = ipAddress(d.ipv4?.address || legacy.primaryAddress) || '未知';
+  const gateway = ipAddress(d.ipv4?.gateway || legacy.primaryRouter) || (radio ? '蜂窝内网' : '未知');
+  return { label, local, gateway, wifi: !!wifi, identity: JSON.stringify([
+    wifi, clean(d.wifi?.bssid), radio, clean(d.cellular?.carrier), local, gateway,
+    clean(d.ipv4?.interface), clean(d.ipv6?.address), clean(d.ipv6?.interface),
+  ]) };
+}
+async function readCache(ctx, scope) {
+  try {
+    const raw = await ctx.storage?.get(CACHE_KEY), cache = typeof raw === 'string' ? JSON.parse(raw) : null;
+    return cache?.scope === scope ? cache : { scope };
+  } catch { return { scope }; }
+}
+async function saveCache(ctx, cache) {
+  try { await ctx.storage?.set(CACHE_KEY, JSON.stringify(cache)); } catch { /* Cache is optional. */ }
+}
+function fresh(record, ttl, now) { return ttl > 0 && record?.at > 0 && now >= record.at && now - record.at < ttl * 1000; }
+async function request(ctx, url, policy, timeout = 4000) {
+  try {
+    const r = await ctx.http.get(url, { policy, timeout, redirect: 'manual', credentials: 'omit', headers: { 'User-Agent': UA, Accept: '*/*' } });
+    const body = typeof r.text === 'function' ? await r.text() : typeof r.body === 'string' ? r.body : '';
+    return { status: Number(r.status), body, location: clean(r.headers?.get?.('location') || r.headers?.location || r.headers?.Location, 1000) };
+  } catch { return null; }
+}
+async function jsonRequest(ctx, url, policy) {
+  const r = await request(ctx, url, policy);
+  if (!r || r.status !== 200) return null;
+  try { return JSON.parse(r.body); } catch { return null; }
+}
+async function latency(ctx, url, policy) {
+  const start = Date.now(), r = await request(ctx, url, policy, 2000);
+  return r && r.status >= 200 && r.status < 400 ? `${Date.now() - start} ms` : '超时';
+}
+async function localInfo(ctx) {
+  const [j, delay] = await Promise.all([jsonRequest(ctx, 'https://myip.ipip.net/json', 'DIRECT'), latency(ctx, 'https://www.baidu.com', 'DIRECT')]);
+  const loc = Array.isArray(j?.data?.location) ? j.data.location : [];
+  return { ip: ipAddress(j?.data?.ip), location: [clean(loc[1]), clean(loc[2])].filter(Boolean).join(' · '), organization: carrier(loc[loc.length - 1]), delay };
+}
+async function proxyInfo(ctx, policy) {
+  const [j, delay] = await Promise.all([jsonRequest(ctx, 'https://my.ippure.com/v1/info', policy), latency(ctx, 'https://cp.cloudflare.com/generate_204', policy)]);
+  const ip = ipAddress(j?.ip);
+  if (ip) {
+    // These fields describe this exact response's IP. Never mix another self-IP lookup.
+    const score = typeof j.fraudScore === 'number' && Number.isFinite(j.fraudScore) && j.fraudScore >= 0 && j.fraudScore <= 100 ? j.fraudScore : null;
+    return { ip, cc: country(j.countryCode), location: [clean(j.country), clean(j.city)].filter(Boolean).join(' · '), asn: asn(j.asn), organization: clean(j.asOrganization),
+      residential: typeof j.isResidential === 'boolean' ? j.isResidential : null, score, source: 'IPPure', delay };
+  }
+  // Legacy free endpoint is only a fallback. It cannot supply an IPPure score.
+  const fallback = await jsonRequest(ctx, 'http://ip-api.com/json/?lang=zh-CN', policy);
+  return { ip: fallback?.status === 'success' ? ipAddress(fallback.query) : '', cc: country(fallback?.countryCode),
+    location: [clean(fallback?.country), clean(fallback?.city)].filter(Boolean).join(' · '), asn: asn(String(fallback?.as || '').split(' ')[0]),
+    organization: clean(fallback?.org || fallback?.isp), residential: null, score: null, source: 'ip-api', delay };
+}
+const unknown = () => ({ state: 'unknown', cc: '' });
+function serviceResult(r, id) {
+  if (!r) return unknown();
+  const body = r.body || '', location = r.location || '';
+  if (r.status >= 500 || r.status === 429) return unknown();
+  if (/\/unavailable(?:[/?#]|$)|unsupported.country/i.test(location) || /app unavailable|not available in your (country|region)|not available in certain regions/i.test(body)) return { state: 'restricted', cc: '' };
+  if (/cf-turnstile|just a moment|checking your browser|access denied|captcha|challenge-platform/i.test(body)) return unknown();
+  if (r.status !== 200 || !body.trim()) return unknown();
+  if (id === 'GPT') {
+    const cc = country(body.match(/^loc=([A-Z]{2})\s*$/m)?.[1]);
+    return cc ? { state: 'reachable', cc } : unknown();
+  }
+  if (id === 'TK') {
+    const cc = country(body.match(/"region"\s*:\s*"([A-Z]{2})"/i)?.[1]);
+    return cc ? { state: 'reachable', cc } : unknown();
+  }
+  if (!/<(?:!doctype|html|head|body)\b/i.test(body)) return unknown();
+  return { state: 'reachable', cc: '' };
+}
+async function services(ctx, policy, ids) {
+  const endpoints = [['DP', 'https://www.disneyplus.com'], ['TK', 'https://www.tiktok.com/explore'], ['GPT', 'https://chatgpt.com/cdn-cgi/trace'], ['CL', 'https://claude.ai/login'], ['GM', 'https://gemini.google.com/app']];
+  const jobs = endpoints.filter(([id]) => ids.includes(id)).map(async ([id, url]) => {
+    const r = await request(ctx, url, policy);
+    if (id === 'GM' && r && /\/faq(?:[/?#]|$)/i.test(r.location)) return [id, { state: 'restricted', cc: '' }];
+    return [id, serviceResult(r, id)];
+  });
+  if (ids.includes('NF')) jobs.push((async () => {
+    const [full, original] = await Promise.all([request(ctx, 'https://www.netflix.com/title/70143836', policy), request(ctx, 'https://www.netflix.com/title/81280792', policy)]);
+    const a = serviceResult(full, 'NF'), b = serviceResult(original, 'NF');
+    if (a.state === 'reachable') return ['NF', a];
+    if (b.state === 'reachable') return ['NF', { state: 'limited', cc: '' }];
+    return ['NF', a.state === 'restricted' ? a : unknown()];
+  })());
+  return Object.fromEntries(await Promise.all(jobs));
+}
+export async function collectRadar(ctx) {
+  const env = ctx.env || {}, net = network(ctx), now = Date.now();
+  const policy = clean(env.RADAR_POLICY, 80) || 'Proxy';
+  const force = ctx.script?.name === '网络诊断雷达 · 立即检测';
+  const localTTL = numberOption(env.RADAR_LOCAL_CACHE_SECONDS, 60, 0, 600);
+  const serviceTTL = numberOption(env.RADAR_SERVICE_CACHE_SECONDS, 600, 0, 3600);
+  const scope = JSON.stringify([net.identity, policy]), cache = await readCache(ctx, scope);
+  const [local, proxy] = await Promise.all([
+    !force && fresh(cache.local, localTTL, now) && cache.local.data?.ip ? cache.local.data : localInfo(ctx),
+    proxyInfo(ctx, policy), // Recheck egress even if a group's name is unchanged.
+  ]);
+  if (local.ip && local !== cache.local?.data) cache.local = { at: now, data: local };
+  let checks = Object.fromEntries(SERVICE_IDS.map(id => [id, unknown()])), checkedAt = now, cached = false;
+  const enabled = String(env.RADAR_SERVICES_ENABLED || 'true') !== 'false';
+  if (enabled && proxy.ip) {
+    const previous = cache.services?.ip === proxy.ip ? cache.services.data || {} : {};
+    const pending = SERVICE_IDS.filter(id => force || !['reachable', 'restricted', 'limited', 'unknown'].includes(previous[id]?.state) ||
+      !fresh(previous[id], previous[id]?.state === 'unknown' ? Math.min(30, serviceTTL) : serviceTTL, now));
+    const results = await services(ctx, policy, pending);
+    checks = Object.fromEntries(SERVICE_IDS.map(id => [id, pending.includes(id) ? { ...results[id], at: now } : previous[id]]));
+    checkedAt = Math.min(...SERVICE_IDS.map(id => checks[id].at));
+    cached = pending.length < SERVICE_IDS.length;
+    cache.services = { ip: proxy.ip, data: checks };
+  } else delete cache.services;
+  await saveCache(ctx, cache);
+  return { net, local, proxy, policy, checks, checkedAt, cached, enabled, at: now };
+}
+function displayIP(ip, large, masked) {
+  if (!ip) return '未知';
+  if (masked && ipAddress(ip)) return ip.includes(':') ? ip.split(':').slice(0, 2).join(':') + ':*' : ip.split('.').slice(0, 2).join('.') + '.*.*';
+  if (!large && ip.includes(':') && ip.length > 19) return ip.slice(0, 9) + '…' + ip.slice(-5);
+  return ip;
+}
+function clock(at) { const d = new Date(at); return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`; }
+function compact(value, max) { const s = clean(value); return s.length > max ? s.slice(0, max - 1) + '…' : s || '未知'; }
+export function renderRadar(model, ctx) {
+  const { net, local, proxy, policy, checks } = model, env = ctx.env || {};
+  const hint = String(env.RADAR_LAYOUT || 'auto').toLowerCase();
+  const large = hint === 'large' || (hint !== 'medium' && /large|extra/i.test(ctx.widgetFamily || ctx.family || ctx.widget?.family || ''));
+  const masked = String(env.RADAR_MASK_IP || 'false') === 'true', val = x => clean(x) || '未知';
+  const tx = (text, size = large ? 11.5 : 10.5, col = C.ink, weight = 'medium') => ({ type: 'text', text: String(text), font: { size, weight }, textColor: col, maxLines: 1 });
+  const stack = (children, direction = 'column', gap = 4, more = {}) => ({ type: 'stack', direction, gap, children, ...more });
+  const icon = (name, col = C.blue, s = large ? 12 : 11) => ({ type: 'image', src: `sf-symbol:${name}`, color: col, width: s, height: s });
+  const spacer = () => ({ type: 'spacer' });
+  const rowIcons = { 环境: net.wifi ? 'wifi' : 'antenna.radiowaves.left.and.right', 内网: 'iphone', 公网: 'globe.asia.australia.fill', 位置: 'map.fill', 运营: 'antenna.radiowaves.left.and.right', 网关: 'wifi.router.fill', 延迟: 'timer', 出口: 'paperplane.fill', '出口 IP': 'paperplane.fill', 落地: 'mappin.and.ellipse', ASN: 'network', 组织: 'server.rack', 策略: 'arrow.triangle.branch' };
+  const row = (label, value, col = C.blue) => stack([icon(rowIcons[label], col), tx(label, large ? 11 : 10.5, C.dim), spacer(), { ...tx(value), minScale: 1 }], 'row', 4, { alignItems: 'center' });
+  const rrow = (label, value) => row(label, value, C.purple);
+  const pair = (label, value) => stack([stack([icon(rowIcons[label], C.purple), tx(label, 11, C.dim)], 'row', 4, { alignItems: 'center' }), { ...tx(value, 12), maxLines: 2, minScale: 0.9 }], 'column', 3);
+  const header = stack([icon('waveform.path.ecg', C.blue, large ? 17 : 15), tx('网络诊断雷达', large ? 16 : 14, C.ink, 'bold'), spacer(), tx(proxy.ip ? clock(model.at) : '出口未知', 10.5, proxy.ip ? C.dim : C.amber)], 'row', 6, { alignItems: 'center' });
+  const card = (title, col, rows) => stack([stack([icon(title === '本地网络' ? rowIcons.环境 : 'paperplane.fill', col, 14), tx(title, 12, C.ink, 'semibold')], 'row', 6, { alignItems: 'center' }), ...rows], 'column', 5, { flex: 1, padding: [9, 10], backgroundColor: C.fill, borderRadius: 12 });
+  const localRows = [row('环境', compact(net.label, 22)), row('内网', displayIP(net.local, large, masked)), row('公网', displayIP(local.ip, large, masked)), row('位置', val(local.location)), row('运营', val(local.organization)), ...(large ? [row('网关', displayIP(net.gateway, large, masked))] : []), row('延迟', val(local.delay))];
+  const proxyRows = large ? [pair('出口 IP', displayIP(proxy.ip, true, masked)), rrow('落地', val(proxy.location)), rrow('ASN', val(proxy.asn)), pair('组织', compact(proxy.organization, 38)), rrow('策略', compact(policy, 20)), rrow('延迟', val(proxy.delay))]
+    : [rrow('出口', displayIP(proxy.ip, false, masked)), rrow('落地', val(proxy.location)), rrow('组织', compact(proxy.organization, 20)), rrow('ASN', val(proxy.asn)), rrow('策略', compact(policy, 20)), rrow('延迟', val(proxy.delay))];
+  const columns = stack(large ? [card('本地网络', C.blue, localRows), card('代理出口', C.purple, proxyRows)] : [stack(localRows, 'column', 1.5, { flex: 1 }), { type: 'stack', width: 0.5, backgroundColor: C.fill }, stack(proxyRows, 'column', 1.5, { flex: 1 })], 'row', large ? 8 : 10);
+  const residential = proxy.residential, score = proxy.score;
+  const property = residential === true ? '住宅网络' : residential === false ? '机房 / 商业' : '属性未知';
+  const propertyIcon = residential === true ? 'house.fill' : residential === false ? 'building.2.fill' : 'questionmark.circle.fill';
+  const propertyColor = residential === true ? C.green : residential === false ? C.amber : C.dim;
+  const scoreColor = score === null ? C.dim : score >= 70 ? C.red : score >= 40 ? C.amber : C.green;
+  const scoreIcon = score === null ? 'questionmark.shield' : score >= 70 ? 'exclamationmark.shield.fill' : 'checkmark.shield.fill';
+  const scoreText = score === null ? '无数据' : `${score} · ${score >= 70 ? '高风险' : score >= 40 ? '中风险' : '低风险'}`;
+  const quality = large ? stack([
+    stack([stack([icon(propertyIcon, propertyColor), tx('出口属性', 10.5, C.dim)], 'row', 5, { alignItems: 'center' }), tx(property, 13)], 'column', 4, { flex: 1 }),
+    stack([stack([icon(scoreIcon, scoreColor), tx('IPPure 风险', 10.5, C.dim)], 'row', 5, { alignItems: 'center' }), tx(scoreText, 13, scoreColor)], 'column', 4, { flex: 1 }),
+  ], 'row', 12, { padding: [8, 10], backgroundColor: C.fill, borderRadius: 12 }) : stack([icon(propertyIcon, propertyColor), tx(property, 10.5), spacer(), icon(scoreIcon, scoreColor), tx(`IPPure ${scoreText}`, 10.5, scoreColor)], 'row', 5, { alignItems: 'center' });
+  const serviceIcons = { NF: 'film.fill', DP: 'sparkles.tv', TK: 'music.note', GPT: 'bubble.left.and.bubble.right.fill', CL: 'asterisk', GM: 'sparkles' };
+  const service = (label, ids) => stack([icon(label === '影视' ? 'play.tv.fill' : 'cpu', label === '影视' ? C.blue : C.purple), tx(label, large ? 11 : 10, C.dim), ...ids.map(id => {
+    const result = checks[id] || unknown();
+    const mark = !model.enabled ? '—' : result.state === 'reachable' ? `${result.cc ? result.cc + ' ' : ''}✓` : result.state === 'restricted' ? '×' : result.state === 'limited' ? '◐' : '?';
+    const col = !model.enabled || result.state === 'unknown' ? C.dim : result.state === 'reachable' ? C.green : result.state === 'restricted' ? C.red : C.amber;
+    return stack([icon(serviceIcons[id], label === '影视' ? C.blue : C.purple, large ? 11 : 10), tx(id, large ? 10.5 : 10), { ...tx(mark, large ? 10.5 : 10, col), minScale: 1 }], 'row', 3, { flex: 1, alignItems: 'center' });
+  })], 'row', large ? 6 : 5, { alignItems: 'center' });
+  const servicePanel = stack([service('影视', ['NF', 'DP', 'TK']), service('AI', ['GPT', 'CL', 'GM'])], 'column', large ? 6 : 3, large ? { padding: [8, 10], backgroundColor: C.fill, borderRadius: 12 } : {});
+  let footer = !model.enabled ? '服务检测已关闭' : !proxy.ip ? '出口未知 · 服务状态未知' : `${model.cached ? '缓存' : '检测'} ${clock(model.checkedAt)} · ✓ 可达 / × 受限 / ? 未知`;
+  if (large && proxy.ip && proxy.source !== 'IPPure') footer = '备用 IP 来源 · IPPure 评分不可用';
+  if (!large && model.cached) servicePanel.children[1].children[1] = tx('AI·缓', 10, C.dim);
+  return { type: 'widget', padding: large ? [13, 14] : [9, 13], gap: large ? 8 : 3, backgroundColor: C.bg,
+    refreshAfter: new Date(model.at + 60_000).toISOString(), children: [header, columns, quality, servicePanel,
+      ...(large ? [stack([icon('clock', C.dim, 10), tx(footer, 10, C.dim)], 'row', 4, { alignItems: 'center' })] : [])] };
+}
+export default async function(ctx) { return renderRadar(await collectRadar(ctx), ctx); }

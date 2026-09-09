@@ -228,6 +228,7 @@ the private configuration repository’s Provider Compatibility writer rather th
 
 ## Stash and other non-rule resources
 
+- [Egern 网络诊断雷达](Egern/Modules/README.md): native widgets combining local/exit IP information, ASN, IPPure risk and service probes, with medium/large layouts and scoped local caching.
 - `Stash/Overrides/`: reusable Stash modules.
 - `Stash/Scripts/`: scripts used by Stash modules.
 - `Stash/Rules/`: Stash-specific supplements.

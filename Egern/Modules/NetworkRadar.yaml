@@ -1,5 +1,5 @@
 ﻿name: 网络诊断雷达
-description: 基于 Network-Pro.js 的 Egern 小组件模块，增加本地运营商显示并适配大号小组件。
+description: 本地网络、出口 IP / ASN / IPPure 评分及影视 / AI 探测。中号六行双列，大号完整信息；普通刷新复用缓存，“立即检测”绕过缓存。服务可达不代表播放或账号可用。
 author: SchweppesSoda
 homepage: https://github.com/SchweppesSoda/CustomRules
 icon: waveform.path.ecg
@@ -13,11 +13,38 @@ env_schema:
       - auto
       - large
       - medium
+  RADAR_POLICY:
+    name: 出口检测策略
+    description: 填写配置中实际存在的策略名。出口信息、代理延迟和全部服务探测均走此策略；本地公网与延迟固定 DIRECT。
+    default_value: Proxy
+  RADAR_MASK_IP:
+    name: IP 地址打码
+    description: 对组件里的公网、内网及网关地址打码；本机检测与缓存仍使用完整地址。
+    default_value: "false"
+    options: ["false", "true"]
+  RADAR_SERVICES_ENABLED:
+    name: 影视与 AI 探测
+    description: 关闭时仅获取网络与出口信息，服务显示 —。可达仅代表 HTTP 探测通过；? 表示超时、验证页或证据不足。
+    default_value: "true"
+    options: ["true", "false"]
+  RADAR_LOCAL_CACHE_SECONDS:
+    name: 本地信息缓存（秒）
+    description: 0..600，默认 60。网络变化后失效；出口 IP 每次重新确认，不受此缓存影响。
+    default_value: "60"
+  RADAR_SERVICE_CACHE_SECONDS:
+    name: 服务结果缓存（秒）
+    description: 0..3600，默认 600。网络、策略或出口 IP 变化后失效；未知结果最多缓存 30 秒。“立即检测”跳过缓存。
+    default_value: "600"
 
 scriptings:
   - generic:
       name: 网络诊断雷达
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260617-0404
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2
+      update_interval: 300
+      timeout: 20
+  - generic:
+      name: 网络诊断雷达 · 立即检测
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2
       update_interval: 300
       timeout: 20
 
