@@ -176,3 +176,40 @@ test('masking hides all displayed address values without changing detection', as
   for (const ip of [f.state.ip, '192.0.2.18', '192.168.50.128', '192.168.50.1']) assert.equal(content.includes(ip), false, ip);
   assert.equal(texts(tree).includes('203.0.*.*'), true);
 });
+
+// Geometry contract, not a claim to emulate iOS font rendering. Reserve 1.2x
+// numeric font size per line and check descendants against each explicit box.
+function reservedHeight(node) {
+  if (node.type === 'text') return node.font.size * 1.2 * node.maxLines;
+  if (node.type === 'image') return node.height;
+  assert.notEqual(node.type, 'spacer', 'unbounded spacer can consume native row space');
+  const heights = (node.children || []).map(reservedHeight);
+  const p = node.padding || 0;
+  const verticalPadding = Array.isArray(p) ? p[0] + (p.length === 2 ? p[0] : p[2]) : p * 2;
+  const needed = verticalPadding + (node.direction === 'row' ? Math.max(0, ...heights)
+    : heights.reduce((a, b) => a + b, 0) + Math.max(0, heights.length - 1) * (node.gap || 0));
+  if (node.height) assert.ok(needed <= node.height + 0.01, `content ${needed} exceeds reserved ${node.height}: ${texts(node).join('/')}`);
+  return node.height || needed;
+}
+
+test('native layout reserves every row, bounds title and values, and fits medium/large height budgets', async t => {
+  const f = setup(t, { ip: '2001:db8:85a3:8d3:1319:8a2e:370:7348' });
+  const model = await radar.collectRadar(f.ctx);
+  model.net.label = 'Very long wireless network name '.repeat(5);
+  model.proxy.organization = 'Very long organization name '.repeat(5);
+  model.local.location = '很长的地区名称'.repeat(10);
+  for (const [family, budget] of [['systemMedium', 155], ['systemLarge', 329]]) {
+    f.ctx.env.RADAR_LAYOUT = 'auto'; f.ctx.widgetFamily = family;
+    const tree = radar.renderRadar(model, f.ctx);
+    assert.ok(reservedHeight(tree) <= budget);
+    assert.ok(walk(tree).filter(n => n.type === 'stack').every(n => n.height > 0));
+    const title = walk(tree).find(n => n.text === '网络诊断雷达');
+    assert.equal(title.flex, 1); assert.equal(title.maxLines, 1);
+    const location = walk(tree).find(n => n.text === model.local.location);
+    assert.equal(location.flex, 1); assert.equal(location.maxLines, 1);
+    // Vertical flex would compete for section height instead of reserving it.
+    for (const n of walk(tree).filter(n => n.direction === 'column' || n.type === 'widget')) {
+      assert.ok((n.children || []).every(child => !child.flex));
+    }
+  }
+});

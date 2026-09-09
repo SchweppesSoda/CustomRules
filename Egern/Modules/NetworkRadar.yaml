@@ -39,12 +39,12 @@ env_schema:
 scriptings:
   - generic:
       name: 网络诊断雷达
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.1
       update_interval: 300
       timeout: 20
   - generic:
       name: 网络诊断雷达 · 立即检测
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.1
       update_interval: 300
       timeout: 20
 

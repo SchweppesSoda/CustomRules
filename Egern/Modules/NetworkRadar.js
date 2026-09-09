@@ -173,19 +173,25 @@ export function renderRadar(model, ctx) {
   const large = hint === 'large' || (hint !== 'medium' && /large|extra/i.test(ctx.widgetFamily || ctx.family || ctx.widget?.family || ''));
   const masked = String(env.RADAR_MASK_IP || 'false') === 'true', val = x => clean(x) || '未知';
   const tx = (text, size = large ? 11.5 : 10.5, col = C.ink, weight = 'medium') => ({ type: 'text', text: String(text), font: { size, weight }, textColor: col, maxLines: 1 });
-  const stack = (children, direction = 'column', gap = 4, more = {}) => ({ type: 'stack', direction, gap, children, ...more });
+  const stack = (children, direction = 'column', gap = 4, more = {}) => ({ type: 'stack', direction, alignItems: direction === 'column' ? 'start' : 'center', gap, children, ...more });
   const icon = (name, col = C.blue, s = large ? 12 : 11) => ({ type: 'image', src: `sf-symbol:${name}`, color: col, width: s, height: s });
-  const spacer = () => ({ type: 'spacer' });
+  // Native stacks need bounded rows: do not rely on browser intrinsic sizing.
+  // Only horizontal values flex; every section reserves its vertical space.
+  const lineHeight = large ? 16 : 13;
+  const bounded = (text, size, col = C.ink, weight = 'medium', align = 'right') => ({ ...tx(text, size, col, weight), flex: 1, textAlign: align, minScale: 0.9 });
   const rowIcons = { 环境: net.wifi ? 'wifi' : 'antenna.radiowaves.left.and.right', 内网: 'iphone', 公网: 'globe.asia.australia.fill', 位置: 'map.fill', 运营: 'antenna.radiowaves.left.and.right', 网关: 'wifi.router.fill', 延迟: 'timer', 出口: 'paperplane.fill', '出口 IP': 'paperplane.fill', 落地: 'mappin.and.ellipse', ASN: 'network', 组织: 'server.rack', 策略: 'arrow.triangle.branch' };
-  const row = (label, value, col = C.blue) => stack([icon(rowIcons[label], col), tx(label, large ? 11 : 10.5, C.dim), spacer(), { ...tx(value), minScale: 1 }], 'row', 4, { alignItems: 'center' });
+  const row = (label, value, col = C.blue) => stack([icon(rowIcons[label], col, large ? 11 : 10), tx(label, large ? 10.5 : 10, C.dim), bounded(value, large ? 11 : 10.5)], 'row', 3, { height: lineHeight });
   const rrow = (label, value) => row(label, value, C.purple);
-  const pair = (label, value) => stack([stack([icon(rowIcons[label], C.purple), tx(label, 11, C.dim)], 'row', 4, { alignItems: 'center' }), { ...tx(value, 12), maxLines: 2, minScale: 0.9 }], 'column', 3);
-  const header = stack([icon('waveform.path.ecg', C.blue, large ? 17 : 15), tx('网络诊断雷达', large ? 16 : 14, C.ink, 'bold'), spacer(), tx(proxy.ip ? clock(model.at) : '出口未知', 10.5, proxy.ip ? C.dim : C.amber)], 'row', 6, { alignItems: 'center' });
-  const card = (title, col, rows) => stack([stack([icon(title === '本地网络' ? rowIcons.环境 : 'paperplane.fill', col, 14), tx(title, 12, C.ink, 'semibold')], 'row', 6, { alignItems: 'center' }), ...rows], 'column', 5, { flex: 1, padding: [9, 10], backgroundColor: C.fill, borderRadius: 12 });
+  const pair = (label, value) => stack([
+    stack([icon(rowIcons[label], C.purple, 11), tx(label, 10.5, C.dim)], 'row', 4, { height: 13 }),
+    stack([{ ...bounded(value, 11, C.ink, 'medium', 'left'), maxLines: 2 }], 'row', 0, { height: 28 }),
+  ], 'column', 1, { height: 42 });
+  const header = stack([icon('waveform.path.ecg', C.blue, large ? 17 : 14), bounded('网络诊断雷达', large ? 16 : 14, C.ink, 'bold', 'left'), tx(proxy.ip ? clock(model.at) : '出口未知', 10, proxy.ip ? C.dim : C.amber)], 'row', 6, { height: large ? 22 : 18 });
+  const card = (title, col, rows) => stack([stack([icon(title === '本地网络' ? rowIcons.环境 : 'paperplane.fill', col, 12), bounded(title, 12, C.ink, 'semibold', 'left')], 'row', 5, { height: 16 }), ...rows], 'column', title === '本地网络' ? 6 : 2, { flex: 1, height: 188, padding: [6, 8], backgroundColor: C.fill, borderRadius: 12 });
   const localRows = [row('环境', compact(net.label, 22)), row('内网', displayIP(net.local, large, masked)), row('公网', displayIP(local.ip, large, masked)), row('位置', val(local.location)), row('运营', val(local.organization)), ...(large ? [row('网关', displayIP(net.gateway, large, masked))] : []), row('延迟', val(local.delay))];
   const proxyRows = large ? [pair('出口 IP', displayIP(proxy.ip, true, masked)), rrow('落地', val(proxy.location)), rrow('ASN', val(proxy.asn)), pair('组织', compact(proxy.organization, 38)), rrow('策略', compact(policy, 20)), rrow('延迟', val(proxy.delay))]
     : [rrow('出口', displayIP(proxy.ip, false, masked)), rrow('落地', val(proxy.location)), rrow('组织', compact(proxy.organization, 20)), rrow('ASN', val(proxy.asn)), rrow('策略', compact(policy, 20)), rrow('延迟', val(proxy.delay))];
-  const columns = stack(large ? [card('本地网络', C.blue, localRows), card('代理出口', C.purple, proxyRows)] : [stack(localRows, 'column', 1.5, { flex: 1 }), { type: 'stack', width: 0.5, backgroundColor: C.fill }, stack(proxyRows, 'column', 1.5, { flex: 1 })], 'row', large ? 8 : 10);
+  const columns = stack(large ? [card('本地网络', C.blue, localRows), card('代理出口', C.purple, proxyRows)] : [stack(localRows, 'column', 0, { flex: 1, height: 78 }), stack([], 'column', 0, { width: 0.5, height: 78, backgroundColor: C.fill }), stack(proxyRows, 'column', 0, { flex: 1, height: 78 })], 'row', large ? 8 : 6, { height: large ? 188 : 78, alignItems: 'start' });
   const residential = proxy.residential, score = proxy.score;
   const property = residential === true ? '住宅网络' : residential === false ? '机房 / 商业' : '属性未知';
   const propertyIcon = residential === true ? 'house.fill' : residential === false ? 'building.2.fill' : 'questionmark.circle.fill';
@@ -194,22 +200,23 @@ export function renderRadar(model, ctx) {
   const scoreIcon = score === null ? 'questionmark.shield' : score >= 70 ? 'exclamationmark.shield.fill' : 'checkmark.shield.fill';
   const scoreText = score === null ? '无数据' : `${score} · ${score >= 70 ? '高风险' : score >= 40 ? '中风险' : '低风险'}`;
   const quality = large ? stack([
-    stack([stack([icon(propertyIcon, propertyColor), tx('出口属性', 10.5, C.dim)], 'row', 5, { alignItems: 'center' }), tx(property, 13)], 'column', 4, { flex: 1 }),
-    stack([stack([icon(scoreIcon, scoreColor), tx('IPPure 风险', 10.5, C.dim)], 'row', 5, { alignItems: 'center' }), tx(scoreText, 13, scoreColor)], 'column', 4, { flex: 1 }),
-  ], 'row', 12, { padding: [8, 10], backgroundColor: C.fill, borderRadius: 12 }) : stack([icon(propertyIcon, propertyColor), tx(property, 10.5), spacer(), icon(scoreIcon, scoreColor), tx(`IPPure ${scoreText}`, 10.5, scoreColor)], 'row', 5, { alignItems: 'center' });
+    stack([stack([icon(propertyIcon, propertyColor, 11), bounded('出口属性', 10, C.dim, 'medium', 'left')], 'row', 5, { height: 12 }), stack([bounded(property, 12, C.ink, 'medium', 'left')], 'row', 0, { height: 16 })], 'column', 0, { flex: 1, height: 28 }),
+    stack([stack([icon(scoreIcon, scoreColor, 11), bounded('IPPure 风险', 10, C.dim, 'medium', 'left')], 'row', 5, { height: 12 }), stack([bounded(scoreText, 12, scoreColor, 'medium', 'left')], 'row', 0, { height: 16 })], 'column', 0, { flex: 1, height: 28 }),
+  ], 'row', 12, { height: 36, padding: [4, 8], backgroundColor: C.fill, borderRadius: 12 }) : stack([icon(propertyIcon, propertyColor, 10), bounded(property, 10.5, C.ink, 'medium', 'left'), icon(scoreIcon, scoreColor, 10), bounded(`IPPure ${scoreText}`, 10.5, scoreColor)], 'row', 4, { height: 14 });
   const serviceIcons = { NF: 'film.fill', DP: 'sparkles.tv', TK: 'music.note', GPT: 'bubble.left.and.bubble.right.fill', CL: 'asterisk', GM: 'sparkles' };
-  const service = (label, ids) => stack([icon(label === '影视' ? 'play.tv.fill' : 'cpu', label === '影视' ? C.blue : C.purple), tx(label, large ? 11 : 10, C.dim), ...ids.map(id => {
+  const service = (label, ids) => stack([icon(label === '影视' ? 'play.tv.fill' : 'cpu', label === '影视' ? C.blue : C.purple), tx(label, 10, C.dim), ...ids.map(id => {
     const result = checks[id] || unknown();
     const mark = !model.enabled ? '—' : result.state === 'reachable' ? `${result.cc ? result.cc + ' ' : ''}✓` : result.state === 'restricted' ? '×' : result.state === 'limited' ? '◐' : '?';
     const col = !model.enabled || result.state === 'unknown' ? C.dim : result.state === 'reachable' ? C.green : result.state === 'restricted' ? C.red : C.amber;
-    return stack([icon(serviceIcons[id], label === '影视' ? C.blue : C.purple, large ? 11 : 10), tx(id, large ? 10.5 : 10), { ...tx(mark, large ? 10.5 : 10, col), minScale: 1 }], 'row', 3, { flex: 1, alignItems: 'center' });
-  })], 'row', large ? 6 : 5, { alignItems: 'center' });
-  const servicePanel = stack([service('影视', ['NF', 'DP', 'TK']), service('AI', ['GPT', 'CL', 'GM'])], 'column', large ? 6 : 3, large ? { padding: [8, 10], backgroundColor: C.fill, borderRadius: 12 } : {});
+    return stack([icon(serviceIcons[id], label === '影视' ? C.blue : C.purple, 10), tx(id, 10), bounded(mark, 10, col)], 'row', 2, { flex: 1, height: 13 });
+  })], 'row', 4, { height: 13 });
+  const servicePanel = stack([service('影视', ['NF', 'DP', 'TK']), service('AI', ['GPT', 'CL', 'GM'])], 'column', large ? 2 : 0, large ? { height: 34, padding: [3, 8], backgroundColor: C.fill, borderRadius: 12 } : { height: 26 });
   let footer = !model.enabled ? '服务检测已关闭' : !proxy.ip ? '出口未知 · 服务状态未知' : `${model.cached ? '缓存' : '检测'} ${clock(model.checkedAt)} · ✓ 可达 / × 受限 / ? 未知`;
   if (large && proxy.ip && proxy.source !== 'IPPure') footer = '备用 IP 来源 · IPPure 评分不可用';
   if (!large && model.cached) servicePanel.children[1].children[1] = tx('AI·缓', 10, C.dim);
-  return { type: 'widget', padding: large ? [13, 14] : [9, 13], gap: large ? 8 : 3, backgroundColor: C.bg,
+  // Full content budgets: medium 150 pt, large 328 pt (including padding).
+  return { type: 'widget', padding: large ? [8, 10] : [4, 10], gap: large ? 5 : 2, backgroundColor: C.bg,
     refreshAfter: new Date(model.at + 60_000).toISOString(), children: [header, columns, quality, servicePanel,
-      ...(large ? [stack([icon('clock', C.dim, 10), tx(footer, 10, C.dim)], 'row', 4, { alignItems: 'center' })] : [])] };
+      ...(large ? [stack([icon('clock', C.dim, 10), bounded(footer, 9.5, C.dim, 'medium', 'left')], 'row', 4, { height: 12 })] : [])] };
 }
 export default async function(ctx) { return renderRadar(await collectRadar(ctx), ctx); }
