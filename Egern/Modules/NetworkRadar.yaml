@@ -1,5 +1,5 @@
 ﻿name: 网络诊断雷达
-description: 本地网络、IPv4 出口 / ASN / IPPure 评分及影视 / AI 探测。全部字段单行省略，中号六行双列，大号服务三格对齐；“立即检测”绕过缓存。服务可达不代表播放或账号可用。
+description: 本地网络、IPv4 出口 / ASN / IPPure 评分及影视 / AI 探测。全部字段单行省略，中号标题留白，大号七行对齐；“立即检测”绕过缓存。服务页面与地区信息分开显示，不等于解锁。
 author: SchweppesSoda
 homepage: https://github.com/SchweppesSoda/CustomRules
 icon: waveform.path.ecg
@@ -24,7 +24,7 @@ env_schema:
     options: ["false", "true"]
   RADAR_SERVICES_ENABLED:
     name: 影视与 AI 探测
-    description: 关闭时仅获取网络与出口信息，服务显示 —。可达仅代表 HTTP 探测通过；? 表示超时、验证页或证据不足。
+    description: 关闭时仅获取网络与出口信息，服务显示 —。勾表示页面可达，紫色地区码仅为地区信息；失败显示验证、连接、限流等原因。
     default_value: "true"
     options: ["true", "false"]
   RADAR_LOCAL_CACHE_SECONDS:
@@ -39,14 +39,14 @@ env_schema:
 scriptings:
   - generic:
       name: 网络诊断雷达
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.2
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.3
       update_interval: 300
-      timeout: 20
+      timeout: 30
   - generic:
       name: 网络诊断雷达 · 立即检测
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.2
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.3
       update_interval: 300
-      timeout: 20
+      timeout: 30
 
 widgets:
   - name: 网络诊断雷达

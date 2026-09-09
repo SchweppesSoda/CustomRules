@@ -17,7 +17,7 @@ export function fixture(options = {}) {
     http: { get: async (url, opts) => {
       calls.push({ url, ...opts });
       if (state.allFail) throw new Error('Mock offline; never expose raw request details');
-      const custom = [...state.replies].find(([pattern]) => url.includes(pattern) || pattern === 'ippure.com' && url.includes('my.123169.xyz'));
+      const custom = [...state.replies].find(([pattern]) => pattern.startsWith('=') ? url === pattern.slice(1) : url.includes(pattern) || pattern === 'ippure.com' && url.includes('my.123169.xyz'));
       if (custom && custom[1] instanceof Error) throw custom[1];
       let status = 200, body = '<!doctype html><html><body>Service page</body></html>', location = '';
       if (url.includes('ipip.net')) body = { data: { ip: '192.0.2.18', location: ['中国', '广东', '广州', '', '中国电信'] } };
@@ -25,7 +25,10 @@ export function fixture(options = {}) {
         if (state.pureFails) throw new Error('Mock IPPure offline');
         body = { ip: state.ip, countryCode: 'JP', country: '日本', city: '东京', asn: 64496, asOrganization: 'Example Network', isResidential: state.residential, fraudScore: state.score };
       } else if (url.includes('ip-api.com')) body = { status: 'success', query: '198.51.100.88', countryCode: 'US', country: '美国', city: '洛杉矶', org: 'Fallback Network', as: 'AS64497 Fallback Network' };
-      else if (url.includes('tiktok')) body = '<html>{"region":"JP"}</html>';
+      else if (url.includes('netflix')) body = `<html><title>Netflix</title><script>var recaptchaSiteKey="public";</script><body data-videoid="${url.match(/title\/(\d+)/)?.[1]}"></body></html>`;
+      else if (url.includes('disneyplus')) body = '<html><title>Disney+ | Stream Movies</title><script>{"region":"jp","recaptchaEnabled":true}</script></html>';
+      else if (url.includes('gemini')) body = '<html><title>Gemini</title><script>window.WIZ_global_data={"regionData":[0,2,1,200,"JPN"]};</script></html>';
+      else if (url.includes('tiktok')) body = '<html><title>TikTok - Make Your Day</title><script>{"region":"JP","captchaService":"captcha.js"}</script></html>';
       else if (url.includes('cdn-cgi/trace')) body = 'fl=demo\nloc=JP\n';
       else if (url.includes('generate_204')) { status = 204; body = ''; }
       if (custom) ({ status = 200, body = '', location = '' } = custom[1]);

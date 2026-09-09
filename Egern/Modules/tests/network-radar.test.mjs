@@ -22,14 +22,14 @@ test('one IPPure response supplies all exit fields; direct and selected policies
     assert.equal('followRedirect' in call, false);
   }
   assert.equal(result.checks.GPT.cc, 'JP');
-  assert.equal(result.checks.DP.cc, ''); // Never substitute proxy country for service evidence.
+  assert.equal(result.checks.DP.cc, 'JP'); // Parsed from the Disney page, not the proxy IP.
 });
 test('GPT timeout is unknown even when exit lookup succeeds', async t => {
   const f = setup(t); f.state.replies.set('chatgpt', new Error('timeout'));
   const result = await radar.collectRadar(f.ctx);
   assert.equal(result.checks.GPT.state, 'unknown');
   const tree = radar.renderRadar(result, f.ctx);
-  assert.ok(texts(tree).includes('GPT ?'));
+  assert.ok(texts(tree).includes('GPT 连接'));
 });
 test('all requests failing returns valid widget without any successful check', async t => {
   const f = setup(t, { allFail: true });
@@ -50,13 +50,13 @@ test('challenge pages, empty success, redirects and 500 errors cannot become rea
 });
 test('explicit restriction and partial Netflix reachability are distinct', async t => {
   const f = setup(t);
-  f.state.replies.set('70143836', { status: 403, body: 'not available in your country' });
+  f.state.replies.set('70143836', { status: 404, body: '<html><title>Not found</title></html>' });
   f.state.replies.set('disney', { status: 302, location: 'https://www.disneyplus.com/unavailable' });
   f.state.replies.set('gemini', { status: 302, location: 'https://gemini.google.com/faq/' });
   const r = await radar.collectRadar(f.ctx);
   assert.equal(r.checks.NF.state, 'limited');
   assert.equal(r.checks.DP.state, 'restricted');
-  assert.equal(r.checks.GM.state, 'restricted');
+  assert.equal(r.checks.GM.state, 'unknown'); // A generic FAQ redirect is not a geo denial.
 });
 test('fallback has its own exit IP and never inherits the previous IPPure score', async t => {
   const f = setup(t);
@@ -105,7 +105,7 @@ test('unknown items retry independently without re-requesting successful service
   f.state.replies.delete('chatgpt');
   const r = await radar.collectRadar(f.ctx);
   assert.equal(serviceCalls(f.calls).length, 1);
-  assert.equal(r.checks.GPT.state, 'reachable');
+  assert.equal(r.checks.GPT.state, 'region');
   assert.equal(r.cached, true);
 });
 test('network and selected policy changes invalidate caches even at the same exit IP', async t => {
@@ -219,7 +219,7 @@ test('service names and results stay in the same text block in aligned cells', a
       for (const cell of row.children.slice(1)) {
         assert.equal(cell.flex, 1);
         assert.equal(cell.children[0].type, 'image');
-        assert.match(cell.children[1].text, /^(NF|DP|TK|GPT|CL|GM) (?:[A-Z]{2} )?[✓×◐?—]$/);
+        assert.match(cell.children[1].text, /^(NF|DP|TK|GPT|CL|GM) (?:(?:[A-Z]{2} )?[✓×◐?—]|[A-Z]{2,3})$/);
         assert.equal(cell.children[1].textAlign, 'left');
       }
     }
@@ -267,4 +267,64 @@ test('native layout reserves every row, bounds title and values, and fits medium
       assert.ok((n.children || []).every(child => !child.flex));
     }
   }
+});
+
+test('normal pages containing CAPTCHA resources remain usable, real interstitials do not', async t => {
+  const f = setup(t), r = await radar.collectRadar(f.ctx);
+  for (const id of ['NF', 'DP', 'TK']) assert.equal(r.checks[id].state, 'reachable', id);
+  for (const id of ['GPT', 'CL', 'GM']) assert.equal(r.checks[id].state, 'region', id);
+  assert.ok(texts(radar.renderRadar(r, f.ctx)).includes('CL JP'));
+  f.ctx.script.name = '网络诊断雷达 · 立即检测';
+  f.state.replies.set('disney', { status: 403, body: '<html><title>Just a moment...</title><script src="/cdn-cgi/challenge-platform/x"></script></html>' });
+  assert.equal((await radar.collectRadar(f.ctx)).checks.DP.reason, 'challenge');
+});
+
+test('normal HTTPS redirects follow within the same service with the original policy and no cookies', async t => {
+  const f = setup(t);
+  f.state.replies.set('=https://www.disneyplus.com/', { status: 302, location: '/welcome' });
+  f.state.replies.set('=https://www.netflix.com/title/70143836', { status: 301, location: 'https://www.netflix.com/jp/title/70143836' });
+  const r = await radar.collectRadar(f.ctx);
+  assert.equal(r.checks.DP.state, 'reachable');
+  assert.equal(r.checks.NF.state, 'reachable');
+  assert.equal(r.checks.NF.cc, 'JP');
+  for (const c of serviceCalls(f.calls)) { assert.equal(c.policy, 'Proxy'); assert.equal(c.credentials, 'omit'); }
+});
+
+test('redirect loops, foreign hosts and HTTP downgrades remain bounded unknown results', async t => {
+  const f = setup(t); f.ctx.script.name = '网络诊断雷达 · 立即检测';
+  for (const location of ['/', 'https://www.disneyplus.com.example.org/', 'http://www.disneyplus.com/', 'https://user@www.disneyplus.com/', 'https://127.0.0.1/']) {
+    f.state.replies.set('disney', { status: 302, location }); f.calls.length = 0;
+    const r = await radar.collectRadar(f.ctx);
+    assert.equal(r.checks.DP.reason, 'redirect');
+    assert.equal(f.calls.filter(c => c.url.includes('disney')).length, 1);
+  }
+});
+
+test('plain HTTP failures and unexpected content retain diagnostic reasons, not a green check', async t => {
+  const f = setup(t);
+  f.state.replies.set('disney', { status: 403, body: '<html><title>Forbidden</title></html>' });
+  f.state.replies.set('tiktok', { status: 429, body: '' });
+  f.state.replies.set('gemini', { status: 200, body: '<html><title>Sign in</title></html>' });
+  const r = await radar.collectRadar(f.ctx);
+  assert.equal(r.checks.DP.reason, 'http_403');
+  assert.equal(r.checks.TK.reason, 'rate_limit');
+  assert.equal(r.checks.GM.reason, 'unrecognized');
+  const values = texts(radar.renderRadar(r, f.ctx));
+  for (const expected of ['DP 403', 'TK 限流', 'GM 解析']) assert.ok(values.includes(expected));
+});
+
+test('large columns have seven aligned rows with latency last; medium reserves title breathing room', async t => {
+  const f = setup(t), model = await radar.collectRadar(f.ctx);
+  const medium = radar.renderRadar(model, f.ctx);
+  assert.ok(medium.children[0].padding[2] + medium.gap >= 7);
+  assert.equal(medium.children[0].height - medium.children[0].padding[2], 18);
+  f.ctx.env.RADAR_LAYOUT = 'large';
+  const large = radar.renderRadar(model, f.ctx);
+  const [left, right] = large.children[1].children;
+  assert.equal(left.children.length, 8); assert.equal(right.children.length, 8);
+  assert.equal(left.gap, right.gap);
+  assert.deepEqual(left.children.map(n => n.height), right.children.map(n => n.height));
+  assert.ok(texts(left.children.at(-1)).includes('延迟'));
+  assert.ok(texts(right.children.at(-1)).includes('延迟'));
+  assert.ok(texts(right.children.at(-2)).includes('来源'));
 });

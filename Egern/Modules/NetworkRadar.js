@@ -3,7 +3,7 @@
  * 延续 Network-Pro.js 衍生版的蓝色本地 / 紫色代理布局。
  * 出口信息来自同一响应；服务标记表示 HTTP 探测，不承诺播放或账号可用。
  */
-const CACHE_KEY = 'NetworkRadar.v2.2';
+const CACHE_KEY = 'NetworkRadar.v2.3';
 const SERVICE_IDS = ['NF', 'DP', 'TK', 'GPT', 'CL', 'GM'];
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36';
 const C = {
@@ -64,7 +64,7 @@ async function saveCache(ctx, cache) {
 function fresh(record, ttl, now) { return ttl > 0 && record?.at > 0 && now >= record.at && now - record.at < ttl * 1000; }
 async function request(ctx, url, policy, timeout = 4000) {
   try {
-    const r = await ctx.http.get(url, { policy, timeout, redirect: 'manual', credentials: 'omit', headers: { 'User-Agent': UA, Accept: '*/*' } });
+    const r = await ctx.http.get(url, { policy, timeout, redirect: 'manual', credentials: 'omit', headers: { 'User-Agent': UA, Accept: '*/*', 'Accept-Language': 'en-US,en;q=0.9' } });
     const body = typeof r.text === 'function' ? await r.text() : typeof r.body === 'string' ? r.body : '';
     return { status: Number(r.status), body, location: clean(r.headers?.get?.('location') || r.headers?.location || r.headers?.Location, 1000) };
   } catch { return null; }
@@ -103,38 +103,98 @@ async function proxyInfo(ctx, policy) {
     location: [clean(fallback?.country), clean(fallback?.city)].filter(Boolean).join(' · '), asn: asn(String(fallback?.as || '').split(' ')[0]),
     organization: clean(fallback?.org || fallback?.isp), residential: null, score: null, source: 'ip-api', delay };
 }
-const unknown = () => ({ state: 'unknown', cc: '' });
+const unknown = (reason = 'unrecognized') => ({ state: 'unknown', cc: '', reason });
+function challengePage(body) {
+  const title = body.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '';
+  const visible = body.length < 1000 ? body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<[^>]+>/g, ' ').trim() : '';
+  // Normal Netflix/Disney/TikTok pages include CAPTCHA libraries/translations.
+  // A bare substring is not evidence that the response is a challenge page.
+  return /just a moment|attention required|access denied|verify.*human|security check|captcha/i.test(title) ||
+    /<form[^>]+id=["']challenge-form["']|window\._cf_chl_opt\s*=/i.test(body) ||
+    /just a moment|checking your browser|^captcha$|access denied/i.test(visible);
+}
+function serviceURL(location, base, domains) {
+  const origin = base.match(/^https:\/\/[^/]+/i)?.[0];
+  if (!origin || !location || /[\s\\]/.test(location)) return '';
+  const target = location.startsWith('//') ? `https:${location}` : location.startsWith('/') ? origin + location
+    : /^https:\/\//i.test(location) ? location : /^[a-z][a-z\d+.-]*:/i.test(location) ? ''
+    : location.startsWith('?') ? base.split('?')[0] + location : base.replace(/[^/]*$/, '') + location;
+  const host = target.match(/^https:\/\/([a-z\d.-]+)(?=\/|\?|#|$)/i)?.[1]?.toLowerCase();
+  return host && domains.some(d => host === d || host.endsWith('.' + d)) ? target.split('#')[0] : '';
+}
+async function serviceRequest(ctx, url, policy, domains) {
+  const deadline = Date.now() + 7000, seen = new Set();
+  for (let hop = 0; hop < 4; hop++) {
+    if (seen.has(url)) return { reason: 'redirect', status: 0, body: '' };
+    seen.add(url);
+    const remaining = deadline - Date.now();
+    if (remaining <= 0) return { reason: 'timeout', status: 0, body: '' };
+    const r = await request(ctx, url, policy, Math.min(remaining, 4000));
+    if (!r) return { reason: 'connection', status: 0, body: '' };
+    r.url = url;
+    if (![301, 302, 303, 307, 308].includes(r.status)) return r;
+    if (/\/(?:unavailable|unsupported-country)(?:[/?#]|$)/i.test(r.location)) return r;
+    const next = serviceURL(r.location, url, domains);
+    if (!next) return { ...r, reason: 'redirect' };
+    url = next;
+  }
+  return { reason: 'redirect', status: 0, body: '' };
+}
 function serviceResult(r, id) {
-  if (!r) return unknown();
-  const body = r.body || '', location = r.location || '';
-  if (r.status >= 500 || r.status === 429) return unknown();
-  if (/\/unavailable(?:[/?#]|$)|unsupported.country/i.test(location) || /app unavailable|not available in your (country|region)|not available in certain regions/i.test(body)) return { state: 'restricted', cc: '' };
-  if (/cf-turnstile|just a moment|checking your browser|access denied|captcha|challenge-platform/i.test(body)) return unknown();
-  if (r.status !== 200 || !body.trim()) return unknown();
-  if (id === 'GPT') {
+  if (!r) return unknown('connection');
+  if (r.reason) return unknown(r.reason);
+  const body = (r.body || '').replace(/\\"/g, '"'), location = r.location || '';
+  if (r.status === 429) return unknown('rate_limit');
+  if (r.status >= 500) return unknown(`http_${r.status}`);
+  if (challengePage(body)) return unknown('challenge');
+  const title = body.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '';
+  if (/\/(?:unavailable|unsupported-country)(?:[/?#]|$)|unsupported.country/i.test(location) ||
+    /app unavailable|not available in your (country|region)/i.test(title) ||
+    body.length < 2000 && /app unavailable|not available in your (country|region)|not available in certain regions|forbidden-location/i.test(body)) return { state: 'restricted', cc: '' };
+  if (r.status !== 200) return unknown(`http_${r.status}`);
+  if (!body.trim()) return unknown('empty');
+  if (id === 'GPT' || id === 'CL') {
     const cc = country(body.match(/^loc=([A-Z]{2})\s*$/m)?.[1]);
-    return cc ? { state: 'reachable', cc } : unknown();
+    // Cloudflare trace is regional evidence, not a product unlock test.
+    return cc ? { state: 'region', cc } : unknown();
   }
   if (id === 'TK') {
-    const cc = country(body.match(/"region"\s*:\s*"([A-Z]{2})"/i)?.[1]);
+    const cc = country(body.match(/"region"\s*:\s*"([A-Z]{2})(?:-[A-Z\d]+)?"/i)?.[1]);
     return cc ? { state: 'reachable', cc } : unknown();
   }
-  if (!/<(?:!doctype|html|head|body)\b/i.test(body)) return unknown();
-  return { state: 'reachable', cc: '' };
+  if (id === 'DP') {
+    const supported = body.match(/"inSupportedLocation"\s*:\s*(true|false)/i)?.[1];
+    const cc = country(body.match(/"(?:countryCode|region)"\s*:\s*"([A-Z]{2})"/i)?.[1]);
+    if (supported === 'false') return { state: 'restricted', cc };
+    if (supported === 'true' || /Disney\+/i.test(title) && cc) return { state: 'reachable', cc };
+  }
+  if (id === 'GM') {
+    const cc = body.match(/,\s*2,\s*1,\s*200,\s*"([A-Z]{3})"/)?.[1];
+    if (cc) return { state: 'region', cc };
+    if (/BardChatUi|boq_assistant-bard/i.test(body)) return { state: 'reachable', cc: '' };
+  }
+  if (id === 'NF') {
+    const titleID = r.url?.match(/\/title\/(\d+)/)?.[1];
+    if (/Netflix/i.test(title) && titleID && body.includes(titleID)) {
+      const cc = country(r.url.match(/netflix\.com\/([a-z]{2})(?:-[a-z]{2})?\/title\//i)?.[1]);
+      return { state: 'reachable', cc };
+    }
+  }
+  return unknown();
 }
 async function services(ctx, policy, ids) {
-  const endpoints = [['DP', 'https://www.disneyplus.com'], ['TK', 'https://www.tiktok.com/explore'], ['GPT', 'https://chatgpt.com/cdn-cgi/trace'], ['CL', 'https://claude.ai/login'], ['GM', 'https://gemini.google.com/app']];
-  const jobs = endpoints.filter(([id]) => ids.includes(id)).map(async ([id, url]) => {
-    const r = await request(ctx, url, policy);
-    if (id === 'GM' && r && /\/faq(?:[/?#]|$)/i.test(r.location)) return [id, { state: 'restricted', cc: '' }];
+  const endpoints = [['DP', 'https://www.disneyplus.com/', 'disneyplus.com'], ['TK', 'https://www.tiktok.com/', 'tiktok.com'], ['GPT', 'https://chatgpt.com/cdn-cgi/trace', 'chatgpt.com'], ['CL', 'https://claude.ai/cdn-cgi/trace', 'claude.ai'], ['GM', 'https://gemini.google.com/', 'gemini.google.com']];
+  const jobs = endpoints.filter(([id]) => ids.includes(id)).map(async ([id, url, domain]) => {
+    const r = await serviceRequest(ctx, url, policy, [domain]);
     return [id, serviceResult(r, id)];
   });
   if (ids.includes('NF')) jobs.push((async () => {
-    const [full, original] = await Promise.all([request(ctx, 'https://www.netflix.com/title/70143836', policy), request(ctx, 'https://www.netflix.com/title/81280792', policy)]);
-    const a = serviceResult(full, 'NF'), b = serviceResult(original, 'NF');
-    if (a.state === 'reachable') return ['NF', a];
-    if (b.state === 'reachable') return ['NF', { state: 'limited', cc: '' }];
-    return ['NF', a.state === 'restricted' ? a : unknown()];
+    const responses = await Promise.all(['70143836', '81280792'].map(id => serviceRequest(ctx, `https://www.netflix.com/title/${id}`, policy, ['netflix.com'])));
+    const [a, b] = responses.map(r => serviceResult(r, 'NF'));
+    if (a.state === 'reachable' && b.state === 'reachable') return ['NF', a];
+    if ((responses[0]?.status === 404 && b.state === 'reachable') || (responses[1]?.status === 404 && a.state === 'reachable')) return ['NF', { state: 'limited', cc: a.cc || b.cc }];
+    if (a.state === 'restricted' || b.state === 'restricted') return ['NF', a.state === 'restricted' ? a : b];
+    return ['NF', a.state === 'unknown' ? a : b];
   })());
   return Object.fromEntries(await Promise.all(jobs));
 }
@@ -150,11 +210,11 @@ export async function collectRadar(ctx) {
     proxyInfo(ctx, policy), // Recheck egress even if a group's name is unchanged.
   ]);
   if (local.ip && local !== cache.local?.data) cache.local = { at: now, data: local };
-  let checks = Object.fromEntries(SERVICE_IDS.map(id => [id, unknown()])), checkedAt = now, cached = false;
+  let checks = Object.fromEntries(SERVICE_IDS.map(id => [id, unknown('no_exit')])), checkedAt = now, cached = false;
   const enabled = String(env.RADAR_SERVICES_ENABLED || 'true') !== 'false';
   if (enabled && proxy.ip) {
     const previous = cache.services?.ip === proxy.ip ? cache.services.data || {} : {};
-    const pending = SERVICE_IDS.filter(id => force || !['reachable', 'restricted', 'limited', 'unknown'].includes(previous[id]?.state) ||
+    const pending = SERVICE_IDS.filter(id => force || !['reachable', 'restricted', 'limited', 'region', 'unknown'].includes(previous[id]?.state) ||
       !fresh(previous[id], previous[id]?.state === 'unknown' ? Math.min(30, serviceTTL) : serviceTTL, now));
     const results = await services(ctx, policy, pending);
     checks = Object.fromEntries(SERVICE_IDS.map(id => [id, pending.includes(id) ? { ...results[id], at: now } : previous[id]]));
@@ -185,13 +245,13 @@ export function renderRadar(model, ctx) {
   // Only horizontal values flex; every section reserves its vertical space.
   const lineHeight = large ? 16 : 13;
   const bounded = (text, size, col = C.ink, weight = 'medium', align = 'right') => ({ ...tx(text, size, col, weight), flex: 1, textAlign: align, minScale: 1 });
-  const rowIcons = { 环境: net.wifi ? 'wifi' : 'antenna.radiowaves.left.and.right', 内网: 'iphone', 公网: 'globe.asia.australia.fill', 位置: 'map.fill', 运营: 'antenna.radiowaves.left.and.right', 网关: 'wifi.router.fill', 延迟: 'timer', 出口: 'paperplane.fill', '出口 IP': 'paperplane.fill', 落地: 'mappin.and.ellipse', ASN: 'network', 组织: 'server.rack', 策略: 'arrow.triangle.branch' };
+  const rowIcons = { 环境: net.wifi ? 'wifi' : 'antenna.radiowaves.left.and.right', 内网: 'iphone', 公网: 'globe.asia.australia.fill', 位置: 'map.fill', 运营: 'antenna.radiowaves.left.and.right', 网关: 'wifi.router.fill', 延迟: 'timer', 出口: 'paperplane.fill', '出口 IP': 'paperplane.fill', 落地: 'mappin.and.ellipse', ASN: 'network', 组织: 'server.rack', 策略: 'arrow.triangle.branch', 来源: 'doc.text.magnifyingglass' };
   const row = (label, value, col = C.blue) => stack([icon(rowIcons[label], col, large ? 11 : 10), tx(label, large ? 10.5 : 10, C.dim), bounded(value, large ? 11 : 10.5)], 'row', 3, { height: lineHeight });
   const rrow = (label, value) => row(label, value, C.purple);
-  const header = stack([icon('waveform.path.ecg', C.blue, large ? 17 : 14), bounded('网络诊断雷达', large ? 16 : 14, C.ink, 'bold', 'left'), tx(proxy.ip ? `${clock(model.at)}${!large && model.cached ? ' · 缓' : ''}` : 'IPv4 未知', 10, proxy.ip ? C.dim : C.amber)], 'row', 6, { height: large ? 22 : 18 });
+  const header = stack([icon('waveform.path.ecg', C.blue, large ? 17 : 14), bounded('网络诊断雷达', large ? 16 : 14, C.ink, 'bold', 'left'), tx(proxy.ip ? `${clock(model.at)}${!large && model.cached ? ' · 缓' : ''}` : 'IPv4 未知', 10, proxy.ip ? C.dim : C.amber)], 'row', 6, large ? { height: 22 } : { height: 24, padding: [0, 0, 6, 0] });
   const card = (title, col, rows) => stack([stack([icon(title === '本地网络' ? rowIcons.环境 : 'paperplane.fill', col, 12), bounded(title, 12, C.ink, 'semibold', 'left')], 'row', 5, { height: 16 }), ...rows], 'column', 2, { flex: 1, height: 158, padding: [6, 8], backgroundColor: C.fill, borderRadius: 12 });
   const localRows = [row('环境', compact(net.label, 22)), row('内网', displayIP(net.local, large, masked)), row('公网', displayIP(local.ip, large, masked)), row('位置', val(local.location)), row('运营', val(local.organization)), ...(large ? [row('网关', displayIP(net.gateway, large, masked))] : []), row('延迟', val(local.delay))];
-  const proxyRows = [rrow('出口', displayIP(proxy.ip, large, masked)), rrow('落地', val(proxy.location)), rrow('组织', val(proxy.organization)), rrow('ASN', val(proxy.asn)), rrow('策略', val(policy)), rrow('延迟', val(proxy.delay))];
+  const proxyRows = [rrow('出口', displayIP(proxy.ip, large, masked)), rrow('落地', val(proxy.location)), rrow('组织', val(proxy.organization)), rrow('ASN', val(proxy.asn)), rrow('策略', val(policy)), ...(large ? [rrow('来源', val(proxy.source))] : []), rrow('延迟', val(proxy.delay))];
   const columns = stack(large ? [card('本地网络', C.blue, localRows), card('代理出口', C.purple, proxyRows)] : [stack(localRows, 'column', 0, { flex: 1, height: 78 }), stack([], 'column', 0, { width: 0.5, height: 78, backgroundColor: C.fill }), stack(proxyRows, 'column', 0, { flex: 1, height: 78 })], 'row', large ? 8 : 6, { height: large ? 158 : 78, alignItems: 'start' });
   const residential = proxy.residential, score = proxy.score;
   const property = residential === true ? '住宅网络' : residential === false ? '机房 / 商业' : '属性未知';
@@ -204,18 +264,19 @@ export function renderRadar(model, ctx) {
   const quality = stack([qualityItem(propertyIcon, property, propertyColor), qualityItem(scoreIcon, `IPPure ${scoreText}`, scoreColor)], 'row', 8,
     large ? { height: 30, padding: [7, 8], backgroundColor: C.fill, borderRadius: 10 } : { height: 14 });
   const serviceIcons = { NF: 'film.fill', DP: 'sparkles.tv', TK: 'music.note', GPT: 'bubble.left.and.bubble.right.fill', CL: 'asterisk', GM: 'sparkles' };
+  const reasonText = result => ({ no_exit: '未测', challenge: '验证', timeout: '超时', connection: '连接', redirect: '跳转', rate_limit: '限流', empty: '空响应', unrecognized: '解析' }[result.reason] || (result.reason?.startsWith('http_') ? result.reason.slice(5) : '?'));
   const service = (label, ids) => stack([stack([tx(label, 10, C.dim)], 'row', 0, { width: 22, height: large ? 32 : 14 }), ...ids.map(id => {
     const result = checks[id] || unknown();
-    const mark = !model.enabled ? '—' : result.state === 'reachable' ? `${result.cc ? result.cc + ' ' : ''}✓` : result.state === 'restricted' ? '×' : result.state === 'limited' ? '◐' : '?';
-    const col = !model.enabled || result.state === 'unknown' ? C.dim : result.state === 'reachable' ? C.green : result.state === 'restricted' ? C.red : C.amber;
+    const mark = !model.enabled ? '—' : result.state === 'region' ? result.cc : result.state === 'reachable' ? `${result.cc ? result.cc + ' ' : ''}✓` : result.state === 'restricted' ? '×' : result.state === 'limited' ? '◐' : reasonText(result);
+    const col = !model.enabled || result.state === 'unknown' ? C.dim : result.state === 'region' ? C.purple : result.state === 'reachable' ? C.green : result.state === 'restricted' ? C.red : C.amber;
     return stack([icon(serviceIcons[id], label === '影视' ? C.blue : C.purple, large ? 12 : 10), bounded(`${id} ${mark}`, large ? 11 : 10, col, 'medium', 'left')], 'row', 4,
       large ? { flex: 1, height: 32, padding: [8, 5], backgroundColor: C.fill, borderRadius: 8 } : { flex: 1, height: 14 });
   })], 'row', large ? 6 : 4, { height: large ? 32 : 14 });
   const servicePanel = stack([service('影视', ['NF', 'DP', 'TK']), service('AI', ['GPT', 'CL', 'GM'])], 'column', large ? 6 : 0, { height: large ? 70 : 28 });
-  let footer = !model.enabled ? '服务检测已关闭' : !proxy.ip ? 'IPv4 未知 · 服务状态未知' : `${model.cached ? '缓存' : '检测'} ${clock(model.checkedAt)} · ✓ 可达 / × 受限 / ? 未知`;
+  let footer = !model.enabled ? '服务检测已关闭' : !proxy.ip ? 'IPv4 未知 · 未检测服务' : `${model.cached ? '缓存' : '检测'} ${clock(model.checkedAt)} · ✓ 页面 / 地区码不代表解锁`;
   if (large && proxy.ip && proxy.source !== 'IPPure') footer = '备用 IP 来源 · IPPure 评分不可用';
-  // Full content budgets: medium 152 pt, large 328 pt (including padding).
-  return { type: 'widget', padding: large ? [8, 10] : [4, 10], gap: large ? 5 : 2, backgroundColor: C.bg,
+  // Full content budgets: medium 155 pt, large 328 pt (including padding).
+  return { type: 'widget', padding: large ? [8, 10] : [4, 10], gap: large ? 5 : 1, backgroundColor: C.bg,
     refreshAfter: new Date(model.at + 60_000).toISOString(), children: [header, columns, quality, servicePanel,
       ...(large ? [stack([icon('clock', C.dim, 10), bounded(footer, 9.5, C.dim, 'medium', 'left')], 'row', 4, { height: 12 })] : [])] };
 }
