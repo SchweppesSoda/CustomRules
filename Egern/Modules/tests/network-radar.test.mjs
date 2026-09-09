@@ -29,7 +29,7 @@ test('GPT timeout is unknown even when exit lookup succeeds', async t => {
   const result = await radar.collectRadar(f.ctx);
   assert.equal(result.checks.GPT.state, 'unknown');
   const tree = radar.renderRadar(result, f.ctx);
-  assert.equal(texts(tree.children[3].children[1].children[2]).at(-1), '?');
+  assert.ok(texts(tree).includes('GPT ?'));
 });
 test('all requests failing returns valid widget without any successful check', async t => {
   const f = setup(t, { allFail: true });
@@ -128,7 +128,7 @@ test('manual force bypasses caches, disable makes zero service requests', async 
   f.ctx.env.RADAR_SERVICES_ENABLED = 'false'; f.calls.length = 0;
   const tree = await radar.default(f.ctx);
   assert.equal(serviceCalls(f.calls).length, 0);
-  assert.equal(texts(tree).filter(v => v === '—').length, 6);
+  assert.equal(texts(tree).filter(v => v.endsWith(' —')).length, 6);
 });
 test('cache expiry and explicit zero TTL request fresh data', async t => {
   const f = setup(t);
@@ -153,22 +153,77 @@ test('accepted medium layout has six rows per column and icons, ASN, organizatio
     assert.equal(columns.children[index].children.length, 6);
     assert.equal(columns.children[index].children.every(row => row.children[0].type === 'image'), true);
   }
-  for (const value of ['内网', '组织', 'ASN', '策略', '中国电信', 'AS64496', ...['NF', 'DP', 'TK', 'GPT', 'CL', 'GM']]) assert.equal(texts(tree).includes(value), true, value);
+  for (const value of ['内网', '组织', 'ASN', '策略', '中国电信', 'AS64496']) assert.equal(texts(tree).includes(value), true, value);
+  for (const id of ['NF', 'DP', 'TK', 'GPT', 'CL', 'GM']) assert.ok(texts(tree).some(v => v.startsWith(id + ' ')), id);
   assert.equal(walk(tree).filter(n => n.type === 'image').every(n => n.src.startsWith('sf-symbol:')), true);
 });
-test('large layout does not duplicate quality or AI and keeps IPv6 readable', async t => {
-  const f = setup(t, { ip: '2001:db8:85a3:8d3:1319:8a2e:370:7348' });
+test('both layouts keep every data value on one line, including organization and unexpected IPv6', async t => {
+  const f = setup(t);
   f.ctx.env.RADAR_LAYOUT = 'large';
-  const tree = await radar.default(f.ctx), values = texts(tree);
-  assert.equal(values.filter(v => v === 'IPPure 风险').length, 1);
+  const model = await radar.collectRadar(f.ctx);
+  model.proxy.ip = '2001:db8:85a3:8d3:1319:8a2e:370:7348';
+  model.proxy.organization = 'Very Long International Organization Name';
+  const tree = radar.renderRadar(model, f.ctx), values = texts(tree);
+  assert.equal(values.filter(v => v.startsWith('IPPure ')).length, 1);
   assert.equal(values.filter(v => v === '机房 / 商业').length, 1);
-  assert.equal(values.filter(v => v === 'GPT').length, 1);
+  assert.equal(values.filter(v => v.startsWith('GPT ')).length, 1);
   assert.equal(values.includes('网关'), true);
-  const ip = walk(tree).find(n => n.text === f.state.ip);
-  assert.equal(ip.maxLines, 2);
-  assert.ok(ip.minScale >= 0.9);
+  const ip = walk(tree).find(n => n.text === model.proxy.ip);
+  assert.equal(ip.maxLines, 1);
+  assert.equal(ip.minScale, 1);
+  assert.ok(walk(tree).filter(n => n.type === 'text').every(n => n.maxLines === 1));
   f.ctx.env.RADAR_LAYOUT = 'medium';
-  assert.equal(texts(await radar.default(f.ctx)).some(v => v.includes('…') && v.startsWith('2001:db8:')), true);
+  const medium = radar.renderRadar(model, f.ctx);
+  assert.equal(texts(medium).some(v => v.includes('…') && v.startsWith('2001:db8:')), true);
+  assert.ok(walk(medium).filter(n => n.type === 'text').every(n => n.maxLines === 1));
+});
+
+test('IPv4 IPPure endpoint is preferred and IPv6 responses never populate IPv4 quality', async t => {
+  const f = setup(t);
+  let model = await radar.collectRadar(f.ctx);
+  assert.ok(f.calls.some(c => c.url === 'https://my.123169.xyz/v1/info'));
+  assert.ok(!f.calls.some(c => c.url.includes('my.ippure.com')));
+  assert.equal(model.proxy.score, 18);
+  f.state.ip = '2001:db8::1234';
+  model = await radar.collectRadar(f.ctx);
+  assert.equal(model.proxy.ip, '198.51.100.88');
+  assert.equal(model.proxy.score, null);
+  assert.equal(model.proxy.residential, null);
+  f.state.replies.set('ip-api.com', { status: 200, body: { status: 'success', query: '2001:db8::5678', countryCode: 'JP', org: 'Wrong family' } });
+  f.calls.length = 0;
+  model = await radar.collectRadar(f.ctx);
+  assert.equal(model.proxy.ip, '');
+  assert.equal(model.proxy.organization, '');
+  assert.equal(serviceCalls(f.calls).length, 0);
+});
+
+test('IPv4 mirror failure can fall back to a validated IPv4 official response', async t => {
+  const f = setup(t);
+  f.state.replies.set('my.123169.xyz', new Error('mirror timeout'));
+  const model = await radar.collectRadar(f.ctx);
+  assert.equal(model.proxy.ip, f.state.ip);
+  assert.equal(model.proxy.score, 18);
+  assert.equal(model.proxy.source, 'IPPure');
+});
+
+test('service names and results stay in the same text block in aligned cells', async t => {
+  const f = setup(t);
+  for (const layout of ['medium', 'large']) {
+    f.ctx.env.RADAR_LAYOUT = layout;
+    const tree = await radar.default(f.ctx);
+    const rows = tree.children[3].children;
+    assert.equal(rows.length, 2);
+    assert.equal(rows[0].children[0].width, rows[1].children[0].width);
+    for (const row of rows) {
+      assert.equal(row.children.length, 4);
+      for (const cell of row.children.slice(1)) {
+        assert.equal(cell.flex, 1);
+        assert.equal(cell.children[0].type, 'image');
+        assert.match(cell.children[1].text, /^(NF|DP|TK|GPT|CL|GM) (?:[A-Z]{2} )?[✓×◐?—]$/);
+        assert.equal(cell.children[1].textAlign, 'left');
+      }
+    }
+  }
 });
 test('masking hides all displayed address values without changing detection', async t => {
   const f = setup(t); f.ctx.env.RADAR_MASK_IP = 'true'; f.ctx.env.RADAR_LAYOUT = 'large';

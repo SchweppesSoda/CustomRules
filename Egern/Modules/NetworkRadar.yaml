@@ -1,5 +1,5 @@
 ﻿name: 网络诊断雷达
-description: 本地网络、出口 IP / ASN / IPPure 评分及影视 / AI 探测。中号六行双列，大号完整信息；普通刷新复用缓存，“立即检测”绕过缓存。服务可达不代表播放或账号可用。
+description: 本地网络、IPv4 出口 / ASN / IPPure 评分及影视 / AI 探测。全部字段单行省略，中号六行双列，大号服务三格对齐；“立即检测”绕过缓存。服务可达不代表播放或账号可用。
 author: SchweppesSoda
 homepage: https://github.com/SchweppesSoda/CustomRules
 icon: waveform.path.ecg
@@ -39,12 +39,12 @@ env_schema:
 scriptings:
   - generic:
       name: 网络诊断雷达
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.1
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.2
       update_interval: 300
       timeout: 20
   - generic:
       name: 网络诊断雷达 · 立即检测
-      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.1
+      script_url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/master/Egern/Modules/NetworkRadar.js?v=20260909-radar-v2.2
       update_interval: 300
       timeout: 20
 

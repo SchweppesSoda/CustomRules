@@ -17,11 +17,11 @@ export function fixture(options = {}) {
     http: { get: async (url, opts) => {
       calls.push({ url, ...opts });
       if (state.allFail) throw new Error('Mock offline; never expose raw request details');
-      const custom = [...state.replies].find(([pattern]) => url.includes(pattern));
+      const custom = [...state.replies].find(([pattern]) => url.includes(pattern) || pattern === 'ippure.com' && url.includes('my.123169.xyz'));
       if (custom && custom[1] instanceof Error) throw custom[1];
       let status = 200, body = '<!doctype html><html><body>Service page</body></html>', location = '';
       if (url.includes('ipip.net')) body = { data: { ip: '192.0.2.18', location: ['中国', '广东', '广州', '', '中国电信'] } };
-      else if (url.includes('ippure.com')) {
+      else if (url.includes('ippure.com') || url.includes('my.123169.xyz')) {
         if (state.pureFails) throw new Error('Mock IPPure offline');
         body = { ip: state.ip, countryCode: 'JP', country: '日本', city: '东京', asn: 64496, asOrganization: 'Example Network', isResidential: state.residential, fraudScore: state.score };
       } else if (url.includes('ip-api.com')) body = { status: 'success', query: '198.51.100.88', countryCode: 'US', country: '美国', city: '洛杉矶', org: 'Fallback Network', as: 'AS64497 Fallback Network' };
