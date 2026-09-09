@@ -250,6 +250,7 @@ export function renderRadar(model, ctx) {
   // fixed, readable height; surplus space is shared between data rows, never
   // inflated service cards. Avoid nested flexible columns with intrinsic height.
   const lineHeight = large ? 20 : 13;
+  const columnGap = large ? 12 : 10;
   const bounded = (text, size, col = C.ink, weight = 'medium', align = 'right') => ({ ...tx(text, size, col, weight), flex: 1, textAlign: align, minScale: 1 });
   const rowIcons = { 环境: net.wifi ? 'wifi' : 'antenna.radiowaves.left.and.right', 内网: 'iphone', 公网: 'globe.asia.australia.fill', 位置: 'map.fill', 运营: 'antenna.radiowaves.left.and.right', 网关: 'wifi.router.fill', 延迟: 'timer', 出口: 'paperplane.fill', '出口 IP': 'paperplane.fill', 落地: 'mappin.and.ellipse', ASN: 'network', 组织: 'server.rack', 策略: 'arrow.triangle.branch', 来源: 'doc.text.magnifyingglass' };
   const row = (label, value, col = C.blue) => stack([icon(rowIcons[label], col, large ? 12 : 10), tx(label, large ? 11.5 : 10, C.dim), bounded(value, large ? 12 : 10.5)], 'row', 3, { height: lineHeight, flex: 1, padding: [0, 4] });
@@ -261,8 +262,8 @@ export function renderRadar(model, ctx) {
   const columnHeading = (title, name, col) => stack([icon(name, col, 14), bounded(title, 14, col, 'semibold', 'left')], 'row', 5,
     { flex: 1, height: 22, padding: [0, 4], backgroundColor: col === C.blue ? C.localHeading : C.proxyHeading, borderRadius: 6 });
   const columns = stack([
-    ...(large ? [stack([columnHeading('本地网络', rowIcons.环境, C.blue), columnHeading('代理出口', 'paperplane.fill', C.purple)], 'row', 12, { height: 22 })] : []),
-    ...localRows.map((left, i) => stack([left, proxyRows[i]], 'row', large ? 12 : 10, { flex: 1 })),
+    ...(large ? [stack([columnHeading('本地网络', rowIcons.环境, C.blue), columnHeading('代理出口', 'paperplane.fill', C.purple)], 'row', columnGap, { height: 22 })] : []),
+    ...localRows.map((left, i) => stack([left, proxyRows[i]], 'row', columnGap, { flex: 1 })),
   ], 'column', large ? 3 : 1, { flex: 1, borderRadius: 8,
     // Paint behind the flat table; background layers consume no vertical space.
     backgroundGradient: { type: 'linear', colors: [C.localFill, C.localFill, C.proxyFill, C.proxyFill], stops: [0, 0.46, 0.54, 1], startPoint: { x: 0, y: 0 }, endPoint: { x: 1, y: 0 } } });
@@ -275,18 +276,20 @@ export function renderRadar(model, ctx) {
   const scoreText = score === null ? '无数据' : `${score} · ${score >= 70 ? '高风险' : score >= 40 ? '中风险' : '低风险'}`;
   const statusFill = col => col === C.green ? C.greenFill : col === C.amber ? C.amberFill : col === C.red ? C.redFill : C.fill;
   const qualityItem = (name, text, col) => stack([icon(name, col, large ? 12 : 10), bounded(text, large ? 11 : 10.5, col, 'medium', 'left')], 'row', 4,
-    { flex: 1, height: large ? 16 : 14, padding: [0, 4], backgroundColor: statusFill(col), borderRadius: 5 });
-  const quality = stack([qualityItem(propertyIcon, property, propertyColor), qualityItem(scoreIcon, `IPPure ${scoreText}`, scoreColor)], 'row', 8,
-    large ? { height: 22, padding: [3, 8] } : { height: 14 });
+    { flex: 1, height: large ? 22 : 14, padding: [large ? 3 : 0, 4], backgroundColor: statusFill(col), borderRadius: large ? 6 : 5 });
+  const quality = stack([qualityItem(propertyIcon, property, propertyColor), qualityItem(scoreIcon, `IPPure ${scoreText}`, scoreColor)], 'row', columnGap,
+    { height: large ? 22 : 14 });
   const serviceIcons = { NF: 'film.fill', DP: 'sparkles.tv', TK: 'music.note', GPT: 'bubble.left.and.bubble.right.fill', CL: 'asterisk', GM: 'sparkles' };
   const reasonText = result => ({ no_exit: '未测', challenge: '验证', timeout: '超时', connection: '连接', redirect: '跳转', rate_limit: '限流', empty: '空', unrecognized: '解析' }[result.reason] || (result.reason?.startsWith('http_') ? result.reason.slice(5) : '?'));
   const service = (label, ids) => stack([...(large ? [stack([tx(label, 10, C.dim)], 'row', 0, { width: 22, height: 18 })] : []), ...ids.map(id => {
     const result = checks[id] || unknown();
     const mark = !model.enabled ? '—' : result.state === 'region' ? result.cc : result.state === 'reachable' ? `${result.cc ? result.cc + ' ' : ''}✓` : result.state === 'restricted' ? '×' : result.state === 'limited' ? '◐' : reasonText(result);
     const col = !model.enabled || result.state === 'unknown' ? C.dim : result.state === 'region' ? C.purple : result.state === 'reachable' ? C.green : result.state === 'restricted' ? C.red : C.amber;
+    const serviceFill = !model.enabled || result.state === 'unknown' ? C.fill : result.state === 'restricted' ? C.redFill : result.state === 'limited' ? C.amberFill
+      : ['NF', 'DP', 'TK'].includes(id) ? C.localFill : C.proxyFill;
     return stack([...(large ? [icon(serviceIcons[id], label === '影视' ? C.blue : C.purple, 12)] : []), bounded(`${id} ${mark}`, large ? 11 : 10, col, 'medium', large ? 'left' : 'center')], 'row', large ? 4 : 0,
-      { flex: 1, height: large ? 18 : 14, padding: [0, large ? 4 : 0], borderRadius: 5, backgroundColor: ['NF', 'DP', 'TK'].includes(id) ? C.localFill : C.proxyFill });
-  })], 'row', large ? 6 : 2, { height: large ? 18 : 14 });
+      { flex: 1, height: large ? 18 : 14, padding: [0, large ? 4 : 0], borderRadius: 5, backgroundColor: serviceFill });
+  })], 'row', large ? 6 : 3, { height: large ? 18 : 14 });
   const servicePanel = large ? stack([service('影视', ['NF', 'DP', 'TK']), service('AI', ['GPT', 'CL', 'GM'])], 'column', 2, { height: 38 })
     : service('', SERVICE_IDS);
   let footer = !model.enabled ? '服务检测已关闭' : !proxy.ip ? 'IPv4 未知 · 未检测服务' : `${model.cached ? '缓存' : '检测'} ${clock(model.checkedAt)} · ✓ 页面 / 地区码不代表解锁`;
