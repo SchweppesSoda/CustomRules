@@ -76,8 +76,15 @@ def list_rules(path: Path, behavior: str = "classical") -> list[str]:
 
 def verify_checksums(root: Path) -> None:
     expected: dict[str, str] = {}
-    for line in (root / "SHA256SUMS").read_text(encoding="utf-8").splitlines():
-        digest, relative = line.split("  ", 1)
+    for number, line in enumerate(
+        (root / "SHA256SUMS").read_text(encoding="utf-8").splitlines(), 1
+    ):
+        match = re.fullmatch(r"([0-9a-f]{64})  (.+)", line)
+        if not match:
+            raise RuntimeError(f"Malformed SHA256SUMS entry at line {number}")
+        digest, relative = match.groups()
+        if relative in expected:
+            raise RuntimeError(f"Duplicate SHA256SUMS entry: {relative}")
         expected[relative] = digest
     actual_files = {
         path.relative_to(root).as_posix()
@@ -93,7 +100,13 @@ def verify_checksums(root: Path) -> None:
     for relative, digest in expected.items():
         body = (root / relative).read_bytes()
         actual = hashlib.sha256(body).hexdigest()
-        if actual != digest and b"\r\n" in body:
+        text_artifact = (
+            Path(relative).suffix.lower() in {".yaml", ".list", ".json", ".txt"}
+            or relative == ".gitattributes"
+        )
+        # Only checkout-normalized text may differ from the original LF bytes.
+        # MRS and any other binary artifacts must match their exact checksum.
+        if actual != digest and text_artifact and b"\r\n" in body:
             actual = hashlib.sha256(body.replace(b"\r\n", b"\n")).hexdigest()
         if actual != digest:
             raise RuntimeError(f"Checksum mismatch: {relative}")

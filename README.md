@@ -219,7 +219,9 @@ It:
 
 The published branch also contains `manifest.json`, `SOURCES.json`,
 `SHA256SUMS`, the Crypto candidate-review report, and the unsupported-upstream
-report.
+report. Checksum entries must be unique and well-formed. Windows checkout
+line-ending normalization is accepted only for generated text; MRS and other
+binary artifacts require an exact byte checksum.
 
 Public sources contain domain/rule data only. They must not include provider
 subscription URLs, keys, tokens, or node credentials. BitzNet remains an
