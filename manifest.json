@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 35483,
-      "rules_sha256": "dc65763f96422e68ec9366d76dde7e1025fdd22ea48877885c54f01700ad10e1"
+      "rule_count": 35387,
+      "rules_sha256": "5f892cb6c014be4a1b84bb707c9f58e8183e798017cd3e17a87903cc6eaf386b"
     },
     "AirportServers": {
       "behavior": "classical",
@@ -3824,8 +3824,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 9622,
-      "rules_sha256": "7e7c21f114cac918dae8c4565c6e74acfc6c9c1aacbcc381aea846b6be1a103c"
+      "rule_count": 9647,
+      "rules_sha256": "021bfd7d2996957601cc6930c4e0cfd749e30cf0b2062f466c65e747a650b8b0"
     },
     "IP/Google": {
       "behavior": "ipcidr",
@@ -3835,8 +3835,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8142,
-      "rules_sha256": "9744ff03957d534d0972b465617a0f8e6a85abadc0c283a52eaccc0dd333b2bb"
+      "rule_count": 8201,
+      "rules_sha256": "7b8a958cb4a0c679d85d88bb8fb1958cba55253ac434583f5e4f4cc1087d0080"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -3880,8 +3880,8 @@
       ],
       "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 9347,
-      "rules_sha256": "1fa57df9ca5f77a30e61917531ec3667e5ba69d8c62546cac9fcee01f97b3859"
+      "rule_count": 9415,
+      "rules_sha256": "caf05cc37083b431a0d8e8e77c299342e398a2db4e6987e8a7a791c24791a460"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
