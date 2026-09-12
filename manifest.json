@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 35387,
-      "rules_sha256": "5f892cb6c014be4a1b84bb707c9f58e8183e798017cd3e17a87903cc6eaf386b"
+      "rule_count": 35270,
+      "rules_sha256": "a35228f4efc2ae90242e4d77b3f8199cf73ea27a3fd703401e00d859e955fbb5"
     },
     "AirportServers": {
       "behavior": "classical",
@@ -3354,8 +3354,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26519,
-      "rules_sha256": "a2d8cafc6fdecd0d670d4e603c1996bd6edaa99d64fc9cc9ec794faeb3f71639"
+      "rule_count": 26520,
+      "rules_sha256": "25ffee4f305952492393fb06050a7418aec8cf2e67535d0d389d9a0f700127c4"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4355,8 +4355,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26388,
-      "rules_sha256": "9d8d964a3297d9a578fad27f6df9cbcd4349540ec38ba39a627434f1ba32b2cc"
+      "rule_count": 26389,
+      "rules_sha256": "b347f95a7f1f723b3ecd725b1144a326fd47fe0c3746961a67e802b2d9132592"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -4366,8 +4366,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26388,
-      "rules_sha256": "9d8d964a3297d9a578fad27f6df9cbcd4349540ec38ba39a627434f1ba32b2cc"
+      "rule_count": 26389,
+      "rules_sha256": "b347f95a7f1f723b3ecd725b1144a326fd47fe0c3746961a67e802b2d9132592"
     },
     "Scholar": {
       "behavior": "domain",
