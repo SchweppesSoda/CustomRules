@@ -6,7 +6,7 @@
       "url": "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta"
     },
     {
-      "sha256": "c9600db67c76c2ca8b64790aed915afba476f34206521e3aed71ff0562616131",
+      "sha256": "7aa5ef417dc882f47c628ec818749daa986acdc980e9812f2f55603e2cd50a3a",
       "size": "425",
       "url": "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt"
     },
@@ -536,7 +536,7 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GitHub/GitHub.list"
     },
     {
-      "sha256": "164f31948febf45e73fac9251704bc3d7851a9cd2883cad4b8b845e99ca7d21d",
+      "sha256": "0e0aed78c599c0a6bfba73765b3ccb6cd31ae46650e752d9df13c87b4c616ead",
       "size": "35624",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia.list"
     },
@@ -571,7 +571,7 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/PayPal/PayPal.list"
     },
     {
-      "sha256": "9e5f18ab2f9e74b7dd416198bc9959925f60461129f058f302ef58b80b742bc6",
+      "sha256": "dea9329b4ef90e0e2a5780424fb120bf6d867c4daeb82fe1b2bc29293be55474",
       "size": "4391",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list"
     },

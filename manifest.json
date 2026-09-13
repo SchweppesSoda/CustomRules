@@ -3154,7 +3154,7 @@
         "list"
       ],
       "rule_count": 2599,
-      "rules_sha256": "e868e79bd0065e2ed67098c0a8e6d961b3468de3ee14972dfcaf83d4641c585c"
+      "rules_sha256": "798ba29082c6a325377a51af10b659330637931fcdd604fb789ffdb9cf817250"
     },
     "Classical/Google": {
       "behavior": "classical",
