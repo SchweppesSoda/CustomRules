@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 34523,
-      "rules_sha256": "62ca04336d2fab4a38a3de197cdf696da2d6950f2b5bf29c4426d119c7fdf16f"
+      "rule_count": 34810,
+      "rules_sha256": "540565ab088e75721bf5cb18133fd9d8c43a1299e210cd0933774d4f927d6c23"
     },
     "AirportServers": {
       "behavior": "classical",
@@ -2896,8 +2896,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 111022,
-      "rules_sha256": "f8d81f9383ba0cf7a2ea7efbfad357ac1511ad975e59fdf38aaf75c8265e77af"
+      "rule_count": 111021,
+      "rules_sha256": "7e12ec60a82f69fdbccc29dc43159767316e50c2c8f24560d32f7933f154dd8f"
     },
     "ChinaMedia": {
       "behavior": "domain",
@@ -3021,8 +3021,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 111083,
-      "rules_sha256": "9859a6f7e557709675b8281f4f974469e163ccd6aeb5b120beb2a4cd6804b734"
+      "rule_count": 111082,
+      "rules_sha256": "5447ee028122763b8e9cbf5a51abe65a4b33fe137b75042dfd563d0114018480"
     },
     "Classical/ChinaASN": {
       "behavior": "classical",
