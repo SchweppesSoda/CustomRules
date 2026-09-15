@@ -57,6 +57,7 @@ payload:
   - ntppool1.time.nl
   - ntppool2.time.nl
   - ood.opsource.net
+  - p16-tiktok-dm-sticker-sign-sg.ibyteimg.com
   - public-us-pingsx.api.clonoth.com
   - q676790b.pmhcjk.com
   - rink.hockeyapp.net
@@ -21538,6 +21539,9 @@ payload:
   - +.stripchat.com
   - +.stripe-terminal-local-reader.net
   - +.stripe.com
+  - +.stripe.dev
+  - +.stripe.events
+  - +.stripe.global
   - +.stripe.network
   - +.stripecdn.com
   - +.stripparadise.com
