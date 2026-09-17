@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 36789,
-      "rules_sha256": "5f9ff9127dd912878e51a6bd2bc629acafc792062fb8a2bc725322e69c58c554"
+      "rule_count": 39076,
+      "rules_sha256": "28ddd2260aa2c0c1d4965fd7953410440081c977d8d291415ad62414655114f6"
     },
     "AirportServers": {
       "behavior": "classical",
@@ -2957,7 +2957,7 @@
         "list"
       ],
       "rule_count": 1628,
-      "rules_sha256": "2b2bc03ca2613ed5a6bcb927b142c5dcde5031726c107da5d8941beecbf712c7"
+      "rules_sha256": "fe65623670b625fcc10a1254e4ccd37e6386950a849cf1b0435d294ba8453276"
     },
     "Classical/AppleMusic": {
       "behavior": "classical",
@@ -3824,8 +3824,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 9647,
-      "rules_sha256": "021bfd7d2996957601cc6930c4e0cfd749e30cf0b2062f466c65e747a650b8b0"
+      "rule_count": 9741,
+      "rules_sha256": "baff838a8fed6d082fe80decfbbb555388835947699018ee81cbb9dc363b3d6e"
     },
     "IP/Google": {
       "behavior": "ipcidr",
@@ -3835,8 +3835,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8201,
-      "rules_sha256": "7b8a958cb4a0c679d85d88bb8fb1958cba55253ac434583f5e4f4cc1087d0080"
+      "rule_count": 8360,
+      "rules_sha256": "a1027190eccd3e8fef94af848a78c93678c56457a77b5e166021ec4a002396cb"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -3880,8 +3880,8 @@
       ],
       "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 9415,
-      "rules_sha256": "caf05cc37083b431a0d8e8e77c299342e398a2db4e6987e8a7a791c24791a460"
+      "rule_count": 9605,
+      "rules_sha256": "a0dc489258c2174488176e70040110fe314cdd39805c6631d641ac2a5de10142"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
@@ -3902,8 +3902,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 20,
-      "rules_sha256": "4f2d491014763a6d415c29035357e198db49d3670c350402fed0145e4ccc48ab"
+      "rule_count": 19,
+      "rules_sha256": "96ee410ba0372d94f4d56597a3ec18d2310d1938c03cea60bbd353d1d28bd55a"
     },
     "IP/YouTube": {
       "behavior": "ipcidr",
