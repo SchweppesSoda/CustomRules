@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 39651,
-      "rules_sha256": "00d2944c3945785a0d53b77d0482b4807b7f3de90c3f009f013d4888d1be395b"
+      "rule_count": 39524,
+      "rules_sha256": "a3cedb77ab6a6374d1e212bc5f43110144b2e791dacdca1d8cf9c63948aeedb6"
     },
     "AirportServers": {
       "behavior": "classical",
@@ -3154,7 +3154,7 @@
         "list"
       ],
       "rule_count": 2599,
-      "rules_sha256": "798ba29082c6a325377a51af10b659330637931fcdd604fb789ffdb9cf817250"
+      "rules_sha256": "e868e79bd0065e2ed67098c0a8e6d961b3468de3ee14972dfcaf83d4641c585c"
     },
     "Classical/Google": {
       "behavior": "classical",
