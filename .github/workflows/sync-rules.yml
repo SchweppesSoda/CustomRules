@@ -39,6 +39,11 @@ jobs:
           ref: master
           fetch-depth: 0
 
+      - name: Record checked out source
+        id: source
+        shell: bash
+        run: echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: Set up Python
         uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6
         with:
@@ -80,6 +85,7 @@ jobs:
         shell: bash
         env:
           ALLOW_LARGE_CHANGE: ${{ inputs.allow_large_change || 'false' }}
+          SOURCE_COMMIT: ${{ steps.source.outputs.commit }}
         run: |
           set -euo pipefail
           extra=()
@@ -91,7 +97,7 @@ jobs:
             --source-cache "$RUNNER_TEMP/source-snapshot" \
             --baseline "$RUNNER_TEMP/auto-build" \
             --mihomo "$RUNNER_TEMP/mihomo" \
-            --source-commit "$GITHUB_SHA" \
+            --source-commit "$SOURCE_COMMIT" \
             "${extra[@]}"
           python scripts/verify_build.py \
             --output "$RUNNER_TEMP/build-a" \
@@ -101,12 +107,14 @@ jobs:
             --source-cache "$RUNNER_TEMP/source-snapshot" --offline \
             --baseline "$RUNNER_TEMP/auto-build" \
             --mihomo "$RUNNER_TEMP/mihomo" \
-            --source-commit "$GITHUB_SHA" \
+            --source-commit "$SOURCE_COMMIT" \
             "${extra[@]}"
           diff --recursive --brief "$RUNNER_TEMP/build-a" "$RUNNER_TEMP/build-b"
 
       - name: Publish changed artifacts
         shell: bash
+        env:
+          SOURCE_COMMIT: ${{ steps.source.outputs.commit }}
         run: |
           set -euo pipefail
           python scripts/publish_build.py \
@@ -123,5 +131,5 @@ jobs:
             exit 0
           fi
           git -C "$RUNNER_TEMP/auto-build" commit \
-            -m "chore(auto-build): publish rules from ${GITHUB_SHA::12}"
+            -m "chore(auto-build): publish rules from ${SOURCE_COMMIT::12}"
           git -C "$RUNNER_TEMP/auto-build" push origin auto-build
