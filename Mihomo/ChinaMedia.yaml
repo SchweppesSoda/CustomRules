@@ -24,11 +24,13 @@ payload:
   - +.admin5.com
   - +.ahcaijing.com
   - +.ahcjw.com
+  - +.ahnews.com.cn
   - +.ahwang.cn
   - +.aiganggu.com
   - +.anhuinews.com
   - +.anhuiyun.com
   - +.anzhuo.cn
+  - +.askci.com
   - +.bandao.cn
   - +.banyuetan.org
   - +.bbtnews.com.cn
@@ -43,6 +45,7 @@ payload:
   - +.cankaoxiaoxi.com
   - +.cbinews.com
   - +.ccidcom.com
+  - +.ccn.com.cn
   - +.ccreports.com.cn
   - +.cctv.cn
   - +.cctv.com
@@ -56,11 +59,18 @@ payload:
   - +.cctvpro.com.cn
   - +.ce.cn
   - +.cfgw.net.cn
+  - +.cfi.cn
+  - +.cfi.net.cn
+  - +.cfsn.cn
   - +.chaindd.com
   - +.changyou.com
   - +.cheaa.com
   - +.checkzeit.com
   - +.chenshipin.com
+  - +.china.cn
+  - +.china.com
+  - +.china.com.cn
+  - +.china.org.cn
   - +.chinaaet.com
   - +.chinabyte.com
   - +.chinadevelopment.com.cn
@@ -72,14 +82,17 @@ payload:
   - +.chinapp.com
   - +.chinaqw.com
   - +.chinastarmarket.cn
+  - +.chnfund.com
   - +.chuanbaoguancha.cn
   - +.cih-index.com
   - +.citv.net.cn
   - +.ckxx.net
   - +.cls.cn
+  - +.cneo.com.cn
   - +.cnfol.com
   - +.cnfolimg.com
   - +.cnhubei.com
+  - +.cnmo.com
   - +.cnms.net.cn
   - +.cnr.cn
   - +.cns.com.cn
@@ -113,9 +126,11 @@ payload:
   - +.daheapp.com
   - +.dahebao.cn
   - +.danjuanfunds.com
+  - +.datasheet5.com
   - +.dayoo.com
   - +.dgtle.com
   - +.dianzhenkeji.com
+  - +.dili360.com
   - +.dingxinwen.cn
   - +.donews.com
   - +.dutenews.com
@@ -125,6 +140,8 @@ payload:
   - +.eastday.com
   - +.ebrun.com
   - +.ecns.cn
+  - +.eefcdn.com
+  - +.eefocus.com
   - +.eeo.com.cn
   - +.egsea.com
   - +.evolife.cn
@@ -164,12 +181,14 @@ payload:
   - +.hexun.com
   - +.hndt.com
   - +.hnol.net
+  - +.hnr.cn
   - +.hntv.tv
   - +.hsw.cn
   - +.huanqiu.com
   - +.huanqiucdn.cn
   - +.huashangtop.com
   - +.hubeidaily.net
+  - +.hunantoday.cn
   - +.huxiu.com
   - +.huxiucdn.com
   - +.hxnews.com
@@ -189,6 +208,7 @@ payload:
   - +.iheima.com
   - +.ikanchai.com
   - +.imedao.com
+  - +.imgcdc.com
   - +.inewsweek.cn
   - +.infoq.cn
   - +.infzm.com
@@ -209,8 +229,10 @@ payload:
   - +.jiemian.com.cn
   - +.jin10.com
   - +.jinantimes.com.cn
+  - +.jingjiribao.cn
   - +.jingpt.com
   - +.jiqizhixin.com
+  - +.jjrbs.cn
   - +.jrj.com.cn
   - +.jrjimg.cn
   - +.jsbc.com
@@ -224,6 +246,7 @@ payload:
   - +.kanshangjie.com
   - +.kf.cn
   - +.kjrb.com.cn
+  - +.kkj.cn
   - +.kksmg.com
   - +.knewsmart.com
   - +.kuaizhan.com
@@ -238,6 +261,7 @@ payload:
   - +.leikeji.com
   - +.leiphone.com
   - +.liangtv.cn
+  - +.lifeweek.com.cn
   - +.livechina.cn
   - +.livechina.com
   - +.miercn.com
@@ -267,6 +291,7 @@ payload:
   - +.pconline.com.cn
   - +.pcpop.com
   - +.pdnews.cn
+  - +.pedaily.cn
   - +.people.cn
   - +.people.com.cn
   - +.peopleapp.com
@@ -282,15 +307,18 @@ payload:
   - +.ql1d.com
   - +.qstheory.cn
   - +.qzwb.com
+  - +.radio.cn
   - +.rednet.cn
   - +.ruanmei.com
   - +.saayaa.com
   - +.scdaily.cn
   - +.scgchc.com
+  - +.sciencenet.cn
   - +.scol.com.cn
   - +.scsjb.cn
   - +.sctv-tf.com
   - +.sctv.com
+  - +.sdxjpc.com
   - +.secrss.com
   - +.sfccn.com
   - +.shangyexinzhi.com
@@ -334,6 +362,7 @@ payload:
   - +.tmtpost.com
   - +.tmtsmartlife.com
   - +.tmtsmartrun.com
+  - +.toodaylab.com
   - +.topnews.cn
   - +.tvcc.cn
   - +.tvcc.com.cn
@@ -366,6 +395,7 @@ payload:
   - +.xuexi.cn
   - +.xxcb.cn
   - +.yangshipin.cn
+  - +.yangtse.com
   - +.ycwb.com
   - +.yesky.com
   - +.yeyou.com
@@ -374,6 +404,7 @@ payload:
   - +.ynet.cn
   - +.ynet.com
   - +.ynet.com.cn
+  - +.youth.cn
   - +.yundzh.com
   - +.yunnan.cn
   - +.yzwb.net
