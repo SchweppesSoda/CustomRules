@@ -7,6 +7,7 @@ on:
     paths:
       - 'sources/**'
       - 'scripts/build_rules.py'
+      - 'scripts/build_evidence.py'
       - 'scripts/verify_build.py'
       - 'scripts/verify_consumers.py'
       - 'scripts/publish_build.py'
@@ -82,6 +83,7 @@ jobs:
           git worktree add "$RUNNER_TEMP/auto-build" auto-build
 
       - name: Build and verify twice
+        id: build
         shell: bash
         env:
           ALLOW_LARGE_CHANGE: ${{ inputs.allow_large_change || 'false' }}
@@ -110,6 +112,40 @@ jobs:
             --source-commit "$SOURCE_COMMIT" \
             "${extra[@]}"
           diff --recursive --brief "$RUNNER_TEMP/build-a" "$RUNNER_TEMP/build-b"
+
+      - name: Preserve bounded public build evidence
+        if: always() && steps.build.outcome != 'skipped' && steps.build.outcome != ''
+        shell: bash
+        env:
+          SOURCE_COMMIT: ${{ steps.source.outputs.commit }}
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
+          ALLOW_LARGE_CHANGE: ${{ inputs.allow_large_change || 'false' }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          git cat-file -e "${SOURCE_COMMIT}^{commit}"
+          baseline_commit="$(git -C "$RUNNER_TEMP/auto-build" rev-parse HEAD)"
+          extra=()
+          if [[ "$ALLOW_LARGE_CHANGE" == "true" ]]; then
+            extra+=(--allow-large-change)
+          fi
+          python scripts/build_evidence.py capture \
+            --source . --cache "$RUNNER_TEMP/source-snapshot" \
+            --baseline "$RUNNER_TEMP/auto-build" --candidate "$RUNNER_TEMP/build-a" \
+            --compiler "$RUNNER_TEMP/mihomo" \
+            --source-commit "$SOURCE_COMMIT" --baseline-commit "$baseline_commit" \
+            --outcome "$BUILD_OUTCOME" --destination "$RUNNER_TEMP/build-evidence" \
+            "${extra[@]}"
+          python scripts/build_evidence.py verify "$RUNNER_TEMP/build-evidence"
+
+      - name: Upload public input evidence
+        if: always() && steps.build.outcome != 'skipped' && steps.build.outcome != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: public-build-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/build-evidence/
+          retention-days: 14
+          if-no-files-found: error
 
       - name: Publish changed artifacts
         shell: bash

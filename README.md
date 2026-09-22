@@ -243,3 +243,31 @@ the private configuration repository’s Provider Compatibility writer rather th
 PO0 official reporting modules belong to [VPS-Toolkit](https://github.com/SchweppesSoda/VPS-Toolkit/tree/main/scripts/po0/nftables/clients), and reusable maintenance workflows belong to [proxy-vps-skills](https://github.com/SchweppesSoda/proxy-vps-skills). Private client configuration and device recovery records remain outside this public repository.
 
 Use `.tmp/` for local validation output and `.build/` for build/tool caches. Preserve source snapshots needed for reproducing a past run outside the repository before cleanup; a new scheduled update must obtain a fresh source cache.
+
+The build workflow preserves a bounded `public-build-evidence-<run>-<attempt>`
+Actions artifact on both successful builds and build/threshold failures, for
+14 days. It contains public source responses journaled before parsing, their
+hashes, source and baseline commit identities, reviewed builder/source files,
+the complete baseline LIST inventory and counts, baseline/current source
+metadata when available, and the compiler's actual binary hash plus pinned
+version/archive hash. It excludes credentials, arbitrary cache files, raw logs
+and compiler binaries. Evidence creation or upload failure blocks publication;
+it never enables `allow_large_change` or weakens either threshold.
+
+`scripts/build_evidence.py verify <artifact-directory>` checks the file
+inventory, hashes, public-source whitelist, size limits and baseline counts.
+`restore <artifact-directory> <new-directory> --compiler <verified-mihomo>`
+additionally requires the exact recorded compiler hash, then copies verified
+inputs to a new directory. Neither command fetches sources or executes a
+compiler/archived script. Inspect artifact provenance and compare its
+`source_commit` and archived source hashes with the reviewed source checkout
+before executing a replay; internal checksums alone do not establish trust.
+Use that checkout's builder with restored `source-snapshot`, restored
+`baseline`, the recorded source commit/allow flag, a new output and `--offline`.
+A parsing/fetch failure can leave only a partial input snapshot; the offline
+builder must reject any later missing input rather than fetch a replacement.
+
+This artifact is short-term build evidence, not a long-term backup or a
+guarantee that a full build can finish. Retain selected incident evidence
+separately before expiration. See [the dated implementation and validation
+record](docs/maintenance/2026-09-21-build-evidence.md).

@@ -115,14 +115,42 @@ class RuleSet:
 
 
 class SourceRegistry:
-    def __init__(self) -> None:
+    def __init__(self, journal: Path | None = None) -> None:
         self.items: dict[str, dict[str, str]] = {}
+        self.journal = journal
+        self.journal_items: dict[str, dict[str, str]] = {}
+        if journal is not None and journal.exists():
+            document = json.loads(journal.read_text(encoding="utf-8"))
+            for item in document["sources"]:
+                url = item["url"]
+                if (not isinstance(url, str) or url in self.journal_items or
+                        set(item) != {"url", "size", "sha256"}):
+                    raise ValueError("Invalid source journal")
+                self.journal_items[url] = {"sha256": item["sha256"], "size": item["size"]}
 
     def add(self, url: str, body: bytes) -> None:
         self.items[url] = {
             "sha256": hashlib.sha256(body).hexdigest(),
             "size": str(len(body)),
         }
+        # Preserve each received input before a parser or later safety gate
+        # can fail. This is separate from the final published SOURCES.json.
+        if self.journal is not None:
+            # The offline second build shares this run's snapshot. Retain all
+            # prior successful responses even if its parser/compiler fails early.
+            self.journal_items[url] = self.items[url]
+            self.journal.parent.mkdir(parents=True, exist_ok=True)
+            descriptor, temporary = tempfile.mkstemp(prefix=".sources-", dir=self.journal.parent)
+            try:
+                with os.fdopen(descriptor, "w", encoding="utf-8", newline="\n") as handle:
+                    snapshot = {"sources": [{"url": item, **self.journal_items[item]} for item in sorted(self.journal_items)]}
+                    json.dump(snapshot, handle, sort_keys=True, indent=2)
+                    handle.write("\n")
+                    handle.flush()
+                    os.fsync(handle.fileno())
+                os.replace(temporary, self.journal)
+            finally:
+                Path(temporary).unlink(missing_ok=True)
 
     def as_json(self) -> dict[str, object]:
         return {
@@ -1040,7 +1068,7 @@ def main() -> None:
 
     upstream_config = load_toml(SOURCES / "upstreams.toml")
     v2fly_base = str(upstream_config["v2fly"]["base_url"])
-    registry = SourceRegistry()
+    registry = SourceRegistry(args.source_cache / "SOURCES.json" if args.source_cache else None)
     fetcher = Fetcher(registry, args.source_cache, args.offline)
     sets: dict[str, RuleSet] = {}
     unsupported_upstream_rules: list[str] = []
