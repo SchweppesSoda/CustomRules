@@ -1,8 +1,9 @@
 # AUTO-GENERATED REVIEW REPORT. NOT USED FOR ROUTING.
 # HaGeZi Light rules removed for HTTPDNS and shared-service compatibility.
 # Upstream: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light.txt
-# Excluded rules: 9
+# Excluded rules: 10
 DOMAIN-SUFFIX,browser.miui.com # protects: DOMAIN-SUFFIX,httpdns.browser.miui.com
+DOMAIN-SUFFIX,dns.weibo.cn # protects: DOMAIN-SUFFIX,dns.weibo.cn
 DOMAIN-SUFFIX,dotserver.douyucdn.cn # protects: DOMAIN-SUFFIX,dotserver.douyucdn.cn
 DOMAIN-SUFFIX,httpdns.baidubce.com # protects: DOMAIN-SUFFIX,httpdns.baidubce.com
 DOMAIN-SUFFIX,httpdns.bcelive.com # protects: DOMAIN-SUFFIX,httpdns.bcelive.com

@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 39452,
-      "rules_sha256": "7058b08dfc5cacb19e5002c1be8f7e33d4fe4b77264b72790dc3c737cdc5da0d"
+      "rule_count": 39999,
+      "rules_sha256": "36fdb19906ad85dcca7864139b5421a463f967e5e5b3665817224df3ce12096e"
     },
     "AirportServers": {
       "behavior": "classical",
