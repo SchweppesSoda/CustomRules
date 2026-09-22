@@ -2896,8 +2896,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 111021,
-      "rules_sha256": "7e12ec60a82f69fdbccc29dc43159767316e50c2c8f24560d32f7933f154dd8f"
+      "rule_count": 111030,
+      "rules_sha256": "b972df5dca1e59e02ff51f712531bee71dd68b67a379ab40125ed80c5c89a0c9"
     },
     "ChinaMedia": {
       "behavior": "domain",
@@ -3021,8 +3021,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 111082,
-      "rules_sha256": "5447ee028122763b8e9cbf5a51abe65a4b33fe137b75042dfd563d0114018480"
+      "rule_count": 111091,
+      "rules_sha256": "6f8312568e71dec72fce692371ed468d59da9daf2ad1c002da6c0b558aa40ae1"
     },
     "Classical/ChinaASN": {
       "behavior": "classical",
@@ -3354,8 +3354,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26529,
-      "rules_sha256": "7bc63887ca55ca117153750377a1929c466350b56c44248a356225a2645a8bfe"
+      "rule_count": 26531,
+      "rules_sha256": "6f0c6b6100a3c9f1b74acc102f92083048618fb8e28f16176e27719f76468660"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4355,8 +4355,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26398,
-      "rules_sha256": "ab77fb30e4ae0e0eba0969262ffb0f1fe22952e095eb5e9d5ac3a671406bcf9a"
+      "rule_count": 26400,
+      "rules_sha256": "dc0b393e26f68d2082164295d55bbfdd3508a1b2d07b05a8776263a28444fea5"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -4366,8 +4366,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26398,
-      "rules_sha256": "ab77fb30e4ae0e0eba0969262ffb0f1fe22952e095eb5e9d5ac3a671406bcf9a"
+      "rule_count": 26400,
+      "rules_sha256": "dc0b393e26f68d2082164295d55bbfdd3508a1b2d07b05a8776263a28444fea5"
     },
     "Scholar": {
       "behavior": "domain",
@@ -4599,5 +4599,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "bcf284dc572413cb29e569835bc0b3f48e4fdf8f"
+  "source_commit": "8d387ee6491b4d30883ccf6c95dfa181bb4be2bf"
 }
