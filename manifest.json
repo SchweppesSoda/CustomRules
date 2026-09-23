@@ -2633,7 +2633,7 @@
       ],
       "mrs_behavior": "domain",
       "rule_count": 907,
-      "rules_sha256": "9c25e52a461e314ca08b0bcbacadfc42d702a49606c6536d2c3fbe05f7b57aa8"
+      "rules_sha256": "49fde42d4de6e577fcf3f457c95ee8be987c0bdb680fcd7e44650b3cc036ba9b"
     },
     "AdBlockLite": {
       "behavior": "domain",
@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 39999,
-      "rules_sha256": "36fdb19906ad85dcca7864139b5421a463f967e5e5b3665817224df3ce12096e"
+      "rule_count": 39839,
+      "rules_sha256": "749c8f3d1b45b030ef05766a2094e4ae8054a7a2ef9b5700b452734c0c89a9cc"
     },
     "AirportServers": {
       "behavior": "classical",
@@ -3703,8 +3703,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 5375,
-      "rules_sha256": "178d8662db236979251a986184fd49b4b9ca9a4b5c4ed913c68de87fdcb66d15"
+      "rule_count": 5376,
+      "rules_sha256": "b611694b3a744c90e7fdbfa75fbd623194f2b3cf3302087bc16b9130c2a0fb50"
     },
     "GitHub": {
       "behavior": "domain",
