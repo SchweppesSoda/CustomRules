@@ -13,6 +13,6 @@ payload:
   # > Pikpak
   - DOMAIN-SUFFIX,mypikpak.com
 
-  # > Linkdin
+  # > LinkedIn
   - DOMAIN-SUFFIX,linkedin.com
-  - DOMAIN-SUFFIX,lindedin.cn
+  - DOMAIN-SUFFIX,linkedin.cn

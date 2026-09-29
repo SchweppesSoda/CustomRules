@@ -28,7 +28,8 @@ name = "WorldFirst"
 kind = "cross-border-account"
 region = "Global"
 required = true
-domains = ["suffix:worldfirst.com", "suffix:worldfirst.com.cn"]
+# Mainland worldfirst.com.cn follows the domestic rule sets.
+domains = ["suffix:worldfirst.com"]
 source = "official-domain-review"
 reviewed = "2026-08-12"
 
@@ -320,6 +321,8 @@ name = "sc.com"
 kind = "bank"
 region = "Global"
 required = false
+# Domain-only Banking outputs cannot subtract a child suffix.
+# cn.sc.com is guarded earlier by MyDirect; Egern Lite has the same local guard.
 domains = ["suffix:sc.com"]
 source = "manual-review-2026-08-12"
 reviewed = "2026-08-12"

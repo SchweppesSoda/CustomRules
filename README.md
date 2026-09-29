@@ -115,7 +115,7 @@ validates candidate profiles, preserves source hashes, and owns client rollout.
 ## Sources
 
 - `sources/manual/` contains reviewed classical rule sources such as
-  MyDirect, MyProxy, Emby, AirportServers, AirportServersCTC, and MyGoHome.
+  MyDirect, MyDirectSub, MyProxy, Emby, AirportServers, and AirportServersCTC.
   Every `sources/manual/*.yaml` file is discovered automatically by
   `scripts/build_rules.py` and emits `Mihomo/<name>.yaml` plus
   `Surge/<name>.list`; every manual source always provides these YAML/LIST
@@ -173,6 +173,13 @@ Banking is also published as `Global`, `NorthAmerica`, `Europe`,
 `HongKongMacau`, `Singapore`, `JapanKorea`, `MiddleEast`, and `Other`
 under `Mihomo/Banking/` and `Surge/Banking/`. The aggregate is validated as
 the exact union of the eight regions.
+
+Mainland `worldfirst.com.cn` is excluded from Banking and follows domestic
+rules. The global `sc.com` suffix remains in Banking; consumers must route
+`cn.sc.com` and its subdomains directly before broad Banking/global proxy
+rules. Maintained full/Safe profiles use the earlier `MyDirect` set; Egern
+Lite, which does not subscribe to `MyDirect`, carries the same narrow local
+exception. Domain-only MRS cannot express a parent suffix minus one child.
 
 Pure-domain sets also receive MRS output. Classical sets retain their existing
 YAML/LIST semantics. Service-domain sets are published at
