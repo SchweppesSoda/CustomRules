@@ -104,11 +104,8 @@ or other conditions. For example, `Policy/GlobalTV` is domain-only while
 `Policy/CNMainlandTV` currently contains mixed rules. Use manifest behavior,
 not the directory name, to choose the client provider type.
 
-During rollout, existing per-service URLs remain published for older profiles
-and Lite clients. This first stage reduces client subscriptions; it adds 10
-aggregates (23 files), so a complete build temporarily grows from 475 to 498
-files. Removing old exports is a separate step after their consumers have
-migrated; fewer subscriptions does not by itself mean fewer published files.
+Existing per-service URLs remain published for older profiles and Lite clients.
+Remove an old export only after checking and migrating its consumers.
 
 Run the normal unit tests, two builds from one fresh input snapshot, and
 `scripts/verify_build.py`. Publish and verify the new `auto-build` assets before
@@ -269,5 +266,6 @@ builder must reject any later missing input rather than fetch a replacement.
 
 This artifact is short-term build evidence, not a long-term backup or a
 guarantee that a full build can finish. Retain selected incident evidence
-separately before expiration. See [the dated implementation and validation
-record](docs/maintenance/2026-09-21-build-evidence.md).
+separately before expiration.
+
+[Maintenance documentation](docs/maintenance/INDEX.md).
