@@ -267,5 +267,3 @@ builder must reject any later missing input rather than fetch a replacement.
 This artifact is short-term build evidence, not a long-term backup or a
 guarantee that a full build can finish. Retain selected incident evidence
 separately before expiration.
-
-[Maintenance documentation](docs/maintenance/INDEX.md).
