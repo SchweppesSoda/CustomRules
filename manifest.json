@@ -24,7 +24,7 @@
         "name": "WorldFirst",
         "region": "Global",
         "required": true,
-        "rule_count": 2
+        "rule_count": 1
       },
       {
         "id": "payoneer",
@@ -2786,8 +2786,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 257,
-      "rules_sha256": "6db0d8f06462343a6e32da0ec3724e115fdf63e4db4fc0833fb7fc841d8c57e2"
+      "rule_count": 256,
+      "rules_sha256": "e7158313733622f3677d6ffbcf992f952e3714fcac23adf725b1e28a2eb6dbac"
     },
     "Banking/Europe": {
       "behavior": "domain",
@@ -2808,8 +2808,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 32,
-      "rules_sha256": "3762418922dd40b3cea7ab4a328a756dac959f497d330c46b09e37fc131e11d5"
+      "rule_count": 31,
+      "rules_sha256": "fc45cd2622eee7fe31c75d981c1f257529a1cf857dea72677383ed46f1d5a76f"
     },
     "Banking/HongKongMacau": {
       "behavior": "domain",
@@ -3997,10 +3997,12 @@
       "behavior": "classical",
       "formats": [
         "yaml",
-        "list"
+        "list",
+        "mrs"
       ],
-      "rule_count": 21,
-      "rules_sha256": "a90d794966c8e015bec034ff557a681774d4602c5ffd4ed2d9b1a5087ad77df3"
+      "mrs_behavior": "domain",
+      "rule_count": 8,
+      "rules_sha256": "4dc17616bf0db72a1a48c36ed17ecbc8b6c32c2122ecd5f54261be5c50fba1e2"
     },
     "MyDirectSub": {
       "behavior": "classical",
@@ -4013,17 +4015,6 @@
       "rule_count": 7,
       "rules_sha256": "de579a2b1f979d036851839d90759db914ac067c7f606502facd2759a1452348"
     },
-    "MyGoHome": {
-      "behavior": "classical",
-      "formats": [
-        "yaml",
-        "list",
-        "mrs"
-      ],
-      "mrs_behavior": "domain",
-      "rule_count": 1,
-      "rules_sha256": "4e36d14e89543a5e64bbf1aa366be707c2837dea2af18d241977c6967948e14c"
-    },
     "MyProxy": {
       "behavior": "classical",
       "formats": [
@@ -4031,7 +4022,7 @@
         "list"
       ],
       "rule_count": 10,
-      "rules_sha256": "b7d89ff7beee5a0ad35001620ac52247d048ff764c13e7ff0ef3e6cda14cc05d"
+      "rules_sha256": "9dc909d06b4aaf05654253899559a46f518102c1c846eacc51f1b06695ccc17c"
     },
     "NetEase": {
       "behavior": "domain",
@@ -4601,5 +4592,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "ec65475ed1ff17c5a488bee7cb2acd77e2f4623f"
+  "source_commit": "23559dc5c329c5216d93deaf289231fd19311439"
 }
