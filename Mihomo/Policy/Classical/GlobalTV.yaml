@@ -128,8 +128,6 @@ payload:
   - DOMAIN-SUFFIX,bbcverticals.com
   - DOMAIN-SUFFIX,bidi.net.uk
   - USER-AGENT,BBCiPlayer*
-  - DOMAIN-KEYWORD,-uk-live.akamaized.net
-  - DOMAIN-KEYWORD,bbcfmt
   - DOMAIN-SUFFIX,dazn-api.com
   - DOMAIN-SUFFIX,dazn.com
   - DOMAIN-SUFFIX,dazndn.com
@@ -138,8 +136,8 @@ payload:
   - DOMAIN-SUFFIX,daznservices.com
   - DOMAIN-SUFFIX,indazn.com
   - DOMAIN-SUFFIX,indaznlab.com
-  - USER-AGENT,DAZN*
   - PROCESS-NAME,com.dazn
+  - USER-AGENT,DAZN*
   - DOMAIN-SUFFIX,content-ause1-ur-discovery1.uplynk.com
   - DOMAIN-SUFFIX,disco-api.com
   - DOMAIN-SUFFIX,discoveryplus.com

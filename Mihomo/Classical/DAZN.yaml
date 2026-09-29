@@ -9,5 +9,5 @@ payload:
   - DOMAIN-SUFFIX,daznservices.com
   - DOMAIN-SUFFIX,indazn.com
   - DOMAIN-SUFFIX,indaznlab.com
-  - USER-AGENT,DAZN*
   - PROCESS-NAME,com.dazn
+  - USER-AGENT,DAZN*

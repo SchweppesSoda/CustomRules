@@ -4,5 +4,5 @@ payload:
   - DOMAIN-SUFFIX,kktv.com.tw
   - DOMAIN-SUFFIX,kktv.me
   - DOMAIN-SUFFIX,theater-kktv.cdn.hinet.net
-  - USER-AGENT,KKTV*
   - USER-AGENT,com.kktv*
+  - USER-AGENT,KKTV*
