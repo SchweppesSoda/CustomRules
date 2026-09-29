@@ -117,6 +117,14 @@ urls = [
   "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list",
 ]
 
+# Keep the existing classical YAML subscription compatible with deployed clients.
+[sets.TikTok]
+behavior = "classical"
+parser = "classical-yaml"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/tiktok.yaml",
+]
+
 [sets.Twitter]
 behavior = "domain"
 parser = "meta-list"

@@ -115,8 +115,8 @@ validates candidate profiles, preserves source hashes, and owns client rollout.
 ## Sources
 
 - `sources/manual/` contains reviewed classical rule sources such as
-  MyDirect, MyProxy, Emby, AirportServers, AirportServersCTC, MyGoHome, and
-  TikTok. Every `sources/manual/*.yaml` file is discovered automatically by
+  MyDirect, MyProxy, Emby, AirportServers, AirportServersCTC, and MyGoHome.
+  Every `sources/manual/*.yaml` file is discovered automatically by
   `scripts/build_rules.py` and emits `Mihomo/<name>.yaml` plus
   `Surge/<name>.list`; every manual source always provides these YAML/LIST
   artifacts. MRS output follows the builder's existing eligibility logic.
@@ -143,6 +143,11 @@ validates candidate profiles, preserves source hashes, and owns client rollout.
 - `sources/upstreams.toml` is the only registry for permitted remote sources.
   Every set declares its parser and `domain`, `ipcidr` or `classical` behavior; the Emby
   declaration also enables the reviewed manual/upstream union.
+- TikTok automatically follows MetaCubeX `geosite/classical/tiktok.yaml`.
+  Its existing `Mihomo/TikTok.yaml` and `Surge/TikTok.list` URLs retain
+  classical rule syntax for deployed clients; domain-only data also emits MRS.
+  DouYin follows the separate MetaCubeX `geosite/douyin.list` source. Broad
+  ByteDance suffixes are not manually merged into the TikTok set.
 - `sources/toolchain.toml` pins the Mihomo compiler release and archive
   SHA256.
 

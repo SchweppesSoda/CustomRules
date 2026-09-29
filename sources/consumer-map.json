@@ -347,7 +347,7 @@
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list": {
       "set": "TikTok",
-      "reason": "retain reviewed manual TikTok semantics"
+      "reason": "MetaCubeX TikTok domains with compatible classical YAML/LIST exports"
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list": {
       "set": "Classical/WeChat",
