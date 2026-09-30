@@ -2646,6 +2646,278 @@
       "rule_count": 45205,
       "rules_sha256": "e4495e70445b242a358050b1176699e6bc49c0c2523a5f87c07f9a0a518561cc"
     },
+    "Address/Classical/Apple": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/Apple"
+      },
+      "rule_count": 13,
+      "rules_sha256": "4420d95570a1ab64ab22ca3f1ef88ba15612d2cc7fa5f73abdcdd9241cfb02b2"
+    },
+    "Address/Classical/BiliBili": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/BiliBili"
+      },
+      "rule_count": 8,
+      "rules_sha256": "5ee5117db454788e4a902d6db2a3bc67734e43563dad92715c85d81affafd0ec"
+    },
+    "Address/Classical/China": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/China"
+      },
+      "rule_count": 21,
+      "rules_sha256": "6b33971a8e0231c6c50f67835edfed5e07ec33ed5cb39442428e419b4da78de2"
+    },
+    "Address/Classical/ChinaMedia": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/ChinaMedia"
+      },
+      "rule_count": 84,
+      "rules_sha256": "62f0c2b5dacdfdca7f022c815eb7d74ed11cfd56216f81647b06baeeeff48b97"
+    },
+    "Address/Classical/Copilot": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/Copilot"
+      },
+      "rule_count": 4,
+      "rules_sha256": "70c8206a0c7e6d9c2a7cc74040467952774e3f5b1f807721ca4f3d950c818b49"
+    },
+    "Address/Classical/GlobalMedia": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/GlobalMedia"
+      },
+      "rule_count": 924,
+      "rules_sha256": "60d4ee3450a2162b9abc7e1301013233a6bf85d66d3bf4463f9dc877702e7ba5"
+    },
+    "Address/Classical/Google": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/Google"
+      },
+      "rule_count": 5,
+      "rules_sha256": "548ab7ba20cd381c195b6917b4b85c9d8e4b86c2daf5e3aa2f5e16b89f5eea07"
+    },
+    "Address/Classical/GoogleFCM": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/GoogleFCM"
+      },
+      "rule_count": 26,
+      "rules_sha256": "b48d882b18ab647cd8e373c6d886c205597cdc86b651a8f51f83e70e7a2aa4c1"
+    },
+    "Address/Classical/Netflix": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/Netflix"
+      },
+      "rule_count": 1119,
+      "rules_sha256": "61f5828b09f24a4e5a9f50a0391666f515e50a273413b9998664687293d551fd"
+    },
+    "Address/Classical/OpenAI": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/OpenAI"
+      },
+      "rule_count": 3,
+      "rules_sha256": "0b5cfd6c03e5edce6e6748e9a0293a79c123e85ea363fb54106f413ede0e923e"
+    },
+    "Address/Classical/Proxy": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/Proxy"
+      },
+      "rule_count": 100,
+      "rules_sha256": "c193190c830221e99c3db91eaa284d5ad3119dd66788074f06d4386fe717fab9"
+    },
+    "Address/Classical/Spotify": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/Spotify"
+      },
+      "rule_count": 2,
+      "rules_sha256": "1e515be9603d89cd5cc3a9624ab399d3c52a5b4a38ac1ae768b99d8a384f59b2"
+    },
+    "Address/Classical/Telegram": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/Telegram"
+      },
+      "rule_count": 15,
+      "rules_sha256": "256e73e2a1d75e5ed8d43ed558558a75193f0cd1b8bfcb1e95a8895cb2fe2852"
+    },
+    "Address/Classical/WeChat": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/WeChat"
+      },
+      "rule_count": 1,
+      "rules_sha256": "a7dd9df23ee1fa3dc5bb89509a7e84df841f530065191f92e134144278fac66d"
+    },
+    "Address/Classical/YouTube": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Classical/YouTube"
+      },
+      "rule_count": 3,
+      "rules_sha256": "8c73cd2be313b5998d54899c66822ff49aa3c377fa7cc31e52aa96255e4cca02"
+    },
+    "Address/Policy/Classical/AsianTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Policy/Classical/AsianTV"
+      },
+      "rule_count": 13,
+      "rules_sha256": "c73bf086b53b8bc6d1d11df438b992109781b497ddf079d69d5b4327e4453c95"
+    },
+    "Address/Policy/Classical/CNMainlandTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Policy/Classical/CNMainlandTV"
+      },
+      "rule_count": 80,
+      "rules_sha256": "d0dcc15e1447a88979ed9c502ca46f431a99a7bd5859c2dd1bda40784624b5bd"
+    },
     "AirportServers": {
       "behavior": "classical",
       "formats": [
@@ -2890,14 +3162,15 @@
     },
     "China": {
       "behavior": "domain",
+      "domain_selection": "reports/China-selection.json",
       "formats": [
         "yaml",
         "list",
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 111224,
-      "rules_sha256": "f31add358af0ff53065e7b5e073284ef4272180240ff327990e271efa14885b1"
+      "rule_count": 111254,
+      "rules_sha256": "b32bd5694407cf6cf799bad7bf439783006ad5e308ab8ebfe7343d4882a0451d"
     },
     "ChinaMedia": {
       "behavior": "domain",
@@ -3021,8 +3294,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 111285,
-      "rules_sha256": "eed5ce4ec939c69ee687954fd50566cfc3ecbff71adef6543aacf732047226d9"
+      "rule_count": 111315,
+      "rules_sha256": "adfd39969c15c7345f3c4bf998400eab0b13f0a8233d1d0716e798252414489c"
     },
     "Classical/ChinaASN": {
       "behavior": "classical",
@@ -4077,6 +4350,280 @@
       "rule_count": 10,
       "rules_sha256": "64f79ce59273322c2e1a60cbc5dc6d76a0932307d9c42074fb02247f693681d9"
     },
+    "NonIP/Classical/Apple": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/Apple"
+      },
+      "rule_count": 1615,
+      "rules_sha256": "b145b59eb0643c2cbd0d7dd7c2ede404c12e22b6077018bad14e32ad76a7d2c2"
+    },
+    "NonIP/Classical/BiliBili": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/BiliBili"
+      },
+      "rule_count": 63,
+      "rules_sha256": "0c7db560b7f38be51b8b6a29f321c3ff660648fdd93565520b5d5ccacfe1be37"
+    },
+    "NonIP/Classical/China": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/China"
+      },
+      "rule_count": 111294,
+      "rules_sha256": "214c6cb322756fa341259ad266dbe3bcb55ed7bbe0dd3f53556c1fba5da50318"
+    },
+    "NonIP/Classical/ChinaMedia": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/ChinaMedia"
+      },
+      "rule_count": 458,
+      "rules_sha256": "2cc25a70b473d394cc7ce9e6460cebf8cc71ac0b31b4e17d40d23384171ceb00"
+    },
+    "NonIP/Classical/Copilot": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/Copilot"
+      },
+      "rule_count": 7,
+      "rules_sha256": "502ce530125f85ecee134ec60d88a39b68bace8dc6dd276c0db2ee0543ece43f"
+    },
+    "NonIP/Classical/GlobalMedia": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/GlobalMedia"
+      },
+      "rule_count": 1675,
+      "rules_sha256": "854bf149d4b823a0f1631f0cae2ff3353edd411fcb5be84dc1a8ebbd15859333"
+    },
+    "NonIP/Classical/Google": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/Google"
+      },
+      "rule_count": 855,
+      "rules_sha256": "035a4174296dbcf2787b8c8ad6d52870bbccec5e5cb6e2dcd56eb3e362da24ac"
+    },
+    "NonIP/Classical/GoogleFCM": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list",
+        "mrs"
+      ],
+      "mrs_behavior": "domain",
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/GoogleFCM"
+      },
+      "rule_count": 12,
+      "rules_sha256": "19286abb4fd359743325d9d6d55c48fd7eebf2cbb492587740537756afac78c4"
+    },
+    "NonIP/Classical/Netflix": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/Netflix"
+      },
+      "rule_count": 29,
+      "rules_sha256": "a74af8206e3e5da8651636cb961e0b218095fd6626af746acfb6791a109e544a"
+    },
+    "NonIP/Classical/OpenAI": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/OpenAI"
+      },
+      "rule_count": 23,
+      "rules_sha256": "d150805498df1c2d95c71d12ee9ff6170fbf29ccd75d3726f933cab7f4041c72"
+    },
+    "NonIP/Classical/Proxy": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/Proxy"
+      },
+      "rule_count": 26440,
+      "rules_sha256": "d9590078e463fde6542f3a0fdeea8c346fc57c59a934ff5f0743d95dc051cf18"
+    },
+    "NonIP/Classical/Spotify": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/Spotify"
+      },
+      "rule_count": 28,
+      "rules_sha256": "4f5c0e96b49190f0ab16ff29aedee403276c642c563485d743a3aec2e9963a35"
+    },
+    "NonIP/Classical/Telegram": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/Telegram"
+      },
+      "rule_count": 22,
+      "rules_sha256": "80f985d9a7e8f96341a41429571e381585b685740de126746e18fb422f877ff1"
+    },
+    "NonIP/Classical/WeChat": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/WeChat"
+      },
+      "rule_count": 32,
+      "rules_sha256": "dba5d9153248a79ec0f86b25a944741795401dadfd6c88e3a4ab099ad985ca7a"
+    },
+    "NonIP/Classical/YouTube": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Classical/YouTube"
+      },
+      "rule_count": 185,
+      "rules_sha256": "e96bb59984ce7c899876036d170f8642586f96b2ff797e7b3ac0a6bd69ab38d1"
+    },
+    "NonIP/Policy/Classical/AsianTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Policy/Classical/AsianTV"
+      },
+      "rule_count": 77,
+      "rules_sha256": "2593505dab0448e9a405adaf1fb51894bb3f63ca391ad9f4ef66eafc6d755966"
+    },
+    "NonIP/Policy/Classical/CNMainlandTV": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Policy/Classical/CNMainlandTV"
+      },
+      "rule_count": 137,
+      "rules_sha256": "833ef9ff16c3a67608d677815af863a258e393b813a5a1aaabd8357a69898518"
+    },
     "OpenAI": {
       "behavior": "domain",
       "formats": [
@@ -4612,5 +5159,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "34fd33b59306724e7b88691d7fb660b4c75d4ad2"
+  "source_commit": "cf4d486e2028911c34a9afc12921bf35eef2fc7f"
 }

@@ -1,0 +1,4 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: Address/Classical/WeChat
+payload:
+  - IP-ASN,132203,no-resolve

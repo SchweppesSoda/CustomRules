@@ -1,6 +1,8 @@
 # AUTO-GENERATED. DO NOT EDIT.
 # Rule set: China
 payload:
+  - end-api.shallow.ink
+  - end.shallow.ink
   - +.0.zone
   - +.00.net
   - +.000.link
@@ -5556,6 +5558,7 @@ payload:
   - +.51zjedu.com
   - +.51zjxm.com
   - +.51zmt.net
+  - +.51zmt.top
   - +.51znt.com
   - +.51znyx.com
   - +.51zr.com
@@ -11597,6 +11600,7 @@ payload:
   - +.amanyi.com
   - +.amap-cdn.com
   - +.amap.com
+  - +.amap.net
   - +.amapauto.com
   - +.amarsoft.com
   - +.amassfreight.com
@@ -14320,6 +14324,7 @@ payload:
   - +.baozipu.com
   - +.baozou.com
   - +.baozoudi.com
+  - +.baozoumanhua.com
   - +.baozugongkeji.com
   - +.baozun.com
   - +.baozy.com
@@ -17313,6 +17318,7 @@ payload:
   - +.bsagit.com
   - +.bsbgjj.com
   - +.bsbkjt.com
+  - +.bsbsb.top
   - +.bsbsb.xyz
   - +.bsbydd.com
   - +.bscabank.com
@@ -20316,6 +20322,7 @@ payload:
   - +.chaseyanyu.net
   - +.chashebao.com
   - +.chashudi.com
+  - +.chat.top
   - +.chat2db-ai.com
   - +.chat778.com
   - +.chatairc.com
@@ -28500,6 +28507,7 @@ payload:
   - +.diandian.com
   - +.diandian.net
   - +.diandianchong.com
+  - +.diandianlife.top
   - +.diandianmeijia.com
   - +.diandiannuo.com
   - +.diandianqi.com
@@ -34096,6 +34104,7 @@ payload:
   - +.fengniao.com
   - +.fengniaohd.com
   - +.fengniaojianzhan.com
+  - +.fengniaojipei.net
   - +.fengniaourl.com
   - +.fengone.com
   - +.fengpintech.com
@@ -38403,6 +38412,7 @@ payload:
   - +.gm99game.net
   - +.gmacsaic.com
   - +.gmacsaic.net
+  - +.gmanhua.com
   - +.gmatg.com
   - +.gmaxbiopharm.com
   - +.gmbbs.net
@@ -55460,6 +55470,7 @@ payload:
   - +.jsinnopharm.com
   - +.jsiport.com
   - +.jsirfe.com
+  - +.jsj.top
   - +.jsjajt.com
   - +.jsjcjx.com
   - +.jsjclykz.com
@@ -55853,6 +55864,7 @@ payload:
   - +.jtcjd.com
   - +.jtcopper.com
   - +.jtexpress.com
+  - +.jtexpress.top
   - +.jtfengtou.com
   - +.jtfulfillment.com
   - +.jtg2g.com
@@ -55934,6 +55946,7 @@ payload:
   - +.jueduilingyu.com
   - +.juefeng.com
   - +.juehuo.com
+  - +.juejin.im
   - +.juejinchain.com
   - +.juejinqifu.com
   - +.juemei.com
@@ -58506,6 +58519,7 @@ payload:
   - +.ktyunlianjie.com
   - +.ku25.com
   - +.ku33a.net
+  - +.ku6.com
   - +.ku6.net
   - +.ku6cdn.com
   - +.ku6img.com
@@ -58586,6 +58600,7 @@ payload:
   - +.kuaijisishu.com
   - +.kuaijitong.com
   - +.kuaikan.ink
+  - +.kuaikanmanhua.com
   - +.kuaikao.com
   - +.kuaikaoti.com
   - +.kuaikuaicloud.com
@@ -60445,6 +60460,7 @@ payload:
   - +.lgpm.com
   - +.lgrcbank.com
   - +.lgshouyou.com
+  - +.lgstatic.com
   - +.lgtzkg.com
   - +.lguohe.com
   - +.lgvf.com
@@ -60988,6 +61004,7 @@ payload:
   - +.linglingkaimen.com
   - +.linglingmo.site
   - +.linglong.dev
+  - +.linglong.space
   - +.linglongart.com
   - +.linglonglife.com
   - +.linglongtech.com
@@ -63815,6 +63832,7 @@ payload:
   - +.maodou.com
   - +.maodouapp.com
   - +.maodouketang.com
+  - +.maoer.com
   - +.maoercdn.com
   - +.maoflag.net
   - +.maogang.com
@@ -70721,6 +70739,8 @@ payload:
   - +.opplestore.com
   - +.oppo.com
   - +.oppo.mobi
+  - +.oppocolor.com
+  - +.oppocoloros.com
   - +.oppodigital.com
   - +.oppoer.me
   - +.oppofind.com
@@ -77911,6 +77931,7 @@ payload:
   - +.sachenpharm.com
   - +.sact-digital.com
   - +.sadidc.com
+  - +.saduck.top
   - +.sae-china.org
   - +.saebbs.com
   - +.saec.cc
@@ -80304,6 +80325,7 @@ payload:
   - +.shapharqx.com
   - +.shaphc.org
   - +.shaqing.com
+  - +.share123.top
   - +.share1diantong.com
   - +.share2dlink.com
   - +.share2uu.com
@@ -87002,9 +87024,11 @@ payload:
   - +.tapd-app.com
   - +.tapdata.net
   - +.tapimg.com
+  - +.tapimg.net
   - +.tapjoytech.com
   - +.tapnow.art
   - +.tapnow.media
+  - +.tapnow.top
   - +.tapotiexie.com
   - +.tappile.com
   - +.tapque.com
@@ -92063,6 +92087,7 @@ payload:
   - +.vc800.com
   - +.vcarepharmatech.com
   - +.vcbeat.net
+  - +.vcbeat.top
   - +.vcc808.site
   - +.vcchar.com
   - +.vcd.io
@@ -92964,6 +92989,7 @@ payload:
   - +.vrzhijia.com
   - +.vrzwk.com
   - +.vrzwk.net
+  - +.vrzwk.top
   - +.vs-gascloud.com
   - +.vs2a.com
   - +.vsaker.com
@@ -97964,6 +97990,7 @@ payload:
   - +.xhslink.com
   - +.xhslw.com
   - +.xhsmlt.com
+  - +.xhsrcdn.com
   - +.xhsrmyy.com
   - +.xhsxmt.com
   - +.xhsyqx.com
@@ -104369,6 +104396,7 @@ payload:
   - +.youku.org
   - +.youkua.net
   - +.youkud.com
+  - +.youkuhonor.com
   - +.youkupic.com
   - +.youkuyouku.pro
   - +.youlai.tech
@@ -104975,6 +105003,7 @@ payload:
   - +.yto-jsd.com
   - +.yto-lgs.com
   - +.yto-lgs.net
+  - +.yto.top
   - +.yto.vip
   - +.yto.xin
   - +.yto56test.com
@@ -110460,6 +110489,7 @@ payload:
   - +.ztmao.com
   - +.ztmvip.com
   - +.ztn.com
+  - +.ztna-dingtalk.com
   - +.ztnews.net
   - +.ztno.com
   - +.ztnwork.com
