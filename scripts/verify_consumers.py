@@ -15,9 +15,8 @@ from urllib.parse import unquote
 BASE = 'https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/auto-build/'
 CANONICAL = ('Mihomo/AutoMihomo.Mobile.yaml', 'Mihomo/AutoMihomo.OpenWrt.yaml',
              'Mihomo/SafeMihomo.yaml', 'Stash/AutoStash.yaml', 'Egern/AutoEgern.yaml',
-             'Loon/AutoLoon.conf', 'Loon/AutoLoonLite.conf')
-GENERATED = ('Mihomo/AutoMihomo.OpenWrt-WAN2.yaml', 'Egern/AutoEgern.PO0SH.yaml',
-             'Egern/AutoEgern.PO0GZ.yaml')
+             'Egern/AutoEgernLite.yaml')
+GENERATED = ('Mihomo/AutoMihomo.OpenWrt-WAN2.yaml',)
 
 
 def subscriptions(relative: str, text: str):

@@ -16,6 +16,7 @@ from build_rules import (SOURCES, adblock_lite_protections, load_toml, stable_un
                          parse_classical_yaml, parse_list_rules,
                          parse_cidr_list, select_ip_union,
                          DOMAIN_TYPES, china_source_contract, compact_domains,
+                         rule_partition_sources, split_address_rules,
                          parse_meta_list, select_china_supplement,
                          parse_wildcard_domain_list, select_adblock_lite)
 
@@ -124,7 +125,8 @@ def verify_behavior_sets(root: Path, manifest: dict[str, object]) -> None:
         elif behavior == "ipcidr":
             yaml_rules = yaml_ip_rules(yaml_path)
         else:
-            yaml_rules = [rule.classical for rule in parse_classical_yaml(yaml_path)]
+            yaml_rules = [rule.classical for rule in parse_classical_yaml(
+                yaml_path, allow_empty="partition" in info)]
         if yaml_rules != list_rules(list_path, behavior):
             raise RuntimeError(f"YAML/LIST {behavior} rule mismatch: {name}")
         if len(yaml_rules) != info['rule_count']:
@@ -133,6 +135,7 @@ def verify_behavior_sets(root: Path, manifest: dict[str, object]) -> None:
             raise RuntimeError(f"Manifest rule hash mismatch: {name}")
 
     verify_policy_aggregates(root, manifest)
+    verify_rule_partitions(root, manifest)
     verify_ip_selections(root, manifest)
     verify_china_selection(root, manifest)
 
@@ -287,6 +290,42 @@ def verify_policy_aggregates(root: Path, manifest: dict[str, object]) -> None:
         found = parse_list_rules(root / 'Surge' / f'{name}.list', info['behavior'])
         if found != expected:
             raise RuntimeError(f'Policy aggregate is not the literal member union: {name}')
+
+
+def verify_rule_partitions(root: Path, manifest: dict[str, object]) -> None:
+    contract = load_toml(SOURCES / "rule-partitions.toml")
+    sources = rule_partition_sources(contract)
+    expected_names = {f"{part}/{source}" for source in sources for part in ("NonIP", "Address")}
+    actual = {name for name, info in manifest["sets"].items()
+              if "partition" in info or name.startswith(("NonIP/", "Address/"))}
+    if actual != expected_names:
+        raise RuntimeError("Rule partition inventory differs from source contract")
+    for source in sources:
+        if source not in manifest["sets"]:
+            raise RuntimeError(f"Rule partition source is missing: {source}")
+        full = parse_list_rules(root / "Surge" / f"{source}.list",
+                                manifest["sets"][source]["behavior"])
+        if not full or full != stable_unique(full):
+            raise RuntimeError(f"Rule partition source must be nonempty and deduplicated: {source}")
+        non_ip, address = split_address_rules(full)
+        for prefix, part, expected in (("NonIP", "non_ip", non_ip),
+                                       ("Address", "address", address)):
+            name = f"{prefix}/{source}"
+            info = manifest["sets"][name]
+            metadata = {"source": source, "part": part, "clients": contract["clients"]}
+            if info.get("partition") != metadata or info.get("behavior") != "classical":
+                raise RuntimeError(f"Rule partition metadata/behavior mismatch: {name}")
+            eligible_mrs = bool(expected) and all(rule.kind in DOMAIN_TYPES for rule in expected)
+            formats = ["yaml", "list", "mrs"] if eligible_mrs else ["yaml", "list"]
+            if (info.get("formats") != formats
+                    or info.get("mrs_behavior") != ("domain" if eligible_mrs else None)
+                    or (root / "Mihomo" / f"{name}.mrs").exists() != eligible_mrs):
+                raise RuntimeError(f"Rule partition format/behavior mismatch: {name}")
+            found = parse_list_rules(root / "Surge" / f"{name}.list")
+            if found != expected:
+                raise RuntimeError(f"Rule partition differs from the literal source subsequence: {name}")
+        if set(non_ip) & set(address) or set(non_ip) | set(address) != set(full):
+            raise RuntimeError(f"Rule partitions do not conserve the full source: {source}")
 
 
 def verify_ip_selections(root: Path, manifest: dict[str, object]) -> None:

@@ -1,0 +1,24 @@
+# Preserve each Egern source independently; keep full compatibility exports.
+# Build after China domain inheritance and policy aggregation, without unions.
+schema = 1
+clients = ["Egern"]
+
+sources = [
+  "Classical/OpenAI",
+  "Classical/Copilot",
+  "Classical/Telegram",
+  "Classical/YouTube",
+  "Classical/Spotify",
+  "Classical/Netflix",
+  "Classical/Apple",
+  "Classical/GlobalMedia",
+  "Classical/BiliBili",
+  "Classical/ChinaMedia",
+  "Classical/GoogleFCM",
+  "Classical/Google",
+  "Classical/Proxy",
+  "Classical/WeChat",
+  "Classical/China",
+  "Policy/Classical/AsianTV",
+  "Policy/Classical/CNMainlandTV",
+]

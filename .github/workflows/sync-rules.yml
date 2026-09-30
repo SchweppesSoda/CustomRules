@@ -82,10 +82,10 @@ jobs:
           git fetch origin auto-build:auto-build
           git worktree add "$RUNNER_TEMP/auto-build" auto-build
 
-      # Includes the shared China supplement and Classical/China inheritance.
+      # Includes China inheritance and source-local Egern NonIP/Address partitions.
       # The fresh snapshot includes every required overseas/ads classifier;
-      # selection evidence is verified before the ordinary publication gate.
-      - name: Build and verify twice including shared China selection
+      # selection and exact partition conservation are publication gates.
+      - name: Build and verify twice including China and Egern partitions
         id: build
         shell: bash
         env:

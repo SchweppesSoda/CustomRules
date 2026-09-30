@@ -164,11 +164,14 @@ def write_new_directory(destination: Path, files: dict[str, bytes]) -> None:
 
 def capture(*, source: Path, cache: Path, baseline: Path, candidate: Path,
             compiler: Path, source_commit: str, baseline_commit: str,
-            outcome: str, destination: Path, allow_large_change: bool = False) -> dict:
+            outcome: str, destination: Path, allow_large_change: bool = False,
+            compiler_platform: str = "linux_amd64") -> dict:
     if not COMMIT.fullmatch(source_commit) or not COMMIT.fullmatch(baseline_commit):
         raise ValueError("source and baseline require full commit identities")
     if outcome not in {"success", "failure", "cancelled"}:
         raise ValueError("invalid build outcome")
+    if compiler_platform not in {"linux_amd64", "windows_amd64"}:
+        raise ValueError("unsupported compiler platform")
     files: dict[str, bytes] = {}
     total = 0
     def add(name: str, body: bytes):
@@ -210,13 +213,15 @@ def capture(*, source: Path, cache: Path, baseline: Path, candidate: Path,
     validate_baseline(baseline, baseline_counts)
     add("counts.json", json_bytes({"baseline": baseline_counts, "candidate": counts(candidate)}))
     toolchain = tomllib.loads(files["source/sources/toolchain.toml"].decode())["mihomo"]
+    if compiler_platform not in toolchain:
+        raise ValueError("compiler platform is not declared in the source lock")
     compiler_sha, compiler_size = compiler_identity(compiler)
     metadata = {
         "schema": 1, "source_commit": source_commit, "baseline_commit": baseline_commit,
         "outcome": outcome, "allow_large_change": allow_large_change,
         "python_version": platform.python_version(),
         "compiler": {"version": toolchain["version"], "binary_sha256": compiler_sha, "binary_size": compiler_size,
-                     "archive_sha256": toolchain["linux_amd64"]["sha256"], "platform": "linux_amd64"},
+                     "archive_sha256": toolchain[compiler_platform]["sha256"], "platform": compiler_platform},
         "source_response_count": len(entries),
         "files": {name: {"sha256": digest(body), "size": len(body)} for name, body in sorted(files.items())},
     }
@@ -264,8 +269,11 @@ def verify(archive: Path, compiler: Path | None = None) -> dict:
     if metadata.get("source_response_count") != len(entries):
         raise ValueError("source response count mismatch")
     toolchain = tomllib.loads(read_regular(archive, "source/sources/toolchain.toml").decode())["mihomo"]
+    compiler_platform = metadata["compiler"].get("platform")
+    if compiler_platform not in {"linux_amd64", "windows_amd64"} or compiler_platform not in toolchain:
+        raise ValueError("compiler platform does not match source lock")
     if (metadata["compiler"]["version"] != toolchain["version"] or
-            metadata["compiler"]["archive_sha256"] != toolchain["linux_amd64"]["sha256"] or
+            metadata["compiler"]["archive_sha256"] != toolchain[compiler_platform]["sha256"] or
             not HASH.fullmatch(metadata["compiler"]["binary_sha256"]) or
             not 0 < metadata["compiler"]["binary_size"] <= MAX_COMPILER):
         raise ValueError("compiler metadata does not match source lock")
@@ -293,6 +301,8 @@ def main() -> None:
     for name in ("source-commit", "baseline-commit", "outcome"):
         capture_parser.add_argument("--" + name, required=True)
     capture_parser.add_argument("--allow-large-change", action="store_true")
+    capture_parser.add_argument("--compiler-platform", choices=("linux_amd64", "windows_amd64"),
+                                default="linux_amd64")
     verify_parser = actions.add_parser("verify")
     verify_parser.add_argument("archive", type=Path)
     verify_parser.add_argument("--compiler", type=Path)

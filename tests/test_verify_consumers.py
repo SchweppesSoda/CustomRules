@@ -35,16 +35,19 @@ class ConsumerTests(unittest.TestCase):
                 body = "[Remote Rule]\n" + url + ", policy=DIRECT\n"
             path.write_text(body, encoding="utf-8")
 
-    def test_remaining_clients_and_shared_list_pass_without_surge_profiles(self):
+    def test_active_clients_pass_without_retired_loon_or_egern_derivatives(self):
         count, failures = consumer.verify(self.repo, self.output, generated=True)
         self.assertEqual([], failures)
-        self.assertEqual(10, count)
+        self.assertEqual(7, count)
         self.assertFalse((self.repo / "Surge").exists())
+        self.assertFalse((self.repo / "Loon").exists())
+        self.assertFalse((self.repo / "Egern/AutoEgern.PO0SH.yaml").exists())
+        self.assertFalse((self.repo / "Egern/AutoEgern.PO0GZ.yaml").exists())
 
     def test_missing_lite_is_still_an_error(self):
-        (self.repo / "Loon/AutoLoonLite.conf").unlink()
+        (self.repo / "Egern/AutoEgernLite.yaml").unlink()
         _, failures = consumer.verify(self.repo, self.output)
-        self.assertEqual(["Loon/AutoLoonLite.conf: missing profile"], failures)
+        self.assertEqual(["Egern/AutoEgernLite.yaml: missing profile"], failures)
 
     def test_generated_checks_remain_opt_in(self):
         (self.repo / "Mihomo/AutoMihomo.OpenWrt-WAN2.yaml").unlink()

@@ -71,10 +71,11 @@ class BuildEvidenceTests(unittest.TestCase):
         (self.baseline / "SOURCES.json").write_text(json.dumps(self.registry.as_json()), encoding="utf-8")
         (self.baseline / "manifest.json").write_text(json.dumps({"sets": {"AdBlockLite": {"rule_count": len(rules)}}}), encoding="utf-8")
 
-    def capture(self, outcome="success"):
+    def capture(self, outcome="success", compiler_platform="linux_amd64"):
         return evidence.capture(source=self.source, cache=self.cache, baseline=self.baseline,
             candidate=self.candidate, compiler=self.compiler, source_commit="a" * 40,
-            baseline_commit="b" * 40, outcome=outcome, destination=self.archive)
+            baseline_commit="b" * 40, outcome=outcome, destination=self.archive,
+            compiler_platform=compiler_platform)
 
     def replay(self, name):
         destination = self.root / name
@@ -95,8 +96,30 @@ class BuildEvidenceTests(unittest.TestCase):
     def test_success_archive_replays_twice_identically_without_network_or_compiler(self):
         metadata = self.capture()
         self.assertEqual(metadata["compiler"]["binary_sha256"], evidence.digest(self.compiler.read_bytes()))
+        self.assertEqual(metadata["compiler"]["platform"], "linux_amd64")
         self.assertEqual(self.replay("first"), self.replay("second"))
         self.assertEqual(self.replay("third")[1], "passed")
+
+    def test_windows_compiler_uses_windows_lock_and_rejects_platform_mismatch(self):
+        metadata = self.capture(compiler_platform="windows_amd64")
+        lock = tomllib.loads((self.source / "sources/toolchain.toml").read_text())["mihomo"]
+        self.assertEqual(metadata["compiler"]["archive_sha256"], lock["windows_amd64"]["sha256"])
+        self.assertEqual(evidence.verify(self.archive, self.compiler)["compiler"]["platform"], "windows_amd64")
+        for invalid in ("linux_amd64", "unknown"):
+            with self.subTest(platform=invalid):
+                metadata["compiler"]["platform"] = invalid
+                (self.archive / "evidence.json").write_text(json.dumps(metadata))
+                with self.assertRaisesRegex(ValueError, "compiler"):
+                    evidence.verify(self.archive)
+
+    def test_unknown_or_undeclared_compiler_platform_refuses_capture(self):
+        with self.assertRaisesRegex(ValueError, "unsupported compiler platform"):
+            self.capture(compiler_platform="unknown")
+        lock = self.source / "sources/toolchain.toml"
+        lock.write_text('[mihomo]\nversion = "fixture"\n[mihomo.linux_amd64]\nsha256 = "' + "a" * 64 + '"\n')
+        with self.assertRaisesRegex(ValueError, "not declared"):
+            self.capture(compiler_platform="windows_amd64")
+        self.assertFalse(self.archive.exists())
 
     def test_threshold_failure_keeps_pre_manifest_inputs_and_replays_failure(self):
         self.write_baseline(self.rules + [builder.Rule("DOMAIN-SUFFIX", "old.example")])
@@ -234,6 +257,8 @@ class BuildEvidenceTests(unittest.TestCase):
         (source_dir / "policies/china-supplement.toml").write_text(
             'schema = 1\nprotected_sets = ["HTTPDNS"]\nexcluded_suffixes = []\n')
         (source_dir / "policy-aggregates.toml").write_text("schema = 1\n")
+        (source_dir / "rule-partitions.toml").write_text(
+            'schema = 1\nclients = ["Egern"]\nsources = ["Classical/China"]\n')
         (source_dir / "licenses/HaGeZi-GPL-3.0.txt").write_text("Synthetic license fixture only\n")
         candidate_url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-cryptocurrency"
         (source_dir / "upstreams.toml").write_text(
@@ -299,8 +324,11 @@ class BuildEvidenceTests(unittest.TestCase):
                                     restored / "baseline", restored / "output"))
         self.assertEqual(original, outputs[0])
         self.assertEqual(outputs[0], outputs[1])
-        self.assertEqual(len([name for name in outputs[0] if name.startswith("Surge/")]), 14)
+        self.assertEqual(len([name for name in outputs[0] if name.startswith("Surge/")]), 16)
         self.assertIn("Mihomo/AdBlockLite.yaml", outputs[0])
+        self.assertIn("Surge/NonIP/Classical/China.list", outputs[0])
+        self.assertIn(b"payload: []", outputs[0]["Mihomo/Address/Classical/China.yaml"])
+        self.assertIn("source/sources/rule-partitions.toml", evidence.verify(self.archive)["files"])
         self.assertIn("SOURCES.json", outputs[0])
 
 

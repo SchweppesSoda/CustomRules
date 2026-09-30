@@ -91,10 +91,19 @@ read-only client gate checks URLs, artifact existence and provider behavior:
 python scripts/verify_consumers.py --proxyconfig-root ../ProxyConfig --output <verified-build> --include-generated
 ```
 
+Its required canonical inventory is Mihomo Mobile/OpenWrt/Safe, Stash, and
+Egern Full/Lite. `--include-generated` adds OpenWrt WAN2. Retired Loon profiles
+and the retired Egern SH/GZ derivatives are outside active discovery.
+
 Source provenance and hashes remain in `SOURCES.json`. A fresh per-run
 `--source-cache` captures inputs; the second build uses the same cache with
 `--offline`. Never reuse an old cache for a new scheduled update. The CI also
 verifies the final publication tree and skips copying byte-identical files.
+
+Build evidence records the compiler binary and its platform's archive lock.
+Linux CI uses the default `linux_amd64`; local Windows evidence capture passes
+`--compiler-platform windows_amd64` to `scripts/build_evidence.py capture`.
+Unknown platforms and metadata that differs from the source lock are rejected.
 
 ### Claude supplemental routing
 
@@ -150,6 +159,36 @@ Run the normal unit tests, two builds from one fresh input snapshot, and
 `scripts/verify_build.py`. Publish and verify the new `auto-build` assets before
 switching client URLs. The private configuration repository prepares and
 validates candidate profiles, preserves source hashes, and owns client rollout.
+
+### Egern rule partitions
+
+[`sources/rule-partitions.toml`](./sources/rule-partitions.toml) declares 17
+Egern sources that also publish `NonIP/<source>` and `Address/<source>` under
+both `Surge/` (LIST) and `Mihomo/` (YAML). For example, the China LIST pair is
+`Surge/NonIP/Classical/China.list` and `Surge/Address/Classical/China.list`.
+The builder partitions each finished source independently, after China domain
+inheritance and policy aggregation. It preserves the full compatibility sets
+and existing aggregates; no source membership is shared across client families.
+
+`NonIP` retains DOMAIN, DOMAIN-SUFFIX, DOMAIN-KEYWORD, DOMAIN-WILDCARD,
+USER-AGENT, PROCESS-NAME and URL-REGEX conditions. `Address` retains IP-CIDR,
+IP-CIDR6 and IP-ASN conditions. Each side preserves its source's order and
+literal options after the existing stable deduplication. Unknown types and
+compound rules fail the build rather than being guessed into `NonIP`.
+Client configurations place the non-address side with the corresponding
+business rules and the address side in their later address section.
+
+Both sides retain `classical` manifest behavior to preserve flags; ASN and
+other address rules are never projected into an IP-only MRS. A nonempty,
+pure-domain `NonIP` side additionally receives MRS with `mrs_behavior=domain`.
+Empty sides still publish an explicit `payload: []` YAML and a comment-only
+LIST, with `rule_count=0` and no MRS. The manifest's `partition` field records
+the original `source`, `part` (`non_ip` or `address`) and `clients` (`Egern`).
+Verification requires both exact source subsequences and their disjoint union
+to equal the full source, including China additions, keywords and user agents.
+The declaration, counts and manifest are included in the normal build evidence,
+checksums and publication workflow. Publish and verify those assets before
+deploying consumer URL changes.
 
 ## Sources
 

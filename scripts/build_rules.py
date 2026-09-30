@@ -32,6 +32,10 @@ DOMAIN_RE = re.compile(
 )
 DOMAIN_TYPES = {"DOMAIN", "DOMAIN-SUFFIX"}
 IP_TYPES = {"IP-CIDR", "IP-CIDR6"}
+ADDRESS_TYPES = IP_TYPES | {"IP-ASN"}
+NON_IP_TYPES = DOMAIN_TYPES | {
+    "DOMAIN-KEYWORD", "DOMAIN-WILDCARD", "PROCESS-NAME", "USER-AGENT", "URL-REGEX",
+}
 AIRPORT_DOMAIN_SOURCE_NAMES = frozenset({"AirportServers", "AirportServersCTC"})
 BEHAVIOR_TYPES = {
     "domain": DOMAIN_TYPES,
@@ -257,9 +261,10 @@ def parse_catalog_domain(raw: str) -> Rule:
     return Rule("DOMAIN" if prefix == "exact" else "DOMAIN-SUFFIX", normalize_domain(value))
 
 
-def parse_classical_yaml(path: Path) -> list[Rule]:
+def parse_classical_yaml(path: Path, *, allow_empty: bool = False) -> list[Rule]:
     rules: list[Rule] = []
-    for raw in path.read_text(encoding="utf-8-sig").splitlines():
+    lines = path.read_text(encoding="utf-8-sig").splitlines()
+    for raw in lines:
         line = raw.strip()
         if not line.startswith("- "):
             continue
@@ -272,7 +277,7 @@ def parse_classical_yaml(path: Path) -> list[Rule]:
         else:
             value = value.strip()
         rules.append(Rule(kind, value))
-    if not rules:
+    if not rules and not (allow_empty and "payload: []" in lines):
         raise ValueError(f"No rules found in {path}")
     return stable_unique(rules)
 
@@ -784,6 +789,60 @@ def add_policy_aggregates(
     return metadata
 
 
+def rule_partition_sources(config: dict[str, object]) -> list[str]:
+    if config.get("schema") != 1 or config.get("clients") != ["Egern"]:
+        raise ValueError("Rule partitions require schema 1 and the Egern client contract")
+    sources = config.get("sources")
+    if (not isinstance(sources, list)
+            or not all(isinstance(name, str) and re.fullmatch(
+                r"(?:Policy/)?Classical/[A-Za-z][A-Za-z0-9+]*", name) for name in sources)
+            or len(set(sources)) != len(sources)):
+        raise ValueError("Rule partitions require unique classical source names")
+    return sources
+
+
+def split_address_rules(rules: list[Rule]) -> tuple[list[Rule], list[Rule]]:
+    """Stable literal partition; unknown/compound types must never enter NonIP.
+
+    RULE_RE also rejects unsupported upstream syntax before this stage. This
+    explicit allowlist guards newly supported parser types and direct callers:
+    extending the parser alone cannot silently classify a new address rule.
+    """
+    non_ip: list[Rule] = []
+    address: list[Rule] = []
+    for rule in stable_unique(rules):
+        if rule.kind in ADDRESS_TYPES:
+            address.append(rule)
+        elif rule.kind in NON_IP_TYPES:
+            non_ip.append(rule)
+        else:
+            raise ValueError(f"Unsupported rule partition type: {rule.kind}")
+    return non_ip, address
+
+
+def add_rule_partitions(
+    sets: dict[str, RuleSet], config: dict[str, object]
+) -> dict[str, dict[str, object]]:
+    """Add both sides after source selection/aggregation, preserving full sets."""
+    staged: dict[str, RuleSet] = {}
+    metadata: dict[str, dict[str, object]] = {}
+    for source in rule_partition_sources(config):
+        if source not in sets or not sets[source].rules:
+            raise ValueError(f"Rule partition requires a nonempty built source: {source}")
+        non_ip, address = split_address_rules(sets[source].rules)
+        for prefix, part, rules in (("NonIP", "non_ip", non_ip),
+                                    ("Address", "address", address)):
+            name = f"{prefix}/{source}"
+            if name in sets:
+                raise ValueError(f"Rule partition collides with source: {name}")
+            # Classical syntax preserves flags and options verbatim. Even a
+            # CIDR-only side must not implicitly gain no-resolve via ipcidr.
+            staged[name] = RuleSet(rules, "classical")
+            metadata[name] = {"source": source, "part": part, "clients": config["clients"]}
+    sets.update(staged)
+    return metadata
+
+
 def merge_rule_sets(name: str, manual: RuleSet, upstream: RuleSet) -> RuleSet:
     if manual.behavior != "classical":
         raise ValueError(f"{name}: merge source must be a manual classical set")
@@ -843,7 +902,7 @@ def render_classical_yaml(name: str, rules: list[Rule]) -> str:
     lines = [
         "# AUTO-GENERATED. DO NOT EDIT.",
         f"# Rule set: {name}",
-        "payload:",
+        "payload:" if rules else "payload: []",
     ]
     lines.extend(f"  - {rule.classical}" for rule in rules)
     return "\n".join(lines) + "\n"
@@ -1262,6 +1321,9 @@ def main() -> None:
     policy_aggregates = add_policy_aggregates(
         sets, load_toml(SOURCES / "policy-aggregates.toml")
     )
+    rule_partitions = add_rule_partitions(
+        sets, load_toml(SOURCES / "rule-partitions.toml")
+    )
     manifests: dict[str, dict[str, object]] = {}
     for name, rule_set in sorted(sets.items()):
         rules = stable_unique(rule_set.rules)
@@ -1278,7 +1340,7 @@ def main() -> None:
             yaml_rules = parse_ipcidr_yaml(yaml_path)
         else:
             write_text(yaml_path, render_classical_yaml(name, rules))
-            yaml_rules = parse_classical_yaml(yaml_path)
+            yaml_rules = parse_classical_yaml(yaml_path, allow_empty=name in rule_partitions)
         validate_airport_domain_source(name, yaml_rules, stage="YAML output")
         write_text(list_path, render_list(name, rules, behavior))
         list_rules = parse_list_rules(list_path, behavior)
@@ -1290,7 +1352,7 @@ def main() -> None:
         if behavior in BEHAVIOR_TYPES:
             compile_source = yaml_path
             mrs_behavior = behavior
-        elif is_domain_only:
+        elif rules and is_domain_only:
             compile_source = args.output / ".compile" / f"{name}.yaml"
             write_text(compile_source, render_domain_yaml(name, rules))
             mrs_behavior = "domain"
@@ -1314,6 +1376,8 @@ def main() -> None:
             manifests[name]["mrs_behavior"] = mrs_behavior
         if name in policy_aggregates:
             manifests[name]["aggregation"] = policy_aggregates[name]
+        if name in rule_partitions:
+            manifests[name]["partition"] = rule_partitions[name]
         if rule_set.selection is not None:
             report = f"reports/{name}-selection.json"
             write_text(args.output / report, json.dumps(rule_set.selection, indent=2, sort_keys=True) + "\n")
