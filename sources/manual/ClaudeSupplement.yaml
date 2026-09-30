@@ -1,0 +1,24 @@
+# Shared services used by Claude checkout, CAPTCHA and optional telemetry.
+# Applying this set also routes other applications using these services.
+# Stripe: https://docs.stripe.com/ips
+# hCaptcha: https://docs.hcaptcha.com/#content-security-policy-settings
+# Datadog: https://docs.datadoghq.com/real_user_monitoring/guide/proxy-rum-data/
+# Browser intake hosts are separate registered domains, not datadoghq.com
+# subdomains. Match the family, including regional and quota subdomains.
+# This is routing coverage, not evidence that telemetry causes region errors.
+payload:
+  # Checkout and CAPTCHA.
+  - DOMAIN-SUFFIX,stripe.com
+  - DOMAIN-SUFFIX,stripe.network
+  - DOMAIN-SUFFIX,stripecdn.com
+  - DOMAIN-SUFFIX,hcaptcha.com
+
+  # Optional Datadog telemetry: traditional hosts and browser intake families.
+  - DOMAIN-SUFFIX,datadoghq.com
+  - DOMAIN-SUFFIX,datadoghq.eu
+  - DOMAIN-SUFFIX,browser-intake-datadoghq.com
+  - DOMAIN-SUFFIX,browser-intake-datadoghq.eu
+  - DOMAIN-WILDCARD,browser-intake-*-datadoghq.com
+  - DOMAIN-WILDCARD,*.browser-intake-*-datadoghq.com
+  - DOMAIN-WILDCARD,browser-intake-*-datadoghq.eu
+  - DOMAIN-WILDCARD,*.browser-intake-*-datadoghq.eu

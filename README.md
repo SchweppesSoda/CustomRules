@@ -75,6 +75,25 @@ Source provenance and hashes remain in `SOURCES.json`. A fresh per-run
 `--offline`. Never reuse an old cache for a new scheduled update. The CI also
 verifies the final publication tree and skips copying byte-identical files.
 
+### Claude supplemental routing
+
+`ClaudeSupplement` supplies shared Stripe (`stripe.com`, `stripe.network`,
+`stripecdn.com`), hCaptcha, and optional Datadog telemetry routing. Browser
+intake uses separate registered domains; wildcard rules cover regional names
+and their subdomains without pinning one region such as US5. This set emits
+classical YAML/LIST, retaining wildcard semantics rather than projecting them
+into a domain MRS. These shared domains also affect other applications;
+telemetry coverage is not evidence of a fix for a Claude region error.
+
+`IP/Claude` follows MetaCubeX `asn/AS399358.list` through the existing CIDR
+pipeline and emits IP-only YAML/MRS/LIST. The official API/Console inbound
+prefixes are a subset of ASN coverage; this is not a list of every Claude web
+or third-party endpoint. Clients route it to `AI Suite` after domain rules and
+before broad IP rules, using `no-resolve`.
+
+These sets do not change QUIC or exit selection. Existing higher-priority
+private, manual and blocking policies still take precedence.
+
 ## Policy aggregates
 
 [`sources/policy-aggregates.toml`](./sources/policy-aggregates.toml) defines the

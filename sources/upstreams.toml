@@ -160,6 +160,16 @@ urls = [
   "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list",
 ]
 
+# Anthropic ASN coverage; the first two prefixes match the official
+# API/Console inbound ranges. Other ASN prefixes are not official API ranges.
+# https://platform.claude.com/docs/en/api/ip-addresses
+[sets."IP/Claude"]
+behavior = "ipcidr"
+parser = "cidr-list"
+urls = [
+  "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/asn/AS399358.list",
+]
+
 [sets."IP/ApplePush"]
 behavior = "ipcidr"
 parser = "classical-list"
