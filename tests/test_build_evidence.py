@@ -231,13 +231,33 @@ class BuildEvidenceTests(unittest.TestCase):
         (source_dir / "licenses").mkdir()
         (source_dir / "manual/HTTPDNS.yaml").write_text("payload:\n  - DOMAIN,dns.fixture.invalid\n")
         (source_dir / "policies/adblock-lite.toml").write_text('protected_suffixes = ["protected.fixture.invalid"]\n')
+        (source_dir / "policies/china-supplement.toml").write_text(
+            'schema = 1\nprotected_sets = ["HTTPDNS"]\nexcluded_suffixes = []\n')
         (source_dir / "policy-aggregates.toml").write_text("schema = 1\n")
         (source_dir / "licenses/HaGeZi-GPL-3.0.txt").write_text("Synthetic license fixture only\n")
         candidate_url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-cryptocurrency"
         (source_dir / "upstreams.toml").write_text(
             '[v2fly]\nbase_url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data"\n'
             '[crypto_candidates]\nurl = "' + candidate_url + '"\n'
-            '[sets.AdBlockLite]\nbehavior = "domain"\nparser = "wildcard-domain-list"\nurls = ["' + URL + '"]\n')
+            '[sets.AdBlockLite]\nbehavior = "domain"\nparser = "wildcard-domain-list"\nurls = ["' + URL + '"]\n'
+            '[china_supplement]\nsnapshot_api_url = "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta"\n'
+            'candidates = ["fixture"]\noverseas = ["fixture@!cn"]\nads = ["fixture@ads"]\n'
+            '[sets.China]\nbehavior = "domain"\nparser = "meta-list"\n'
+            'urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.list"]\n'
+            '[sets."Classical/China"]\nbehavior = "classical"\nparser = "classical-list"\n'
+            'urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/fixture-classical.list"]\n'
+            'include_sets = ["China"]\nnon_domain_only = true\n')
+        api = 'https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta'
+        inputs = {api: json.dumps({'sha': '1' * 40}).encode(),
+                  'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/fixture-classical.list':
+                  b'DOMAIN-KEYWORD,fixture\n'}
+        for name, body in [('cn', b'+.base.fixture.invalid\n'),
+                           ('fixture', b'+.added.fixture.invalid\n'),
+                           ('fixture@!cn', b'+.foreign.fixture.invalid\n'),
+                           ('fixture@ads', b'+.ads.fixture.invalid\n')]:
+            inputs[f'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/{"1" * 40}/geo/geosite/{name}.list'] = body
+        for url, body in inputs.items():
+            (self.cache / evidence.digest(url.encode())).write_bytes(body)
         (self.cache / evidence.digest(candidate_url.encode())).write_bytes(b"domain:candidate.fixture.invalid\n")
         for family, required, kind in (("crypto", builder.REQUIRED_CRYPTO_IDS, "exchange"), ("banking", builder.REQUIRED_BANKING_IDS, "bank")):
             entries = []
@@ -279,7 +299,7 @@ class BuildEvidenceTests(unittest.TestCase):
                                     restored / "baseline", restored / "output"))
         self.assertEqual(original, outputs[0])
         self.assertEqual(outputs[0], outputs[1])
-        self.assertEqual(len([name for name in outputs[0] if name.startswith("Surge/")]), 12)
+        self.assertEqual(len([name for name in outputs[0] if name.startswith("Surge/")]), 14)
         self.assertIn("Mihomo/AdBlockLite.yaml", outputs[0])
         self.assertIn("SOURCES.json", outputs[0])
 

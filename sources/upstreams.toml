@@ -1,6 +1,24 @@
 [v2fly]
 base_url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data"
 
+# Reviewed shared-China supplement. CN and all classifiers use one immutable
+# Meta commit per run; a missing classifier is a build failure, never a bypass.
+[china_supplement]
+snapshot_api_url = "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta"
+candidates = [
+  "category-ai-cn", "category-dev-cn", "category-education-cn",
+  "category-entertainment-cn", "category-logistics-cn", "category-media-cn",
+  "category-netdisk-cn", "amap", "dingtalk", "oppo", "deepin", "taptap",
+  "xiaohongshu", "eleme", "youku", "bilibili", "jinshuju", "lagou",
+]
+overseas = ["oppo@!cn", "deepin@!cn", "taptap@!cn", "xiaohongshu@!cn", "youku@!cn", "bilibili@!cn"]
+ads = [
+  "category-dev-cn@ads", "category-education-cn@ads", "category-entertainment-cn@ads",
+  "category-food-cn@ads", "category-games-cn@ads", "category-httpdns-cn@ads",
+  "category-logistics-cn@ads", "category-media-cn@ads", "category-social-media-cn@ads",
+  "mihoyo-cn@ads", "unitychina@ads",
+]
+
 # HaGeZi's low-interference tier; compatibility exclusions are applied after
 # HTTPDNS has been built. Wildcards include both the root and all subdomains.
 [sets."AdBlockLite"]

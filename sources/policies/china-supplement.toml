@@ -1,0 +1,22 @@
+# Only uncovered additions are filtered. Existing upstream CN coverage is retained.
+# Private client profiles and temporary review reports are never selection inputs.
+schema = 1
+protected_sets = [
+  "AdBlock", "AdBlockLite", "HTTPDNS", "ProxyGlobal", "Classical/ProxyGFWlist",
+  "TikTok", "GoogleGlobal", "GitHub", "Microsoft", "Apple", "ApplePush", "AppleTV",
+  "AI", "PayPal", "Banking", "Crypto", "Steam", "ScholarGlobal", "GlobalMedia",
+  "Netflix", "YouTube", "Twitter", "Telegram", "MyProxy", "Proxy", "AIGlobal",
+  "Anthropic", "Claude", "Copilot", "Gemini", "OpenAI", "Discord", "Disney",
+  "Spotify", "PrimeVideo", "HBO", "Hulu", "BBC", "AbemaTV", "ClaudeSupplement",
+]
+excluded_suffixes = [
+  # Deferred pending business/child-domain review. These are negative guards,
+  # not an accepted-domain allowlist. In particular preserve ad/HTTPDNS children.
+  "51yipei.com", "chatqidian.net", "chatxiaoxiang.com", "cmpassport.com", "dishu3.com",
+  "getfeishu.com", "goka.top", "goodq.top", "jddebug.com", "jingxiaoling.com",
+  "kuaishouzt.com", "manhuaren.com", "qwapp.top", "tgpro.top",
+  # Explicit foreign/shared-service/ad exclusions from the reviewed selection.
+  "chatdrama.net", "chatwrite.net", "getsays.com", "kskwai.com", "rednote.com.my",
+  "rumt-sg.com", "rumt-us.com", "snssdk.com", "tencentmiying.com", "webnovel.com",
+  "xiangrikuisite.com", "youdaoads.com",
+]

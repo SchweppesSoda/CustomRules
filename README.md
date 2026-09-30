@@ -35,6 +35,27 @@ They are not silently reduced to domain-only MRS. Client-specific DNS lists
 use domain-only projections. Proxy subscriptions, modules, scripts, icons and
 GeoIP/ASN databases remain separately managed.
 
+### Shared China coverage
+
+`China` retains MetaCubeX `cn.list` coverage and adds uncovered domain rules
+from the 18 reviewed sources in `sources/upstreams.toml`'s `china_supplement`.
+The CN base, candidates, overseas tags and ad tags use one immutable MetaCubeX
+commit resolved on each scheduled build. Missing or empty classifier inputs
+fail the build. `sources/policies/china-supplement.toml` excludes deferred and
+foreign/shared-service domains and protects existing ad, HTTPDNS and dedicated
+policy sets, including protected children beneath a proposed parent suffix.
+Exact DOMAIN rules retain their exact-match semantics; this is an upstream
+classification supplement, not proof of domestic hosting for every service.
+
+All YAML/MRS/LIST outputs use the same selected rules. `Classical/China`
+inherits the resulting domain coverage while retaining its keyword, user-agent
+and IP conditions. Existing client subscriptions need no URL changes; client
+rule order and DNS use still determine the effect (including Egern's China DNS
+selection). Private client profiles are audit targets, never builder inputs.
+The daily workflow fetches fresh inputs, verifies selection, then reproduces
+the build offline before publication. `reports/China-selection.json` records
+source hashes, selected rules and exclusions for verification, not routing.
+
 ### Conservative ad blocking
 
 - `AdBlockLite`: the default, derived from [HaGeZi Multi Light](https://github.com/hagezi/dns-blocklists#light).

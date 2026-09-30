@@ -82,7 +82,10 @@ jobs:
           git fetch origin auto-build:auto-build
           git worktree add "$RUNNER_TEMP/auto-build" auto-build
 
-      - name: Build and verify twice
+      # Includes the shared China supplement and Classical/China inheritance.
+      # The fresh snapshot includes every required overseas/ads classifier;
+      # selection evidence is verified before the ordinary publication gate.
+      - name: Build and verify twice including shared China selection
         id: build
         shell: bash
         env:

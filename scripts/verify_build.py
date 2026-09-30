@@ -15,6 +15,8 @@ from pathlib import Path
 from build_rules import (SOURCES, adblock_lite_protections, load_toml, stable_unique,
                          parse_classical_yaml, parse_list_rules,
                          parse_cidr_list, select_ip_union,
+                         DOMAIN_TYPES, china_source_contract, compact_domains,
+                         parse_meta_list, select_china_supplement,
                          parse_wildcard_domain_list, select_adblock_lite)
 
 
@@ -132,6 +134,7 @@ def verify_behavior_sets(root: Path, manifest: dict[str, object]) -> None:
 
     verify_policy_aggregates(root, manifest)
     verify_ip_selections(root, manifest)
+    verify_china_selection(root, manifest)
 
     lite = parse_list_rules(root / 'Surge' / 'AdBlockLite.list')
     policy = load_toml(SOURCES / 'policies' / 'adblock-lite.toml')
@@ -327,6 +330,58 @@ def verify_ip_selections(root: Path, manifest: dict[str, object]) -> None:
         found = parse_list_rules(root / 'Surge' / f'{name}.list', 'ipcidr')
         if found != expected:
             raise RuntimeError(f'IP selection differs from (primary minus CN) union supplement: {name}')
+
+
+def verify_china_selection(root: Path, manifest: dict[str, object]) -> None:
+    upstream = load_toml(SOURCES / 'upstreams.toml')
+    contract = upstream['china_supplement']
+    report = 'reports/China-selection.json'
+    actual = {name for name, info in manifest['sets'].items() if 'domain_selection' in info}
+    if actual != {'China'} or manifest['sets']['China']['domain_selection'] != report:
+        raise RuntimeError('China selection report inventory mismatch')
+    evidence = json.loads((root / report).read_text(encoding='utf-8'))
+    sources = {item['url']: item['sha256'] for item in
+               json.loads((root / 'SOURCES.json').read_text(encoding='utf-8'))['sources']}
+    commit = evidence['snapshot_commit']
+    response = evidence['snapshot_response']
+    api = contract['snapshot_api_url']
+    if (evidence['schema'] != 1 or evidence['snapshot_api_url'] != api or
+            not isinstance(commit, str) or not re.fullmatch(r'[0-9a-f]{40}', commit) or
+            json.loads(response).get('sha') != commit or
+            sources.get(api) != hashlib.sha256(response.encode('utf-8')).hexdigest()):
+        raise RuntimeError('China source snapshot evidence mismatch')
+    if [(item['role'], item['name']) for item in evidence['sources']] != china_source_contract(contract):
+        raise RuntimeError('China source inventory mismatch')
+    groups = {role: [] for role in ('base', 'candidate', 'overseas', 'ads')}
+    for item in evidence['sources']:
+        url = f"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/{commit}/geo/geosite/{item['name']}.list"
+        digest = hashlib.sha256(item['text'].encode('utf-8')).hexdigest()
+        if item['url'] != url or item['sha256'] != digest or sources.get(url) != digest:
+            raise RuntimeError('China source checksum mismatch')
+        groups[item['role']].extend(parse_meta_list(item['text'].lstrip('\ufeff'), url))
+    policy_path = SOURCES / 'policies' / 'china-supplement.toml'
+    if evidence['policy_sha256'] != hashlib.sha256(policy_path.read_bytes()).hexdigest():
+        raise RuntimeError('China selection policy checksum mismatch')
+    policy = load_toml(policy_path)
+    protections = [rule for name in policy['protected_sets'] for rule in
+                   parse_list_rules(root / 'Surge' / f'{name}.list', manifest['sets'][name]['behavior'])]
+    base = compact_domains(groups['base'])
+    selected, excluded = select_china_supplement(base, groups['candidate'],
+        [*groups['overseas'], *groups['ads']], protections, policy)
+    if evidence['selected'] != [r.classical for r in selected] or evidence['excluded'] != excluded:
+        raise RuntimeError('China selection decisions differ from source policy')
+    expected = compact_domains([*base, *selected])
+    if parse_list_rules(root / 'Surge' / 'China.list', 'domain') != expected:
+        raise RuntimeError('China differs from base plus selected supplement')
+    for name, config in upstream['sets'].items():
+        if 'China' not in config.get('include_sets', []):
+            continue
+        if config.get('include_sets') != ['China'] or not config.get('non_domain_only'):
+            raise RuntimeError(f'Unexpected China inheritance contract: {name}')
+        domains = [r for r in parse_list_rules(root / 'Surge' / f'{name}.list', 'classical')
+                   if r.kind in DOMAIN_TYPES]
+        if domains != expected:
+            raise RuntimeError(f'China domain inheritance mismatch: {name}')
 
 
 def main() -> None:

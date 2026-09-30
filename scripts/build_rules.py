@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import bisect
+import fnmatch
 import hashlib
 import ipaddress
 import json
@@ -326,6 +327,119 @@ def parse_cidr_list(body: str, url: str) -> list[Rule]:
     if not rules:
         raise RuntimeError(f"No supported IP networks found in {url}")
     return stable_unique(rules)
+
+
+class ChinaDomainIndex:
+    """Index domain coverage and protected descendants without pairwise scans."""
+
+    def __init__(self, rules: list[Rule]) -> None:
+        self.exact = {r.value for r in rules if r.kind == "DOMAIN"}
+        self.suffix = {r.value for r in rules if r.kind == "DOMAIN-SUFFIX"}
+        self.reversed = sorted(".".join(reversed(v.split("."))) for v in self.exact | self.suffix)
+        self.keywords = {r.value for r in rules if r.kind == "DOMAIN-KEYWORD"}
+        self.wildcards = {r.value for r in rules if r.kind == "DOMAIN-WILDCARD"}
+
+    def covers(self, rule: Rule) -> bool:
+        labels = rule.value.split(".")
+        return ((rule.kind == "DOMAIN" and rule.value in self.exact) or
+                any(".".join(labels[i:]) in self.suffix for i in range(len(labels))))
+
+    def overlaps(self, rule: Rule) -> bool:
+        if self.covers(rule):
+            return True
+        if rule.kind == "DOMAIN-SUFFIX":
+            key = ".".join(reversed(rule.value.split(".")))
+            if rule.value in self.exact:
+                return True
+            position = bisect.bisect_left(self.reversed, key + ".")
+            if position < len(self.reversed) and self.reversed[position].startswith(key + "."):
+                return True
+        if any(keyword in rule.value for keyword in self.keywords):
+            return True
+        for pattern in self.wildcards:
+            if fnmatch.fnmatchcase(rule.value, pattern):
+                return True
+            if rule.kind == "DOMAIN-SUFFIX":
+                # A possible wildcard child must end in the literal '.suffix'.
+                # Cutting at each glob state allows an arbitrary leading child
+                # without discarding fixed fragments such as '-datadoghq.com'.
+                if any(fnmatch.fnmatchcase("." + rule.value, pattern[i:]) for i in range(len(pattern))):
+                    return True
+        return False
+
+
+def china_source_contract(config: dict[str, object]) -> list[tuple[str, str]]:
+    inputs = [("base", "cn")]
+    for role, key in (("candidate", "candidates"), ("overseas", "overseas"), ("ads", "ads")):
+        names = config[key]
+        if (not isinstance(names, list) or not names or len(set(names)) != len(names)
+                or any(not isinstance(n, str) or not re.fullmatch(r"[a-z0-9@!_-]+", n) for n in names)):
+            raise ValueError(f"Invalid China {role} source inventory")
+        inputs.extend((role, name) for name in names)
+    return inputs
+
+
+def fetch_china_inputs(config: dict[str, object], fetcher: Fetcher) -> dict[str, object]:
+    api = config["snapshot_api_url"]
+    if api != "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta":
+        raise ValueError("China inputs require the reviewed MetaCubeX snapshot API")
+    response = fetcher.bytes(api).decode("utf-8")
+    commit = json.loads(response).get("sha")
+    if not isinstance(commit, str) or not re.fullmatch(r"[0-9a-f]{40}", commit):
+        raise ValueError("Invalid China source snapshot")
+    sources = []
+    for role, name in china_source_contract(config):
+        url = f"https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/{commit}/geo/geosite/{name}.list"
+        body = fetcher.bytes(url)
+        parse_meta_list(body.decode("utf-8-sig"), url)  # Required guards fail closed.
+        sources.append(dict(role=role, name=name, url=url, sha256=hashlib.sha256(body).hexdigest(),
+                            text=body.decode("utf-8")))
+    return dict(schema=1, snapshot_api_url=api, snapshot_commit=commit,
+                snapshot_response=response, sources=sources)
+
+
+def select_china_supplement(base: list[Rule], candidates: list[Rule], guards: list[Rule],
+                            protections: list[Rule], policy: dict[str, object]) -> tuple[list[Rule], list[dict[str, str]]]:
+    """Add uncovered reviewed candidates; never subtract from upstream CN."""
+    coverage = ChinaDomainIndex(base)
+    checks = [("explicit-exclusion", ChinaDomainIndex([
+        Rule("DOMAIN-SUFFIX", normalize_domain(v)) for v in policy["excluded_suffixes"]])),
+        ("overseas-or-ads", ChinaDomainIndex(guards)),
+        ("existing-special-policy", ChinaDomainIndex(protections))]
+    selected, excluded = [], []
+    for rule in stable_unique(candidates):
+        if coverage.covers(rule):
+            continue
+        reason = next((reason for reason, index in checks if index.overlaps(rule)), None)
+        if reason:
+            excluded.append(dict(rule=rule.classical, reason=reason))
+        else:
+            selected.append(rule)
+    return stable_unique(selected), excluded
+
+
+def apply_china_supplement(sets: dict[str, RuleSet], upstream: dict[str, object], evidence: dict[str, object]) -> None:
+    policy_path = SOURCES / "policies" / "china-supplement.toml"
+    policy = load_toml(policy_path)
+    groups = {role: [] for role in ("base", "candidate", "overseas", "ads")}
+    for item in evidence["sources"]:
+        groups[item["role"]].extend(parse_meta_list(item["text"].lstrip("\ufeff"), item["url"]))
+    base = compact_domains(groups["base"])
+    if sets["China"].rules != base:
+        raise RuntimeError("China base differs from immutable source snapshot")
+    protections = [rule for name in policy["protected_sets"] for rule in sets[name].rules]
+    selected, excluded = select_china_supplement(base, groups["candidate"],
+        [*groups["overseas"], *groups["ads"]], protections, policy)
+    rules = compact_domains([*base, *selected])
+    evidence = dict(evidence, policy_sha256=hashlib.sha256(policy_path.read_bytes()).hexdigest(),
+                    selected=[r.classical for r in selected], excluded=excluded)
+    sets["China"] = RuleSet(rules, "domain", evidence)
+    # Reapply direct inheritance, preserving the consumer's non-domain conditions.
+    for name, config in upstream["sets"].items():
+        if "China" in config.get("include_sets", []):
+            if config.get("include_sets") != ["China"] or not config.get("non_domain_only"):
+                raise ValueError(f"Unexpected China inheritance contract: {name}")
+            sets[name].rules = stable_unique([*rules, *[r for r in sets[name].rules if r.kind not in DOMAIN_TYPES]])
 
 
 def subtract_ip_rules(primary: list[Rule], excluded: list[Rule]) -> list[Rule]:
@@ -1070,6 +1184,7 @@ def main() -> None:
     v2fly_base = str(upstream_config["v2fly"]["base_url"])
     registry = SourceRegistry(args.source_cache / "SOURCES.json" if args.source_cache else None)
     fetcher = Fetcher(registry, args.source_cache, args.offline)
+    china_evidence = fetch_china_inputs(upstream_config["china_supplement"], fetcher)
     sets: dict[str, RuleSet] = {}
     unsupported_upstream_rules: list[str] = []
     entity_reports: dict[str, list[dict[str, object]]] = {}
@@ -1080,6 +1195,11 @@ def main() -> None:
         sets[path.stem] = RuleSet(rules, "classical")
 
     for name, config in sorted(upstream_config.get("sets", {}).items()):
+        config = dict(config)
+        if name == "China":
+            if config["urls"] != ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.list"]:
+                raise ValueError("China base must remain the reviewed MetaCubeX cn.list")
+            config["urls"] = [china_evidence["sources"][0]["url"]]
         built, unsupported = build_upstream_set(
             name, dict(config), v2fly_base, fetcher
         )
@@ -1136,6 +1256,8 @@ def main() -> None:
     if union != set(banking):
         raise RuntimeError("Banking region union does not equal Banking aggregate")
     validate_region_exclusivity(regions)
+
+    apply_china_supplement(sets, upstream_config, china_evidence)
 
     policy_aggregates = add_policy_aggregates(
         sets, load_toml(SOURCES / "policy-aggregates.toml")
@@ -1195,7 +1317,7 @@ def main() -> None:
         if rule_set.selection is not None:
             report = f"reports/{name}-selection.json"
             write_text(args.output / report, json.dumps(rule_set.selection, indent=2, sort_keys=True) + "\n")
-            manifests[name]["ip_selection"] = report
+            manifests[name]["domain_selection" if name == "China" else "ip_selection"] = report
 
     for region, rules in regions.items():
         name = f"Banking/{region}"
