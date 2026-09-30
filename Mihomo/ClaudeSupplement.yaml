@@ -1,0 +1,11 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: ClaudeSupplement
+payload:
+  - DOMAIN-SUFFIX,datadoghq.com
+  - DOMAIN-SUFFIX,datadoghq.eu
+  - DOMAIN-SUFFIX,browser-intake-datadoghq.com
+  - DOMAIN-SUFFIX,browser-intake-datadoghq.eu
+  - DOMAIN-WILDCARD,browser-intake-*-datadoghq.com
+  - DOMAIN-WILDCARD,*.browser-intake-*-datadoghq.com
+  - DOMAIN-WILDCARD,browser-intake-*-datadoghq.eu
+  - DOMAIN-WILDCARD,*.browser-intake-*-datadoghq.eu
