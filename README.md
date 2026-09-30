@@ -77,8 +77,7 @@ verifies the final publication tree and skips copying byte-identical files.
 
 ### Claude supplemental routing
 
-`ClaudeSupplement` supplies shared Stripe (`stripe.com`, `stripe.network`,
-`stripecdn.com`), hCaptcha, and optional Datadog telemetry routing. Browser
+`ClaudeSupplement` supplies optional Datadog telemetry routing. Browser
 intake uses separate registered domains; wildcard rules cover regional names
 and their subdomains without pinning one region such as US5. This set emits
 classical YAML/LIST, retaining wildcard semantics rather than projecting them
