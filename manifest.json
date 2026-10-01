@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 45202,
-      "rules_sha256": "421a62c14f7b7596d933cef31b6886e092a5ab7a64d33ad0af2eaaf2bc0aa452"
+      "rule_count": 45727,
+      "rules_sha256": "286badcd586826984bcdca2d34319a93e58401af8ee1f890b6cfa66ee7bdf6d1"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3230,7 +3230,7 @@
         "list"
       ],
       "rule_count": 1628,
-      "rules_sha256": "fe65623670b625fcc10a1254e4ccd37e6386950a849cf1b0435d294ba8453276"
+      "rules_sha256": "2b2bc03ca2613ed5a6bcb927b142c5dcde5031726c107da5d8941beecbf712c7"
     },
     "Classical/AppleMusic": {
       "behavior": "classical",
@@ -3627,8 +3627,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26540,
-      "rules_sha256": "90166133c136a0d43303f7316138b646cb242082185cdd32fddc842e90ff0cdd"
+      "rule_count": 26541,
+      "rules_sha256": "d999635d7718ff4948c625aced5e7f8a8a38152e98d5bc1cc86db1743f342a52"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4106,8 +4106,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 9612,
-      "rules_sha256": "ec35c60d2bc02097dbaa6833730a052cb8544830632acf903921f2fe82239c36"
+      "rule_count": 9621,
+      "rules_sha256": "0a4d5df90c83d888a9f5bd9e8c96f2a445975e9db12f158969a05da97c0356cf"
     },
     "IP/Claude": {
       "behavior": "ipcidr",
@@ -4128,8 +4128,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8403,
-      "rules_sha256": "aacf7a156cd56897a490018721dfbe6661511f1ff0688b8327f801be6fbe8b55"
+      "rule_count": 8468,
+      "rules_sha256": "1b7d2b405b63ac234263161dc5481a6a0159ea6a1a2c71043a285b8a6298b932"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -4150,8 +4150,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 120,
-      "rules_sha256": "befa8b335d6bc0332c17da74164235195ec1d6557c41a5781d9460ebc1131c1e"
+      "rule_count": 122,
+      "rules_sha256": "b8347cd701f2e205319a45028a038c1cb1f80ba47d4b7217da08aa8da1d66b74"
     },
     "IP/Private": {
       "behavior": "ipcidr",
@@ -4173,8 +4173,8 @@
       ],
       "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 9641,
-      "rules_sha256": "569760762f20f833514b054b56b6c192e9b8787cfc84157bd8deebe887d62c86"
+      "rule_count": 9722,
+      "rules_sha256": "ee4b40fadc3cc33c5954f7468f199df97b483e8f36b525895347243fb19e1a9b"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
@@ -4364,7 +4364,7 @@
         "source": "Classical/Apple"
       },
       "rule_count": 1615,
-      "rules_sha256": "b145b59eb0643c2cbd0d7dd7c2ede404c12e22b6077018bad14e32ad76a7d2c2"
+      "rules_sha256": "5bed5f51480612c503afdb7de96450eecd301c2a55842551861f63dcc4e7c2a8"
     },
     "NonIP/Classical/BiliBili": {
       "behavior": "classical",
@@ -4525,8 +4525,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26440,
-      "rules_sha256": "d9590078e463fde6542f3a0fdeea8c346fc57c59a934ff5f0743d95dc051cf18"
+      "rule_count": 26441,
+      "rules_sha256": "a7fe4be30e7c15f59b49e2a96b23063c18a4a0635173c2b2c6bfe6c162d37283"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -4913,8 +4913,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26406,
-      "rules_sha256": "577740cb0e252469e9f06285b0b728f561bf8715e0a76e41701f7b583264cb23"
+      "rule_count": 26407,
+      "rules_sha256": "65e9b7e0bd65e29315e1f8bffa0cd34dbe5a57f2e864645635944def5f0bacad"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -4924,8 +4924,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26406,
-      "rules_sha256": "577740cb0e252469e9f06285b0b728f561bf8715e0a76e41701f7b583264cb23"
+      "rule_count": 26407,
+      "rules_sha256": "65e9b7e0bd65e29315e1f8bffa0cd34dbe5a57f2e864645635944def5f0bacad"
     },
     "Scholar": {
       "behavior": "domain",

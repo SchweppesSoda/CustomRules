@@ -1,5 +1,7 @@
 # AUTO-GENERATED. DO NOT EDIT.
 # Rule set: IP/Netflix
+IP-CIDR,9.187.0.0/16,no-resolve
+IP-CIDR,9.188.0.0/16,no-resolve
 IP-CIDR,23.246.0.0/18,no-resolve
 IP-CIDR,37.77.184.0/21,no-resolve
 IP-CIDR,45.57.0.0/17,no-resolve
