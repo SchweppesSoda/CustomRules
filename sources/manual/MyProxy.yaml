@@ -16,3 +16,6 @@ payload:
   # > LinkedIn
   - DOMAIN-SUFFIX,linkedin.com
   - DOMAIN-SUFFIX,linkedin.cn
+
+  # > djhdhs.us
+  - DOMAIN-SUFFIX,djhdhs.us
