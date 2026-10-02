@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 45727,
-      "rules_sha256": "286badcd586826984bcdca2d34319a93e58401af8ee1f890b6cfa66ee7bdf6d1"
+      "rule_count": 50618,
+      "rules_sha256": "c454880f6a9c64c0f3b4f7fb7cf81867ba03b10a2f9d6904832599d2d45934ef"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3665,8 +3665,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 104,
-      "rules_sha256": "c1342a07d70d13830f8bf6279b71f1060b3d98bf536ce40be383213392ac8193"
+      "rule_count": 106,
+      "rules_sha256": "ff3701c873d01e24e8b13d0c62c3dfe35e3f79c3cbff6c2fba8f68b8496f30d7"
     },
     "Classical/Speedtest": {
       "behavior": "classical",
@@ -4106,8 +4106,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 9621,
-      "rules_sha256": "0a4d5df90c83d888a9f5bd9e8c96f2a445975e9db12f158969a05da97c0356cf"
+      "rule_count": 9648,
+      "rules_sha256": "f5804bda26d0078bd0d021d313287b042da7fa5879b78113d3caa5adacdaa304"
     },
     "IP/Claude": {
       "behavior": "ipcidr",
@@ -4128,8 +4128,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8468,
-      "rules_sha256": "1b7d2b405b63ac234263161dc5481a6a0159ea6a1a2c71043a285b8a6298b932"
+      "rule_count": 8483,
+      "rules_sha256": "bdc18c436126f3478b06b41aeca1ecd7617666607d2d096f2dcb80d5792b7b82"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -4173,8 +4173,8 @@
       ],
       "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 9722,
-      "rules_sha256": "ee4b40fadc3cc33c5954f7468f199df97b483e8f36b525895347243fb19e1a9b"
+      "rule_count": 9749,
+      "rules_sha256": "a97d6c488b2711593ed188aeb0c29977a080dd3adfa47ed09ea959426205491e"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
@@ -4314,8 +4314,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 10,
-      "rules_sha256": "9dc909d06b4aaf05654253899559a46f518102c1c846eacc51f1b06695ccc17c"
+      "rule_count": 11,
+      "rules_sha256": "1d4edc2da534cea617b9e6022f51113e7f1075f4a7c2cdbbd5cf3f6f62a15b8e"
     },
     "NetEase": {
       "behavior": "domain",
@@ -5159,5 +5159,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "cf4d486e2028911c34a9afc12921bf35eef2fc7f"
+  "source_commit": "6bdd929eca61224d263b8e5c1ffeabfc7918f21f"
 }
