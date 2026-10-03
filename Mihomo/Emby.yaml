@@ -1,18 +1,12 @@
 # AUTO-GENERATED. DO NOT EDIT.
 # Rule set: Emby
 payload:
-  - emby.nexitally.com
-  - emby.maying.club
-  - emby.mdss.cloud
   - +.emby.page
   - emby.linkfireka.xyz
-  - line.emby.men
-  - emby.plusmedia.site
   - bgp.emby.mickeycloud.com
   - +.xeton.dev
   - +.emby.wtf
   - +.cn2gias.uk
-  - +.uhdnow.com
   - agahk.odysseyplus.site
   - agahk1.jmsooo.com
   - agajp1.jmsooo.com
@@ -31,9 +25,13 @@ payload:
   - emby.cjpc.cc
   - emby.flowercloud.yt
   - emby.immtel.com
+  - emby.maying.club
+  - emby.mdss.cloud
+  - emby.nexitally.com
   - emby.nyancat.net
   - emby.otakudrive.life
   - emby.p-p.men
+  - emby.plusmedia.site
   - emby.prprcloud.com
   - emby.run
   - emby.wtf
@@ -46,6 +44,7 @@ payload:
   - hk.jmsooo.com
   - jellyfin.xeton.dev
   - jmsooo.com
+  - line.emby.men
   - movie.xeton.dev
   - ntt1.jmsooo.com
   - play.charontv.com
@@ -89,4 +88,5 @@ payload:
   - +.stream.ntrrr.top
   - +.stream.synn.cc
   - +.texon.fans
+  - +.uhdnow.com
   - +.yunti.online

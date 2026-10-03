@@ -1,8 +1,6 @@
 # AUTO-GENERATED. DO NOT EDIT.
 # Rule set: MyDirect
 payload:
-  - DOMAIN-SUFFIX,zju.edu.cn
-  - DOMAIN-SUFFIX,zmmc.com.cn
   - DOMAIN-SUFFIX,api-huacloud.net
   - DOMAIN-SUFFIX,api-xmancdn.net
   - DOMAIN-SUFFIX,api.wd-purple.com
