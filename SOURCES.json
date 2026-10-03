@@ -6,7 +6,7 @@
       "url": "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta"
     },
     {
-      "sha256": "c042cc7a06eed71ac7f0f3d4bc226f952d3f9998f05778bf2e71fb6f85977c56",
+      "sha256": "8154152a21ecc4d8cd14de64bd2449d08e51bed211d57c13292ff24a3ddc75c9",
       "size": "425",
       "url": "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt"
     },
@@ -646,7 +646,7 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AbemaTV/AbemaTV.list"
     },
     {
-      "sha256": "54120da02c768a44823931c9bba43c93d681cb7a047aabb20d3ad1ef3e2056ad",
+      "sha256": "6397d4ab84a5f05b9cdf79ad746e0ddad4eef8951facbe2e6afb54b6f10e451d",
       "size": "1468",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Apple/Apple.list"
     },
@@ -721,7 +721,7 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GitHub/GitHub.list"
     },
     {
-      "sha256": "1bb20d077b69fd75f4f9f162ea7f24ccc48dc4f9f8b56f9b8cfbe877d0ff0e68",
+      "sha256": "559a2ac75c1a3bbb3f8a457ef8717d6e8a5b024f5e58250f9d54f128b17f1ce8",
       "size": "35624",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia.list"
     },
@@ -756,7 +756,7 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/PayPal/PayPal.list"
     },
     {
-      "sha256": "9c3ecd539c6373ff5e7f6684e4698edde7c031aa544fc790e063c2c9b9163d7a",
+      "sha256": "dd0df6cf62c2b6176970825d9852ca77af191143ffb9b51ce36cc3d377e02ad8",
       "size": "4494",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list"
     },
@@ -1071,8 +1071,8 @@
       "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Special.list"
     },
     {
-      "sha256": "229086e1b93d8a5127b2d051ed003379692da94e2227ba452e296e8a4ff234e2",
-      "size": "1130887",
+      "sha256": "5e2ae60b1ab7adf7ba72c09719f65e8675a604cc1904ee171f431f7999d1cf8b",
+      "size": "1150595",
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light.txt"
     },
     {

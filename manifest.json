@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 50618,
-      "rules_sha256": "c454880f6a9c64c0f3b4f7fb7cf81867ba03b10a2f9d6904832599d2d45934ef"
+      "rule_count": 51301,
+      "rules_sha256": "003af83c53b4f6086a3906d79db46f3beebf0bf0a52aa05840956ebb6eee380c"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3230,7 +3230,7 @@
         "list"
       ],
       "rule_count": 1628,
-      "rules_sha256": "2b2bc03ca2613ed5a6bcb927b142c5dcde5031726c107da5d8941beecbf712c7"
+      "rules_sha256": "fe65623670b625fcc10a1254e4ccd37e6386950a849cf1b0435d294ba8453276"
     },
     "Classical/AppleMusic": {
       "behavior": "classical",
@@ -3427,7 +3427,7 @@
         "list"
       ],
       "rule_count": 2599,
-      "rules_sha256": "e868e79bd0065e2ed67098c0a8e6d961b3468de3ee14972dfcaf83d4641c585c"
+      "rules_sha256": "798ba29082c6a325377a51af10b659330637931fcdd604fb789ffdb9cf817250"
     },
     "Classical/Google": {
       "behavior": "classical",
@@ -4366,7 +4366,7 @@
         "source": "Classical/Apple"
       },
       "rule_count": 1615,
-      "rules_sha256": "5bed5f51480612c503afdb7de96450eecd301c2a55842551861f63dcc4e7c2a8"
+      "rules_sha256": "b145b59eb0643c2cbd0d7dd7c2ede404c12e22b6077018bad14e32ad76a7d2c2"
     },
     "NonIP/Classical/BiliBili": {
       "behavior": "classical",
@@ -4446,7 +4446,7 @@
         "source": "Classical/GlobalMedia"
       },
       "rule_count": 1675,
-      "rules_sha256": "854bf149d4b823a0f1631f0cae2ff3353edd411fcb5be84dc1a8ebbd15859333"
+      "rules_sha256": "ee560a0da22d45d3166c494ef43709bd222d2faffd11c5cae98112cc96e721fc"
     },
     "NonIP/Classical/Google": {
       "behavior": "classical",

@@ -69,9 +69,9 @@
     },
     {
       "role": "supplement",
-      "sha256": "c042cc7a06eed71ac7f0f3d4bc226f952d3f9998f05778bf2e71fb6f85977c56",
+      "sha256": "8154152a21ecc4d8cd14de64bd2449d08e51bed211d57c13292ff24a3ddc75c9",
       "source_url": "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt",
-      "text": "# NAME: Proxy\n# AUTHOR: YYDS666\n# UPDATED: 2026-10-02 06:06:57\n# TOTAL: 19\n103.2.30.0/23\n125.209.208.0/20\n147.92.128.0/17\n149.154.160.0/20\n185.76.151.0/24\n203.104.144.0/21\n85.17.73.31/32\n91.105.192.0/23\n91.108.12.0/22\n91.108.16.0/22\n91.108.20.0/22\n91.108.4.0/22\n91.108.56.0/22\n91.108.8.0/22\nIP-CIDR6:2001:67c:4e8::/48\nIP-CIDR6:2001:b28:f23c::/48\nIP-CIDR6:2001:b28:f23d::/48\nIP-CIDR6:2001:b28:f23f::/48\nIP-CIDR6:2a0a:f280::/32",
+      "text": "# NAME: Proxy\n# AUTHOR: YYDS666\n# UPDATED: 2026-10-04 04:21:19\n# TOTAL: 19\n103.2.30.0/23\n125.209.208.0/20\n147.92.128.0/17\n149.154.160.0/20\n185.76.151.0/24\n203.104.144.0/21\n85.17.73.31/32\n91.105.192.0/23\n91.108.12.0/22\n91.108.16.0/22\n91.108.20.0/22\n91.108.4.0/22\n91.108.56.0/22\n91.108.8.0/22\nIP-CIDR6:2001:67c:4e8::/48\nIP-CIDR6:2001:b28:f23c::/48\nIP-CIDR6:2001:b28:f23d::/48\nIP-CIDR6:2001:b28:f23f::/48\nIP-CIDR6:2a0a:f280::/32",
       "url": "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt"
     }
   ]
