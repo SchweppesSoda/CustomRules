@@ -1071,8 +1071,8 @@
       "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Special.list"
     },
     {
-      "sha256": "bf83d940e9ec2b271e23cbb5c413fe10cf754ba0bb486b422f0b41566160103f",
-      "size": "1158524",
+      "sha256": "769fb2d1367f0228f5bfe3950f78a06776dac4f6b77e699e4b11920d8c86e45c",
+      "size": "1156689",
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light.txt"
     },
     {

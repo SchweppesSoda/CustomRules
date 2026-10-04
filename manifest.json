@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 51549,
-      "rules_sha256": "7d7afa307d67dee268149e3183f40e02aad4a937ea4af3193eab25437ec775a9"
+      "rule_count": 51460,
+      "rules_sha256": "2108c6255ffbbcdd1d2af5003d4f6a25bac6b10416ba7c826f3fb5133ba490d8"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
