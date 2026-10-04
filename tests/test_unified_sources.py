@@ -107,7 +107,7 @@ class UnifiedSourcesTests(unittest.TestCase):
         found=list(verify_consumers.subscriptions('Mihomo/AutoMihomo.Mobile.yaml',text))
         self.assertEqual(len(found),1)
         self.assertTrue(found[0][1].endswith('/Discord.mrs'))
-        self.assertEqual(list(verify_consumers.subscriptions('Loon/AutoLoon.conf','[Plugin]\nhttps://example.com/plugin.lpx, enabled=true\n')),[])
+        self.assertEqual(list(verify_consumers.subscriptions('Egern/AutoEgern.yaml','modules:\n  - name: Fixture\n    url: https://example.com/module.yaml\n    enabled: true\n')),[])
 
     def test_consumer_gate_rejects_third_party_and_behavior_mismatch(self):
         with tempfile.TemporaryDirectory() as temporary:

@@ -1,4 +1,7 @@
 from pathlib import Path
+from contextlib import redirect_stdout
+import io
+import json
 import sys
 import tempfile
 import unittest
@@ -6,6 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import build_rules as build
+import publish_build
 import verify_build
 
 
@@ -81,6 +85,46 @@ class PolicyAggregateTests(unittest.TestCase):
                 manifest['sets']['Policy/GlobalTV']['aggregation']['members'] = ['A']
                 with self.assertRaisesRegex(RuntimeError, 'membership mismatch'):
                     verify_build.verify_policy_aggregates(root, manifest)
+
+    def test_retired_aggregate_publication_preserves_shared_and_member_exports(self):
+        retired = 'Policy/Classical/AISuite'
+        retained = {
+            'Classical/OpenAI': {'formats': ['yaml', 'list']},
+            'Policy/Classical/AppleTV': {'formats': ['yaml', 'list', 'mrs']},
+        }
+        old_manifest = {'sets': {**retained, retired: {'formats': ['yaml', 'list', 'mrs']}}}
+        new_manifest = {'sets': retained}
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            candidate, published = root / 'build', root / 'published'
+            candidate.mkdir()
+            published.mkdir()
+            (published / 'manifest.json').write_text(json.dumps(old_manifest), encoding='utf-8')
+            (candidate / 'manifest.json').write_text(json.dumps(new_manifest), encoding='utf-8')
+            for name in ('SOURCES.json', 'SHA256SUMS'):
+                (candidate / name).write_text('fixture\n', encoding='utf-8')
+            old_owned = publish_build.artifact_paths(published / 'manifest.json')
+            new_owned = publish_build.artifact_paths(candidate / 'manifest.json')
+            for relative in old_owned:
+                path = published / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b'shared rules\n')
+            for relative in new_owned:
+                path = candidate / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b'shared rules\n')
+            extra = published / 'Stash/Rules/HTTPDNS.Loon-Extra.list'
+            extra.parent.mkdir(parents=True)
+            extra.write_bytes(b'Stash supplement\n')
+            with patch.object(sys, 'argv', ['publish_build.py', '--build', str(candidate),
+                                           '--publish', str(published)]), redirect_stdout(io.StringIO()):
+                publish_build.main()
+            for relative in old_owned - new_owned:
+                self.assertFalse((published / relative).exists())
+            for relative in new_owned:
+                self.assertEqual((published / relative).read_bytes(), b'shared rules\n')
+            self.assertEqual(extra.read_bytes(), b'Stash supplement\n')
+            self.assertNotIn(retired, json.loads((published / 'manifest.json').read_text())['sets'])
 
 
 if __name__ == '__main__':

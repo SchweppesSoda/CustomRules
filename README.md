@@ -131,14 +131,13 @@ the listed source sets, removes exact duplicates, and preserves every other
 match condition. `manifest.json` records the policy and source members, and the
 verifier requires each aggregate to equal that literal member union.
 
-| Final policy | Mihomo / Stash | Surge / Egern / Loon Full |
+| Final policy | Mihomo / Stash | Egern |
 | --- | --- | --- |
 | Asian TV | `Policy/AsianTV` | `Policy/Classical/AsianTV` |
 | Global TV | `Policy/GlobalTV` | `Policy/Classical/GlobalTV` |
 | CN Mainland TV | `Policy/CNMainlandTV` | `Policy/Classical/CNMainlandTV` |
 | Steam | `Policy/Steam` | `Policy/Classical/Steam` |
 | Apple TV | Existing single AppleTV source | `Policy/Classical/AppleTV` |
-| AI Suite | Existing rules | `Policy/Classical/AISuite` for Loon Full only |
 
 The two families preserve the existing clients' different source membership.
 They are not interchangeable domain-only projections of one larger list.
@@ -278,7 +277,7 @@ Shared CDN/cloud addresses may also match unrelated sites.
 The `reports/IP/Proxy-selection.json` artifact records the exact input bodies,
 URLs, hashes and snapshot commit. Verification recomputes the selection and
 requires every IP LIST entry to retain `no-resolve`; Mihomo/Stash consumers
-retain it on the calling RULE-SET, and Loon/Egern retain the shared LIST flags.
+retain it on the calling RULE-SET, and Egern retains the shared LIST flags.
 The report is evidence, not a client subscription. The first reviewed expansion
 uses the existing manual `allow_large_change` workflow input; scheduled builds
 keep the normal change thresholds.

@@ -24,30 +24,25 @@ members = ["GameDownload", "Steam"]
 
 [aggregates."Policy/Classical/AppleTV"]
 policy = "Apple TV"
-clients = ["Egern", "Loon"]
+clients = ["Egern"]
 members = ["AppleTV", "Classical/AppleMusic", "Classical/AppleNews"]
 
 [aggregates."Policy/Classical/AsianTV"]
 policy = "Asian TV"
-clients = ["Egern", "Loon"]
+clients = ["Egern"]
 members = ["Classical/AbemaTV", "Classical/Bahamut", "Classical/iQIYIIntl", "Classical/myTVSUPER", "Classical/Fox+", "Classical/HuluJapan", "Classical/JOOX", "Classical/KKBOX", "Classical/KKTV", "Classical/LineTV", "Classical/Niconico", "Classical/ViuTV"]
 
 [aggregates."Policy/Classical/GlobalTV"]
 policy = "Global TV"
-clients = ["Egern", "Loon"]
+clients = ["Egern"]
 members = ["Classical/HBO", "Classical/PrimeVideo", "Classical/ABC", "Classical/BBC", "Classical/DAZN", "Classical/DiscoveryPlus", "Classical/TVB", "Classical/F1TV", "Classical/Fox", "Classical/Pandora", "Classical/PBS", "Classical/Soundcloud"]
 
 [aggregates."Policy/Classical/CNMainlandTV"]
 policy = "CN Mainland TV"
-clients = ["Egern", "Loon"]
+clients = ["Egern"]
 members = ["Classical/BiliBili", "Classical/iQIYI", "Classical/LeTV", "Classical/NetEaseMusic", "Classical/TencentVideo", "Classical/Youku"]
 
 [aggregates."Policy/Classical/Steam"]
 policy = "Steam"
-clients = ["Egern", "Loon"]
+clients = ["Egern"]
 members = ["GameDownload", "Classical/Steam"]
-
-[aggregates."Policy/Classical/AISuite"]
-policy = "AI Suite"
-clients = ["Loon"]
-members = ["Classical/OpenAI", "Classical/Claude", "Classical/Anthropic", "Classical/Copilot", "Classical/Gemini"]
