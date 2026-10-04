@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 51301,
-      "rules_sha256": "003af83c53b4f6086a3906d79db46f3beebf0bf0a52aa05840956ebb6eee380c"
+      "rule_count": 51549,
+      "rules_sha256": "7d7afa307d67dee268149e3183f40e02aad4a937ea4af3193eab25437ec775a9"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -4705,25 +4705,6 @@
       "rule_count": 80,
       "rules_sha256": "2dfb07ceabe0c3d54190ec3fb35785ab989b126e8aa3c6c44ac878e7154756ab"
     },
-    "Policy/Classical/AISuite": {
-      "aggregation": {
-        "members": [
-          "Classical/OpenAI",
-          "Classical/Claude",
-          "Classical/Anthropic",
-          "Classical/Copilot",
-          "Classical/Gemini"
-        ],
-        "policy": "AI Suite"
-      },
-      "behavior": "classical",
-      "formats": [
-        "yaml",
-        "list"
-      ],
-      "rule_count": 92,
-      "rules_sha256": "8f98d750ac8995bb7e2a0c3632e8b13714be5f85cc5046640310072a9fff15ed"
-    },
     "Policy/Classical/AppleTV": {
       "aggregation": {
         "members": [
@@ -5161,5 +5142,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "4de43712cc16c9f480144d45cc0cfdc77d960230"
+  "source_commit": "3b01a4c6be470a0e97cecc09823cfdb5156c2e68"
 }
