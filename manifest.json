@@ -2643,8 +2643,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 51460,
-      "rules_sha256": "2108c6255ffbbcdd1d2af5003d4f6a25bac6b10416ba7c826f3fb5133ba490d8"
+      "rule_count": 55530,
+      "rules_sha256": "2deb269cd3a56877b2b2c24f5ae3302363a52436d6f5b2efe285d15d2aee5f80"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3627,8 +3627,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26542,
-      "rules_sha256": "08148639d3268427abea8436fe7967f9ff833a3916603e879aa92990b31a1c68"
+      "rule_count": 26543,
+      "rules_sha256": "4b3e0b570f9ac2443c9ffaf7c35e39226f1edd99f3979394cb71d9691566525d"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4527,8 +4527,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26442,
-      "rules_sha256": "2d8e09cb8aacf108c31d32c099e6a3744083b5418ad4ec73779b92a3183575c3"
+      "rule_count": 26443,
+      "rules_sha256": "cd78c728450cd6cf4d03d841f8beba5a21a46b0cd36c8a36c04348b5459acca6"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -4896,8 +4896,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26408,
-      "rules_sha256": "3ce3c6bebc68e111044004a257470426f7b8a31d47d9eaaa472c5e0b4e9ba53e"
+      "rule_count": 26409,
+      "rules_sha256": "b6391bd88ff9b9abc06de60049af52b3d029174e2ec7040140c6450fc9ec933a"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -4907,8 +4907,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26408,
-      "rules_sha256": "3ce3c6bebc68e111044004a257470426f7b8a31d47d9eaaa472c5e0b4e9ba53e"
+      "rule_count": 26409,
+      "rules_sha256": "b6391bd88ff9b9abc06de60049af52b3d029174e2ec7040140c6450fc9ec933a"
     },
     "Scholar": {
       "behavior": "domain",
