@@ -2325,6 +2325,38 @@
         "rule_count": 3
       },
       {
+        "id": "binance-tr",
+        "kind": "exchange",
+        "name": "Binance TR",
+        "region": null,
+        "required": false,
+        "rule_count": 3
+      },
+      {
+        "id": "lbank",
+        "kind": "exchange",
+        "name": "LBank",
+        "region": null,
+        "required": false,
+        "rule_count": 3
+      },
+      {
+        "id": "xt",
+        "kind": "exchange",
+        "name": "XT.COM",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "tokocrypto",
+        "kind": "exchange",
+        "name": "Tokocrypto",
+        "region": null,
+        "required": false,
+        "rule_count": 4
+      },
+      {
         "id": "nexo",
         "kind": "custodian",
         "name": "Nexo",
@@ -2563,6 +2595,46 @@
         "region": null,
         "required": false,
         "rule_count": 1
+      },
+      {
+        "id": "plasma-one",
+        "kind": "crypto-card",
+        "name": "Plasma One",
+        "region": null,
+        "required": false,
+        "rule_count": 3
+      },
+      {
+        "id": "ether-fi",
+        "kind": "crypto-card",
+        "name": "ether.fi Cash",
+        "region": null,
+        "required": false,
+        "rule_count": 2
+      },
+      {
+        "id": "ready",
+        "kind": "crypto-card",
+        "name": "Ready",
+        "region": null,
+        "required": false,
+        "rule_count": 2
+      },
+      {
+        "id": "bleap",
+        "kind": "crypto-card",
+        "name": "Bleap",
+        "region": null,
+        "required": false,
+        "rule_count": 1
+      },
+      {
+        "id": "tria",
+        "kind": "crypto-card",
+        "name": "Tria",
+        "region": null,
+        "required": false,
+        "rule_count": 1
       }
     ]
   },
@@ -2643,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 55530,
-      "rules_sha256": "2deb269cd3a56877b2b2c24f5ae3302363a52436d6f5b2efe285d15d2aee5f80"
+      "rule_count": 56594,
+      "rules_sha256": "cd2f33df5b3e9e4364e6d31b2dbd60fd2cbcf0cf5008ce2e785045eeacfa813e"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3627,8 +3699,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26543,
-      "rules_sha256": "4b3e0b570f9ac2443c9ffaf7c35e39226f1edd99f3979394cb71d9691566525d"
+      "rule_count": 26572,
+      "rules_sha256": "5dd26e773c58c87cbdcc54d7d4b13151fac6ba92d48a0eea4b5f871cb9832689"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -3853,8 +3925,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 180,
-      "rules_sha256": "7b43caf5fb3309002caf939ccb450d44b6eb9371256b5fe01e2041a70ce5f446"
+      "rule_count": 200,
+      "rules_sha256": "6da2c7431f3b11ed083d799a3f4961df7a778496550fe84d122bf4b5387402ac"
     },
     "DAZN": {
       "behavior": "domain",
@@ -4527,8 +4599,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26443,
-      "rules_sha256": "cd78c728450cd6cf4d03d841f8beba5a21a46b0cd36c8a36c04348b5459acca6"
+      "rule_count": 26472,
+      "rules_sha256": "f3193c177d6d5ac1927bbf9d3f3c67f6c6231a6cb91a9ae44669327e8ece0819"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -4896,8 +4968,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26409,
-      "rules_sha256": "b6391bd88ff9b9abc06de60049af52b3d029174e2ec7040140c6450fc9ec933a"
+      "rule_count": 26438,
+      "rules_sha256": "4dc971a92b593ea0f44c5840a38b99d9bf6cf5b82c207f1953457ce4da7685cb"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -4907,8 +4979,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26409,
-      "rules_sha256": "b6391bd88ff9b9abc06de60049af52b3d029174e2ec7040140c6450fc9ec933a"
+      "rule_count": 26438,
+      "rules_sha256": "4dc971a92b593ea0f44c5840a38b99d9bf6cf5b82c207f1953457ce4da7685cb"
     },
     "Scholar": {
       "behavior": "domain",
@@ -5142,5 +5214,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "3b01a4c6be470a0e97cecc09823cfdb5156c2e68"
+  "source_commit": "338a92b95796b5ae6dfd51c519c3e92a29924cef"
 }

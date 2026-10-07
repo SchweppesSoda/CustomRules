@@ -1,15 +1,24 @@
 # AUTO-GENERATED. DO NOT EDIT.
 # Rule set: Crypto
 payload:
+  - api.lbank.info
+  - api.lbkex.com
   - bybit-exchange.github.io
   - bybit.ada.support
+  - cloudme-toko.2meta.app
+  - cloudme-tr.2meta.app
   - d3r7nsslvs6aaf.cloudfront.net
   - deribit.cdn.prismic.io
+  - etherfi.gitbook.io
   - onekey.zendesk.com
+  - plasmaone.onelink.me
   - straitsx-826709081262441084-b790f87a2ae6fd417434295.freshchat.com
+  - stream-toko.2meta.app
+  - stream-tr.2meta.app
   - token-api.metaswap.codefi.network
   - zftksc.cdn-settings.appsflyersdk.com
   - zftksc.launches.appsflyersdk.com
+  - +.argent.xyz
   - +.backpack.app
   - +.binance.cc
   - +.binance.charity
@@ -20,6 +29,7 @@ payload:
   - +.binance.me
   - +.binance.net
   - +.binance.org
+  - +.binance.tr
   - +.binance.us
   - +.binance.vision
   - +.binanceapi.com
@@ -60,6 +70,7 @@ payload:
   - +.bitrefill.com
   - +.bitsquare.io
   - +.bitstamp.net
+  - +.bleap.finance
   - +.blofin.com
   - +.bmwweb.solutions
   - +.bnappweb.black
@@ -96,6 +107,7 @@ payload:
   - +.coinw.com
   - +.crypto.com
   - +.deribit.com
+  - +.ether.fi
   - +.exodus.com
   - +.fiat24.com
   - +.gate.com
@@ -127,6 +139,7 @@ payload:
   - +.kraken.onl
   - +.kucoin.com
   - +.kucoin.plus
+  - +.lbank.com
   - +.ledger.com
   - +.ledgerwallet.com
   - +.lighter.exchange
@@ -155,7 +168,10 @@ payload:
   - +.osl.com
   - +.phantom.app
   - +.pionex.com
+  - +.plasma.org
+  - +.plasma.to
   - +.rabby.io
+  - +.ready.co
   - +.redotpay.com
   - +.saasexch.cc
   - +.saasexch.co
@@ -167,7 +183,10 @@ payload:
   - +.straitsx.com
   - +.swissborg.com
   - +.tangem.com
+  - +.tokocrypto.com
+  - +.tokocrypto.site
   - +.trezor.io
+  - +.tria.so
   - +.trustwallet.com
   - +.unisat.io
   - +.upbit.com
@@ -178,6 +197,7 @@ payload:
   - +.xapo.com
   - +.xfers.com
   - +.xlayer.tech
+  - +.xt.com
   - +.xverse.app
   - +.zklighter.elliot.ai
   - +.zoomex.com
