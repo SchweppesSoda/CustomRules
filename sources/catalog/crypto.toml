@@ -488,3 +488,43 @@ id = "infini"
 name = "Infini"
 kind = "crypto-card"
 domains = ["suffix:infini.money"]
+
+# Reviewed 2026-10-07 against official product pages and linked account/help sites.
+[[entities]]
+id = "plasma-one"
+name = "Plasma One"
+kind = "crypto-card"
+# https://www.plasma.org/personal
+# https://www.plasma.to/one redirects to the current product page.
+# Scope the shared app-download service to Plasma's own hostname.
+domains = ["suffix:plasma.org", "suffix:plasma.to", "exact:plasmaone.onelink.me"]
+
+[[entities]]
+id = "ether-fi"
+name = "ether.fi Cash"
+kind = "crypto-card"
+# https://www.ether.fi/personal links the account app, help and documentation.
+domains = ["suffix:ether.fi", "exact:etherfi.gitbook.io"]
+
+[[entities]]
+id = "ready"
+name = "Ready"
+kind = "crypto-card"
+# https://www.ready.co/ retains links to the former Argent developer domain.
+# https://www.ready.co/blog/community-finance documents the Argent rebrand.
+domains = ["suffix:ready.co", "suffix:argent.xyz"]
+
+[[entities]]
+id = "bleap"
+name = "Bleap"
+kind = "crypto-card"
+# https://www.bleap.finance/ includes trading, campaign and CDN subdomains.
+domains = ["suffix:bleap.finance"]
+
+[[entities]]
+id = "tria"
+name = "Tria"
+kind = "crypto-card"
+# https://help.tria.so/en/articles/14056678-how-to-get-a-tria-card
+# https://docs.tria.so/tria-sdk-authenticate lists auth.tria.so and wallet.tria.so.
+domains = ["suffix:tria.so"]
