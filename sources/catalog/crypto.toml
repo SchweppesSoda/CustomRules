@@ -255,6 +255,40 @@ kind = "exchange"
 upstream_components = ["lighter"]
 domains = ["suffix:lighter.exchange", "suffix:lighter.xyz"]
 
+# Reviewed 2026-10-07: complete the first 20 exchanges in this CMC snapshot.
+# https://coinmarketcap.com/zh/rankings/exchanges/
+[[entities]]
+id = "binance-tr"
+name = "Binance TR"
+kind = "exchange"
+# https://www.binance.tr/apidocs/
+# api.binance.me is already covered by the Binance upstream component.
+domains = ["suffix:binance.tr", "exact:cloudme-tr.2meta.app", "exact:stream-tr.2meta.app"]
+
+[[entities]]
+id = "lbank"
+name = "LBank"
+kind = "exchange"
+# https://www.lbank.com/docs/index.html
+# https://www.lbank.com/support/articles/21533217989145
+# Current API docs and the upgrade notice name different hosts; retain both.
+domains = ["suffix:lbank.com", "exact:api.lbank.info", "exact:api.lbkex.com"]
+
+[[entities]]
+id = "xt"
+name = "XT.COM"
+kind = "exchange"
+# https://doc.xt.com/
+domains = ["suffix:xt.com"]
+
+[[entities]]
+id = "tokocrypto"
+name = "Tokocrypto"
+kind = "exchange"
+# https://www.tokocrypto.com/apidocs/
+# Keep shared 2meta.app infrastructure scoped to the documented hosts.
+domains = ["suffix:tokocrypto.com", "suffix:tokocrypto.site", "exact:cloudme-toko.2meta.app", "exact:stream-toko.2meta.app"]
+
 [[entities]]
 id = "nexo"
 name = "Nexo"
