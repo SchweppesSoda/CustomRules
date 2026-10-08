@@ -6,7 +6,7 @@
       "url": "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta"
     },
     {
-      "sha256": "865125fa29c733fed7efb2c1150fb87c9ca0ab3113b0f57d318b648d4ffe9e7f",
+      "sha256": "ed3af70fe3ff8bd5da5a889ee397e2b3fc42f504e8f4bc6950f5e351b646f0b9",
       "size": "425",
       "url": "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt"
     },
@@ -721,7 +721,7 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GitHub/GitHub.list"
     },
     {
-      "sha256": "559a2ac75c1a3bbb3f8a457ef8717d6e8a5b024f5e58250f9d54f128b17f1ce8",
+      "sha256": "bd028974bdc8ab4c29030d1fbbb4c5adb6db4071a0cae5ab915e6a9c03287241",
       "size": "35624",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia.list"
     },
@@ -756,7 +756,7 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/PayPal/PayPal.list"
     },
     {
-      "sha256": "dd0df6cf62c2b6176970825d9852ca77af191143ffb9b51ce36cc3d377e02ad8",
+      "sha256": "85cf9bb25931e0d00e7c0798d1d5b16da404ee07148476fb5b1e608d0cfc181c",
       "size": "4494",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list"
     },
@@ -1071,8 +1071,8 @@
       "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Special.list"
     },
     {
-      "sha256": "54d9903fb23c45d9012cae017c723fff5502e39a35e1e6f9e661b32059faa3c0",
-      "size": "1271041",
+      "sha256": "c1a2f073713a052415d3b4464eca11d829b690584f5fac6922fded8bc0e715e3",
+      "size": "1287864",
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light.txt"
     },
     {

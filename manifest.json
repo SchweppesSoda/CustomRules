@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 56594,
-      "rules_sha256": "cd2f33df5b3e9e4364e6d31b2dbd60fd2cbcf0cf5008ce2e785045eeacfa813e"
+      "rule_count": 57222,
+      "rules_sha256": "7186e08b7b21fc404f09e7b996d2e1a15a171eab9c067c744e3a733c83cacc87"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3499,7 +3499,7 @@
         "list"
       ],
       "rule_count": 2599,
-      "rules_sha256": "798ba29082c6a325377a51af10b659330637931fcdd604fb789ffdb9cf817250"
+      "rules_sha256": "e868e79bd0065e2ed67098c0a8e6d961b3468de3ee14972dfcaf83d4641c585c"
     },
     "Classical/Google": {
       "behavior": "classical",
@@ -4518,7 +4518,7 @@
         "source": "Classical/GlobalMedia"
       },
       "rule_count": 1675,
-      "rules_sha256": "ee560a0da22d45d3166c494ef43709bd222d2faffd11c5cae98112cc96e721fc"
+      "rules_sha256": "854bf149d4b823a0f1631f0cae2ff3353edd411fcb5be84dc1a8ebbd15859333"
     },
     "NonIP/Classical/Google": {
       "behavior": "classical",
