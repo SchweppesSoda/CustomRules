@@ -1,14 +1,23 @@
 /**
- * ProxyConfig -> Stash chained-provider transformer for Sub-Store.
+ * ProxyConfig residential naming and Stash chained-provider transformer.
  *
- * Attach this script only to the Residential/Landed sources used by
- * Stash/AutoStash.yaml. Ordinary airport and self-hosted providers use
+ * Attach this script to the three independent US sources and the existing
+ * Residential/Landed collections used by Stash. Ordinary providers use
  * Sub-Store's native target=Stash conversion without this script.
- * The provider URL passes: mode=proxyconfig-stash-v1&profile=<profile>&strict=1
+ * Stash requests use mode=proxyconfig-stash-v1 and receive one front hop.
+ * Independent US Egern/Loon/Mihomo requests use
+ * mode=proxyconfig-residential-name-v1 and receive only a stable name prefix.
+ * Bind each independent source via fixed Script Operator link arguments:
+ * #kind=subscription&source=<source>&profile=<profile>
+ * A different requested profile passes through, so collection members do not
+ * inject a chain or prefix before Residential_US_All's legacy transformer.
  */
 
 const PROFILES = {
   residential_us: { prefix: "Res-US | ", dialer: "🔗 Dialer-Res-US" },
+  residential_us_txpool: { prefix: "US-TXPOOL | ", dialer: "🔗 Dialer-Res-US", source: "TX_Carpool_Residential_US" },
+  residential_us_frontier: { prefix: "US-Frontier | ", dialer: "🔗 Dialer-Res-US", source: "LAND_TX" },
+  residential_us_charter: { prefix: "US-Charter | ", dialer: "🔗 Dialer-Res-US", source: "Charter_LA" },
   residential_global: { prefix: "Res-G | ", dialer: "🔗 Dialer-Res-Global" },
   landed_daily: { prefix: "Land-D | ", dialer: "🔗 Dialer-Landed-Daily" },
   landed_heavy: { prefix: "Land-H | ", dialer: "🔗 Dialer-Landed-Heavy" },
@@ -34,16 +43,37 @@ function parseOptions(value) {
   return out;
 }
 
-function operator(proxies = [], targetPlatform) {
+function operator(proxies = [], targetPlatform, context) {
+  const binding = parseOptions(typeof $arguments !== "undefined" ? $arguments : {});
+  // Sub-Store passes child subscriptions a source map plus _collection. The
+  // collection's own transformer owns its legacy naming and single front hop.
+  if (binding.kind === "subscription" && context && context.source && context.source._collection) {
+    return proxies;
+  }
   const options = parseOptions(optionBag());
-  if (options.mode !== "proxyconfig-stash-v1") return proxies;
+  const chained = options.mode === "proxyconfig-stash-v1";
+  const namesOnly = options.mode === "proxyconfig-residential-name-v1";
+  if (!chained && !namesOnly) return proxies;
 
   const target = String(targetPlatform || "").toLowerCase();
-  if (target && target !== "stash") throw new Error(`stash transform refuses target: ${targetPlatform}`);
+  if (chained && target && target !== "stash") throw new Error(`stash transform refuses target: ${targetPlatform}`);
 
   const profileName = String(options.profile || "");
   const profile = PROFILES[profileName];
   if (!profile) throw new Error(`unknown stash profile: ${profileName || "(empty)"}`);
+
+  if (binding.profile && String(binding.profile) !== profileName) return proxies;
+  if (profile.source && (binding.profile !== profileName || binding.source !== profile.source
+      || binding.kind !== "subscription")) {
+    throw new Error(`${profileName}: missing or invalid fixed source binding`);
+  }
+  if (profile.source && context && context.source
+      && (!context.source[profile.source] || context.source[profile.source].name !== profile.source)) {
+    throw new Error(`${profileName}: fixed source identity mismatch`);
+  }
+  if (namesOnly && (!profile.source || !["egern", "loon", "clashmeta", "mihomo"].includes(target))) {
+    throw new Error(`${profileName}: invalid residential naming target`);
+  }
 
   const strict = String(options.strict || "1") !== "0";
   const names = new Set();
@@ -60,7 +90,7 @@ function operator(proxies = [], targetPlatform) {
     const node = { ...original };
     CHAIN_KEYS.forEach((key) => { delete node[key]; });
     node.name = rawName.startsWith(profile.prefix) ? rawName : `${profile.prefix}${rawName}`;
-    node["underlying-proxy"] = profile.dialer;
+    if (chained) node["underlying-proxy"] = profile.dialer;
 
     if (names.has(node.name) && strict) {
       throw new Error(`${profileName}: duplicate node name: ${node.name}`);
