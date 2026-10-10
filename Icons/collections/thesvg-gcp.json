@@ -1,0 +1,862 @@
+{
+  "description": "xream 基于 theSVG 转换的 gcp variant 图标集；仅包含链接清单，不重新分发 SVG。图标版权、商标和 license 归各自权利方及 upstream license 约束。\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/gcp.json",
+  "icons": [
+    {
+      "name": "Access Context Manager",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8a/8a01ad546c302a7f78b2625abb79db95d94884b850d894bd3cbf06d2af09f52c.svg"
+    },
+    {
+      "name": "Administration",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b8/b861e4eebceba06e6150695813b559e0d86ff16f49a67076378a95237d48b256.svg"
+    },
+    {
+      "name": "Advanced Agent Modeling",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b4/b4dd4fddb81add588ed7cacb1619b058a0353f6bacd4997597949bc6a755572c.svg"
+    },
+    {
+      "name": "Advanced Solutions Lab",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f3/f35174fbbfd7588ab7259a2f115c4476480b219e2732c73dd0199029acd3d493.svg"
+    },
+    {
+      "name": "Agent Assist",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3f/3ff36d7186f8bc427d86a5a9ca6fe328ffa270da43deeca512599c07914e28ac.svg"
+    },
+    {
+      "name": "Ai Hub",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/94/943cf47a93ca9724e7eee476faf2c706ddb118c095839802af16138099930989.svg"
+    },
+    {
+      "name": "Ai Platform",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/83/8380aebc00b408a337eee2d2a231d05d9411af091adf313cdee0418d2a9aa239.svg"
+    },
+    {
+      "name": "Ai Platform Unified",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7a/7a12043f7d225cd59490eabe516532ab3be055a235b5983c5097171a343caf5a.svg"
+    },
+    {
+      "name": "Analytics Hub",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c5215df21f782300541780b850806bc01457f567d31c72b94972efab1812a192.svg"
+    },
+    {
+      "name": "Anthos",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6f/6fa87797ffe81c633ff6cb16dec20439a24bc850dee41c9d8bbec4bf4bb099a2.svg"
+    },
+    {
+      "name": "Anthos Config Management",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a1/a19d1ee1d35c69a26acc9bbbc7795d4ee783945d3df89624f05f577623f2b559.svg"
+    },
+    {
+      "name": "Anthos Service Mesh",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/57/57463f0b1af3723e44a34c5861b5bb8977a06ec0715a1ceabc9d754864bade54.svg"
+    },
+    {
+      "name": "Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/dd/ddc1daafa7c207d669e257e7e26ecf70193777c2d1aaab33f81fb436530189b3.svg"
+    },
+    {
+      "name": "Api Analytics",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/19/19d415782061a7cb96f5d50c1e54527416b17895c0b2a70754f45e9e5ff3bf39.svg"
+    },
+    {
+      "name": "Api Monetization",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2b/2b13bba1aef985c0af3eb757625b774face68fbfb8e7f519dc45655d08d50c1b.svg"
+    },
+    {
+      "name": "Apigee Api Platform",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/86/869eba544a85d579ff29db6886237f79e1a2f865193afaa1582a18ca15f96992.svg"
+    },
+    {
+      "name": "Apigee Sense",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d8/d8d323bfebcac3ef8bc461e169ded6f70a2e58ac18d5703c32879fb715f91682.svg"
+    },
+    {
+      "name": "App Engine",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/93/930cb874998d07ee4b6bd8a44a156e3f2c9a3f019fee03ec400c2809a0e222e4.svg"
+    },
+    {
+      "name": "Artifact Registry",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/57/57ea82b70db1be29c94685a16993222f94fcd7989435211ce06b66832a63edbc.svg"
+    },
+    {
+      "name": "Asset Inventory",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2b/2b2dc3347270547fab0fbaa1f9e78fbc2e6a5f56c22618489ba9545312d4409d.svg"
+    },
+    {
+      "name": "Assured Workloads",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/55/551a98020b332b05ca911f353859165595c4d8eb1701f94971fa77408af8aa3e.svg"
+    },
+    {
+      "name": "Automl",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/72/725628f74b903b01148a44ab67d02a256a11b4820659fbc4ca52ca73fee27a96.svg"
+    },
+    {
+      "name": "Automl Natural Language",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/20/2000dc1beea50bee81785f45ddf041aa4a5a1ec38b7b5326c37b4694b75e6b9c.svg"
+    },
+    {
+      "name": "Automl Tables",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a4/a4a90c37cfe3f4b03f4ccba88e83c691998ca7e80c7c4efb79f621f69a3c7c03.svg"
+    },
+    {
+      "name": "Automl Translation",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c1/c15b2b1cc9054b6facef57e3b7b3c8d93316d9b4189e47f94fd103168ef4ba31.svg"
+    },
+    {
+      "name": "Automl Video Intelligence",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/91/91fb6f9234b6bf49b0d9b31a75f4e9a218641d103fc33f61fb83373aa11a32a9.svg"
+    },
+    {
+      "name": "Automl Vision",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e7/e7b87015c453054dd6919dfab28be6335830f00a1b88f9a7f8427aca6ba14fb0.svg"
+    },
+    {
+      "name": "Bare Metal Solutions",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/80/80060177c5e5e8336278051f5833a410d446414669b1bc1c30c935da2c5a1acc.svg"
+    },
+    {
+      "name": "Batch",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/33/33476867062c79bacf536fa55ceffce616a9d89d1c8c38c276bfcb42251b2e91.svg"
+    },
+    {
+      "name": "Beyondcorp",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/09/0963cdfdc3a0c8b7f45797293e1a78c046312d907e52cf41eb39af5f4fa1b2d9.svg"
+    },
+    {
+      "name": "Bigquery",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ec/ec426e1d63267d73766f87cafb6d8c30b59877981bdd14b89c4dcd709b18650c.svg"
+    },
+    {
+      "name": "Bigtable",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b0/b0a8950764e5a5269c13283e7a3aa18d6dd6abb6e49b502cf8e8496c08016eed.svg"
+    },
+    {
+      "name": "Billing",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ee/ee3bc3f251a65bcd1f58485b5df72afbc8127ddd788797ce80de2aea1d689f50.svg"
+    },
+    {
+      "name": "Binary Authorization",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b4/b413b68bdaef5f10bfb751ea5f04aefdb428d7006740ae91234cc53b1dd1ddbe.svg"
+    },
+    {
+      "name": "Catalog",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a1/a1a56f93fecf3481a742d2428f1302221f5b562fccc5e8b7b534608c102ba00b.svg"
+    },
+    {
+      "name": "Certificate Authority Service",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/55/554431730f8d19473fb85cdfe092cdfb82cedfbc210b28c2537a97bcc7382af6.svg"
+    },
+    {
+      "name": "Certificate Manager",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ae/ae60cdc7984b8f511af5525c61c669311b1748f976a79a754de42611cc1b8365.svg"
+    },
+    {
+      "name": "Cloud Api Gateway",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/95/95d563bf93df1119f09cb9692b9404c3b1d95fbbb524e8efbb76204e1725747a.svg"
+    },
+    {
+      "name": "Cloud Apis",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e4/e4bae314d0adaa9c6e01fb9b31c9c1222402e8c4052511bdebdc3148d1eb0a3e.svg"
+    },
+    {
+      "name": "Cloud Armor",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8a/8affbfc8cf9b6c7292d4cb4d3b4a1b10ee0d4e9a437c0a7b0a1aa498b93f5963.svg"
+    },
+    {
+      "name": "Cloud Asset Inventory",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0e/0e9a7531153ca711b0ef78fd98930bf8eebad59f4b9a176fd33b13f23875d6da.svg"
+    },
+    {
+      "name": "Cloud Audit Logs",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7c/7c485ae1ab624a1cf48ec338a117b7b005646c4e3a5752fe00aff1bbb43fdbf3.svg"
+    },
+    {
+      "name": "Cloud Build",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ab/ab28e0704c3a2b3d35846d4c5428f2946ed5120c4eea1fb6b3bba0e1659d865f.svg"
+    },
+    {
+      "name": "Cloud Cdn",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3c/3c6256e395e5f36082635644689485b9424a1b104c3168ddc9802e9163777d05.svg"
+    },
+    {
+      "name": "Cloud Code",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f6/f67883517bb8169e6697a20a3d64f758cc7e27d63378542e71f2e32d9831a039.svg"
+    },
+    {
+      "name": "Cloud Composer",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/22/228c39feb11c834c06ee3cc208ba8998a934ad9fff521a0e8a57614f09643d60.svg"
+    },
+    {
+      "name": "Cloud Data Fusion",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5d/5d3eac1c4f6fc37c278e0a0d77e46bc534f8d6875a43d7eb57df1d4881227f15.svg"
+    },
+    {
+      "name": "Cloud Deploy",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8d/8d585d0d80bbe8bafe5f31e0f64de9f9a058a724b1c29629743587a48d23988a.svg"
+    },
+    {
+      "name": "Cloud Deployment Manager",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d4/d400647e29f2a9db6fd1e8a535de69f64d6ff84ceeba1e07c60ecfa1d79141ee.svg"
+    },
+    {
+      "name": "Cloud Dns",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/62/627549daff6bf65b1c4dd0cd0098543b6c7398fa99ad91a6833ff3a42179fa83.svg"
+    },
+    {
+      "name": "Cloud Domains",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/59/598696b666c0206971663c989ffa5c38b5747bf5e0292a5dc0b879657b6648c5.svg"
+    },
+    {
+      "name": "Cloud Ekm",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/97/97e9c810708355ba2f0f107003cc69fc4bb05d4ed8e8737844b0d52282630fd7.svg"
+    },
+    {
+      "name": "Cloud Endpoints",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7e/7e0b35a77e8d6d31d0d0a871f7e54318ba48dd7afe92f2c1ceef121f8f16774b.svg"
+    },
+    {
+      "name": "Cloud External Ip Addresses",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e4/e4c49ad3ca0e6d64b1a71c2b088eddaa01c0708a8471516d7237bce374c76bf5.svg"
+    },
+    {
+      "name": "Cloud Firewall Rules",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/91/91e5e4da803fa160dbc611778a538c0e3f7ce0e31e3e62484290da1b8235e684.svg"
+    },
+    {
+      "name": "Cloud For Marketing",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2e/2efd5216ae5fa51e036e1de573a074bcfa734e1539208e8bb3c524130ee5f7a0.svg"
+    },
+    {
+      "name": "Cloud Functions",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0e/0e4364a34db2b14e1f7cae1766f5dcab631cd5fce7754d2f361370175657c29f.svg"
+    },
+    {
+      "name": "Cloud Generic",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c0/c0f328b7a02a047dc68b1e73a6f7da5c165ac61f96130872a138257b60f52681.svg"
+    },
+    {
+      "name": "Cloud Gpu",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c4/c4e069053dedddd4a0ba8b68e47d282d7a2d5c5682a4952f8eaff1a7b3c247a1.svg"
+    },
+    {
+      "name": "Cloud Healthcare Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7c/7cc2a2186f1d8905e4fc1138d5d354f217c3a240c2d48d805c174b581f0a7e8a.svg"
+    },
+    {
+      "name": "Cloud Healthcare Marketplace",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6e/6e1c174812a9c66ba4e4fbf8f7de4d823ddc3072daf0fc71b162171f6eb4dc99.svg"
+    },
+    {
+      "name": "Cloud Hsm",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f4/f4458e00f4d69fdb26488c99c27124c778e113211c855808b61637fbd7cebbd8.svg"
+    },
+    {
+      "name": "Cloud Ids",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/09/0998dc2cdb78b4b02b0eadcd0b6e5ce9d2c0e543a811d50ee9f00359ba9b4838.svg"
+    },
+    {
+      "name": "Cloud Inference Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5a/5ab90c9d12b977bce4cea7a055497c5b5952f13f57d49a28b5e8b78ebb9c6af2.svg"
+    },
+    {
+      "name": "Cloud Interconnect",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/72/72e3b549f932cf21426aa83406186d939a369f40a167003c23d7d118eb88c163.svg"
+    },
+    {
+      "name": "Cloud Jobs Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e082d328e54551930eb42791383f11b8db0251077f46fd935ba29357726f8fe8.svg"
+    },
+    {
+      "name": "Cloud Load Balancing",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/12/12ae6f7cfae4411471d0fe32f2202225c49cead1e6e0abdb7b6d3491a4e07c5c.svg"
+    },
+    {
+      "name": "Cloud Logging",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/26/26da246cce31205a75ae24ccc28e450bc4a245811549c2dcd04ad3add5f1b00c.svg"
+    },
+    {
+      "name": "Cloud Media Edge",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/54/54e9d8ff9538dd89f37db5733be31397f908de6a9a18e71fc6afe0cb5bbaf278.svg"
+    },
+    {
+      "name": "Cloud Monitoring",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/25/25c3b9f626b6f4ef15d2ef99a1fff90295733f585ed9f2e97482f623c1e2cd3d.svg"
+    },
+    {
+      "name": "Cloud Nat",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8c/8ca1a6211e7a81e27f8fc2133f1c80340162c258c8e5c2c475b422139c919e72.svg"
+    },
+    {
+      "name": "Cloud Natural Language Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/15/15235d41bfe636656887d12b6f097ef51af2272286e5b54e45b7e297bd4751b2.svg"
+    },
+    {
+      "name": "Cloud Network",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e5/e56ce06d0ded094d67f6e2e078c1532b134f30ba2b8e9de4efc0c7a128fbafdc.svg"
+    },
+    {
+      "name": "Cloud Ops",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/51/5147da0c9845e2ae31b9e8c5fa43ca3e1eceba3746f8c041e04be9248d6a2623.svg"
+    },
+    {
+      "name": "Cloud Optimization Ai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/41/41b3d935d83ce417062ac0c7548019688845cb727c4fb4d0ac9a77c50a8f4db6.svg"
+    },
+    {
+      "name": "Cloud Optimization Ai   Fleet Routing Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e8/e8e736f51100df40ba6379865315850824b0ea4b14a4195ffc945a39455d4e7d.svg"
+    },
+    {
+      "name": "Cloud Router",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/de/de82fc32c63685e9b86c580eb655ff3ca230f28cfac72602f0950711836a9be4.svg"
+    },
+    {
+      "name": "Cloud Routes",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4d/4df53a4baef3a0b07f6e3f9ee83807b74b09ffd6a069d6dd16449e6e68bada27.svg"
+    },
+    {
+      "name": "Cloud Run",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/86/861fa81db07400f1c1a529ddde9a62d15a029d3c5ba3a39db51be35351b58bd7.svg"
+    },
+    {
+      "name": "Cloud Run For Anthos",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d2/d2149f723af5c28c6e61eb76aa4601ecc8384170abd16bf73f7c08741143cf5f.svg"
+    },
+    {
+      "name": "Cloud Scheduler",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6e/6e31629cd87547217a30f38fcdc79e510291ec091fb5609192a56fd950e2e076.svg"
+    },
+    {
+      "name": "Cloud Security Scanner",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8b/8bbc59b7bd27dfb79e41ed6d427939e63e03afbbe45a0a849bfaee7aefcb08c2.svg"
+    },
+    {
+      "name": "Cloud Shell",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c3/c3ad06ea86ed2839d28699a3098cecbb69af3a5783bb1c2c55a2a2d5cbc3f5c3.svg"
+    },
+    {
+      "name": "Cloud Spanner",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/aa/aad32ed1b0da124b578466a358f2a0f9f07ee12ce8500dc86c42f820cea180c7.svg"
+    },
+    {
+      "name": "Cloud Sql",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bf/bf60eb495dd0cc2b250dc52974f17fc962febfe799c3942c32906123a021f76a.svg"
+    },
+    {
+      "name": "Cloud Storage",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2d/2d7c8076e26d1a1a03b441aa0f630b3b6c111f930ac9070297da54475ad1424c.svg"
+    },
+    {
+      "name": "Cloud Tasks",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fb/fb7bcdcc2a514df12c713c3cdfbed03ef968cb7a486f62bad277553ccb306586.svg"
+    },
+    {
+      "name": "Cloud Test Lab",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/39/392ba89b3192862828dcdd8005ed4381bf16801bd9c2ac88e18ba24946c1fbdb.svg"
+    },
+    {
+      "name": "Cloud Tpu",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1a/1a76fd2e80186814f6c3e55bf3631ccc6cb4c87383303d29be442017c24cd904.svg"
+    },
+    {
+      "name": "Cloud Translation Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1f/1fb3177854b9cf0b3ec2f203063a49fef14d2c991b9cf0a726e8de7e8cdff23e.svg"
+    },
+    {
+      "name": "Cloud Vision Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e5/e546be0b3fca01b12e5a40da81b75585388b0f73c16ed347d07ab45388d1953f.svg"
+    },
+    {
+      "name": "Cloud Vpn",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/49/49a4373902215317dce667507f47026ce578dc3e2ecd72cde75c636d4b700918.svg"
+    },
+    {
+      "name": "Compute Engine",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3f/3f2d129c036ba7390ba14f94d3193fde59b505e827386b9c6c5d849406bf5fdc.svg"
+    },
+    {
+      "name": "Configuration Management",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e9/e9d3e5caf657ea02b90b3825cf346c5729efde9949eb05fe1dbcfd488ab654a0.svg"
+    },
+    {
+      "name": "Connectivity Test",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/da/daf662d037abd0dc858aff6443f2657d6e6585db62a67e6b45100cfa465432e1.svg"
+    },
+    {
+      "name": "Connectors",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a7/a7a7ccfc429458158f05e06de537c854bab80fc70a83fd1f5554e68f87f0e26b.svg"
+    },
+    {
+      "name": "Contact Center Ai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/db/db4ac7e6c8d2e69fbc8672615082cad5405015e4426276ab3f1428de286de4ac.svg"
+    },
+    {
+      "name": "Container Optimized Os",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9d/9dd50108cc29949a333231d77a98424e5cfb54f89cf095dea0a9faa7c65bdcfd.svg"
+    },
+    {
+      "name": "Container Registry",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/94/948263b99f95764d14e418fd71141a698ba54092dc00f59b1996a0e587a3e1a8.svg"
+    },
+    {
+      "name": "Data Catalog",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/36/36c10d203d49faae693bcbe19985f836aaabc7ca5640efffb10ba5334e6fbb90.svg"
+    },
+    {
+      "name": "Data Labeling",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/86/8613f0f7187f7c1b6f222ba4b0c87e2b1eb0bfb679fdb13aaa8c3e3bfa35e249.svg"
+    },
+    {
+      "name": "Data Layers",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a3/a37a864249d39871b9f09d0c78bd350d5803673415032b79de35fecc4abe333c.svg"
+    },
+    {
+      "name": "Data Loss Prevention Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7e/7e164daa0a8fa52d3f2e62969cd0bb6a7061dc3fbfafd54231daf111371896d4.svg"
+    },
+    {
+      "name": "Data Qna",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7a/7a35d4c91d8600bb50bf129f0e67202388da3c8b32c05bd5400d291817385b7d.svg"
+    },
+    {
+      "name": "Data Studio",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cd/cdde5e1278faef9fe44a9990231c01f6b965a5054304bf6564f4fe5cf2cd3290.svg"
+    },
+    {
+      "name": "Data Transfer",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6e/6e64b94fb2d613fe005c8d9113ddddab29b242794fae33cff78c78702e128ab5.svg"
+    },
+    {
+      "name": "Database Migration Service",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fe/febe036de28a85e5011f78b4579c2195ed6f20b88372a600a3d5dda1cb32e2fb.svg"
+    },
+    {
+      "name": "Dataflow",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b6/b665e99572e7ed8df911cd47b57ed1d561d2d427aa3deeb7bd9016af13760cf7.svg"
+    },
+    {
+      "name": "Datalab",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/99/9940bda29fd0a55d27c9c5e7c317c14c9d47121115dabb13caf9c58717c037ff.svg"
+    },
+    {
+      "name": "Dataplex",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c2/c282e486cd6e3c139701f1491445e495f3f018f7245e69f2c3f13bbc3afa0bc7.svg"
+    },
+    {
+      "name": "Datapol",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a1/a1939bbd8c0b53bc13b22f55dd00ffa84ee16d03c800d0c255c3ad7b83e167da.svg"
+    },
+    {
+      "name": "Dataprep",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bf/bf38070c0374cc867b4a74edcb62cbdec902e17ab4a4e3557e2a3889dcc32384.svg"
+    },
+    {
+      "name": "Dataproc",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/40/408cb05781e9423c62583944e7ab6759faca5c40e8deab982403f96d47521bce.svg"
+    },
+    {
+      "name": "Dataproc Metastore",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/58/5824f67b6cd6ee1d5549d4c83191b51e25e83414f2f4bca312480622068c0f4d.svg"
+    },
+    {
+      "name": "Datashare",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/73/73efc8e6bc702f06eb3a3fcd9d1aeec7aa2711305db02108f23aa26e4e7cee9a.svg"
+    },
+    {
+      "name": "Datastore",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/31/31c2267877632e3eb4353980964120f4e4d283a509c93609b733289706cad19c.svg"
+    },
+    {
+      "name": "Datastream",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/03/03e364a00ca41166ab4d25025a712403727bcd9b66f73abec23aea62b9a1229d.svg"
+    },
+    {
+      "name": "Debugger",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/03/039b175933cd325d3b39d38346305b3fb8d004f404bcefb296fd8f4f7f6bca2d.svg"
+    },
+    {
+      "name": "Developer Portal",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bd/bd94ac6fd20c8aa76038e91fc2d97e50eb3bd39888551f8b861ad86c44c64eae.svg"
+    },
+    {
+      "name": "Dialogflow Cx",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7f/7f062685eee398e888fe0e3d11af4f3dec7b158a89daf33309a52be7eafe7593.svg"
+    },
+    {
+      "name": "Dialogflow Insights",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/13/13f11cd7505ac773f5ba823d1af8f7ef66b98d3f5c5125477248f7f1e20535c4.svg"
+    },
+    {
+      "name": "Document Ai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/67/6770fa1ffecaa41a42e70dc4ed095bfc0b60a10152f797469a7a9f4b63aed927.svg"
+    },
+    {
+      "name": "Early Access Center",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/69/69f10024590401dde04e3c6a8de98e1d5833a904ff4498630cf99e01ccd3288b.svg"
+    },
+    {
+      "name": "Error Reporting",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6c/6cbaf0d2cc8b8ff468f8b68d47ab3a36189f12433ef02babd4e41eae5085941b.svg"
+    },
+    {
+      "name": "Eventarc",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e4/e472976e3504d82025a76c50f79a6e90602cfb978a9408bc0a6896247d84fb46.svg"
+    },
+    {
+      "name": "Filestore",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e5/e5f3185a7077f9d23d88b51bb7829903555e6acd980260f6610d3620d051894f.svg"
+    },
+    {
+      "name": "Financial Services Marketplace",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d7/d7f85fe293c13f8d66e23625d83ba6d0f6b5a00a78bdf86765bd2f44742ed921.svg"
+    },
+    {
+      "name": "Firestore",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/aa/aa1c67f8602fc4ddf7291c1a39c9a07829b9c939eda9c830914e814cfdfe7ca2.svg"
+    },
+    {
+      "name": "Fleet Engine",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c9/c9e491f8d34621ab52e8594871893bd10c42228604f92d34171a4cb020c6490a.svg"
+    },
+    {
+      "name": "Free Trial",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f9/f977ee0f13b3cea4832b438a4eafda17daf8c83194b086c9a96584dcac42ff08.svg"
+    },
+    {
+      "name": "Game Servers",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9e/9e4b363f6c8f2df1e2b18312a7980c33651c78369688fd205da142d17b501705.svg"
+    },
+    {
+      "name": "Gce Systems Management",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/de/de5966c5700d40289bb64446e9601b42e78974f6b95f83518c82fef3a9cd8f04.svg"
+    },
+    {
+      "name": "Genomics",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/99/999fae30396c8a4d308fbf116b936ce425a1eae555fbd4917187cbffade8561c.svg"
+    },
+    {
+      "name": "Gke On Prem",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/37/37868861f85b02b83b0b6743ad4933039c23c8535788aef21248758c19f30004.svg"
+    },
+    {
+      "name": "Google Cloud Marketplace",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/96/96d1192f3a8ad81593d3563b510e13e8177163a3f81c7a3044adf2e5fd59e6ca.svg"
+    },
+    {
+      "name": "Google Kubernetes Engine",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cc/cce822e9ade3543dedc3d738c7164017cf86e9c9fa04e87faf07992db22a0bcc.svg"
+    },
+    {
+      "name": "Google Maps Platform",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c9/c95e23a70b26a97c436d1811f3fbc0b6c241a20ed3a47482ecb9e76a02cd660f.svg"
+    },
+    {
+      "name": "Healthcare Nlp Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5d/5dac07bfbf836e5964f466f88fb4a9f89103228f15b217e45c747ec54515a688.svg"
+    },
+    {
+      "name": "Home",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e3/e3eb0fea4f04045a30e2088487e55e05085cfe10ce9ca6882a1ea44ce1efe6e4.svg"
+    },
+    {
+      "name": "Identity And Access Management",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3d/3d82906d6c7a594f72d9b400a0525d76f9964b32999dd592ca43b038e83b35a1.svg"
+    },
+    {
+      "name": "Identity Aware Proxy",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0a/0a1adf184239bef8223a46e0e86f1d50dff06945085c607667d7a28f708a5ee6.svg"
+    },
+    {
+      "name": "Identity Platform",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bd/bd5f482a320d100a3c968b9e435b2e672d2d875f8062697ba3324ede8b80a65d.svg"
+    },
+    {
+      "name": "Iot Core",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4b/4b38d733810bcdabf495a47475423940343d147f2cebe86082dbcc704b4499d8.svg"
+    },
+    {
+      "name": "Iot Edge",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6d/6dfdc8420563f087af8d062246900bdbc0d1033e307f9afc3729f90491c5b653.svg"
+    },
+    {
+      "name": "Key Access Justifications",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/90/9015974d49feaa5062539843cba620dd6e48e395305a8802b3ad27dc5e88666e.svg"
+    },
+    {
+      "name": "Key Management Service",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ef/efcc43eedfd9abba0ce0545203c2d58e5589830a5dfd32af3a8d58218f4b5b20.svg"
+    },
+    {
+      "name": "Kuberun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/15/15cb0b0fc142e55e271b1a656b63e1fc3ed5354feae02724c8d40f2210f50187.svg"
+    },
+    {
+      "name": "Launcher",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/71/71f50a9701cd92692973360917974d23c75a746232418883c30dadf87f993914.svg"
+    },
+    {
+      "name": "Local Ssd",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7f/7f84d4ac59d1c9aacfb38beb98b6afb36fcfece2df221fd9e369675e314e9094.svg"
+    },
+    {
+      "name": "Managed Service For Microsoft Active Directory",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/10/1090b3c563ad661f6058ff3ba61db1b11a56172a035b9887f1dfc6021cd9a15f.svg"
+    },
+    {
+      "name": "Media Translation Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/54/5466fbbcc8cf294deea6b7350cadbddf4fe3dbb0ed944f55a31b8cc52dcc919f.svg"
+    },
+    {
+      "name": "Memorystore",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/03/03af577686adcca2c6cf70a7c3e777e21cdea013ce7ebec647de07063950350f.svg"
+    },
+    {
+      "name": "Migrate For Anthos",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4c/4c4826ae376e2072470a25a07929392df784e621f393abd24409a76910e6cee6.svg"
+    },
+    {
+      "name": "Migrate For Compute Engine",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fa/fa9ccaff1de80d2f114b714e4b5941e930361fc5301b4ed5a0e9fd2303d8a77c.svg"
+    },
+    {
+      "name": "My Cloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c3/c3e112e7415a8c89cc6c15e16d4604ed873ff742a298618fd83e19eadbb40168.svg"
+    },
+    {
+      "name": "Network Connectivity Center",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/04/04a4e513c0fb125064b0c806d1fb0515a4d9436c2cab95c9e94ea1ccde84699d.svg"
+    },
+    {
+      "name": "Network Intelligence Center",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/83/830e2a3a4ee565332b57d63d0cdbaca958c513e410de9532861afb2eac4db468.svg"
+    },
+    {
+      "name": "Network Security",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/20/20063bd16fc32c4af74c96558ecc9e6bff7f675b570302317d332f9d65773328.svg"
+    },
+    {
+      "name": "Network Tiers",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/27/27de81455134eb6b676ba6cc8db15c39bfdeb6e49ce94fad4bcb251fb9ecd5d8.svg"
+    },
+    {
+      "name": "Network Topology",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6f/6f5f81c2e209cbc975c6745e28543f109a47b28136f591b02b8f159260316f0b.svg"
+    },
+    {
+      "name": "Onboarding",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f8/f8c34dded76e78463eac2dd39b2c9b88b2a257cca955586b49e015cb59c881ad.svg"
+    },
+    {
+      "name": "Os Configuration Management",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/23/23b59b2a873920afa48aca91a1ad69305b475fa4222b70e6a1654a6c31628018.svg"
+    },
+    {
+      "name": "Os Inventory Management",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d1/d12ff95d6455657e4d2da76febb75b60941a3383a9339c0a24ad2b9767b22504.svg"
+    },
+    {
+      "name": "Os Patch Management",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8a/8a26e8737e8cf4c98dd71055426c70c7dbb7224545a4a42f8c69ff566654d86e.svg"
+    },
+    {
+      "name": "Partner Interconnect",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e04a7d9728872b78173e01d9b9d6372afd1cd82686d4203fef525363effb6e76.svg"
+    },
+    {
+      "name": "Partner Portal",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/95/95aee5b6d579f244376457b80499f3a57f011de6e2cfde70ff7b51e6f77c47df.svg"
+    },
+    {
+      "name": "Performance Dashboard",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/61/611ed8bd217a7ef37b057fdee49c3048a9dfaa293178f78acb936bbe8dad19df.svg"
+    },
+    {
+      "name": "Permissions",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/17/17b74d2d04dea861d9e92017dbc916687f9738fd4a68fc924a88e5dc4f04f43c.svg"
+    },
+    {
+      "name": "Persistent Disk",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/08/08d73f7018548adf1b4be966c40b908b8a6b6c3958b9b58ea70dcb9f2d545056.svg"
+    },
+    {
+      "name": "Phishing Protection",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b3/b3dfd1fddcf76f0653b56d4bda0e3bfc7faef9e105d772912eae7975c2c3db15.svg"
+    },
+    {
+      "name": "Policy Analyzer",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fb/fb011a683b811177c4def91b88ced26ec44576a29a971398f4495e37cd5e3035.svg"
+    },
+    {
+      "name": "Premium Network Tier",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/69/699ece3f6a6a2fd689b2f4745dc1359cef1478cbc7b8b1b25f3cc076edbd9047.svg"
+    },
+    {
+      "name": "Private Connectivity",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/af/af53c02226ecfc70ce3e83c0b65980acb45adf4e872b1d9de4e4f90346f9ae58.svg"
+    },
+    {
+      "name": "Private Service Connect",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/14/14a02192a824f3f8d989848b94c1a793399b9e7790387791cce57ee79d55c795.svg"
+    },
+    {
+      "name": "Producer Portal",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/25/25ecba3c8a190c57ed06b3c95d34793f0bccc417056ba60db94dcbd7b8bf481c.svg"
+    },
+    {
+      "name": "Profiler",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3e/3e0445dc8b181e559adde536ad303c641254d72c5f505ad7ea3eb73fd1fba432.svg"
+    },
+    {
+      "name": "Project",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f7/f76509ac5a8de8b872117b63937de7b89f21dc5ff4d05d89d4193c755c3068c4.svg"
+    },
+    {
+      "name": "Pubsub",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/46/4648ce7dc22e237f098a889bdea9a70189e5f7dc659969c3f8f2f89702ba5fec.svg"
+    },
+    {
+      "name": "Quantum Engine",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/46/46ad804cc2fcd7e38f0937f52d7532cab3bfb628b67c6d4ee9d73b15a16c4e9e.svg"
+    },
+    {
+      "name": "Quotas",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/56/56d620f7c79122700ede51106bd72c377b056c331a96f9f1020bc6f0c2e08f4c.svg"
+    },
+    {
+      "name": "Real World Insights",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0d/0d53ad69d1164dc0cd1786a0ecd4a17a474c0ef3208da69798cecf4d63bfcbec.svg"
+    },
+    {
+      "name": "Recommendations Ai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/18/18feb931e999605aeef3247c2d1177ba7078bfa0f4f48c2125beabd88fc8d09b.svg"
+    },
+    {
+      "name": "Release Notes",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2b/2b24a23529cf857fa140b52b3e8e53b70c6845c4506f9388e4eacc698190d0b6.svg"
+    },
+    {
+      "name": "Retail Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8e/8e04f19d4613e677d4bd311eeb6a5c281e7af0a6e1139175a051740087fac2c2.svg"
+    },
+    {
+      "name": "Risk Manager",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8b/8b43b2cd3d8cdfc137494dbbc003da3e19881e72974d00962ab75727afb07c06.svg"
+    },
+    {
+      "name": "Runtime Config",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b4/b4426eb9d12eb340e710288087df44c8ad14106281ca855b4f1913ff37605a85.svg"
+    },
+    {
+      "name": "Secret Manager",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fd/fd2ea043d45f97c57811576d668caddf59f614c56faec93dafc193cc818ee377.svg"
+    },
+    {
+      "name": "Security",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e7/e7d29da750d07574f407e8567f5d659eb9dd8a7b4b23a575d1c8f105dbfefcb4.svg"
+    },
+    {
+      "name": "Security Command Center",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d2/d2193b91aa776e6292755d191b9bdcf949563508a4299279b122527c86476a35.svg"
+    },
+    {
+      "name": "Security Health Advisor",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/96/960dd6caecb918d4e89a839dca7bf09fc94f0a488a30d1adccfed9c022b4ed7d.svg"
+    },
+    {
+      "name": "Security Key Enforcement",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6c/6cc4fc0836c4df563ba9179bca277faa01406fb50d47cb007bf8c64ec9a88d51.svg"
+    },
+    {
+      "name": "Service Discovery",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c7/c7037bdc2fe4ddc7a2ac44b66319c57cc0a90b5d7789002b5448c9f3c0c4ec00.svg"
+    },
+    {
+      "name": "Speech To Text",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/78/787402dc68a035b5c94586b44259b86071a4697fa4d2ccef2454769d87c3705a.svg"
+    },
+    {
+      "name": "Stackdriver",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/79/79c26e3be5f4d1b9d41c0f6e89e9c720992550d36eeb4f4ea34b9b5b76f70dcc.svg"
+    },
+    {
+      "name": "Standard Network Tier",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/37/371db8d3a81dd968a7b88b6d5f7946311a1ae60240e0a28906c137b90cf12e07.svg"
+    },
+    {
+      "name": "Stream Suite",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3b/3bded94456f73ac934776c4245562508bb7ab2e0bfe300a037bc7de528c429de.svg"
+    },
+    {
+      "name": "Support",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fd/fd3dfab30b4087bf95508d8cc97f3c77423b1bef467e1f3b23c6f8da3166bedd.svg"
+    },
+    {
+      "name": "Tensorflow Enterprise",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f1/f157c3ffec592593a1ec586a2fad484f14799ca4f8d6eb927377f42d3723c384.svg"
+    },
+    {
+      "name": "Text To Speech",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/89/898818dfebd2af0d4c8f981e51f22e553a30add67576c3487f74a992822ba639.svg"
+    },
+    {
+      "name": "Tools For Powershell",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5b/5b95d3a184059368778557b4fc79a511e4b1c552ba4911e6667b7e6892545ec9.svg"
+    },
+    {
+      "name": "Trace",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/43/433dc15cc4e428cc36163d9a57a51d703461120e924f66d1b582590c0af9b6e9.svg"
+    },
+    {
+      "name": "Traffic Director",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9d/9d5bf46da9df2bc41d452b3abf73a93ec28b858dcde2b26b05e3a2f7908aabc4.svg"
+    },
+    {
+      "name": "Transfer",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2f/2fdd8428d62bd0ee180b71386c6fbf23c2bd29542daac1052b2173a0e7f5a0db.svg"
+    },
+    {
+      "name": "Transfer Appliance",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/08/0867498684d86e0b315257685194cd6a5d6ed2f0842ebdeb1ae31b2823ca3008.svg"
+    },
+    {
+      "name": "User Preferences",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/70/70a7ec385890c0cff09f445faaf2eeeff4744168c15200b3defb4b05610b3240.svg"
+    },
+    {
+      "name": "Vertexai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/63/63cb37da25325c7c42201570050fe8ad3d13af776e88f29983a81a496d86584c.svg"
+    },
+    {
+      "name": "Video Intelligence Api",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/97/97e742141a51ea8f9e3e7e00447fb24aa9a643bdb03a04d61de3fca848adacbc.svg"
+    },
+    {
+      "name": "Virtual Private Cloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/55/55e980192dc2f4fcf1fd4398d9fbbbb5c7af779b700c49946870170d9d9142fc.svg"
+    },
+    {
+      "name": "Visual Inspection",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/92/9226ea3d9a1e240e645978babe894072f6e9d309d0ca06719ed221d4dc180148.svg"
+    },
+    {
+      "name": "Vmware Engine",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/08/082e571f827aa84665aca8f20b2ffa6d062b87ad0c1f4d205527ce5f8bf353da.svg"
+    },
+    {
+      "name": "Web Risk",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fc/fc0cd57708553064ae51e72b36829d1a14a31a7b029bf60bc9aa3aebac1e5e33.svg"
+    },
+    {
+      "name": "Web Security Scanner",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/41/41bf0a83640a63d518e8bc5877035e6dffa7c65e657b115f6bd6abfc3e5399de.svg"
+    },
+    {
+      "name": "Workflows",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/84/84812abacd203f41316a9de706dffed292523e643af4499a144ed905edd46135.svg"
+    },
+    {
+      "name": "Workload Identity Pool",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/67/67943902d02d90e2980a0743344cb664ea9cc7057c1d31af5081a0d8fc2b057c.svg"
+    }
+  ],
+  "name": "Unofficial theSVG Iconset - gcp"
+}

@@ -1,0 +1,248 @@
+{
+  "repositoryAliases": {
+    "Twoandz9/TheMagic-Icons": "black2c7/TheMagic-Icons",
+    "lige47/QuanX-icon-rule": "lige47/lige_icon",
+    "shindgewongxj/WHATSINStash": "shindgew/WHATSINStash"
+  },
+  "schema": 1,
+  "sources": [
+    {
+      "commit": "b16b260625f873266f6a6a9b88710132774997b8",
+      "documents": [
+        {
+          "bytes": 6246,
+          "originalPath": "README.md",
+          "path": "licenses/Koolson--Qure/README.md",
+          "sha256": "2324258f45a04f2bb9af48c18e734d3bdefa217dd9f7567f681dc431f5b65b24",
+          "sourceUrl": "https://raw.githubusercontent.com/Koolson/Qure/b16b260625f873266f6a6a9b88710132774997b8/README.md"
+        }
+      ],
+      "repository": "Koolson/Qure",
+      "usage": "Upstream attribution and non-commercial notice; no standalone license"
+    },
+    {
+      "commit": "ac66fa080532aef651be47d4fcad5b46a4fd203e",
+      "documents": [
+        {
+          "bytes": 9291,
+          "originalPath": "README.md",
+          "path": "licenses/xream--Qure/README.md",
+          "sha256": "ddfdc7321ba031b73c848e4d9be8920e9f69c842127a76214457aedbff7abd78",
+          "sourceUrl": "https://raw.githubusercontent.com/xream/Qure/ac66fa080532aef651be47d4fcad5b46a4fd203e/README.md"
+        }
+      ],
+      "repository": "xream/Qure",
+      "usage": "Upstream attribution and non-commercial notice; no standalone license"
+    },
+    {
+      "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+      "documents": [
+        {
+          "bytes": 5327,
+          "originalPath": "README.md",
+          "path": "licenses/Orz-3--mini/README.md",
+          "sha256": "1ab6810c1a8e5149f7408ce4fba348a66e43c88b3005da98b34aff4f24ce7fd4",
+          "sourceUrl": "https://raw.githubusercontent.com/Orz-3/mini/0e2bab71d8dbe512db9b5e7a9000a5661dd0e327/README.md"
+        }
+      ],
+      "repository": "Orz-3/mini",
+      "usage": "No standalone license; preserve source and README"
+    },
+    {
+      "commit": "500edfaa0b03aaeb3576116b3eee2d4e844e37f6",
+      "documents": [
+        {
+          "bytes": 1640,
+          "originalPath": "README.md",
+          "path": "licenses/black2c7--TheMagic-Icons/README.md",
+          "sha256": "ba7dd6fac361bb8d9cc4fbfb363f171c830ec16221f10ac661854632686f903d",
+          "sourceUrl": "https://raw.githubusercontent.com/black2c7/TheMagic-Icons/500edfaa0b03aaeb3576116b3eee2d4e844e37f6/README.md"
+        }
+      ],
+      "repository": "black2c7/TheMagic-Icons",
+      "usage": "Special upstream usage/redistribution notice; no standalone license"
+    },
+    {
+      "commit": "b3c5008a68ffcab3f488bea9a84c32e3076a837f",
+      "documents": [
+        {
+          "bytes": 1269,
+          "originalPath": "README.md",
+          "path": "licenses/cc63--ICON/README.md",
+          "sha256": "02b04328061f13234da3c74840cfde78c3662df5f2eb325133a700ae946ec4f0",
+          "sourceUrl": "https://raw.githubusercontent.com/cc63/ICON/b3c5008a68ffcab3f488bea9a84c32e3076a837f/README.md"
+        }
+      ],
+      "repository": "cc63/ICON",
+      "usage": "No standalone license; preserve source and README"
+    },
+    {
+      "commit": "62245c807f0260feac72a3c971035a6ce8b7957f",
+      "documents": [
+        {
+          "bytes": 2910,
+          "originalPath": "README.md",
+          "path": "licenses/lige47--lige_icon/README.md",
+          "sha256": "7d339f6700ddb9cba8eeb63e5d67c1aa09fbb9dd74a49fee957e038db4c0a650",
+          "sourceUrl": "https://raw.githubusercontent.com/lige47/lige_icon/62245c807f0260feac72a3c971035a6ce8b7957f/README.md"
+        }
+      ],
+      "repository": "lige47/lige_icon",
+      "usage": "Upstream requests attribution for reuse; no standalone license"
+    },
+    {
+      "commit": "5d5f63fcf98bc69d5f8f1b1bae6f86a01ee4bb97",
+      "documents": [
+        {
+          "bytes": 35149,
+          "originalPath": "LICENSE",
+          "path": "licenses/fmz200--wool_scripts/LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "sourceUrl": "https://raw.githubusercontent.com/fmz200/wool_scripts/5d5f63fcf98bc69d5f8f1b1bae6f86a01ee4bb97/LICENSE"
+        },
+        {
+          "bytes": 14622,
+          "originalPath": "README.md",
+          "path": "licenses/fmz200--wool_scripts/README.md",
+          "sha256": "326397aef384df338ad03cd7c342de645ad628b140a73d29a5d12484c1d4eb12",
+          "sourceUrl": "https://raw.githubusercontent.com/fmz200/wool_scripts/5d5f63fcf98bc69d5f8f1b1bae6f86a01ee4bb97/README.md"
+        }
+      ],
+      "repository": "fmz200/wool_scripts",
+      "usage": "GPL-3.0; third-party brand rights remain with their owners"
+    },
+    {
+      "commit": "173d41fe13f74590ab9449ee1ae1feb7be2f2b5b",
+      "documents": [
+        {
+          "bytes": 19018,
+          "originalPath": "LICENSE",
+          "path": "licenses/luestr--IconResource/LICENSE",
+          "sha256": "600ca4e25fe11762b75a97e714707fab48bb778374e92d24c6ca068791661c11",
+          "sourceUrl": "https://raw.githubusercontent.com/luestr/IconResource/173d41fe13f74590ab9449ee1ae1feb7be2f2b5b/LICENSE"
+        },
+        {
+          "bytes": 50,
+          "originalPath": "README.md",
+          "path": "licenses/luestr--IconResource/README.md",
+          "sha256": "2c93e880717c43b50b1cffd8bb53d1a74b8554ff334e603f944cd8994d469ac6",
+          "sourceUrl": "https://raw.githubusercontent.com/luestr/IconResource/173d41fe13f74590ab9449ee1ae1feb7be2f2b5b/README.md"
+        }
+      ],
+      "repository": "luestr/IconResource",
+      "usage": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "commit": "fadb238849a29eb7ed61bd78e00d7986f594709e",
+      "documents": [
+        {
+          "bytes": 924,
+          "originalPath": "README.md",
+          "path": "licenses/shindgew--WHATSINStash/README.md",
+          "sha256": "970b760be0e66a876ac2cf9807abf3c22d1efbb4bd3a89a5a7a5a0b934ac9e3d",
+          "sourceUrl": "https://raw.githubusercontent.com/shindgew/WHATSINStash/fadb238849a29eb7ed61bd78e00d7986f594709e/README.md"
+        },
+        {
+          "bytes": 872,
+          "originalPath": "README_zh.md",
+          "path": "licenses/shindgew--WHATSINStash/README_zh.md",
+          "sha256": "f7cbd2ae8b7008b3555d60746ef8d8be4f0bade41ae72f2eca58fb0d0d7046bc",
+          "sourceUrl": "https://raw.githubusercontent.com/shindgew/WHATSINStash/fadb238849a29eb7ed61bd78e00d7986f594709e/README_zh.md"
+        }
+      ],
+      "repository": "shindgew/WHATSINStash",
+      "usage": "No standalone license; preserve source and README"
+    },
+    {
+      "commit": "ea81823ced215c0282fb19beecdc4e9f56635d69",
+      "documents": [
+        {
+          "bytes": 34523,
+          "originalPath": "LICENSE",
+          "path": "licenses/xream--unofficial-thesvg-iconset/LICENSE",
+          "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+          "sourceUrl": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/ea81823ced215c0282fb19beecdc4e9f56635d69/LICENSE"
+        },
+        {
+          "bytes": 1291,
+          "originalPath": "README.md",
+          "path": "licenses/xream--unofficial-thesvg-iconset/README.md",
+          "sha256": "6fb6525b892dfc6afb38329ca0a2c520425631683a26d623f8aa225c3bbd214f",
+          "sourceUrl": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/ea81823ced215c0282fb19beecdc4e9f56635d69/README.md"
+        }
+      ],
+      "repository": "xream/unofficial-thesvg-iconset",
+      "usage": "AGPL-3.0 for package/generator; SVG assets originate from glincker/thesvg"
+    },
+    {
+      "commit": "a0da72712950c6109f14130915e4f38f89b52e6d",
+      "documents": [
+        {
+          "bytes": 1067,
+          "originalPath": "LICENSE",
+          "path": "licenses/glincker--thesvg/LICENSE",
+          "sha256": "7a679e60d78db32455aea3b4613d2d3f3bec929edf8cbb608ccc40b37c663aed",
+          "sourceUrl": "https://raw.githubusercontent.com/glincker/thesvg/a0da72712950c6109f14130915e4f38f89b52e6d/LICENSE"
+        },
+        {
+          "bytes": 19587,
+          "originalPath": "README.md",
+          "path": "licenses/glincker--thesvg/README.md",
+          "sha256": "f7cd3d7af76474b2214470db538dc9327518f11c3c51c64c36fbda88c0f348a2",
+          "sourceUrl": "https://raw.githubusercontent.com/glincker/thesvg/a0da72712950c6109f14130915e4f38f89b52e6d/README.md"
+        }
+      ],
+      "repository": "glincker/thesvg",
+      "usage": "MIT; brand/trademark rights remain with their owners"
+    },
+    {
+      "commit": "f349c583d09108e5c5e6ed5d1c7e1ffe8069bb3b",
+      "documents": [
+        {
+          "bytes": 1064,
+          "originalPath": "LICENSE",
+          "path": "licenses/lobehub--lobe-icons/LICENSE",
+          "sha256": "add9d7531d1b21646317a8958e38fc727506fa39d24bdecb44154d943c82753a",
+          "sourceUrl": "https://raw.githubusercontent.com/lobehub/lobe-icons/f349c583d09108e5c5e6ed5d1c7e1ffe8069bb3b/LICENSE"
+        },
+        {
+          "bytes": 167055,
+          "originalPath": "README.md",
+          "path": "licenses/lobehub--lobe-icons/README.md",
+          "sha256": "60e33efeea0f3f6209caec011d274edc90db2c6d4ff19c241ab0929c97edc75e",
+          "sourceUrl": "https://raw.githubusercontent.com/lobehub/lobe-icons/f349c583d09108e5c5e6ed5d1c7e1ffe8069bb3b/README.md"
+        }
+      ],
+      "repository": "lobehub/lobe-icons",
+      "usage": "MIT"
+    },
+    {
+      "commit": "b6b55fef1e8636b540a6d016a4729ca8cdf2e60b",
+      "documents": [
+        {
+          "bytes": 1134,
+          "originalPath": "LICENSE",
+          "path": "licenses/jdecked--twemoji/LICENSE",
+          "sha256": "5076b7ec0f98f95aa87a3103bebdcd3852acd88d61fbd99307b8d953024acb67",
+          "sourceUrl": "https://raw.githubusercontent.com/jdecked/twemoji/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/LICENSE"
+        },
+        {
+          "bytes": 18524,
+          "originalPath": "LICENSE-GRAPHICS",
+          "path": "licenses/jdecked--twemoji/LICENSE-GRAPHICS",
+          "sha256": "8ae9438818c26e4873b91d8c6ad620526c011e27e125677f13031eda903f007c",
+          "sourceUrl": "https://raw.githubusercontent.com/jdecked/twemoji/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/LICENSE-GRAPHICS"
+        },
+        {
+          "bytes": 11932,
+          "originalPath": "README.md",
+          "path": "licenses/jdecked--twemoji/README.md",
+          "sha256": "15103e6888388c6a07b729a7d5bbd69c4c5ae71adb5d6f45288d1e7c014e8db8",
+          "sourceUrl": "https://raw.githubusercontent.com/jdecked/twemoji/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/README.md"
+        }
+      ],
+      "repository": "jdecked/twemoji",
+      "usage": "Graphics CC-BY-4.0, attribution to Twemoji; code MIT"
+    }
+  ]
+}

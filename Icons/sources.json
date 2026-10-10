@@ -1,0 +1,153 @@
+{
+  "branch": "master",
+  "packs": [
+    {
+      "assetRepositories": [
+        "cc63/ICON"
+      ],
+      "id": "cc63",
+      "url": "https://raw.githubusercontent.com/cc63/ICON/main/icons.json"
+    },
+    {
+      "assetRepositories": [
+        "fmz200/wool_scripts"
+      ],
+      "id": "fmz200",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/icons-all.json"
+    },
+    {
+      "assetRepositories": [
+        "luestr/IconResource"
+      ],
+      "id": "kelee",
+      "url": "https://raw.githubusercontent.com/luestr/IconResource/main/KeLee_icon.json"
+    },
+    {
+      "assetRepositories": [
+        "lige47/QuanX-icon-rule"
+      ],
+      "id": "lige",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json"
+    },
+    {
+      "assetRepositories": [
+        "Orz-3/mini"
+      ],
+      "id": "mini",
+      "url": "https://raw.githubusercontent.com/Orz-3/mini/master/mini.json"
+    },
+    {
+      "assetRepositories": [
+        "Orz-3/mini"
+      ],
+      "id": "mini-color",
+      "url": "https://raw.githubusercontent.com/Orz-3/mini/master/miniColor.json"
+    },
+    {
+      "assetRepositories": [
+        "Orz-3/mini"
+      ],
+      "id": "mini-color-plus",
+      "url": "https://raw.githubusercontent.com/Orz-3/mini/master/Color%2B.json"
+    },
+    {
+      "assetRepositories": [
+        "Orz-3/mini"
+      ],
+      "id": "mini-plus",
+      "url": "https://raw.githubusercontent.com/Orz-3/mini/master/mini%2B.json"
+    },
+    {
+      "assetRepositories": [
+        "xream/Qure"
+      ],
+      "id": "qure-additions",
+      "url": "https://raw.githubusercontent.com/xream/Qure/refs/heads/master/xream/iconset.json"
+    },
+    {
+      "assetRepositories": [
+        "Koolson/Qure"
+      ],
+      "id": "qure-color",
+      "url": "https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor.json"
+    },
+    {
+      "assetRepositories": [
+        "black2c7/TheMagic-Icons"
+      ],
+      "id": "the-magic",
+      "url": "https://raw.githubusercontent.com/Twoandz9/TheMagic-Icons/main/TheRaw.json"
+    },
+    {
+      "assetRepositories": [
+        "glincker/thesvg"
+      ],
+      "id": "thesvg-azure",
+      "url": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/azure.json"
+    },
+    {
+      "assetRepositories": [
+        "glincker/thesvg"
+      ],
+      "id": "thesvg-color",
+      "url": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/color.json"
+    },
+    {
+      "assetRepositories": [
+        "glincker/thesvg"
+      ],
+      "id": "thesvg-dark",
+      "url": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/dark.json"
+    },
+    {
+      "assetRepositories": [
+        "glincker/thesvg"
+      ],
+      "id": "thesvg-default",
+      "url": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/default.json"
+    },
+    {
+      "assetRepositories": [
+        "glincker/thesvg"
+      ],
+      "id": "thesvg-gcp",
+      "url": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/gcp.json"
+    },
+    {
+      "assetRepositories": [
+        "glincker/thesvg"
+      ],
+      "id": "thesvg-light",
+      "url": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/light.json"
+    },
+    {
+      "assetOverrides": {
+        "https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/thebluemosque.png": {
+          "reason": "Restore the exact original image from the parent of its upstream deletion, commit 976bf884112c676be1dd51d655427e7d83ce107f.",
+          "url": "https://raw.githubusercontent.com/shindgewongxj/WHATSINStash/673ae8f1aa91b8d0d10ea1c89aeb2f57cf84863b/icon/thebluemosque.png"
+        }
+      },
+      "assetRepositories": [
+        "shindgewongxj/WHATSINStash"
+      ],
+      "id": "whats-in-stash",
+      "knownUnavailable": [
+        {
+          "reason": "Upstream URL returns 404 and the original path has no Git history; no different image substituted.",
+          "url": "https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/discord.png"
+        },
+        {
+          "reason": "Upstream URL returns 404 and the original path has no Git history; no different image substituted.",
+          "url": "https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/vercel.png"
+        }
+      ],
+      "url": "https://raw.githubusercontent.com/shindgew/WHATSINStash/refs/heads/main/icon/iconset.json"
+    }
+  ],
+  "previousPublishPrefixes": [
+    "https://raw.githubusercontent.com/SchweppesSoda/ProxyIcons/main/"
+  ],
+  "publishPrefix": "Icons/",
+  "repository": "SchweppesSoda/CustomRules",
+  "schema": 1
+}

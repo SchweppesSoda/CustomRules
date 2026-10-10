@@ -1,0 +1,1562 @@
+{
+  "description": "可莉的图标订阅\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/luestr/IconResource/main/KeLee_icon.json",
+  "icons": [
+    {
+      "name": "Loon",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ee/eedc8e3a65cfb0e1312d41a6ae16bda6a99fc3df28c17198a3a2b15b972b0593.png"
+    },
+    {
+      "name": "1.1.1.1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d4/d4a1112acdf939550ed91bfd2c98838b498f200c5c9e9d0c9d83a56dba0a3c65.png"
+    },
+    {
+      "name": "12306",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6a/6a1da3e18d232eac7ba9aa8eb10878d16f40b14c78846d2240a340ef11b925f3.png"
+    },
+    {
+      "name": "Adobe Creative Cloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c2/c2f2a68f01372b22fcbf06903fa3feae9298413900a3994bde6fb38f8c2821ed.png"
+    },
+    {
+      "name": "Agenda",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fd/fd5f24eec5827e9ccb21033dc727e81dd73b8b6973019898af9f704613ef392d.png"
+    },
+    {
+      "name": "AppRaven",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e7/e7681486aed4c6f3fb63a8a903e407af518f005b6c94a2a4d7107daccd81a05f.png"
+    },
+    {
+      "name": "Audiomack",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d7/d77ba996055c805d0e25feafd31a0ad65a88ce4d2f37e7e23ecc884fe24787fc.png"
+    },
+    {
+      "name": "Bluesky",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/dd/ddd7500d180a7703d2f7f1897bda7f6b2352b023bdb2cc8a9fadc396f20cfb21.png"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/68/68fee176360ad6e6634944dca006cdaff1a43c9723eb6a2d57c9e4984d7910da.png"
+    },
+    {
+      "name": "Claude",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/64/64e360a202d6a5d3e6fe2b948842358ad35bf294bcf68abe428f06faa97700ed.png"
+    },
+    {
+      "name": "Cubox",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8b/8bdf4c3218e4b9ead684ce0710943f7777026abfd1cffc7dafabd98e23c33964.png"
+    },
+    {
+      "name": "Darkroom",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ec/ec8d4550ec234adad881e3f5d508d2e6080cbc602323cd9bc67a763600e42e8c.png"
+    },
+    {
+      "name": "Dazn",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/09/099144077c6b27139c712782cfa85f66a10170be5f70512efb478958db40f40a.png"
+    },
+    {
+      "name": "Discovery+",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/04/04f9ac1402686e22f54df01d54466f8e50ddb16aed0e0fba851de0cf36129494.png"
+    },
+    {
+      "name": "Disney+",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7a/7a0c8a08c06a9c2c87bfc65294cfa04dc3f82518d5a72932a4302b64e15ba3cb.png"
+    },
+    {
+      "name": "Documents",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0c/0cdecd3febb9ba0456041dc0484171001ee1fa5f3067805defeede1a2458cde4.png"
+    },
+    {
+      "name": "Drafts",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/04/0437f45769c6afecc41fff086ed9fe4e107dd4634a921decc71c8ba77c014be4.png"
+    },
+    {
+      "name": "Emby",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c9/c988828edf90a478bc16f77a231da99c6cd62a53fd9e84b0c7fc66e0753d22de.png"
+    },
+    {
+      "name": "Enpass Password Manager",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/83/83810957916588597ac21f5d6937944347fa882a155ed26eecdd1f318bd51517.png"
+    },
+    {
+      "name": "Fileball",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3b/3b3b1d058cae202e751e66f37eedd45a1297ad756e2ce3f2d041a597ac0f4f59.png"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5f/5fab678560014020c6e35bd230e3940af12fe1eca76e7ba963cefe0aca8fddf7.png"
+    },
+    {
+      "name": "Google",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/61/61cee76ad9c00d4e8ebaf65f28d2f096d5b85400eac13c2ff8ae69c5fe225de0.png"
+    },
+    {
+      "name": "Grow",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cf/cf3785d42301cf634c11f3599aec237999ddf1efbaa607ce9ac3e5fe58958a3c.png"
+    },
+    {
+      "name": "Happy:Days",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/dd/dd9ad1231efd02a4d33c08773e63ce6c5c30b5ce775242f8f2967881365e97e7.png"
+    },
+    {
+      "name": "IT之家",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8c/8cbe34c574f00e0cc4e2413b8f10a0c2dd4b6d338fa552678e76c64c252a11f3.png"
+    },
+    {
+      "name": "Instapaper",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e3/e34582cd3851bf5700dc8f8799723732129b3f6ddb1adca932f16d3f33d9139f.png"
+    },
+    {
+      "name": "JavaScript转换器",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9c/9c61b63f147fa8a1ee0c1f386fb866af0e851fb4b20b6d3b80bd776c5042523a.png"
+    },
+    {
+      "name": "Line",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4b/4bd283e147ead1fad58d839d0585ade3d25bff7c47b116679cdbf4a1d7914629.png"
+    },
+    {
+      "name": "Netflix",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b7/b7e50fcbc601aa58a317c76b8e3e8f1173cb0b331a024a39b9bdb71ed4ad1814.png"
+    },
+    {
+      "name": "Nicegram",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/69/6907de6b30ce87096b00c0192edc0fc878b4d2a98e9e5c38cebc3e72c9235cdf.png"
+    },
+    {
+      "name": "Nike",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fd/fda42707fb7c996672996e9b67ee651f9b426c387bd43644415371fa7578b2fb.png"
+    },
+    {
+      "name": "Notability",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2f/2fa3a332b0af3fc6731e371c798461b41941e5a607524784beca56b0fd1d6fa0.png"
+    },
+    {
+      "name": "PDF点睛",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3f/3fb825f4b81d07de5748e7f7a3f1a003b2e5ef5d8c7d9e0a69953e47da9af0f8.png"
+    },
+    {
+      "name": "Paramount+",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/27/2784ce4f8ae597bef18998c38663b3fed80ecb1eb704377cfed9b8eb7eae6850.png"
+    },
+    {
+      "name": "Picsart",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/81/811d9608fb659ead19404afcc6dad96cec9cdac61328133012b3ca334d23eb90.jpg"
+    },
+    {
+      "name": "PikPak",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/64/64e7c1e3944ac55c47a860ed8b1f13036fa6659c2413cdfeae971bc4c13a70cd.png"
+    },
+    {
+      "name": "Prime Video",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c2/c2f8aaf69bc002014a92d05194ffbb39c7fb94835cc45dd8cedebb9208ce0c5a.png"
+    },
+    {
+      "name": "ProCamera",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/62/627d3e65600cc16ef1baf019a8016d462ce6649459fddb0adee89ce28fad2406.png"
+    },
+    {
+      "name": "QQ",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fb/fbe7afeb1c9ec5044383d52a90f958f5cec2e02766b6e1143179d6facaa1256f.png"
+    },
+    {
+      "name": "QQ音乐",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5f/5f3efb8c7281d300a5999cbd24101eb8851c61c8ce9853c90284b515bb508238.png"
+    },
+    {
+      "name": "Reddit",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/10/104905641b89554e8b2aaa1f32936ac48f2bee6086715dbb6509bb4772b891b1.png"
+    },
+    {
+      "name": "Safari",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f7/f7565b2f0e9c5880a8fc46c547790c818f78d800333ad65c6750ae614bd9ad15.png"
+    },
+    {
+      "name": "Scanner Pro",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6e/6e52b2f5339c1f9d831d644d2c1cf741a12ecd0520b0b3f9072ec20709dbf768.png"
+    },
+    {
+      "name": "Soul",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/15/151fb3e23dec43d87842d20d1e56bb048aad45f4a7e52742eb104322dd6bfc17.png"
+    },
+    {
+      "name": "Spark",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9b/9b32e59d4637ffa1865491d4b62d779701d00417c22538e35a282296e60d9e01.png"
+    },
+    {
+      "name": "Spotify",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3e/3e17ce2b2861dee8bde98bf31ec0140f486fc1052a63ba5938945f498dcc0bd2.png"
+    },
+    {
+      "name": "Stay",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2b/2b1e25c21729e9a75e6a5bf4545299ae861826e47252004313241804f346b5bc.png"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c9/c9c99cd2dc3e175dbe8cff534fa375fb136d848f303d6c3f8d95d921125199f7.png"
+    },
+    {
+      "name": "TestFlight",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a7/a75467bbb0395c747f4657c7ac9e94cd7c1195c4978132ae1b29518fe97a89aa.png"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d8/d847dcb0efd2bd7996a3aa20c59adc30e60e02724be79e89490dae728f62ac1b.png"
+    },
+    {
+      "name": "TubeMax",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/eb/eb0d852e278a01f4bc082ae738df1ce725c9e6bfeef11e9734616cfc94cb486c.png"
+    },
+    {
+      "name": "VVebo",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0d/0dd6083292018963161a9d5387d6506f5a27d8ad5d294722317292d9514c0969.png"
+    },
+    {
+      "name": "Xmind",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d8/d8c72f478f14e91522dd0b0a748b0b384488ea5796cf44c47d657b733aa9a657.png"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/86/86fb46d7bdf6e14d9e62f94fc04b0126b4233231495cc5e4d77934656b931b41.png"
+    },
+    {
+      "name": "YouTube Music",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f2/f25584989c28dcc4821075f25bbe75cab17525e0f9ff9bc9cde9ecfd75e736f5.png"
+    },
+    {
+      "name": "一键抠图",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2e/2ee7810f7be064ee64f9e0a759a1bebb87a74686122afd3ad51c293bdad0cec1.png"
+    },
+    {
+      "name": "七猫小说",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ad/ad2d0ebdc3121303a58cb789823555b06b0460fec13af5603e2188a1f51fd2ea.png"
+    },
+    {
+      "name": "中国人保",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ba/ba24732971fcd357eed2ace837ec4219eb270be5b1e94c67db39b75e157822b5.png"
+    },
+    {
+      "name": "中国移动云盘",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/82/82b067872f277dce240c4d92511911f1309ab1836ae7ed25e552f9860c367b12.png"
+    },
+    {
+      "name": "云闪付",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/db/db833eba4b5985968520e7d85bc601fcda7c40b76de3e670a802d7813c41e223.png"
+    },
+    {
+      "name": "京东",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b0/b0fd94c3591e4b9d3334aa662eca66eda38898361dde00d9d9d791876d7c9caa.png"
+    },
+    {
+      "name": "什么值得买",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/99/991681b92d4781d41cf90b149b42a244b021b54aebaf9fe525cab4d3bebbcde8.png"
+    },
+    {
+      "name": "优酷视频",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/dc/dcba9676d0d6e7e6d86189242e94a860667d77b4b86966901a4080af639c70d1.png"
+    },
+    {
+      "name": "全民K歌",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/27/27b89df5b62a5528495bcb36592596d59b7292489afb16be2ccbe46e16cd4c12.png"
+    },
+    {
+      "name": "半次元",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8d/8d8012220ccc53019678e7958d2e7c71feef26594478f2b83a0f24061eff563d.png"
+    },
+    {
+      "name": "哔哩哔哩",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2f/2f8fe8e41fe2b5fd3ffdbc9a8dbf38da1fe63710339562960d84cc2cea54d315.png"
+    },
+    {
+      "name": "唱吧",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/af/afd4f35b4f1447c8318e0d0b938beba8bee97416d739029fc69cdaaf42e69cbb.png"
+    },
+    {
+      "name": "喜马拉雅",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/99/993d17e0f99a6a9cbd8c3bbe9745913703475e335bbbe1ec5b63abe5a716e77f.png"
+    },
+    {
+      "name": "宝宝树孕育",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c51531556fa44cf96cc903846567487fbef64f252c770136672103cd242414a4.png"
+    },
+    {
+      "name": "小红书",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/33/33cb27469e5ff4770cabf9f04ec0470a5624301b63631f7ca7fded8d705c3cb8.png"
+    },
+    {
+      "name": "微信",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c3/c3c9684a96cd3f44f19399fd178d2a503890bd5fe53471087d380a92b8438b01.png"
+    },
+    {
+      "name": "微信小程序",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ee/ee2690923d094a1a05cb2e0e7836f94a9e9a9ada390e729d374ee59d1f10b6b0.png"
+    },
+    {
+      "name": "微博",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/da/da0322f4715e301fc786086bc2fb1b25dc692d86b5bf19e9443027b49fd67a73.png"
+    },
+    {
+      "name": "微博轻享版",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/44/446532ca46099e253cab2576cc1fb84b982d1bd1270bf4e56cc7f584df6e629e.png"
+    },
+    {
+      "name": "必应",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e8/e867b633257c32d06c9d9aae3395449013e32eeed976c94aef85a4c6be544e61.png"
+    },
+    {
+      "name": "推栏",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0a/0a2a101648ebf8ba1f3a8e84a7c4ac5465f88eeae1be6ac1cde5cce5c8af8fbf.png"
+    },
+    {
+      "name": "搜图神器",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/83/83342685aae8ca80839d1f3c09661c826da0256a4943bd263653cefa69e47ae3.png"
+    },
+    {
+      "name": "淘宝",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/57/577e68d916ec72d4b6b44dfdab3247c1fc8c22d92184f52bdf86c2a99462dc0e.png"
+    },
+    {
+      "name": "爱企查",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d5/d557c775f0a7b4d98a17e0f18f24568d9d57416ab8e839a4783f45e9b512cbe8.png"
+    },
+    {
+      "name": "爱奇艺",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/be/bea045bcebd7c359f1b74db48cd45dc904cee79d210df833097d335d8eb0c751.png"
+    },
+    {
+      "name": "番茄小说",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c5921a39761173525002839d3fae26e7bf72055f12b14e7f0c99ee6955e73398.png"
+    },
+    {
+      "name": "百度",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ac/aca555265aee7f3d89d169336f6f9536b9cc5ae1aff8998f699839219adf25dd.png"
+    },
+    {
+      "name": "百度网盘",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/68/6854e15ccf7895c24fd64e3fa5ec1a291c0543a782333d98ca153dab9dc3d691.png"
+    },
+    {
+      "name": "百度输入法",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/15/1546ea00ac1faaa47538a6b02a402c616027a558398f085b39f86c7b7116b1f6.png"
+    },
+    {
+      "name": "皮皮虾",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d6/d6121db12989ea657ac7e1f6becb472f85f1dfbdd8419e9f182b261143936a4a.png"
+    },
+    {
+      "name": "知乎",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5a/5a4b4576e7823e9f850e49fda2078975902e3fdef28983c20b8ce1c5a46dd28d.png"
+    },
+    {
+      "name": "稿定设计",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6a/6a296b2dc87b3c97cf8c8826a59df29e4b4792e269d7c27d2ee1aabcfc0d6497.png"
+    },
+    {
+      "name": "网易云音乐",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/35/350db482c5b6fcc431ccdb2af7378da1a7ada2f14810591b485626d7dcc40f25.png"
+    },
+    {
+      "name": "网易新闻",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/84/84c68ff9afdeedff0f7335f06819c94fd565f6fe0df4573518e3a45d24f6ea81.png"
+    },
+    {
+      "name": "腾讯视频",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f7/f7a9e7b5f16e86c7277d83021b6899af92cabda15450a1b8e38737de81303b67.png"
+    },
+    {
+      "name": "航旅纵横",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/74/7471f3519e1c5f302c5a6316da70c0370bcfeab0347ae4274daad1cf774e35d5.png"
+    },
+    {
+      "name": "芒果TV",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4d/4dbd6fa20b1abe57889888b0bcf6648a33e59751587eb3d337b750290a353ced.png"
+    },
+    {
+      "name": "菜鸟",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/24/2426582545d28d4cb7c45af7061a482dbb5fdfeec692d0e19d41194dfacf1c77.png"
+    },
+    {
+      "name": "虎扑",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/59/59ed2238cec5966a89930fdc65bbf4654059c7280fe402f806248938404e4af9.png"
+    },
+    {
+      "name": "财新",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/aa/aa22b60e221e26074a3d7e3626a2a90e46d5055b8fea8c7b1557e1ce917b1f02.png"
+    },
+    {
+      "name": "贴吧",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/06/067c89f6785e0fe2271779d4b2988c3da0c9fb58b593954cb03c27bda4bb561f.png"
+    },
+    {
+      "name": "起点读书",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/81/814b86ae5b1a5c165e98763586abfede8da1b2e12b199475105536dbb41e4873.png"
+    },
+    {
+      "name": "酷安",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/32/32af03d7d2fea4be4cc0451c15904bd2177cfc6cf95ab13e0797bea0837da026.png"
+    },
+    {
+      "name": "阿里云盘",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6d/6d1d87a92c9ca62cb34da2cbae49e2dec80e81bd0ee3d07b856cbcdd98134478.png"
+    },
+    {
+      "name": "高德地图",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/40/405fd0babe5c4ac0d827510d8a6c696be0f5c96fefd70a780bddf3717d1b6d38.png"
+    },
+    {
+      "name": "纵横小说",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b1/b1f589c5614336edd17402a1a4b337d031d2fc904d666d0a8ae835361d472d0b.png"
+    },
+    {
+      "name": "朴朴超市",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/26/26a991a5004b65e058a8316c0ebe0b68f5d13b8e2eac0528b7579d167cf6b12d.png"
+    },
+    {
+      "name": "滴滴出行",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0c/0c0dd8af0135bddaec32fa104b886505637f85bccf42871f990c76c6cbd4f728.png"
+    },
+    {
+      "name": "启信宝",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/61/614cc60904c353f56428a763f7cca487a58d3bf11349120f90ae39f684ad94bb.png"
+    },
+    {
+      "name": "转转",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a6/a61466bc97318fd8c49298a0a8953f6b44ff47506dd6d8f47b85dc402423ca85.png"
+    },
+    {
+      "name": "风鸟",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c8/c83ae3e6789cff8b06f3fbb206e85c220e17e7d0618327ba33e948680ba6029c.png"
+    },
+    {
+      "name": "小象买菜",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4a/4a41870ac3b79b7a4aa81e8ab71987617599f3042d9730f4f50404a91746d515.png"
+    },
+    {
+      "name": "最右",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c6/c63179cf859731273caf66d5e91585530d743b2eea6d591ab64c1a4fa080a4b0.png"
+    },
+    {
+      "name": "网易邮箱大师",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/42/4212d92a893ac1c23596b005bc7058fa28eaeceb9d94826594fb2751a9321f3f.png"
+    },
+    {
+      "name": "小喵看书",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/df/dfb765091092537d6c2f1000d56b389f88b1669c95e21d13673c4dafbfaa9fef.png"
+    },
+    {
+      "name": "360智慧生活",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c3/c32fb8005d42a44a2b0ceb47be875f5395573067dea055cc3c9f9059b918ba67.png"
+    },
+    {
+      "name": "360摄像机",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d2/d27d4668439f60c14577996d7d5976dee295c0f9dd0ed0498b9ae8e0e1c829a2.png"
+    },
+    {
+      "name": "萤石云视频",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2f/2f73bf2dc2cdeeae31447e556d4e30850fd66d9ab8411d2cc358f38681b34dcf.png"
+    },
+    {
+      "name": "飞客",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2d/2dc04d9a904a9598b1ed7f550f53c1f6aa1c2d3ac3fb1b62c21fb4f1f1340fed.png"
+    },
+    {
+      "name": "收银通商户端",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d5/d5cf03529eb2da58d81e4f073a814a91dc0bce3b36622b049456c56999421f61.png"
+    },
+    {
+      "name": "粉笔",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/83/838df7e8d1583d846a499a797cfd936ac32090a352b1b4ed417eea62688269b3.png"
+    },
+    {
+      "name": "乐播投屏",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/71/714d9f481bb0123658acd054c43ebf6e765948f55130636bdc43bb3634c0c1e8.png"
+    },
+    {
+      "name": "小黑盒",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9b/9b8223f67f1575337ac31d7a426fc498c894b2a8e74ce5d1e44494d3b75678d2.png"
+    },
+    {
+      "name": "雪球",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d3/d367bb9f479734be46c9b5a0942807708bc682be039e72e2efe02564fd947a3f.png"
+    },
+    {
+      "name": "知识星球",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ec/ecfde08d6e167e4ea9ef4d7747de21e5df6b1b43ae96332c94d8b487ac2f1566.png"
+    },
+    {
+      "name": "随手记",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0f/0fef6d5580a2c1573d8b391fd4f0337089622e561bc546b853671b093319bf8f.png"
+    },
+    {
+      "name": "迅雷",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ec/ec96b2e496ab5bbab54a8d5a6051c64c7c09fd530ceab308f9d59ead59e8c090.png"
+    },
+    {
+      "name": "夸克",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/44/448978496c88d883fe8c048d0ad543be4a7440131cad7b60f6a694d2f6f7655b.png"
+    },
+    {
+      "name": "书旗小说",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/05/053d8c781a16d545c4c4fd46b1ba62351bbc7930246d558b80b379f38860ef5c.png"
+    },
+    {
+      "name": "驾考宝典",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/70/70fc208b258441c756af8638b9bd28e6b637c4656aee711cd0ff918f6fa36295.png"
+    },
+    {
+      "name": "驾校一点通",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/34/34582e23a6f00aa402fbd84ca9991eb629a97652f2b4268120914bbbed6436e2.png"
+    },
+    {
+      "name": "堆糖",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/86/8647e65f32bd090431dbda13582810c11c724177ba57a66506e40ee08f7fbadc.png"
+    },
+    {
+      "name": "汽车之家",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bb/bb44e720c253c1bb6b42cddb7fa6d7e1cfe6d6d4e9e646477d7353f78831a3a1.png"
+    },
+    {
+      "name": "酷狗音乐",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7a/7a28bcaac4c979aed3967b77f1f00ddd837ad606dcc328f16a0cb0696a3d476c.png"
+    },
+    {
+      "name": "酷我音乐",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/64/642185f30919e6ba96d63475b0746740e521ff678a08385eb78228217bba6af9.png"
+    },
+    {
+      "name": "配音秀",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4f/4f3fab2f6445f36b51202e83f20aeb8e660a043929199dfef6342474454e9690.png"
+    },
+    {
+      "name": "京东金融",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2d/2df2aecd90b787afe67674b0c39301ebdf567eaa825cbec6525e63d5e4305153.png"
+    },
+    {
+      "name": "漫客栈",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/90/9039a27e3de652c62c61f2a6c1684930ad5b22065b458edc83dd8bd4116be1cc.png"
+    },
+    {
+      "name": "腾讯动漫",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e7/e7fb54809961c1ea08fba068cdff97bd2d299f214ccc0f6e62d0e7ac79030691.png"
+    },
+    {
+      "name": "快看漫画",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/54/543c0efd19880cbb1ff4af0697bdb6ba79f652151cc04164c52141292d0f2ef0.png"
+    },
+    {
+      "name": "哔哩哔哩漫画",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/be/bebe3861b476908c312acc148fd909068d7c0bcf03215defbcf7d47038b0f0e9.png"
+    },
+    {
+      "name": "支付宝",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/aa/aa4f0dd1490a9ce1de5e2f424bdff4d0a652e58c5ab51fd7a820dcde2fc2b6a5.png"
+    },
+    {
+      "name": "磁力宅播放器",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/71/71ac44c52bbb685b07fa312ff143acbb7439e969dc58393fceb510e112ae6074.png"
+    },
+    {
+      "name": "中国移动",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3e/3e57ec91e519ab71f5f3d6736654bea922479f5bbc8fdf3f3b149936b564f9cc.png"
+    },
+    {
+      "name": "中国电信",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b7/b79522319e1f65f9393e3a415d2c3b57b122336ff0f78ba272397e0ddd57400b.png"
+    },
+    {
+      "name": "中国联通",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/11/113399f88bc5e8bdd3008d87413058e0fcc009d091dc8077864640291cdb7de2.png"
+    },
+    {
+      "name": "爱思助手",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e070a08470911246bbbe355780e4fe8f10534bbc25573e01348509c34a3dccba.png"
+    },
+    {
+      "name": "Uki",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/22/228eebb3e715508d2222c3b770f4dacb1ecb6ceefbf2c46da7cbbfe9c9d799f4.png"
+    },
+    {
+      "name": "斗鱼",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/72/727a25316dda35f82d44563da4f12f5c7fdaf5e790933ad02df79d341339f943.png"
+    },
+    {
+      "name": "央视频",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/49/49743ef0361345e73a3c97e38bf009d45368114e0527055da579f5ef68245c73.png"
+    },
+    {
+      "name": "爱啪思道",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a5/a57bbcf954005c6352d52d1ab61b10eb79f3915846d6c3f57c36317235482942.png"
+    },
+    {
+      "name": "豆瓣",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4d/4d3ea13164207559c6556832fd6b23826c4f0be22c16583cc08b762430609eca.png"
+    },
+    {
+      "name": "Talkatone",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a5/a5ae33ec1d19ce9a9bbe3cdac6419c9b7fefadef0360296b9babbfb2756a07f1.png"
+    },
+    {
+      "name": "百词斩",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/60/601e8bb793719d80b9dc850862cc3c670cdf853407dc45ee0435c19a0adfbd42.png"
+    },
+    {
+      "name": "饿了么",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1e/1e15281d9f4ac5c8ba3c46216d095f1223fe873d9a6f3de811a14a4d3f52c356.png"
+    },
+    {
+      "name": "Discord",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/be/bec0d2aece6a495a889c7bc67e857c6a99d86ec609b2a7d19d6fcc8a58f4a559.png"
+    },
+    {
+      "name": "猫耳FM",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a0/a03b260e1b91b53c9f6a1ff962e324dfc8528b02eff44e3b9298fff87300d572.png"
+    },
+    {
+      "name": "OKX",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1b/1b53a778f65175b859917f970b5b9b5a4a771137d125dc8140fe0db800b92a8e.png"
+    },
+    {
+      "name": "Elk",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6b/6be8550df2f6a8c355a6810562f930f94549c4b466515e83454090c29a4ec5cd.png"
+    },
+    {
+      "name": "PayPal",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/23/235a3822cecbdced89a28f59ead8a5a35ff5cf9c776bea1f9e546d6e9888a852.png"
+    },
+    {
+      "name": "OneKey",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bf/bfbad12cd58acb164c5d1fddf80d153144060642b6beeabf1d864efc9bd98d7c.png"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/03/03bce0fd508086af6199420745839011e1db132ecc298347e0191cb42f8252a2.png"
+    },
+    {
+      "name": "X",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fe/feaedd5fb92822cb96bb9e39c96d3f92063d8165e58a40aaff0ec86ea6cb78c7.png"
+    },
+    {
+      "name": "Signal",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/55/5505da6e83b0f045ec845b918ab57fee33e98c4f371402a1c82715fd14c832bf.png"
+    },
+    {
+      "name": "Yealico",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b9/b9edd3798f3e74b9284d2b003ff2dce2d9cd19c33920d53ac17b3f1cdc0e2f8b.png"
+    },
+    {
+      "name": "UpNote",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/88/8870080dfb0fbce322fb8a94cdb16ff63e574ac14f326e7d81e24883d8f52b71.png"
+    },
+    {
+      "name": "giffgaff",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/68/68b49300b684fddf9a74442f199c974466652fef4fbbe483c2f4db1d6a7c1f10.png"
+    },
+    {
+      "name": "TapTap",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a3/a3845375b662522557d791304cfaf839aa9f523795eebceb9cfebceeac91a7b3.png"
+    },
+    {
+      "name": "DeepL",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6a/6a8ff93949249eaeea9f56da121b654a9b7c8b845be7e6edd2c0b078149fa4cb.png"
+    },
+    {
+      "name": "美团外卖",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/34/3462eea83ea377e2e1f2df667393834dd60d6cdd71e95e2c37d88f271594b808.png"
+    },
+    {
+      "name": "Filen",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ec/ec002643378a7fd909611ffdc066476085f4398b44cee094d1cbee1dbeef5826.png"
+    },
+    {
+      "name": "彩云天气",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0d/0de21f6b3f5078d38d811471e8c324f17c6f803547afc06272c623f92c450550.png"
+    },
+    {
+      "name": "彩云天气Pro",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7f/7ff89310db96683ceb5f356770b51b57af5b8c41323c9b6ac6d212c7a6e42064.png"
+    },
+    {
+      "name": "Proton Calendar",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f9/f9935c97f89e46ccd2f133deb190e92849a35d5cfbbea2516d17164a7cbf50fb.png"
+    },
+    {
+      "name": "Proton Drive",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/41/41a21ac6b1dcbd73fe8df6cba066b14299fd775e22d48e7d66a6e6ebd3e2d342.png"
+    },
+    {
+      "name": "Proton Mail",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c53d940d39501dbb9d9eb59856c509402e32efa86b3c82085465bf70c44f76da.png"
+    },
+    {
+      "name": "Proton Pass",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4e/4e8f8aacd700469ded4c959cf88384bf69e7384bd473e1a888b43f9551239193.png"
+    },
+    {
+      "name": "Proton VPN",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/24/24b02b4be491f40b6b79d00040da625fabf8265086057909479f06ed33974e0e.png"
+    },
+    {
+      "name": "视频盒子",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/57/57add0e83c2701ccef5aa3825aaa73c5504e5dd32a720e90bd29acf843c872dd.png"
+    },
+    {
+      "name": "盖得排行",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9c/9c8aef7eb61db32d06d22bf4a429edf25fb76f3ffd3632c310ead90569cb671e.png"
+    },
+    {
+      "name": "闲鱼",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/22/221c420b7865e71fb7f9e344e60e1bcc8bb61a39a8c8229c5786ae5bfbd532a7.png"
+    },
+    {
+      "name": "拼多多",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9f/9faa71661431fde871615c72f2804ac8a2a330c8c01411d05787447fce3703df.png"
+    },
+    {
+      "name": "网易大神",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fe/feb994ba41bfe1f5b4859e9c004809cf3181ff5a68b55e8fd59147febfda04f0.png"
+    },
+    {
+      "name": "深圳地铁",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6a/6ac5ca0b640416bb0eae849f76d8b4e086ae9381659978418d61c53600dab2c5.png"
+    },
+    {
+      "name": "淘票票",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/00/00cd66d916bfc11899c32e69b9e10406f75af85d6b4b2e7f8df67cb97564dafa.png"
+    },
+    {
+      "name": "百度地图",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a8/a85b23721edd488055828b16b24763c6bb5da66fd788d8d9db73a0c5787981b5.png"
+    },
+    {
+      "name": "小蚕霸王餐",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/16/169c5fe2fdfbaf179bec9da9c3b0c0fcb72fc844d8ed590ea3bacd363325365d.png"
+    },
+    {
+      "name": "薄荷健康",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/06/068fd3c891926342c4828b1b24a9f9e173c014d7f96e38bcca2d64a37c774d8f.png"
+    },
+    {
+      "name": "脉脉",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e7/e758151613638123c1504caf1ed7bd34c82bd510986d0a86d5f789f580bc0b7e.png"
+    },
+    {
+      "name": "网易有道词典",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/23/234d1fca2f42c067b56b1b2a73cac43994e0fe1748e69b741939eff056462927.png"
+    },
+    {
+      "name": "美图秀秀",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/07/077c19ce34fb95430d2d40f4e522e4ff34b325546bbd808cee454b1e77d38ae9.png"
+    },
+    {
+      "name": "555电影",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b9/b9655dc3dfcb913145c8e2c4e0a536177ff71e15f3f0c8e458aa571992c150ac.png"
+    },
+    {
+      "name": "天气",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/76/76daa83973993a17224b2a8e5edd039ced48087e7584ddd7dd32174fbf6900ad.png"
+    },
+    {
+      "name": "1919",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a3/a3c4d097592f032413978e6ee5b1d62f434fbfeebd9aac3324af557a0dbe959d.png"
+    },
+    {
+      "name": "剑网三无界",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ae/ae89b84e0b34e64e8bd590432ac934aba7c08214dc99d0f0518b3563e53dbefb.jpg"
+    },
+    {
+      "name": "快手",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2f/2fc57887e8182266f3218dfdef84d4b7e8729ec8098b2c8c96c87001832c4412.png"
+    },
+    {
+      "name": "Keep",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/31/313891afc4eff5dea4a75aa09252a7e2b591aeba866cc7e555413936f019fb09.png"
+    },
+    {
+      "name": "123云盘",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a9/a99ecc53a91aec4fea3effa6d0446942dfbe2ddca5d15cd0cdfd200c7758c431.png"
+    },
+    {
+      "name": "红果短剧",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/70/70a499b2af8bee6f1adf759890098dad5871b8dbb2e394e64307da296c7ca326.png"
+    },
+    {
+      "name": "汽水音乐",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e0c4ac01aaf8e605ad7dd9a88aa1444a90ee2ad76dc9d30ffc4b317db93fa0ae.png"
+    },
+    {
+      "name": "悟空浏览器",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2e/2ebf5e58028c61be28c0c793fca21c02ee454a3fd4238bb853c231712db8e3a6.png"
+    },
+    {
+      "name": "美颜相机",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/77/772ed86357e62a8061fba5ddc014a0c3b8faf8af3d740353c1dbc345aa206572.png"
+    },
+    {
+      "name": "有道翻译官",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d5/d5de9e8a937f9f60518d503e96ef22a57507860667a6d37d40bf43bd7f2198a0.png"
+    },
+    {
+      "name": "YY",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d7/d7303f8587f4d10b98dbab6976f0ed13f88f391ed31ff2f0e0242d7370cbabf5.png"
+    },
+    {
+      "name": "顺丰速运",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/20/2010b6de16072888a1bc065b503933b139ca6291b892e2b25f00391451ac854c.png"
+    },
+    {
+      "name": "健康160",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6d/6dfd601dd6d9dd1684e54192fdd4f042c8cf69aaf90f92733b8e6800277c1a1d.png"
+    },
+    {
+      "name": "掌上公交",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5a/5a3325da4aa97b5136d8a5f719738a5da3c586895a2e13d701ba63532ba03f60.png"
+    },
+    {
+      "name": "快递100",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d7/d70e7facaa7efa9fbff4e7f5d765aa387167b42e81d2553ac24721fdab646595.png"
+    },
+    {
+      "name": "成分喵",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/94/9420bea340fd6722f5f8b660e6c8b3fa7a46130892601019071fa564e15f2194.png"
+    },
+    {
+      "name": "丰巢",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e09a3a831b90144bb9360c890bacbce5a9791db321febdcc20a7cc8cf32691b3.png"
+    },
+    {
+      "name": "威锋",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/80/808247859fba3813c17b2bdee93d99aa5a779c5d9483f28fecc4fb96d5f577fa.png"
+    },
+    {
+      "name": "酷狗铃声",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/95/954e4ca003b83f01aade1c9dfba247bdb841ff59a3294af7a9f48ef6d52c59ad.png"
+    },
+    {
+      "name": "WPS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/16/162bd97a8c66671ad87b2dbf9358cc9db2526f6e4b498387a93b0504d4d3a207.png"
+    },
+    {
+      "name": "FollowRSS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5a/5a35cc7ce14c2ad1ed776e51d61f2de4fc3c4686c33d6db8806f7834eeb2ade9.png"
+    },
+    {
+      "name": "前程无忧",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/33/338aa74e86d70e01e36b1e21c24230877b16274c71ab4989d20dcf64e9a94e3c.png"
+    },
+    {
+      "name": "智联招聘",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/af/af4a289dccfa4ad9e00d5aa487c73ece6eed5f037d994024112a2fbb91d3a05a.png"
+    },
+    {
+      "name": "美柚",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e8/e83bac0659bdaada3b015cc9ce2d4ee694813b1189ff049e8a0856535c84b937.png"
+    },
+    {
+      "name": "阅友",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1c/1ce4278c06065214f3d86a78b36beaab2ecf2a8476d0cc03c65dd44d7784d13a.png"
+    },
+    {
+      "name": "河马剧场",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/67/67197b3baa383eebbb3329e97d084ba22f8ee863afe46af52f84a75cdb388413.png"
+    },
+    {
+      "name": "马蜂窝",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2c/2c915fed340db16724667db516ebde8812b1b9e75f59cc19855b4404b076fa7e.png"
+    },
+    {
+      "name": "向日葵",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2c/2c53776e98cd929d7d597798bc5aba5c3c5724bb8b8a212515afd27dc213798e.png"
+    },
+    {
+      "name": "一刻相册",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5d/5d082788553b7f08396d9f6ff6490078173abca893c2666f845b2925b43ed86d.png"
+    },
+    {
+      "name": "Microsoft Copilot",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cb/cbb8a8593d159ccb9e0121fa61a1499ba10c38e6f4f4ba399ca9b374582a1007.png"
+    },
+    {
+      "name": "Google Gemini",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/38/3847dccf5d76216df56c6ad1d52d58a5d187eed7518ef93bca8e31404878bf07.png"
+    },
+    {
+      "name": "快对",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c7/c74512e4907a1c88c0562baf14d56ed70f2298eee3bd40df1d0fac67993cd4fe.png"
+    },
+    {
+      "name": "中华万年历",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/95/955685ed664025d32efbec651af0521dc075873a7f0d0bcd1103b4ecd5fd268e.png"
+    },
+    {
+      "name": "比特球云盘",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/80/80e37fef4b95ff2c3840cc67974ed08a69516278edab7fd887068c4afa596aa8.png"
+    },
+    {
+      "name": "墨迹天气",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c9/c9ab58f375a99da135888229f97d304d0d43bf7c3f7947f787908f2a8da1120e.png"
+    },
+    {
+      "name": "美食杰",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f3/f3a716b710032ae03f097c0800e5a23910730d5a28bddf800acc1df83a4ae45f.png"
+    },
+    {
+      "name": "下厨房",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f6/f6d5a85c7c7b0fe1a8d0e714c0453854f8911af7e59109f4e57dec1e00dba4d2.png"
+    },
+    {
+      "name": "快影",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9c/9cd786e269e71e4c0586d395e0945e8f2788ff6298764b5f661d84b06bbd101f.png"
+    },
+    {
+      "name": "直播吧",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/dd/dd6943b74d38a49751e1a9a15fa2e7f5ac2227078edec0855ea4a43397f51869.png"
+    },
+    {
+      "name": "瑞幸咖啡",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ab/ab644d72a56d195e39cf0cb471c41feabef52eb2de339bb9ecb7c2f82cbed018.png"
+    },
+    {
+      "name": "韩小圈",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1e/1e65d2433fe2e35df25f3e035b430defda3637f1647c36ed318cd5a02dbb5111.png"
+    },
+    {
+      "name": "智慧苏州",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9c/9cf548c061d251ea9427d6c5f408ae6a836c132534b9851bee62cfa240493cb0.png"
+    },
+    {
+      "name": "粉象生活",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d0/d0b6684c875778f09eafdbd086c4a548ff3921a443409e6d8a04cc2b6558aeb1.png"
+    },
+    {
+      "name": "催眠大师",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/26/26f1ded15396a69a5d7780fc5dce1acd0dffe023c73640f69e1ecea06f269e04.png"
+    },
+    {
+      "name": "蜻蜓FM",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ab/abaaa85aa87c3fac9a3a4feff1e88ebed95fffb8d2d4bdded95b39e9efd50aee.png"
+    },
+    {
+      "name": "懒人听书",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/86/86fb8adb4581d0e060d11beadf10930dfc764f5a8e5f8b11dc3b92b15bd90956.png"
+    },
+    {
+      "name": "番茄畅听",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/51/510665f6c0b668dd5fdc1e0e83510e6c482b0c511f37b044ce8bf025eebb9472.png"
+    },
+    {
+      "name": "飞常准",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2f/2f80fe7fb62f554a7db34d2caa6028f942007b1b04ce1abafe2d5ebe70310de5.png"
+    },
+    {
+      "name": "KOOK",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/65/657e8d3f0380fe5c6c2da3e639f3ed26a352103d67a8eb4f6ec8fae9463687cc.png"
+    },
+    {
+      "name": "CC直播",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b0/b0205d916510bf8790d48d3bf8195e0eee577f7a2ce02e465669f30c1e51e508.png"
+    },
+    {
+      "name": "帆书",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f6/f647e5cf18c18f2cb31c2ac0e62fdfcf3f3a963dcaf715260b93850033a51ee6.png"
+    },
+    {
+      "name": "携程旅行",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/88/889d654b2d02ff84604c7da3033eea3f274e02fc2e81d5d6ba5f685787b9e5ff.png"
+    },
+    {
+      "name": "海螺AI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/40/40f8acd395b27572ba8fcd232f1802efe89155200cc73d457609c21f22433aa2.png"
+    },
+    {
+      "name": "DeepSeek",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a0/a0f5ffc17f3ec5c97fb0c8623fc1e69374fed9af0be54932fc0586eb4b9c3e67.png"
+    },
+    {
+      "name": "Grok",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1a/1aa8c8f57f26bc1a081ab992fc43555d8283f4d33984d68c7ae9a1187d385549.png"
+    },
+    {
+      "name": "Kimi",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/02/020c28422d86c6525f4f5ceebe1b50f8e0718031610305f0c9bc8ab475df146e.png"
+    },
+    {
+      "name": "Mistral AI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/99/9955685a2d8002db71fa7f65a727922a336128c5b457ce05faca35ffc5434676.png"
+    },
+    {
+      "name": "通义",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/72/72f4826cdf376cff951683208e35ddefac201c72e4487404923d344bc390a656.png"
+    },
+    {
+      "name": "智谱清言",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/99/994ba1343a7aadff21eae3831867bdf8a13ebd89a8597e16dcf78314b05ebaab.png"
+    },
+    {
+      "name": "WPS文档",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/67/6794bcc20f85eadc2e9a898fded781eb4a0e984db3e697bd1714c88d9caf4d25.png"
+    },
+    {
+      "name": "腾讯文档",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/44/44203a46feb0250758fef3c2b6624340adaef48540391c7464fec1d9adef3cf7.png"
+    },
+    {
+      "name": "小宇宙",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7a/7aad79eb9266415732915d5f3703139ae577f50124dc94fa889227daaf150307.png"
+    },
+    {
+      "name": "叮咚买菜",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/74/74334b1f1bcde3aa651e427475d9b351ed9e584d25672cd84b1308bd3673918b.png"
+    },
+    {
+      "name": "Wind金融终端",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/65/6540e65a03843d30958016baf24a32bacf719088c86ee97b7da32af200039453.png"
+    },
+    {
+      "name": "波点音乐",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d6/d688f618b1db76789231c2a2c2f78681f1f9028da2eb465650310b858d398592.png"
+    },
+    {
+      "name": "小店掌柜",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2e/2eece57ccbea2f204e64c1ef7dcfdf5ede82b98c30df55547c8c5d32763ed4ef.png"
+    },
+    {
+      "name": "有道云笔记",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/66/6694894996d02e8d2332aa98f40fd5a4bf222aa3beb547bd456c08cf0d610443.png"
+    },
+    {
+      "name": "省钱快报",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/11/1167d020203dd1f0e49361a2628284bdf305b115cf9c4c70a089859052d9a487.png"
+    },
+    {
+      "name": "挖财记账",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a7/a76e8c3c2d9e7eca7b41874c11d0902fb863d032def2411a78b4590e43f73240.png"
+    },
+    {
+      "name": "ZAKER",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bc/bc84c5e767a652ec746bf212d93075db07c685c805d6f413ac80b9e4f7c029cd.png"
+    },
+    {
+      "name": "比心",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cf/cfa52236c1a4b0bda2f8196f0d4e7e21f04c39c31e4c7d2745e7ac81c7d470c1.png"
+    },
+    {
+      "name": "得间小说",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b9/b98702499b0ac71688fdefde43de6064c4348105056df3fca1fa8add2b662a68.png"
+    },
+    {
+      "name": "一甜相机",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b6/b6a7bab7a87468191d264a2659681abac8961e136dd0d5f77e040712309f70ae.png"
+    },
+    {
+      "name": "B612咔叽",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f3/f388385e254dfa9f53494d1c417d7a27aa1bc62cd5b9ed858e93990359993988.png"
+    },
+    {
+      "name": "无他相机",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d8/d8a5478aa42ae9088078374d8ff1025b5001d0656dd3318ba678dda704555240.png"
+    },
+    {
+      "name": "小米音箱",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6f/6fb24d2f124be3c11d3bc676b587dc5360305f63abdb4d9c746559387b33ebef.png"
+    },
+    {
+      "name": "Dlabel云标签",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fe/fe334a72b9a6c9e1560c77aa8894b2dc98586423577a2620190fd2b0c8004530.png"
+    },
+    {
+      "name": "米家",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6d/6d1462e54c7364bdb6b19be2e8aad6f23c018f9805e8daf16d773fd25d73bebc.png"
+    },
+    {
+      "name": "ReelShort",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/41/41a5b99ba8cf6598581105031fc687ecfc60467d4bb54dee02a45ca8787a2c37.png"
+    },
+    {
+      "name": "贝壳找房",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c6/c6b446efe58c8460307170ef70ab2569bdfb4e854561388d58f68919bee2feb1.png"
+    },
+    {
+      "name": "万年历",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1e/1e2ca6ad8ca804688d9132d8ba1667dc74727c402ce7edb922a1e8dfac1afc9b.png"
+    },
+    {
+      "name": "Speedtest",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/97/97c3629d90c94b2f13202714c27e08bb9cd4e6f360feeadcf0d8a459c070d5f9.png"
+    },
+    {
+      "name": "看天",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/88/8892073afeae84cca9d87cd60483cfa9871432aad1030cfe52695453b262f6ae.png"
+    },
+    {
+      "name": "胖乖生活",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/20/2002ff8d7658c64a4fd4e0d068dbfa3ef83c805d67d126881cfa04388272f7f0.png"
+    },
+    {
+      "name": "掌阅",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bd/bdf7269ca6b9a91b44cfd0458105a257076d45fc31a33faf9b206a86a5dbcfc0.png"
+    },
+    {
+      "name": "Foodie",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/31/31dd8bc2b80051588cf539c273210abe4adc8ccdc85bdb59da8cd17ee6098dda.png"
+    },
+    {
+      "name": "微脉圈",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f1/f1937647796c6978cb8b40f48c2d4ae47d690b72e053aaf5586b57490e501369.png"
+    },
+    {
+      "name": "TeraBox",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fb/fb51013fa1a707bab80cc24c82221f11d189411bfa097d960b303335de80b73d.png"
+    },
+    {
+      "name": "大麦",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/03/031937d7556f0d921f02c8024786d701a45d33264b5b04d460f34c4af02b8186.png"
+    },
+    {
+      "name": "掌上英雄联盟",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bd/bd203ecd9fe505effb7ed0b42f3b8d406693fca5efe3a1f21cbaa026b868e0f5.png"
+    },
+    {
+      "name": "掌上无畏契约",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b1/b1afc2e0b57a2cd9d29b469229c9ef600cccb8d0d8f2b936c83ab65756778a7b.png"
+    },
+    {
+      "name": "掌上穿越火线",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/42/42c63a9bfc205632f581fec2947d5f387477f8177512427300f82e961a437036.png"
+    },
+    {
+      "name": "王者营地",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/06/06e09faca091e2133c41f4250846bc0f7ab89ef31b8995163bbe9ebb168496c8.png"
+    },
+    {
+      "name": "和平营地",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/15/15d6747bb062d75281d6ec142fddc0bec1a0d0114d1bb2c53fd085bafaf6ce81.png"
+    },
+    {
+      "name": "米游社",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2c/2cee294fe252d7db98cec84a2095b1158d153c04fb3ed4ab78a54a8149f8d287.png"
+    },
+    {
+      "name": "美丽修行",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a3/a3dbcf1ba6d13bb7288492588dcf768bae3fa62a7c542707ad53d3adf5007a4a.png"
+    },
+    {
+      "name": "库街区",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/25/25cdebe81185874f099a75ec1020654065d9352ea1af88679a8f1e7a5ff1947d.png"
+    },
+    {
+      "name": "YY语音",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d6/d6fc7d705f66cef74eb0401df76159b695e0cd899abce119954d1b6e6b7aaa68.png"
+    },
+    {
+      "name": "Oopz",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/db/db4b96f4dbebb647083b97c534e1d801c8a52a56181fb8484f111988c129f58e.png"
+    },
+    {
+      "name": "豆瓣阅读",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/58/5838c585ac4b300038a5c931970c81b12c858dbb8e230e2804ee179db01ba922.png"
+    },
+    {
+      "name": "飞猪旅行",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/04/04377d4c262cf505ef7b7f578bb0374f133fdfa0c103d5e4862abd1d4e6a5994.png"
+    },
+    {
+      "name": "京东外卖",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/26/26a91115cac42232ca89f6843001ef04f34df91e51aa03067996f83ca97291ae.png"
+    },
+    {
+      "name": "人人追剧",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8a/8ae1b5e6758518954ca05fedcc638cee58a7901b64378fe8bbbfe9ee5b5e5e8b.png"
+    },
+    {
+      "name": "DREAME",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/11/11ff28ff3b0cb716ef3fb21f3c5e3cc3acf220d882d84960f88553beef2d06d4.png"
+    },
+    {
+      "name": "得物",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/77/77204d2bad8e00b0686ebf7831e357aa7b6b1335603625dc2042b576b6cca43c.png"
+    },
+    {
+      "name": "最美壁纸",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/23/2346b6064aba84c447fe31c2195a2ec69d90754fabb88af73fddc3d041ce9af8.png"
+    },
+    {
+      "name": "百度文库",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3f/3f0c33e5c67d22d7448d65cf003b986b63c84385352f0fb6cf08a5a091007ab9.png"
+    },
+    {
+      "name": "萝卜快跑",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/64/647e6b48315a7be97d31a4b7edb4cc041886f87c4e26d86f2f6f501f1ec1e26e.png"
+    },
+    {
+      "name": "滴答出行",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/02/02f08ef1591994c5b76b6b58c672a27b4c00e02a8e7055f6ba74702c7c730930.png"
+    },
+    {
+      "name": "小桔充电",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/91/9163e3b30ab462c3673b2a803c35e88fb2a4f4d46c6d09c9c2786a27f51052d4.png"
+    },
+    {
+      "name": "特来电",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7c/7c2522a9ae09fd582239fcc25c353c9a4b809634a8f4073ac06c180c5b65fd1f.png"
+    },
+    {
+      "name": "RQrun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e0fcb538fac0da9ebefd0ad0290328b55b8e2fdca0103f5c9d44c27d0a6b30ab.png"
+    },
+    {
+      "name": "DigitalHeartbeat",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/53/53a2b57f32ef47e13e7685038afd88347a67e506f78c56068dd992ad87d041eb.png"
+    },
+    {
+      "name": "夸克扫描王",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c8/c82e41cc1af8fed3555ea09834bbd0d553d3360694e86cfebb1e40045d380456.png"
+    },
+    {
+      "name": "智行火车票",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f2/f2408db2597dd326ec6c8789c1fc035f2a1e7169f0c9aa9fb771a14fb313906d.png"
+    },
+    {
+      "name": "萌娘百科",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fd/fd55b6ee33a70022a20c564b886ba9a9d0adf51f1fc716685eafaad5191cd3be.png"
+    },
+    {
+      "name": "触站",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/73/7387463a348539128d68842ebb5c235b34e97c693b34093cc59f3127b0e4b400.png"
+    },
+    {
+      "name": "图怪兽",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d1/d1b68cc0062c7a0ef32ce1fb4806d0f2420fe5eeaa3ef0f4df06b1b3a36f97c7.png"
+    },
+    {
+      "name": "Roborock",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/45/453a923863727e5cb538afb731983cfc036e2f60ba6be1a32e138892d5718764.png"
+    },
+    {
+      "name": "酷狗概念版",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/75/7534637437c3f5f0bff4c664536c72e084d90c7525e9a165abc8362e847f7f33.png"
+    },
+    {
+      "name": "云鲸智能",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b0/b096d91bbf131dc601e1c162c34bee9f9e374b6bb165d619970e9ad264d7c794.png"
+    },
+    {
+      "name": "ECOVACS HOME",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/88/8831ed589f3e68dec88e6ccb16dfdafda6eff6fc94a77de49d557ad4d1a76d21.png"
+    },
+    {
+      "name": "医考帮",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/54/54f670412d52f11f1851bf584c2191a9122a896c40de893b187e027eb8f26797.png"
+    },
+    {
+      "name": "盒马",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/62/62a3a00f2656eb5152a8d4713942bfd630e588276a2a717c38f624aa454f243c.png"
+    },
+    {
+      "name": "Tumblr",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/86/86daed0afa4eb4056a14a3256f27a44777d08863fa8e20136e4ad3e661fa3497.png"
+    },
+    {
+      "name": "小睡眠",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ce/cec851fedf8697a35e7a02f812f05549914a959ad22f5a4c0dffa63100faa457.png"
+    },
+    {
+      "name": "纷玩岛",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/55/55b7e3796ffd97ab62e598da9c6ad902b1968de2fae41ca8bbe26141e1816aa0.png"
+    },
+    {
+      "name": "Pinterest",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/13/134e8e09ac82878f485dc14e13e2093a922cccd4ec5393087a3f0d705ad7c36a.png"
+    },
+    {
+      "name": "完美世界电竞",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/28/28880d2c0ef76e52b9d932ed51015f337171449b5c8832e6546a1d1b6bcffade.png"
+    },
+    {
+      "name": "华尔街见闻",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2d/2d825e292e5322015c6662b8ef15620032d2a6df288bee65f194f9533105a257.png"
+    },
+    {
+      "name": "金十数据",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d9/d974b4f59df6ef9534be3639c6eaf7ff3ff12876c46188f17f4a78819c3ba2be.png"
+    },
+    {
+      "name": "他趣",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8e/8e9fdb476d9de988eed55de842e1cce412ea23b9a84340ec6ed25e9e50a502e3.png"
+    },
+    {
+      "name": "财联社",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3e/3eb53e11a5fcdb0ed2dc8afca882b718027cee37ec92cf08d048208cb12b9c23.png"
+    },
+    {
+      "name": "36氪",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/88/88796a9b471e06d498599c99ad5dc48fa6bffdb43b92239c7be156d7769c39a7.png"
+    },
+    {
+      "name": "虎嗅",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2d/2d45a6449ef7c04b416b2eac5d0c9977202ded2c436fa3fe0d93facd9f5053a7.png"
+    },
+    {
+      "name": "两步路户外助手",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/61/6186d1f5ebbe5e75884bfec6e7800626b5dd9de3d6433bc9653bfdf83d8adb5f.png"
+    },
+    {
+      "name": "行者户外",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a2/a2349b92d72fcbb2fd17f8d3cb95e061eefc0902e9e4ade0b5bd9539a4f47e8d.png"
+    },
+    {
+      "name": "蜗牛睡眠",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c4/c41eeaff3049ccdda67476472ffae10ab986ed7b6defdcc08e329ea13a9687d4.png"
+    },
+    {
+      "name": "陌陌",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d0/d0376e7f1115b2e2bbe31c8b231fa3c3876f30988a835820d7d56a72207da7b9.png"
+    },
+    {
+      "name": "南网在线",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3d/3df3f2130cd497139048e831f3771509107eaeb294fffa7d44df6c9ef3c44ace.png"
+    },
+    {
+      "name": "测测",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e4/e4b144c2db0b7956cdaa00e05ba9659d4aab49871e7b70566ec5671f17313360.png"
+    },
+    {
+      "name": "沃尔玛",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2e/2e31ee36dc6fd432b378d1b16d1f0e7ea1d514a1742c8d9e148ee217d0b17218.png"
+    },
+    {
+      "name": "摩天轮",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bc/bc17291db8228cddabd3ae4c5daf08e504fc5925e1d7660f5379d588dd2ee91d.png"
+    },
+    {
+      "name": "华住会",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/37/379ebc12d7b244f0e13bc06586a3687df31fdb0cf31120b784d6ee6a53be5a75.png"
+    },
+    {
+      "name": "Hong Kong Toolbar",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2f/2fd64630a60bc574c6c9b9f5f99aadae38c27323c49319b132ffe0f6fe1d8f0a.png"
+    },
+    {
+      "name": "超级课程表",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/51/5166c5f975e526514a359ed800a30950b70bfcce1807f8fee91a7d499240a574.png"
+    },
+    {
+      "name": "天猫校园",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/50/50fe5dc64e61982df4724e21e1b7772bf1877eeb09af0278d0a4b975397ee2e7.png"
+    },
+    {
+      "name": "学习通",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c3/c379c3e2acb6adef4fc009e3712f5017b94467d0b9dc182e242247381192176b.png"
+    },
+    {
+      "name": "天气预报",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/00/003e1a91d95e5006bc5add6f629337249a2e6a4084c0e869d95dcd7dab4fe855.png"
+    },
+    {
+      "name": "中国天气",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/df/df641d2ebdd594b4341b1abc1b9bdad452b613d15211bb0632a1e1e3a383a05f.png"
+    },
+    {
+      "name": "挖财记账",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4c/4c496991b34ee9e5e8b6c3076b71d6c780ebbcf9e28d54dde21f3b5a1997b8c6.png"
+    },
+    {
+      "name": "百度翻译",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/db/db6046f33abbe60f783e48cd26fdf79d1b9bb9400a7c407d0663ac276b999259.png"
+    },
+    {
+      "name": "天天跳绳",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/64/6409739db3a50f87d1c8aa7bf5cc7fc2f18b6ffdc271a9a2c3b61c7500dec874.png"
+    },
+    {
+      "name": "凤凰新闻",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/30/300f6a2a6cbe42e8cea41d575dca4ed743cf90bf991ce01bbfb118035e0dd556.png"
+    },
+    {
+      "name": "WakeUp课程表",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/57/57e63f94ffb26d0e85a4f6b193ae9c316ea0e87937146e77269db40bdc509757.png"
+    },
+    {
+      "name": "慧生活798",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/32/32435b37c0801b5a608f0ff5035379fd8ce98fdb04dd33e3328cd4d772a4c2a0.png"
+    },
+    {
+      "name": "易校园",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/72/72f8d705674630a5700d177d9aee38f3c4c36d1e9e36d389e57bc6a42db89252.png"
+    },
+    {
+      "name": "排班日历",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6e/6e14d6bb6e59e9643e0b978c98cb3ad7d143a22e0bbeff48f1b926a4aeedd561.png"
+    },
+    {
+      "name": "e充电",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4d/4d3ac5ceb759f5d857a690e897494f323dd32c32e01a1377778e01111f50f722.png"
+    },
+    {
+      "name": "看家王",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/40/40ac40f4a0f8051d50c6a342a22100d350cfd6fd835e633892f90dc4f477ef63.png"
+    },
+    {
+      "name": "天气通",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b5/b5da1191b17fd1a62be692e603d5873a35dda990cc2b1367d70b47ecbe6e724a.png"
+    },
+    {
+      "name": "每日赛车",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bd/bd865c4e42a5e3fcf2fd293b26d9dd30076bda183413d0811e1f6db2529ee41e.png"
+    },
+    {
+      "name": "大姨妈月经期助手",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c5afa9ececfa03a8694bb3503ddc6c5c1f29301659685876d2f8664fe9131129.png"
+    },
+    {
+      "name": "小白智慧打印",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/89/891f4991f59d97e9446ab19bbbbeef11712f7b1d4778a3c7caf9b44022d8d7b0.png"
+    },
+    {
+      "name": "海雀",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7a/7ae5874b91a7d6803c4f6290441049524c5567c0f705f217a9cc4a5c881d8bd2.png"
+    },
+    {
+      "name": "创维智慧云",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cb/cbf4066ac6d4d18e85a1fdc91bebe01f656d3d4d12876c787b7d56dca68d8edf.png"
+    },
+    {
+      "name": "OKOK",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9f/9f087a464c99f742d6a0506d9bc8446a90e8ea242805e93b7b47876b1ebae8fa.png"
+    },
+    {
+      "name": "车来了",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/01/017d28805bec4635b437076d4f56e31233b1eed4681bdfa6d5ca5f55edbc23ad.png"
+    },
+    {
+      "name": "好轻",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9b/9b722fe2957f8ce941970f234c32a0304ca92d82de05abba72b1da48743b6f39.png"
+    },
+    {
+      "name": "多屏互动",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/61/61bd6e889b2b4b4f990dbfd6df2688786d49a4bbdc7fd7c81e317ba2b8f4c169.png"
+    },
+    {
+      "name": "马克水印相机",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/39/39dd20480b241fe8236eec60b92a04ecdd927ef7db77840bf24b98da001549c2.png"
+    },
+    {
+      "name": "联掌门户",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/51/51b5f156f3a62af344d276cd6ba48c02dc9a6b9a528907c98b410d1facda40f6.png"
+    },
+    {
+      "name": "Sofascore",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b6/b6aeb9002ee88edc8cb5b107397bb70191fd8fabbe8c1a9fb7c02831b5c29767.png"
+    },
+    {
+      "name": "DJ多多",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0a/0a2637016c9e7652549862a4b015b4af9faa27d7ba2c2a70685bbf05f2c39ef2.png"
+    },
+    {
+      "name": "摩托范",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/18/188f63e12a5d60df79cc4bc310599d1a019edf2ca3d1de6360015a58a6cf9984.png"
+    },
+    {
+      "name": "5EPlay",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/42/42b3a5866ccae9827feb5dd8c1d1608c6a14cfdd04833b9e71dbbe456f7dfdde.png"
+    },
+    {
+      "name": "微店",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2d/2defd0e0c5ca60c60930034c434d6fca9e0cfbb8749230bfa1067d9a23131588.png"
+    },
+    {
+      "name": "亲宝宝",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c0/c073b90afa249317755b2b510db01ffce2e6057f17015fd08fa4900aeda17b0f.png"
+    },
+    {
+      "name": "新浪财经",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/eb/ebc12665d0220ab46c96e21f1d1931d3d2d65c66411a8280dfe350ea660ab6c2.png"
+    },
+    {
+      "name": "PICOOC",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/16/1622991818a1557f7aac0c3d4521cfd1d408d9946c4d38be9cd26072f02d2282.png"
+    },
+    {
+      "name": "最美壁纸",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/33/33f66101883d27ad8225a01c733f030b8617c2e7978b50a713ec4c4a18a40919.png"
+    },
+    {
+      "name": "比心",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cf/cfa52236c1a4b0bda2f8196f0d4e7e21f04c39c31e4c7d2745e7ac81c7d470c1.png"
+    },
+    {
+      "name": "口袋壁纸",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b5/b5e28aee7d18f6d44daea0b351806933af069d6037165fefc8c7b84106b54e45.png"
+    },
+    {
+      "name": "闪动校园",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/09/09fbefb2b0338c78967b4505395e286fd047277ed1f5b63d7c7368ef4b6d0d14.png"
+    },
+    {
+      "name": "RevenueCat",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1f/1fd1ee0816077e3adbf04d2d6a0273e416362ee1c17c6af638af35efc931d35f.png"
+    },
+    {
+      "name": "腾讯广告",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c0/c0c08b8978097fecb41a0794a53b0104069ead52f695720b1c3454b8a64177ca.png"
+    },
+    {
+      "name": "字节跳动广告",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a6/a67dbb100c04c67de402effc3ac26555775245976b612ec974582d148f39ade4.png"
+    },
+    {
+      "name": "App Store",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/28/289b918d1b4b27115decb27266f0d7c22afe949dc935c48e9ac0ff947f83fd5e.png"
+    },
+    {
+      "name": "BoxJS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/86/862a2b2196c884bbcd2e6677182d402af7f6663b480d1bffafe7e4144da92377.png"
+    },
+    {
+      "name": "DNS防泄露",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ac/acaff85486ea93ac2d2979f59d97d1ac624db871f32a5785acfd397204c8e0ad.png"
+    },
+    {
+      "name": "HTTPDNS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cf/cf817335c9f8b89ac04a28f74d5d219c979ea566f1993c69623c50c54fb099c6.png"
+    },
+    {
+      "name": "节点检测工具",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cd/cd724b18706aaa6bbffa8ce81a70661a9ee21e7143fd556f3367a6942d7ff923.png"
+    },
+    {
+      "name": "Script-Hub",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6c/6cb345a2fd24dbbe6728b61c15192ba6b70f4063bf7292cea9a1f9c845f073fd.png"
+    },
+    {
+      "name": "Sub-Store",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ce/ce5ad121a500baad59016c3677304f3e2b6061efc6f14274effe12aa657a67eb.png"
+    },
+    {
+      "name": "Switch",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/99/99f9a11188f36f42634558309a5824fcc1d2f1aeec1c4c987149e22cb182b581.png"
+    },
+    {
+      "name": "可莉",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/06/06c6698557f2206ab7864720d7533a3d4273c90aba49aa8c7d2fb0ad79f6b43c.png"
+    },
+    {
+      "name": "广告拦截",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b3/b37fc365e69f4c032731541ccafe7574d8b2393cf96fb2336403dc66fa53854a.png"
+    },
+    {
+      "name": "远程资源转换器",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/21/2112fe0396cc6f716a2733783cb467feb1ad99ab967ecbf9a3d06fe757918071.png"
+    },
+    {
+      "name": "银行",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d5/d512aa8b3e67b5502ab6f3f0eff37c906453cc10f8b10e74e1d6d56e38e15d4f.png"
+    },
+    {
+      "name": "WebDAV",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/dc/dcb3f0fae1ee6e54ead0087bf13720ba53dc1fb1c735bb984665cd4da32c004d.png"
+    },
+    {
+      "name": "IPATool",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/70/7087cda8f07c3b3084fe5519b07bebc6ce157411297116f5960f5c15e51f110e.png"
+    }
+  ],
+  "name": "可莉图标"
+}

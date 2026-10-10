@@ -1,0 +1,34 @@
+{
+  "description": "xream 基于 Qure 风格新增的图标集\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/xream/Qure/refs/heads/master/xream/iconset.json",
+  "icons": [
+    {
+      "name": "Back_Proxy",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/34/344e71ebfa46c4e1659029a7bed8ad2aedf7544fcd12ee6b61b23d73ae873b55.png"
+    },
+    {
+      "name": "Baidu",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/38/38f0335085d5a8c3b68e5fd1b3885c6c284ad8e7638d3a7feb37ac96051c4181.png"
+    },
+    {
+      "name": "BaiduCloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/96/96dbdbe36a9ed0fb562ea4b022fa98fdb9d2617b3f83c629c7f712e7167c1a0e.png"
+    },
+    {
+      "name": "DNS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f8/f899b44fd16a444ee1be83febd567dbe39db7599107e59d46ed5143c965571b4.png"
+    },
+    {
+      "name": "Domestic_Proxy",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1b/1bd8ed6ae6b2f203420c077a9a7de53325210527c41d5cde8c208cf8af47d02f.png"
+    },
+    {
+      "name": "IP",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c50d358133de0ac83de16298ef5dd462f6e2782965025739016da1d33ee7128f.png"
+    },
+    {
+      "name": "ULB_Proxy",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0a/0a23fc01834eb031f98a74de4aa5215a44ed1a61e5cf5723b7d324db0f6c286c.png"
+    }
+  ],
+  "name": "xream Qure Additions"
+}

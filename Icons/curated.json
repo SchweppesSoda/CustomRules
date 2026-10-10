@@ -1,0 +1,667 @@
+{
+  "icons": [
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Adblock.png"
+      ],
+      "bytes": 12100,
+      "gitBlob": "28db835891a7a7e41ab43b9edc98b9c75b09d3db",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Adblock.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/adblock.png",
+      "sha256": "3f7a6e83acba3d13fb6a21c1ca9c006f5f6b92edc2c502f4e9158c3e4f6c63dd",
+      "slug": "adblock"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bot.png"
+      ],
+      "bytes": 8739,
+      "gitBlob": "4b2ef6877fa5fbc8ec0fb9a2e76ba2f850b396f5",
+      "origin": {
+        "commit": "b16b260625f873266f6a6a9b88710132774997b8",
+        "path": "IconSet/Color/Bot.png",
+        "ref": "master",
+        "repository": "Koolson/Qure"
+      },
+      "path": "icons/ai-bot.png",
+      "sha256": "1afccc81c40414eff905d4866c0be86bd0b9e6063309c47b32a3d46649d6b427",
+      "slug": "ai-bot"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/lobehub/lobe-icons/f349c583d09108e5c5e6ed5d1c7e1ffe8069bb3b/packages/static-png/dark/anthropic.png"
+      ],
+      "bytes": 3580,
+      "gitBlob": "a4760d1665868c2ec5570cf9562c8eb57ed64360",
+      "origin": {
+        "commit": "f349c583d09108e5c5e6ed5d1c7e1ffe8069bb3b",
+        "path": "packages/static-png/dark/anthropic.png",
+        "ref": "f349c583d09108e5c5e6ed5d1c7e1ffe8069bb3b",
+        "repository": "lobehub/lobe-icons"
+      },
+      "path": "icons/anthropic-white.png",
+      "sha256": "77c77059492c4b09937bcabafbbcfaf06738c893b1bc60a5a272eafeea68a8ea",
+      "slug": "anthropic-white"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png"
+      ],
+      "bytes": 4838,
+      "gitBlob": "9642240d4ac71559f0a81ba5d7a35cffa475891e",
+      "origin": {
+        "commit": "b16b260625f873266f6a6a9b88710132774997b8",
+        "path": "IconSet/Color/Apple.png",
+        "ref": "master",
+        "repository": "Koolson/Qure"
+      },
+      "path": "icons/apple.png",
+      "sha256": "89bfe107f21dd109d93f8d58671be06e0ad34a9f672ba96d228c2b3c3b89dfba",
+      "slug": "apple"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/jdecked/twemoji/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/72x72/1f4b5.png"
+      ],
+      "bytes": 584,
+      "gitBlob": "4f29d43c5256d4dfd434d7d643ad860f1f68b9c6",
+      "origin": {
+        "commit": "b6b55fef1e8636b540a6d016a4729ca8cdf2e60b",
+        "path": "assets/72x72/1f4b5.png",
+        "ref": "b6b55fef1e8636b540a6d016a4729ca8cdf2e60b",
+        "repository": "jdecked/twemoji"
+      },
+      "path": "icons/banking-usd.png",
+      "sha256": "f10ed853e2c5bacc21cd06b8b5f6197b97f794441d8857cef838215ce17853d9",
+      "slug": "banking-usd"
+    },
+    {
+      "aliases": [
+        "https://github.com/lige47/QuanX-icon-rule/blob/main/icon/04ProxySoft/Bitcoin.png?raw=true",
+        "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/Bitcoin.png"
+      ],
+      "bytes": 9917,
+      "gitBlob": "f8ff308eb02967511bd280f024e1750d84f2b77a",
+      "origin": {
+        "commit": "62245c807f0260feac72a3c971035a6ce8b7957f",
+        "path": "icon/04ProxySoft/Bitcoin.png",
+        "ref": "main",
+        "repository": "lige47/QuanX-icon-rule"
+      },
+      "path": "icons/bitcoin.png",
+      "sha256": "47f004486868667b416c3dddc62452fda633f58dfe331d9a1f1ba3d667e39ce8",
+      "slug": "bitcoin"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"
+      ],
+      "bytes": 20153,
+      "gitBlob": "ff3c24874e7a3871759f23810cbdb0d7249e33b4",
+      "origin": {
+        "commit": "b16b260625f873266f6a6a9b88710132774997b8",
+        "path": "IconSet/Color/ChatGPT.png",
+        "ref": "master",
+        "repository": "Koolson/Qure"
+      },
+      "path": "icons/chatgpt.png",
+      "sha256": "2779f53f26cda315cc5624de87c51e51e6598210674875dce5271ef2a2d91691",
+      "slug": "chatgpt"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/China.png"
+      ],
+      "bytes": 9629,
+      "gitBlob": "8661d460e233590c29002349d9b264dee86f5be5",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/China.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/china.png",
+      "sha256": "54e63c4e2d5dfbb216ea0c487e02b16176132ed90bb0373847fdde2e3dad7eb5",
+      "slug": "china"
+    },
+    {
+      "aliases": [
+        "https://github.com/lige47/QuanX-icon-rule/blob/main/icon/05icon/liuliang(2).png?raw=true",
+        "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/liuliang(2).png"
+      ],
+      "bytes": 7785,
+      "gitBlob": "2871fcda62ed97007efcdbec8eaad0e895b4d3f1",
+      "origin": {
+        "commit": "62245c807f0260feac72a3c971035a6ce8b7957f",
+        "path": "icon/05icon/liuliang(2).png",
+        "ref": "main",
+        "repository": "lige47/QuanX-icon-rule"
+      },
+      "path": "icons/data-blue.png",
+      "sha256": "a7794740073b882f3e5655153387884c157e25c61eea411f8d6b7133a1112e44",
+      "slug": "data-blue"
+    },
+    {
+      "aliases": [
+        "https://github.com/lige47/QuanX-icon-rule/blob/main/icon/05icon/liuliang(3).png?raw=true",
+        "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/liuliang(3).png"
+      ],
+      "bytes": 4021,
+      "gitBlob": "35b608ba37f41c8690a4c843d488d0783e466296",
+      "origin": {
+        "commit": "62245c807f0260feac72a3c971035a6ce8b7957f",
+        "path": "icon/05icon/liuliang(3).png",
+        "ref": "main",
+        "repository": "lige47/QuanX-icon-rule"
+      },
+      "path": "icons/data-green.png",
+      "sha256": "df40d9b18e0da701e9ee3201f2a5a1ba8b7725799ba50eb03f7f04a021b19567",
+      "slug": "data-green"
+    },
+    {
+      "aliases": [
+        "https://github.com/Koolson/Qure/blob/master/IconSet/Color/Discord.png?raw=true",
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Discord.png"
+      ],
+      "bytes": 12217,
+      "gitBlob": "c66cd9519d6265105709a69151ad90ff9292a5cb",
+      "origin": {
+        "commit": "b16b260625f873266f6a6a9b88710132774997b8",
+        "path": "IconSet/Color/Discord.png",
+        "ref": "master",
+        "repository": "Koolson/Qure"
+      },
+      "path": "icons/discord.png",
+      "sha256": "7395cd4efb07f64eebf34eff0daae83404610b345a36f4e399fb0f0b0324d06d",
+      "slug": "discord"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Discovery.png"
+      ],
+      "bytes": 7904,
+      "gitBlob": "51f346f063ecb200fa4a29189dae751418c02cb1",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Discovery.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/discovery.png",
+      "sha256": "26afd02da0d97df2674d4df520c8beccae39cf366b0881baf62463266d72bc29",
+      "slug": "discovery"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/DisneyPlus.png"
+      ],
+      "bytes": 13825,
+      "gitBlob": "4276991a605d7eee0ff5af72a7e922d6ecc2788a",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/DisneyPlus.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/disneyplus.png",
+      "sha256": "ebd55ad787550c1f10c617174b060ac52da4ef55ea28ebd4169bc5f6e4780844",
+      "slug": "disneyplus"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Egern.png"
+      ],
+      "bytes": 14204,
+      "gitBlob": "1432437f51376b83c954aa46a74b46673a4bbfb4",
+      "origin": {
+        "commit": "62245c807f0260feac72a3c971035a6ce8b7957f",
+        "path": "icon/02ProxySoftLogo/Egern.png",
+        "ref": "main",
+        "repository": "lige47/QuanX-icon-rule"
+      },
+      "path": "icons/egern.png",
+      "sha256": "73b0f00a0a3dadd302f2d3b43210d48037d444d7a8758c85d6669b0eb1407946",
+      "slug": "egern"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png"
+      ],
+      "bytes": 5897,
+      "gitBlob": "ef2c3adb582cee81bde09637cc73766c40cc0070",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Emby.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/emby.png",
+      "sha256": "3567d916fd85e221553b2201c2ec4408d6178d3efc9706a45ac3f81f4ad93c58",
+      "slug": "emby"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"
+      ],
+      "bytes": 11353,
+      "gitBlob": "0ef2529f5200eebe58a6bd61c762366286ef0f2e",
+      "origin": {
+        "commit": "b16b260625f873266f6a6a9b88710132774997b8",
+        "path": "IconSet/Color/Final.png",
+        "ref": "master",
+        "repository": "Koolson/Qure"
+      },
+      "path": "icons/final.png",
+      "sha256": "2f5e1d63526c34b4a26194bf07c554d35b98b25bbfaa988611d6ecb77e3f511f",
+      "slug": "final"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png"
+      ],
+      "bytes": 6422,
+      "gitBlob": "0bd57d039d3bf7f13f295215fca5f03f8fd87c28",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Global.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/global.png",
+      "sha256": "a57cdb22c5ae4e5cc27c42c4578eed61359786c37a11173d1436666e850aaf61",
+      "slug": "global"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Google.png"
+      ],
+      "bytes": 9580,
+      "gitBlob": "623e2144a7f007fef9ba16a041b43613b8ab50c3",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Google.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/google.png",
+      "sha256": "72d52fa7b1bd7b097004b09855d8f2c7d3b2813694d65be787618d457fd9bac1",
+      "slug": "google"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png"
+      ],
+      "bytes": 11336,
+      "gitBlob": "6df88fa6225a7421bb8feac49d337d51aa3a5122",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/HK.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/hk.png",
+      "sha256": "7b6d08af03264b34d63a355d802285dc33189ee3705db407e77f8a62223decad",
+      "slug": "hk"
+    },
+    {
+      "aliases": [
+        "https://github.com/lige47/QuanX-icon-rule/blob/main/icon/05icon/home.png?raw=true",
+        "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/home.png"
+      ],
+      "bytes": 2279,
+      "gitBlob": "ea1bbf1fd168fc7c266e9af6af5ac1eac3b0d4ec",
+      "origin": {
+        "commit": "62245c807f0260feac72a3c971035a6ce8b7957f",
+        "path": "icon/05icon/home.png",
+        "ref": "main",
+        "repository": "lige47/QuanX-icon-rule"
+      },
+      "path": "icons/home.png",
+      "sha256": "eabf0bbd31626565c898e112db3e017edc4ef15c544a39f4210b392f69580322",
+      "slug": "home"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png"
+      ],
+      "bytes": 8477,
+      "gitBlob": "2ef3ed6353f27c0df854e41ffd8916822fe445b4",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/JP.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/jp.png",
+      "sha256": "9e6366a6764f2be7b0dbc8ebbf47b1c1312a653d7540364a33331d52a3b13220",
+      "slug": "jp"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png"
+      ],
+      "bytes": 9111,
+      "gitBlob": "e5a709c4de5cfc865a92ecadf7bce1e7e00965b7",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Microsoft.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/microsoft.png",
+      "sha256": "73ca9796a36f8408c2191df47bb31d7b4997727fe657acdf96ff06166d01e58c",
+      "slug": "microsoft"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Netflix.png"
+      ],
+      "bytes": 3675,
+      "gitBlob": "d4a344068f43efd8db8e5b2aa0a948a9aa84fef2",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Netflix.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/netflix.png",
+      "sha256": "d27bc25a9801646618bb030caf309526d8b1db8ff889e381476de53ae72e40ad",
+      "slug": "netflix"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Paypal.png"
+      ],
+      "bytes": 8977,
+      "gitBlob": "b7e58e9bc11a24f3f11547556b797dcfad44b8ab",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Paypal.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/paypal.png",
+      "sha256": "bc8a4bd647222a40ac14450e016dfe28d9afaaec05a8682d641251f2b6eae035",
+      "slug": "paypal"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Personal.png"
+      ],
+      "bytes": 4918,
+      "gitBlob": "217de89c16a14657571f2ac29a2dba165dcc3906",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Personal.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/personal.png",
+      "sha256": "6ffa0fa1301c97205f60e8c4a86178b39ff49e964fb56ca3259b395276367d8b",
+      "slug": "personal"
+    },
+    {
+      "aliases": [
+        "https://github.com/lige47/QuanX-icon-rule/blob/main/icon/05icon/zhuanyi(4).png?raw=true",
+        "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/zhuanyi(4).png"
+      ],
+      "bytes": 5761,
+      "gitBlob": "da11a9d79edf62f8414464ba3d4fdeebca56c0cd",
+      "origin": {
+        "commit": "62245c807f0260feac72a3c971035a6ce8b7957f",
+        "path": "icon/05icon/zhuanyi(4).png",
+        "ref": "main",
+        "repository": "lige47/QuanX-icon-rule"
+      },
+      "path": "icons/relay.png",
+      "sha256": "97505bbcd78ca6e400a699d3a7274ca8ca73911fcaa43fb1f7fd5748f416a3c1",
+      "slug": "relay"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png"
+      ],
+      "bytes": 7382,
+      "gitBlob": "2bdba289a1d826defdc284e417968f3615b690a8",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/SG.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/sg.png",
+      "sha256": "2fad74de2339578914335c3936d40a708a60b13de9cce5f76205125a5302e615",
+      "slug": "sg"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Speedtest.png"
+      ],
+      "bytes": 6009,
+      "gitBlob": "219d08581fa16a70866ec64a5f244ff39d4e56b3",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Speedtest.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/speedtest.png",
+      "sha256": "4ef2b98b38ef6377bcf90a0622d964bc2117098722d6c5de3ec86c306b920f03",
+      "slug": "speedtest"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png"
+      ],
+      "bytes": 17767,
+      "gitBlob": "e56498218e79f1df823f34ea23468a26ce102151",
+      "origin": {
+        "commit": "b16b260625f873266f6a6a9b88710132774997b8",
+        "path": "IconSet/Color/Spotify.png",
+        "ref": "master",
+        "repository": "Koolson/Qure"
+      },
+      "path": "icons/spotify.png",
+      "sha256": "af656084c22d2409c989b20c89a4526af114aeb55b0e3b97484a40feff304ffb",
+      "slug": "spotify"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Steam.png"
+      ],
+      "bytes": 5149,
+      "gitBlob": "8bccdc312d5feae478a2aeba01c7198c2fa87b8c",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Steam.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/steam.png",
+      "sha256": "c941045769c462c874e974c3d6bc5cecc8ece8922bd2d5c5da5158ca37f0d94c",
+      "slug": "steam"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png"
+      ],
+      "bytes": 10291,
+      "gitBlob": "abe9b79664db6ff5fb66f66b699947440910cc9f",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Streaming.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/streaming.png",
+      "sha256": "b81bbd6841131e60885fe268c1071265ccdf8a764989189301bc4be3e401cb28",
+      "slug": "streaming"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png"
+      ],
+      "bytes": 11672,
+      "gitBlob": "9ceaa0781c7d478dddbeddd292fd94fd133225aa",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/StreamingCN.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/streamingcn.png",
+      "sha256": "48d88ae17d20d99c441896f635eb5de048cd32abc5ea5cddfa996c27a973d4e1",
+      "slug": "streamingcn"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingSE.png"
+      ],
+      "bytes": 11069,
+      "gitBlob": "c1e2df606435ae359f4f23072902b7d133780d55",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/StreamingSE.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/streamingse.png",
+      "sha256": "42bf86fa85747e4e3eff29686b3828f02ec7bd131b988e84f8ac00502372053d",
+      "slug": "streamingse"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/tailscale.png"
+      ],
+      "bytes": 21190,
+      "gitBlob": "fc744548b9b7133ee8003c2226daf4e48320ebdc",
+      "origin": {
+        "commit": "62245c807f0260feac72a3c971035a6ce8b7957f",
+        "path": "icon/04ProxySoft/tailscale.png",
+        "ref": "main",
+        "repository": "lige47/QuanX-icon-rule"
+      },
+      "path": "icons/tailscale.png",
+      "sha256": "2a76ed002023d5895661ff43e25169af89daddf374c3bfc5d294d5df9ec4278a",
+      "slug": "tailscale"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
+      ],
+      "bytes": 13559,
+      "gitBlob": "de233c5ab1bab7574160eeb9776417fc21a56cb7",
+      "origin": {
+        "commit": "b16b260625f873266f6a6a9b88710132774997b8",
+        "path": "IconSet/Color/Telegram.png",
+        "ref": "master",
+        "repository": "Koolson/Qure"
+      },
+      "path": "icons/telegram.png",
+      "sha256": "1af4c3abe4f3be8f1fa1677302aa40e7fb509b89707fbd79f07d209c36ba970e",
+      "slug": "telegram"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png"
+      ],
+      "bytes": 11688,
+      "gitBlob": "5090cbd25207a93fb16fa9c22321508ff1a37192",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/TikTok.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/tiktok.png",
+      "sha256": "8097fcc577f174c6c52f4e5f05b40e53f56532ca8b99928423ea3ddf57c4fbe5",
+      "slug": "tiktok"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png"
+      ],
+      "bytes": 10244,
+      "gitBlob": "3d435685e63d5d870c7ceff0544e7e3603b9911c",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/TW.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/tw.png",
+      "sha256": "49df3f34c471af48b81f96ebc5b4d3cb28942df3ddcedbedeb63792783588b78",
+      "slug": "tw"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/UN.png"
+      ],
+      "bytes": 8362,
+      "gitBlob": "7c9eac7aac46d4edcc4986da939e36cf6b00aad2",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/UN.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/un.png",
+      "sha256": "c0cd4d86415533b80c3a7377a1dd2e45db8200d1b501e3ca1cbc2585d385ba6c",
+      "slug": "un"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png"
+      ],
+      "bytes": 11746,
+      "gitBlob": "2533f07e5317bfa6b810a82ac1d7e8131e244ad8",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/Urltest.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/urltest.png",
+      "sha256": "86fa8637aba4f3f4a68b308e175f2bd496a869f4920307cf348cd092a749ffc1",
+      "slug": "urltest"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png"
+      ],
+      "bytes": 11359,
+      "gitBlob": "3368ab5b4d8a2ac47b3e84e1142a6232d43b46ca",
+      "origin": {
+        "commit": "0e2bab71d8dbe512db9b5e7a9000a5661dd0e327",
+        "path": "Color/US.png",
+        "ref": "master",
+        "repository": "Orz-3/mini"
+      },
+      "path": "icons/us.png",
+      "sha256": "961bfb437ab98c46f1771031473165003dc200ea61ff9e30a4f4a18c2db56554",
+      "slug": "us"
+    },
+    {
+      "aliases": [
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"
+      ],
+      "bytes": 9092,
+      "gitBlob": "20b18cf8ade89df8df3bd1be31434c331d0e8dfb",
+      "origin": {
+        "commit": "b16b260625f873266f6a6a9b88710132774997b8",
+        "path": "IconSet/Color/YouTube.png",
+        "ref": "master",
+        "repository": "Koolson/Qure"
+      },
+      "path": "icons/youtube.png",
+      "sha256": "1ff428e8f81e5b959cd7a1181f9f7279315e5d04de3b052886fc60834c28529d",
+      "slug": "youtube"
+    }
+  ],
+  "schema": 1
+}

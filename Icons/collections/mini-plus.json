@@ -1,0 +1,46 @@
+{
+  "description": "By Orz-3\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/Orz-3/mini/master/mini%2B.json",
+  "icons": [
+    {
+      "name": "Personal",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ce/ce942a9bdac00155723acb42f07129cac04b04e5f9755b9219186f9fe6ea3c03.png"
+    },
+    {
+      "name": "Team",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cb/cbdd38a16ee437f0be131baa99cc4f2bcefc325c31e6c621d2f7e5acc9217329.png"
+    },
+    {
+      "name": "Enterprise",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/34/3433d3ea29b441e0ef5b0044eb6e46bcb1f76475030a5c7bc3921656d2565ecf.png"
+    },
+    {
+      "name": "Piao",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/26/26fd83765b22880fcd4dd607e42fab02574297d4bf21a7642dd0ab88440f9c6b.png"
+    },
+    {
+      "name": "RIP",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/94/94d992fafdb575d64d803532ca4e43f2b3195808076b56c1a5c7e98d2741b40f.png"
+    },
+    {
+      "name": "SS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fb/fbf844e2268cf9bfcfe8cda63f6eff3c794786b965ddd7c89d19bf615e590850.png"
+    },
+    {
+      "name": "SSR",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/45/45bb22035d0b573f5ba6433663fd1d6afb9eb07e59a7a10ae46840df17d7650e.png"
+    },
+    {
+      "name": "V2aray",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f4/f4aa053e7251b8ba92b87e510828619c171b883c2eaf8658b3380c8c682e4ebb.png"
+    },
+    {
+      "name": "Trojan",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/20/20d635ffc6ef683c49fcba689ac38eda29b3c102be3a1affd116afad79892322.png"
+    },
+    {
+      "name": "Vpn",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/46/4600a3cc0028d7eba5f1d73eea92d3c1b6500b23911c264cd1e45a526c7b2039.png"
+    }
+  ],
+  "name": "mini+"
+}

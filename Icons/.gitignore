@@ -1,0 +1,6 @@
+.cache/
+.tmp/
+.venv/
+__pycache__/
+*.pyc
+sync-report.json

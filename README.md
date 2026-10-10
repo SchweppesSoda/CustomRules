@@ -5,7 +5,7 @@ This repository separates reviewed rule sources from generated client artifacts.
 ## Branch contract
 
 - `master`: catalogs, manual sources, build scripts, workflows, Egern modules,
-  Stash overrides, and Sub-Store scripts.
+  Stash overrides, Sub-Store scripts, and [icon assets/collections](Icons/README.md).
 - `auto-build`: generated rules only. Every rule artifact is marked
   `AUTO-GENERATED. DO NOT EDIT.`
 
@@ -15,8 +15,18 @@ Production rule URLs use:
 https://raw.githubusercontent.com/SchweppesSoda/CustomRules/refs/heads/auto-build/...
 ```
 
-Non-rule resources such as `Egern/Modules/` and `Stash/` continue to use
+Non-rule resources such as `Egern/Modules/`, `Stash/` and `Icons/` continue to use
 `master`.
+
+## Icons
+
+`Icons/` contains fixed PNG selections, mirrored Sub-Store collections, source
+provenance and original licenses. Use the [selected collection](https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/collections/selected.json)
+or [all packages](https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/collections/all.json).
+Weekly/manual icon sync has its own [workflow](.github/workflows/sync-icons.yml),
+tests and dependency file under `Icons/`; it never builds rules or changes
+`auto-build`. Automatic library updates keep selected artwork fixed. See the
+[icon guide](Icons/README.md) for direct image URLs and source usage restrictions.
 
 ## Unified client subscriptions
 

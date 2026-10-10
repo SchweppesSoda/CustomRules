@@ -1,0 +1,170 @@
+{
+  "description": "Fixed PNG selections; automatic synchronization never changes these images. See curated.json for provenance and licenses.",
+  "icons": [
+    {
+      "name": "adblock",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/adblock.png"
+    },
+    {
+      "name": "ai-bot",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/ai-bot.png"
+    },
+    {
+      "name": "anthropic-white",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/anthropic-white.png"
+    },
+    {
+      "name": "apple",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/apple.png"
+    },
+    {
+      "name": "banking-usd",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/banking-usd.png"
+    },
+    {
+      "name": "bitcoin",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/bitcoin.png"
+    },
+    {
+      "name": "chatgpt",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/chatgpt.png"
+    },
+    {
+      "name": "china",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/china.png"
+    },
+    {
+      "name": "data-blue",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/data-blue.png"
+    },
+    {
+      "name": "data-green",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/data-green.png"
+    },
+    {
+      "name": "discord",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/discord.png"
+    },
+    {
+      "name": "discovery",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/discovery.png"
+    },
+    {
+      "name": "disneyplus",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/disneyplus.png"
+    },
+    {
+      "name": "egern",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/egern.png"
+    },
+    {
+      "name": "emby",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/emby.png"
+    },
+    {
+      "name": "final",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/final.png"
+    },
+    {
+      "name": "global",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/global.png"
+    },
+    {
+      "name": "google",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/google.png"
+    },
+    {
+      "name": "hk",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/hk.png"
+    },
+    {
+      "name": "home",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/home.png"
+    },
+    {
+      "name": "jp",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/jp.png"
+    },
+    {
+      "name": "microsoft",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/microsoft.png"
+    },
+    {
+      "name": "netflix",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/netflix.png"
+    },
+    {
+      "name": "paypal",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/paypal.png"
+    },
+    {
+      "name": "personal",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/personal.png"
+    },
+    {
+      "name": "relay",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/relay.png"
+    },
+    {
+      "name": "sg",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/sg.png"
+    },
+    {
+      "name": "speedtest",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/speedtest.png"
+    },
+    {
+      "name": "spotify",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/spotify.png"
+    },
+    {
+      "name": "steam",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/steam.png"
+    },
+    {
+      "name": "streaming",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/streaming.png"
+    },
+    {
+      "name": "streamingcn",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/streamingcn.png"
+    },
+    {
+      "name": "streamingse",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/streamingse.png"
+    },
+    {
+      "name": "tailscale",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/tailscale.png"
+    },
+    {
+      "name": "telegram",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/telegram.png"
+    },
+    {
+      "name": "tiktok",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/tiktok.png"
+    },
+    {
+      "name": "tw",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/tw.png"
+    },
+    {
+      "name": "un",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/un.png"
+    },
+    {
+      "name": "urltest",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/urltest.png"
+    },
+    {
+      "name": "us",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/us.png"
+    },
+    {
+      "name": "youtube",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/icons/youtube.png"
+    }
+  ],
+  "name": "CustomRules Icons Selected"
+}

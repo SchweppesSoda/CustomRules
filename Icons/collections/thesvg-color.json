@@ -1,0 +1,634 @@
+{
+  "description": "xream 基于 theSVG 转换的 color variant 图标集；仅包含链接清单，不重新分发 SVG。图标版权、商标和 license 归各自权利方及 upstream license 约束。\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/color.json",
+  "icons": [
+    {
+      "name": "01.AI (零一万物)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d1/d10025422899ced725494d646fa3e429a7cbd7375f7f9fd312bc10e84e133d27.svg"
+    },
+    {
+      "name": "302.AI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8a/8ad40ae43939e08a57b83502db14cd686b43532aaa619c9f0f0019fec31cc101.svg"
+    },
+    {
+      "name": "Ai2",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/df/dfaffd9b6e38371f541bae354cf7db9669bfca4fbc0b0e45cb5616c6fa4d6d63.svg"
+    },
+    {
+      "name": "Ai360 (360智脑)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/76/76876b4bf8ba4d6956d4595af9181cec47d81ae6088f7bbb6f45b8d792031424.svg"
+    },
+    {
+      "name": "AiHubMix (推理时代)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/81/81b07c92993c3a909e45cd48858b3b3b02a88ea6b453156d416091abc8c0f6f0.svg"
+    },
+    {
+      "name": "AiMass (紫东太初)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/67/6747165f12dce79d4b3e58a3c684ff4a31c7054e3dc0817f0405a6779828406e.svg"
+    },
+    {
+      "name": "AionLabs",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f3/f3491ccd6f54f371665f72a28c7db3b4ba463c5766f237819055693393bf93d8.svg"
+    },
+    {
+      "name": "AkashChat",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/47/47f14064579fb1dd3c7118f14104347f0f743674351d6abe42f7d25848e2c364.svg"
+    },
+    {
+      "name": "Alibaba",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1c/1cd1e7be5108d1e847508dc9e40591fb6eb29aac20bbf7f4c56c6f082359b323.svg"
+    },
+    {
+      "name": "AlibabaCloud (阿里云)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2e/2e5d248dd99afd7f4f74b17f3149927c47f4efee3024c8871c4293204c3bfc8a.svg"
+    },
+    {
+      "name": "AntGroup",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/58/58d7ce11563a3c18d60588f650efff680cae22b82ffce4a1edeb6ec9558c0dcc.svg"
+    },
+    {
+      "name": "Antigravity (Google)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/14/14fd6d0b3a1904b29fe1e00b6e73f98b08c33a20810d02fc4aec05cf74019248.svg"
+    },
+    {
+      "name": "Anyscale",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4b/4bcc84d918d60db386c4535455c0d2e257a2c81f9b5c48f4b759f78d12777318.svg"
+    },
+    {
+      "name": "Arcee",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c54fde7b3f98270594daaa1215f07c22d705bb89799d9a116321fd2b3379e971.svg"
+    },
+    {
+      "name": "AssemblyAI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/12/12b95e8db89da1d2676fe289b942e5ebd23e61743bfbae5291c18e07509f5f1a.svg"
+    },
+    {
+      "name": "Automatic1111 (SD Webui)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ec/ecbe1da45755fe82d2fff73ad83956d9a958e01593683f6dd284f7aa87e397de.svg"
+    },
+    {
+      "name": "AWS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/65/65e2ca39ef0669dbb0323bc5ab69f981b8087d8ebb3e4a3bce1d3b32b3b67151.svg"
+    },
+    {
+      "name": "Aya (Cohere)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/eb/ebf777cfe645af788888a9bcdd02d87c4a2b54b9442b7b7567da8b35a5a6782a.svg"
+    },
+    {
+      "name": "AzureAI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a8/a8ad4524c2b8277209bfd0fda29dd9a659fa0d8c2d75f7adb0acd36045b98f96.svg"
+    },
+    {
+      "name": "Baichuan (百川)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/97/9700d94fab05a7aa8a67203ac76d6d5ad86c8784941cfbb7d947258ae658d9e5.svg"
+    },
+    {
+      "name": "BaiduCloud (百度智能云)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e8/e84e807665bc3306af0937366b1c4b4d721b0ce95b3c093766ff4ec0abcce6bc.svg"
+    },
+    {
+      "name": "Bailian (阿里云百炼)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/24/240f4584c8ae0a32ec84ab53068abc6649881393e831af716c389e4825ac6779.svg"
+    },
+    {
+      "name": "Bedrock (AWS)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e7/e73825f9f86b6c571c1426d76aded01b0a5d3fca4d2343ddffac764ff27cde14.svg"
+    },
+    {
+      "name": "BurnCloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/90/901b999888012f6d165049cce356f08a60d1f4911697245863c47b69d2dfb327.svg"
+    },
+    {
+      "name": "CentML",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d4/d46cd1206c70cabba940d8b5094f9b794d64324724815982f28c01f0381d5747.svg"
+    },
+    {
+      "name": "Cerebras",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b0/b0f331de0f07ef52cd9078b7cd85a646b3363fbdafe8203a022a8ce01038d0d4.svg"
+    },
+    {
+      "name": "ChatGLM (智谱)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/79/79b3acceaf2edbc632e61dace5a30b601677b8d4e64468e18c4e277696d511e8.svg"
+    },
+    {
+      "name": "Cherry Studio",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8a/8a7e7b6ccb37f254e932f1051d9972bd618de2909c175bead850beaee07e9ab9.svg"
+    },
+    {
+      "name": "Civitai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/12/1267d950cc2463131c16c315f9abd90a42d51ac75249dd173e7fb78aac1f2120.svg"
+    },
+    {
+      "name": "Claude Code",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/55/55c31d5508b2e0ee82897d099e7f6c19ec4df441479433b44a9e00e13999dc4f.svg"
+    },
+    {
+      "name": "CodeFlicker",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/38/386e1e8807fd3d78c6142a8825a81326e40b2f21b484da4354b58ccedebfbd62.svg"
+    },
+    {
+      "name": "CodeGeeX",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d4/d44717f7473b89a343a6562e02d4236cb70313a0a27a5a8d40f17d61a03b213a.svg"
+    },
+    {
+      "name": "Codex (OpenAI)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5f/5f424b10216e17cd79c5f852138969453e031066e68a8d9c661e74534276ed9c.svg"
+    },
+    {
+      "name": "CogVideo",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/77/771bea0490f916107e998e48233baa8e80c571e52ec0752c1386c385d31bf559.svg"
+    },
+    {
+      "name": "CogView",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/dc/dce12c69d673e5cf1e4d7c29cc7cead20a7091f5b9ab7c6d9151f67c22ce9324.svg"
+    },
+    {
+      "name": "Colab (Google)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a4/a455d2a833d00d57dc99c2e37ac4e2ff67e27ca1f72dec0fc6d8d6de1cd0819b.svg"
+    },
+    {
+      "name": "Comet API",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6d/6d9bba1a3ccce19a6b4d2f7e4cb8384e663418709d3a9fc3108b7729173a51c5.svg"
+    },
+    {
+      "name": "ComfyUI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/08/0867b6df03d94ac9240993abb8f7636e4d1254aa8a0cb69fe3c29be1d30fbdcf.svg"
+    },
+    {
+      "name": "CommandA (Cohere)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b9/b942f6227ce8db17fbdff34b9018e3a6cfd2aafa3a61e68012e3df82c1c8f630.svg"
+    },
+    {
+      "name": "CopilotKit",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ac/acdca52a7ef349fe25fb2680a76f5f00ab7a7b50fd22d3600f8538d26531cc85.svg"
+    },
+    {
+      "name": "Coqui",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/63/63f735130b40d377ccc2550eb25557b5a6b1b5bd605f226a36a7d9cc81ce786c.svg"
+    },
+    {
+      "name": "Crusoe",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/df/df300635ec8f2891a58900f6ceccec967224c5d26a32d102b2f2d0778ea49734.svg"
+    },
+    {
+      "name": "DALL·E (OpenAI)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/04/04921f0ad358ebdde44760a4f519b1de86ab6d7847ae7cd233bb110de01ed66c.svg"
+    },
+    {
+      "name": "DBRX (Databricks)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/08/089781811eef03cf2a153549b36990db7aef2dc245f31c678541837a9f2bb639.svg"
+    },
+    {
+      "name": "Deep Cogito",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8d/8d04fb1468683f1820915606217463c85b1a6f311178ba0027b0c9b13d81c8ac.svg"
+    },
+    {
+      "name": "DeepInfra",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e2/e2daddb98348277845a52a78bf1b04d33d333aaaf06fd641b020f26e5a0669ee.svg"
+    },
+    {
+      "name": "DeepMind (Google)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/aa/aa3624b96baadbf9cc465cc0fae9c875a224e7bfc3b4fa74d00fa45f0dabb07b.svg"
+    },
+    {
+      "name": "Dify",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/57/57e93ce57ff9934aa8ff53eab0bfe3ef5014ecb51afdaa47792ab4f31167c5e7.svg"
+    },
+    {
+      "name": "Doc2X",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/54/5430cee889e9a3bd1ff469f21281bb72b691ce34b75d90aac8a8770341ac3eb7.svg"
+    },
+    {
+      "name": "DocSearch",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5b/5bfb8c79e7f90b99c054438fcf947097bbecee34b3f5a86c73cc9230b245574f.svg"
+    },
+    {
+      "name": "Doubao (豆包)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4a/4a1065dcaff5c3414101828e433c86d8324a6f63d945285f04ffe46b2eded5c0.svg"
+    },
+    {
+      "name": "Essential AI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e9/e96c1977c2e07f9e82e176988dcadfb7e1df75e3b42c66bae97df4db09ac7678.svg"
+    },
+    {
+      "name": "Exa",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2c/2ccd7ec05fa43dbfcfa7d0df1810f07978edb82afca3b2cb83a9393aa2e33ee8.svg"
+    },
+    {
+      "name": "Fal",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/52/5214ae1cf705b0ce4c155f03efadca2b16685586fc46a237910610b920a46e2f.svg"
+    },
+    {
+      "name": "FastGPT",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c6/c6821275c608265da7b386244c59ec6119d7cbc5db7e97da73668572d7cc3a6a.svg"
+    },
+    {
+      "name": "Featherless.ai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c9/c96779e90b701c5c10655f350db30c7eb4c3f344735c352554defda20b6e2275.svg"
+    },
+    {
+      "name": "Firefly (Adobe)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e019db082c9207e0b438907101de0ef184f47a2c3171af3cedd8aec6da998625.svg"
+    },
+    {
+      "name": "Fireworks",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1d/1df32a350d032f6d8a0860271473c10ae5d9d97273f3f8402c454e7feb33a626.svg"
+    },
+    {
+      "name": "Gemini (Google)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c7/c7dbaa604a5c6dd81f5f9a7feada0c5ba04022d2b773446e147f65f3b5d828af.svg"
+    },
+    {
+      "name": "Gemma (Google)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d1/d16e9e69b95d68ca70003fc24969e42a28ae1be8782c208c6d40dd33320e5e88.svg"
+    },
+    {
+      "name": "GLM-V",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c0/c0f7cb3b047c0967674785cb16d1d032495c7dcb22c8622eb82783e696fa800e.svg"
+    },
+    {
+      "name": "GoogleCloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/05/05ba03b6d92a7bc19e321a976189df4569f9105c6c7f709654f79186839b036b.svg"
+    },
+    {
+      "name": "Greptile",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8c/8c8e3fb6d218f79631417c1f6278a35bc329e2c0e8791e1331ad7106d80f732f.svg"
+    },
+    {
+      "name": "Hailuo (海螺)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8c/8c5ee82ff0273ba3749f6435be16e5d7e8c350a6a1047d8a330661b87100b33e.svg"
+    },
+    {
+      "name": "Higress",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/16/1607aa71cd7849f6c7fd3ae2c3ef530fa7dc4a4ebfcf8bab9bbc42ba6ff9a6d2.svg"
+    },
+    {
+      "name": "HuaweiCloud (华为云)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/34/34a3cb5b30002c32a80865896bfc5a6347883014c7e67c0fdced751a0194e441.svg"
+    },
+    {
+      "name": "Hunyuan (腾讯混元)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/38/38e4b9e300fcd32e09a225f6a9d02976a2de6478be2079ccf17c873b9d8a2667.svg"
+    },
+    {
+      "name": "Hyperbolic",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f6/f61f429451497ffc5d03e3e4dfc09f79ac067d848336a048e0a373aa5299990a.svg"
+    },
+    {
+      "name": "IFlyTekCloud (讯飞开放平台)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/16/16c037fbdb679635fa31d4c2360810e89a4663a954c85301afa5a4d24f66a30a.svg"
+    },
+    {
+      "name": "Infermatic",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3c/3ca25415aaca08f00bd7b95ebe96f055b858f96716730b33ca8af7f361b22b9f.svg"
+    },
+    {
+      "name": "Infinigence (无问芯穹)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/69/69fe99f93860212ed47e8d8b562e63a85e56c87c411a92622ee6dbefede8a166.svg"
+    },
+    {
+      "name": "InternLM",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/84/8478a75a5c5a2887d4ecb411d9bef81e79deaa427b20b5efd2b89bbdc4f0e3d0.svg"
+    },
+    {
+      "name": "Jimeng (即梦)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e3/e3a69a658b7a9dab77e784fe35edc00588280bb03a21b688b32b990874990863.svg"
+    },
+    {
+      "name": "Junie",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bb/bb8f129af751fef5b99b3f3fdfbe6ff78d98627ef3455a6bcd77309a2306938d.svg"
+    },
+    {
+      "name": "KFC",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b8/b8e5e115fcb58b7395c0a41857c2a7b069c8885182b588f7a3651ba8c48e3331.svg"
+    },
+    {
+      "name": "Kling (可灵)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/35/35a4c6d2f3b56bc471c1581a8b4db249685b2a256db20dff06fea23398712ca3.svg"
+    },
+    {
+      "name": "Kluster",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/98/98cc0d4c5713281681fc80bdaba6a93eaae7997ef9e9999638062593047245bd.svg"
+    },
+    {
+      "name": "Kolors (快手可图)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ed/edd751e6bdd42b23e610ab66d6b5dca2a2f20bc74124f6be4e27403629e78990.svg"
+    },
+    {
+      "name": "Kwaipilot",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a8/a87353f9fbe8fc4c8a2100cf4f5edca293de4abc2f4c888d415b4472ea8bdb09.svg"
+    },
+    {
+      "name": "LangChain",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c6/c63d2749f6b554b56aacab1415794d2ab4ccbec05e891c747ac2cd20176c7c1f.svg"
+    },
+    {
+      "name": "Langfuse",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7b/7b912bc7f9e513533c85a791b34ed2896286d217453849c6538d863d03c4780c.svg"
+    },
+    {
+      "name": "LangGraph (LangChain)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c5dc5a6743119d621ef23f08145753df2ecf4b704cf46e230fb15bb14281682b.svg"
+    },
+    {
+      "name": "LangSmith (LangChain)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/26/26739a5f65943b652ec4d8eb2bc210d5fe04140c4761c030c0e4d3ad41031af3.svg"
+    },
+    {
+      "name": "LeptonAI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f4/f49eb9f5236aa164370efe1698dbc0415f2d26a2f16e21f0058aad57dda7b5b0.svg"
+    },
+    {
+      "name": "LG AI (KMMLU/EXAONE)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/16/163bfe3e9924ad4319e39529b27db58fa81a256b22065a16af675bf2fc8220d4.svg"
+    },
+    {
+      "name": "LlamaIndex",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bb/bb120cb3d6cbc2c5104d3d7857988c32810d7cb1998028ed888c14c678195e8b.svg"
+    },
+    {
+      "name": "LLaVA",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7e/7e25aea1b9e8198594cb407dbdb818d9b9c427ba47a780e16b6de8fe84c954a3.svg"
+    },
+    {
+      "name": "LobeHub",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cf/cf5cc6bde402e81d145e308de1de60c56515ef5bf67f23ffdeb23ab1b16260bc.svg"
+    },
+    {
+      "name": "LongCat",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/73/73e6838c126557998803a3c864ceb8ac6982597fa680fa139ff942d456c23687.svg"
+    },
+    {
+      "name": "Luma",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a9/a99f851581d63c962732150fcee1dc9c3a8b3609b302f96cc9249fd7b2d60c54.svg"
+    },
+    {
+      "name": "MCP.so",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ef/ef1d21d53eba41721e9bd9455e8b88a3b80ea0906c75d90e3a68e704bec0b865.svg"
+    },
+    {
+      "name": "MENLO (Lucy/Jan-nano)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/00/00c37575cec382fb61ede2a62adaf7da057337171e0a3d1c5e489bf713c09e23.svg"
+    },
+    {
+      "name": "MetaAI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a7/a7b52cfde49434eab56dfaf8550633fe2200885d7fe9880f0ddac49ecef71393.svg"
+    },
+    {
+      "name": "Microsoft Bing",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c2/c22a4996e99f17005150e68f01905572096dc3f0c35f11dfbfcc1e5e9c26a6c2.svg"
+    },
+    {
+      "name": "Mistral",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a2/a21838f4a3714b9f537bd849de4848dca712778517bfc4177621cc58b3050006.svg"
+    },
+    {
+      "name": "Morph",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0f/0fdb479e13c5d5de15aa89d1f87c8d55f8f8a56d33fc5dee8c566d2e0dbd5b96.svg"
+    },
+    {
+      "name": "MyShell",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/03/03fa622d0c8212fef4c4b0992d53f73467f7b83ab819f733f0199414c7402302.svg"
+    },
+    {
+      "name": "Nano Banana (Google)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/83/83544264e46c17968acb206ecf6d8e541184403ded7774e6f0af0c6234a9f051.svg"
+    },
+    {
+      "name": "New API",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/74/748dc524f0b7055163dbc364ccd4258d0ba1a9207a7107e1cd2c235cd01d5594.svg"
+    },
+    {
+      "name": "Nova (AWS)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/68/68bd6340b5f194b628e0460265bd001623119bba37ce9f67f2cbc8905526e67d.svg"
+    },
+    {
+      "name": "Novita",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ab/ab99ef3113a12e64ef8b44eda132094017359ede5bdb33e830ed855b69520612.svg"
+    },
+    {
+      "name": "NPLCloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9e/9e59acc28a1f4b2e0d03038b3b9015411f9a4f014bb3cf3314a4ac15f6d5aed7.svg"
+    },
+    {
+      "name": "Nvidia (Nemotron)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d1/d1a30635bfbda43b74fb9ba728b7125689590f726a77dffca202f86133b40706.svg"
+    },
+    {
+      "name": "OpenChat",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7f/7fba3082752e70e4f1a25166251cfc213b9b35c6b7a0239d1dddda5cd3422308.svg"
+    },
+    {
+      "name": "OpenClaw (MoltBot/ClawdBot)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/20/20214a0dc7a77ca237a70d8cba203764a107d01529654a8b9cf2f777bbc4a88d.svg"
+    },
+    {
+      "name": "OpenHands",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/89/8996f5e483c2522fad7d3795f24591228fa8fc97281cc312a9eda4e3efebabbc.svg"
+    },
+    {
+      "name": "PaLM (Google)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ed/edac7f264c49b69fbd3dbcd06ccb0184b1034a8f4c6eceb8239874f5f4213e6e.svg"
+    },
+    {
+      "name": "Phidata",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cc/cc98b57c349fe09306234c2a8d084e70150ef7d8f204bb1a9abc8b37ddd6eee8.svg"
+    },
+    {
+      "name": "PixVerse",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7b/7b6f4dd2d5a49cc7a5229d3a323d7e68c5bf80fed68d1824c6b36229d621f6cc.svg"
+    },
+    {
+      "name": "Player2",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/46/46f75e14a892536b420660fed12fbdebd226354fe630a43ed1da1e97f858af04.svg"
+    },
+    {
+      "name": "PPIO",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d6/d67219c261bb14d531fc7a9a8d9d664b1f107e84c722c01573ba30618143cb4f.svg"
+    },
+    {
+      "name": "profClaw",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2c/2c6f3f2c224b53eec8bf229908f62ae5cf0698da4c50c370c26dc9afd4a42ed0.svg"
+    },
+    {
+      "name": "PydanticAI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6c/6c8191824720ffdce3952b79f848e0e8324fe8de12ea2ff72f8985d3ed75dd56.svg"
+    },
+    {
+      "name": "Qingyan (智谱清言)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6a/6a32e3722718426d0419f121d4074fceec369a4739f4651aa90b9284a8c24e48.svg"
+    },
+    {
+      "name": "Qiniu (七牛云)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/68/689ad9e4a94c81784e56164066ff93582ea8fc2d5720d8a3598cd78c3079f9c1.svg"
+    },
+    {
+      "name": "RSSHub",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c0/c0102c78cbeb12c72c9a57c8e9079365859a36cc7fdb003cd0985168daa3a211.svg"
+    },
+    {
+      "name": "RWKV",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b9/b91f6aa2dd8981fd3bdd0731262b7815fd4c9182d2ce4759aa7a4b66357d9271.svg"
+    },
+    {
+      "name": "SambaNova",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1e/1eae1179dbeb2a31edcabeca5f2c9d593bb1255aa8354e784be60a94dd850aa9.svg"
+    },
+    {
+      "name": "Search1API",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/df/dfef0b7f7f82c09b874fa51b69f120f75c79833c89ea8d73f50e7afba3439331.svg"
+    },
+    {
+      "name": "SenseNova (商汤)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/68/68517d77b4424e2cdc0c77b1c58b6417a83471d0199e1016d2557590d9a23132.svg"
+    },
+    {
+      "name": "SiliconCloud (SiliconFlow)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/76/7679065e51dd369f357df41d097837c1631f8c83b56c1ccaebb961dd045157c7.svg"
+    },
+    {
+      "name": "Skywork (天工)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2a/2a4fdc01d6a408f09589d3c58867e6bc3734d8d2be2fe0fc59cf39e892ed9475.svg"
+    },
+    {
+      "name": "Smithery",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fb/fb2d6421df0d97e392de8b69c374c4ab84862dc8f17ff2344527c9391d48091a.svg"
+    },
+    {
+      "name": "SophNet",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4d/4d423c1fde63d06997fcd44fc3c7901828cd0081bed7c50e6391224ea983389c.svg"
+    },
+    {
+      "name": "Sora (OpenAI)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/53/53c7c68d6df822010cdb47bf72be48a58311bedfbc5338e9ba8445ef7da2b210.svg"
+    },
+    {
+      "name": "Spark (讯飞星火)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/33/33b9c8296d31f8cb8787cb27257d5c986e9b1e163e4dff35121d45d9c49de0e3.svg"
+    },
+    {
+      "name": "Stability (StableDiffusion)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3f/3f3bf379f1651330903e1b2ebbd0596519d791ea7d8e1fddca1ff5445fc5fd90.svg"
+    },
+    {
+      "name": "StateCloud (天翼云)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9d/9d2324ddedc910958c29045dfc262e540d7186c7d3e4a901887faa05555b8d92.svg"
+    },
+    {
+      "name": "Stepfun (阶跃星辰)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/17/17bac726b3be8f0ff6ea4af14b7af144c65729f5345253e380c854c4fefa0e50.svg"
+    },
+    {
+      "name": "Straico",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/df/df2a81b0f0bee0f1556357a60ca4ead0914a79b7221333b8af6ca6be0e560231.svg"
+    },
+    {
+      "name": "StreamLake",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/61/61c5f37bdd1b653d5f8f86d505b8ba74e726a2cf3b3154ffba91726d916fdd98.svg"
+    },
+    {
+      "name": "SubModel",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/37/377742a9f660caa7367281380baef17a15f7a0555e84e2211e7cfd346396ddf2.svg"
+    },
+    {
+      "name": "Targon",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3c/3c2f45f519904a012b9a45983fca8ae533e9d04ac648442e2bcffd65b8ab5d30.svg"
+    },
+    {
+      "name": "Tavily",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/80/80dddf9848f8761a2552c10ad0b60e4d11ad399f6ae014a8b43af6150456aa1a.svg"
+    },
+    {
+      "name": "Technology Innovation Institute (Falcon)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cd/cdae8fb055d70cf1c4ca1092e7063e82d28d93268a2f475bd872bba95d173448.svg"
+    },
+    {
+      "name": "Tencent",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d8/d8a6bd33ecfb403641e3c9881fbeb9901cd8796c991a7a3be8c1a277dcced4a7.svg"
+    },
+    {
+      "name": "TencentCloud (腾讯云)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/eb/ebcf15b5ad2f3f8188ecf729764ac373fae6b408b132ca354f8edb99014a0f23.svg"
+    },
+    {
+      "name": "Tiangong (天工)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4e/4ee70c555d92540d4331dc31115ceeec8004f90fd439199031d3c117f6dc5bc7.svg"
+    },
+    {
+      "name": "together.ai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ae/ae5dfaf4e2533e32f0ff00172bbf20724524fd221bb214cf7315dba855e696b5.svg"
+    },
+    {
+      "name": "TRAE",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/14/1445a2fa3fba86fe876175e23ddb0bc8dbfa889971628bc451d5d2f53f974703.svg"
+    },
+    {
+      "name": "Tripo",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/39/3937d6a88309bf152fae49c16461bb7b92653eb02ceb0b3ef8c38df2e52f7e5c.svg"
+    },
+    {
+      "name": "Udio",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ae/ae4b9af080f08bb1aedbe6f5b7fa2532c3a0b3e5de129b2dbcb795245ff05ee6.svg"
+    },
+    {
+      "name": "Unstructured",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/af/af2253643fc7b85d54c9406a657509baf69d4d8ac641005ae53bba6fff3b1ce2.svg"
+    },
+    {
+      "name": "Upstage",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/14/14dc984f2f6d1dcb3481387438d5b4528f794aea8ac20f1a4442bb5d8f2dcedc.svg"
+    },
+    {
+      "name": "VertexAI (Google)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/36/36a5bbdaffe24fa703ad938716f81c45e78042faaf3ae8a45009e2710aaa3548.svg"
+    },
+    {
+      "name": "Vidu",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b8/b8bf199a0b1fd7a5979974dbdcb163cf645611bc7731ddcd00ee8ade9ec02219.svg"
+    },
+    {
+      "name": "vLLM",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/91/918d594cfb73c0dd269b725cf6672f4863d10c39a443d58c68c0662ae6ae84b1.svg"
+    },
+    {
+      "name": "Volcengine (火山引擎)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e5/e519337670163eb3babc1fb5ce8abe24b8777f3180aeb135870c40672d757a58.svg"
+    },
+    {
+      "name": "Voyage",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f2/f20ac1f2bef06f52e34bb63dbb215163641d4703fe347337250d03b19bcecb2c.svg"
+    },
+    {
+      "name": "Wenxin (文心)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/85/858de21408163aa80148b70545d5d41016be7bb73d8afa44cd5f4738cc79047c.svg"
+    },
+    {
+      "name": "WorkersAI (Cloudflare)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/dc/dc21fbfc8015c55d1799f85d75a0eba392ab9f906bd2980b11067c0419e7d6cf.svg"
+    },
+    {
+      "name": "Xinference",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e0caa389b4acd614f4f6a809fddf55d96563936fd47c12d6cb6f8e5ff335aeb9.svg"
+    },
+    {
+      "name": "Xuanyuan (度小满轩辕)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ba/baca687cd7c850caddcdac4c30858a27324627548ecaf021238dbb49750907e7.svg"
+    },
+    {
+      "name": "Yi (零一万物)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2c/2cf49a8778c99c2258d2063beebaf2ea2470c9747410f8317af0ba1bb3d6bb51.svg"
+    },
+    {
+      "name": "Yuanbao (腾讯元宝)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4d/4de43315c50c8b616206d4da9ee5fb115c904fdba6bfc9ba15bb710dbd0ab51c.svg"
+    },
+    {
+      "name": "Zencoder",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ee/eec185316e7cb6424643bcba75af1c7138de3fdedb61028c4269874faf362846.svg"
+    },
+    {
+      "name": "Zhipu (智谱)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4e/4e7400476df64ad7c41a19828bd1dc8250cfab014a97e7cc89a1536384c48e31.svg"
+    }
+  ],
+  "name": "Unofficial theSVG Iconset - color"
+}

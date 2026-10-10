@@ -1,0 +1,502 @@
+{
+  "description": "By twoz\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/Twoandz9/TheMagic-Icons/main/TheRaw.json",
+  "icons": [
+    {
+      "name": "Naiyou",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b9/b9469026d6b722c9658f9899d1d27e63b234391ac72a37b0a110a51f44567880.png"
+    },
+    {
+      "name": "IMM",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/74/74097cffe1f37eb0236ef785c7482bb9e000ccd55579d12faf3b74279457520d.png"
+    },
+    {
+      "name": "Kuromis",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/47/47e20071f3ec7786e2b55bbaf9f0b9d6e3b67362c85f37b2c038475ae9bc070a.png"
+    },
+    {
+      "name": "AMY",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6d/6db45e929f9486887fc6b7c96dd395fcf233e28797dee52f12ce68dfe29ffd1c.png"
+    },
+    {
+      "name": "Ytoo1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/91/919002580aa3210fefd3ee486704e17abada9dcb0edc46608c72429ef0518c0e.png"
+    },
+    {
+      "name": "Flowercloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ee/ee88941c4b60a21de5a2a607337bab0a841546625a2ec5e0838976910f5ba982.png"
+    },
+    {
+      "name": "Texon1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0f/0fc1b19661339c6397386568d800de3c3a02a3699a6ed51feb861816032f5bc8.png"
+    },
+    {
+      "name": "Texon3",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/de/de1931423dab6629e4aba1e847bfd143eca8f36561133dbaace69814bd8471c1.png"
+    },
+    {
+      "name": "Shutiao",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b2/b223c5d6e58ca9d79763f4ee98bf81951b240942b477abffa4add9dae101d745.png"
+    },
+    {
+      "name": "Wd1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4b/4b23486ee68ebb14f24ac333be57148854e0b64d0b2c1db63e35089895a8eb60.png"
+    },
+    {
+      "name": "Tag",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/84/84283275c3f7cbb37ba7e5a6568ccc009618e786d903bcd478c5e1bdac2fe96e.png"
+    },
+    {
+      "name": "BBbus",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d2/d2685d1ff4b1ca2fbd123386b48a2a1cbd7fa5b2d712b8335eca6fdb5a6bdca5.png"
+    },
+    {
+      "name": "Bitz",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cc/ccf794ca1604d85e05e26b8c27b1149f57333394eba42fb5befe4246d77e5674.png"
+    },
+    {
+      "name": "Meiying1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c6/c6414bed4db6eda8ec4388fce14f3dda628eca137621f471416b23eb722e65af.png"
+    },
+    {
+      "name": "xs",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/21/21f460420dd44d951b9d540bc55ad0d10c17371c10fb66eb3c12a49d806972c8.png"
+    },
+    {
+      "name": "xfss1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8f/8fc2e1d60c842cdbdcca6c743956754ffec3a04bf8b930ca90d1841e2f8f005f.png"
+    },
+    {
+      "name": "Boom",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d3/d3ecca1140d333427da62fde900261a0e0d487aadba3c979d5606cba62556cc4.png"
+    },
+    {
+      "name": "TNTV2",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/99/9949928bed99db150ba162d3deca1bd78f0df3b205cd7bc0c2cbb5a15a4753ac.png"
+    },
+    {
+      "name": "EF",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c9/c9c3f819a502302ad5c3c20ff7c2a759d9a5eab2721bd4e9d79e00f359377eb7.png"
+    },
+    {
+      "name": "EF2",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a8/a889aac147df81deb0785d7413a7059e96d61131ca221dcfd601fea8d54d4beb.png"
+    },
+    {
+      "name": "Yiri1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/87/877f60a65b0adad9ff0c53a1a7971fe49e189fcd556633bfe30449c9b3b03d79.png"
+    },
+    {
+      "name": "Fishport0",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f7/f73f1c3b32aa87f8b7072a066f920260608ff61fff1a39c9d0fcf422f2d5aca8.png"
+    },
+    {
+      "name": "Fishchip",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6d/6d79bd31af3bccc1664e816a63e7c8ecacf364e34f18d064f1527eea10421cf3.png"
+    },
+    {
+      "name": "Suwa",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ea/ea57ae91570f33690b9d0642beb487773c9c42828d967414f10976629e9b797b.png"
+    },
+    {
+      "name": "Bywave",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b0/b0bde08d0c044061ac34fa2666f23411fd99f0c38ff351553c5db7b0e5e76128.png"
+    },
+    {
+      "name": "CT1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3d/3dd17999ee7b6e55ea20d16b3fa6c45abfed6c81f943e06ee52876a003c4358d.png"
+    },
+    {
+      "name": "Mojie",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/08/08e21135fba3a02cd4198c43f7d9e280d3b0a0ea7b30085af0e8aba435e392a3.png"
+    },
+    {
+      "name": "Flyingbird",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/01/01b62969d6780e63f053c7416cc86ad2f9195a1bbdd7bef76f4dcea7bb5a1b51.png"
+    },
+    {
+      "name": "Renzheyun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c0/c0331ad26a9b7dcce92d97dd9bd66642301f33261316567f189cb54423431464.png"
+    },
+    {
+      "name": "Xianyu13",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2a/2a66d22a3f67f443bf48d21dc9fcc371cb45889b700d265e3b65d0bc358925af.png"
+    },
+    {
+      "name": "BYG",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c1/c1fb40c44095c4882f17e062c0dc64620008e5a7c29af756ffca60e17762399f.png"
+    },
+    {
+      "name": "Titan1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/06/0651b6cb8ae7ec9016ad604541dfb71cf132916a66ffc44e689aa158fba01ead.png"
+    },
+    {
+      "name": "MIlk",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f4/f47e7da4bf32938a12deb0906b291e60d8a6f0bea499f480206e87e53bc33b04.png"
+    },
+    {
+      "name": "Cream2",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0f/0fbc613ba93e98887d4d979aa81574a24bbe93536cf6db1b934bba630b94b323.png"
+    },
+    {
+      "name": "Paofu2",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a1/a1a03f2b9596dc41f6a73723d019c59946997586500eee13f4bb68098c7df963.png"
+    },
+    {
+      "name": "Flybird",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/72/72caf997fb15a1f691853d3ef3e84d239ec4d73d52994504e0adc8f6648b4399.png"
+    },
+    {
+      "name": "Xray",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b0/b04f7b3c9a572fef244eff432ea2f5c654958114ba76c0cb7148caffc77b8ba8.png"
+    },
+    {
+      "name": "WYY",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/10/10b480743e15e3a444de516d69596c11407b3b0f39d91e02c3f9e0764212533a.png"
+    },
+    {
+      "name": "Xingjiabi",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c8/c8d0470fb2dadbf28b96808678be424f03200ff3f0d3e76a01016fe5f8bed85a.png"
+    },
+    {
+      "name": "DJ",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f4/f4baaefa6a1486683a24fa1ced6066ad3d613c10bf315cbea564e35d6c554ed9.png"
+    },
+    {
+      "name": "Lightcat",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b4/b4687efb044097d4b1a23032fd1d82568f4c4074478bb0b36c34525a9f7a5fd4.png"
+    },
+    {
+      "name": "Fishport",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/54/54e9c92aa1374262bfc61bc1037877f9bdb314cd868f1523a376bf6e63e1ab5b.png"
+    },
+    {
+      "name": "Bigairport",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3f/3fb598c6bce133e3f8a351fe337f465965697f6aac0c12eb56215ab2b49f5aa1.png"
+    },
+    {
+      "name": "Alink",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9b/9ba149751501ec5f9d1a11001a549a434fe26a352d2a7e411326e8783de75422.png"
+    },
+    {
+      "name": "Jiji",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ab/ab78e4a95cabd2dd16aa7781696d5694e9a0bcb2697b27951b4e66aeb2851798.png"
+    },
+    {
+      "name": "Catnet",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9d/9d860d9b60ad87a007fd31f9f51a9782c079fc26a5f0c1ff5d0db63e1ba26f3d.png"
+    },
+    {
+      "name": "Gatern",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/64/64b87c52359919e768f0e5bec0ae8a18a89b87e716166865419ae50bcf900b97.png"
+    },
+    {
+      "name": "Ark",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/49/493f0bd73798634f7c73afd0266900f5c29b302bd4c175bed36f94b1ba239662.png"
+    },
+    {
+      "name": "Paoluyun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/91/917ab699cd5920742bb521f36495c74153e5446bf09ab314df5312b59fda6712.png"
+    },
+    {
+      "name": "V4",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2a/2a38022edef3066919f8536a644437fa66e02f769a5e812cd4fbc99cad8be6ea.png"
+    },
+    {
+      "name": "Liying",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ff/ffc93e0ef487578b4723e85d0f6003c97bc0d6da561b64e4b875e95e66f568bd.png"
+    },
+    {
+      "name": "Fast",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/eb/eb78b839268b77e8ea897f6ae404fc083a7ec2631999ee065358460d0ebe8686.png"
+    },
+    {
+      "name": "Bajie",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c3/c3517c9569c88a1c8d4e3e3d461f5224c5c2dae288fea6c51e5d49a47d9b8851.png"
+    },
+    {
+      "name": "Kuayue",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5e/5ea53b6b80c8a84257ca8ec29f171083bcdcd3dc9fad7d8b4fc2939a5987bcb6.png"
+    },
+    {
+      "name": "Anyland",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4b/4bd7be65cecf949b378f57b106132fc6379c2e23ec71505c2102da689474149c.png"
+    },
+    {
+      "name": "Jumao",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/33/33b3851741e5a8b48815bc010754d1752bc321694f2de0e9d7305717bed3196f.png"
+    },
+    {
+      "name": "Jiji",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ab/ab78e4a95cabd2dd16aa7781696d5694e9a0bcb2697b27951b4e66aeb2851798.png"
+    },
+    {
+      "name": "ELE",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/51/513bcb4451a3273f3ee8a92a1fac8bcdee536d9a07893bfafc20a814fe09d433.png"
+    },
+    {
+      "name": "Coffee2",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e4/e451957b8d26162ad9d865b301548dd8c2367f4971a5443794ac076655be0d77.png"
+    },
+    {
+      "name": "Qingliang",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e7/e77bc30d0e413b6a07f2e28757159204c90db246dc804ece9d99002a1ceb4c4e.png"
+    },
+    {
+      "name": "Liangyuandian",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f2/f2da97d66024d316c057cfe6c58f4ddc9cb98e54f29bc0bb44b6bf2c764958c9.png"
+    },
+    {
+      "name": "Scr",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6d/6d181d2b24f71ae6f22232be12360828e01b4ab1dbc0d126757e4d1e819dfc40.png"
+    },
+    {
+      "name": "Kaochang",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7d/7dd0a17a0bc73301dfc78fab3f40a3c8d8cc13a591e7f46b28ada6e6ab4ea5d3.png"
+    },
+    {
+      "name": "Mofaxueyuan",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6c/6c442f2bf32cfe3278f86774ae050944e785b470453b457f6a90eab83ab9ff3a.png"
+    },
+    {
+      "name": "Bailanyun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a4/a4498404253d617066aebd4a3ba80327c14fa53c5cfda4824a7dfcafa8131eb9.png"
+    },
+    {
+      "name": "Suannai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bd/bd4cde6c0d444e89aea2396be789b89bcf3f721e481e2552be8f86085bff35d8.png"
+    },
+    {
+      "name": "Miaosu",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/06/06b8281d951d66e8f66049329333218e8631f05e621657b31e6c2e10a2445d03.png"
+    },
+    {
+      "name": "Guoji",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9f/9f1bb89c398dec9ce10eff61ede67fa03c4e44e9a01724ac3bf9e0cf32f42585.png"
+    },
+    {
+      "name": "Taoli",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b3/b3ef3ca08d9d1d4c0c21906e0afc6d6bb415adac25e817d844b6beb76f14c3cd.png"
+    },
+    {
+      "name": "ENET",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/97/9796629ff510b55d6cb1e79ab65a23a0d900a3837098b6b5f3b055471442066d.png"
+    },
+    {
+      "name": "BK",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6b/6b941e9bb934a56aa0a9d1039ad65aa7fb8e0ef0e6a1f5440e37d973f84a6535.png"
+    },
+    {
+      "name": "Qingning",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b2/b2f62e3a5bd7b1cd5dc4b7002ee8efd985a210a7b3a3f63a1edb29c0db1c7e6e.png"
+    },
+    {
+      "name": "Windy1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a3/a3424d88ecaf722978aa8d73e429a6941c2af5d3819700d3756f9c4a8fab701d.png"
+    },
+    {
+      "name": "Sifei",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e2/e21f273fc373bd6858bfa06f1fbfa171f5881cc4edf98a525b4fc72b15c9b776.png"
+    },
+    {
+      "name": "yy1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a1/a114fb3f20d36947f57f615a5b6f4cbac94d51de9f1302e7339875864c699205.png"
+    },
+    {
+      "name": "Peiqian",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ab/abb675e851eda8ad608828dcbc63eec3393682c890362e668907eead56b7bb69.png"
+    },
+    {
+      "name": "KQS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a7/a71265f1e4bd05157cb759c5eef8994f8c01ff77e3f53e65af1a134c55f24218.png"
+    },
+    {
+      "name": "Mihuan1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f7/f72f3b76202d69ac4ec4b5638ca627f4cdb4658576560df1eefee2d0df3e6664.png"
+    },
+    {
+      "name": "XNY",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/45/453587a6abd58389a37cb47380ccc4a579dcec54b888f33d51de4dc9bf6ce860.png"
+    },
+    {
+      "name": "YYZ",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/43/43addbe51d1ada5577f653cacb484e7b409cd0b1e7f69f7b7a20106ade72f7c3.png"
+    },
+    {
+      "name": "VV",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/09/092cde814f98d23f2575a89cfa2a4353056b26c89a5a1d5f175b87eabb6c58ec.png"
+    },
+    {
+      "name": "MESL",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f0/f0a201dfad46d7a5c5b03b6243c61ff35da0db578d5483795651951cef185b9d.png"
+    },
+    {
+      "name": "ETON",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/be/bebe681d27f81077caad512f72a587c8f2d157f90e7ae2c73dab485b64211c04.png"
+    },
+    {
+      "name": "Linkcube2",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/63/63c08fcacc822d13a85ee130a12efa039fbc9cd21198b505ff7bbf68913964af.png"
+    },
+    {
+      "name": "BBQ",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3c/3cc718b420ce345946a0b2b91aa1381d3ace5ee94ca44cee1e6cf28f42799ce6.png"
+    },
+    {
+      "name": "SKNP",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/20/20b5599e6c1ca18111ffd4cfeefaab2ebc8d8768c1ce1b3d327ae18095bc19e3.png"
+    },
+    {
+      "name": "Coffee1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/52/521f8c2b6e5a8a4889691b065a33db777cb11ca6c9baa9d24e1ad5cc058829e0.png"
+    },
+    {
+      "name": "MTC",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/14/14917500ea00ef6d552965b5de4869ac722ef3b17c516860f1957ed4d98e2753.png"
+    },
+    {
+      "name": "Kitty1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/81/819a8de9fd7f5487e8bd4f995fa9c5266521f694ed3415853124ceb32c25daa4.png"
+    },
+    {
+      "name": "Sese",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fb/fbe3c51c9793d59acbee8bcf6426b023926b51d86957dd6f3aa52fa955b67fd6.png"
+    },
+    {
+      "name": "Xiaoheizi",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c0/c0938dae75e22b4f010455c6d79b4bc68d8515ae0a02aaea0336f9d37d5b55f0.png"
+    },
+    {
+      "name": "Jiji1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/40/404ac5174df3616bad9fbf369058edd5a7e60b3186ac03a112c69b83c2a989f8.png"
+    },
+    {
+      "name": "Xiaoheizi1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e0264873f6bd321848bc2aba3a13ca93abfad2b8b6ed7a2e42acb40a068b942c.png"
+    },
+    {
+      "name": "Xenolink",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e9/e95b7419d187cc4810ce6bbcbf42197b934c8c8f352febed0d666927000395c6.png"
+    },
+    {
+      "name": "Iqzone",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a1/a136958edd270cb8517ff85c054306b5e167a8c67f7431cc43d762547f74f6cb.png"
+    },
+    {
+      "name": "Dahuangfeng",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3a/3ac2ae05473d747a0231180bb71918f66309d399a90ea73572f47217c2b8fe03.png"
+    },
+    {
+      "name": "Uni",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a1/a15cdaa1011cef53da3ce66d542aedc0dbdb4f9126ad1e2a97a8ecd7814c0ffd.png"
+    },
+    {
+      "name": "Sichouzhilu",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/28/2808c254666344bde489a3cfe3a43f869d921b6de7bb57cff1303ca6f6a16657.png"
+    },
+    {
+      "name": "ConnectEase",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/06/063a50f0230a19f1b44f9fa2369810b1cab06c1868293b339b570a03d0de604a.png"
+    },
+    {
+      "name": "Gohaha",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/01/010cfc63e7534435cb4602ede5c298f88916c5e591e0e494adbfaf89d05cb13b.png"
+    },
+    {
+      "name": "CTC",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/81/81ff6695def651af1ae187ea4fe96896c335d63cf1296c29a68be15f725e8ea0.png"
+    },
+    {
+      "name": "Ciyuanyun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3b/3b59b546bc9d0749192cc64145fecd6aa402c4167f57f99f959a917c966c479b.png"
+    },
+    {
+      "name": "Xinglianyun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/25/258b808191ad4bedae6a8226d5f7f18d50e64d14a7c4078ffa5af6324f9de3b5.png"
+    },
+    {
+      "name": "Jike",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/35/354c024c270892f4fd900ce28f36740b27adbc556525f762c678b752e6f1855e.png"
+    },
+    {
+      "name": "Lingyun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/60/6072be7115b9b2b11678674d6483d2efb740fb53b676d27b6ea8c91afdba6a5d.png"
+    },
+    {
+      "name": "ACA",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4b/4b57d87a6c9ef287cafb68023b7ef6a4970f9a3abbcaef7d351facc82f0c6759.png"
+    },
+    {
+      "name": "Fm",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/25/2566a319110c8c8d0b29104a90184772a0d1a02495ef053378330791ad53b476.png"
+    },
+    {
+      "name": "COO",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3b/3b86bfa2a2261c7b3fbcc5a6026b98010ab495532f32b48b7d60628929a8ddc1.png"
+    },
+    {
+      "name": "Dlercloud1",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6e/6e2d460cfdd0986966971b228ce1a1f030820a953a1a8301c22311b520f010c8.png"
+    },
+    {
+      "name": "Ecloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/60/602fffa3e1d53b887d69f77e7b5b0cde2aceb208ad9bf32f8570ffaace8a7592.png"
+    },
+    {
+      "name": "Dingdangamo",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8b/8bc2979a03fd7a3be61e7b1d2f6364eb5c3a7316622aee22bb7117118c591f21.png"
+    },
+    {
+      "name": "BK5",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ce/cec5a9905efdca19a1f6707da9c05cdd920f91f2c6dea7e58a2ea3aef61b216d.png"
+    },
+    {
+      "name": "DEG",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/be/bec50f1cb8aebdf5e7d549a7b21f820d10062fb27bd333eafa01e42358b7772b.png"
+    },
+    {
+      "name": "Simple",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7e/7e5fae307683afbdbaa4ebb407d0c0a173d6a81d33592a8dc24291e49f598896.png"
+    },
+    {
+      "name": "Caiyun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e1/e1ed74d55fa1b6c7da533c049a97dca1bb79d1e4c60b4ec546bdc1d50ec154f2.png"
+    },
+    {
+      "name": "UNI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/35/35528548ac20bd226451bf8d64cbb75e98bcc242bd2d958eb4f663ad473942fa.png"
+    },
+    {
+      "name": "To2",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/36/369e74c7372340b2433d5d6c03f6589dec7c187daae1580350166550554c3e40.png"
+    },
+    {
+      "name": "Lend",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0c/0cc8b056839394db40ce8bfb0e163afa0bd4251a870a31db04cdf423d0a3f709.png"
+    },
+    {
+      "name": "FC",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bd/bdfd11a19cad07e06aaaf2a7eabd2c094260a393c186eb99e819e1742b5cec58.png"
+    },
+    {
+      "name": "Shouhou",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/da/da286043663b481111eb47dca9e3aea20c4badcee6bc2647c5276ceddb16358c.png"
+    },
+    {
+      "name": "Sifangcai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a0/a04f3fef465dd47ce307370c4d81a390d608dfa879a80e6a3ff870d1c7cf1094.png"
+    },
+    {
+      "name": "VPS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/89/89304857230dbadc2925ee5f35872733d4810f7460dc054682c5fea3ce53455c.png"
+    },
+    {
+      "name": "VPS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/94/94b7ea2337d676c62393855f1ecfd4ef2e5c02ad639589dc1af4bf8e8ff4f277.png"
+    },
+    {
+      "name": "VPS",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/10/105f07205c880649cd69b4832720f53a0daab28660194cfbbcc01dcd31b8d5e5.png"
+    }
+  ],
+  "name": "The Magic"
+}
