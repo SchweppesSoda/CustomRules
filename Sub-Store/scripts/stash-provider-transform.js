@@ -4,7 +4,8 @@
  * Attach this script to the three independent US sources and the existing
  * Residential/Landed collections used by Stash. Ordinary providers use
  * Sub-Store's native target=Stash conversion without this script.
- * Stash requests use mode=proxyconfig-stash-v1 and receive one front hop.
+ * Legacy Stash requests use mode=proxyconfig-stash-v1 with emoji front names.
+ * Opt-in mode=proxyconfig-stash-text-v1 keeps names and uses text-only fronts.
  * Independent US Egern/Loon/Mihomo requests use
  * mode=proxyconfig-residential-name-v1 and receive only a stable name prefix.
  * Bind each independent source via fixed Script Operator link arguments:
@@ -51,7 +52,10 @@ function operator(proxies = [], targetPlatform, context) {
     return proxies;
   }
   const options = parseOptions(optionBag());
-  const chained = options.mode === "proxyconfig-stash-v1";
+  // Appended adapters for NoUS/Landed must stay transparent to old consumers.
+  if (binding.onlyMode && binding.onlyMode !== options.mode) return proxies;
+  const textChained = options.mode === "proxyconfig-stash-text-v1";
+  const chained = options.mode === "proxyconfig-stash-v1" || textChained;
   const namesOnly = options.mode === "proxyconfig-residential-name-v1";
   if (!chained && !namesOnly) return proxies;
 
@@ -63,6 +67,19 @@ function operator(proxies = [], targetPlatform, context) {
   if (!profile) throw new Error(`unknown stash profile: ${profileName || "(empty)"}`);
 
   if (binding.profile && String(binding.profile) !== profileName) return proxies;
+  if (textChained) {
+    const source = profile.source || {
+      residential_global: "TX_Carpool_Residential_NoUS",
+      landed_daily: "Landed", landed_heavy: "Landed",
+    }[profileName];
+    if (!source || binding.kind !== "subscription" || binding.source !== source
+        || binding.profile !== profileName) {
+      throw new Error(`${profileName}: missing or invalid text source binding`);
+    }
+    if (context && context.source && (!context.source[source] || context.source[source].name !== source)) {
+      throw new Error(`${profileName}: fixed source identity mismatch`);
+    }
+  }
   if (profile.source && (binding.profile !== profileName || binding.source !== profile.source
       || binding.kind !== "subscription")) {
     throw new Error(`${profileName}: missing or invalid fixed source binding`);
@@ -90,7 +107,7 @@ function operator(proxies = [], targetPlatform, context) {
     const node = { ...original };
     CHAIN_KEYS.forEach((key) => { delete node[key]; });
     node.name = rawName.startsWith(profile.prefix) ? rawName : `${profile.prefix}${rawName}`;
-    if (chained) node["underlying-proxy"] = profile.dialer;
+    if (chained) node["underlying-proxy"] = textChained ? profile.dialer.replace(/^🔗\s+/, "") : profile.dialer;
 
     if (names.has(node.name) && strict) {
       throw new Error(`${profileName}: duplicate node name: ${node.name}`);
