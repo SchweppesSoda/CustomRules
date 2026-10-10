@@ -106,7 +106,10 @@ function operator(proxies = [], targetPlatform, context) {
 
     const node = { ...original };
     CHAIN_KEYS.forEach((key) => { delete node[key]; });
-    node.name = rawName.startsWith(profile.prefix) ? rawName : `${profile.prefix}${rawName}`;
+    // The published NoUS provider uses native names without a legacy prefix.
+    // Its opt-in text variant adds only the front hop to those exact leaves.
+    node.name = textChained && profileName === "residential_global" ? original.name
+      : rawName.startsWith(profile.prefix) ? rawName : `${profile.prefix}${rawName}`;
     if (chained) node["underlying-proxy"] = textChained ? profile.dialer.replace(/^🔗\s+/, "") : profile.dialer;
 
     if (names.has(node.name) && strict) {
