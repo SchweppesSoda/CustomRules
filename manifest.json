@@ -2704,8 +2704,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 907,
-      "rules_sha256": "49fde42d4de6e577fcf3f457c95ee8be987c0bdb680fcd7e44650b3cc036ba9b"
+      "rule_count": 900,
+      "rules_sha256": "a90431b768c2041ebf8ebe008d93227c638131566dfd88bddfa1210a964e49da"
     },
     "AdBlockLite": {
       "behavior": "domain",
@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 57222,
-      "rules_sha256": "7186e08b7b21fc404f09e7b996d2e1a15a171eab9c067c744e3a733c83cacc87"
+      "rule_count": 54894,
+      "rules_sha256": "717e993c7474b188d774824a58f67aa7f0edf2f431373544d80c512950b1fea1"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3499,7 +3499,7 @@
         "list"
       ],
       "rule_count": 2599,
-      "rules_sha256": "e868e79bd0065e2ed67098c0a8e6d961b3468de3ee14972dfcaf83d4641c585c"
+      "rules_sha256": "798ba29082c6a325377a51af10b659330637931fcdd604fb789ffdb9cf817250"
     },
     "Classical/Google": {
       "behavior": "classical",
@@ -3699,8 +3699,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26572,
-      "rules_sha256": "5dd26e773c58c87cbdcc54d7d4b13151fac6ba92d48a0eea4b5f871cb9832689"
+      "rule_count": 26576,
+      "rules_sha256": "ff613508a489aba7aaff377d6262d267cb938ea22ab7c7df5f82158cc7ca46f4"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -3746,8 +3746,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 78,
-      "rules_sha256": "67e184d3ab11d46bf2bad8a8b759b85f30de31a7a9296fb99a5d48b729b3ffc4"
+      "rule_count": 79,
+      "rules_sha256": "10fd43c7d7983c88b34409680b650071ce45a0f8324fd229944674fcac62fa71"
     },
     "Classical/Spotify": {
       "behavior": "classical",
@@ -4178,8 +4178,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 9648,
-      "rules_sha256": "f5804bda26d0078bd0d021d313287b042da7fa5879b78113d3caa5adacdaa304"
+      "rule_count": 9609,
+      "rules_sha256": "d0f708b3e7801d1dd28a40aaedcc950434998b0f49e2a7074cc5f7ed54616493"
     },
     "IP/Claude": {
       "behavior": "ipcidr",
@@ -4200,8 +4200,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8483,
-      "rules_sha256": "bdc18c436126f3478b06b41aeca1ecd7617666607d2d096f2dcb80d5792b7b82"
+      "rule_count": 8495,
+      "rules_sha256": "f102fb9f9855b07864bde5d9683b2a379a7b91207e9bf1a2fdd111d7f215ea39"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -4245,8 +4245,8 @@
       ],
       "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 9749,
-      "rules_sha256": "a97d6c488b2711593ed188aeb0c29977a080dd3adfa47ed09ea959426205491e"
+      "rule_count": 9859,
+      "rules_sha256": "6417ee0217128a2c839bb4e18c5a592cd365d66482c7e0a4a831b8d9473aa827"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
@@ -4518,7 +4518,7 @@
         "source": "Classical/GlobalMedia"
       },
       "rule_count": 1675,
-      "rules_sha256": "854bf149d4b823a0f1631f0cae2ff3353edd411fcb5be84dc1a8ebbd15859333"
+      "rules_sha256": "ee560a0da22d45d3166c494ef43709bd222d2faffd11c5cae98112cc96e721fc"
     },
     "NonIP/Classical/Google": {
       "behavior": "classical",
@@ -4599,8 +4599,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26472,
-      "rules_sha256": "f3193c177d6d5ac1927bbf9d3f3c67f6c6231a6cb91a9ae44669327e8ece0819"
+      "rule_count": 26476,
+      "rules_sha256": "f18f57ec6317a161d963b0c7c995cd023d57ff177c1b873db2d7cfea261f88d1"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -4968,8 +4968,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26438,
-      "rules_sha256": "4dc971a92b593ea0f44c5840a38b99d9bf6cf5b82c207f1953457ce4da7685cb"
+      "rule_count": 26442,
+      "rules_sha256": "396b12545139247331aea2c5fe8b7f8cdb040b29901b4b17326d244bb456b848"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -4979,8 +4979,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26438,
-      "rules_sha256": "4dc971a92b593ea0f44c5840a38b99d9bf6cf5b82c207f1953457ce4da7685cb"
+      "rule_count": 26442,
+      "rules_sha256": "396b12545139247331aea2c5fe8b7f8cdb040b29901b4b17326d244bb456b848"
     },
     "Scholar": {
       "behavior": "domain",
@@ -5034,8 +5034,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 76,
-      "rules_sha256": "afecaab9fa16dcb61ff23d92fec18d9490c1ff4ce2329aeca551a34da90f100a"
+      "rule_count": 77,
+      "rules_sha256": "9fecb1a32c5b092cb7d968b2ba1203dd6c8e7276ec6410a37b6c45f27b209403"
     },
     "Spotify": {
       "behavior": "domain",
@@ -5214,5 +5214,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "338a92b95796b5ae6dfd51c519c3e92a29924cef"
+  "source_commit": "66844f4bee7bf8734c134fb82893f6c85d3edee6"
 }
