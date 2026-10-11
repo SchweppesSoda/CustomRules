@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 55291,
-      "rules_sha256": "51b1999694cfd874445fe52dee9e748cecf5b98e331079804fdb3d8d4330c5e3"
+      "rule_count": 55339,
+      "rules_sha256": "f2f1429b9a80f184115d4a1322308fa95a4145db5dd5ee19eddcb5fc3c963357"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3499,7 +3499,7 @@
         "list"
       ],
       "rule_count": 2599,
-      "rules_sha256": "798ba29082c6a325377a51af10b659330637931fcdd604fb789ffdb9cf817250"
+      "rules_sha256": "e868e79bd0065e2ed67098c0a8e6d961b3468de3ee14972dfcaf83d4641c585c"
     },
     "Classical/Google": {
       "behavior": "classical",
@@ -4518,7 +4518,7 @@
         "source": "Classical/GlobalMedia"
       },
       "rule_count": 1675,
-      "rules_sha256": "ee560a0da22d45d3166c494ef43709bd222d2faffd11c5cae98112cc96e721fc"
+      "rules_sha256": "854bf149d4b823a0f1631f0cae2ff3353edd411fcb5be84dc1a8ebbd15859333"
     },
     "NonIP/Classical/Google": {
       "behavior": "classical",
@@ -5214,5 +5214,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "aa09fcae13d605c418e065a9cdf34a88a086d428"
+  "source_commit": "bd8cff03d255c3970d621dca7c4cfc6332fac69c"
 }
