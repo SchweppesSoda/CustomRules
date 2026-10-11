@@ -47,9 +47,8 @@ function compactName(rawName, profileName) {
     return "🇺🇸 Spectrum CA";
   }
   if (profileName === "landed_daily" || profileName === "landed_heavy") {
-    // Both providers contain the same leaves but use different front hops.
-    const suffix = profileName === "landed_daily" ? " · 日常" : " · 大流量";
-    return name.endsWith(suffix) ? name : name + suffix;
+    // The dedicated groups already identify the route; keep native leaf names.
+    return name;
   }
   // Unknown upstream names keep their source identity until reviewed.
   return rawName.startsWith(prefix) ? rawName : prefix + rawName;
