@@ -5,9 +5,10 @@
  * Residential/Landed collections used by Stash. Ordinary providers use
  * Sub-Store's native target=Stash conversion without this script.
  * Legacy Stash requests use mode=proxyconfig-stash-v1 with emoji front names.
- * Opt-in mode=proxyconfig-stash-text-v1 keeps names and uses text-only fronts.
+ * Opt-in mode=proxyconfig-stash-text-v1 uses compact names and text-only fronts.
  * Independent US Egern/Loon/Mihomo requests use
- * mode=proxyconfig-residential-name-v1 and receive only a stable name prefix.
+ * mode=proxyconfig-residential-name-v1; Egern/Mihomo receive compact names,
+ * while retired Loon and legacy Stash requests retain their original names.
  * Bind each independent source via fixed Script Operator link arguments:
  * #kind=subscription&source=<source>&profile=<profile>
  * A different requested profile passes through, so collection members do not
@@ -25,6 +26,34 @@ const PROFILES = {
 };
 
 const CHAIN_KEYS = ["dialer-proxy", "underlying-proxy", "prev_hop", "chain", "detour"];
+
+function compactName(rawName, profileName) {
+  const prefix = PROFILES[profileName].prefix;
+  const name = rawName.startsWith(prefix) ? rawName.slice(prefix.length) : rawName;
+  if (profileName === "residential_us_txpool") {
+    const match = name.match(/^🇺🇸 【1\.0x美国】(AT&T|Verizon)(家宽|商宽)落地 · 线路(\d+) \[(\d+)(?:st|nd|rd|th)\]$/);
+    // The line and ordinal describe the same route in the reviewed source.
+    // Keep unfamiliar rates, labels or mismatched ordinals intact.
+    if (match && match[3] === match[4]) {
+      const kind = match[1] === "Verizon" && match[2] === "家宽" ? "" : ` ${match[2]}`;
+      return `🇺🇸 ${match[1]}${kind} ${match[3]}`;
+    }
+    if (/^🇺🇸 (?:AT&T (?:家宽|商宽)|Verizon(?: 商宽)?) \d+$/.test(name)) return name;
+  }
+  if (profileName === "residential_us_frontier" && ["US-FRONTIER-AAITR", "🇺🇸 Frontier"].includes(name)) {
+    return "🇺🇸 Frontier";
+  }
+  if (profileName === "residential_us_charter" && ["[SS] 🇺🇸 Spectrum-CA", "🇺🇸 Spectrum CA"].includes(name)) {
+    return "🇺🇸 Spectrum CA";
+  }
+  if (profileName === "landed_daily" || profileName === "landed_heavy") {
+    // Both providers contain the same leaves but use different front hops.
+    const suffix = profileName === "landed_daily" ? " · D" : " · H";
+    return name.endsWith(suffix) ? name : name + suffix;
+  }
+  // Unknown upstream names keep their source identity until reviewed.
+  return rawName.startsWith(prefix) ? rawName : prefix + rawName;
+}
 
 function optionBag() {
   if (typeof $options !== "undefined" && $options) return $options;
@@ -109,6 +138,7 @@ function operator(proxies = [], targetPlatform, context) {
     // The published NoUS provider uses native names without a legacy prefix.
     // Its opt-in text variant adds only the front hop to those exact leaves.
     node.name = textChained && profileName === "residential_global" ? original.name
+      : textChained || (namesOnly && target !== "loon") ? compactName(rawName, profileName)
       : rawName.startsWith(profile.prefix) ? rawName : `${profile.prefix}${rawName}`;
     if (chained) node["underlying-proxy"] = textChained ? profile.dialer.replace(/^🔗\s+/, "") : profile.dialer;
 
