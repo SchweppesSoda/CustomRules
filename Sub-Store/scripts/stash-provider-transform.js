@@ -48,7 +48,7 @@ function compactName(rawName, profileName) {
   }
   if (profileName === "landed_daily" || profileName === "landed_heavy") {
     // Both providers contain the same leaves but use different front hops.
-    const suffix = profileName === "landed_daily" ? " · D" : " · H";
+    const suffix = profileName === "landed_daily" ? " · 日常" : " · 大流量";
     return name.endsWith(suffix) ? name : name + suffix;
   }
   // Unknown upstream names keep their source identity until reviewed.
