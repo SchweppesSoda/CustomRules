@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 55339,
-      "rules_sha256": "f2f1429b9a80f184115d4a1322308fa95a4145db5dd5ee19eddcb5fc3c963357"
+      "rule_count": 55904,
+      "rules_sha256": "510f641cfaeb709dd8ca2524d6ba5fe359e176cdbdfd35e1b09f42bc2c13dd53"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -5214,5 +5214,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "bd8cff03d255c3970d621dca7c4cfc6332fac69c"
+  "source_commit": "64a6c19d2800c969cf2ae06f42673024bc3359fd"
 }
