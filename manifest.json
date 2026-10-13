@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 55904,
-      "rules_sha256": "510f641cfaeb709dd8ca2524d6ba5fe359e176cdbdfd35e1b09f42bc2c13dd53"
+      "rule_count": 56898,
+      "rules_sha256": "61c1e06ee606038aad63d35055cf580c799c3bdeec4a9de859753c241420e8d1"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3302,7 +3302,7 @@
         "list"
       ],
       "rule_count": 1628,
-      "rules_sha256": "fe65623670b625fcc10a1254e4ccd37e6386950a849cf1b0435d294ba8453276"
+      "rules_sha256": "2b2bc03ca2613ed5a6bcb927b142c5dcde5031726c107da5d8941beecbf712c7"
     },
     "Classical/AppleMusic": {
       "behavior": "classical",
@@ -4438,7 +4438,7 @@
         "source": "Classical/Apple"
       },
       "rule_count": 1615,
-      "rules_sha256": "b145b59eb0643c2cbd0d7dd7c2ede404c12e22b6077018bad14e32ad76a7d2c2"
+      "rules_sha256": "5bed5f51480612c503afdb7de96450eecd301c2a55842551861f63dcc4e7c2a8"
     },
     "NonIP/Classical/BiliBili": {
       "behavior": "classical",
