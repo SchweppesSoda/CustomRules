@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 56898,
-      "rules_sha256": "61c1e06ee606038aad63d35055cf580c799c3bdeec4a9de859753c241420e8d1"
+      "rule_count": 58171,
+      "rules_sha256": "692f96a744cf052fdfd9edaf3f6381f1fa2787f52e27939bd0cd220e4324a2ee"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3241,8 +3241,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 111625,
-      "rules_sha256": "822e800ef9e7d43197f6cb4d77d667b144210878b799b259f51153b47524cd1f"
+      "rule_count": 110851,
+      "rules_sha256": "4dfc4b57bd2f3bddcd1805385b511cd149046ea8e98f66ebab8881a37d3121d7"
     },
     "ChinaMedia": {
       "behavior": "domain",
@@ -3366,8 +3366,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 111686,
-      "rules_sha256": "f921a8e4af468c2b3b0a81ed7e012138b72c13bcca85fde8e62dfbb39b8b3e6c"
+      "rule_count": 110912,
+      "rules_sha256": "d71dab6e44fa6ea89dd366e55e759592d5f135cbc39d7d5328131b43a4f1f429"
     },
     "Classical/ChinaASN": {
       "behavior": "classical",
@@ -4469,8 +4469,8 @@
         "part": "non_ip",
         "source": "Classical/China"
       },
-      "rule_count": 111665,
-      "rules_sha256": "a9532975c6b7e91bd345280cde956fbd4ded764ccfd34cd8a0155f9b0ddecb7d"
+      "rule_count": 110891,
+      "rules_sha256": "d771f56ecde5174b94c5f6e7dd37c057971aedde701b9f156f3ea6edd6345027"
     },
     "NonIP/Classical/ChinaMedia": {
       "behavior": "classical",
