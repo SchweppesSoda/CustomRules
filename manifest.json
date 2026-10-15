@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 58171,
-      "rules_sha256": "692f96a744cf052fdfd9edaf3f6381f1fa2787f52e27939bd0cd220e4324a2ee"
+      "rule_count": 59604,
+      "rules_sha256": "f975167df04812a2692058dc9ad0f5dbea7bae04ddce0b6e55022fabcf754912"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3302,7 +3302,7 @@
         "list"
       ],
       "rule_count": 1628,
-      "rules_sha256": "2b2bc03ca2613ed5a6bcb927b142c5dcde5031726c107da5d8941beecbf712c7"
+      "rules_sha256": "fe65623670b625fcc10a1254e4ccd37e6386950a849cf1b0435d294ba8453276"
     },
     "Classical/AppleMusic": {
       "behavior": "classical",
@@ -4178,8 +4178,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 9609,
-      "rules_sha256": "d0f708b3e7801d1dd28a40aaedcc950434998b0f49e2a7074cc5f7ed54616493"
+      "rule_count": 10008,
+      "rules_sha256": "74f0adc2971c38718c1e92e28d68c57b083957caaf75559fcbb5ee84ea4da451"
     },
     "IP/Claude": {
       "behavior": "ipcidr",
@@ -4200,8 +4200,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8495,
-      "rules_sha256": "f102fb9f9855b07864bde5d9683b2a379a7b91207e9bf1a2fdd111d7f215ea39"
+      "rule_count": 8536,
+      "rules_sha256": "6dc939d322451be338988d1f5c0adee5f1b1a601ffb5fed7eb578f97bc7fcf28"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -4245,8 +4245,8 @@
       ],
       "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 9859,
-      "rules_sha256": "6417ee0217128a2c839bb4e18c5a592cd365d66482c7e0a4a831b8d9473aa827"
+      "rule_count": 9939,
+      "rules_sha256": "f0776b663ff9e74d93a54c8dda6a247736736f6605fe32f0d8ac364df921e9b8"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
@@ -4438,7 +4438,7 @@
         "source": "Classical/Apple"
       },
       "rule_count": 1615,
-      "rules_sha256": "5bed5f51480612c503afdb7de96450eecd301c2a55842551861f63dcc4e7c2a8"
+      "rules_sha256": "b145b59eb0643c2cbd0d7dd7c2ede404c12e22b6077018bad14e32ad76a7d2c2"
     },
     "NonIP/Classical/BiliBili": {
       "behavior": "classical",
