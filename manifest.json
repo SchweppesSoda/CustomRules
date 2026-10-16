@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 59604,
-      "rules_sha256": "f975167df04812a2692058dc9ad0f5dbea7bae04ddce0b6e55022fabcf754912"
+      "rule_count": 61996,
+      "rules_sha256": "06e62ba69984e5e407228ec38da36a6b6a1253f4cafea82d064b653f06c586a7"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3241,8 +3241,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 110851,
-      "rules_sha256": "4dfc4b57bd2f3bddcd1805385b511cd149046ea8e98f66ebab8881a37d3121d7"
+      "rule_count": 110564,
+      "rules_sha256": "ad96cf37c78b8674adf7c5f73bc95625a6e0cab8927299c243d16b26fae7e6d5"
     },
     "ChinaMedia": {
       "behavior": "domain",
@@ -3366,8 +3366,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 110912,
-      "rules_sha256": "d71dab6e44fa6ea89dd366e55e759592d5f135cbc39d7d5328131b43a4f1f429"
+      "rule_count": 110625,
+      "rules_sha256": "20b06729a1336804fa4224558b87a0fea0e9e8937730bc68e1b5f964e70c00ab"
     },
     "Classical/ChinaASN": {
       "behavior": "classical",
@@ -3699,8 +3699,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26662,
-      "rules_sha256": "f66dac2f0039b52d93924f845ac9cdbf4bc8afa4b48a28c2e816b5a9184844f9"
+      "rule_count": 26667,
+      "rules_sha256": "f4651319156241a74bd8fcaa533101e5956c9c32bc4c2807042aa000e2db2cb7"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4178,8 +4178,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 10008,
-      "rules_sha256": "74f0adc2971c38718c1e92e28d68c57b083957caaf75559fcbb5ee84ea4da451"
+      "rule_count": 10009,
+      "rules_sha256": "6f78635d1dc74811ac749100d040af8eb30d4cfc6198cda0e3a5567bcafbd056"
     },
     "IP/Claude": {
       "behavior": "ipcidr",
@@ -4200,8 +4200,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8536,
-      "rules_sha256": "6dc939d322451be338988d1f5c0adee5f1b1a601ffb5fed7eb578f97bc7fcf28"
+      "rule_count": 8552,
+      "rules_sha256": "1ba0503f3a71013b50065a4eb814fccc9af577f899e95232285045dd84c2e181"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -4245,8 +4245,8 @@
       ],
       "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 9939,
-      "rules_sha256": "f0776b663ff9e74d93a54c8dda6a247736736f6605fe32f0d8ac364df921e9b8"
+      "rule_count": 9958,
+      "rules_sha256": "b78b3efa6a2fff10dd57679391557cae55a7c5f288c8c5f141025ec2844822ab"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
@@ -4469,8 +4469,8 @@
         "part": "non_ip",
         "source": "Classical/China"
       },
-      "rule_count": 110891,
-      "rules_sha256": "d771f56ecde5174b94c5f6e7dd37c057971aedde701b9f156f3ea6edd6345027"
+      "rule_count": 110604,
+      "rules_sha256": "44be47eec342fde98b2f84b2f2495a8d4f23cb8953444b341fd6c057c530b498"
     },
     "NonIP/Classical/ChinaMedia": {
       "behavior": "classical",
@@ -4599,8 +4599,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26562,
-      "rules_sha256": "ce1d44c2dcc14024df97bac8002ce5f14ca7c2a64cb3da5f89fc53762b083766"
+      "rule_count": 26567,
+      "rules_sha256": "e520388fb9d143271ad105a4b10740c906969d05e5420546c521f8904b436294"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -4968,8 +4968,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26528,
-      "rules_sha256": "17dd46d52f0a41954cbfe79af645219f1a61c0b8f560a714f1dac3e4eeb8e7c8"
+      "rule_count": 26533,
+      "rules_sha256": "5933174cddab639732ab6583af70966a70659984f891ab63ee09cf4bfc5cb750"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -4979,8 +4979,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26528,
-      "rules_sha256": "17dd46d52f0a41954cbfe79af645219f1a61c0b8f560a714f1dac3e4eeb8e7c8"
+      "rule_count": 26533,
+      "rules_sha256": "5933174cddab639732ab6583af70966a70659984f891ab63ee09cf4bfc5cb750"
     },
     "Scholar": {
       "behavior": "domain",
