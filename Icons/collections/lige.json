@@ -1,5 +1,5 @@
 {
-  "description": "图标更新请关注TG频道：@ligeicon ，您当前版本日期为261010\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json",
+  "description": "图标更新请关注TG频道：@ligeicon ，您当前版本日期为261018\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json",
   "icons": [
     {
       "name": "lige",
@@ -790,6 +790,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f6/f657e7e621777e5e85f954df36dec5e8f815014d8052f9a0cac5ceaf10faab9e.png"
     },
     {
+      "name": "iqoo",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/af/afafc3ceccd082789240da4d205f48f9a37351e84ee5f52fc169195e10df513d.png"
+    },
+    {
       "name": "ithome",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/bf/bf9d094ea940511e7b39114a251ad51b49f72efa8fcf8a3cada36de04ddb3722.png"
     },
@@ -1260,6 +1264,10 @@
     {
       "name": "wifiwannengyaoshi",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/68/689005e6f2effd409d2585319192573ebb0b088363f9da223aa8f3ebfe02ebbb.png"
+    },
+    {
+      "name": "woniu4k",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d9/d9acaccf146ae48089fe16198f603dc6b7e0133c59179be9dddf7c584cab17a2.png"
     },
     {
       "name": "wps(1)",
@@ -1974,6 +1982,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ad/addfc2f0d52c70cec331d210862b98b4d18cd98846e182d927f271203f0bf5b5.png"
     },
     {
+      "name": "nodeseek",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/cd/cd816716f5b3352b5a519eca578bc381b75230f58722e222f65a6fefc31be5a5.png"
+    },
+    {
       "name": "Notion",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/74/74fbad48331845308455c24ceabb9befae21e8f1b2491934fb808864b2f83ca2.png"
     },
@@ -2024,6 +2036,10 @@
     {
       "name": "pigsec",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/76/76fe15364ec38d485e90ef6da6b09ec085c8ff4a95fb68a0f1adfc805b4304bb.png"
+    },
+    {
+      "name": "pingme",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f3/f30055760aa2ebb1606e1d2b5231a01be913454fb5464ba2d5ecf89b09c23884.png"
     },
     {
       "name": "Pinterest",
@@ -2332,6 +2348,10 @@
     {
       "name": "vsco",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/32/328556bf7b75e071713ad5ca136b307c6053b81e7ad545f1bc4b873407859f4e.png"
+    },
+    {
+      "name": "wetalk",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/86/868a09d41af5bba14ee80f3475fec633cb6968bdcb00ffb58e82ec0eebb0aeef.png"
     },
     {
       "name": "whatsapp(1)",
@@ -2782,6 +2802,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f9/f99768845f4ec5920d647c5e1c27c0701e8e5de770de01a9eac67766e86b60a4.png"
     },
     {
+      "name": "bat",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f8/f891fef0a05282b75692ab1adee92cfcb209ffa5116db3b0ad9ce986d47ddd16.png"
+    },
+    {
       "name": "BestTelecom",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a5/a5b78a6f6c8a6135a01a6fd48939f422dca2ae2cb2aad0ac8af88dcecbf53aeb.png"
     },
@@ -2884,6 +2908,14 @@
     {
       "name": "DegYax",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6d/6dada7f7342335e2304e3dc89e387af6e21d4ac50c81cd6942115616db7d8f7b.png"
+    },
+    {
+      "name": "dengta(1)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/44/44fa456977dfd3ff81b498061d63fcbfed33a54f0cb2fba9c5128a58ae9889df.png"
+    },
+    {
+      "name": "dengta",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/61/6122d5145890536dffe889ca820e9c1dc1ebf17d0e48af97242cd4eb86c427db.png"
     },
     {
       "name": "dickvpn",
@@ -3128,6 +3160,10 @@
     {
       "name": "iNetS",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1a/1a463e41f6824d2968ad134fd5e23bd0b84d896ed21411ac10906e81bbd81739.png"
+    },
+    {
+      "name": "jiajiayun",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/23/23bb1a277374e42ff6157eb141e6cfc3df2bd6208d1a4109fef54c723b68da6b.png"
     },
     {
       "name": "jiaojuzhe",
@@ -3392,6 +3428,10 @@
     {
       "name": "NieRCloud2",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4e/4e6b1e4ab775839295900de1c34a85d1d6ea074a147230154ea2b1b2664333f5.png"
+    },
+    {
+      "name": "niva",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b5/b536fe9f45c98ab7728259fbfe65c656528c643b9e4eebb6843d59d54e35e391.png"
     },
     {
       "name": "now(1)",
