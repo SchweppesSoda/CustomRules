@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 64130,
-      "rules_sha256": "875ca4c92ee389d5784d2e50ac5702163efcf83c61d63eda59df79555da22f60"
+      "rule_count": 65239,
+      "rules_sha256": "f0837226fdbcc62ff0b710b4a788ec0b0a7227356c86c6bae4f93d4754e27812"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3594,8 +3594,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 646,
-      "rules_sha256": "634bca507559822cc872fce7170ad52392e1c5609ea34b7ef0ae3c4d00ee3b9a"
+      "rule_count": 644,
+      "rules_sha256": "89b6b9fb19f25800be57c2bb1e6d98f35d87f402f43fa98090a37b8fa6a276da"
     },
     "Classical/NetEaseMusic": {
       "behavior": "classical",
@@ -3681,8 +3681,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26,
-      "rules_sha256": "9b6b3c543cf16e04c88b9d6d315146addef9fce701072919786811994b5b6026"
+      "rule_count": 27,
+      "rules_sha256": "fdcc54b8159e7fa2904be8a85f0b6ad53e68d56c19e044421fd2582989c93110"
     },
     "Classical/Private": {
       "behavior": "classical",
@@ -3699,8 +3699,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26674,
-      "rules_sha256": "2a3e3f83ac6336a0fd86ff3b009445d83086db6cae4aa2f4a29007846a7c96b8"
+      "rule_count": 26684,
+      "rules_sha256": "3a73d923886ad1453be228bfdefaaa06c6ec64ce295b143325a4a26b072a3453"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4344,8 +4344,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 637,
-      "rules_sha256": "3e2143e685a4a7447cdc84afb01d9596f478a690a7456357b6af19b0bc738cea"
+      "rule_count": 635,
+      "rules_sha256": "676b4cc8b3b81694cbd42367987517d932373691a1b87f1369ceb7ef3d92289d"
     },
     "MicrosoftCN": {
       "behavior": "domain",
@@ -4599,8 +4599,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26574,
-      "rules_sha256": "3a466b864df7ededebfb0faebf735f1c1404a954cdbaae80e9475b5be33ec0d6"
+      "rule_count": 26584,
+      "rules_sha256": "db0f2ed40dd4d4ff87634e8470a6ef6dd19f9384852a4b15771685e5dfed5d64"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -4863,8 +4863,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 412,
-      "rules_sha256": "192b6162668c87dc39d88c2beb6721643c82ca8bed5a29258d48c91448a0c853"
+      "rule_count": 413,
+      "rules_sha256": "489eb0eabe4b580d1ce9af588566b0ff0749079611a0f8a3340520e5bc1f323a"
     },
     "Policy/Classical/Steam": {
       "aggregation": {
@@ -4906,8 +4906,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 403,
-      "rules_sha256": "8e0bf7b4eee589c0104a3bacd23a17f6c31a0020c150795031b8d31c8b5538dd"
+      "rule_count": 404,
+      "rules_sha256": "3a35ced0ac161c9cec696a7c15655c1c154199be1bbdef0a3033e3787619ffc1"
     },
     "Policy/Steam": {
       "aggregation": {
@@ -4946,8 +4946,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 23,
-      "rules_sha256": "5d635782275666f35eaeac4b60f261890719767f72a1b7db9d5639856725ec9f"
+      "rule_count": 24,
+      "rules_sha256": "4bbd3d8d945289d774e56c5ea3b899e2cf14ec3b38ff27d3096bd2e2190e4f48"
     },
     "Private": {
       "behavior": "domain",
@@ -4968,8 +4968,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26540,
-      "rules_sha256": "2f13faef5d34ef2c63f3ed2cf175f1a23e1dab77ee8a626a358872acb2e786d5"
+      "rule_count": 26550,
+      "rules_sha256": "a238f16f0c110aebd5b844da9158f6779c0233b6265e50bded7712ae06e915a4"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -4979,8 +4979,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26540,
-      "rules_sha256": "2f13faef5d34ef2c63f3ed2cf175f1a23e1dab77ee8a626a358872acb2e786d5"
+      "rule_count": 26550,
+      "rules_sha256": "a238f16f0c110aebd5b844da9158f6779c0233b6265e50bded7712ae06e915a4"
     },
     "Scholar": {
       "behavior": "domain",
@@ -5214,5 +5214,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "64a6c19d2800c969cf2ae06f42673024bc3359fd"
+  "source_commit": "f28540ac7710c3f1e78ed639ddc5688f2b6ebd93"
 }
