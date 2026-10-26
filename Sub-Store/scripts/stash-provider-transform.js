@@ -31,11 +31,13 @@ function compactName(rawName, profileName) {
   const prefix = PROFILES[profileName].prefix;
   const name = rawName.startsWith(prefix) ? rawName.slice(prefix.length) : rawName;
   if (profileName === "residential_us_txpool") {
-    const match = name.match(/^🇺🇸 【1\.0x美国】(AT&T|Verizon)(家宽|商宽)落地 · 线路(\d+) \[(\d+)(st|nd|rd|th)\]$/);
-    // The line and ordinal describe the same route in the reviewed source.
-    // Keep unfamiliar rates, labels or mismatched ordinals intact.
-    if (match && match[3] === match[4]) {
-      return `🇺🇸 1.0x ${match[1]} ${match[2]} · ${match[4]}${match[5]}`;
+    const match = name.match(/^🇺🇸 (?:【(1\.0x)美国】)?(AT&T|Verizon)?(家宽|商宽)落地( \(SLA\))?(?: · 线路(\d+))? \[(\d+)(st|nd|rd|th)\]$/);
+    // Current upstream labels may omit the rate, carrier or redundant line.
+    // Preserve the SLA label and only display details actually supplied.
+    // If both line and ordinal exist, they must describe the same route.
+    if (match && (match[2] || match[4]) && (!match[5] || match[5] === match[6])) {
+      const details = [match[1], match[2], match[3]].filter(Boolean).join(" ");
+      return `🇺🇸 ${details}${match[4] || ""} · ${match[6]}${match[7]}`;
     }
     // These earlier compact names came from the reviewed 1.0x routes.
     const previous = name.match(/^🇺🇸 (AT&T (?:家宽|商宽)|Verizon(?: 商宽)?) ([12])$/);
@@ -43,7 +45,7 @@ function compactName(rawName, profileName) {
       const service = previous[1] === "Verizon" ? "Verizon 家宽" : previous[1];
       return `🇺🇸 1.0x ${service} · ${previous[2] === "1" ? "1st" : "2nd"}`;
     }
-    if (/^🇺🇸 1\.0x (?:AT&T|Verizon) (?:家宽|商宽) · \d+(?:st|nd|rd|th)$/.test(name)) return name;
+    if (/^🇺🇸 (?:1\.0x )?(?:(?:AT&T|Verizon) (?:家宽|商宽)(?: \(SLA\))?|(?:家宽|商宽) \(SLA\)) · \d+(?:st|nd|rd|th)$/.test(name)) return name;
   }
   if (profileName === "residential_us_frontier" && ["US-FRONTIER-AAITR", "🇺🇸 Frontier", "🇺🇸 Frontier · AAITR"].includes(name)) {
     return "🇺🇸 Frontier · AAITR";
