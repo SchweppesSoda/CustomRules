@@ -27,9 +27,9 @@ const PROFILES = {
 
 const CHAIN_KEYS = ["dialer-proxy", "underlying-proxy", "prev_hop", "chain", "detour"];
 
-function txpoolName(rate, carrier, service, sla, ordinal) {
+function txpoolName(rate, carrier, service, sla, ordinal, landing) {
   const carrierCode = { "AT&T": "ATT", Verizon: "VERIZON" }[carrier];
-  const details = [carrierCode, service, sla && "SLA", ordinal.toUpperCase(), rate].filter(Boolean);
+  const details = [carrierCode, service, landing && `落地${landing}`, sla && "SLA", ordinal.toUpperCase(), rate].filter(Boolean);
   return `🇺🇸 ${details.join("_")}`;
 }
 
@@ -37,6 +37,11 @@ function compactName(rawName, profileName) {
   const prefix = PROFILES[profileName].prefix;
   const name = rawName.startsWith(prefix) ? rawName.slice(prefix.length) : rawName;
   if (profileName === "residential_us_txpool") {
+    // Landing identity and route ordinal are separate upstream fields.
+    const numbered = name.match(/^🇺🇸 (?:【(1\.0x)美国】)?(AT&T|Verizon)(家宽|商宽)落地(\d+)(?: · 线路(\d+))? \[(\d+)(st|nd|rd|th|ST|ND|RD|TH)\]$/);
+    if (numbered && (!numbered[5] || numbered[5] === numbered[6])) {
+      return txpoolName(numbered[1], numbered[2], numbered[3], false, numbered[6] + numbered[7], numbered[4]);
+    }
     const match = name.match(/^🇺🇸 (?:【(1\.0x)美国】)?(AT&T|Verizon)?(家宽|商宽)落地( \(SLA\))?(?: · 线路(\d+))? \[(\d+)(st|nd|rd|th|ST|ND|RD|TH)\]$/);
     // Current upstream labels may omit the rate, carrier or redundant line.
     // Preserve the SLA label and only display details actually supplied.
@@ -65,10 +70,10 @@ function compactName(rawName, profileName) {
       return txpoolName(coded[5], { ATT: "AT&T", VERIZON: "Verizon" }[coded[1]],
         { RES: "家宽", BIZ: "商宽" }[coded[2]], coded[3], coded[4]);
     }
-    const canonical = name.match(/^🇺🇸 (?:(ATT|VERIZON)_)?(家宽|商宽)(_SLA)?_(\d+(?:st|nd|rd|th|ST|ND|RD|TH))(?:_(1\.0x))?$/);
-    if (canonical && (canonical[1] || canonical[3])) {
-      return txpoolName(canonical[5], { ATT: "AT&T", VERIZON: "Verizon" }[canonical[1]],
-        canonical[2], canonical[3], canonical[4]);
+    const canonical = name.match(/^🇺🇸 (?:(ATT|VERIZON)_)?(家宽|商宽)(?:_落地(\d+))?(_SLA)?_(\d+(?:st|nd|rd|th|ST|ND|RD|TH))(?:_(1\.0x))?$/);
+    if (canonical && (canonical[1] || canonical[4])) {
+      return txpoolName(canonical[6], { ATT: "AT&T", VERIZON: "Verizon" }[canonical[1]],
+        canonical[2], canonical[4], canonical[5], canonical[3]);
     }
   }
   if (profileName === "residential_us_frontier" && ["US-FRONTIER-AAITR", "🇺🇸 Frontier", "🇺🇸 Frontier · AAITR", "🇺🇸 FRONTIER_AAITR", "🇺🇸 FRONTIER_家宽"].includes(name)) {
