@@ -29,8 +29,7 @@ const CHAIN_KEYS = ["dialer-proxy", "underlying-proxy", "prev_hop", "chain", "de
 
 function txpoolName(rate, carrier, service, sla, ordinal) {
   const carrierCode = { "AT&T": "ATT", Verizon: "VERIZON" }[carrier];
-  const serviceCode = { 家宽: "RES", 商宽: "BIZ" }[service];
-  const details = ["TXPOOL", carrierCode, serviceCode, sla && "SLA", ordinal, rate].filter(Boolean);
+  const details = [carrierCode, service, sla && "SLA", ordinal.toUpperCase(), rate].filter(Boolean);
   return `🇺🇸 ${details.join("_")}`;
 }
 
@@ -38,7 +37,7 @@ function compactName(rawName, profileName) {
   const prefix = PROFILES[profileName].prefix;
   const name = rawName.startsWith(prefix) ? rawName.slice(prefix.length) : rawName;
   if (profileName === "residential_us_txpool") {
-    const match = name.match(/^🇺🇸 (?:【(1\.0x)美国】)?(AT&T|Verizon)?(家宽|商宽)落地( \(SLA\))?(?: · 线路(\d+))? \[(\d+)(st|nd|rd|th)\]$/);
+    const match = name.match(/^🇺🇸 (?:【(1\.0x)美国】)?(AT&T|Verizon)?(家宽|商宽)落地( \(SLA\))?(?: · 线路(\d+))? \[(\d+)(st|nd|rd|th|ST|ND|RD|TH)\]$/);
     // Current upstream labels may omit the rate, carrier or redundant line.
     // Preserve the SLA label and only display details actually supplied.
     // If both line and ordinal exist, they must describe the same route.
@@ -53,21 +52,30 @@ function compactName(rawName, profileName) {
       return txpoolName("1.0x", carrier, kind, false, previous[2] === "1" ? "1st" : "2nd");
     }
     // Accept earlier short names and the segmented local revision too.
-    const compact = name.match(/^🇺🇸 (1\.0x )?(?:(AT&T|Verizon) )?(家宽|商宽)( \(SLA\))? · (\d+(?:st|nd|rd|th))$/);
+    const compact = name.match(/^🇺🇸 (1\.0x )?(?:(AT&T|Verizon) )?(家宽|商宽)( \(SLA\))? · (\d+(?:st|nd|rd|th|ST|ND|RD|TH))$/);
     if (compact && (compact[2] || compact[4])) {
       return txpoolName(compact[1] && compact[1].trim(), compact[2], compact[3], compact[4], compact[5]);
     }
-    const segmented = name.match(/^🇺🇸 (?:(AT&T|Verizon) · )?(家宽|商宽)( SLA)? · (\d+(?:st|nd|rd|th))(?: · (1\.0x))?$/);
+    const segmented = name.match(/^🇺🇸 (?:(AT&T|Verizon) · )?(家宽|商宽)( SLA)? · (\d+(?:st|nd|rd|th|ST|ND|RD|TH))(?: · (1\.0x))?$/);
     if (segmented && (segmented[1] || segmented[3])) {
       return txpoolName(segmented[5], segmented[1], segmented[2], segmented[3], segmented[4]);
     }
-    if (/^🇺🇸 TXPOOL_(?:(?:ATT|VERIZON)_(?:RES|BIZ)(?:_SLA)?|(?:RES|BIZ)_SLA)_\d+(?:st|nd|rd|th)(?:_1\.0x)?$/.test(name)) return name;
+    const coded = name.match(/^🇺🇸 TXPOOL_(?:(ATT|VERIZON)_)?(RES|BIZ)(_SLA)?_(\d+(?:st|nd|rd|th|ST|ND|RD|TH))(?:_(1\.0x))?$/);
+    if (coded && (coded[1] || coded[3])) {
+      return txpoolName(coded[5], { ATT: "AT&T", VERIZON: "Verizon" }[coded[1]],
+        { RES: "家宽", BIZ: "商宽" }[coded[2]], coded[3], coded[4]);
+    }
+    const canonical = name.match(/^🇺🇸 (?:(ATT|VERIZON)_)?(家宽|商宽)(_SLA)?_(\d+(?:st|nd|rd|th|ST|ND|RD|TH))(?:_(1\.0x))?$/);
+    if (canonical && (canonical[1] || canonical[3])) {
+      return txpoolName(canonical[5], { ATT: "AT&T", VERIZON: "Verizon" }[canonical[1]],
+        canonical[2], canonical[3], canonical[4]);
+    }
   }
-  if (profileName === "residential_us_frontier" && ["US-FRONTIER-AAITR", "🇺🇸 Frontier", "🇺🇸 Frontier · AAITR", "🇺🇸 FRONTIER_AAITR"].includes(name)) {
-    return "🇺🇸 FRONTIER_AAITR";
+  if (profileName === "residential_us_frontier" && ["US-FRONTIER-AAITR", "🇺🇸 Frontier", "🇺🇸 Frontier · AAITR", "🇺🇸 FRONTIER_AAITR", "🇺🇸 FRONTIER_家宽"].includes(name)) {
+    return "🇺🇸 FRONTIER_家宽";
   }
-  if (profileName === "residential_us_charter" && ["[SS] 🇺🇸 Spectrum-CA", "🇺🇸 Spectrum CA", "🇺🇸 Spectrum · CA", "🇺🇸 SPECTRUM_CA"].includes(name)) {
-    return "🇺🇸 SPECTRUM_CA";
+  if (profileName === "residential_us_charter" && ["[SS] 🇺🇸 Spectrum-CA", "🇺🇸 Spectrum CA", "🇺🇸 Spectrum · CA", "🇺🇸 SPECTRUM_CA", "🇺🇸 CHARTER_家宽"].includes(name)) {
+    return "🇺🇸 CHARTER_家宽";
   }
   if (profileName === "landed_daily" || profileName === "landed_heavy") {
     // The dedicated groups already identify the route; keep native leaf names.
