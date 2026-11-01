@@ -27,6 +27,11 @@ const PROFILES = {
 
 const CHAIN_KEYS = ["dialer-proxy", "underlying-proxy", "prev_hop", "chain", "detour"];
 
+function txpoolName(rate, carrier, service, sla, ordinal) {
+  const details = [carrier, `${service}${sla ? " SLA" : ""}`, ordinal, rate].filter(Boolean);
+  return `🇺🇸 ${details.join(" · ")}`;
+}
+
 function compactName(rawName, profileName) {
   const prefix = PROFILES[profileName].prefix;
   const name = rawName.startsWith(prefix) ? rawName.slice(prefix.length) : rawName;
@@ -36,16 +41,22 @@ function compactName(rawName, profileName) {
     // Preserve the SLA label and only display details actually supplied.
     // If both line and ordinal exist, they must describe the same route.
     if (match && (match[2] || match[4]) && (!match[5] || match[5] === match[6])) {
-      const details = [match[1], match[2], match[3]].filter(Boolean).join(" ");
-      return `🇺🇸 ${details}${match[4] || ""} · ${match[6]}${match[7]}`;
+      return txpoolName(match[1], match[2], match[3], match[4], match[6] + match[7]);
     }
     // These earlier compact names came from the reviewed 1.0x routes.
     const previous = name.match(/^🇺🇸 (AT&T (?:家宽|商宽)|Verizon(?: 商宽)?) ([12])$/);
     if (previous) {
       const service = previous[1] === "Verizon" ? "Verizon 家宽" : previous[1];
-      return `🇺🇸 1.0x ${service} · ${previous[2] === "1" ? "1st" : "2nd"}`;
+      const [carrier, kind] = service.split(" ");
+      return txpoolName("1.0x", carrier, kind, false, previous[2] === "1" ? "1st" : "2nd");
     }
-    if (/^🇺🇸 (?:1\.0x )?(?:(?:AT&T|Verizon) (?:家宽|商宽)(?: \(SLA\))?|(?:家宽|商宽) \(SLA\)) · \d+(?:st|nd|rd|th)$/.test(name)) return name;
+    // Accept the previous published layout as well as the current segmented
+    // layout, so refreshing a provider does not add a source prefix twice.
+    const compact = name.match(/^🇺🇸 (1\.0x )?(?:(AT&T|Verizon) )?(家宽|商宽)( \(SLA\))? · (\d+(?:st|nd|rd|th))$/);
+    if (compact && (compact[2] || compact[4])) {
+      return txpoolName(compact[1] && compact[1].trim(), compact[2], compact[3], compact[4], compact[5]);
+    }
+    if (/^🇺🇸 (?:(?:AT&T|Verizon) · (?:家宽|商宽)(?: SLA)?|(?:家宽|商宽) SLA) · \d+(?:st|nd|rd|th)(?: · 1\.0x)?$/.test(name)) return name;
   }
   if (profileName === "residential_us_frontier" && ["US-FRONTIER-AAITR", "🇺🇸 Frontier", "🇺🇸 Frontier · AAITR"].includes(name)) {
     return "🇺🇸 Frontier · AAITR";
