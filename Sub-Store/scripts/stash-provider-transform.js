@@ -28,8 +28,10 @@ const PROFILES = {
 const CHAIN_KEYS = ["dialer-proxy", "underlying-proxy", "prev_hop", "chain", "detour"];
 
 function txpoolName(rate, carrier, service, sla, ordinal) {
-  const details = [carrier, `${service}${sla ? " SLA" : ""}`, ordinal, rate].filter(Boolean);
-  return `🇺🇸 ${details.join(" · ")}`;
+  const carrierCode = { "AT&T": "ATT", Verizon: "VERIZON" }[carrier];
+  const serviceCode = { 家宽: "RES", 商宽: "BIZ" }[service];
+  const details = ["TXPOOL", carrierCode, serviceCode, sla && "SLA", ordinal, rate].filter(Boolean);
+  return `🇺🇸 ${details.join("_")}`;
 }
 
 function compactName(rawName, profileName) {
@@ -50,19 +52,22 @@ function compactName(rawName, profileName) {
       const [carrier, kind] = service.split(" ");
       return txpoolName("1.0x", carrier, kind, false, previous[2] === "1" ? "1st" : "2nd");
     }
-    // Accept the previous published layout as well as the current segmented
-    // layout, so refreshing a provider does not add a source prefix twice.
+    // Accept earlier short names and the segmented local revision too.
     const compact = name.match(/^🇺🇸 (1\.0x )?(?:(AT&T|Verizon) )?(家宽|商宽)( \(SLA\))? · (\d+(?:st|nd|rd|th))$/);
     if (compact && (compact[2] || compact[4])) {
       return txpoolName(compact[1] && compact[1].trim(), compact[2], compact[3], compact[4], compact[5]);
     }
-    if (/^🇺🇸 (?:(?:AT&T|Verizon) · (?:家宽|商宽)(?: SLA)?|(?:家宽|商宽) SLA) · \d+(?:st|nd|rd|th)(?: · 1\.0x)?$/.test(name)) return name;
+    const segmented = name.match(/^🇺🇸 (?:(AT&T|Verizon) · )?(家宽|商宽)( SLA)? · (\d+(?:st|nd|rd|th))(?: · (1\.0x))?$/);
+    if (segmented && (segmented[1] || segmented[3])) {
+      return txpoolName(segmented[5], segmented[1], segmented[2], segmented[3], segmented[4]);
+    }
+    if (/^🇺🇸 TXPOOL_(?:(?:ATT|VERIZON)_(?:RES|BIZ)(?:_SLA)?|(?:RES|BIZ)_SLA)_\d+(?:st|nd|rd|th)(?:_1\.0x)?$/.test(name)) return name;
   }
-  if (profileName === "residential_us_frontier" && ["US-FRONTIER-AAITR", "🇺🇸 Frontier", "🇺🇸 Frontier · AAITR"].includes(name)) {
-    return "🇺🇸 Frontier · AAITR";
+  if (profileName === "residential_us_frontier" && ["US-FRONTIER-AAITR", "🇺🇸 Frontier", "🇺🇸 Frontier · AAITR", "🇺🇸 FRONTIER_AAITR"].includes(name)) {
+    return "🇺🇸 FRONTIER_AAITR";
   }
-  if (profileName === "residential_us_charter" && ["[SS] 🇺🇸 Spectrum-CA", "🇺🇸 Spectrum CA", "🇺🇸 Spectrum · CA"].includes(name)) {
-    return "🇺🇸 Spectrum · CA";
+  if (profileName === "residential_us_charter" && ["[SS] 🇺🇸 Spectrum-CA", "🇺🇸 Spectrum CA", "🇺🇸 Spectrum · CA", "🇺🇸 SPECTRUM_CA"].includes(name)) {
+    return "🇺🇸 SPECTRUM_CA";
   }
   if (profileName === "landed_daily" || profileName === "landed_heavy") {
     // The dedicated groups already identify the route; keep native leaf names.
