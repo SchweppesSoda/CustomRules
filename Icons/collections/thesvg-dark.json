@@ -150,6 +150,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d1/d114349eb8f832aa2d4e50f7eccdc6817828d5d7798a6241492fc62c25a2b2cd.svg"
     },
     {
+      "name": "Countly",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1f/1f92d2a893889ab17be37fff2689721c6962049679afbbb9f1a950f0af5b39e3.svg"
+    },
+    {
       "name": "CRI-O",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c52bf10bfa15dd0d6135c6ce16f5809ce4b183624d3c246e816ea450d90467b1.svg"
     },
@@ -200,6 +204,10 @@
     {
       "name": "Earmark",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c4/c4c99803376e07ba2d3cd4f9c89c0f0427be8d72e17d92f4e9193219e3c0c215.svg"
+    },
+    {
+      "name": "Easy AI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a1/a12dfabb2bc547312b53aec7f2546aa1b26e0dcad99dfb61ebf34a10a50dd1ad.svg"
     },
     {
       "name": "Edison",
@@ -286,8 +294,8 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5a/5a7adf758c27c533142cad44da068e35d662ee8f5ff271ae2796bf7813deb477.svg"
     },
     {
-      "name": "GoDonate.me",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b2/b2fd9cb478c977fd6383dfe0c6c8d5d4e9e0051ebfdfd886ebaf880d201e12e7.svg"
+      "name": "GoDonateMe",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d6/d6dd0d73594d7720d5d09b1c34078b7685eb970cacdaecfc100ad71ed21768ed.svg"
     },
     {
       "name": "Goil",
@@ -308,6 +316,10 @@
     {
       "name": "Habitica",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4c/4c24079a18d3b22b2f2bff6cfbb24054c5c5f91ad9360dc77c8f388952f5e4d9.svg"
+    },
+    {
+      "name": "Heap",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/83/835b3c929b30f6841ea048baaa1f2bd4090519fb6f16c166db1dbe25ad918fc5.svg"
     },
     {
       "name": "HeroUI",
@@ -510,6 +522,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d6/d666d07efc294db49dc2c794d689dbae17878b7049aaa49f9c0339a81f525ab9.svg"
     },
     {
+      "name": "n8n",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4c/4c29cab162876648b3ba2fffad9a9e179ba1a68b48ba4693e5db21373f7dc6bf.svg"
+    },
+    {
       "name": "Newmont",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/55/557dffbdc9b6e4d5b60e58dd17b27f98b72cbfbc94c06b102b8e545a9d95e387.svg"
     },
@@ -562,6 +578,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f9/f9e553d76fb5790e9e83bae15fcb76b2496355cba130d9287c1c4160efd93060.svg"
     },
     {
+      "name": "Oddinpay",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/84/840f915b082baebf8c3e9aca82ca9210fd7ba81b761e318b6f73c324566682b9.svg"
+    },
+    {
       "name": "Ollama",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/04/04d95aa0e2cccdd24f8f6c9c58ac2f312464d0f8280a6744fdd48b28b15aebab.svg"
     },
@@ -584,6 +604,10 @@
     {
       "name": "OpenFGA",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9c/9cb89052fdb9e679239c2c6a4509e4db2720dbd2e8885e8a0adce7e285ecab97.svg"
+    },
+    {
+      "name": "OpenReplay",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ad/ad11b9d84aca463b1c44b41cf846ee4d54caba807b3efdc127dd23c0f54cb581.svg"
     },
     {
       "name": "OpenRouter",
@@ -720,6 +744,10 @@
     {
       "name": "Rust",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/93/93750b6a19c9c4723956684ee4bde7691a652dafd782cfef76d27937cd0a0be6.svg"
+    },
+    {
+      "name": "Rybbit",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1f/1fbb79505e2a215f213cbd1c3fca3ae83a7c0254c095d6693d8901806136a579.svg"
     },
     {
       "name": "Ryot",
@@ -878,6 +906,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/2e/2e043bf53407fdf08143254d80c6eba27b72889e403d7ec2b92eddfbbc0ab94d.svg"
     },
     {
+      "name": "Userpilot",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5b/5bcc8eb36d0855c235e440068446da7d8309bff9d0ea9df93ce1c0be171fbd0e.svg"
+    },
+    {
       "name": "UXAnaRangel",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f2/f2db7a9dcdfe638c2c292fbb80a85b34eab960441cbb88627ad3ecffb0b3b5db.svg"
     },
@@ -968,6 +1000,10 @@
     {
       "name": "Zen Browser",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ce/ce1d1bc2a1bdce9d97a3f1abaeeb4c678ea242f3433ec77754b29a1b7d25377c.svg"
+    },
+    {
+      "name": "GoDonate.me",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b2/b2fd9cb478c977fd6383dfe0c6c8d5d4e9e0051ebfdfd886ebaf880d201e12e7.svg"
     }
   ],
   "name": "Unofficial theSVG Iconset - dark"

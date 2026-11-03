@@ -214,6 +214,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7d/7dbaf79c0639391cc895c61892b76f96938f6d4fd4796d98ea28b9fb331b56cb.svg"
     },
     {
+      "name": "altumptic",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/56/56333e2a8730e034e4b5bc6e3cb4a8d7c443c040b929f4b41e03a96444454ae1.svg"
+    },
+    {
       "name": "Amazon",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/59/592309387d79ef7dff343cbdb422abbaf002b3499b59177d4c485b0cda097de3.svg"
     },
@@ -532,6 +536,10 @@
     {
       "name": "Backblaze",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/71/712b4e0309bd8f9adcf92f37dd9d931d8f40804db5769a6a84f83887d6014e5a.svg"
+    },
+    {
+      "name": "Backloggd",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6e/6ecf3d9e9ffeca99e9ccc6d18a833b06528f3dc9834a9c2f4913f0a010d7db25.svg"
     },
     {
       "name": "Bajaj Auto",
@@ -856,6 +864,10 @@
     {
       "name": "Brain.js",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d1/d1aa98540c57f8d4d9c97bac1b7e01a7a2923d1604254df0adf80a8bcb0c9a20.svg"
+    },
+    {
+      "name": "Brainrune Mark Deep",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/49/49d684f5266ab718ed43c8755944888e36ffcea7c0d0d207ed3e0bbb551e86fb.svg"
     },
     {
       "name": "Brave",
@@ -2894,10 +2906,6 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e0/e0daa0e5e354e9ba0e5ce335793727666b109f124cde0fd29831b4d4aa2eb1a2.svg"
     },
     {
-      "name": "Heap",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d3/d3b445ed1b275e8ee841c2a4b85bf7f35f6d0b33b75623cbf8b3d5d45c317bf7.svg"
-    },
-    {
       "name": "Heimdall",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ac/ac760cc0a78a75f621c8c654ae4c43378ffcb107c5bf879080d0ced737a96950.svg"
     },
@@ -3236,6 +3244,10 @@
     {
       "name": "Instagram",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/04/047b55751749b70d269ef4f7a8ed6e9270d57e0d667d8a61f07b8da97a049888.svg"
+    },
+    {
+      "name": "Instagram (legacy wordmark)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/24/247b53c7a17575c3d27e3919cfd6412ca679eeee2b810bb368b6de7de134632f.svg"
     },
     {
       "name": "Instructor",
@@ -4111,7 +4123,7 @@
     },
     {
       "name": "Mango",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/0c/0c33d4acb7133da90e62c82a7746d8b9d588336bb78034eec5ea658c3e70bebf.svg"
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/41/4166c921b4ec5b7e8f1567f106e85bc23f79261d9fc6b7a3e1853756de38218e.svg"
     },
     {
       "name": "Manifest",
@@ -4152,6 +4164,10 @@
     {
       "name": "Marvel Studios",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ca/ca166a40c04caeeb698271931dfadcfe1c82ff300143bc717b6b86b87bc088da.svg"
+    },
+    {
+      "name": "Masheev",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d4/d4826def2dcad96d255e43e89940d8dff2ad2e6d79efa1bbf095e805e7f0f944.svg"
     },
     {
       "name": "Mastodon",
@@ -4319,7 +4335,7 @@
     },
     {
       "name": "Microsoft Copilot",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e8/e8ab839789e54678f4d368f0176978b2a075070b64898da53d4c5c56759d9e95.svg"
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/af/afef9ffcca96315e88b98aaafb0eb1ad46f564edc08b6346618c83012fd9ae90.svg"
     },
     {
       "name": "Microsoft Defender",
@@ -5264,10 +5280,6 @@
     {
       "name": "optionOS",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/92/927ab1e4c80fb405004695dbe8cc2e33f03685dc257783cf190647bb13a3448d.svg"
-    },
-    {
-      "name": "Oracle",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9d/9df094765c7193710c94c818f65bd076be708a3b2cebd6756b877397f2eb8cd0.svg"
     },
     {
       "name": "Oracle",
@@ -6382,6 +6394,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/31/3130889cf8be1af3937660909fb8367a1994ea3ea17c58fb02650364650cb789.svg"
     },
     {
+      "name": "ServiceNow",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9e/9ebf1dbfbffee1d648b711af65e01b0520f1559412afad926f6a1aba8037a105.svg"
+    },
+    {
       "name": "Session Buddy",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ce/cec966060d2c8f1d9ee3cf048a0e647805aa6b57028185755985fb025a501390.svg"
     },
@@ -6878,6 +6894,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7f/7f7702ab447e85585adb7830e04c3d2e4dc80f9021aa8b5714bff4f22213bdec.svg"
     },
     {
+      "name": "TablePort",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/30/30b03ba5546d649c226aad609d7cce0018620a39230727d1fadbb462f2c4417c.svg"
+    },
+    {
       "name": "Taboola",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c3/c3fc3f95f83cbe0d140a1baf045efeee5930dfca7d73c020b6f82822f84ac855.svg"
     },
@@ -7260,6 +7280,10 @@
     {
       "name": "Tweakers",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c5/c5a39a8de10c44130cc2473be70b9b28a8ce9179aafbf98b2c33eb338f80b4b8.svg"
+    },
+    {
+      "name": "Twig",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/64/6464a30474cc9e2062fece2bdb4e3ef638d3cd82462c53c37d7c9b77c6e4d360.svg"
     },
     {
       "name": "Twilio",
@@ -7807,7 +7831,7 @@
     },
     {
       "name": "Workday",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8f/8fd2e56650dbef8354a802fdfc828a5d82565b762ece40856c23c36e276d811c.svg"
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/91/9123e544fccdb5217bcd469faeb7855b1d76cce63d6e29c8bcbbaea0196c6ef5.svg"
     },
     {
       "name": "World Bank",
@@ -8032,6 +8056,10 @@
     {
       "name": "Zyft",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4f/4f4f0e2398ba4a58607ad3d1f50e0fbf95938dd1c023f267b7916945829a7d76.svg"
+    },
+    {
+      "name": "Heap",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d3/d3b445ed1b275e8ee841c2a4b85bf7f35f6d0b33b75623cbf8b3d5d45c317bf7.svg"
     },
     {
       "name": "Apollo.io",
