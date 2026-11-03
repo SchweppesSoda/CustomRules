@@ -104,6 +104,35 @@ class SyncTests(unittest.TestCase):
         self.assertEqual(mirror.read_json(self.root / 'collections/example.json')['icons'], before)
         self.assertEqual(len(mirror.read_json(self.root / 'manifest.json')['assets']), 1)
 
+    def test_renamed_entry_keeps_old_artwork_when_branch_url_is_reused(self):
+        self.run_sync()
+        old_entry = mirror.read_json(self.root / 'collections/example.json')['icons'][0]
+        old_asset = mirror.read_json(self.root / 'manifest.json')['assets'][ORIGINAL]
+        self.github.package['icons'][0]['name'] = 'Renamed'
+        self.github.data = png('blue')
+        self.github.resolve = lambda repo, ref: 'b' * 40
+
+        failures = self.run_sync()['failures']
+        self.assertEqual(failures[0]['entries'], [old_entry])
+        assets = mirror.read_json(self.root / 'manifest.json')['assets']
+        self.assertEqual(assets[mirror.raw_url('example/art', COMMIT, 'a.png')], old_asset)
+        self.assertNotEqual(assets[ORIGINAL]['path'], old_asset['path'])
+        self.assertEqual((self.root / old_asset['path']).read_bytes(), png())
+        self.assertIn(old_entry, mirror.read_json(self.root / 'collections/example.json')['icons'])
+
+        config = mirror.read_json(self.root / 'sources.json')
+        config['packs'][0]['reviewedRetentions'] = {'A': assets[ORIGINAL]['path']}
+        mirror.write_if_changed(self.root / 'sources.json', mirror.json_bytes(config))
+        self.assertEqual(self.run_sync()['failures'], failures)
+        config['packs'][0]['reviewedRetentions']['A'] = old_asset['path']
+        mirror.write_if_changed(self.root / 'sources.json', mirror.json_bytes(config))
+        result = self.run_sync()
+        self.assertEqual(result['failures'], [])
+        self.assertEqual(result['changedFiles'], 0)
+        (self.root / old_asset['path']).write_bytes(png('black'))
+        with self.assertRaisesRegex(mirror.InvalidAsset, 'hash mismatch'):
+            mirror.verify(self.root)
+
     def test_no_op_preserves_all_output_bytes_and_mtime(self):
         self.run_sync()
         before = {p.relative_to(self.root): (p.read_bytes(), p.stat().st_mtime_ns) for p in self.root.rglob('*') if p.is_file()}

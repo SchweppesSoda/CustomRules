@@ -328,6 +328,9 @@ def validate_config(config: dict):
         for requested, replacement in pack.get("assetOverrides", {}).items():
             if parse_url(requested)['repository'] not in pack['assetRepositories'] or parse_url(replacement['url'])['repository'] not in pack['assetRepositories'] or not replacement.get('reason'):
                 raise InvalidAsset("invalid reviewed historical fallback")
+        for name, path in pack.get('reviewedRetentions', {}).items():
+            if not name or not re.fullmatch(r'library/([0-9a-f]{2})/\1[0-9a-f]{62}\.(?:svg|png|jpg)', path):
+                raise InvalidAsset("invalid reviewed collection retention")
 
 
 def sync(root: Path, github: GitHub, workers=12) -> dict:
@@ -421,9 +424,12 @@ def sync(root: Path, github: GitHub, workers=12) -> dict:
         current = [{"name": x["name"], "url": local_url(config, assets[x["url"]]["path"])} for x in entries if x["url"] in assets]
         old_pack = read_json(root / "collections" / f"{pack['id']}.json", {})
         collection = {"name": payload["name"], "description": f"{payload.get('description', '')}\nMirrored by {config['repository']}. Source: {pack['url']}", "icons": merge_collection(old_pack, current)}
-        retained = len(collection["icons"]) - len(current)
-        if retained:
-            failures.append({"package": pack["id"], "stage": "removed", "error": "UpstreamEntryRemoved", "retained": retained})
+        reviewed = {(name, local_url(config, path)) for name, path in pack.get("reviewedRetentions", {}).items()}
+        unreviewed = [entry for entry in collection["icons"][len(current):]
+                      if (entry["name"], entry["url"]) not in reviewed]
+        if unreviewed:
+            failures.append({"package": pack["id"], "stage": "removed", "error": "UpstreamEntryRemoved",
+                             "retained": len(unreviewed), "entries": unreviewed})
         if not collection["icons"] and entries:
             failures.append({"package": pack["id"], "stage": "collection", "error": "EmptyCollection"})
             continue
@@ -435,6 +441,16 @@ def sync(root: Path, github: GitHub, workers=12) -> dict:
     for pack in config["packs"]:
         collection = read_json(root / "collections" / f"{pack['id']}.json", {})
         all_entries.extend({"name": f"{pack['id']} · {x['name']}", "url": x["url"]} for x in collection.get("icons", []))
+    # A retained entry may still use the old bytes after the same branch URL changes.
+    # Keep its verified provenance under the immutable source URL.
+    untracked_urls = {entry["url"] for entry in all_entries}
+    untracked_urls.difference_update(local_url(config, record["path"]) for record in assets.values())
+    for record in old["assets"].values():
+        url = local_url(config, record["path"])
+        if url in untracked_urls:
+            origin = record["origin"]
+            assets[raw_url(origin["repository"], origin["commit"], origin["path"])] = record
+            untracked_urls.remove(url)
     changed += write_if_changed(root / "collections" / "all.json", json_bytes({"name": "CustomRules Icons All", "description": "All mirrored packages. Names are prefixed with their source package; image bytes are deduplicated by SHA256. Licenses differ by source; see ATTRIBUTION.md.", "icons": all_entries}))
     changed += write_if_changed(root / 'aliases.json', json_bytes({'schema': 1, 'icons': {url: local_url(config, record['path']) for record in curated['icons'] for url in record['aliases']}}))
     changed += write_if_changed(root / "manifest.json", json_bytes({"schema": 1, "assets": assets, "packages": packages}))
