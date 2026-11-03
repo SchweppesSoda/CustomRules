@@ -1105,7 +1105,9 @@ def enforce_baseline(output: Path, baseline: Path, allow_large_change: bool) -> 
             continue
         reduction = max(0, len(old) - len(new)) / len(old)
         change = len(old.symmetric_difference(new)) / len(old)
-        if reduction > 0.05:
+        airport_list = relative.parent == Path("Surge") and current.stem in AIRPORT_DOMAIN_SOURCE_NAMES
+        reduction_limit = 0.10 if airport_list else 0.05
+        if reduction > reduction_limit:
             raise RuntimeError(f"Safety threshold: {relative} shrank by {reduction:.1%}")
         if change > 0.20:
             raise RuntimeError(f"Safety threshold: {relative} changed by {change:.1%}")

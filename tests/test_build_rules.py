@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.util
 import re
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -18,6 +19,24 @@ SPEC.loader.exec_module(build_rules)
 
 
 class BuildRulesTests(unittest.TestCase):
+    def test_airport_publication_reduction_limit(self) -> None:
+        rules = [f"DOMAIN,node{i}.example.com\n" for i in range(10)]
+        for name, keep, allowed in (
+            ("AirportServers", 9, True), ("AirportServersCTC", 9, True),
+            ("AirportServers", 8, False), ("MyDirect", 9, False),
+        ):
+            with self.subTest(name=name, keep=keep), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                for target, entries in (("old", rules), ("new", rules[:keep])):
+                    path = root / target / "Surge" / f"{name}.list"
+                    path.parent.mkdir(parents=True)
+                    path.write_text("".join(entries), encoding="utf-8")
+                if allowed:
+                    build_rules.enforce_baseline(root / "new", root / "old", False)
+                else:
+                    with self.assertRaisesRegex(RuntimeError, "shrank"):
+                        build_rules.enforce_baseline(root / "new", root / "old", False)
+
     def test_manual_airport_sources_are_public_safe(self) -> None:
         sources = (
             ROOT / "sources" / "manual" / "AirportServers.yaml",
@@ -61,10 +80,9 @@ class BuildRulesTests(unittest.TestCase):
         self.assertNotIn("ctcxianyu.com", generic_text)
         self.assertNotIn("525536.xyz", generic_text)
         self.assertNotIn("07c06051-81fd-4aa4-a94e-a0860315df8f.org", generic_dynamic)
-        self.assertIn("DOMAIN-SUFFIX,911-gt2-rs.com", generic_dynamic)
-        self.assertIn("DOMAIN-SUFFIX,aws-agent.net", generic_dynamic)
-        for suffix in ("lxyun.xyz", "777078.xyz", "7770006.xyz", "7770008.xyz"):
-            self.assertIn(f"DOMAIN-SUFFIX,{suffix}", generic_dynamic)
+        # The writer owns live suffixes. Each airport must contribute a nonempty group.
+        for name in ("MESL", "BitzNet", "SNTP", "LinkCube", "Flower", "LiangXin"):
+            self.assertRegex(generic_dynamic, rf"(?m)^  # > {name}\r?\n  - DOMAIN-SUFFIX,[^\s,]+$")
         self.assertNotIn("DOMAIN,cl-", generic_dynamic)
         self.assertNotIn("DOMAIN,aws-link", generic_dynamic)
         self.assertIn("ctcxianyu.com", ctc_text.split(begin, 1)[0])

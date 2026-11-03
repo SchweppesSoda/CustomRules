@@ -309,8 +309,9 @@ It:
    entities, and forbidden broad domains;
 4. loads all MRS files through a minimal Mihomo configuration;
 5. repeats the build and requires byte-for-byte identical output;
-6. blocks a reduction over 5% or total change over 20% against the current
-   `auto-build` baseline;
+6. allows reductions up to 10% for `AirportServers` and `AirportServersCTC`
+   and up to 5% for other lists. The total-change limit is 20% for all lists,
+   measured against the current `auto-build` baseline;
 7. publishes only changed files without force-pushing.
 
 The published branch also contains `manifest.json`, `SOURCES.json`,
