@@ -2,6 +2,7 @@
 # Rule set: GeolocationCN
 payload:
   - api.blipsandchitz.me
+  - app.moegirl.org.cn
   - ctdsb.clouddiffuse.xyz
   - cueme-api.quark.cn
   - end-api.shallow.ink
@@ -34,6 +35,7 @@ payload:
   - p7-juejin.byteimg.com
   - p8-juejin.byteimg.com
   - p9-juejin.byteimg.com
+  - storage.moegirl.org.cn
   - study.163.com
   - time.izatcloud.net
   - time.xtracloud.net
@@ -432,6 +434,7 @@ payload:
   - +.9xu.com
   - +.a2z.org.cn
   - +.a9vg.com
+  - +.aaej.cn
   - +.aaic.com.cn
   - +.aamgame.com
   - +.aamgame.mobi
@@ -527,6 +530,7 @@ payload:
   - +.allday.work
   - +.allflow.cn
   - +.allhistory.com
+  - +.allwinnertech.com
   - +.allyes.com
   - +.alookweb.com
   - +.aloys233.top
@@ -768,6 +772,7 @@ payload:
   - +.bibaodao.com
   - +.bidchance.com
   - +.biddingx.com
+  - +.bigdatacq.com
   - +.bigmodel.cn
   - +.bihu.com
   - +.biji.com
@@ -806,6 +811,7 @@ payload:
   - +.bmac.com.cn
   - +.bobbns.com
   - +.bobo.com
+  - +.bocd.com.cn
   - +.boce.com
   - +.bochaai.com
   - +.boe.com
@@ -845,6 +851,7 @@ payload:
   - +.buke999.com
   - +.burningvocabulary.cn
   - +.burningvocabulary.com
+  - +.busyming.com
   - +.butterfly-static.cn
   - +.butterflyai.cn
   - +.bvmlt.top
@@ -868,6 +875,7 @@ payload:
   - +.caiyunapp.com
   - +.caiyuncdn.com
   - +.calorietech.com
+  - +.cambricon.com
   - +.camcard.com
   - +.camscanner.com
   - +.cang.com
@@ -918,6 +926,8 @@ payload:
   - +.cdndo.com
   - +.cdnmama.com
   - +.cdnmg.com
+  - +.cdrcb.com
+  - +.cdrcbank.com
   - +.cdut.top
   - +.ce.cn
   - +.ceair.com
@@ -1111,6 +1121,7 @@ payload:
   - +.ckxx.net
   - +.clangcn.com
   - +.clawhub-mirror.com
+  - +.cldisk.com
   - +.cleargrass.com
   - +.clewm.net
   - +.cli.im
@@ -1238,13 +1249,17 @@ payload:
   - +.cqcb.com
   - +.cqccn.com
   - +.cqctyiptv.cn
+  - +.cqdcg.com
+  - +.cqge.com.cn
   - +.cqhlw.cn
   - +.cqliving.com
   - +.cqn.com.cn
   - +.cqnews.net
+  - +.cqsdlys.cn
   - +.cqsjb.com
   - +.cqtk.com.cn
   - +.cqvip.com
+  - +.cqyyxc.com
   - +.cr-cts.com
   - +.cr173.com
   - +.cravatar.cn
@@ -1454,6 +1469,7 @@ payload:
   - +.dida365.com
   - +.didachuxing.com
   - +.didapinche.com
+  - +.digitalcnzz.com
   - +.digitaling.com
   - +.diiing.cn
   - +.dili360.com
@@ -1509,6 +1525,7 @@ payload:
   - +.doubanio.com
   - +.doubao-dev.com
   - +.doubao.com
+  - +.doubaoapps.com
   - +.doubaocdn.com
   - +.doucang.cn
   - +.doucang.com
@@ -1609,6 +1626,7 @@ payload:
   - +.e0n.cn
   - +.eagsen.com
   - +.easec.com.cn
+  - +.easemob.com
   - +.easesale.com
   - +.easiu.com
   - +.eastday.com
@@ -1728,6 +1746,9 @@ payload:
   - +.fastcdn.com
   - +.fastcdn.com.cn
   - +.fastcom.com.cn
+  - +.favonis.cloud
+  - +.favonis.com
+  - +.favonis.space
   - +.faxingbao.com
   - +.fbank.com
   - +.fbstatic.cn
@@ -1766,6 +1787,7 @@ payload:
   - +.fhldns.com
   - +.fhyx.com
   - +.filez.com
+  - +.filmorigin.com
   - +.fimmu.com
   - +.finchina.com
   - +.finclip.com
@@ -1933,7 +1955,6 @@ payload:
   - +.gdjdxy.com
   - +.gdliontech.com
   - +.gdrc.com
-  - +.gdtimg.com
   - +.geekbang.org
   - +.geekpark.net
   - +.geektool.top
@@ -2034,6 +2055,7 @@ payload:
   - +.gowinamc.com
   - +.gpall.cn
   - +.gpall.net
+  - +.gpzshq.cn
   - +.gracg.com
   - +.greatwallwine.com.cn
   - +.gree.cn
@@ -2245,6 +2267,7 @@ payload:
   - +.hnbntv.com
   - +.hnchasing.com
   - +.hndt.com
+  - +.hnlshm.com
   - +.hnol.net
   - +.hnr.cn
   - +.hnrcsc.com
@@ -2379,6 +2402,7 @@ payload:
   - +.i8tq.com
   - +.iachina.cn
   - +.iask.com
+  - +.ibangbank.com
   - +.ibaotu.com
   - +.ibcet.org
   - +.ibidian.com
@@ -2487,6 +2511,7 @@ payload:
   - +.intsig.com
   - +.intsig.net
   - +.iotronic.tech
+  - +.ip.cn
   - +.ip138.com
   - +.ipanda.cn
   - +.ipanda.com
@@ -2514,6 +2539,8 @@ payload:
   - +.ishijue.com
   - +.ishumei.com
   - +.ishuqi.com
+  - +.isigning.cn
+  - +.isigning.com
   - +.istoreos.com
   - +.istv.cn
   - +.isxtv.com
@@ -2591,7 +2618,6 @@ payload:
   - +.jikecdn.com
   - +.jikeiot.cloud
   - +.jikexueyuan.com
-  - +.jikipedia.com
   - +.jin10.com
   - +.jinantimes.com.cn
   - +.jinchutou.com
@@ -2759,6 +2785,7 @@ payload:
   - +.kaipuyun.net
   - +.kaixin001.com
   - +.kajicam.com
+  - +.kakaxing.com
   - +.kameng98.com
   - +.kancloud.cn
   - +.kanimg.com
@@ -3307,6 +3334,7 @@ payload:
   - +.mlzt.com.cn
   - +.mmbang.com
   - +.mmbang.info
+  - +.mnc015.mcc460.pub.3gppnetwork.org
   - +.mndqlib.net
   - +.mnw.cn
   - +.mob.com
@@ -3315,8 +3343,6 @@ payload:
   - +.modelers.cn
   - +.modex.com.cn
   - +.moedu.com
-  - +.moegirl.org
-  - +.moegirl.org.cn
   - +.moer.cn
   - +.mofang.com
   - +.mofazhu.com
@@ -3364,6 +3390,7 @@ payload:
   - +.mszdld.com
   - +.mszdld.net
   - +.mszq.com
+  - +.mthreads.com
   - +.mti100.com
   - +.mtime.cn
   - +.mtime.com
@@ -3413,6 +3440,7 @@ payload:
   - +.nalrer.cn
   - +.namiso.com
   - +.nanhaicorp.com
+  - +.nanocorechip.com
   - +.nanyuenews.com
   - +.narwal.com
   - +.narwaltech.com
@@ -3725,6 +3753,7 @@ payload:
   - +.qianyierp.com
   - +.qianzhan.com
   - +.qiaobutang.com
+  - +.qiaqiafood.com
   - +.qichacha.com
   - +.qichamao.com
   - +.qie.tv
@@ -4109,6 +4138,7 @@ payload:
   - +.soulapp.cn
   - +.soulteary.com
   - +.souqian.com
+  - +.southchip.com
   - +.southcn.com
   - +.southmoney.com
   - +.sparkletour.com
@@ -4215,7 +4245,10 @@ payload:
   - +.sznews.com
   - +.szpgm.com
   - +.szse.cn
+  - +.szu.app
+  - +.szu.moe
   - +.szzfgjj.com
+  - +.t-head.cn
   - +.t00ls.cc
   - +.t00ls.net
   - +.t1tms.com
@@ -4841,6 +4874,7 @@ payload:
   - +.xiaoluyouxuan.com
   - +.xiaoluzhidian.com
   - +.xiaomaicn.com
+  - +.xiaomaigui.com
   - +.xiaomengai.com
   - +.xiaomimimo.com
   - +.xiaomingtaiji.com
@@ -4926,6 +4960,7 @@ payload:
   - +.xuexi365.com.cn
   - +.xuexi365.net
   - +.xuexicha.com
+  - +.xuexitong.com
   - +.xundupdf.com
   - +.xunfei.cn
   - +.xunfeixxj.com
@@ -5370,6 +5405,7 @@ payload:
   - +.zygbdszt.net.cn
   - +.zyh365.com
   - +.zyhe.com.cn
+  - +.zymls.com
   - +.zysn.net
   - +.zysou.com
   - +.zyyct.com

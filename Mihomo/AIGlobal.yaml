@@ -6,6 +6,9 @@ payload:
   - alkalimakersuite-pa.clients6.google.com
   - antigravity-pa.googleapis.com
   - antigravity.googleapis.com
+  - appsgenaiserver-pa.clients.google.com
+  - appsgenaiserver-pa.clients6.google.com
+  - appsgenaiserver-pa.googleapis.com
   - browser-intake-datadoghq.com
   - cloudaicompanion.googleapis.com
   - cloudcode-pa.googleapis.com
@@ -20,6 +23,7 @@ payload:
   - notebooklm-pa.googleapis.com
   - notebooklm.googleapis.com
   - o33249.ingest.sentry.io
+  - o33249.ingest.us.sentry.io
   - openai.qualtrics.com
   - openaiapi-site.azureedge.net
   - openaiassets.blob.core.windows.net
@@ -37,14 +41,19 @@ payload:
   - +.aida.googleapis.com
   - +.aisandbox-pa.googleapis.com
   - +.aistudio.google.com
+  - +.ant.dev
   - +.anthropic.com
+  - +.anthropic.team
   - +.antigravity-unleash.goog
   - +.antigravity.google
+  - +.antspace.dev
   - +.anythingllm.com
   - +.arena.ai
+  - +.artificialanalysis.ai
   - +.bard.google.com
   - +.cerebras.ai
   - +.chat.com
+  - +.chatbotclaude.com
   - +.chatgpt.com
   - +.chatgpt.livekit.cloud
   - +.chatgpt.site
@@ -54,12 +63,19 @@ payload:
   - +.ciciaicdn.com
   - +.clau.de
   - +.claude.ai
+  - +.claude.app
   - +.claude.com
   - +.claude.dev
+  - +.claude.new
+  - +.claude.site
+  - +.claudeacademy.com
   - +.claudemcpclient.com
   - +.claudemcpcontent.com
+  - +.claudepages.dev
+  - +.claudestudio.com
   - +.claudeusercontent.com
   - +.clawhub.ai
+  - +.cline.bot
   - +.clipdrop.co
   - +.codeium.com
   - +.codeiumdata.com
@@ -70,6 +86,8 @@ payload:
   - +.comfy.org
   - +.comfyci.org
   - +.comfyregistry.org
+  - +.commandcode.ai
+  - +.context7.com
   - +.copilot-stg.com
   - +.copilot.cloud.microsoft
   - +.copilot.com
@@ -139,6 +157,7 @@ payload:
   - +.manuscdn.com
   - +.marscode.com
   - +.meta.ai
+  - +.metaaiusercontent.com
   - +.metaaivm.com
   - +.midjourney.com
   - +.minimax.io
@@ -151,6 +170,7 @@ payload:
   - +.notebooklm.google
   - +.notebooklm.google.com
   - +.notegpt.io
+  - +.nousresearch.com
   - +.novelai.net
   - +.oaistatic.com
   - +.oaistatsig.com

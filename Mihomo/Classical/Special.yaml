@@ -91,6 +91,11 @@ payload:
   - DOMAIN,steamuserimages-a.akamaihd.net
   - DOMAIN,wmsjsteam.com
   - USER-AGENT,Steam*
+  - PROCESS-NAME,tailscaled
+  - PROCESS-NAME,tailscaled.exe
+  - DOMAIN-SUFFIX,tailscale.com
+  - DOMAIN-SUFFIX,tailscale.io
+  - DOMAIN-SUFFIX,ts.net
   - IP-CIDR,100.64.0.0/10,no-resolve
   - DOMAIN-SUFFIX,solarcity.com
   - DOMAIN,tesla-cdn.thron.cn
@@ -104,6 +109,7 @@ payload:
   - DOMAIN-SUFFIX,ts.la
   - DOMAIN,uplaypc-s-ubisoft.cdn.ubi.com
   - PROCESS-NAME,UUBooster
+  - DOMAIN-SUFFIX,3gppnetwork.org
   - DOMAIN-SUFFIX,app-measurement.com
   - DOMAIN-SUFFIX,xunlei.com
   - USER-AGENT,%E8%BF%85%E9%9B%B7
