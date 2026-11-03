@@ -56,11 +56,10 @@ declarations are parsed without downloading a DTD.
 Failed downloads, invalid images, and removed upstream entries keep existing
 good images and collection entries. If an upstream URL changes artwork while an
 old collection entry still references it, the manifest keeps the previous image
-under its immutable source URL. After reviewing a removal, record its exact name
-and library path in that package's `reviewedRetentions` in `sources.json`.
-Other removals and download or validation failures still fail the run. Valid
-updates to other assets can still be committed after the mirror passes validation. Files
-are not deleted automatically. An unchanged sync preserves bytes and mtimes.
+under its immutable source URL. Upstream removals and renames succeed when the
+retained entries pass verification. The sync report lists them in `retainedEntries`.
+Download or validation errors still fail the run. Valid updates can be committed
+after the mirror passes validation. An unchanged sync preserves bytes and mtimes.
 
 Two initially broken WHATSINStash links (`icon/discord.png` and
 `icon/vercel.png`) have no retrievable original path and are explicitly listed

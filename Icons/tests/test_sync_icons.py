@@ -100,7 +100,9 @@ class SyncTests(unittest.TestCase):
         self.run_sync()
         before = mirror.read_json(self.root / 'collections/example.json')['icons']
         self.github.package['icons'] = []
-        self.run_sync()
+        result = self.run_sync()
+        self.assertEqual(result['failures'], [])
+        self.assertEqual(result['retainedEntries'], [{'package': 'example', **before[0]}])
         self.assertEqual(mirror.read_json(self.root / 'collections/example.json')['icons'], before)
         self.assertEqual(len(mirror.read_json(self.root / 'manifest.json')['assets']), 1)
 
@@ -112,20 +114,15 @@ class SyncTests(unittest.TestCase):
         self.github.data = png('blue')
         self.github.resolve = lambda repo, ref: 'b' * 40
 
-        failures = self.run_sync()['failures']
-        self.assertEqual(failures[0]['entries'], [old_entry])
+        result = self.run_sync()
+        self.assertEqual(result['failures'], [])
+        self.assertEqual(result['retainedEntries'], [{'package': 'example', **old_entry}])
         assets = mirror.read_json(self.root / 'manifest.json')['assets']
         self.assertEqual(assets[mirror.raw_url('example/art', COMMIT, 'a.png')], old_asset)
         self.assertNotEqual(assets[ORIGINAL]['path'], old_asset['path'])
         self.assertEqual((self.root / old_asset['path']).read_bytes(), png())
         self.assertIn(old_entry, mirror.read_json(self.root / 'collections/example.json')['icons'])
 
-        config = mirror.read_json(self.root / 'sources.json')
-        config['packs'][0]['reviewedRetentions'] = {'A': assets[ORIGINAL]['path']}
-        mirror.write_if_changed(self.root / 'sources.json', mirror.json_bytes(config))
-        self.assertEqual(self.run_sync()['failures'], failures)
-        config['packs'][0]['reviewedRetentions']['A'] = old_asset['path']
-        mirror.write_if_changed(self.root / 'sources.json', mirror.json_bytes(config))
         result = self.run_sync()
         self.assertEqual(result['failures'], [])
         self.assertEqual(result['changedFiles'], 0)

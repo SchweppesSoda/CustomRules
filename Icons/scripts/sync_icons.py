@@ -328,9 +328,6 @@ def validate_config(config: dict):
         for requested, replacement in pack.get("assetOverrides", {}).items():
             if parse_url(requested)['repository'] not in pack['assetRepositories'] or parse_url(replacement['url'])['repository'] not in pack['assetRepositories'] or not replacement.get('reason'):
                 raise InvalidAsset("invalid reviewed historical fallback")
-        for name, path in pack.get('reviewedRetentions', {}).items():
-            if not name or not re.fullmatch(r'library/([0-9a-f]{2})/\1[0-9a-f]{62}\.(?:svg|png|jpg)', path):
-                raise InvalidAsset("invalid reviewed collection retention")
 
 
 def sync(root: Path, github: GitHub, workers=12) -> dict:
@@ -343,6 +340,7 @@ def sync(root: Path, github: GitHub, workers=12) -> dict:
     assets = dict(old["assets"])
     packages = dict(old["packages"])
     failures = []
+    retained_entries = []
     changed = 0
     changed += relocate_collections(root, config, assets, curated)
     prepared = []
@@ -424,12 +422,7 @@ def sync(root: Path, github: GitHub, workers=12) -> dict:
         current = [{"name": x["name"], "url": local_url(config, assets[x["url"]]["path"])} for x in entries if x["url"] in assets]
         old_pack = read_json(root / "collections" / f"{pack['id']}.json", {})
         collection = {"name": payload["name"], "description": f"{payload.get('description', '')}\nMirrored by {config['repository']}. Source: {pack['url']}", "icons": merge_collection(old_pack, current)}
-        reviewed = {(name, local_url(config, path)) for name, path in pack.get("reviewedRetentions", {}).items()}
-        unreviewed = [entry for entry in collection["icons"][len(current):]
-                      if (entry["name"], entry["url"]) not in reviewed]
-        if unreviewed:
-            failures.append({"package": pack["id"], "stage": "removed", "error": "UpstreamEntryRemoved",
-                             "retained": len(unreviewed), "entries": unreviewed})
+        retained_entries.extend({"package": pack["id"], **entry} for entry in collection["icons"][len(current):])
         if not collection["icons"] and entries:
             failures.append({"package": pack["id"], "stage": "collection", "error": "EmptyCollection"})
             continue
@@ -455,7 +448,7 @@ def sync(root: Path, github: GitHub, workers=12) -> dict:
     changed += write_if_changed(root / 'aliases.json', json_bytes({'schema': 1, 'icons': {url: local_url(config, record['path']) for record in curated['icons'] for url in record['aliases']}}))
     changed += write_if_changed(root / "manifest.json", json_bytes({"schema": 1, "assets": assets, "packages": packages}))
     # A transient upstream failure is diagnostic, not a new good provenance record.
-    report = {"packageCount": len(config["packs"]), "assetReferences": len(assets), "uniqueAssets": len({x['path'] for x in assets.values()}), "changedFiles": changed, "failures": failures}
+    report = {"packageCount": len(config["packs"]), "assetReferences": len(assets), "uniqueAssets": len({x['path'] for x in assets.values()}), "changedFiles": changed, "retainedEntries": retained_entries, "failures": failures}
     verify(root)
     return report
 
@@ -593,7 +586,7 @@ def main():
     result = verify(args.root) if args.command == "check" else relocate(args.root) if args.command == 'relocate' else sync(args.root, GitHub(args.seed_cache), args.workers)
     if args.report:
         write_if_changed(args.report, json_bytes(result))
-    print(json.dumps({k: len(v) if k == "failures" else v for k, v in result.items()}, sort_keys=True), flush=True)
+    print(json.dumps({k: len(v) if isinstance(v, list) else v for k, v in result.items()}, sort_keys=True), flush=True)
     return 1 if result.get("failures") else 0
 
 

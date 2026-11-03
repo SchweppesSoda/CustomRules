@@ -97,9 +97,6 @@
         "glincker/thesvg"
       ],
       "id": "thesvg-dark",
-      "reviewedRetentions": {
-        "GoDonate.me": "library/b2/b2fd9cb478c977fd6383dfe0c6c8d5d4e9e0051ebfdfd886ebaf880d201e12e7.svg"
-      },
       "url": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/dark.json"
     },
     {
@@ -107,10 +104,6 @@
         "glincker/thesvg"
       ],
       "id": "thesvg-default",
-      "reviewedRetentions": {
-        "Apollo.io": "library/a9/a91ff800b027365e5f83373578e10c39e03ab94ff531f9b5db01d112e8d0f2c0.svg",
-        "Heap": "library/d3/d3b445ed1b275e8ee841c2a4b85bf7f35f6d0b33b75623cbf8b3d5d45c317bf7.svg"
-      },
       "url": "https://raw.githubusercontent.com/xream/unofficial-thesvg-iconset/refs/heads/release/default.json"
     },
     {
