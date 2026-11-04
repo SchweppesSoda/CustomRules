@@ -1,12 +1,12 @@
 {
   "sources": [
     {
-      "sha256": "2e80eb0b85efc28df4a3f938c8262774494bf8bf49891bec9e7a9db6cc8f37e3",
-      "size": "203190",
+      "sha256": "9838bc5e9ec2bce128dc0692e2e88124b60e3c5f0e8548df9932b24fc3ed9ce6",
+      "size": "3508",
       "url": "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta"
     },
     {
-      "sha256": "86343a9390e45f5a4e1278ae60f3dd5d07e76322fcaba039252b109fe9b20a9f",
+      "sha256": "34d1ee4b4f78c562785188e8ee495a24be4848fbe4b0e53379a45ea51d21ea20",
       "size": "425",
       "url": "https://raw.githubusercontent.com/666OS/rules/release/mihomo/ip/Proxy.txt"
     },
@@ -1071,8 +1071,8 @@
       "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Special.list"
     },
     {
-      "sha256": "eeb6d1951c55d265d4198c3e04fe090bc2aa0bf8b799d9955f53392bb3b3c049",
-      "size": "1869000",
+      "sha256": "970bdc8891a08995855bd5cd522e3055bcc3dd73f2b4cf86557173906782c4b5",
+      "size": "1889724",
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light.txt"
     },
     {
@@ -1101,8 +1101,8 @@
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-cryptocurrency"
     },
     {
-      "sha256": "bbafc8f5870c5e3062d3ca22225f55c06f730bf70eb099ebaeffcdf9d4d7a9ef",
-      "size": "2355",
+      "sha256": "d1fabfcdeb778a6943926a6b33938c6d6d84567d8db127cf35e160be35933a95",
+      "size": "2179",
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-emby"
     },
     {
