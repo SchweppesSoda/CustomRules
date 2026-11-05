@@ -294,6 +294,8 @@ def validate_airport_domain_source(
 
     if name not in AIRPORT_DOMAIN_SOURCE_NAMES:
         return
+    if not rules:
+        raise ValueError(f"{name}: {stage} domain inventory is empty")
     invalid = [rule.classical for rule in rules if rule.kind not in DOMAIN_TYPES]
     if invalid:
         preview = ", ".join(invalid[:3])
@@ -1101,13 +1103,14 @@ def enforce_baseline(output: Path, baseline: Path, allow_large_change: bool) -> 
             continue
         old = set(parse_list_rules(previous))
         new = set(parse_list_rules(current))
+        if relative.parent == Path("Surge") and current.stem in AIRPORT_DOMAIN_SOURCE_NAMES:
+            validate_airport_domain_source(current.stem, list(new), stage="publication")
+            continue
         if not old:
             continue
         reduction = max(0, len(old) - len(new)) / len(old)
         change = len(old.symmetric_difference(new)) / len(old)
-        airport_list = relative.parent == Path("Surge") and current.stem in AIRPORT_DOMAIN_SOURCE_NAMES
-        reduction_limit = 0.10 if airport_list else 0.05
-        if reduction > reduction_limit:
+        if reduction > 0.05:
             raise RuntimeError(f"Safety threshold: {relative} shrank by {reduction:.1%}")
         if change > 0.20:
             raise RuntimeError(f"Safety threshold: {relative} changed by {change:.1%}")

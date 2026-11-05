@@ -19,23 +19,32 @@ SPEC.loader.exec_module(build_rules)
 
 
 class BuildRulesTests(unittest.TestCase):
-    def test_airport_publication_reduction_limit(self) -> None:
-        rules = [f"DOMAIN,node{i}.example.com\n" for i in range(10)]
-        for name, keep, allowed in (
-            ("AirportServers", 9, True), ("AirportServersCTC", 9, True),
-            ("AirportServers", 8, False), ("MyDirect", 9, False),
-        ):
-            with self.subTest(name=name, keep=keep), tempfile.TemporaryDirectory() as directory:
+    def test_airport_publication_accepts_size_changes_and_rotation(self) -> None:
+        a, b = "DOMAIN,one.example\n", "DOMAIN,two.example\n"
+        for name in ("AirportServers", "AirportServersCTC"):
+            for old, new in (([a], [a, b]), ([a, b], [a]), ([a], [b])):
+                with self.subTest(name=name, old=old, new=new), tempfile.TemporaryDirectory() as directory:
+                    root = Path(directory)
+                    for target, entries in (("old", old), ("new", new)):
+                        path = root / target / "Surge" / f"{name}.list"
+                        path.parent.mkdir(parents=True)
+                        path.write_text("".join(entries), encoding="utf-8")
+                    build_rules.enforce_baseline(root / "new", root / "old", False)
+                    (root / "new" / "Surge" / f"{name}.list").write_text("")
+                    with self.assertRaisesRegex(ValueError, "empty"):
+                        build_rules.enforce_baseline(root / "new", root / "old", False)
+
+    def test_other_rules_keep_their_existing_change_guards(self) -> None:
+        rules = [f"DOMAIN,node{i}.example.com\n" for i in range(100)]
+        for new, error in ((rules[:94], "shrank"), (rules + [f"DOMAIN,new{i}.example.com\n" for i in range(21)], "changed")):
+            with self.subTest(error=error), tempfile.TemporaryDirectory() as directory:
                 root = Path(directory)
-                for target, entries in (("old", rules), ("new", rules[:keep])):
-                    path = root / target / "Surge" / f"{name}.list"
+                for target, entries in (("old", rules), ("new", new)):
+                    path = root / target / "Surge/MyDirect.list"
                     path.parent.mkdir(parents=True)
                     path.write_text("".join(entries), encoding="utf-8")
-                if allowed:
+                with self.assertRaisesRegex(RuntimeError, error):
                     build_rules.enforce_baseline(root / "new", root / "old", False)
-                else:
-                    with self.assertRaisesRegex(RuntimeError, "shrank"):
-                        build_rules.enforce_baseline(root / "new", root / "old", False)
 
     def test_manual_airport_sources_are_public_safe(self) -> None:
         sources = (

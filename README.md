@@ -218,7 +218,9 @@ deploying consumer URL changes.
   dynamic block. `oss.ctc.lol` is intentionally not pinned and may only be
   supplied dynamically. Both AirportServers sources are DNS-only and accept
   `DOMAIN`/`DOMAIN-SUFFIX` rules; their builder input and generated YAML/LIST
-  outputs reject IP-CIDR/IP-CIDR6 and other non-domain rules. IP rules remain
+  outputs reject empty inventories, IP-CIDR/IP-CIDR6 and other non-domain rules.
+  These two inventories have no percentage growth, replacement or shrink gate;
+  ordinary rule sets retain their separate baseline checks. IP rules remain
   valid in unrelated classical sources such as `MyDirect.yaml`. The private
   synchronizer emits every live hostname as a `DOMAIN-SUFFIX` for its
   registrable root using an offline Public Suffix List, including public and
