@@ -21,4 +21,5 @@ sources = [
   "Classical/China",
   "Policy/Classical/AsianTV",
   "Policy/Classical/CNMainlandTV",
+  "Policy/Classical/Steam",
 ]

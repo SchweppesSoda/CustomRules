@@ -171,7 +171,7 @@ validates candidate profiles, preserves source hashes, and owns client rollout.
 
 ### Egern rule partitions
 
-[`sources/rule-partitions.toml`](./sources/rule-partitions.toml) declares 17
+[`sources/rule-partitions.toml`](./sources/rule-partitions.toml) declares the
 Egern sources that also publish `NonIP/<source>` and `Address/<source>` under
 both `Surge/` (LIST) and `Mihomo/` (YAML). For example, the China LIST pair is
 `Surge/NonIP/Classical/China.list` and `Surge/Address/Classical/China.list`.

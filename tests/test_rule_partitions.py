@@ -44,6 +44,18 @@ class RulePartitionTests(unittest.TestCase):
         self.assertEqual(metadata["Address/Classical/A"], {
             "source": "Classical/A", "part": "address", "clients": ["Egern"]})
 
+    def test_registered_steam_partition_preserves_keyword_and_cidr(self):
+        contract = build.load_toml(build.SOURCES / "rule-partitions.toml")
+        self.assertIn("Policy/Classical/Steam", build.rule_partition_sources(contract))
+        original = [build.Rule("DOMAIN-SUFFIX", "steampowered.com"),
+                    build.Rule("DOMAIN-KEYWORD", "steamstore"),
+                    build.Rule("IP-CIDR", "103.10.124.0/23,no-resolve")]
+        sets = {"Policy/Classical/Steam": build.RuleSet(original, "classical")}
+        build.add_rule_partitions(sets, self.contract("Policy/Classical/Steam"))
+        self.assertEqual(sets["NonIP/Policy/Classical/Steam"].rules, original[:2])
+        self.assertEqual(sets["Address/Policy/Classical/Steam"].rules, original[2:])
+        self.assertEqual(sets["Policy/Classical/Steam"].rules, original)
+
     def test_sources_never_expand_into_each_other(self):
         a, b = build.Rule("DOMAIN-KEYWORD", "only-a"), build.Rule("DOMAIN-KEYWORD", "only-b")
         sets = {"Classical/A": build.RuleSet([a], "classical"),
@@ -104,11 +116,11 @@ class RulePartitionTests(unittest.TestCase):
             build.add_rule_partitions(sets, self.contract("Classical/A"))
         self.assertEqual(set(sets), {"Classical/A", "Address/Classical/A"})
 
-    def test_declared_scope_is_exactly_the_seventeen_reviewed_sources(self):
+    def test_declared_scope_is_exactly_the_reviewed_sources(self):
         expected = {"Classical/" + name for name in (
             "OpenAI", "Copilot", "Telegram", "YouTube", "Spotify", "Netflix", "Apple",
             "GlobalMedia", "BiliBili", "ChinaMedia", "GoogleFCM", "Google", "Proxy", "WeChat", "China")}
-        expected |= {"Policy/Classical/AsianTV", "Policy/Classical/CNMainlandTV"}
+        expected |= {"Policy/Classical/AsianTV", "Policy/Classical/CNMainlandTV", "Policy/Classical/Steam"}
         contract = build.load_toml(build.SOURCES / "rule-partitions.toml")
         self.assertEqual(set(build.rule_partition_sources(contract)), expected)
         upstream = build.load_toml(build.SOURCES / "upstreams.toml")["sets"]
