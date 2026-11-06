@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 77745,
-      "rules_sha256": "7259b5a3e2cfc2584917d4e024bd093529493989b01087362d073adab2c00b4e"
+      "rule_count": 87253,
+      "rules_sha256": "52aa72dc3b7d5e0441e6f98d430a23525d18799dc81136fc7d07acd0a4426050"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3699,8 +3699,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26754,
-      "rules_sha256": "b8ed3e3d2a107a22e62a7e20a88ec775cddaeb83dd22f52191135d45c3e2d8f9"
+      "rule_count": 26759,
+      "rules_sha256": "5af2d2f522432da1db8cb75685adaab1d796b9af4e2b2e72c7c7892edd2abd79"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4178,8 +4178,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 9662,
-      "rules_sha256": "0472c22e4dc90336786d81ae2a60ff0a6170a8466a8bd9df5b21384e2deddf3f"
+      "rule_count": 9647,
+      "rules_sha256": "c6e2d2b44d6de440efa024cb711f79b416b8978652230e5d6c446677e6c799e9"
     },
     "IP/Claude": {
       "behavior": "ipcidr",
@@ -4200,8 +4200,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 8559,
-      "rules_sha256": "4c88de2b6cb42e16ba17e04d612c0bc2f3b859f46aaaef26d1a19b85a19fe632"
+      "rule_count": 8426,
+      "rules_sha256": "a44eb64f2741dd3fb99d8ef40f2f6428df2cd77d67cdf9512bddf0c39c9f8c87"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -4245,8 +4245,8 @@
       ],
       "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 9922,
-      "rules_sha256": "e857525a9fc57e63ddb1d44f32974b239659cdaf43ade1afb46e0404b0618954"
+      "rule_count": 9816,
+      "rules_sha256": "e6f363f33b502fe51e82e5d9698b3ea7fab6a65cd2fe130c9329a2794c3d913e"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
@@ -4267,8 +4267,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 19,
-      "rules_sha256": "96ee410ba0372d94f4d56597a3ec18d2310d1938c03cea60bbd353d1d28bd55a"
+      "rule_count": 20,
+      "rules_sha256": "4f2d491014763a6d415c29035357e198db49d3670c350402fed0145e4ccc48ab"
     },
     "IP/YouTube": {
       "behavior": "ipcidr",
@@ -4599,8 +4599,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26654,
-      "rules_sha256": "37038c71a5a6224bcfec2ce6c91be404330fb89e0ee04a9d54a91e32a7396fb4"
+      "rule_count": 26659,
+      "rules_sha256": "b5c9c35b504cbd3bd17df73a798d4bc335641b749a89b765e03c39ed9d9aef8e"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -4968,8 +4968,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26620,
-      "rules_sha256": "0abe1747ba9ddf499e2245603f7f8ebfb330e7ccbb464fbe2875efc254613232"
+      "rule_count": 26625,
+      "rules_sha256": "971a325af38a51a74eb84bc0e894c06ad9e685b15ebea4501aa36063106c8ff5"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -4979,8 +4979,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26620,
-      "rules_sha256": "0abe1747ba9ddf499e2245603f7f8ebfb330e7ccbb464fbe2875efc254613232"
+      "rule_count": 26625,
+      "rules_sha256": "971a325af38a51a74eb84bc0e894c06ad9e685b15ebea4501aa36063106c8ff5"
     },
     "Scholar": {
       "behavior": "domain",
