@@ -316,6 +316,11 @@ It:
    measured against the current `auto-build` baseline;
 7. publishes only changed files without force-pushing.
 
+For an existing set, a pure addition of at most 10 rules bypasses the 20%
+total-change limit. This permits small manual additions even when the previous
+set contains only one or two rules. Changes that remove or replace rules retain
+the normal reduction and total-change checks; empty-source validation is unchanged.
+
 The published branch also contains `manifest.json`, `SOURCES.json`,
 `SHA256SUMS`, the Crypto candidate-review report, and the unsupported-upstream
 report. Checksum entries must be unique and well-formed. Windows checkout

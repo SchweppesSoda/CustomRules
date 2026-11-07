@@ -46,6 +46,26 @@ class BuildRulesTests(unittest.TestCase):
                 with self.assertRaisesRegex(RuntimeError, error):
                     build_rules.enforce_baseline(root / "new", root / "old", False)
 
+    def test_small_additions_do_not_trip_tiny_baseline_percentage(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for name in ("old", "new"):
+                (root / name / "Surge").mkdir(parents=True)
+            old = ["DOMAIN,one.example", "DOMAIN,two.example"]
+            (root / "old/Surge/MyProxy.list").write_text("\n".join(old) + "\n")
+            for count in (1, 10):
+                additions = [f"DOMAIN,new{i}.example" for i in range(count)]
+                (root / "new/Surge/MyProxy.list").write_text("\n".join(old + additions) + "\n")
+                build_rules.enforce_baseline(root / "new", root / "old", False)
+            additions = [f"DOMAIN,new{i}.example" for i in range(11)]
+            (root / "new/Surge/MyProxy.list").write_text("\n".join(old + additions) + "\n")
+            with self.assertRaisesRegex(RuntimeError, "changed"):
+                build_rules.enforce_baseline(root / "new", root / "old", False)
+            for replacement in ([old[0], "DOMAIN,replacement.example"], [old[0]], []):
+                (root / "new/Surge/MyProxy.list").write_text("\n".join(replacement) + "\n")
+                with self.assertRaisesRegex(RuntimeError, "changed|shrank"):
+                    build_rules.enforce_baseline(root / "new", root / "old", False)
+
     def test_manual_airport_sources_are_public_safe(self) -> None:
         sources = (
             ROOT / "sources" / "manual" / "AirportServers.yaml",
