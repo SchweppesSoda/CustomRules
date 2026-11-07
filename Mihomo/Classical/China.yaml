@@ -10064,6 +10064,7 @@ payload:
   - DOMAIN-SUFFIX,ai-daxue.com
   - DOMAIN-SUFFIX,ai-factory.com
   - DOMAIN-SUFFIX,ai-guardrail.com
+  - DOMAIN-SUFFIX,ai-indeed.com
   - DOMAIN-SUFFIX,ai-indestry.com
   - DOMAIN-SUFFIX,ai-kaleidoscope.com
   - DOMAIN-SUFFIX,ai-qingchang.com
@@ -11134,6 +11135,7 @@ payload:
   - DOMAIN-SUFFIX,allapp.link
   - DOMAIN-SUFFIX,allawnfs.com
   - DOMAIN-SUFFIX,allawno.com
+  - DOMAIN-SUFFIX,allawnofs.com
   - DOMAIN-SUFFIX,allawntech.com
   - DOMAIN-SUFFIX,allbrightlaw.com
   - DOMAIN-SUFFIX,allchips.com
@@ -78741,6 +78743,7 @@ payload:
   - DOMAIN-SUFFIX,senra.me
   - DOMAIN-SUFFIX,sense-hk.com
   - DOMAIN-SUFFIX,senseagro.com
+  - DOMAIN-SUFFIX,senseavatar.com
   - DOMAIN-SUFFIX,senselock.com
   - DOMAIN-SUFFIX,senseluxury.com
   - DOMAIN-SUFFIX,senser.group
@@ -80989,6 +80992,7 @@ payload:
   - DOMAIN-SUFFIX,shutu.cc
   - DOMAIN-SUFFIX,shutwin.com
   - DOMAIN-SUFFIX,shuwangxing.com
+  - DOMAIN-SUFFIX,shuwen.com
   - DOMAIN-SUFFIX,shuwenxianyun.com
   - DOMAIN-SUFFIX,shuwulou.com
   - DOMAIN-SUFFIX,shuxiangmuye.com
@@ -87649,6 +87653,7 @@ payload:
   - DOMAIN-SUFFIX,tidemedia.com
   - DOMAIN-SUFFIX,tidepharm.com
   - DOMAIN-SUFFIX,tidesec.com
+  - DOMAIN-SUFFIX,tidesight.com
   - DOMAIN-SUFFIX,tideswing.fun
   - DOMAIN-SUFFIX,tidi.mobi
   - DOMAIN-SUFFIX,tiduyun.com
@@ -90698,6 +90703,7 @@ payload:
   - DOMAIN-SUFFIX,upsapp.com
   - DOMAIN-SUFFIX,upseller.com
   - DOMAIN-SUFFIX,upskyshanghai.com
+  - DOMAIN-SUFFIX,upsort.com
   - DOMAIN-SUFFIX,upst86.com
   - DOMAIN-SUFFIX,uptom.com
   - DOMAIN-SUFFIX,uptougu.com
@@ -103403,7 +103409,6 @@ payload:
   - DOMAIN-SUFFIX,youku.org
   - DOMAIN-SUFFIX,youkua.net
   - DOMAIN-SUFFIX,youkud.com
-  - DOMAIN-SUFFIX,youkuhonor.com
   - DOMAIN-SUFFIX,youkupic.com
   - DOMAIN-SUFFIX,youkuyouku.pro
   - DOMAIN-SUFFIX,youlai.tech

@@ -38,6 +38,7 @@ payload:
   - +.bjd.com.cn
   - +.bjnews.com.cn
   - +.bkeconomy.com
+  - +.bowangcaijing.cn
   - +.btime.com
   - +.caijing.com.cn
   - +.cailianpress.com
@@ -47,6 +48,7 @@ payload:
   - +.ccidcom.com
   - +.ccn.com.cn
   - +.ccreports.com.cn
+  - +.cctime.com
   - +.cctv.cn
   - +.cctv.com
   - +.cctv4g.com
@@ -91,9 +93,11 @@ payload:
   - +.cneo.com.cn
   - +.cnfol.com
   - +.cnfolimg.com
+  - +.cnfood.cn
   - +.cnhubei.com
   - +.cnmo.com
   - +.cnms.net.cn
+  - +.cnpharm.com
   - +.cnr.cn
   - +.cns.com.cn
   - +.cnsimg.net
@@ -128,6 +132,7 @@ payload:
   - +.danjuanfunds.com
   - +.datasheet5.com
   - +.dayoo.com
+  - +.dbw.cn
   - +.dgtle.com
   - +.dianzhenkeji.com
   - +.dili360.com
@@ -157,6 +162,7 @@ payload:
   - +.fromgeek.com
   - +.geekbang.org
   - +.geekpark.net
+  - +.gelonghui.com
   - +.gfan.com
   - +.gjgbdszt.cn
   - +.gjgbdszt.com.cn
@@ -175,6 +181,8 @@ payload:
   - +.gxxw.com
   - +.gztv.com
   - +.haowenti.net
+  - +.hebnews.cn
+  - +.hebrb.cn
   - +.heimadata.com
   - +.hexin.cn
   - +.hexin.com.cn
@@ -192,6 +200,7 @@ payload:
   - +.huxiu.com
   - +.huxiucdn.com
   - +.hxnews.com
+  - +.iceo.com.cn
   - +.icntvcdn.com
   - +.icpcw.com
   - +.icswb.com
@@ -222,6 +231,7 @@ payload:
   - +.it168.com
   - +.itc.cn
   - +.ithome.com
+  - +.jcrb.com
   - +.jfdaily.com
   - +.jfdaily.com.cn
   - +.jianyuweb.com
@@ -264,6 +274,7 @@ payload:
   - +.lifeweek.com.cn
   - +.livechina.cn
   - +.livechina.com
+  - +.mcndata.cn
   - +.miercn.com
   - +.minapp.com
   - +.mnw.cn
@@ -275,6 +286,7 @@ payload:
   - +.nbd.com.cn
   - +.neweekly.com.cn
   - +.news.cn
+  - +.newscdn.cn
   - +.newsimg.cn
   - +.newssc.org
   - +.nfpeople.com
@@ -298,6 +310,7 @@ payload:
   - +.phoenixcenter.cn
   - +.pingwest.com
   - +.playcool.com
+  - +.przwt.com
   - +.qbitai.com
   - +.qianlong.com
   - +.qianzhan.com
@@ -315,6 +328,7 @@ payload:
   - +.scgchc.com
   - +.sciencenet.cn
   - +.scol.com.cn
+  - +.scpublic.cn
   - +.scsjb.cn
   - +.sctv-tf.com
   - +.sctv.com
@@ -325,6 +339,7 @@ payload:
   - +.shedunews.net
   - +.shobserver.cn
   - +.shobserver.com
+  - +.shuwen.com
   - +.snowballsecurities.com
   - +.snxw.com
   - +.sohu
@@ -355,6 +370,7 @@ payload:
   - +.thsi.cn
   - +.tianjimedia.com
   - +.tidenews.com.cn
+  - +.tidesight.com
   - +.tigeek.net.cn
   - +.time-weekly.com
   - +.timesmedia.com.cn
@@ -364,8 +380,10 @@ payload:
   - +.tmtsmartrun.com
   - +.toodaylab.com
   - +.topnews.cn
+  - +.traveldaily.cn
   - +.tvcc.cn
   - +.tvcc.com.cn
+  - +.upsort.com
   - +.vbdata.cn
   - +.vcbeat.top
   - +.voc.com.cn
@@ -382,6 +400,7 @@ payload:
   - +.xilu.com
   - +.xinhuanet.com
   - +.xinhuaxmt.com
+  - +.xinhuazhiyun.com
   - +.xinmeng.info
   - +.xinmin.cn
   - +.xinminweekly.com.cn
@@ -415,6 +434,7 @@ payload:
   - +.zgjtb.com
   - +.zhichanli.com
   - +.zhiding.cn
+  - +.zhiguf.com
   - +.zjol.com.cn
   - +.zjstv.com
   - +.zol-img.com.cn

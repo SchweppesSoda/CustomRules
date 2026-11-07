@@ -172,7 +172,6 @@ payload:
   - +.ihappystudio.com
   - +.imqq.com
   - +.imweb.io
-  - +.in.th
   - +.intltencentcos.com
   - +.iot-tencent.com
   - +.isd.com
@@ -199,6 +198,7 @@ payload:
   - +.kugouyouth.com
   - +.kuwo.cn
   - +.labycore.cn
+  - +.levelinfinite.com
   - +.lrts.me
   - +.ludosuperstar.cn
   - +.ludoworld.net
@@ -225,6 +225,7 @@ payload:
   - +.nagcloudcs.com
   - +.nextstudios.com
   - +.nextworkshop.net
+  - +.nikke-en.com
   - +.onexmail.com
   - +.openapp.run
   - +.openmidas.com
@@ -445,6 +446,7 @@ payload:
   - +.tencentdms.com
   - +.tencenteiam.com
   - +.tencentelasticsearch.com
+  - +.tencentgames.com
   - +.tencentid.com
   - +.tencentidentity.com
   - +.tencentmiying.com

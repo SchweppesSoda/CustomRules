@@ -3,3 +3,4 @@
 payload:
   - DOMAIN-SUFFIX,linkedin.cn
   - DOMAIN-SUFFIX,djhdhs.us
+  - DOMAIN,services.googleapis.cn

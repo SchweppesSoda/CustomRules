@@ -2,5 +2,6 @@
 # Rule set: ApplePush
 payload:
   - +.apple.com.edgekey.net
+  - +.courier-push-apple.com.akadns.net
   - +.push-apple.com.akadns.net
   - +.push.apple.com

@@ -2671,8 +2671,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 120,
-      "rules_sha256": "8cd09d47cb16c0c80944d67a0bbd559f5a0d22594dd2a82efcb30f4810c1fba8"
+      "rule_count": 128,
+      "rules_sha256": "03f05bd820e3af771d2ec879aa133762ce387117acd1fd2e3ef55ac96ccee5fa"
     },
     "AIGlobal": {
       "behavior": "domain",
@@ -2704,8 +2704,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 900,
-      "rules_sha256": "ffb8ee3c4e84e62055b9cfcd6c5d3202e72469fb4c484c677ee67fc507f6c048"
+      "rule_count": 904,
+      "rules_sha256": "e1329cb43410263f03dbc5d576d2e9c0d50f66f91eb678b6ac4d8630019268a0"
     },
     "AdBlockLite": {
       "behavior": "domain",
@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 87253,
-      "rules_sha256": "52aa72dc3b7d5e0441e6f98d430a23525d18799dc81136fc7d07acd0a4426050"
+      "rule_count": 115159,
+      "rules_sha256": "32d7ca5991570bcdca489e2d1d4ff3ce71f5d69e0e3f21b98ffb8ae118c1b326"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3053,8 +3053,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 297,
-      "rules_sha256": "0de2469d494440a2e96c7a2907df935cbca53337f7c5fcef8bddc5e01e860951"
+      "rule_count": 298,
+      "rules_sha256": "18f531b5aa74726c9116f482fe9ff5a586277d7b556c050839c7a8a4d34e9f58"
     },
     "AppleIntelligence": {
       "behavior": "domain",
@@ -3086,8 +3086,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 3,
-      "rules_sha256": "8ba5d2e9937047a8d876af7b598399f60f5f82c1e9566b5e016d65ac616f8f8c"
+      "rule_count": 4,
+      "rules_sha256": "27421a55cfc4ab29085bf41838ed838d84d61962c878596d47c5f43011ebb8b0"
     },
     "AppleTV": {
       "behavior": "domain",
@@ -3241,8 +3241,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 110211,
-      "rules_sha256": "ad044ec7016c5077cffa2ee5f013db11abce65c5482c7b8ee25e1754dc7d506c"
+      "rule_count": 110216,
+      "rules_sha256": "10f151f94e640774e381e48c93aedce6a2397e6dd303de717d1a290237878b56"
     },
     "ChinaMedia": {
       "behavior": "domain",
@@ -3252,8 +3252,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 421,
-      "rules_sha256": "3a99afade8aa396cd0ff62c7050a66cf480126a13d8e8f6a7ab0df213c632811"
+      "rule_count": 441,
+      "rules_sha256": "a0eea37c40b658a494650294c6af7ccac33ee48c7c6bfde600364c0cbd65d8dc"
     },
     "Classical/ABC": {
       "behavior": "classical",
@@ -3366,8 +3366,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 110272,
-      "rules_sha256": "5613e5cac7b495d6757de39017f47a7983ee5844fa23c28e5c1d26edaa5ee9d0"
+      "rule_count": 110277,
+      "rules_sha256": "8a64313db39f0bf75c3e4d1b97a71e14250a9890e534a9afa5cccdca450566dc"
     },
     "Classical/ChinaASN": {
       "behavior": "classical",
@@ -3384,8 +3384,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 542,
-      "rules_sha256": "6df25e5b1fdb8f6b2ab24fa5890508ce61040bf5811a886f7444db46bc424aed"
+      "rule_count": 562,
+      "rules_sha256": "33ec12b28be3574cd0b6433189899d9f7b9f6de4c23ec146ef5d2a1fe5308828"
     },
     "Classical/Claude": {
       "behavior": "classical",
@@ -3737,8 +3737,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 110,
-      "rules_sha256": "c2cbfa238ac57c6c369c5d07a9fa81c2add83ed797d9fe3bd3aecfaa922a9417"
+      "rule_count": 118,
+      "rules_sha256": "f31b443a0d6a21e93d80a214c2fd08bb9c067a7dd5741907940fefe3fc24d999"
     },
     "Classical/Speedtest": {
       "behavior": "classical",
@@ -4057,8 +4057,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 5413,
-      "rules_sha256": "1fcbdd7d5a8ce2263f21b8c073a64d1fcb6e9e9f7208682d95053ce2701c5bc0"
+      "rule_count": 5419,
+      "rules_sha256": "2dd596256de4971bb94a806fe9324342f2dcc0de10f7113e51ecb79f0cf689ee"
     },
     "GitHub": {
       "behavior": "domain",
@@ -4388,8 +4388,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 2,
-      "rules_sha256": "69e8990a09b72d3d64952f7f5eabd594f356e01610f4d96ae63d82d25a54c6dd"
+      "rule_count": 3,
+      "rules_sha256": "d348c070a527aada1639e45f62c4a6df3f1d0af98cd8be1a3214a622587a0cdb"
     },
     "NetEase": {
       "behavior": "domain",
@@ -4399,8 +4399,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 42,
-      "rules_sha256": "3743a7c53a7ca629b38355f25d35d93c50a7bc256c96017f66ad683d4b573c9e"
+      "rule_count": 43,
+      "rules_sha256": "9d5e5a3e57a3e44cda631108416bd117732057e711b9a3f04310cd76256d9fa4"
     },
     "Netflix": {
       "behavior": "domain",
@@ -4469,8 +4469,8 @@
         "part": "non_ip",
         "source": "Classical/China"
       },
-      "rule_count": 110251,
-      "rules_sha256": "357f5a1122c5f9252742fc072818c143437dca73a50c36ec943cc929877fcfaf"
+      "rule_count": 110256,
+      "rules_sha256": "44f3ebc1df08cc57096fa0705d1720403863704bd4acc4fcc73fb95e991f4090"
     },
     "NonIP/Classical/ChinaMedia": {
       "behavior": "classical",
@@ -4485,8 +4485,8 @@
         "part": "non_ip",
         "source": "Classical/ChinaMedia"
       },
-      "rule_count": 458,
-      "rules_sha256": "2cc25a70b473d394cc7ce9e6460cebf8cc71ac0b31b4e17d40d23384171ceb00"
+      "rule_count": 478,
+      "rules_sha256": "c55f40efefccffdce2b0d1dc6b842611ec16e5061e821043e57ce7150e5ce714"
     },
     "NonIP/Classical/Copilot": {
       "behavior": "classical",
@@ -5100,8 +5100,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 555,
-      "rules_sha256": "4420a73498fbf53e3dd256e2a490c6cbaffb4cbf0b2153950584233eb2af66b6"
+      "rule_count": 557,
+      "rules_sha256": "f1dde26542b26dde2a34a6d279ca5d0a25701fde62e71c293c8b4f6af9a1540d"
     },
     "TikTok": {
       "behavior": "classical",
@@ -5214,5 +5214,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "e4b769c22f343553a989e4542c129539bdc7e583"
+  "source_commit": "aa7e0ac41f4d2f29d8ac13b93a2eb05949e207f0"
 }
