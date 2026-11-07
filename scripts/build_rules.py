@@ -1109,7 +1109,10 @@ def enforce_baseline(output: Path, baseline: Path, allow_large_change: bool) -> 
         reduction_limit = 0.10 if airport_list else 0.05
         if reduction > reduction_limit:
             raise RuntimeError(f"Safety threshold: {relative} shrank by {reduction:.1%}")
-        if change > 0.20:
+        # A small additive patch must not fail only because its baseline is tiny.
+        # Keep shrink/replacement checks unchanged; this exception removes no rules.
+        small_addition_only = not (old - new) and len(new - old) <= 10
+        if change > 0.20 and not small_addition_only:
             raise RuntimeError(f"Safety threshold: {relative} changed by {change:.1%}")
 
 
