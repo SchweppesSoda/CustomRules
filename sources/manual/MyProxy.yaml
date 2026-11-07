@@ -4,3 +4,6 @@ payload:
 
   # > djhdhs.us
   - DOMAIN-SUFFIX,djhdhs.us
+
+  # > Google Play
+  - DOMAIN,services.googleapis.cn
