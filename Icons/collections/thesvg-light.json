@@ -342,6 +342,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e3/e31c0cb3753c817bb0b5b2dd673331dd7f45491f41b1be242a17c953f5171298.svg"
     },
     {
+      "name": "Lumin",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/10/109bc01dcbc61a002c9323ae83629ce381e7105b1dea2eeacd8b407d50d3b1b7.svg"
+    },
+    {
       "name": "Manus",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/db/db3a1852c7be2b3e5773e8828f846c8938fbcfafcc9f9ec0df1734120f77a9b4.svg"
     },
@@ -804,6 +808,10 @@
     {
       "name": "WakaTime",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a6/a61d1f89a1489f00bbe7516ea7c9aa0292d64a72aa4e4b3b1bef867b4977b2f4.svg"
+    },
+    {
+      "name": "Warden",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/3d/3decffa4480f9cf6aa2f52885db327ffbc030ccf6cb726654cb48a8b62173ff4.svg"
     },
     {
       "name": "WebGL",

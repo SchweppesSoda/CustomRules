@@ -74,6 +74,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4b/4b4eb272562ad0043242e74ed6a5eb5344ae2f785c96bed20f3a1917b2e40e5c.svg"
     },
     {
+      "name": "Backrest",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1f/1f22f299194f84da9c4661c839bef8c48047c4478e4a760ea9ef3b3c5382d4e8.svg"
+    },
+    {
       "name": "Base UI",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d2/d278dc6d5b0eb86cea9c48043e9a39b29ab20631b4a7f66f0c584c27a66662e6.svg"
     },
@@ -232,6 +236,10 @@
     {
       "name": "Express.js",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ef/efd960856d23e75f865ebbd8df1a28e50ecf5887900f4a10f7b733ce401f0074.svg"
+    },
+    {
+      "name": "Fans",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/59/59306522931743cbc1a3777d92df963c7b33f867a8e3fc6075d36154e2bec004.svg"
     },
     {
       "name": "Fastify",
@@ -440,6 +448,10 @@
     {
       "name": "Lume",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ed/edd4797e0fe5df2701feb13282a8db9684abef025f7a0f240f69359100438f40.svg"
+    },
+    {
+      "name": "Lumin",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a2/a2a2d238f50810e2c31f21cd994cc4b0631e11d54b24469368e566524bb1d79c.svg"
     },
     {
       "name": "Manus",
@@ -826,6 +838,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fe/fe5b3436741cd48e943ab3d3190af5cfc9867d4707f476a8ca582143d567a9b3.svg"
     },
     {
+      "name": "The Lounge",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ed/edeec104bea65cb7b40a3fd535526a1aa664b59f80bc757b8e3ee263cfe133ea.svg"
+    },
+    {
       "name": "theAuth",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4e/4ee66e98a0659126f7cf8b7245c49147cb9d0d207af5f5ce41fd9c99d04b6461.svg"
     },
@@ -944,6 +960,10 @@
     {
       "name": "WakaTime",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8e/8e5aea8460a3ed995b96741529742f6c6719ec318a5707c45bbe8c93f8f96f31.svg"
+    },
+    {
+      "name": "Warden",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/38/38057fe998c2129e614a4ef393929f8519123218ae1d3eba547d44c4b6327a8e.svg"
     },
     {
       "name": "Web Check",
