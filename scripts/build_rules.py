@@ -1093,30 +1093,77 @@ def validate_region_exclusivity(regions: dict[str, list[Rule]]) -> None:
                         )
 
 
-def enforce_baseline(output: Path, baseline: Path, allow_large_change: bool) -> None:
-    if allow_large_change or not baseline.exists():
-        return
-    for current in sorted((output / "Surge").rglob("*.list")):
-        relative = current.relative_to(output)
-        previous = baseline / relative
-        if not previous.exists():
-            continue
-        old = set(parse_list_rules(previous))
-        new = set(parse_list_rules(current))
-        if relative.parent == Path("Surge") and current.stem in AIRPORT_DOMAIN_SOURCE_NAMES:
-            validate_airport_domain_source(current.stem, list(new), stage="publication")
-            continue
-        if not old:
-            continue
-        reduction = max(0, len(old) - len(new)) / len(old)
-        change = len(old.symmetric_difference(new)) / len(old)
-        if reduction > 0.05:
-            raise RuntimeError(f"Safety threshold: {relative} shrank by {reduction:.1%}")
-        # A small additive patch must not fail only because its baseline is tiny.
-        # Keep shrink/replacement checks unchanged; this exception removes no rules.
-        small_addition_only = not (old - new) and len(new - old) <= 10
-        if change > 0.20 and not small_addition_only:
-            raise RuntimeError(f"Safety threshold: {relative} changed by {change:.1%}")
+def report_baseline_changes(output: Path, baseline: Path | None) -> dict[str, object]:
+    """Report size changes without treating percentages as data validity checks."""
+    if baseline is not None and not (baseline / "Surge").is_dir():
+        raise ValueError("Explicit baseline has no Surge rule inventory")
+    manifest_path = output / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
+    current_files = {p.relative_to(output).as_posix(): p for p in (output / "Surge").rglob("*.list")}
+    previous_files = ({p.relative_to(baseline).as_posix(): p for p in (baseline / "Surge").rglob("*.list")}
+                      if baseline is not None else {})
+    records: dict[str, object] = {}
+    summary = [
+        "# Rule changes", "",
+        "Percentages are advisory. Source, semantic, compiler and consistency checks remain mandatory.", "",
+        "Coverage below only checks DOMAIN/DOMAIN-SUFFIX removals against current suffix rules;",
+        "it does not establish IP, wildcard, process or cross-set routing equivalence.", "",
+        "| Set | Previous | Current | Added | Removed | Removed covered by suffix | Shrink | Change | Notice |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+    ]
+    for relative in sorted(current_files.keys() | previous_files.keys()):
+        current, previous = current_files.get(relative), previous_files.get(relative)
+        old = set(parse_list_rules(previous)) if previous else set()
+        new = set(parse_list_rules(current)) if current else set()
+        name = relative.removeprefix("Surge/").removesuffix(".list")
+        if current:
+            info = manifest.get("sets", {}).get(name, {})
+            if not new and "partition" not in info:
+                raise ValueError(f"{name}: non-partition output is empty")
+            validate_airport_domain_source(name, list(new), stage="publication")
+        added, removed = new - old, old - new
+        reduction = max(0, len(old) - len(new)) / len(old) if old else None
+        change = len(added | removed) / len(old) if old else None
+        notices = []
+        if reduction is not None and reduction > 0.05:
+            notices.append(f"shrank by {reduction:.1%}")
+        if change is not None and change > 0.20:
+            notices.append(f"changed by {change:.1%}")
+        suffixes = {r.value for r in new if r.kind == "DOMAIN-SUFFIX"}
+        covered = {}
+        for rule in sorted(removed):
+            if rule.kind not in DOMAIN_TYPES:
+                continue
+            labels = rule.value.split(".")
+            parent = next((".".join(labels[i:]) for i in range(len(labels))
+                           if ".".join(labels[i:]) in suffixes), None)
+            if parent is not None:
+                covered[rule.classical] = f"DOMAIN-SUFFIX,{parent}"
+        records[name] = {
+            "status": "added-set" if previous is None else "removed-set" if current is None else "existing",
+            "old_count": len(old), "new_count": len(new),
+            "added": [r.classical for r in sorted(added)],
+            "removed": [r.classical for r in sorted(removed)],
+            "removed_covered_by_suffix": covered,
+            "shrink_ratio": reduction, "change_ratio": change, "notices": notices,
+        }
+        if added or removed:
+            shrink_text = f"{reduction:.1%}" if reduction is not None else "n/a"
+            change_text = f"{change:.1%}" if change is not None else "n/a"
+            summary.append(f"| {name} | {len(old)} | {len(new)} | {len(added)} | {len(removed)} | "
+                           f"{len(covered)} | {shrink_text} | {change_text} | {'; '.join(notices) or '-'} |")
+        if notices:
+            message = f"{relative}: {'; '.join(notices)}; +{len(added)}/-{len(removed)}. See reports/Rule-Changes.json."
+            if os.environ.get("GITHUB_ACTIONS") == "true":
+                message = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+                print(f"::warning title=Rule change notice::{message}")
+            else:
+                print(f"WARNING: {message}")
+    report = {"schema": 1, "baseline_available": baseline is not None,
+              "warning_thresholds": {"shrink_ratio": 0.05, "change_ratio": 0.20}, "sets": records}
+    write_text(output / "reports/Rule-Changes.json", json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
+    write_text(output / "reports/Rule-Changes.md", "\n".join(summary) + "\n")
+    return report
 
 
 def compile_mrs(mihomo: Path, source: Path, target: Path, behavior: str) -> None:
@@ -1235,7 +1282,8 @@ def main() -> None:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--mihomo", type=Path, required=True)
     parser.add_argument("--baseline", type=Path)
-    parser.add_argument("--allow-large-change", action="store_true")
+    parser.add_argument("--allow-large-change", action="store_true",
+                        help="Deprecated compatibility option; warnings and validation are always enabled")
     parser.add_argument("--source-commit", default=os.environ.get("GITHUB_SHA", "working-tree"))
     parser.add_argument("--source-cache", type=Path, help="Fresh per-build input snapshot; reuse only for replay")
     parser.add_argument("--offline", action="store_true", help="Replay only the existing input snapshot")
@@ -1466,8 +1514,7 @@ def main() -> None:
         "*.mrs binary\n",
     )
 
-    if args.baseline:
-        enforce_baseline(args.output, args.baseline, args.allow_large_change)
+    report_baseline_changes(args.output, args.baseline)
 
     checksum_files = [
         path for path in args.output.rglob("*") if path.is_file() and path.name != "SHA256SUMS"

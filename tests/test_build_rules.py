@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+import contextlib
 import importlib.util
+import io
+import json
 import re
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,52 +23,94 @@ SPEC.loader.exec_module(build_rules)
 
 
 class BuildRulesTests(unittest.TestCase):
-    def test_airport_publication_accepts_size_changes_and_rotation(self) -> None:
-        a, b = "DOMAIN,one.example\n", "DOMAIN,two.example\n"
-        for name in ("AirportServers", "AirportServersCTC"):
-            for old, new in (([a], [a, b]), ([a, b], [a]), ([a], [b])):
-                with self.subTest(name=name, old=old, new=new), tempfile.TemporaryDirectory() as directory:
-                    root = Path(directory)
-                    for target, entries in (("old", old), ("new", new)):
-                        path = root / target / "Surge" / f"{name}.list"
-                        path.parent.mkdir(parents=True)
-                        path.write_text("".join(entries), encoding="utf-8")
-                    build_rules.enforce_baseline(root / "new", root / "old", False)
-                    (root / "new" / "Surge" / f"{name}.list").write_text("")
-                    with self.assertRaisesRegex(ValueError, "empty"):
-                        build_rules.enforce_baseline(root / "new", root / "old", False)
-
-    def test_other_rules_keep_their_existing_change_guards(self) -> None:
+    def test_baseline_changes_warn_without_blocking_and_keep_full_diffs(self) -> None:
         rules = [f"DOMAIN,node{i}.example.com\n" for i in range(100)]
-        for new, error in ((rules[:94], "shrank"), (rules + [f"DOMAIN,new{i}.example.com\n" for i in range(21)], "changed")):
-            with self.subTest(error=error), tempfile.TemporaryDirectory() as directory:
+        cases = [(rules[:94], "shrank", 0, 6),
+                 (rules + [f"DOMAIN,new{i}.example.com\n" for i in range(21)], "changed", 21, 0),
+                 (rules[:95], "", 0, 5),
+                 (rules + [f"DOMAIN,new{i}.example.com\n" for i in range(20)], "", 20, 0)]
+        for new, notice, added, removed in cases:
+            with self.subTest(notice=notice, added=added, removed=removed), tempfile.TemporaryDirectory() as directory:
                 root = Path(directory)
                 for target, entries in (("old", rules), ("new", new)):
                     path = root / target / "Surge/MyDirect.list"
                     path.parent.mkdir(parents=True)
                     path.write_text("".join(entries), encoding="utf-8")
-                with self.assertRaisesRegex(RuntimeError, error):
-                    build_rules.enforce_baseline(root / "new", root / "old", False)
+                log = io.StringIO()
+                with contextlib.redirect_stdout(log), patch.dict(build_rules.os.environ, {"GITHUB_ACTIONS": "true"}):
+                    report = build_rules.report_baseline_changes(root / "new", root / "old")
+                record = report["sets"]["MyDirect"]
+                self.assertEqual(len(record["added"]), added)
+                self.assertEqual(len(record["removed"]), removed)
+                self.assertEqual(record["new_count"], len(new))
+                if notice:
+                    self.assertIn(notice, log.getvalue())
+                    self.assertIn("::warning title=Rule change notice::", log.getvalue())
+                else:
+                    self.assertEqual(log.getvalue(), "")
+                path = root / "new/reports/Rule-Changes.json"
+                self.assertEqual(json.loads(path.read_text()), report)
+                first = path.read_bytes()
+                with contextlib.redirect_stdout(io.StringIO()):
+                    build_rules.report_baseline_changes(root / "new", root / "old")
+                self.assertEqual(path.read_bytes(), first)
 
-    def test_small_additions_do_not_trip_tiny_baseline_percentage(self) -> None:
+    def test_change_report_distinguishes_suffix_coverage_and_whole_set_changes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            for name in ("old", "new"):
-                (root / name / "Surge").mkdir(parents=True)
-            old = ["DOMAIN,one.example", "DOMAIN,two.example"]
-            (root / "old/Surge/MyProxy.list").write_text("\n".join(old) + "\n")
-            for count in (1, 10):
-                additions = [f"DOMAIN,new{i}.example" for i in range(count)]
-                (root / "new/Surge/MyProxy.list").write_text("\n".join(old + additions) + "\n")
-                build_rules.enforce_baseline(root / "new", root / "old", False)
-            additions = [f"DOMAIN,new{i}.example" for i in range(11)]
-            (root / "new/Surge/MyProxy.list").write_text("\n".join(old + additions) + "\n")
-            with self.assertRaisesRegex(RuntimeError, "changed"):
-                build_rules.enforce_baseline(root / "new", root / "old", False)
-            for replacement in ([old[0], "DOMAIN,replacement.example"], [old[0]], []):
-                (root / "new/Surge/MyProxy.list").write_text("\n".join(replacement) + "\n")
-                with self.assertRaisesRegex(RuntimeError, "changed|shrank"):
-                    build_rules.enforce_baseline(root / "new", root / "old", False)
+            for target in ("old", "new"):
+                (root / target / "Surge").mkdir(parents=True)
+            (root / "old/Surge/Example.list").write_text(
+                "DOMAIN,a.example.com\nDOMAIN-SUFFIX,b.example.com\n"
+                "DOMAIN,badexample.com\nIP-CIDR,192.0.2.0/24,no-resolve\n")
+            (root / "new/Surge/Example.list").write_text("DOMAIN-SUFFIX,example.com\n")
+            (root / "old/Surge/Retired.list").write_text("DOMAIN,retired.example\n")
+            (root / "new/Surge/New.list").write_text("DOMAIN,new.example\n")
+            with contextlib.redirect_stdout(io.StringIO()):
+                report = build_rules.report_baseline_changes(root / "new", root / "old")
+            record = report["sets"]["Example"]
+            self.assertEqual(record["removed_covered_by_suffix"], {
+                "DOMAIN,a.example.com": "DOMAIN-SUFFIX,example.com",
+                "DOMAIN-SUFFIX,b.example.com": "DOMAIN-SUFFIX,example.com"})
+            self.assertEqual(len(record["removed"]), 4)
+            self.assertEqual(report["sets"]["Retired"]["status"], "removed-set")
+            self.assertEqual(report["sets"]["New"]["status"], "added-set")
+            self.assertIsNone(report["sets"]["New"]["change_ratio"])
+
+    def test_report_preserves_empty_source_type_and_missing_baseline_failures(self) -> None:
+        for name in ("MyDirect", "AirportServers", "AirportServersCTC"):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                for target in ("old", "new"):
+                    path = root / target / "Surge" / f"{name}.list"
+                    path.parent.mkdir(parents=True)
+                    path.write_text("DOMAIN,one.example\n")
+                current = root / "new/Surge" / f"{name}.list"
+                current.write_text("")
+                with self.assertRaisesRegex(ValueError, "empty"):
+                    build_rules.report_baseline_changes(root / "new", root / "old")
+                current.write_text("not a rule\n")
+                with self.assertRaisesRegex(ValueError, "Unsupported"):
+                    build_rules.report_baseline_changes(root / "new", root / "old")
+                current.write_text("DOMAIN,one.example\n")
+                with self.assertRaisesRegex(ValueError, "baseline"):
+                    build_rules.report_baseline_changes(root / "new", root / "missing")
+                if name.startswith("Airport"):
+                    current.write_text("IP-CIDR,192.0.2.0/24\n")
+                    with self.assertRaisesRegex(ValueError, "DOMAIN"):
+                        build_rules.report_baseline_changes(root / "new", root / "old")
+
+    def test_declared_empty_partition_and_first_build_are_allowed(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "Surge/Address/Example.list"
+            path.parent.mkdir(parents=True)
+            path.write_text("# empty address partition\n")
+            (root / "manifest.json").write_text(json.dumps({"sets": {
+                "Address/Example": {"partition": {"source": "Example", "type": "address"}}}}))
+            report = build_rules.report_baseline_changes(root, None)
+            self.assertFalse(report["baseline_available"])
+            self.assertEqual(report["sets"]["Address/Example"]["new_count"], 0)
 
     def test_manual_airport_sources_are_public_safe(self) -> None:
         sources = (

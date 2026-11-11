@@ -25,7 +25,8 @@ PUBLIC_RAW_REPOS = {
     "blackmatrix7/ios_rule_script", "dler-io/Rules",
     "hagezi/dns-blocklists", "v2fly/domain-list-community",
 }
-METADATA_FILES = {"manifest.json", "SOURCES.json", "SHA256SUMS"}
+METADATA_FILES = {"manifest.json", "SOURCES.json", "SHA256SUMS",
+                  "reports/Rule-Changes.json", "reports/Rule-Changes.md"}
 
 
 def digest(body: bytes) -> str:

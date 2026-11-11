@@ -88,7 +88,7 @@ class BuildEvidenceTests(unittest.TestCase):
             output.parent.mkdir(parents=True)
             output.write_text(builder.render_list("AdBlockLite", rules), encoding="utf-8")
             try:
-                builder.enforce_baseline(destination / "output", destination / "baseline", False)
+                builder.report_baseline_changes(destination / "output", destination / "baseline")
             except RuntimeError as error:
                 return output.read_bytes(), str(error)
             return output.read_bytes(), "passed"
@@ -121,16 +121,20 @@ class BuildEvidenceTests(unittest.TestCase):
             self.capture(compiler_platform="windows_amd64")
         self.assertFalse(self.archive.exists())
 
-    def test_threshold_failure_keeps_pre_manifest_inputs_and_replays_failure(self):
+    def test_large_change_replays_as_notice_and_reports_are_preserved(self):
         self.write_baseline(self.rules + [builder.Rule("DOMAIN-SUFFIX", "old.example")])
-        self.capture("failure")
-        self.assertFalse((self.archive / "candidate/SOURCES.json").exists())
+        path = self.candidate / "Surge/AdBlockLite.list"
+        path.parent.mkdir(parents=True)
+        path.write_text(builder.render_list("AdBlockLite", self.rules), encoding="utf-8")
+        builder.report_baseline_changes(self.candidate, self.baseline)
+        metadata = self.capture()
+        self.assertIn("candidate/reports/Rule-Changes.json", metadata["files"])
         first, second = self.replay("first"), self.replay("second")
         self.assertEqual(first, second)
-        self.assertIn("Safety threshold", first[1])
-        self.assertIn("33.3%", first[1])
-        # The original explicit override contract remains unchanged.
-        builder.enforce_baseline(self.root / "first/output", self.root / "first/baseline", True)
+        self.assertEqual(first[1], "passed")
+        report = json.loads((self.root / "first/output/reports/Rule-Changes.json").read_text())
+        self.assertEqual(report["sets"]["AdBlockLite"]["removed"], ["DOMAIN-SUFFIX,old.example"])
+        self.assertIn("shrank by 33.3%", report["sets"]["AdBlockLite"]["notices"])
 
     def test_parser_failure_has_journal_before_final_sources(self):
         bad = b"not a wildcard rule with spaces\n"
@@ -322,7 +326,12 @@ class BuildEvidenceTests(unittest.TestCase):
         for restored in (first, second):
             outputs.append(run_main(restored / "source/sources", restored / "source-snapshot",
                                     restored / "baseline", restored / "output"))
-        self.assertEqual(original, outputs[0])
+        # Bootstrap and replay compare against different baselines; only the
+        # advisory reports and their checksums may differ. Replay uses one
+        # baseline and must remain byte-for-byte deterministic.
+        advisory = {"reports/Rule-Changes.json", "reports/Rule-Changes.md", "SHA256SUMS"}
+        self.assertEqual({k: v for k, v in original.items() if k not in advisory},
+                         {k: v for k, v in outputs[0].items() if k not in advisory})
         self.assertEqual(outputs[0], outputs[1])
         self.assertEqual(len([name for name in outputs[0] if name.startswith("Surge/")]), 16)
         self.assertIn("Mihomo/AdBlockLite.yaml", outputs[0])
