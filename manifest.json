@@ -2990,6 +2990,22 @@
       "rule_count": 80,
       "rules_sha256": "d0dcc15e1447a88979ed9c502ca46f431a99a7bd5859c2dd1bda40784624b5bd"
     },
+    "Address/Policy/Classical/Steam": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "address",
+        "source": "Policy/Classical/Steam"
+      },
+      "rule_count": 12,
+      "rules_sha256": "6cb910b06aa8429af6775c2f2fb002226d56509c347a53f8999583f785fa4016"
+    },
     "AirportServers": {
       "behavior": "classical",
       "formats": [
@@ -4709,6 +4725,22 @@
       "rule_count": 137,
       "rules_sha256": "833ef9ff16c3a67608d677815af863a258e393b813a5a1aaabd8357a69898518"
     },
+    "NonIP/Policy/Classical/Steam": {
+      "behavior": "classical",
+      "formats": [
+        "yaml",
+        "list"
+      ],
+      "partition": {
+        "clients": [
+          "Egern"
+        ],
+        "part": "non_ip",
+        "source": "Policy/Classical/Steam"
+      },
+      "rule_count": 549,
+      "rules_sha256": "acd3e6a88c21348e8d353a6dbeeb3158828a4d30c0ec02b8e187d37f3e608286"
+    },
     "OpenAI": {
       "behavior": "domain",
       "formats": [
@@ -5225,5 +5257,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "9d339237ccc19d867d3dbbf553a0b1dc6f09b90c"
+  "source_commit": "f0e9bf548d16b1a8a82f108c416d28cf43d865f1"
 }
