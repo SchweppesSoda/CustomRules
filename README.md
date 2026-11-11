@@ -224,7 +224,9 @@ deploying consumer URL changes.
   dynamic block. `oss.ctc.lol` is intentionally not pinned and may only be
   supplied dynamically. Both AirportServers sources are DNS-only and accept
   `DOMAIN`/`DOMAIN-SUFFIX` rules; their builder input and generated YAML/LIST
-  outputs reject IP-CIDR/IP-CIDR6 and other non-domain rules. IP rules remain
+  outputs reject empty inventories, IP-CIDR/IP-CIDR6 and other non-domain rules.
+  Percentage changes are advisory for these inventories and other rule sets.
+  IP rules remain
   valid in unrelated classical sources such as `MyDirect.yaml`. The private
   synchronizer emits every live hostname as a `DOMAIN-SUFFIX` for its
   registrable root using an offline Public Suffix List, including public and
@@ -294,9 +296,8 @@ The `reports/IP/Proxy-selection.json` artifact records the exact input bodies,
 URLs, hashes and snapshot commit. Verification recomputes the selection and
 requires every IP LIST entry to retain `no-resolve`; Mihomo/Stash consumers
 retain it on the calling RULE-SET, and Egern retains the shared LIST flags.
-The report is evidence, not a client subscription. The first reviewed expansion
-uses the existing manual `allow_large_change` workflow input; scheduled builds
-keep the normal change thresholds.
+The report is evidence, not a client subscription. Percentage changes are
+reported for review; IP selection and routing constraints remain mandatory.
 
 The generated `Emby` set is the normalized, de-duplicated literal union of
 `sources/manual/Emby.yaml` and V2Fly `category-emby`. Unsupported classical
@@ -315,15 +316,24 @@ It:
    entities, and forbidden broad domains;
 4. loads all MRS files through a minimal Mihomo configuration;
 5. repeats the build and requires byte-for-byte identical output;
-6. allows reductions up to 10% for `AirportServers` and `AirportServersCTC`
-   and up to 5% for other lists. The total-change limit is 20% for all lists,
-   measured against the current `auto-build` baseline;
+6. reports changes against the current `auto-build` baseline, emitting advisory
+   warnings for shrinkage over 5% or total changes over 20%; percentages do not
+   block publication;
 7. publishes only changed files without force-pushing.
 
-For an existing set, a pure addition of at most 10 rules bypasses the 20%
-total-change limit. This permits small manual additions even when the previous
-set contains only one or two rules. Changes that remove or replace rules retain
-the normal reduction and total-change checks; empty-source validation is unchanged.
+`reports/Rule-Changes.json` records counts, complete added/removed rules,
+whole-set additions/removals, and removed domain rules still covered by a current
+suffix. This coverage analysis does not infer equivalence for IP, wildcard,
+process or cross-set routing. `reports/Rule-Changes.md` summarizes changed sets
+in the Actions job summary. Reports are checksummed and preserved in build evidence.
+No percentage exception or manual override is needed for small sets or airports.
+
+Download/parse failures, unexpectedly empty sources or non-partition outputs,
+required entities, forbidden broad domains, exact aggregate/partition membership,
+MRS compilation/loading and reproducibility failures still block the entire
+publication. Declared partitions may legitimately be empty. The legacy builder
+`--allow-large-change` option remains accepted for saved commands, but is a no-op:
+it suppresses neither validation nor change notices. The workflow has no override input.
 
 The published branch also contains `manifest.json`, `SOURCES.json`,
 `SHA256SUMS`, the Crypto candidate-review report, and the unsupported-upstream
@@ -353,14 +363,15 @@ PO0 official reporting modules belong to [VPS-Toolkit](https://github.com/Schwep
 Use `.tmp/` for local validation output and `.build/` for build/tool caches. Preserve source snapshots needed for reproducing a past run outside the repository before cleanup; a new scheduled update must obtain a fresh source cache.
 
 The build workflow preserves a bounded `public-build-evidence-<run>-<attempt>`
-Actions artifact on both successful builds and build/threshold failures, for
+Actions artifact on both successful builds and build failures, for
 14 days. It contains public source responses journaled before parsing, their
 hashes, source and baseline commit identities, reviewed builder/source files,
 the complete baseline LIST inventory and counts, baseline/current source
-metadata when available, and the compiler's actual binary hash plus pinned
+metadata and change reports when available, and the compiler's actual binary hash plus pinned
 version/archive hash. It excludes credentials, arbitrary cache files, raw logs
-and compiler binaries. Evidence creation or upload failure blocks publication;
-it never enables `allow_large_change` or weakens either threshold.
+and compiler binaries. Evidence creation or upload failure blocks publication.
+The historical `allow_large_change` evidence field remains readable for older runs;
+new runs do not use it to bypass checks.
 
 `scripts/build_evidence.py verify <artifact-directory>` checks the file
 inventory, hashes, public-source whitelist, size limits and baseline counts.
