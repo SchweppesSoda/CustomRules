@@ -1,0 +1,6 @@
+# AUTO-GENERATED. DO NOT EDIT.
+# Rule set: GeminiSupplement
+payload:
+  - DOMAIN,www.google.com
+  - DOMAIN,webchannel-robinfrontend-pa.googleapis.com
+  - DOMAIN,optimizationguide-pa.googleapis.com

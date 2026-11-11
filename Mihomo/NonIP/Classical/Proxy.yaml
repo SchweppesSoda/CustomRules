@@ -33,6 +33,7 @@ payload:
   - DOMAIN,hb4bbbbb.pmhcjk.com
   - DOMAIN,holoxx.f5.si
   - DOMAIN,hpstore.corpmerchandise.com
+  - DOMAIN,http-intake.logs.us5.datadoghq.com
   - DOMAIN,hub.slarker.me
   - DOMAIN,i.jeded.com
   - DOMAIN,imperial.insendi.com
@@ -10694,6 +10695,8 @@ payload:
   - DOMAIN-SUFFIX,grabhentai.com
   - DOMAIN-SUFFIX,grabpussy.com
   - DOMAIN-SUFFIX,gradeuptube.com
+  - DOMAIN-SUFFIX,grafana.com
+  - DOMAIN-SUFFIX,grafana.net
   - DOMAIN-SUFFIX,grafolio.com
   - DOMAIN-SUFFIX,graias.com
   - DOMAIN-SUFFIX,graiasmovies.com
@@ -10747,6 +10750,7 @@ payload:
   - DOMAIN-SUFFIX,gridaware.app
   - DOMAIN-SUFFIX,grindr.com
   - DOMAIN-SUFFIX,grok.com
+  - DOMAIN-SUFFIX,grokbot.com
   - DOMAIN-SUFFIX,grokipedia.com
   - DOMAIN-SUFFIX,grooby.com
   - DOMAIN-SUFFIX,groq.com
@@ -19345,6 +19349,7 @@ payload:
   - DOMAIN-SUFFIX,quatrowireless.com
   - DOMAIN-SUFFIX,quatrum.com.br
   - DOMAIN-SUFFIX,quay.io
+  - DOMAIN-SUFFIX,questionablequesting.com
   - DOMAIN-SUFFIX,questvisual.com
   - DOMAIN-SUFFIX,quicinc.com
   - DOMAIN-SUFFIX,quickbook.com.br
@@ -21324,6 +21329,7 @@ payload:
   - DOMAIN-SUFFIX,soyjak.party
   - DOMAIN-SUFFIX,soyjak.st
   - DOMAIN-SUFFIX,sp.cool
+  - DOMAIN-SUFFIX,spacebattles.com
   - DOMAIN-SUFFIX,spaceexplored.com
   - DOMAIN-SUFFIX,spaceforce.mil
   - DOMAIN-SUFFIX,spacely.com.au
@@ -23490,6 +23496,7 @@ payload:
   - DOMAIN-SUFFIX,v.recipes
   - DOMAIN-SUFFIX,v2.help
   - DOMAIN-SUFFIX,v2.hysteria.network
+  - DOMAIN-SUFFIX,v2ex.co
   - DOMAIN-SUFFIX,v2ex.com
   - DOMAIN-SUFFIX,v2fly.org
   - DOMAIN-SUFFIX,v2ph.com

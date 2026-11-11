@@ -1,5 +1,7 @@
 # AUTO-GENERATED. DO NOT EDIT.
 # Rule set: Classical/Claude
+DOMAIN,http-intake.logs.us5.datadoghq.com
+DOMAIN,o1158394.ingest.us.sentry.io
 DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN-SUFFIX,ant.dev
 DOMAIN-SUFFIX,anthropic.com
