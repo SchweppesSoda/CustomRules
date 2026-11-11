@@ -1,0 +1,15 @@
+# Exact-host compatibility additions shared by AI and AIGlobal.
+# These hosts can serve other Google features; their requests also follow AI.
+# Keep exact matches so sibling hosts and unrelated Google APIs retain routing.
+payload:
+  # Gemini's verification redirect can require the same exit as gemini.google.com.
+  # This also routes ordinary Google Search requests on www.google.com through AI.
+  # https://linux.do/t/topic/1924440/11
+  - DOMAIN,www.google.com
+  # iOS app endpoint; a hyphenated sibling of robinfrontend-pa, not its subdomain.
+  # https://github.com/MetaCubeX/meta-rules-dat/issues/170
+  - DOMAIN,webchannel-robinfrontend-pa.googleapis.com
+  # Reported Android dependency; also listed in Google's Gemini firewall hosts.
+  # https://github.com/MetaCubeX/meta-rules-dat/issues/159
+  # https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/gemini-app-firewall-settings
+  - DOMAIN,optimizationguide-pa.googleapis.com

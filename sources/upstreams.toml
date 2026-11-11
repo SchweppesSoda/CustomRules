@@ -32,6 +32,7 @@ url = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data
 [sets.AI]
 behavior = "domain"
 parser = "meta-list"
+include_sets = ["GeminiSupplement"]
 urls = [
   "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list",
   "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-intelligence.list",
@@ -271,6 +272,7 @@ urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geo
 [sets."AIGlobal"]
 behavior = "domain"
 parser = "meta-list"
+include_sets = ["GeminiSupplement"]
 urls = ["https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list"]
 
 [sets."AbemaTV"]

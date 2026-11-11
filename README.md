@@ -207,6 +207,12 @@ deploying consumer URL changes.
   `scripts/build_rules.py` and emits `Mihomo/<name>.yaml` plus
   `Surge/<name>.list`; every manual source always provides these YAML/LIST
   artifacts. MRS output follows the builder's existing eligibility logic.
+- `sources/manual/GeminiSupplement.yaml` supplies exact-host compatibility
+  additions to both `AI` and `AIGlobal`: `www.google.com`,
+  `webchannel-robinfrontend-pa.googleapis.com`, and
+  `optimizationguide-pa.googleapis.com`. Requests from other features using
+  these same hosts also follow the AI policy, including Google Search on
+  `www.google.com`; sibling hosts and other Google APIs keep their existing rules.
 - `sources/manual/AirportServers.yaml` is the generic airport node-domain
   source. Private provider-sync automation may replace only the text between
   the exact `# BEGIN AUTO-GENERATED PROVIDER DOMAINS` and
