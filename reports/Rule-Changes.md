@@ -7,5 +7,4 @@ it does not establish IP, wildcard, process or cross-set routing equivalence.
 
 | Set | Previous | Current | Added | Removed | Removed covered by suffix | Shrink | Change | Notice |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Address/Policy/Classical/Steam | 0 | 12 | 12 | 0 | 0 | n/a | n/a | - |
-| NonIP/Policy/Classical/Steam | 0 | 549 | 549 | 0 | 0 | n/a | n/a | - |
+| AdBlockLite | 88456 | 88445 | 22 | 33 | 0 | 0.0% | 0.1% | - |

@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 88456,
-      "rules_sha256": "f7a05c5d3de3b776b7cfafabf291688e00cbbbf4c0e9fa1acb375899b3f7f336"
+      "rule_count": 88445,
+      "rules_sha256": "367a11067698d08dbed4b1ca1bad58bd8747567018bc4e59157cc81e266be404"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
