@@ -35,6 +35,9 @@ USER-AGENT,duet*
 DOMAIN,ol.epicgames.com
 DOMAIN-SUFFIX,dl.google.com
 DOMAIN,safebrowsing.googleapis.com
+DOMAIN-SUFFIX,alipay.hk
+DOMAIN-SUFFIX,alipayhk.com
+DOMAIN-SUFFIX,antbank.hk
 DOMAIN-SUFFIX,bank.za.group
 DOMAIN-SUFFIX,citibank.com.hk
 DOMAIN-SUFFIX,hangseng.com
