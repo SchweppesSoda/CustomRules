@@ -7,8 +7,8 @@ it does not establish IP, wildcard, process or cross-set routing equivalence.
 
 | Set | Previous | Current | Added | Removed | Removed covered by suffix | Shrink | Change | Notice |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| AdBlockLite | 88445 | 89041 | 701 | 105 | 8 | 0.0% | 0.9% | - |
-| Classical/Special | 118 | 121 | 3 | 0 | 0 | 0.0% | 2.5% | - |
-| IP/China | 9647 | 9640 | 88 | 95 | 0 | 0.1% | 1.9% | - |
-| IP/Google | 8426 | 7979 | 94 | 541 | 0 | 5.3% | 7.5% | shrank by 5.3% |
-| IP/Proxy | 9816 | 9468 | 213 | 561 | 0 | 3.5% | 7.9% | - |
+| AdBlockLite | 89041 | 90262 | 1419 | 198 | 14 | 0.0% | 1.8% | - |
+| Classical/Proxy | 26766 | 26767 | 1 | 0 | 0 | 0.0% | 0.0% | - |
+| NonIP/Classical/Proxy | 26666 | 26667 | 1 | 0 | 0 | 0.0% | 0.0% | - |
+| Proxy | 26632 | 26633 | 1 | 0 | 0 | 0.0% | 0.0% | - |
+| ProxyGlobal | 26632 | 26633 | 1 | 0 | 0 | 0.0% | 0.0% | - |
