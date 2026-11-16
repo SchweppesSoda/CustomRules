@@ -84,6 +84,7 @@ jobs:
         shell: bash
         env:
           SOURCE_COMMIT: ${{ steps.source.outputs.commit }}
+          CUSTOMRULES_SNAPSHOT_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           python scripts/build_rules.py \

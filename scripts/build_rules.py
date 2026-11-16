@@ -16,6 +16,7 @@ import subprocess
 import tempfile
 import time
 import tomllib
+import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
@@ -23,6 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ROOT / "sources"
+METACUBEX_SNAPSHOT_API_URL = "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta"
 RULE_RE = re.compile(
     r"^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-WILDCARD|IP-CIDR6?|IP-ASN|PROCESS-NAME|USER-AGENT|URL-REGEX),(.+)$"
 )
@@ -167,11 +169,15 @@ class SourceRegistry:
 
 
 class Fetcher:
-    def __init__(self, registry: SourceRegistry, cache_dir: Path | None = None, offline: bool = False) -> None:
+    def __init__(
+        self, registry: SourceRegistry, cache_dir: Path | None = None, offline: bool = False,
+        *, snapshot_token: str | None = None,
+    ) -> None:
         self.registry = registry
         self.cache: dict[str, bytes] = {}
         self.cache_dir = cache_dir
         self.offline = offline
+        self.snapshot_token = snapshot_token
 
     def bytes(self, url: str) -> bytes:
         if url not in self.cache:
@@ -182,14 +188,22 @@ class Fetcher:
                 if self.offline:
                     raise RuntimeError(f"Source snapshot is missing: {url}")
                 request = urllib.request.Request(url, headers={"User-Agent": "CustomRules-AutoBuild/1.0"})
+                if self.snapshot_token and url == METACUBEX_SNAPSHOT_API_URL:
+                    # urllib drops unredirected headers on every redirect.
+                    request.add_unredirected_header("Authorization", f"Bearer {self.snapshot_token}")
                 for attempt in range(3):
                     try:
                         with urllib.request.urlopen(request, timeout=45) as response:
                             body = response.read()
                         break
-                    except OSError:
+                    except OSError as exc:
                         if attempt == 2:
-                            raise RuntimeError(f"Failed to fetch approved upstream: {url}") from None
+                            reason = type(exc).__name__
+                            if isinstance(exc, urllib.error.HTTPError):
+                                reason = f"HTTP {exc.code}"
+                                if url == METACUBEX_SNAPSHOT_API_URL and exc.headers.get("X-RateLimit-Remaining") == "0":
+                                    reason += ", GitHub rate limit exhausted"
+                            raise RuntimeError(f"Failed to fetch approved upstream: {url} ({reason})") from None
                         time.sleep(attempt + 1)
                 if cached and body.strip():
                     cached.parent.mkdir(parents=True, exist_ok=True)
@@ -388,7 +402,7 @@ def china_source_contract(config: dict[str, object]) -> list[tuple[str, str]]:
 
 def fetch_china_inputs(config: dict[str, object], fetcher: Fetcher) -> dict[str, object]:
     api = config["snapshot_api_url"]
-    if api != "https://api.github.com/repos/MetaCubeX/meta-rules-dat/commits/meta":
+    if api != METACUBEX_SNAPSHOT_API_URL:
         raise ValueError("China inputs require the reviewed MetaCubeX snapshot API")
     response = fetcher.bytes(api).decode("utf-8")
     commit = json.loads(response).get("sha")
@@ -1298,7 +1312,10 @@ def main() -> None:
     upstream_config = load_toml(SOURCES / "upstreams.toml")
     v2fly_base = str(upstream_config["v2fly"]["base_url"])
     registry = SourceRegistry(args.source_cache / "SOURCES.json" if args.source_cache else None)
-    fetcher = Fetcher(registry, args.source_cache, args.offline)
+    fetcher = Fetcher(
+        registry, args.source_cache, args.offline,
+        snapshot_token=os.environ.get("CUSTOMRULES_SNAPSHOT_TOKEN"),
+    )
     china_evidence = fetch_china_inputs(upstream_config["china_supplement"], fetcher)
     sets: dict[str, RuleSet] = {}
     unsupported_upstream_rules: list[str] = []

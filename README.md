@@ -308,6 +308,9 @@ artifact silently.
 ## Safety and reproducibility
 
 The `Auto Build Rules` workflow runs for source changes, daily, and manually.
+It uses the job's GitHub token to resolve the MetaCubeX snapshot commit.
+The token is scoped to that API request. Rule downloads remain public.
+
 It:
 
 1. downloads the pinned Mihomo release and verifies its archive SHA256;

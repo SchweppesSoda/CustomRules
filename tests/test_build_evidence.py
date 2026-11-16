@@ -10,6 +10,7 @@ import sys
 import tempfile
 import tomllib
 import unittest
+import urllib.error
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -155,6 +156,28 @@ class BuildEvidenceTests(unittest.TestCase):
         document = json.loads((self.cache / "SOURCES.json").read_text())
         self.assertEqual([item["url"] for item in document["sources"]], [URL])
         self.capture("failure")
+
+    def test_snapshot_token_is_scoped_to_the_exact_api_request(self):
+        api_url = builder.METACUBEX_SNAPSHOT_API_URL
+        fetcher = builder.Fetcher(builder.SourceRegistry(), snapshot_token="test-token")
+        with patch("urllib.request.urlopen", side_effect=[io.BytesIO(b"{}"), io.BytesIO(b"example.com")]) as open_url:
+            fetcher.bytes(api_url)
+            fetcher.bytes(URL)
+        api_request, rule_request = (call.args[0] for call in open_url.call_args_list)
+        self.assertEqual(api_request.get_header("Authorization"), "Bearer test-token")
+        self.assertNotIn("Authorization", api_request.headers)
+        self.assertIsNone(rule_request.get_header("Authorization"))
+
+    def test_snapshot_fetch_failure_reports_http_status_without_response(self):
+        url = builder.METACUBEX_SNAPSHOT_API_URL
+        fetcher = builder.Fetcher(builder.SourceRegistry())
+        error = urllib.error.HTTPError(url, 403, "untrusted response", {"X-RateLimit-Remaining": "0"}, None)
+        with patch("urllib.request.urlopen", side_effect=error) as open_url, patch("time.sleep"):
+            with self.assertRaisesRegex(RuntimeError, "HTTP 403, GitHub rate limit exhausted") as caught:
+                fetcher.bytes(url)
+        self.assertEqual(open_url.call_count, 3)
+        self.assertNotIn("untrusted response", str(caught.exception))
+        self.assertEqual(fetcher.registry.items, {})
 
     def test_journal_write_failure_preserves_previous_atomic_file(self):
         before = (self.cache / "SOURCES.json").read_bytes()
