@@ -290,8 +290,12 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b5/b5228de7ed502dc81915c9ef155c1be56c330443f3295f0b4080ca5533699bd1.svg"
     },
     {
-      "name": "GLINCKER",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/57/5754b6db0674ac595586ec8bb2e2dddcf758e268edaea0b0b653fba77151f4cb.svg"
+      "name": "GLINCKER (legacy)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/61/613849fd8122cce3ad8c4f6c29b1d7d6041663de55890c57c49e80a026d894b0.svg"
+    },
+    {
+      "name": "GLINR Studios",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d9/d92a8517134e5b309b1ffb6966ddf861ca01101ab02527e5e6b3aa333c1586f5.svg"
     },
     {
       "name": "Go",
@@ -1020,6 +1024,10 @@
     {
       "name": "Zen Browser",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/ce/ce1d1bc2a1bdce9d97a3f1abaeeb4c678ea242f3433ec77754b29a1b7d25377c.svg"
+    },
+    {
+      "name": "GLINCKER",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/57/5754b6db0674ac595586ec8bb2e2dddcf758e268edaea0b0b653fba77151f4cb.svg"
     },
     {
       "name": "GoDonate.me",

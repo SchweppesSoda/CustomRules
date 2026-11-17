@@ -242,8 +242,12 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4b/4b4e11ecc9d1b0aef28d1f980af8648b328fa7208ff775d1012d003e7965d626.svg"
     },
     {
-      "name": "GLINCKER",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/88/88dd11fca8857386f7cb6812f58d58e716dc6cf7b998326d19862092f0f1e557.svg"
+      "name": "GLINCKER (legacy)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/97/97ecc6363dbeb748522114a2c4e8251b349acabce465eee73c46b0ba506431d2.svg"
+    },
+    {
+      "name": "GLINR Studios",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a1/a191e57b296ad569cc8e92a0b507ea418efe328b4cbf4a7b11b2fff1760bfc07.svg"
     },
     {
       "name": "Go",
@@ -864,6 +868,10 @@
     {
       "name": "Zoom (2025)",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/84/849978a3d2a41527fc6f383113a39bd16f62140ae165a95b32d00cd3442fa23c.svg"
+    },
+    {
+      "name": "GLINCKER",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/88/88dd11fca8857386f7cb6812f58d58e716dc6cf7b998326d19862092f0f1e557.svg"
     }
   ],
   "name": "Unofficial theSVG Iconset - light"
