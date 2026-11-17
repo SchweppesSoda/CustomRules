@@ -1,0 +1,282 @@
+# Rule sources and client formats
+
+[Repository overview](../README.md) · [Build and validation](build-and-validation.md)
+
+Paths and commands on this page are relative to the repository root.
+
+## Unified client subscriptions
+
+All ordinary remote rule subscriptions in the maintained ProxyConfig clients
+are published here. `sources/consumer-map.json` records the migration from each
+old public URL to its generated set and the reason for choosing its source.
+MetaCubeX is the preferred domain/IP upstream. Services without an equivalent
+MetaCubeX category retain their existing blackmatrix7, dler-io, ACL4SSR or other
+reviewed source, explicitly listed in `sources/upstreams.toml`.
+
+`Classical/<Service>` combines the preferred domain set with the former
+source's non-domain rules (keywords, IPs, ASN, process, user-agent or URL rules).
+Where no equivalent domain set exists, it preserves the whole classical
+source. These emit YAML and LIST, plus MRS only when the result is domain-only.
+They are not silently reduced to domain-only MRS. Client-specific DNS lists
+use domain-only projections. Proxy subscriptions, modules, scripts, icons and
+GeoIP/ASN databases remain separately managed.
+
+### Shared China coverage
+
+`China` retains MetaCubeX `cn.list` coverage and adds uncovered domain rules
+from the 18 reviewed sources in `sources/upstreams.toml`'s `china_supplement`.
+The CN base, candidates, overseas tags and ad tags use one immutable MetaCubeX
+commit resolved on each scheduled build. Missing or empty classifier inputs
+fail the build. `sources/policies/china-supplement.toml` excludes deferred and
+foreign/shared-service domains and protects existing ad, HTTPDNS and dedicated
+policy sets, including protected children beneath a proposed parent suffix.
+Exact DOMAIN rules retain their exact-match semantics; this is an upstream
+classification supplement, not proof of domestic hosting for every service.
+
+All YAML/MRS/LIST outputs use the same selected rules. `Classical/China`
+inherits the resulting domain coverage while retaining its keyword, user-agent
+and IP conditions. Existing client subscriptions need no URL changes; client
+rule order and DNS use still determine the effect (including Egern's China DNS
+selection). Private client profiles are audit targets, never builder inputs.
+The daily workflow fetches fresh inputs, verifies selection, then reproduces
+the build offline before publication. `reports/China-selection.json` records
+source hashes, selected rules and exclusions for verification, not routing.
+
+### Conservative ad blocking
+
+- `AdBlockLite`: the default, derived from [HaGeZi Multi Light](https://github.com/hagezi/dns-blocklists#light).
+  It follows this maintained low-interference tier, including ads, tracking,
+  metrics, telemetry and some badware. It is no longer the original 46-domain
+  manual subset. Wildcard entries preserve root and subdomain coverage in
+  every client; keyword/IP/rewrite rules are not imported.
+  Each build removes blockers whose match space overlaps `HTTPDNS`, including
+  broader parent suffixes, plus shared-service protections declared in
+  `sources/policies/adblock-lite.toml`. Exclusions do not force traffic DIRECT:
+  the normal client policy still decides routing. Zero false positives is not
+  guaranteed; this is a compatibility-oriented default, not an ads-only list.
+- `AdBlock`: the unchanged full MetaCubeX category, available as an alternative.
+  It is a different source, not a superset of HaGeZi Light. Do not stack them.
+- `HTTPDNS`: the deduplicated domain union of MetaCubeX `httpdns` and
+  `category-httpdns-cn`. Clients default to DIRECT and retain an opt-in REJECT
+  selection; duplicate hard-blocking plugins/rewrite rules should be disabled.
+  Existing saved policy selections may need to be changed on the device.
+
+Both ad variants and HTTPDNS emit `Mihomo/<Name>.yaml/.mrs` and
+`Surge/<Name>.list`. All formats are generated from the same selected rules.
+HaGeZi-derived outputs retain attribution and the GPL-3.0 license. The
+`reports/AdBlockLite-Upstream.txt`, `AdBlockLite-Excluded.txt`, and
+`AdBlockLite-LICENSE.txt` files preserve the original source snapshot, exact
+exclusions and license on `auto-build`; they are not routing subscriptions.
+
+### Migration validation
+
+Build and publish artifacts before switching client subscriptions. The
+read-only client gate checks URLs, artifact existence and provider behavior:
+
+```text
+python scripts/verify_consumers.py --proxyconfig-root ../ProxyConfig --output <verified-build> --include-generated
+```
+
+Its required canonical inventory is Mihomo Mobile/OpenWrt/Safe, Stash, and
+Egern Full/Lite. `--include-generated` adds OpenWrt WAN2. Retired Loon profiles
+and the retired Egern SH/GZ derivatives are outside active discovery.
+
+Source provenance and hashes remain in `SOURCES.json`. A fresh per-run
+`--source-cache` captures inputs; the second build uses the same cache with
+`--offline`. Never reuse an old cache for a new scheduled update. The CI also
+verifies the final publication tree and skips copying byte-identical files.
+
+Build evidence records the compiler binary and its platform's archive lock.
+Linux CI uses the default `linux_amd64`; local Windows evidence capture passes
+`--compiler-platform windows_amd64` to `scripts/build_evidence.py capture`.
+Unknown platforms and metadata that differs from the source lock are rejected.
+
+### Claude supplemental routing
+
+`ClaudeSupplement` supplies optional Datadog telemetry routing. Browser
+intake uses separate registered domains; wildcard rules cover regional names
+and their subdomains without pinning one region such as US5. This set emits
+classical YAML/LIST, retaining wildcard semantics rather than projecting them
+into a domain MRS. These shared domains also affect other applications;
+telemetry coverage is not evidence of a fix for a Claude region error.
+
+`IP/Claude` follows MetaCubeX `asn/AS399358.list` through the existing CIDR
+pipeline and emits IP-only YAML/MRS/LIST. The official API/Console inbound
+prefixes are a subset of ASN coverage; this is not a list of every Claude web
+or third-party endpoint. Clients route it to `AI Suite` after domain rules and
+before broad IP rules, using `no-resolve`.
+
+These sets do not change QUIC or exit selection. Existing higher-priority
+private, manual and blocking policies still take precedence.
+
+## Policy aggregates
+
+[`sources/policy-aggregates.toml`](../sources/policy-aggregates.toml) defines the
+client-facing unions for rules that share a final policy. The builder combines
+the listed source sets, removes exact duplicates, and preserves every other
+match condition. `manifest.json` records the policy and source members, and the
+verifier requires each aggregate to equal that literal member union.
+
+| Final policy | Mihomo / Stash | Egern |
+| --- | --- | --- |
+| Asian TV | `Policy/AsianTV` | `Policy/Classical/AsianTV` |
+| Global TV | `Policy/GlobalTV` | `Policy/Classical/GlobalTV` |
+| CN Mainland TV | `Policy/CNMainlandTV` | `Policy/Classical/CNMainlandTV` |
+| Steam | `Policy/Steam` | `Policy/Classical/Steam` |
+| Apple TV | Existing single AppleTV source | `Policy/Classical/AppleTV` |
+
+The two families preserve the existing clients' different source membership.
+They are not interchangeable domain-only projections of one larger list.
+Netflix, YouTube, Spotify and Disney keep their independent policies. Service
+IP rules retain their later position; rules targeting the same policy at
+different priorities must not be merged across intervening rules.
+
+Every aggregate emits YAML and LIST. Pure-domain aggregates also emit MRS;
+mixed aggregates retain classical YAML/LIST rather than dropping keywords, IPs
+or other conditions. For example, `Policy/GlobalTV` is domain-only while
+`Policy/CNMainlandTV` currently contains mixed rules. Use manifest behavior,
+not the directory name, to choose the client provider type.
+
+Existing per-service URLs remain published for older profiles and Lite clients.
+Remove an old export only after checking and migrating its consumers.
+
+Run the normal unit tests, two builds from one fresh input snapshot, and
+`scripts/verify_build.py`. Publish and verify the new `auto-build` assets before
+switching client URLs. The private configuration repository prepares and
+validates candidate profiles, preserves source hashes, and owns client rollout.
+
+### Egern rule partitions
+
+[`sources/rule-partitions.toml`](../sources/rule-partitions.toml) declares the
+Egern sources that also publish `NonIP/<source>` and `Address/<source>` under
+both `Surge/` (LIST) and `Mihomo/` (YAML). For example, the China LIST pair is
+`Surge/NonIP/Classical/China.list` and `Surge/Address/Classical/China.list`.
+The builder partitions each finished source independently, after China domain
+inheritance and policy aggregation. It preserves the full compatibility sets
+and existing aggregates; no source membership is shared across client families.
+
+`NonIP` retains DOMAIN, DOMAIN-SUFFIX, DOMAIN-KEYWORD, DOMAIN-WILDCARD,
+USER-AGENT, PROCESS-NAME and URL-REGEX conditions. `Address` retains IP-CIDR,
+IP-CIDR6 and IP-ASN conditions. Each side preserves its source's order and
+literal options after the existing stable deduplication. Unknown types and
+compound rules fail the build rather than being guessed into `NonIP`.
+Client configurations place the non-address side with the corresponding
+business rules and the address side in their later address section.
+
+Both sides retain `classical` manifest behavior to preserve flags; ASN and
+other address rules are never projected into an IP-only MRS. A nonempty,
+pure-domain `NonIP` side additionally receives MRS with `mrs_behavior=domain`.
+Empty sides still publish an explicit `payload: []` YAML and a comment-only
+LIST, with `rule_count=0` and no MRS. The manifest's `partition` field records
+the original `source`, `part` (`non_ip` or `address`) and `clients` (`Egern`).
+Verification requires both exact source subsequences and their disjoint union
+to equal the full source, including China additions, keywords and user agents.
+The declaration, counts and manifest are included in the normal build evidence,
+checksums and publication workflow. Publish and verify those assets before
+deploying consumer URL changes.
+
+## Sources
+
+- `sources/manual/` contains reviewed classical rule sources such as
+  MyDirect, MyDirectSub, MyProxy, Emby, AirportServers, and AirportServersCTC.
+  Every `sources/manual/*.yaml` file is discovered automatically by
+  `scripts/build_rules.py` and emits `Mihomo/<name>.yaml` plus
+  `Surge/<name>.list`; every manual source always provides these YAML/LIST
+  artifacts. MRS output follows the builder's existing eligibility logic.
+- `sources/manual/GeminiSupplement.yaml` supplies exact-host compatibility
+  additions to both `AI` and `AIGlobal`: `www.google.com`,
+  `webchannel-robinfrontend-pa.googleapis.com`, and
+  `optimizationguide-pa.googleapis.com`. Requests from other features using
+  these same hosts also follow the AI policy, including Google Search on
+  `www.google.com`; sibling hosts and other Google APIs keep their existing rules.
+- `sources/manual/AirportServers.yaml` is the generic airport node-domain
+  source. Private provider-sync automation may replace only the text between
+  the exact `# BEGIN AUTO-GENERATED PROVIDER DOMAINS` and
+  `# END AUTO-GENERATED PROVIDER DOMAINS` markers. Manually protected entries,
+  including the OixCloud entries, remain outside that block.
+- `sources/manual/AirportServersCTC.yaml` is the CTC-only source. The
+  `ctcxianyu.com` and `525536.xyz` suffix rules are protected manual entries;
+  any additional CTC provider domains must be emitted inside its marked
+  dynamic block. `oss.ctc.lol` is intentionally not pinned and may only be
+  supplied dynamically. Both AirportServers sources are DNS-only and accept
+  `DOMAIN`/`DOMAIN-SUFFIX` rules; their builder input and generated YAML/LIST
+  outputs reject empty inventories, IP-CIDR/IP-CIDR6 and other non-domain rules.
+  Percentage changes are advisory for these inventories and other rule sets.
+  IP rules remain
+  valid in unrelated classical sources such as `MyDirect.yaml`. The private
+  synchronizer emits every live hostname as a `DOMAIN-SUFFIX` for its
+  registrable root using an offline Public Suffix List, including public and
+  private suffixes; provider-specific allowlists are not required.
+- `sources/catalog/crypto.toml` is the entity-level Crypto catalog. Its scope
+  is trading accounts, custody, wallets, fiat on/off ramps, and Crypto Cards.
+- `sources/catalog/banking.toml` is the entity-level Banking catalog with
+  mutually exclusive regions.
+- `sources/upstreams.toml` is the only registry for permitted remote sources.
+  Every set declares its parser and `domain`, `ipcidr` or `classical` behavior; the Emby
+  declaration also enables the reviewed manual/upstream union.
+- TikTok automatically follows MetaCubeX `geosite/classical/tiktok.yaml`.
+  Its existing `Mihomo/TikTok.yaml` and `Surge/TikTok.list` URLs retain
+  classical rule syntax for deployed clients; domain-only data also emits MRS.
+  DouYin follows the separate MetaCubeX `geosite/douyin.list` source. Broad
+  ByteDance suffixes are not manually merged into the TikTok set.
+- `sources/toolchain.toml` pins the Mihomo compiler release and archive
+  SHA256.
+
+Large upstream collections are candidate sources only. Unknown components and
+unmapped domains are written to
+`reports/Crypto-Unmapped-Candidates.txt` on `auto-build`; they are never
+promoted automatically.
+
+## Published formats
+
+Crypto and Banking are published in all three formats:
+
+```text
+Mihomo/Crypto.yaml
+Mihomo/Crypto.mrs
+Surge/Crypto.list
+Mihomo/Banking.yaml
+Mihomo/Banking.mrs
+Surge/Banking.list
+```
+
+Banking is also published as `Global`, `NorthAmerica`, `Europe`,
+`HongKongMacau`, `Singapore`, `JapanKorea`, `MiddleEast`, and `Other`
+under `Mihomo/Banking/` and `Surge/Banking/`. The aggregate is validated as
+the exact union of the eight regions.
+
+Mainland `worldfirst.com.cn` is excluded from Banking and follows domestic
+rules. The global `sc.com` suffix remains in Banking; consumers must route
+`cn.sc.com` and its subdomains directly before broad Banking/global proxy
+rules. Maintained full/Safe profiles use the earlier `MyDirect` set; Egern
+Lite, which does not subscribe to `MyDirect`, carries the same narrow local
+exception. Domain-only MRS cannot express a parent suffix minus one child.
+
+Pure-domain sets also receive MRS output. Classical sets retain their existing
+YAML/LIST semantics. Service-domain sets are published at
+`Mihomo/<Service>.yaml/.mrs` and `Surge/<Service>.list`; service IP sets use
+`Mihomo/IP/<Service>.yaml/.mrs` and `Surge/IP/<Service>.list`. IP YAML/MRS files
+use `ipcidr` behavior and LIST files use `IP-CIDR`/`IP-CIDR6` with
+`no-resolve`.
+
+`IP/Proxy` is the exact address union of MetaCubeX full GeoIP `cloudflare`,
+`cloudfront`, `facebook`, `fastly`, `google`, `netflix`, `telegram`, and `twitter`,
+minus its CN collection, followed by the existing 666OS Proxy IP supplement.
+Each fresh build resolves one immutable MetaCubeX commit for all eight inputs
+and CN; later builds resolve a new snapshot. The compatibility supplement is
+added after subtraction, so CN filtering never silently removes existing
+supplement coverage. Dedicated service IP rules keep their earlier priority.
+Shared CDN/cloud addresses may also match unrelated sites.
+
+The `reports/IP/Proxy-selection.json` artifact records the exact input bodies,
+URLs, hashes and snapshot commit. Verification recomputes the selection and
+requires every IP LIST entry to retain `no-resolve`; Mihomo/Stash consumers
+retain it on the calling RULE-SET, and Egern retains the shared LIST flags.
+The report is evidence, not a client subscription. Percentage changes are
+reported for review; IP selection and routing constraints remain mandatory.
+
+The generated `Emby` set is the normalized, de-duplicated literal union of
+`sources/manual/Emby.yaml` and V2Fly `category-emby`. Unsupported classical
+types found while splitting mixed upstreams are retained for review in
+`reports/Unsupported-Upstream-Rules.txt`; they never enter a domain or IP
+artifact silently.
