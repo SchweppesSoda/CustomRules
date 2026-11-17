@@ -9,6 +9,9 @@
  * Independent US Egern/Loon/Mihomo requests use
  * mode=proxyconfig-residential-name-v1; Egern/Mihomo receive compact names,
  * while retired Loon and legacy Stash requests retain their original names.
+ * Opt-in Egern artifacts use mode=proxyconfig-egern-relay-v1 to attach
+ * Relay-Res-US to each US residential leaf, so mixed selectors can flatten
+ * residential and server-forwarded PO0 nodes without adding a group-wide hop.
  * Bind each independent source via fixed Script Operator link arguments:
  * #kind=subscription&source=<source>&profile=<profile>
  * A different requested profile passes through, so collection members do not
@@ -121,10 +124,12 @@ function operator(proxies = [], targetPlatform, context) {
   const textChained = options.mode === "proxyconfig-stash-text-v1";
   const chained = options.mode === "proxyconfig-stash-v1" || textChained;
   const namesOnly = options.mode === "proxyconfig-residential-name-v1";
-  if (!chained && !namesOnly) return proxies;
+  const egernRelay = options.mode === "proxyconfig-egern-relay-v1";
+  if (!chained && !namesOnly && !egernRelay) return proxies;
 
   const target = String(targetPlatform || "").toLowerCase();
   if (chained && target && target !== "stash") throw new Error(`stash transform refuses target: ${targetPlatform}`);
+  if (egernRelay && target !== "egern") throw new Error("Egern relay transform requires Egern target");
 
   const profileName = String(options.profile || "");
   const profile = PROFILES[profileName];
@@ -155,6 +160,7 @@ function operator(proxies = [], targetPlatform, context) {
   if (namesOnly && (!profile.source || !["egern", "loon", "clashmeta", "mihomo"].includes(target))) {
     throw new Error(`${profileName}: invalid residential naming target`);
   }
+  if (egernRelay && !profile.source) throw new Error("Egern relay requires an independent US source");
 
   const strict = String(options.strict || "1") !== "0";
   const names = new Set();
@@ -173,9 +179,10 @@ function operator(proxies = [], targetPlatform, context) {
     // The published NoUS provider uses native names without a legacy prefix.
     // Its opt-in text variant adds only the front hop to those exact leaves.
     node.name = textChained && profileName === "residential_global" ? original.name
-      : textChained || (namesOnly && target !== "loon") ? compactName(rawName, profileName)
+      : textChained || egernRelay || (namesOnly && target !== "loon") ? compactName(rawName, profileName)
       : rawName.startsWith(profile.prefix) ? rawName : `${profile.prefix}${rawName}`;
     if (chained) node["underlying-proxy"] = textChained ? profile.dialer.replace(/^🔗\s+/, "") : profile.dialer;
+    if (egernRelay) node["underlying-proxy"] = "🔀 Relay-Res-US";
 
     if (names.has(node.name) && strict) {
       throw new Error(`${profileName}: duplicate node name: ${node.name}`);
