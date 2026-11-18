@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 90262,
-      "rules_sha256": "76fad1a4346cd560c5ca110aa46b2dccb2862ac0322ab1a26bd0585474ccd4f9"
+      "rule_count": 92902,
+      "rules_sha256": "ff8c149318099eb9fea288b2746d1c309a5a9bba96b3601f49f96a8ee3432ebd"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3069,8 +3069,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 298,
-      "rules_sha256": "18f531b5aa74726c9116f482fe9ff5a586277d7b556c050839c7a8a4d34e9f58"
+      "rule_count": 302,
+      "rules_sha256": "048aa6f043cbc3fc62107e26119d9826ab0581d47ffd46f330c1582a459505b8"
     },
     "AppleIntelligence": {
       "behavior": "domain",
@@ -3715,8 +3715,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26767,
-      "rules_sha256": "8b07c87eb759db3d00dfe8a57049e8f8d0cddd7f8e5468f9c8ef30ee8cdfe7d4"
+      "rule_count": 26771,
+      "rules_sha256": "f5d24bea00021489345ccd32746b165de0bfb553f534ea7a8f2221dbcb4fa820"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4626,8 +4626,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26667,
-      "rules_sha256": "e550f32b5808c0e111f55ed3913797236eae234219b2e1cc223cb5e7b7e602c4"
+      "rule_count": 26671,
+      "rules_sha256": "ab2c8c2d221271065a0d3dd811641a2f9e4cff1fb9723c60f78c93c9973907be"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -5011,8 +5011,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26633,
-      "rules_sha256": "d46a173bcd99cd59fb4fdddf31c83a116f402cfc06d8defcafd68d5a8a0df6ea"
+      "rule_count": 26637,
+      "rules_sha256": "d104a03825b27e9235f1fdfdf35d30573e8e383803dc0dfad93d5ceec5ff6bc9"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -5022,8 +5022,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26633,
-      "rules_sha256": "d46a173bcd99cd59fb4fdddf31c83a116f402cfc06d8defcafd68d5a8a0df6ea"
+      "rule_count": 26637,
+      "rules_sha256": "d104a03825b27e9235f1fdfdf35d30573e8e383803dc0dfad93d5ceec5ff6bc9"
     },
     "Scholar": {
       "behavior": "domain",
@@ -5257,5 +5257,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "f0e9bf548d16b1a8a82f108c416d28cf43d865f1"
+  "source_commit": "e17ef2c581a5e1b02207ffc787dd7ccc860b33ae"
 }
