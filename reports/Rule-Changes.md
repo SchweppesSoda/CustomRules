@@ -7,9 +7,6 @@ it does not establish IP, wildcard, process or cross-set routing equivalence.
 
 | Set | Previous | Current | Added | Removed | Removed covered by suffix | Shrink | Change | Notice |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| AdBlockLite | 90262 | 92902 | 4080 | 1440 | 38 | 0.0% | 6.1% | - |
-| AppleCN | 298 | 302 | 4 | 0 | 0 | 0.0% | 1.3% | - |
-| Classical/Proxy | 26767 | 26771 | 4 | 0 | 0 | 0.0% | 0.0% | - |
-| NonIP/Classical/Proxy | 26667 | 26671 | 4 | 0 | 0 | 0.0% | 0.0% | - |
-| Proxy | 26633 | 26637 | 4 | 0 | 0 | 0.0% | 0.0% | - |
-| ProxyGlobal | 26633 | 26637 | 4 | 0 | 0 | 0.0% | 0.0% | - |
+| AI | 225 | 226 | 1 | 0 | 0 | 0.0% | 0.4% | - |
+| AIGlobal | 220 | 221 | 1 | 0 | 0 | 0.0% | 0.5% | - |
+| AdBlockLite | 92902 | 91281 | 788 | 2409 | 4 | 1.7% | 3.4% | - |

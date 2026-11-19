@@ -2660,8 +2660,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 225,
-      "rules_sha256": "62b07cfe7b64fe8fdadcee195458bca9ff4361983a7e124e7bcfe446b8067720"
+      "rule_count": 226,
+      "rules_sha256": "affcae635397164f63f5bf30b9630c996eb1012a7e19cf6218c600e420824b9c"
     },
     "AICN": {
       "behavior": "domain",
@@ -2682,8 +2682,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 220,
-      "rules_sha256": "08bb10eac331046477a116496545cd3b831908fb4b0a0cd54fa40eec0354f183"
+      "rule_count": 221,
+      "rules_sha256": "eef7ee99f2d5d40491d13bdf22b2567dbf7190e2885193d9173774b136ae07ed"
     },
     "AbemaTV": {
       "behavior": "domain",
@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 92902,
-      "rules_sha256": "ff8c149318099eb9fea288b2746d1c309a5a9bba96b3601f49f96a8ee3432ebd"
+      "rule_count": 91281,
+      "rules_sha256": "70bf1f3d4a1e4401591cf2db0f876c68adde81db92af268450153fae39e94be4"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
