@@ -29,6 +29,40 @@ const PROFILES = {
 };
 
 const CHAIN_KEYS = ["dialer-proxy", "underlying-proxy", "prev_hop", "chain", "detour"];
+const RESIDENTIAL_MEMBERS = new Map([
+  ["Vansail_Residential_US", "residential_us_txpool"],
+  ["Tencent_Landings", "residential_us_frontier"],
+  ["Charter_LA", "residential_us_charter"],
+]);
+
+function currentResidential(proxies, target, info, source) {
+  const collection = source === "Residential_US";
+  if (collection ? info?._collection?.name !== source : info?.[source]?.name !== source) {
+    throw new Error("Residential source binding mismatch");
+  }
+  if (!collection && info._collection) return proxies;
+  const seen = new Set();
+  const members = new Set();
+  const result = [];
+  for (const node of proxies) {
+    const member = collection ? node._subName : source;
+    const profile = RESIDENTIAL_MEMBERS.get(member);
+    if (!profile) throw new Error("Unexpected US residential source");
+    if (member === "Tencent_Landings" && !/FRONTIER/i.test(node.name)) continue;
+    if (CHAIN_KEYS.some(key => node[key])) throw new Error("Existing residential front hop");
+    let name = compactName(node.name, profile);
+    if (member === "Vansail_Residential_US") name = name.replace(/^US-TXPOOL \| /, "US-Vansail | ");
+    if (seen.has(name)) throw new Error("Duplicate US residential name");
+    const leaf = { ...node, name };
+    if (target === "stash") leaf["underlying-proxy"] = "Dialer-Res-US";
+    if (target === "egern") leaf["underlying-proxy"] = "🔀 Relay-Res-US";
+    seen.add(name);
+    members.add(member);
+    result.push(leaf);
+  }
+  if (members.size !== (collection ? RESIDENTIAL_MEMBERS.size : 1)) throw new Error("Missing US residential source");
+  return result;
+}
 
 function txpoolName(rate, carrier, service, sla, ordinal, landing) {
   const carrierCode = { "AT&T": "ATT", Verizon: "VERIZON" }[carrier];
@@ -113,6 +147,17 @@ function parseOptions(value) {
 
 function operator(proxies = [], targetPlatform, context) {
   const binding = parseOptions(typeof $arguments !== "undefined" ? $arguments : {});
+  const target = String(targetPlatform || "").toLowerCase();
+  if ((binding.kind === "collection" && binding.source === "Residential_US")
+      || (binding.kind === "subscription" && binding.source === "Vansail_Residential_US")) {
+    return currentResidential(proxies, target, context?.source, binding.source);
+  }
+  if (binding.kind === "subscription" && binding.source === "Vansail_Residential_NonUS") {
+    if (context?.source?.[binding.source]?.name !== binding.source) throw new Error("NonUS source binding mismatch");
+    if (context.source._collection || target !== "stash") return proxies;
+    if (proxies.some(node => CHAIN_KEYS.some(key => node[key]))) throw new Error("Existing non-US residential front hop");
+    return proxies.map(node => ({ ...node, "underlying-proxy": "Dialer-Res-Global" }));
+  }
   // Sub-Store passes child subscriptions a source map plus _collection. The
   // collection's own transformer owns its legacy naming and single front hop.
   if (binding.kind === "subscription" && context && context.source && context.source._collection) {
@@ -127,7 +172,6 @@ function operator(proxies = [], targetPlatform, context) {
   const egernRelay = options.mode === "proxyconfig-egern-relay-v1";
   if (!chained && !namesOnly && !egernRelay) return proxies;
 
-  const target = String(targetPlatform || "").toLowerCase();
   if (chained && target && target !== "stash") throw new Error(`stash transform refuses target: ${targetPlatform}`);
   if (egernRelay && target !== "egern") throw new Error("Egern relay transform requires Egern target");
 
