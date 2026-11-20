@@ -137,6 +137,8 @@ payload:
   - +.1ting.com
   - +.1tyy.cn
   - +.1xhh.cn
+  - +.1y.com
+  - +.1ycdn.com
   - +.1zhe.com
   - +.20130123.com
   - +.21cnjy.com
@@ -342,6 +344,7 @@ payload:
   - +.58pic.com
   - +.58uxd.com
   - +.58v5.cn
+  - +.58wos.com.cn
   - +.58xinghuo.cn
   - +.58xinghuo.com
   - +.58xueche.com
@@ -515,6 +518,7 @@ payload:
   - +.aiyunxiao.com
   - +.aizgtc.com
   - +.aizhan.com
+  - +.ajkimg.com
   - +.ajzq.com
   - +.akikocorp.cn
   - +.akspeedy.com
@@ -673,6 +677,9 @@ payload:
   - +.baikemy.com
   - +.baimiao.tech
   - +.baimiaoapp.com
+  - +.baishan.com
+  - +.baishancdnx.cn
+  - +.baishancloud.com
   - +.baishinetwork.com
   - +.baixing.com
   - +.baixing.net
@@ -3023,6 +3030,7 @@ payload:
   - +.leelen.com
   - +.leetcode-cn.com
   - +.leetcode.cn
+  - +.lefile.cn
   - +.lehuipay.com
   - +.leigod.cn
   - +.leigod.com
@@ -3044,6 +3052,8 @@ payload:
   - +.lenovocust.cn
   - +.lenovoeservice.com
   - +.lenovofile.com
+  - +.lenovofoundation.cn
+  - +.lenovofuturecenter.com
   - +.lenovogame.com
   - +.lenovoimage.cn
   - +.lenovoimage.com
@@ -3147,13 +3157,10 @@ payload:
   - +.ls66.cn
   - +.lsbj365.com
   - +.lsplayer.com
-  - +.lu.com
   - +.lubiao.wiki
   - +.luckincoffeecdn.com
   - +.luckyair.net
   - +.ludashi.com
-  - +.lufax.com
-  - +.lufaxcdn.com
   - +.lufunds.com
   - +.luhua.cn
   - +.lulian.cn
@@ -3819,6 +3826,7 @@ payload:
   - +.qmniu.com
   - +.qnsdk.com
   - +.qnssl.com
+  - +.qpmcn.com
   - +.qq.design
   - +.qq163.com
   - +.qq163.net
@@ -3938,6 +3946,7 @@ payload:
   - +.saolife.com
   - +.saraba1st.com
   - +.sast.fun
+  - +.saxyit.com
   - +.sbsjk.com
   - +.sc96655.com
   - +.scbaijia.com
@@ -4445,6 +4454,7 @@ payload:
   - +.travelskymobile.cn
   - +.tritoninfo.net
   - +.trjcn.com
+  - +.trpcdn.com
   - +.trpcdn.net
   - +.trunktech.com
   - +.trustasia.cn
@@ -5279,6 +5289,8 @@ payload:
   - +.zhanzhang.net
   - +.zhaodanji.com
   - +.zhaokao.net
+  - +.zhaoliangji.com
+  - +.zhaoliangjipc.com
   - +.zhaomi.cn
   - +.zhaomishijie.com
   - +.zhaopin.cn

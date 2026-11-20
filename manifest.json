@@ -2704,8 +2704,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 904,
-      "rules_sha256": "e1329cb43410263f03dbc5d576d2e9c0d50f66f91eb678b6ac4d8630019268a0"
+      "rule_count": 905,
+      "rules_sha256": "329c7a8f8f5ef7edf97ce6e446426846284cdfbcfb6bf6abbd8c58749383292d"
     },
     "AdBlockLite": {
       "behavior": "domain",
@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 91281,
-      "rules_sha256": "70bf1f3d4a1e4401591cf2db0f876c68adde81db92af268450153fae39e94be4"
+      "rule_count": 92309,
+      "rules_sha256": "b1823079feb2b9f7e4dbe6a197641c47180d9dde6366d9042b1a5a70ae2ce2e7"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3036,8 +3036,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 375,
-      "rules_sha256": "d1549732e5ecc138cd107908f3af5f9d765ee4dbbe88060c8fbff13e5c84a3f8"
+      "rule_count": 376,
+      "rules_sha256": "763d12bf111252fbe7362c203fee1d1e8abfc0d7e6b6660aa99a668615d25b83"
     },
     "Anthropic": {
       "behavior": "domain",
@@ -3268,8 +3268,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 441,
-      "rules_sha256": "a0eea37c40b658a494650294c6af7ccac33ee48c7c6bfde600364c0cbd65d8dc"
+      "rule_count": 443,
+      "rules_sha256": "2adcd1e4a433e86f645de7ed7e2e49766151c28c234d1fe8d1c3fc9f4f9ae722"
     },
     "Classical/ABC": {
       "behavior": "classical",
@@ -3400,8 +3400,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 562,
-      "rules_sha256": "33ec12b28be3574cd0b6433189899d9f7b9f6de4c23ec146ef5d2a1fe5308828"
+      "rule_count": 564,
+      "rules_sha256": "c2c05b17f6d9c1282763442af90ebec905c2761e75eaab3e2618c5b13b20ea90"
     },
     "Classical/Claude": {
       "behavior": "classical",
@@ -3716,7 +3716,7 @@
         "list"
       ],
       "rule_count": 26771,
-      "rules_sha256": "f5d24bea00021489345ccd32746b165de0bfb553f534ea7a8f2221dbcb4fa820"
+      "rules_sha256": "0cb125e54a78a833b97db3b966d11ee144e6eb1270973ef5b4a0050d18e64511"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4084,8 +4084,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 5420,
-      "rules_sha256": "1f8da1fd711859628c74e354df8a229eb766f1bc4b35d30903b6ed124f00f68d"
+      "rule_count": 5432,
+      "rules_sha256": "124abc14d3127cd0b059735eb476f8b3609741a66230f986f9ed08fe70a43c09"
     },
     "GitHub": {
       "behavior": "domain",
@@ -4205,8 +4205,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 9640,
-      "rules_sha256": "f3efe90130fb1a75c6748b321c1ff250f9f70be9fe7ef24b3d435764ef1e2ecf"
+      "rule_count": 9665,
+      "rules_sha256": "096c05b7210a137fafa76a7fae1f81239283f5f785c52f74a33b5856ebb4e38c"
     },
     "IP/Claude": {
       "behavior": "ipcidr",
@@ -4227,8 +4227,8 @@
         "mrs"
       ],
       "mrs_behavior": "ipcidr",
-      "rule_count": 7979,
-      "rules_sha256": "99f87ae20b2a3cc571c95bedf7127fd5898d1b707fa42b8becf3f293271edb57"
+      "rule_count": 7090,
+      "rules_sha256": "f5a5b39f9bdf16765e6f12a20da9733b27009ef20276f965c526f54e600f5cd5"
     },
     "IP/GoogleFCM": {
       "behavior": "ipcidr",
@@ -4272,8 +4272,8 @@
       ],
       "ip_selection": "reports/IP/Proxy-selection.json",
       "mrs_behavior": "ipcidr",
-      "rule_count": 9468,
-      "rules_sha256": "829f9b4704c5a4d2259b4ac4dc4fdd546e45634162428b6b6356d95dc7e5f38c"
+      "rule_count": 8577,
+      "rules_sha256": "04fcf597487e75c113dbd2ce3eb7b995619be52c5814f5e1049aa0ea4ce2925e"
     },
     "IP/Telegram": {
       "behavior": "ipcidr",
@@ -4512,8 +4512,8 @@
         "part": "non_ip",
         "source": "Classical/ChinaMedia"
       },
-      "rule_count": 478,
-      "rules_sha256": "c55f40efefccffdce2b0d1dc6b842611ec16e5061e821043e57ce7150e5ce714"
+      "rule_count": 480,
+      "rules_sha256": "05cebdc85480adeedd4c187ebe80b488e4e4efd7d2ba4e0bff37d96972c2c0c2"
     },
     "NonIP/Classical/Copilot": {
       "behavior": "classical",
@@ -4627,7 +4627,7 @@
         "source": "Classical/Proxy"
       },
       "rule_count": 26671,
-      "rules_sha256": "ab2c8c2d221271065a0d3dd811641a2f9e4cff1fb9723c60f78c93c9973907be"
+      "rules_sha256": "54fc60c8779e75cfdfb30766ccfcd7dee7e3ecb719d1fb3844d909cce232d254"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -5012,7 +5012,7 @@
       ],
       "mrs_behavior": "domain",
       "rule_count": 26637,
-      "rules_sha256": "d104a03825b27e9235f1fdfdf35d30573e8e383803dc0dfad93d5ceec5ff6bc9"
+      "rules_sha256": "578862f65639d2d71569c7788c0e498906d4723a36d7b6e65e10081823636724"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -5023,7 +5023,7 @@
       ],
       "mrs_behavior": "domain",
       "rule_count": 26637,
-      "rules_sha256": "d104a03825b27e9235f1fdfdf35d30573e8e383803dc0dfad93d5ceec5ff6bc9"
+      "rules_sha256": "578862f65639d2d71569c7788c0e498906d4723a36d7b6e65e10081823636724"
     },
     "Scholar": {
       "behavior": "domain",
@@ -5143,8 +5143,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 557,
-      "rules_sha256": "f1dde26542b26dde2a34a6d279ca5d0a25701fde62e71c293c8b4f6af9a1540d"
+      "rule_count": 558,
+      "rules_sha256": "3f0305e4a4a47ef3c5fb1be7269a27103d5bf28d193d7e442686ad61e0b5c912"
     },
     "TikTok": {
       "behavior": "classical",
@@ -5187,8 +5187,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 51,
-      "rules_sha256": "57bea08130dd81de1d58eb19b23ac7f9e841a683d5a32ce276ef0f56398c39f1"
+      "rule_count": 50,
+      "rules_sha256": "1f8ff2432a50c91b3d1400a6eb336fbba83cf590ef8760c84c0c42904d892cee"
     },
     "YouTube": {
       "behavior": "domain",
