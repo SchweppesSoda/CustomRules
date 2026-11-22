@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 91696,
-      "rules_sha256": "8fae772b4aec616d5822fadccb7b9fdf13d1d1908f23887c855ee43272026070"
+      "rule_count": 93220,
+      "rules_sha256": "6536556a954e4e09ddbf7ec3400631ee6492e795460e73b19abcc7f76c99ad09"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3058,8 +3058,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 1584,
-      "rules_sha256": "f5c09dbda827954cd07745201ed3bf8c8a9b4d8235fc9d021bb9c3feb78a5223"
+      "rule_count": 1454,
+      "rules_sha256": "07743e5c4372e3751c4d6d3d26cb620d1c200da128f009fb4fa7cce569d7eb72"
     },
     "AppleCN": {
       "behavior": "domain",
@@ -3317,8 +3317,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 1627,
-      "rules_sha256": "fbe0434210c0cee7e54b670b128c793a2f30b57cc99e68d3c07988bdc9073800"
+      "rule_count": 1497,
+      "rules_sha256": "593ed95001d4c74299ea567e50a59018e433d4edf7ae73febd3ae2b902ce774e"
     },
     "Classical/AppleMusic": {
       "behavior": "classical",
@@ -3715,8 +3715,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26771,
-      "rules_sha256": "0cb125e54a78a833b97db3b966d11ee144e6eb1270973ef5b4a0050d18e64511"
+      "rule_count": 26660,
+      "rules_sha256": "d5d4742a3d0c1ee9cbe82f8594be37f097b3c3b33d414f82507596d55afe4557"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -3724,8 +3724,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 6883,
-      "rules_sha256": "77382d7324a41403568660845eb272ef5321e9d7586e17c52a8433003a86c04e"
+      "rule_count": 7246,
+      "rules_sha256": "76a7ed462497dfc58b4b81342ed0dcaae38a6db33d135d86a373f665c2257b5d"
     },
     "Classical/Scholar": {
       "behavior": "classical",
@@ -4084,8 +4084,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 5432,
-      "rules_sha256": "124abc14d3127cd0b059735eb476f8b3609741a66230f986f9ed08fe70a43c09"
+      "rule_count": 5436,
+      "rules_sha256": "ecd7cb3bf32986c65d627bba3b6d249c0ce14883afd6659e55b3086c6c3a091f"
     },
     "GitHub": {
       "behavior": "domain",
@@ -4464,8 +4464,8 @@
         "part": "non_ip",
         "source": "Classical/Apple"
       },
-      "rule_count": 1614,
-      "rules_sha256": "caa7c7f1484410b93569ef31a6d0d4b87d50c48293efc553a7f6e1f1222b300a"
+      "rule_count": 1484,
+      "rules_sha256": "29f627f874e43dde8caa77086fda7062ea577df1c1dda5dce06ed98a7c3d52bb"
     },
     "NonIP/Classical/BiliBili": {
       "behavior": "classical",
@@ -4626,8 +4626,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26671,
-      "rules_sha256": "54fc60c8779e75cfdfb30766ccfcd7dee7e3ecb719d1fb3844d909cce232d254"
+      "rule_count": 26560,
+      "rules_sha256": "ff90315ace6d2ba4f20c41456abc7a4428c7833fc9ae98d2572194eed7d202b1"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -5011,8 +5011,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26637,
-      "rules_sha256": "578862f65639d2d71569c7788c0e498906d4723a36d7b6e65e10081823636724"
+      "rule_count": 26526,
+      "rules_sha256": "5ed977b472e067355bacddaa1a9f39150e1361a099fdc68457d115d20f9f75db"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -5022,8 +5022,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26637,
-      "rules_sha256": "578862f65639d2d71569c7788c0e498906d4723a36d7b6e65e10081823636724"
+      "rule_count": 26526,
+      "rules_sha256": "5ed977b472e067355bacddaa1a9f39150e1361a099fdc68457d115d20f9f75db"
     },
     "Scholar": {
       "behavior": "domain",
