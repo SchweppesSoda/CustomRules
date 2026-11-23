@@ -130,6 +130,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/17/174dfecdc8c1ef48981b126520f2d5927ec49a7af3ce2afe228cc781c6e7247d.svg"
     },
     {
+      "name": "Claude of Tanks",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/64/641d9b9aaa22633f902913b4df808c609da4243440fd9077cb177bc4f4a1cce5.svg"
+    },
+    {
       "name": "Clerk",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d6/d62d8a4fe8e22c34235c0934a73ec48321bba42d4d26df39de887eb489d87f36.svg"
     },
@@ -268,6 +272,10 @@
     {
       "name": "FreeScout",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b0/b01897ef2e6dea003992e776ba4538ade0caf2345162212a484c01f8026d6932.svg"
+    },
+    {
+      "name": "General Translation",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/db/db5d3c36c7811dd17ad4392648b803f670cf80c44d6dc9d32344f2cd136c5231.svg"
     },
     {
       "name": "GE Vernova",
@@ -607,7 +615,11 @@
     },
     {
       "name": "OpenAI",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/db/db81a8225166f02f773304ba4d8f0141343da5f43870d8b41f10bf6bc59840c8.svg"
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/fb/fb6a4f95d17bbb9d505a8f8df05a7797b8434a762c5dd4ab4f1e5b89e2ad99fe.svg"
+    },
+    {
+      "name": "OpenAI (legacy)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/08/0814cb172690ce6254e1eb7ad7b03b7b49af5307adc644699a8c512d6d6c7931.svg"
     },
     {
       "name": "OpenCost",
@@ -916,6 +928,10 @@
     {
       "name": "Udemy",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9b/9b3f8681d12a0dbb2d989aec536283c2803db1de5aa2e18320b0ba3a70c0910e.svg"
+    },
+    {
+      "name": "Ultanimus",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/74/748958f8eef290b04c0b469d8a43fb3407eb8065fa70e8832c3e538ee8885dfe.svg"
     },
     {
       "name": "Unity",
