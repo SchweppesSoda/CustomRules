@@ -7,13 +7,11 @@ it does not establish IP, wildcard, process or cross-set routing equivalence.
 
 | Set | Previous | Current | Added | Removed | Removed covered by suffix | Shrink | Change | Notice |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| AdBlockLite | 91696 | 93220 | 2098 | 574 | 16 | 0.0% | 2.9% | - |
-| Apple | 1584 | 1454 | 0 | 130 | 0 | 8.2% | 8.2% | shrank by 8.2% |
-| Classical/Apple | 1627 | 1497 | 0 | 130 | 0 | 8.0% | 8.0% | shrank by 8.0% |
-| Classical/Proxy | 26771 | 26660 | 20 | 131 | 0 | 0.4% | 0.6% | - |
-| Classical/ProxyGFWlist | 6883 | 7246 | 491 | 128 | 36 | 0.0% | 9.0% | - |
-| GeolocationCN | 5432 | 5436 | 4 | 0 | 0 | 0.0% | 0.1% | - |
-| NonIP/Classical/Apple | 1614 | 1484 | 0 | 130 | 0 | 8.1% | 8.1% | shrank by 8.1% |
-| NonIP/Classical/Proxy | 26671 | 26560 | 20 | 131 | 0 | 0.4% | 0.6% | - |
-| Proxy | 26637 | 26526 | 20 | 131 | 0 | 0.4% | 0.6% | - |
-| ProxyGlobal | 26637 | 26526 | 20 | 131 | 0 | 0.4% | 0.6% | - |
+| AdBlockLite | 93220 | 75476 | 1501 | 19245 | 25 | 19.0% | 22.3% | shrank by 19.0%; changed by 22.3% |
+| Classical/GlobalMedia | 2599 | 2617 | 19 | 1 | 0 | 0.0% | 0.8% | - |
+| Classical/Proxy | 26660 | 26683 | 24 | 1 | 0 | 0.0% | 0.1% | - |
+| GlobalMedia | 1579 | 1597 | 19 | 1 | 0 | 0.0% | 1.3% | - |
+| NonIP/Classical/GlobalMedia | 1675 | 1693 | 19 | 1 | 0 | 0.0% | 1.2% | - |
+| NonIP/Classical/Proxy | 26560 | 26583 | 24 | 1 | 0 | 0.0% | 0.1% | - |
+| Proxy | 26526 | 26549 | 24 | 1 | 0 | 0.0% | 0.1% | - |
+| ProxyGlobal | 26526 | 26549 | 24 | 1 | 0 | 0.0% | 0.1% | - |
