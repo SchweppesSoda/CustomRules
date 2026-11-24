@@ -33,6 +33,7 @@ const RESIDENTIAL_MEMBERS = new Map([
   ["Vansail_Residential_US", "residential_us_txpool"],
   ["Tencent_Landings", "residential_us_frontier"],
   ["Charter_LA", "residential_us_charter"],
+  ["SixtyNet", "residential_us_sixtynet"],
 ]);
 
 function currentResidential(proxies, target, info, source) {
@@ -71,6 +72,13 @@ function txpoolName(rate, carrier, service, sla, ordinal, landing) {
 }
 
 function compactName(rawName, profileName) {
+  if (profileName === "residential_us_sixtynet") {
+    if (rawName === "🇺🇸 SIXTYNET_家宽") return rawName;
+    if (!/^(?:🇺🇸\s*)?sixtynet\s*美国\s*家宽$/iu.test(rawName)) {
+      throw new Error("Unexpected SixtyNet residential node");
+    }
+    return "🇺🇸 SIXTYNET_家宽";
+  }
   const prefix = PROFILES[profileName].prefix;
   const name = rawName.startsWith(prefix) ? rawName.slice(prefix.length) : rawName;
   if (profileName === "residential_us_txpool") {
@@ -149,7 +157,7 @@ function operator(proxies = [], targetPlatform, context) {
   const binding = parseOptions(typeof $arguments !== "undefined" ? $arguments : {});
   const target = String(targetPlatform || "").toLowerCase();
   if ((binding.kind === "collection" && binding.source === "Residential_US")
-      || (binding.kind === "subscription" && binding.source === "Vansail_Residential_US")) {
+      || (binding.kind === "subscription" && ["Vansail_Residential_US", "SixtyNet"].includes(binding.source))) {
     return currentResidential(proxies, target, context?.source, binding.source);
   }
   if (binding.kind === "subscription" && binding.source === "Vansail_Residential_NonUS") {
