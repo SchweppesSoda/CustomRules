@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 75476,
-      "rules_sha256": "09af967144b4e4c72c05552717a88aa43a2ed75db04b42b6556c5bcd0fb53395"
+      "rule_count": 76655,
+      "rules_sha256": "b44fc475a63cd541dea4fee863a236bd0df83681927b31e4feaa3368624d51a5"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -4084,8 +4084,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 5436,
-      "rules_sha256": "ecd7cb3bf32986c65d627bba3b6d249c0ce14883afd6659e55b3086c6c3a091f"
+      "rule_count": 5437,
+      "rules_sha256": "a191e2368f68d65fc3c7071ac70549344c9c5497a4ede4077b4389939351d05d"
     },
     "GitHub": {
       "behavior": "domain",
@@ -5257,5 +5257,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "e17ef2c581a5e1b02207ffc787dd7ccc860b33ae"
+  "source_commit": "e270d4a3b439e9e262587ef3a6c3878ec24cac98"
 }
