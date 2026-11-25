@@ -2660,8 +2660,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 226,
-      "rules_sha256": "affcae635397164f63f5bf30b9630c996eb1012a7e19cf6218c600e420824b9c"
+      "rule_count": 227,
+      "rules_sha256": "3e1118a8d6232f25764949e1d22487c66be7f18c8eb11fea3003f1f94051e935"
     },
     "AICN": {
       "behavior": "domain",
@@ -2682,8 +2682,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 221,
-      "rules_sha256": "eef7ee99f2d5d40491d13bdf22b2567dbf7190e2885193d9173774b136ae07ed"
+      "rule_count": 222,
+      "rules_sha256": "87f6aa30fba2a26150311e445f902b75c772908931361a1920c89dfd8d5a690d"
     },
     "AbemaTV": {
       "behavior": "domain",
@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 76655,
-      "rules_sha256": "b44fc475a63cd541dea4fee863a236bd0df83681927b31e4feaa3368624d51a5"
+      "rule_count": 85405,
+      "rules_sha256": "b529aa9eadcbc40577038d66f6230560ee0aaae713e10c737641128c00d2b4a0"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3496,8 +3496,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 52,
-      "rules_sha256": "c5486fe3267d4f4e750da3e844258c265e184d50dcade5e7544166bcddaaf416"
+      "rule_count": 53,
+      "rules_sha256": "af27054e19332630b2aa694c8396cb22d4c722a46a5afb8e65ffcd70445f15f1"
     },
     "Classical/GitHub": {
       "behavior": "classical",
@@ -3523,8 +3523,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 860,
-      "rules_sha256": "fa2facffed5b22ffa4597ea08fcc4963da81a287566d3a966029f3e87c3e7b05"
+      "rule_count": 861,
+      "rules_sha256": "c4376b4353fa680e6d6f6ab87ef5db53f7ff0da3b621cb2741e17e8992e1b3af"
     },
     "Classical/GoogleFCM": {
       "behavior": "classical",
@@ -3715,8 +3715,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26683,
-      "rules_sha256": "b3117648a8e330fdd951406ca06ee644ee72fe2befbb2cab34154985ddd5e4f4"
+      "rule_count": 26684,
+      "rules_sha256": "cb772bcb90303add0d57c4d84045d9b2244001a5b8ad8b92bc22686076e12ad0"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4062,8 +4062,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 49,
-      "rules_sha256": "64305fa581c5947c1e631c5655ac4e849496798c34386c1866b9afefd8ad0285"
+      "rule_count": 50,
+      "rules_sha256": "3f453dc9fd301e6ffc15bb6f74be97b543996ab7619ae020e29d2faa90f6ebda"
     },
     "GeminiSupplement": {
       "behavior": "classical",
@@ -4084,8 +4084,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 5437,
-      "rules_sha256": "a191e2368f68d65fc3c7071ac70549344c9c5497a4ede4077b4389939351d05d"
+      "rule_count": 5441,
+      "rules_sha256": "b981be5287d878befed251c9d7453992e41c9ac9bc04327f8bd1b5a2b87c5dbe"
     },
     "GitHub": {
       "behavior": "domain",
@@ -4117,8 +4117,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 847,
-      "rules_sha256": "a12b74d098c10fd16098e397dd03dd723b58bbd98b3a4b763f83bf69cdaf2245"
+      "rule_count": 848,
+      "rules_sha256": "de0f8c65cb8f66d3a5851f929b344fe8a7bd023b313da02e2ba21444edeefaad"
     },
     "GoogleFCM": {
       "behavior": "domain",
@@ -4560,8 +4560,8 @@
         "part": "non_ip",
         "source": "Classical/Google"
       },
-      "rule_count": 855,
-      "rules_sha256": "035a4174296dbcf2787b8c8ad6d52870bbccec5e5cb6e2dcd56eb3e362da24ac"
+      "rule_count": 856,
+      "rules_sha256": "5685319a1bf4133580cb5bc1e33763c3f2616ebc6a037d91e703b4016b1cb37f"
     },
     "NonIP/Classical/GoogleFCM": {
       "behavior": "classical",
@@ -4626,8 +4626,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26583,
-      "rules_sha256": "69c9665c65f3b545b68c4921154c85d7314a558a57180f806fa3741587b5385c"
+      "rule_count": 26584,
+      "rules_sha256": "6b5a441b0eddf4a3656fdf99a3ac4309db53ae55f805b00423999f4bcabefd65"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -5011,8 +5011,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26549,
-      "rules_sha256": "825ad0caf20f3063c811351122cc649d63f75a62270081f858321165952d4e24"
+      "rule_count": 26550,
+      "rules_sha256": "fa59b67630e9971afd0c4b20245fdd76592f649ddf3ccdf3bfee398126f7ffe4"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -5022,8 +5022,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26549,
-      "rules_sha256": "825ad0caf20f3063c811351122cc649d63f75a62270081f858321165952d4e24"
+      "rule_count": 26550,
+      "rules_sha256": "fa59b67630e9971afd0c4b20245fdd76592f649ddf3ccdf3bfee398126f7ffe4"
     },
     "Scholar": {
       "behavior": "domain",
