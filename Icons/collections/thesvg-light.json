@@ -110,6 +110,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/59/591c0ab6e761f708e1cfc36ccd048c72e61569e8a15640d6beb46f92e427c9de.svg"
     },
     {
+      "name": "Claude of Tanks",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c7/c72299e05d988eae9311d64ac761a256306514814d0a93ba6ff48e3f0ecdf5e4.svg"
+    },
+    {
       "name": "Clerk",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/48/4833dd802dd55468cf9113f4f40831380a3e8f431ccc7c2b0a34866430ca2af3.svg"
     },
@@ -220,6 +224,10 @@
     {
       "name": "Framer",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/db/dbd3d12549fb051c55b7c5f3039e69fdf4ba0399c840b9fc3496b7ddb5026b37.svg"
+    },
+    {
+      "name": "General Translation",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/48/481c5e04b29df74af258ff33ada7ce3de8e138920079f4a9d5f96d93d4d9047b.svg"
     },
     {
       "name": "GE Vernova",
@@ -487,7 +495,11 @@
     },
     {
       "name": "OpenAI",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a4/a4b4dae5e28790a0fb3dc7b5d8bb199b0dd6938a002e52a8b6355394c321718e.svg"
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c4/c49d93eaeca3413cd1ce72d36832d4b330e5b67b6a2753400d831ef57eb89e7e.svg"
+    },
+    {
+      "name": "OpenAI (legacy)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4d/4dba66aaafe1bbb234324cbc379fb8c26bb423109e91ccbb14abd7aceadd0a44.svg"
     },
     {
       "name": "OpenRouter",

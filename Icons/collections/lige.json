@@ -1,5 +1,5 @@
 {
-  "description": "图标更新请关注TG频道：@ligeicon ，您当前版本日期为261115\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json",
+  "description": "图标更新请关注TG频道：@ligeicon ，您当前版本日期为261123\nMirrored by SchweppesSoda/CustomRules. Source: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json",
   "icons": [
     {
       "name": "lige",
@@ -626,6 +626,10 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1c/1c26024bd23cccc5ef6b2e2660507eb4059ed8558f2036fc1b68b3b7b920617e.png"
     },
     {
+      "name": "caixin",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/25/250447c9fe47a0caf1fdbad4435c8aeb110a395f93e8d1fedc3e86ad9d099e3d.png"
+    },
+    {
       "name": "caiyuntianqi",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/9a/9a2cd1759de0d07c784116996d1264b6a98339ef968da518334e15e7c6b91e03.png"
     },
@@ -664,6 +668,10 @@
     {
       "name": "CSsaomiaoquannengwang",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/1d/1d9c1936800487c8eccd6e9422154b4bea85d4582deac07334850ddfde2b561c.png"
+    },
+    {
+      "name": "damai",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c4/c44a57eb3211599f25baf8eda64bd8c499a19946356d0b0f8ddd795702db9b4b.png"
     },
     {
       "name": "dazhongpingqiu",
@@ -1368,6 +1376,10 @@
     {
       "name": "xitongdianchifenxi",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6b/6bc2b0ce52ac8910e562e9d19283cccf54a74e59078deead204bcc7d62bc757f.png"
+    },
+    {
+      "name": "xueqiu",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/8d/8d6f7f191af1b771952675fb5411feb5494122e92d6190ca2f560516e14a4a77.png"
     },
     {
       "name": "xuexitong",
@@ -2112,6 +2124,10 @@
     {
       "name": "Polymarket",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/29/294280cd5cbffb3befa645081c07b7e690ed5496cc31c93f006222f4c6a5a524.png"
+    },
+    {
+      "name": "PPFlight",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/e5/e5260da5bfe1fd15d073caeee0c7e4d9a8585750492eab98733949f4f8f8ab1d.png"
     },
     {
       "name": "PrimeVideo",
@@ -3624,6 +3640,14 @@
     {
       "name": "PokerCloud",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/be/be95939471d277082f8ecaff2bc9a1302f626f835317ac641ea2ca96dade60f6.png"
+    },
+    {
+      "name": "prprCloud",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f0/f040cb3293e63a4b03a18243afdad862ec6e873c24321820f1fc7031333d4150.png"
+    },
+    {
+      "name": "qianlink",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/a2/a2792f073b0231df81b76a125d9a0d334ddd235ece0e4ca4fe16a2e4c77f2bed.png"
     },
     {
       "name": "qingfengyun",

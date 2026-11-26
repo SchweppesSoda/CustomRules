@@ -863,7 +863,7 @@
     },
     {
       "name": "Brainrune Mark Deep",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/49/49d684f5266ab718ed43c8755944888e36ffcea7c0d0d207ed3e0bbb551e86fb.svg"
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/07/073bbeaa0c9687f6f67ebdda2d25a1529b8a807ffc47613a680e102f96843101.svg"
     },
     {
       "name": "Brave",
@@ -2142,10 +2142,6 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7f/7f8b6712a9c32e008d33d381ecdccf55274bf0b67f9fdb8578029e57b4f64cd7.svg"
     },
     {
-      "name": "ExpressVPN",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f5/f555d3160624b35913f098f13dcbc8b7be1600050cc73ad0808f55daa1cb8d6d.svg"
-    },
-    {
       "name": "F-Secure",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/89/89b36973090b89635e507248407bae0b1bbc335749d44e8f0a46d364c55f5bd6.svg"
     },
@@ -2204,6 +2200,10 @@
     {
       "name": "FarsiUI",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/b1/b1d8698d83c8f1d53db55be9f5e14c1ceb8468a336702d34e70e0d531131c578.svg"
+    },
+    {
+      "name": "Fastieshop",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f4/f44e00ea62e76e55ef84195e0ec80cbd1d34b13d44590ebcb45d74098b6dd7e5.svg"
     },
     {
       "name": "Fastly",
@@ -3247,7 +3247,7 @@
     },
     {
       "name": "Influence",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/40/406c05847d7acdf7c71e1d4b7ab927217f6a8ce483c12bad3932a84c3ae2227c.svg"
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/30/3050cc1370e706639e1b34f445c2791ea7cb4042c7756a037c737513bf496bd9.svg"
     },
     {
       "name": "Infojobs",
@@ -5254,7 +5254,7 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/c2/c2ae4b0e5603791e869ed5bc34a60a709d1ec6343fc22f75d97937aaafafd7f7.svg"
     },
     {
-      "name": "OpenAI",
+      "name": "OpenAI (badge)",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6c/6c326a340318b577ef1072b92441b8397ee63329b186e06a152997047a4715e0.svg"
     },
     {
@@ -6987,7 +6987,7 @@
     },
     {
       "name": "TablePort",
-      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/30/30b03ba5546d649c226aad609d7cce0018620a39230727d1fadbb462f2c4417c.svg"
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/7e/7e9f36def4dcfccd01a4d628b65f90da36d9f19d71ab2d5750213fe055a927d8.svg"
     },
     {
       "name": "Taboola",
@@ -8156,6 +8156,14 @@
     {
       "name": "Zyft",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4f/4f4f0e2398ba4a58607ad3d1f50e0fbf95938dd1c023f267b7916945829a7d76.svg"
+    },
+    {
+      "name": "ExpressVPN",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/f5/f555d3160624b35913f098f13dcbc8b7be1600050cc73ad0808f55daa1cb8d6d.svg"
+    },
+    {
+      "name": "OpenAI",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/6c/6c326a340318b577ef1072b92441b8397ee63329b186e06a152997047a4715e0.svg"
     },
     {
       "name": "Amplitude",

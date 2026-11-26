@@ -130,7 +130,7 @@
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/d4/d44717f7473b89a343a6562e02d4236cb70313a0a27a5a8d40f17d61a03b213a.svg"
     },
     {
-      "name": "Codex (OpenAI)",
+      "name": "Codex (OpenAI, old)",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5f/5f424b10216e17cd79c5f852138969453e031066e68a8d9c661e74534276ed9c.svg"
     },
     {
@@ -632,6 +632,10 @@
     {
       "name": "Zhipu (智谱)",
       "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/4e/4e7400476df64ad7c41a19828bd1dc8250cfab014a97e7cc89a1536384c48e31.svg"
+    },
+    {
+      "name": "Codex (OpenAI)",
+      "url": "https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Icons/library/5f/5f424b10216e17cd79c5f852138969453e031066e68a8d9c661e74534276ed9c.svg"
     }
   ],
   "name": "Unofficial theSVG Iconset - color"
