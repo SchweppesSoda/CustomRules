@@ -17,6 +17,7 @@ payload:
   - cdn-spotify-experiments.conductrics.com
   - cdn.js7k.com
   - cisco.evergage.com
+  - courses.myecnu.org
   - crl.versign.net
   - databank.worldbank.org
   - datarouter.apps.netherrealm.com
@@ -4902,6 +4903,7 @@ payload:
   - +.cabletvdirectv.com
   - +.cachefly.com
   - +.cachefly.net
+  - +.cachix.org
   - +.cacnw.com
   - +.cactusvpn.com
   - +.cad-mep.com
@@ -8739,10 +8741,12 @@ payload:
   - +.fastlane.ci
   - +.fastlane.tools
   - +.fastly-edge.com
+  - +.fastly-insights.com
   - +.fastly-terrarium.com
   - +.fastly.com
   - +.fastly.io
   - +.fastly.net
+  - +.fastlydns.net
   - +.fastlylabs.com
   - +.fastlylb.net
   - +.fastpic.ru
@@ -23974,6 +23978,7 @@ payload:
   - +.viu.tv
   - +.vivaldi.com
   - +.vivaxnxx.com
+  - +.vivox.com
   - +.vivthomas.com
   - +.vixen.com
   - +.vixengroup.com

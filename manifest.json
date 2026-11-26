@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 85405,
-      "rules_sha256": "b529aa9eadcbc40577038d66f6230560ee0aaae713e10c737641128c00d2b4a0"
+      "rule_count": 84549,
+      "rules_sha256": "59893b68466d327f76e321a0af8b184cb2f39a96f3ef3d3e5e555a32c53249f2"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3715,8 +3715,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 26684,
-      "rules_sha256": "cb772bcb90303add0d57c4d84045d9b2244001a5b8ad8b92bc22686076e12ad0"
+      "rule_count": 26689,
+      "rules_sha256": "7375d56a97076b31822307cc9f3c45fa3474142486877c2f2cb30fda36aabf09"
     },
     "Classical/ProxyGFWlist": {
       "behavior": "classical",
@@ -4626,8 +4626,8 @@
         "part": "non_ip",
         "source": "Classical/Proxy"
       },
-      "rule_count": 26584,
-      "rules_sha256": "6b5a441b0eddf4a3656fdf99a3ac4309db53ae55f805b00423999f4bcabefd65"
+      "rule_count": 26589,
+      "rules_sha256": "c70d1ddbc94124f162555fbac40606e6ded538df0671a4baf8eaa9d7175da7f0"
     },
     "NonIP/Classical/Spotify": {
       "behavior": "classical",
@@ -5011,8 +5011,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26550,
-      "rules_sha256": "fa59b67630e9971afd0c4b20245fdd76592f649ddf3ccdf3bfee398126f7ffe4"
+      "rule_count": 26555,
+      "rules_sha256": "1872fdbfe3856f6501180e05024750a6d845ec760f7781bc5e36a2f72a93a889"
     },
     "ProxyGlobal": {
       "behavior": "domain",
@@ -5022,8 +5022,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 26550,
-      "rules_sha256": "fa59b67630e9971afd0c4b20245fdd76592f649ddf3ccdf3bfee398126f7ffe4"
+      "rule_count": 26555,
+      "rules_sha256": "1872fdbfe3856f6501180e05024750a6d845ec760f7781bc5e36a2f72a93a889"
     },
     "Scholar": {
       "behavior": "domain",
@@ -5257,5 +5257,5 @@
       "rules_sha256": "62e0a891503f4166f009ef67687470ccc0e62ee2da38f996c010830b63359e82"
     }
   },
-  "source_commit": "e270d4a3b439e9e262587ef3a6c3878ec24cac98"
+  "source_commit": "875fedfa2ec43e771f3b9592db0e4dc716856cf5"
 }
