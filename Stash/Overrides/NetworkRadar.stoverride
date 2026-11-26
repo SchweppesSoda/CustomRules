@@ -1,62 +1,162 @@
 name: Network Radar
-desc: 在「第三方服务」分别显示本机直连和 Proxy 策略的出口、地区、延迟及检测时间。每十分钟在后台检测。
+desc: 首页双出口、各七次 HTTP 实测、接入网络与 IPPure 风险分。第三方服务显示九项业务的出口及探测结果。点卡可查看详情或立即检测。
 
-script-providers:
-  proxyconfig-network-radar-worker-v2:
-    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Scripts/network-radar.js?rev=20260721-v2
-    interval: 86400
-  proxyconfig-network-radar-direct-v3: &radar-exit-tile
-    interval: 86400
-    payload: |
-      const direct = $argument === "direct";
-      const tile = {
-        title: direct ? "雷达 · 本机直连" : "雷达 · 本机代理",
-        icon: direct ? "network" : "globe",
-        content: "等待首次后台检测",
-        backgroundColor: "#6b7280",
-      };
-      let state = {};
-      try { state = JSON.parse($persistentStore.read("proxyconfig.network-radar.v1")) || {}; } catch {}
-      const checkedAt = Number(state.checked_at);
-      if (Number.isFinite(checkedAt) && checkedAt > 0) {
-        const sample = direct ? state.direct : state.proxy;
-        const clean = (value, limit) => typeof value === "string" ? value.replace(/\s+/g, " ").trim().slice(0, limit) : "";
-        const ip = clean(sample?.ip, 45);
-        const minutes = Math.max(0, Math.floor((Date.now() - checkedAt) / 60000));
-        const age = minutes >= 1440 ? Math.floor(minutes / 1440) + " 天前" : minutes ? minutes + " 分钟前" : "刚刚";
-        if (ip && !sample.error) {
-          const latency = Number.isFinite(sample.ms) && sample.ms >= 0 ? Math.round(sample.ms) + " ms" : "";
-          tile.content = [ip, clean(sample.country, 24), latency, age].filter(Boolean).join(" · ");
-          tile.backgroundColor = direct ? "#18756a" : "#315ea8";
-        } else {
-          tile.content = "检测失败 · " + age;
-          tile.backgroundColor = "#b45309";
-        }
-      }
-      $done(tile);
-  proxyconfig-network-radar-proxy-v3: *radar-exit-tile
+http:
+  force-http-engine:
+    - network-radar.invalid:80
+  script:
+    - match: ^http://network-radar\.invalid/$
+      name: proxyconfig-network-radar-worker-v4
+      type: request
+      timeout: 45
+      argument: &radar-settings '{"proxyPolicy":"Proxy","maskIP":false,"servicesEnabled":true}'
+
+event:
+  script:
+    - name: proxyconfig-network-radar-worker-v4
+      event: network-changed
+      timeout: 45
+      argument: *radar-settings
 
 cron:
   script:
-    - name: proxyconfig-network-radar-worker-v2
+    - name: proxyconfig-network-radar-worker-v4
       cron: '*/10 * * * *'
-      timeout: 15
-      argument: '{"mode":"refresh"}'
+      timeout: 45
+      argument: *radar-settings
+
+script-providers:
+  proxyconfig-network-radar-worker-v4:
+    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Scripts/network-radar.js?rev=20261126-radar4
+    interval: 86400
+  proxyconfig-network-radar-direct-v4: &radar-cached-tile
+    interval: 86400
+    payload: |
+      const key = $argument;
+      let state = {};
+      try { state = JSON.parse($persistentStore.read("proxyconfig.network-radar.v1")) || {}; } catch {}
+      const route = key === "direct" || key === "proxy";
+      const view = state.cards?.[key];
+      let result = { content: route ? "等待首次后台检测" : "等待业务检测", backgroundColor: "#6b7280" };
+      if (view && typeof view.content === "string" && typeof view.title === "string") {
+        result = { title: view.title.slice(0, 60), content: view.content.slice(0, 240), backgroundColor: view.backgroundColor };
+      } else if (route && state.checked_at > 0 && state.version !== 4) {
+        const old = state[key];
+        const clean = v => typeof v === "string" ? v.replace(/\s+/g, " ").trim().slice(0, 48) : "";
+        const ip = clean(old?.ip);
+        result.content = ip && !old.error
+          ? [ip, clean(old.isp), clean(old.country), Number.isFinite(old.ms) && old.ms >= 0 ? old.ms + " ms" : ""].filter(Boolean).join(" · ") + "\n旧版 IP.SB 查询"
+          : "旧版出口检测失败";
+      }
+      const age = Math.floor((Date.now() - state.checked_at) / 60000);
+      if (age >= 15) result.content += "\n" + (age >= 1440 ? Math.floor(age / 1440) + " 天前" : age + " 分钟前");
+      $done(result);
+  proxyconfig-network-radar-proxy-v4: *radar-cached-tile
+  proxyconfig-network-radar-nf-v4: *radar-cached-tile
+  proxyconfig-network-radar-dp-v4: *radar-cached-tile
+  proxyconfig-network-radar-tk-v4: *radar-cached-tile
+  proxyconfig-network-radar-gpt-v4: *radar-cached-tile
+  proxyconfig-network-radar-cl-v4: *radar-cached-tile
+  proxyconfig-network-radar-gm-v4: *radar-cached-tile
+  proxyconfig-network-radar-bili-v4: *radar-cached-tile
+  proxyconfig-network-radar-yt-v4: *radar-cached-tile
+  proxyconfig-network-radar-icloud-v4: *radar-cached-tile
 
 tiles:
-  - name: proxyconfig-network-radar-direct-v3
-    collapsed: true
+  - name: proxyconfig-network-radar-direct-v4
     argument: direct
     interval: 600
-    title: 雷达 · 本机直连
+    title: 直连出口
     content: 等待首次后台检测
     icon: network
     backgroundColor: '#6b7280'
-  - name: proxyconfig-network-radar-proxy-v3
-    collapsed: true
+    url: 'http://network-radar.invalid/#direct'
+  - name: proxyconfig-network-radar-proxy-v4
     argument: proxy
     interval: 600
-    title: 雷达 · 本机代理
+    title: 代理出口
     content: 等待首次后台检测
     icon: globe
     backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#proxy'
+  - name: proxyconfig-network-radar-nf-v4
+    collapsed: true
+    argument: nf
+    interval: 600
+    title: Netflix
+    content: 等待业务检测
+    icon: film.fill
+    backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#nf'
+  - name: proxyconfig-network-radar-dp-v4
+    collapsed: true
+    argument: dp
+    interval: 600
+    title: Disney+
+    content: 等待业务检测
+    icon: sparkles.tv
+    backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#dp'
+  - name: proxyconfig-network-radar-tk-v4
+    collapsed: true
+    argument: tk
+    interval: 600
+    title: TikTok
+    content: 等待业务检测
+    icon: music.note
+    backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#tk'
+  - name: proxyconfig-network-radar-gpt-v4
+    collapsed: true
+    argument: gpt
+    interval: 600
+    title: ChatGPT
+    content: 等待业务检测
+    icon: bubble.left.and.bubble.right.fill
+    backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#gpt'
+  - name: proxyconfig-network-radar-cl-v4
+    collapsed: true
+    argument: cl
+    interval: 600
+    title: Claude
+    content: 等待业务检测
+    icon: asterisk
+    backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#cl'
+  - name: proxyconfig-network-radar-gm-v4
+    collapsed: true
+    argument: gm
+    interval: 600
+    title: Gemini
+    content: 等待业务检测
+    icon: sparkles
+    backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#gm'
+  - name: proxyconfig-network-radar-bili-v4
+    collapsed: true
+    argument: bili
+    interval: 600
+    title: 哔哩哔哩
+    content: 等待业务检测
+    icon: tv
+    backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#bili'
+  - name: proxyconfig-network-radar-yt-v4
+    collapsed: true
+    argument: yt
+    interval: 600
+    title: YouTube
+    content: 等待业务检测
+    icon: play.rectangle.fill
+    backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#yt'
+  - name: proxyconfig-network-radar-icloud-v4
+    collapsed: true
+    argument: icloud
+    interval: 600
+    title: iCloud
+    content: 等待业务检测
+    icon: icloud.fill
+    backgroundColor: '#6b7280'
+    url: 'http://network-radar.invalid/#icloud'

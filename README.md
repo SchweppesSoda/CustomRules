@@ -82,6 +82,7 @@ validation gates, reproducibility checks and bounded build evidence.
 ## Stash and other non-rule resources
 
 - [Egern 网络诊断雷达](Egern/Modules/README.md): native widgets combining local/exit IP information, ASN, IPPure risk and service probes, with medium/large layouts and scoped local caching.
+- [Stash Network Radar](Stash/Overrides/NetworkRadar.stoverride) adds two homepage exit cards with independent seven-sample HTTP histories. Tap a card for local network details, ASN, IPPure risk, or a fresh measurement. Nine third-party service cards show their configured policy’s observed exit and service response. In standalone profiles, set `proxyPolicy` and any `servicePolicies` overrides in the shared `radar-settings` argument to match local group names.
 - `Stash/Overrides/`: reusable Stash modules.
 - `Stash/Scripts/`: scripts used by Stash modules.
 - `Stash/Rules/`: Stash-specific supplements.
