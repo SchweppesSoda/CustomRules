@@ -1,35 +1,35 @@
 name: Network Radar
-desc: 首页双出口、各七次 HTTP 实测、接入网络与 IPPure 风险分。第三方服务显示九项业务的出口及探测结果。点卡可查看详情或立即检测。
+desc: 首页显示直连和代理各自最近七次成功的 HTTPS 请求耗时、接入网络与 IPPure 风险分。第三方服务显示九项业务的出口及探测结果。点卡可查看详情或立即检测。
 
 http:
   force-http-engine:
     - network-radar.invalid:80
   script:
     - match: ^http://network-radar\.invalid/$
-      name: proxyconfig-network-radar-worker-v4
+      name: proxyconfig-network-radar-worker-v5
       type: request
       timeout: 45
       argument: &radar-settings '{"proxyPolicy":"Proxy","maskIP":false,"servicesEnabled":true}'
 
 event:
   script:
-    - name: proxyconfig-network-radar-worker-v4
+    - name: proxyconfig-network-radar-worker-v5
       event: network-changed
       timeout: 45
       argument: *radar-settings
 
 cron:
   script:
-    - name: proxyconfig-network-radar-worker-v4
+    - name: proxyconfig-network-radar-worker-v5
       cron: '*/10 * * * *'
       timeout: 45
       argument: *radar-settings
 
 script-providers:
-  proxyconfig-network-radar-worker-v4:
-    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Scripts/network-radar.js?rev=20261126-radar4
+  proxyconfig-network-radar-worker-v5:
+    url: https://raw.githubusercontent.com/SchweppesSoda/CustomRules/master/Stash/Scripts/network-radar.js?rev=20261127-https-timing
     interval: 86400
-  proxyconfig-network-radar-direct-v4: &radar-cached-tile
+  proxyconfig-network-radar-direct-v5: &radar-cached-tile
     interval: 86400
     payload: |
       const key = $argument;
@@ -37,21 +37,30 @@ script-providers:
       try { state = JSON.parse($persistentStore.read("proxyconfig.network-radar.v1")) || {}; } catch {}
       const route = key === "direct" || key === "proxy";
       const view = state.cards?.[key];
-      let result = { content: route ? "等待首次后台检测" : "等待业务检测", backgroundColor: "#6b7280" };
+      let result = { content: route ? "HTTPS 请求耗时 · 等待首次采样" : "等待业务检测", backgroundColor: "#6b7280" };
       if (view && typeof view.content === "string" && typeof view.title === "string") {
         result = { title: view.title.slice(0, 60), content: view.content.slice(0, 240), backgroundColor: view.backgroundColor };
+        if (route) {
+          // Relabel the previous worker's cached timing line without taking a new sample.
+          const lines = result.content.split("\n");
+          if (/^(?:[▁-█]+  )?(?:\d+ ms|本次 HTTP 失败)$/.test(lines[1])) {
+            lines[1] = "HTTPS 请求耗时  " + lines[1].replace("本次 HTTP 失败", "本次失败");
+            result.content = lines.join("\n");
+          }
+        }
       } else if (route && state.checked_at > 0 && state.version !== 4) {
         const old = state[key];
         const clean = v => typeof v === "string" ? v.replace(/\s+/g, " ").trim().slice(0, 48) : "";
         const ip = clean(old?.ip);
+        const timing = Number.isFinite(old?.ms) && old.ms >= 0 ? " · HTTPS 请求耗时 " + old.ms + " ms" : "";
         result.content = ip && !old.error
-          ? [ip, clean(old.isp), clean(old.country), Number.isFinite(old.ms) && old.ms >= 0 ? old.ms + " ms" : ""].filter(Boolean).join(" · ") + "\n旧版 IP.SB 查询"
+          ? [ip, clean(old.isp), clean(old.country)].filter(Boolean).join(" · ") + "\n旧版 IP.SB 查询" + timing
           : "旧版出口检测失败";
       }
       const age = Math.floor((Date.now() - state.checked_at) / 60000);
       if (age >= 15) result.content += "\n" + (age >= 1440 ? Math.floor(age / 1440) + " 天前" : age + " 分钟前");
       $done(result);
-  proxyconfig-network-radar-proxy-v4: *radar-cached-tile
+  proxyconfig-network-radar-proxy-v5: *radar-cached-tile
   proxyconfig-network-radar-nf-v4: *radar-cached-tile
   proxyconfig-network-radar-dp-v4: *radar-cached-tile
   proxyconfig-network-radar-tk-v4: *radar-cached-tile
@@ -63,19 +72,19 @@ script-providers:
   proxyconfig-network-radar-icloud-v4: *radar-cached-tile
 
 tiles:
-  - name: proxyconfig-network-radar-direct-v4
+  - name: proxyconfig-network-radar-direct-v5
     argument: direct
     interval: 600
     title: 直连出口
-    content: 等待首次后台检测
+    content: HTTPS 请求耗时 · 等待首次采样
     icon: network
     backgroundColor: '#6b7280'
     url: 'http://network-radar.invalid/#direct'
-  - name: proxyconfig-network-radar-proxy-v4
+  - name: proxyconfig-network-radar-proxy-v5
     argument: proxy
     interval: 600
     title: 代理出口
-    content: 等待首次后台检测
+    content: HTTPS 请求耗时 · 等待首次采样
     icon: globe
     backgroundColor: '#6b7280'
     url: 'http://network-radar.invalid/#proxy'

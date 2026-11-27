@@ -327,10 +327,10 @@ function exitCard(key, state) {
   const route = state[key], direct = key === "direct", history = historyOf(route);
   const place = clean(route?.city || route?.region || route?.cc || route?.country, 22);
   const title = [direct ? "直连" : "代理", place].filter(Boolean).join(" · ");
-  const current = validMs(route?.ms) ? route.ms + " ms" : "本次 HTTP 失败";
+  const current = validMs(route?.ms) ? route.ms + " ms" : "本次失败";
   const lines = [
     route?.ip ? displayIP(route.ip, state.maskIP) + " · " + (clean(route.isp, 42) || "运营商未知") : "出口 IP 未取得",
-    [bars(history), current].filter(Boolean).join("  "),
+    ["HTTPS 请求耗时", bars(history), current].filter(Boolean).join("  "),
     [route?.asn, quality(route)].filter(Boolean).join(" · "),
     direct ? access(state.network) : property(route),
   ];
@@ -367,10 +367,10 @@ function exitDetails(key, state) {
   const recent = history.map(p => "<li><time>" + clock(p.at) + "</time><strong>" + p.ms + " ms</strong></li>").join("");
   const legacy = route.legacy || (state.version !== 4 && route.ip && validMs(route.ms) ? { at: state.checked_at, ms: route.ms } : null);
   return '<section id="' + key + '"><h2>' + (key === "direct" ? "直连" : "代理") + "出口</h2>" + rows(fields) +
-    "<h3>最近 " + history.length + " 次成功的 HTTP 采样</h3>" +
+    "<h3>HTTPS 请求耗时 · 最近 " + history.length + " 次成功采样</h3>" +
     (recent ? "<ol>" + recent + "</ol>" : "<p>等待首次成功采样。</p>") +
-    (state.version === 4 && !validMs(route.ms) ? "<p>本次 HTTP 探测失败，保留此前的实测值。</p>" : "") +
-    (legacy ? "<p>旧版 IP.SB 查询 · " + clock(legacy.at) + " · " + Number(legacy.ms) + " ms</p>" : "") + "</section>";
+    (state.version === 4 && !validMs(route.ms) ? "<p>本次 HTTPS 请求失败，保留此前的实测值。</p>" : "") +
+    (legacy ? "<p>旧版 IP.SB 查询 · HTTPS 请求耗时 " + Number(legacy.ms) + " ms · " + clock(legacy.at) + "</p>" : "") + "</section>";
 }
 
 function details(state, note = "") {
@@ -391,7 +391,7 @@ function details(state, note = "") {
     '</style><main><h1>网络雷达</h1><p>' + escapeHTML(note || ("最近采样 · " + clock(state.checked_at))) +
     '</p><form method="post" action="/"><button type="submit">立即检测</button></form><section><h2>本机接入网络</h2>' +
     device + "</section>" + exitDetails("direct", state) + exitDetails("proxy", state) +
-    "<p>两条路径访问相同的 Cloudflare 204 端点。每级 20 ms，柱子从左到右由早到晚。IPPure 风险分越高，风险越高。</p>" +
+    "<p>两条路径均通过 HTTPS 请求同一 Cloudflare 端点。收到 204 响应时记录耗时。每级 20 ms，柱子从左到右由早到晚。IPPure 风险分越高，风险越高。</p>" +
     "<section><h2>业务出口</h2><p>出口由业务响应或同策略的 IP 回显取得。服务地区和页面可达性分别记录，播放与账号权限需在服务内确认。</p>" +
     services + "</section></main></html>";
   return { response: { status: 200, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store",
@@ -431,6 +431,7 @@ async function run() {
   // Old providers can still call the public script directly as a Tile.
   if (type === "tile" || options.mode === "status") {
     const state = readState(), key = options.route === "direct" ? "direct" : "proxy";
+    if (state.version === 4 && state[key]) return exitCard(key, state);
     return state.cards?.[key] || { title: "网络雷达", content: state[key]?.ip || "等待首次后台检测" };
   }
   if (typeof $request !== "undefined" && $request) {
