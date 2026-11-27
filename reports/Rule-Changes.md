@@ -7,8 +7,11 @@ it does not establish IP, wildcard, process or cross-set routing equivalence.
 
 | Set | Previous | Current | Added | Removed | Removed covered by suffix | Shrink | Change | Notice |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| AdBlockLite | 85405 | 84549 | 783 | 1639 | 11 | 1.0% | 2.8% | - |
-| Classical/Proxy | 26684 | 26689 | 5 | 0 | 0 | 0.0% | 0.0% | - |
-| NonIP/Classical/Proxy | 26584 | 26589 | 5 | 0 | 0 | 0.0% | 0.0% | - |
-| Proxy | 26550 | 26555 | 5 | 0 | 0 | 0.0% | 0.0% | - |
-| ProxyGlobal | 26550 | 26555 | 5 | 0 | 0 | 0.0% | 0.0% | - |
+| AdBlockLite | 84549 | 81800 | 879 | 3628 | 5 | 3.3% | 5.3% | - |
+| Classical/Proxy | 26689 | 26700 | 11 | 0 | 0 | 0.0% | 0.0% | - |
+| IP/China | 9665 | 9735 | 144 | 74 | 0 | 0.0% | 2.3% | - |
+| IP/Google | 7090 | 6915 | 137 | 312 | 0 | 2.5% | 6.3% | - |
+| IP/Proxy | 8577 | 8410 | 152 | 319 | 0 | 1.9% | 5.5% | - |
+| NonIP/Classical/Proxy | 26589 | 26600 | 11 | 0 | 0 | 0.0% | 0.0% | - |
+| Proxy | 26555 | 26566 | 11 | 0 | 0 | 0.0% | 0.0% | - |
+| ProxyGlobal | 26555 | 26566 | 11 | 0 | 0 | 0.0% | 0.0% | - |
