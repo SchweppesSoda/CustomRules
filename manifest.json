@@ -2715,8 +2715,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 81800,
-      "rules_sha256": "377bc716eb94b4767f94902034e317203b0b90c32a211da8580d2cba010652f5"
+      "rule_count": 81830,
+      "rules_sha256": "5b1375559d6223de763b5196f742167de6ca0a4a518022cf23d8166a69bf89c2"
     },
     "Address/Classical/Apple": {
       "behavior": "classical",
@@ -3610,8 +3610,8 @@
         "yaml",
         "list"
       ],
-      "rule_count": 646,
-      "rules_sha256": "2d6782c7d1d42a8deea0a503a8b2271df55833cb2ab985480cd6e8711b03c065"
+      "rule_count": 647,
+      "rules_sha256": "03ca40f7f2b75bfc742bf3134e87f9cfdcb31be2b6a82a38fa786b62ddf9ae11"
     },
     "Classical/NetEaseMusic": {
       "behavior": "classical",
@@ -4371,8 +4371,8 @@
         "mrs"
       ],
       "mrs_behavior": "domain",
-      "rule_count": 637,
-      "rules_sha256": "8cb0041dd1d70d9e995543413f70969468b198750ea56ff2d65a9d4c15c77338"
+      "rule_count": 638,
+      "rules_sha256": "cf33a86c59c8b74df1af6597967301ce2c95ac2bd87506f32079ba312a4eaba5"
     },
     "MicrosoftCN": {
       "behavior": "domain",
